@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "experiment": "118-pds-null-panel-residual",
+  "date_preregistered": "2026-08-30",
+  "stage": "source_only_first_stage",
+  "hypothesis": "An uncertainty-weighted CD4 cross-condition residual restricted to off-diagonal VCC panel coordinates can transfer downstream gene direction while leaving every PDS-visible coordinate exactly unchanged.",
+  "allowed_sources": {
+    "conditions": [
+      "cd4_rest",
+      "cd4_stim8hr",
+      "cd4_stim48hr"
+    ],
+    "condition_artifacts": [
+      "genes.txt",
+      "perts.txt",
+      "log_fc.npy",
+      "lfc_se.npy",
+      "adj_p_value.npy",
+      "valid_log_fc.npy",
+      "base_mean.npy",
+      "obs.csv"
+    ],
+    "canonical_axes": [
+      "data/challenge/gene_names.csv",
+      "data/challenge/pert_counts.csv"
+    ]
+  },
+  "forbidden_inputs_and_actions": {
+    "pan_values": true,
+    "held_harness_truth": true,
+    "nadig_outcomes": true,
+    "kolf_outcomes": true,
+    "challenge_truth": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "submission_build_or_submit": true,
+    "commit_or_push": true
+  },
+  "source_validity": {
+    "target_qc_all_required": {
+      "ontarget_significant": true,
+      "neighboring_gene_KD": false,
+      "distal_offtarget_flag": false,
+      "low_target_gex": false,
+      "n_guides_minimum": 2
+    },
+    "training_pair_all_required": [
+      "target_qc_pass",
+      "valid_log_fc",
+      "finite_log_fc",
+      "finite_lfc_se",
+      "lfc_se_strictly_positive",
+      "finite_adj_p_value"
+    ],
+    "held_truth_additional_requirements": [
+      "adj_p_value_strictly_below_0.05",
+      "log_fc_nonzero"
+    ],
+    "minimum_valid_training_conditions": 2
+  },
+  "candidate_grid": {
+    "identity": {
+      "estimator": "identity",
+      "eta": 0.0
+    },
+    "estimators": [
+      "unweighted",
+      "inverse_variance",
+      "r_mu",
+      "r2_mu"
+    ],
+    "eta": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "candidate_count": 13,
+    "formula": {
+      "mu": "sum(l_c / s_c^2) / sum(1 / s_c^2)",
+      "z": "abs(mu) * sqrt(sum(1 / s_c^2))",
+      "r": "(2*Phi(z)-1) * abs(sum((1/s_c^2)*sign(l_c))) / sum(1/s_c^2)",
+      "unweighted": "mean(l_c)",
+      "inverse_variance": "mu",
+      "r_mu": "r*mu",
+      "r2_mu": "r^2*mu",
+      "dose": "eta * estimator"
+    }
+  },
+  "coordinate_contract": {
+    "response_universe": "canonical_300_vcc_panel_genes_only",
+    "target_self_coordinate": "exact_zero",
+    "nonpanel_coordinates": "exact_zero",
+    "unsupported_panel_coordinates": "exact_zero",
+    "row_centering": "subtract the arithmetic mean over mutable supported off-diagonal panel coordinates",
+    "zero_sum_repair": "subtract the correctly rounded math.fsum residual first from the greatest canonical mutable coordinate, then if sub-ULP cancellation prevents exact closure use mutable coordinates in ascending absolute-value order with canonical order as the stable tie break, until math.fsum is exact zero",
+    "pds_visible_coordinates": "exactly_untouched"
+  },
+  "validation": {
+    "folds": "leave_one_cd4_condition_out",
+    "unit": "whole_target",
+    "held_truth": "held-condition off-diagonal source-valid FDR<0.05 nonzero LFC",
+    "signed_linear_credit_per_target": "sign(truth) @ prediction / sum(abs(truth))",
+    "top20_precision": {
+      "ranking": "descending abs(prediction), stable canonical response order for ties",
+      "fraction": 0.2,
+      "correct": "sign(prediction) equals sign(truth)",
+      "weight": "abs(truth)"
+    },
+    "fold_aggregation": "arithmetic mean over evaluable targets",
+    "eligibility_gates_every_fold": {
+      "signed_linear_credit_minimum": 0.0,
+      "top20_weighted_sign_precision_minimum": 0.5
+    },
+    "selection_order": [
+      "larger_worst_fold_signed_linear_credit",
+      "larger_worst_fold_top20_weighted_sign_precision",
+      "smaller_eta",
+      "simpler_estimator"
+    ],
+    "estimator_complexity_order": [
+      "unweighted",
+      "inverse_variance",
+      "r_mu",
+      "r2_mu"
+    ],
+    "exact_tie_policy": "identity_wins"
+  },
+  "nulls": {
+    "seed": 1182026,
+    "target_label": {
+      "repetitions": 100,
+      "unit": "whole target row",
+      "same_assignment_all_training_conditions": true,
+      "derangement": true,
+      "held_truth_fixed": true,
+      "repeat_complete_selection": true
+    },
+    "response_label_within_expression_bin": {
+      "repetitions": 100,
+      "expression_statistic": "median log1p(base_mean) over every compact row and all three conditions",
+      "bins": 10,
+      "sort": "expression ascending then canonical panel order",
+      "partition": "numpy array_split balanced bins over source-observed panel genes",
+      "same_assignment_all_training_conditions": true,
+      "derangement_within_each_bin_of_size_at_least_2": true,
+      "source-absent_panel_genes": "fixed",
+      "held_truth_fixed": true,
+      "repeat_complete_selection": true
+    },
+    "source_only_significance_gate": "observed selected worst-fold credit strictly exceeds the linear-method p95 of both complete-selection null distributions"
+  },
+  "freeze": {
+    "output_directory": "experiments/118-pds-null-panel-residual/work/source-freeze-v1",
+    "refuse_overwrite": true,
+    "permutations_written_before_effect_arrays_loaded": true,
+    "all_source_and_output_files_sha256_bound": true,
+    "post_freeze_reselection": false,
+    "held_access_authorized": false,
+    "count_generation_authorized": false,
+    "submission_authorized": false
+  }
+}

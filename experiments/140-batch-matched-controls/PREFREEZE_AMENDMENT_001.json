@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-30",
+  "stage": "before_source_hash_freeze_and_before_any_development_outcome_access",
+  "superseded_plan": "work/preregistered-plan-v1",
+  "replacement_plan": "work/preregistered-plan-v2",
+  "findings": [
+    "The first draft used the older full uncapped whitening basis. The live a15 metadata establishes union_pruned semantics: seed 0, a 12000-row cap per donor, then common-essential row pruning.",
+    "The inherited Orion control regex included NEGR1 through ^neg. Per-batch matching makes that error target-dependent, so candidate controls now use the exact allowlist Non-Targeting only."
+  ],
+  "repair": [
+    "Reproduce union_pruned selection separately inside each outer source exclusion and freeze selected-row counts and hashes.",
+    "Scan a legacy Orion control pool only to reconstruct the incumbent artifact, while using exact Non-Targeting controls for matched profiles and recording the discrepancy.",
+    "Treat NEGR1 as a targeting row for target batch/UMI mixtures; it is legacy-control-only for the reconstruction audit."
+  ],
+  "frozen_orion_counts": {
+    "HCT116": {
+      "exact_non_targeting": 165777,
+      "legacy_negr1": 154,
+      "legacy_total": 165931
+    },
+    "HEK293T": {
+      "exact_non_targeting": 218838,
+      "legacy_negr1": 233,
+      "legacy_total": 219071
+    }
+  },
+  "outcomes_accessed": false,
+  "source_hash_freeze_created": false,
+  "candidate_grid_changed": false,
+  "weighting_changed": false
+}

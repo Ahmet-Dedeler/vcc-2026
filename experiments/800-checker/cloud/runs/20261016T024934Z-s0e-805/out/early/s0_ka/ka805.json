@@ -1,0 +1,26 @@
+{
+ "ka1_de_sha256": "796a7e290eecdbf70aee160a445e09ae2b7e4f7a04aa16bb319262e237a5b48e",
+ "ka1_mac_sha256": "1bb8c76d1177047569e156af5a7c40e48f8fedce0ce3cf85b7d82998c5485e99",
+ "ka1_n_real_identical": true,
+ "ka1_rows_same": true,
+ "ka1_max_abs_diff": {
+  "log2_fold_change_abs": 2.220446049250313e-16,
+  "p_value_rel_max": 0.00011772947371968294,
+  "p_value_share_rel_le_1e-9": 0.9994313561773165,
+  "p_adj_rel_max": 0.0001177294737197162,
+  "p_adj_share_rel_le_1e-9": 0.9995481409931075
+ },
+ "ka1_calls_same": true,
+ "ka1_pass": true,
+ "ka1_n_real_median": 89.0,
+ "ka1_targets_ge10": 58,
+ "ka2": {
+  "n": 85,
+  "share": 0.03761271760121407,
+  "mean_pair_cos": 0.02572386067046844,
+  "share_sh": 0.04869282269403374,
+  "top_pc_share_centred": 0.15895906292497466
+ },
+ "ka2_pass": true,
+ "pass": true
+}

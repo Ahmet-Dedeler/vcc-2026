@@ -1,0 +1,17 @@
+{
+  "real": "s3://<your-s3-bucket>/input/harness/h1-test.h5ad",
+  "preds": [
+    {
+      "name": "amp070",
+      "uri": "PROLOGUE"
+    }
+  ],
+  "preset": "vcc2026",
+  "pert_col": "target_gene",
+  "control": "non-targeting",
+  "cell_eval2_version": "0.16.0",
+  "prologue": "prologue-amp070.sh",
+  "bundle": "",
+  "bundle_wait_minutes": 0,
+  "baseline_pred": ""
+}

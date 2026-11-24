@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "experiment": "119-altair-a549",
+  "date": "2026-08-30",
+  "scope": "source_acquisition_and_compact_source_only",
+  "source": {
+    "local_path": "data/external/altair-a549/altair-scrna.h5ad",
+    "s3_uri": "s3://ops-explorer-public/leonetti_ops/ops_data_portal_submission/CROPseq/2026_05_28_CropSeq_June2025_perturbation_lvl_ops_8-24update.h5ad",
+    "https_url": "https://ops-explorer-public.s3.amazonaws.com/leonetti_ops/ops_data_portal_submission/CROPseq/2026_05_28_CropSeq_June2025_perturbation_lvl_ops_8-24update.h5ad",
+    "size_bytes": 281474102,
+    "sha256": "4632972e6c2871603f4ca9108489787d7761aae05dc6a4bf3488f1ed78a63c9f",
+    "public_object_head": {
+      "etag": "cb152c5b6fb206a010d327174e224493-34",
+      "last_modified": "2026-08-25T17:01:21+00:00",
+      "version_id": "faMp5Esq6WYP5QbbKEwXEbneXEMTyMyk",
+      "content_type": "binary/octet-stream",
+      "server_side_encryption": "AES256"
+    }
+  },
+  "official_sources": {
+    "collection_id": "6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3",
+    "dataset_id": "7006c6c0-6487-43c5-b6ca-735acebb4375",
+    "collection_url": "https://biohub.ai/ops-explorer?collection=6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3",
+    "api_base": "https://biohub.ai/api/cellxstate/v1",
+    "paper_doi": "10.64898/2026.06.01.728087",
+    "analysis_repository": "https://github.com/czbiohub-sf/ops-paper-analysis",
+    "analysis_repository_commit": "19e826f53e80a369603c8bbc803e44d56f631514",
+    "cyclops_monorepo": "https://github.com/czbiohub-sf/cyclops-monorepo",
+    "cyclops_monorepo_commit": "a9801c1d17a4b91f27c3f11a655794e0b6841563"
+  },
+  "metadata_assets": {
+    "collection": {
+      "path": "metadata/collection.json",
+      "sha256": "37c8cdbfc2ecf42450104fa8153bea5e3f1ba29c695df9529483452713cc4b21",
+      "url": "https://biohub.ai/api/cellxstate/v1/collections/6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3"
+    },
+    "dataset": {
+      "path": "metadata/dataset.json",
+      "sha256": "9c3d6f6b7c44015dca868a190f88bd62254c0b75e0a3f851d1dcfbd5964ad388",
+      "url": "https://biohub.ai/api/cellxstate/v1/collections/6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3/datasets/7006c6c0-6487-43c5-b6ca-735acebb4375"
+    },
+    "aggregates": {
+      "path": "metadata/aggregates.json",
+      "sha256": "c88a392d2fbd73d8bd06d158d3273a43e3d1f0f5dbf8dfa34209fd46d5cd70da",
+      "url": "https://biohub.ai/api/cellxstate/v1/collections/6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3/datasets/7006c6c0-6487-43c5-b6ca-735acebb4375/aggregates"
+    },
+    "alg12_diff_expression": {
+      "path": "metadata/alg12-diff-expression.json",
+      "sha256": "e7973452de43506f2c6166e96ce4418901591a47ee7b964e563211ce9e23632b",
+      "url": "https://biohub.ai/api/cellxstate/v1/collections/6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3/datasets/7006c6c0-6487-43c5-b6ca-735acebb4375/diff_expression/by_aggregate?aggregate_id=ALG12"
+    },
+    "public_object_head": {
+      "path": "metadata/public-object-head.json",
+      "sha256": "b2b366bb60e8eb4f3f9c3a50cc52c79fe824343f9cc753edd772c6fbf56650cb"
+    }
+  },
+  "canonical_axes": {
+    "genes": {
+      "path": "data/challenge/gene_names.csv",
+      "column": "gene_name",
+      "count": 18533,
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201"
+    },
+    "panel": {
+      "path": "data/challenge/pert_counts.csv",
+      "column": "target_gene",
+      "count": 300,
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    }
+  },
+  "source_semantics": {
+    "matrix_X": "official OPS API field log2_fold_change",
+    "comparison": "each targeting aggregate relative to the dataset non-targeting control aggregate",
+    "not_counts": true,
+    "not_project_log1p_delta": true,
+    "layers": [
+      "adj_p_value",
+      "baseMean",
+      "lfcSE",
+      "neg_log10_fdr",
+      "p_value",
+      "stat"
+    ],
+    "measured_definition": "finite value in source X",
+    "fdr_available_definition": "finite value in source layers/neg_log10_fdr",
+    "unsupported_representation": "NaN",
+    "mapping": "exact gene symbol only",
+    "alias_merge": false,
+    "api_rounding_tolerance": 5.1e-06,
+    "deseq_stat_tolerance": 0.0001
+  },
+  "expected_audit": {
+    "source_shape": [
+      1001,
+      9999
+    ],
+    "target_rows": 1000,
+    "control_rows": 1,
+    "supported_target_rows": 997,
+    "all_nan_rows": [
+      "COQ10B",
+      "HSD17B12",
+      "NEK1",
+      "Nontargeting"
+    ],
+    "cells_total": 606075,
+    "target_cells_total": 560755,
+    "control_cells_total": 45320,
+    "target_cells_min": 73,
+    "target_cells_median": 565.0,
+    "target_cells_max": 1196,
+    "source_response_genes": 9999,
+    "canonical_exact_overlap": 7843,
+    "source_symbols_unmapped": 2156,
+    "canonical_symbols_uncovered": 10690,
+    "source_x_finite": 9969003,
+    "source_x_nan": 39996,
+    "source_fdr_finite": 7633933,
+    "source_fdr_nan": 2375066,
+    "vcc_panel_target_overlap": 21,
+    "vcc_panel_supported_overlap": 20,
+    "vcc_panel_targets": [
+      "ALG12",
+      "ANP32B",
+      "C5orf22",
+      "COQ10B",
+      "LDLR",
+      "MSANTD4",
+      "NUP37",
+      "PAN2",
+      "PATL1",
+      "PHF23",
+      "PIM2",
+      "PRKACA",
+      "RBM26",
+      "RBM5",
+      "SCAF8",
+      "STT3A",
+      "SYVN1",
+      "TIMM17B",
+      "WBP4",
+      "ZNF219",
+      "ZNF496"
+    ],
+    "vcc_panel_supported_targets": [
+      "ALG12",
+      "ANP32B",
+      "C5orf22",
+      "LDLR",
+      "MSANTD4",
+      "NUP37",
+      "PAN2",
+      "PATL1",
+      "PHF23",
+      "PIM2",
+      "PRKACA",
+      "RBM26",
+      "RBM5",
+      "SCAF8",
+      "STT3A",
+      "SYVN1",
+      "TIMM17B",
+      "WBP4",
+      "ZNF219",
+      "ZNF496"
+    ]
+  },
+  "authorization": {
+    "source_file_already_acquired": true,
+    "additional_large_downloads": false,
+    "held_truth_access": false,
+    "existing_outcome_access": false,
+    "model_fitting": false,
+    "evaluation": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "submission_build": false,
+    "submission": false
+  }
+}

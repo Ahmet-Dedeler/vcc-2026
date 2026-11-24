@@ -1,0 +1,7 @@
+1	0	22	4184	bash experiments/801-lab-folds/cloud801.sh verify
+2	0	32	68228	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh fit-abc k562_gwps
+3	0	32	68124	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh fit-abc orion_hct116
+4	0	32	68200	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh fit-abc orion_hek293t
+5	1	85	3970436	T801_THREADS=4 bash experiments/801-lab-folds/cloud801.sh abcp k562_gwps
+6	1	92	4248544	T801_THREADS=4 bash experiments/801-lab-folds/cloud801.sh abcp orion_hct116
+7	1	92	4271608	T801_THREADS=4 bash experiments/801-lab-folds/cloud801.sh abcp orion_hek293t

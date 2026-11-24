@@ -1,0 +1,143 @@
+{
+  "arm_order": [
+    "floor",
+    "hamilton",
+    "random_up"
+  ],
+  "arms": {
+    "floor": "floor",
+    "hamilton": "hamilton",
+    "random_up": "random_up"
+  },
+  "baseline_effects": "experiments/323-current-family-validation/work/effects.npz::cap15",
+  "bootstrap": {
+    "draws": 10000,
+    "mse": "whole-panel ratio with the claim cap recomputed per resample",
+    "paired": true,
+    "seed": 20260909,
+    "unit": "target"
+  },
+  "cell_eval2": {
+    "package_dir": "~/Code/virtual-cell-challenge-2026/.venv/lib/python3.12/site-packages/cell_eval2",
+    "sha256": {
+      "catalog.py": "d371aa454ec07dbaa7aa21fcbc2929ef9b8a55691aae39a471f90f0d4e5752df",
+      "config.py": "30381857e42b7bdc03f0d0779f83885656e9e19f8a6747483976a5342f49f8ec",
+      "configs/vcc2026.yaml": "1a385a53ba9c59d44b56755ef48d8a6713eefe8822fbeef96fc20ab9a8047a32",
+      "de.py": "525b19837c7b42c15838d9f2c053ae19f4108872329d183e4d977620ebe316df",
+      "metrics/de.py": "6cb7bee7cad59c2a20e45d68ca75b8696723cacc56b8dc94da92ac7676813038",
+      "metrics/delta.py": "6067d0c5bd7cac4715406cd4935ec86326e91c6217f204f6bfc5b0a7bb948a8c",
+      "metrics/direction.py": "50624ad3253d1bbb213c90110dd309711579e26479174a88e1ed60444f5637b5",
+      "metrics/discrimination.py": "34802605c5bec46a845088048cb5bff2c7b4266d17ce1a68936a94bb72188b5d",
+      "moments.py": "117aa11b3ab611795bc5be5af7a84ae9ae6fef6a451fbf4c94b730fee7d55679",
+      "prep.py": "d07b7d314c69aff6168c6334da95aed8c46d5e27ec59f45a0215d973f59a6912",
+      "run.py": "4c889611b4726ac574546af50bce15f830243c46f7609746e0b3e0fafe9cf0c3"
+    },
+    "version": "0.16.0"
+  },
+  "classification": "reused H1 development remeasurement of an unsubmitted rounding rider; not A/B/C confirmation, not a cleared package or slot",
+  "control_seed_base": 3420909,
+  "control_seed_rule": "np.random.default_rng(3420909 + target_index), target_index in 323's reference target order; the emission stream is never used",
+  "emission": {
+    "call_set": [
+      400,
+      2200,
+      1.9
+    ],
+    "call_set_first": true,
+    "cells": 400,
+    "dispersion": 0.1,
+    "effects": "323 cap15 final effects, identical for all three arms",
+    "emission_seed_offset": 1000003,
+    "h1_union": "OFF",
+    "jitter_seed_base": 1000,
+    "keep_spread": 0.25,
+    "keep_top": 8000,
+    "mass_fix": null,
+    "min_cpm": 10.0,
+    "overdispersion": 4.0,
+    "prediction_seed": 0,
+    "spread_hi": 0.6,
+    "spread_lo": 0.0,
+    "spread_map": "block",
+    "tail_spread": 1.0
+  },
+  "experiment": "342-hamilton-current-family",
+  "frozen_utc": "2026-09-09T18:57:33.229266+00:00",
+  "gates": {
+    "integrity": "known-answer exact, rounding invariants, identity checks, seam attestation, no non-finite resamples",
+    "lower_bound_vs_floor": "paired overall 95% lower bound > 0 versus floor",
+    "lower_bound_vs_random_up": "paired overall 95% lower bound > 0 versus random_up",
+    "no_resolved_fid_reach_jac_harm": "no raw fidelity/reach/Jaccard contrast (same two comparators) whose entire 95% interval is harmful",
+    "no_resolved_mse_nmae_harm": "no raw MSE or NMAE contrast (hamilton versus floor or random_up) whose entire 95% interval is harmful",
+    "pass_meaning": "LOCAL_GAIN_REQUIRES_SEPARATE_ABC_REVIEW only; never a cleared package or slot",
+    "point_gain": "hamilton local H1 overall point >= +0.001 versus floor"
+  },
+  "inputs_sha256": {
+    "experiments/061-perturbmatch-hct-count/build_candidate.py": "77e6fbf7edf1aeea6d39be4fe801591d0b0c2867f95042b697f0fc4042a2fae4",
+    "experiments/062-cd4-post-whiten/run.py": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176",
+    "experiments/096-mse-floor/msekit.py": "5dda415227fbeb29b5cd61b504d2689ce55ec39783697bb5c0891b7261293f14",
+    "experiments/323-current-family-validation/anchor-inputs.json": "107d05026265a9d67f67dd6fd98439aa98a733bba916adfd6b60c636c1008eea",
+    "experiments/323-current-family-validation/evaluate323.py": "10f7ba375c3fd9161348a10cf84eb45b364eba5e8bab5cd183aefe3f6b2ceb0c",
+    "experiments/323-current-family-validation/evaluation-inputs.json": "ba0d3ae08e29ce890fa9f657579a18d9d755289eccafeb3e3c5e7d38fbfd2306",
+    "experiments/323-current-family-validation/exact_de323.py": "7a3a0b406ede3963b3e5ae9b6ed4f993b1afc87d8efd1e95f113a25f0d183f91",
+    "experiments/323-current-family-validation/inputs.json": "50ff05fe589f0b45625ef0913b87d190c7cfa4d1009c6fa5844789b4b980d6ea",
+    "experiments/323-current-family-validation/report323.py": "4f013f11794328ed377a8b33982185f8b517c08ab2383804167a25f7b5aa2bf8",
+    "experiments/323-current-family-validation/run323.py": "22c92b60e09fc22da9f8774adac4ed09e7ea521b1bb00f52d190e6b58c6033ac",
+    "experiments/323-current-family-validation/work/compose.json": "8b279403584561e2dbbb62ba5561ea8fe25b3c363180d33b5e8b50bdaf8ce2c3",
+    "experiments/323-current-family-validation/work/effects.npz": "1ab617c14973ca9d6a071b1fd966059b7c6596c460b21ae099862394766dfd05",
+    "experiments/323-current-family-validation/work/h1-anchors.json": "0a5c8847b20e346f5587d402064eec5b65e94935edc63c84e87725086b8dc709",
+    "experiments/323-current-family-validation/work/metrics-cap15.json": "8586e9d024268c23ee985d264bb5d70099f3b0ad48f013514b2f6610f34091bb",
+    "experiments/323-current-family-validation/work/metrics-known.json": "9b839b4e3a11a33bc5daa2d9e93ba86eef6bfdeb00831f6d74cf559968f7986c",
+    "experiments/323-current-family-validation/work/per-target-cap15.csv": "648056af315d7ee54b1aed778554971eb54cb5b1994d5c5cbdc5394e70d1a39a",
+    "experiments/323-current-family-validation/work/reference.json": "dceff2cb228a98b0a60e23196fa03162e2180519341054cc828d6c17ce2e17eb",
+    "experiments/323-current-family-validation/work/reference.npz": "304aa51133c9776a8d49c29b2075e82f6110671339fa1df77f163cba4843a8c6",
+    "experiments/323-current-family-validation/work/reference_de.parquet": "1bb8c76d1177047569e156af5a7c40e48f8fedce0ce3cf85b7d82998c5485e99",
+    "experiments/323-current-family-validation/work/stats-cap15.npz": "080ba7094cf3654fd059b7aa4d19a094853408452dab0eb1a0d50896bd118271",
+    "experiments/323-current-family-validation/work/whitener_h1_pruned.json": "ba69c0547ec6a6f9a8e437a18d1c83003a67af74856ccf6b8764af8b381c319c",
+    "experiments/323-current-family-validation/work/whitener_h1_pruned.npz": "a46fd3239a74752d5c72f5c6ae7169d354793f04f7c22b9b3fd39fe6f74b9741",
+    "experiments/342-hamilton-current-family/PREREGISTRATION.md": "68b81ef547051bcf9ca5bfe771472760ff4223e4d1c9afaa0d83a45435779c0f",
+    "experiments/342-hamilton-current-family/audit342.py": "07d96c5c7f9c206f98210833be8ef62d567b9e7c766ff4ffb13b7a341f23aaed",
+    "experiments/342-hamilton-current-family/report342.py": "aa3c0ae67b90d0f5e26014cbb9bbbdf5ef22d64a95725c709d02a5894726ce16",
+    "experiments/342-hamilton-current-family/rounding342.py": "2a2351eba90e3250e6c68f225f8c51553c5494f4c83eadc53205a55139bca3eb",
+    "experiments/342-hamilton-current-family/run342.py": "75cace62f5e1071048b240b7bb3ad160ea6af90e8136dd2bf4502a1225891f94",
+    "experiments/342-hamilton-current-family/seam342.py": "169f227b7ef903ece084bc5569b6002455b06a48ee792ebd2482ae5ac2fcb113",
+    "experiments/342-hamilton-current-family/test342.py": "c16b1dc4b4bf4158d9333a8ce9f7d95014f568cf80bb0928f93f3c2e167e2a74",
+    "scripts/make_submission_pm_cd4.py": "1318cd3c7dbe8ed129a4f45dbf7e1e4ce7bed75c5f73af7174d3dd3530f118f4",
+    "src/vcc2026/donor_transfer.py": "9ffca7ecac591954fdc5f4f4fe18646a4e67be4f1edf7d57a73b79f4865c7dfc",
+    "src/vcc2026/multi_donor.py": "1daf35d97b50fb234a37255cf4136d34580f98f9d54faf175dca48461a33129a",
+    "src/vcc2026/rc_emit.py": "6f5e360b729558aa7caeb702c79218948997e4c6e584c457a2602f0df0cb4456",
+    "src/vcc2026/whiten.py": "5dbddefde17192cda4bc7f8f7eceb202faf672de1833c42251366078e7e18bc1"
+  },
+  "not_implemented_by_design": [
+    "empirical-null call-set proposal",
+    "block-sign repair"
+  ],
+  "run_budget_seconds": 2400,
+  "seam_attestation": {
+    "borrowed_production_objects": [
+      "_quasi_block",
+      "_repair_totals",
+      "_stochastic_round"
+    ],
+    "branch": "mode == 'quasi'",
+    "floor_sites_before": 4,
+    "function": "emit_counts",
+    "hook": "__vcc342_round_totals__",
+    "line_differences": [
+      [
+        "totals = np.floor(n * L * profile_p).astype(np.int64)",
+        "totals = __vcc342_round_totals__(n * L * profile_p)"
+      ]
+    ],
+    "n_line_differences": 1,
+    "original_function_sha256": "cbca1d33464d5f6caac74481c2a62a2a74bc6c59bfad938de26e91d7131c6acb",
+    "original_statement": "totals = np.floor(n * L * profile_p).astype(np.int64)",
+    "production_path": "src/vcc2026/donor_transfer.py",
+    "production_sha256": "9ffca7ecac591954fdc5f4f4fe18646a4e67be4f1edf7d57a73b79f4865c7dfc",
+    "replacements": 1,
+    "seamed_function_sha256": "ed0bb95ca68c6d39c7b2f9169cc912e85c236f85f1c97eee995c0fdc990eb309",
+    "seamed_statement": "totals = __vcc342_round_totals__(n * L * profile_p)",
+    "untouched_floor_sites_after": 3
+  },
+  "start_cutoff_utc": "2026-09-09T19:35:00+00:00"
+}

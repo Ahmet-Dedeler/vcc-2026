@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "experiment": "151-relaxation-consensus-selector",
+  "status": "preregistered_before_hct_outcome_access",
+  "provenance_utc": "2026-08-31T18:45:00+00:00",
+  "provenance_basis": "User stated local time was 2026-08-31 21:45 Europe/Istanbul; host clock is known unreliable.",
+  "outcome_state_at_freeze": {
+    "experiment_150_results_json_existed": false,
+    "experiment_150_incumbent_was_still_running": true,
+    "experiment_150_scoring_output_was_not_read": true
+  },
+  "hypothesis": "A two-level source-only relaxation-consensus blend preserves exact PDS and improves robustness of the dual-moment score gain across contexts.",
+  "source_artifacts": {
+    "hek_effects": {
+      "path": "experiments/149-dual-moment-hek293t/work/source-build-v1/effects.npz",
+      "sha256": "cd0e6854fdf4584c257973571b5aafc3025dac2e0060789bd268b192b5afbe28"
+    },
+    "hct_effects": {
+      "path": "experiments/150-dual-moment-score-level-hct116/work/source-build-v1/effects.npz",
+      "sha256": "edf55db4eac6aaae4dc8c11c1e03681838eb225dfde317d52bc9bd3d7c8f69cd"
+    },
+    "dual_moment_implementation": {
+      "path": "experiments/147-dual-moment-emitter/dual_moment.py",
+      "sha256": "89dda8f617261f9b4cfb6ba44cb8ee85db41c3c55adf0e46991be7c5b81e5bcd"
+    },
+    "held_hct_harness": {
+      "path": "data/harness/orion-hct116-thinned.h5ad",
+      "sha256": "04f98cd764bfa428cae4cd1060e814a327cdcf1a2167e6485d7c57646403b401"
+    },
+    "held_hct_harness_metadata": {
+      "path": "data/harness/orion-hct116-thinned.h5ad.meta.json",
+      "sha256": "98e0d4577d0133d02e61272ed2d24ac5e75b2bcaa84027a6c2c26cacb5f075ff"
+    }
+  },
+  "required_effect_keys": [
+    "genes",
+    "targets",
+    "incumbent",
+    "direction"
+  ],
+  "selector": {
+    "common_target_count": 120,
+    "eligible_gene_count_per_target": 17942,
+    "relaxation": "direction - incumbent",
+    "weight": "minimum of the absolute HEK and HCT relaxation values",
+    "eligible": "both relaxation values finite and weight strictly positive",
+    "score": "sum(weight * indicator(HEK_relaxation * HCT_relaxation > 0)) / sum(weight)",
+    "rank_order": "descending score, then ascending target symbol",
+    "top_count": 60,
+    "top_lambda": 1.0,
+    "bottom_count": 60,
+    "bottom_lambda": 0.5,
+    "hct_only_lambda": 1.0,
+    "hct_only_targets_excluded_from_primary_analysis": [
+      "API5",
+      "CSNK2A1",
+      "CYTH2",
+      "DBF4B",
+      "DEK",
+      "E2F1",
+      "KHDRBS1",
+      "LMAN1",
+      "MTA1",
+      "MYPOP",
+      "NCLN",
+      "ZDHHC12"
+    ],
+    "top_names_sha256_newline_terminated": "cc59c0dd6b62c8e440c442933043cc45a68a4d445ef815d853af47780ffb6bed",
+    "bottom_names_sha256_newline_terminated": "dbc2dad9a5745b63ea86a1d888d2496f23a830217558adcda196621351adf6ab",
+    "ranked_names_sha256_newline_terminated": "0aa337e4d736b71e46557814bc2efdb3ee211412697f4644c7c5a8e80481bbcc",
+    "primary_targets_in_hct_order_sha256_newline_terminated": "ecbfb06f75a6c275cd1f06f4ea10a13cf4512ca279ef507b7bc0aca0fbbfa90a",
+    "last_top_target": "IFNAR2",
+    "last_top_score": 0.6283846795891687,
+    "first_bottom_target": "FZD2",
+    "first_bottom_score": 0.6262877888928687,
+    "boundary_tie": false
+  },
+  "fixed_emission": {
+    "direction_gamma": 0.45,
+    "incumbent_gamma": 0.65,
+    "dual_moment_lambda_by_selector": true,
+    "depth_contrast": 0.5,
+    "within_group_quasi_spread": 0.25,
+    "dual_moment_seed": 14700,
+    "cells_per_target": 400,
+    "all_other_parameters_identical_to_experiment_150": true
+  },
+  "primary_analysis": {
+    "targets": "120 HEK-HCT common targets in frozen HCT order",
+    "comparison_a": "gated candidate minus Experiment 150 incumbent",
+    "comparison_a_gates": {
+      "all_per_target_pds_exact": true,
+      "official_anchor_projected_avg_delta_min": 0.004,
+      "target_bootstrap_95pct_lower_min": 0.0,
+      "minimum_nonnegative_de_metrics": 2,
+      "minimum_individual_de_scaled_delta": -0.015,
+      "minimum_scaled_mse_delta": 0.0
+    },
+    "comparison_b": "gated candidate minus Experiment 150 uniform-lambda-1 candidate",
+    "comparison_b_gates": {
+      "all_per_target_pds_exact": true,
+      "official_anchor_projected_avg_delta_min": 0.001,
+      "target_bootstrap_95pct_lower_min": -0.001,
+      "minimum_individual_de_scaled_delta": -0.01
+    },
+    "bootstrap_draws": 20000,
+    "bootstrap_seed_vs_incumbent": 15100,
+    "bootstrap_seed_vs_uniform": 15101
+  },
+  "decision_rule": {
+    "advance_gated_to_production_build": "comparison_a and comparison_b both pass",
+    "otherwise": "do not replace the Experiment 150 uniform candidate; retain its independent decision"
+  },
+  "secondary_analysis": {
+    "full_hct_target_count": 132,
+    "status": "exploratory_only"
+  },
+  "forbidden_before_scoring_authorization": [
+    "read HCT116 perturbation expression rows",
+    "run cell-eval2",
+    "change the selector, lambdas, emission parameters, gates, or bootstrap seeds"
+  ],
+  "forbidden_without_later_authorization": [
+    "challenge prediction build",
+    "challenge submission"
+  ]
+}

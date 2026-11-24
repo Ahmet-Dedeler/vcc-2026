@@ -1,0 +1,13 @@
+{
+ "name": "c4h",
+ "desc": "zs + the plain CLEAN4 hook (618's hk_c4h)",
+ "emit": {
+  "hook": "c4h",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": true
+ },
+ "stage": "zs"
+}

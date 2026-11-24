@@ -1,0 +1,13 @@
+{
+  "checkpoint_bytes": 114324594,
+  "checkpoint_sha256": "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a",
+  "model_revision": "4dcd344ece2c00be9e831fdd35bed57b5ad83e19",
+  "sha256": {
+    "experiments/331-tabicl-runtime/PREREGISTRATION.md": "7d748fc989a67f4c43c7dcdb2bb2a0d03bad757490e10a6d0d84e6b332c448b6",
+    "experiments/331-tabicl-runtime/requirements.in": "6be5bd0b0d833a894143836fbef9584490475aba7da2ba1851c07eed2bf6530d",
+    "experiments/331-tabicl-runtime/requirements.lock": "2c0ee4675d570eb4dd0bf4755714db3c7bad4d2b4ebb4bb23effca893f757adc",
+    "experiments/331-tabicl-runtime/run331.py": "8241d363bda66b025778c2bf0eab1e2435c1c93e20c1043197ecd05cb4d44cc3",
+    "experiments/331-tabicl-runtime/test331.py": "76bad665f9fad1e855a6d9e878ba2bfd20f738fb334c09c6ad0433944d5eadfa",
+    "uv.lock": "2e458aacefa51a18d1057e09f4984357ad5340674466047350e7fb12a163d78f"
+  }
+}

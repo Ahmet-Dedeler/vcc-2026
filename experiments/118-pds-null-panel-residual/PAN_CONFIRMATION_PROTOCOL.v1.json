@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "experiment": "118-pds-null-panel-residual",
+  "stage": "pan_confirmation_v1",
+  "date_frozen": "2026-08-30",
+  "status": "frozen_before_pan_value_access",
+  "amendments": [
+    {
+      "date": "2026-08-30",
+      "timing": "before_any_pan_value_load_and_before_access_lock_creation",
+      "reason": "adversarial review found that the inline application-invariant loop discarded the mutable mask and then referenced an undefined local name after the permanent-lock boundary",
+      "repair": "factor the complete invariant loop into application_invariant_summary, retain residual and mutable from intersected_panel_residual, and add a synthetic regression test that executes the helper",
+      "scientific_design_changed": false,
+      "metrics_thresholds_nulls_or_candidate_changed": false,
+      "pan_values_opened": false,
+      "access_lock_created": false
+    }
+  ],
+  "candidate": {
+    "name": "unweighted_eta1p00",
+    "selection_json_sha256": "3d849a0fb1227b3e968861fb891d954513a73de12c80130a2b20059f880028d4",
+    "reselection": false,
+    "alternative_candidates_permitted": false,
+    "dose_scaling": false,
+    "clipping": false
+  },
+  "intersection": {
+    "target_match": "exact_symbol_only",
+    "expected_target_count": 64,
+    "response_match": "canonical_vcc_panel_gene_and_pan_row_measured_mask",
+    "aliases": false,
+    "case_folding": false,
+    "synonyms": false,
+    "imputation": false,
+    "target_self_exclusion": true
+  },
+  "linear_mean_application": {
+    "control": "expm1(Pan_TS50000_log1p_b_ctrl)",
+    "truth": "expm1(Pan_b_ctrl_plus_Pan_delta)_minus_control",
+    "candidate": "control_plus_numeric_Experiment118_residual",
+    "candidate_residual_exponentiation": false,
+    "candidate_residual_units": "direct_additive_TS50000_linear_mean_units",
+    "mask_then_center": "retain only exact measured off-diagonal panel coordinates, subtract their arithmetic mean, and repair the compensated residual sum to exact zero",
+    "addition_roundoff_repair": "after direct float64 addition, repair only a mutable measured off-diagonal panel coordinate until the candidate panel math.fsum exactly equals the control panel math.fsum; use the resulting candidate-minus-control vector for every observed and null metric",
+    "negative_candidate_mean_policy": "automatic_no_go_no_clipping_or_rescaling",
+    "required_invariants": [
+      "exact_nonpanel_linear_mean_identity",
+      "exact_target_diagonal_linear_mean_identity",
+      "exact_panel_mass_conservation",
+      "exact_pds_visible_normalized_linear_profile_identity",
+      "exact_pds_visible_normalized_log1p_profile_identity"
+    ],
+    "normalization_mass": "math.fsum(math.fsum(panel_coordinates), math.fsum(nonpanel_coordinates))"
+  },
+  "metrics": {
+    "target_weighting": "equal",
+    "eligible_response_coordinates": "Pan measured, finite, nonzero truth, off-diagonal canonical panel genes",
+    "signed_credit": {
+      "per_target": "sign(truth_linear_delta) @ applied_residual / sum(abs(truth_linear_delta))",
+      "aggregate": "arithmetic_mean_over_evaluable_exact_symbol_targets"
+    },
+    "top20_weighted_sign_precision": {
+      "ranking": "descending_abs_applied_residual_with_stable_canonical_panel_ties",
+      "selected_count": "max(1,ceil(0.20*eligible_response_count))",
+      "correct": "nonzero_prediction_sign_equals_truth_sign",
+      "weight": "abs(truth_linear_delta)",
+      "aggregate": "arithmetic_mean_over_evaluable_exact_symbol_targets"
+    }
+  },
+  "nulls": {
+    "no_reselection": true,
+    "target_label": {
+      "assignments": "Experiment118 frozen target_label_permutations.npy byte_for_byte",
+      "draws": 100,
+      "interpretation": "move the selected residual source target row to each Pan destination target while keeping Pan truth and destination measured support fixed; reapply destination self exclusion and centering"
+    },
+    "response_label_within_expression_bin": {
+      "assignments": "Experiment118 frozen response_label_permutations.npy byte_for_byte",
+      "expression_bins": "Experiment118 frozen response_expression_bins.npy byte_for_byte",
+      "draws": 100,
+      "interpretation": "move selected residual response labels within the frozen source-expression bins while keeping Pan truth, target labels, and destination measured support fixed; reapply self exclusion and centering"
+    },
+    "percentile": "numpy_percentile_method_linear_at_95"
+  },
+  "bootstrap": {
+    "unit": "whole_exact_symbol_target",
+    "draws": 20000,
+    "seed": 1181152026,
+    "bit_generator": "numpy_PCG64",
+    "resampling": "sample_all_evaluable_target_indices_with_replacement",
+    "confidence_interval": "numpy_quantile_method_linear_at_0.025_and_0.975",
+    "same_resampled_target_indices_for_both_metrics": true
+  },
+  "go_no_go": {
+    "exact_target_intersection_count": 64,
+    "all_64_targets_evaluable": true,
+    "all_application_invariants_required": true,
+    "macro_target_equal_signed_credit_minimum_exclusive": 0.0,
+    "signed_credit_bootstrap_lower_95_minimum_exclusive": 0.0,
+    "macro_top20_weighted_sign_precision_minimum_exclusive": 0.55,
+    "top20_precision_bootstrap_lower_95_minimum_exclusive": 0.5,
+    "observed_signed_credit_strictly_above_target_null_p95": true,
+    "observed_signed_credit_strictly_above_response_null_p95": true,
+    "observed_precision_strictly_above_target_null_p95": true,
+    "observed_precision_strictly_above_response_null_p95": true
+  },
+  "one_shot_access": {
+    "authentication_loads_pan_values": false,
+    "authentication_may_hash_pan_files_as_opaque_bytes": true,
+    "confirmation_token": "I_CONFIRM_EXPERIMENT_118_PAN_CONFIRMATION_V1",
+    "access_lock": "experiments/118-pds-null-panel-residual/work/pan-confirmation-v1-access.lock",
+    "result_directory": "experiments/118-pds-null-panel-residual/work/pan-confirmation-v1",
+    "exclusive_lock_create_and_fsync_before_pan_numpy_load": true,
+    "lock_is_permanent_even_on_failure": true,
+    "caller_supplied_paths": false,
+    "result_overwrite": false,
+    "results_and_manifest_read_only": true
+  },
+  "authorization": {
+    "pan_value_access_after_permanent_lock": true,
+    "pan_confirmation_metrics": true,
+    "model_fit": false,
+    "candidate_reselection": false,
+    "counts": false,
+    "cell_eval2": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  }
+}

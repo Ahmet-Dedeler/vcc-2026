@@ -1,0 +1,43 @@
+{
+  "captured_at": "2026-10-22T06:05:21+00:00",
+  "entry": {
+    "anchor_version": "vcc2026-testD-r1+vcc2026-testE-r1+vcc2026-testF-r1",
+    "de_score": null,
+    "de_wilcoxon_direction_fidelity_yield_raw": null,
+    "de_wilcoxon_direction_reach_raw": null,
+    "de_wilcoxon_lfc_nmae": null,
+    "de_wilcoxon_sig_jaccard": null,
+    "description": null,
+    "entry_id": "k2OKr0zPvJq48BCtdUx8",
+    "error_info": null,
+    "expr_mse_unbiased_capped_norm": null,
+    "holds_slot": false,
+    "is_final": true,
+    "is_terminal": true,
+    "mae_score": null,
+    "model_name": "I am persistent but open-minded.",
+    "panel_id": "vcc2026-test-1",
+    "partition": "test",
+    "past_window": false,
+    "pds_cosine": null,
+    "pert_score": null,
+    "rank": null,
+    "score_avg": null,
+    "score_fid": null,
+    "score_jac": null,
+    "score_mse": null,
+    "score_nmae": null,
+    "score_pds": null,
+    "score_reach": null,
+    "status": "published",
+    "submission_date": "2026-10-22T05:38:16.887935Z"
+  },
+  "final_warnings": [
+    "rank missing (dark final board)"
+  ],
+  "members_hidden": true,
+  "note": "R0 D/E/F (re-gated r0g, DEF_DAY_ALLOW_LOW_DOSE=1)",
+  "package": "submissions/r0def.vcc",
+  "sha256": "5c82ea9ea4339cea11286340db28e958f254e0006a1effc315f474cc2eae7499",
+  "vcc_version": "vcc 0.3.0\nPython 3.14.5 (macOS-27.2)\nbuild: release \u00b7 endpoint: https://virtualcellchallenge.org"
+}

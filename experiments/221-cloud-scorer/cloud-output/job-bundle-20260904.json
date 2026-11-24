@@ -1,0 +1,12 @@
+{
+  "real": "s3://<your-s3-bucket>/input/harness/h1-test.h5ad",
+  "preds": [],
+  "preset": "vcc2026",
+  "pert_col": "target_gene",
+  "control": "non-targeting",
+  "cell_eval2_version": "0.16.0",
+  "prologue": "",
+  "bundle": "",
+  "bundle_wait_minutes": 0,
+  "baseline_pred": "s3://<your-s3-bucket>/input/cloud-score/bundle-20260904/baseline-pred.h5ad"
+}

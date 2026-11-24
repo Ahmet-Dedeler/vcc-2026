@@ -1,0 +1,621 @@
+{
+ "ka_pds": 0.8952380952380953,
+ "grid": [
+  {
+   "k": 1,
+   "beta": 0.25,
+   "donor": {
+    "dpds": 0.0,
+    "se_ratio": 0.9996,
+    "wins": 8,
+    "losses": 8
+   },
+   "random": {
+    "dpds": 0.0,
+    "se_ratio": 1.0,
+    "wins": 0,
+    "losses": 0
+   },
+   "self": {
+    "dpds": -0.00182,
+    "se_ratio": 0.9992,
+    "wins": 7,
+    "losses": 15
+   }
+  },
+  {
+   "k": 1,
+   "beta": 0.5,
+   "donor": {
+    "dpds": -0.00126,
+    "se_ratio": 0.9993,
+    "wins": 10,
+    "losses": 13
+   },
+   "random": {
+    "dpds": 0.0,
+    "se_ratio": 1.0,
+    "wins": 0,
+    "losses": 0
+   },
+   "self": {
+    "dpds": -0.00336,
+    "se_ratio": 0.9986,
+    "wins": 10,
+    "losses": 15
+   }
+  },
+  {
+   "k": 1,
+   "beta": 0.75,
+   "donor": {
+    "dpds": -0.00098,
+    "se_ratio": 0.9991,
+    "wins": 10,
+    "losses": 13
+   },
+   "random": {
+    "dpds": -0.00014,
+    "se_ratio": 1.0,
+    "wins": 0,
+    "losses": 1
+   },
+   "self": {
+    "dpds": -0.00574,
+    "se_ratio": 0.9981,
+    "wins": 9,
+    "losses": 20
+   }
+  },
+  {
+   "k": 1,
+   "beta": 1.0,
+   "donor": {
+    "dpds": -0.00364,
+    "se_ratio": 0.999,
+    "wins": 11,
+    "losses": 17
+   },
+   "random": {
+    "dpds": -0.00028,
+    "se_ratio": 1.0,
+    "wins": 0,
+    "losses": 2
+   },
+   "self": {
+    "dpds": -0.00812,
+    "se_ratio": 0.9979,
+    "wins": 9,
+    "losses": 23
+   }
+  },
+  {
+   "k": 3,
+   "beta": 0.25,
+   "donor": {
+    "dpds": -0.00238,
+    "se_ratio": 0.9995,
+    "wins": 4,
+    "losses": 12
+   },
+   "random": {
+    "dpds": 0.0,
+    "se_ratio": 1.0,
+    "wins": 0,
+    "losses": 0
+   },
+   "self": {
+    "dpds": -0.00434,
+    "se_ratio": 0.9916,
+    "wins": 6,
+    "losses": 19
+   }
+  },
+  {
+   "k": 3,
+   "beta": 0.5,
+   "donor": {
+    "dpds": -0.00532,
+    "se_ratio": 0.9997,
+    "wins": 10,
+    "losses": 15
+   },
+   "random": {
+    "dpds": 0.0,
+    "se_ratio": 1.0,
+    "wins": 0,
+    "losses": 0
+   },
+   "self": {
+    "dpds": -0.00672,
+    "se_ratio": 0.9866,
+    "wins": 9,
+    "losses": 19
+   }
+  },
+  {
+   "k": 3,
+   "beta": 0.75,
+   "donor": {
+    "dpds": -0.0084,
+    "se_ratio": 1.0006,
+    "wins": 12,
+    "losses": 17
+   },
+   "random": {
+    "dpds": 0.0,
+    "se_ratio": 1.0,
+    "wins": 1,
+    "losses": 1
+   },
+   "self": {
+    "dpds": -0.01443,
+    "se_ratio": 0.985,
+    "wins": 9,
+    "losses": 21
+   }
+  },
+  {
+   "k": 3,
+   "beta": 1.0,
+   "donor": {
+    "dpds": -0.01401,
+    "se_ratio": 1.0021,
+    "wins": 12,
+    "losses": 20
+   },
+   "random": {
+    "dpds": 0.00014,
+    "se_ratio": 1.0,
+    "wins": 2,
+    "losses": 1
+   },
+   "self": {
+    "dpds": -0.02395,
+    "se_ratio": 0.9867,
+    "wins": 9,
+    "losses": 25
+   }
+  },
+  {
+   "k": 5,
+   "beta": 0.25,
+   "donor": {
+    "dpds": -0.00028,
+    "se_ratio": 0.9989,
+    "wins": 8,
+    "losses": 8
+   },
+   "random": {
+    "dpds": -0.00042,
+    "se_ratio": 1.0,
+    "wins": 0,
+    "losses": 2
+   },
+   "self": {
+    "dpds": -0.00532,
+    "se_ratio": 0.9861,
+    "wins": 6,
+    "losses": 17
+   }
+  },
+  {
+   "k": 5,
+   "beta": 0.5,
+   "donor": {
+    "dpds": -0.00042,
+    "se_ratio": 0.9987,
+    "wins": 13,
+    "losses": 11
+   },
+   "random": {
+    "dpds": -0.00042,
+    "se_ratio": 1.0,
+    "wins": 1,
+    "losses": 3
+   },
+   "self": {
+    "dpds": -0.01134,
+    "se_ratio": 0.9779,
+    "wins": 9,
+    "losses": 19
+   }
+  },
+  {
+   "k": 5,
+   "beta": 0.75,
+   "donor": {
+    "dpds": -0.00406,
+    "se_ratio": 0.9994,
+    "wins": 14,
+    "losses": 15
+   },
+   "random": {
+    "dpds": -0.00042,
+    "se_ratio": 1.0,
+    "wins": 1,
+    "losses": 3
+   },
+   "self": {
+    "dpds": -0.02241,
+    "se_ratio": 0.9754,
+    "wins": 8,
+    "losses": 25
+   }
+  },
+  {
+   "k": 5,
+   "beta": 1.0,
+   "donor": {
+    "dpds": -0.01064,
+    "se_ratio": 1.001,
+    "wins": 14,
+    "losses": 19
+   },
+   "random": {
+    "dpds": -0.00056,
+    "se_ratio": 1.0,
+    "wins": 1,
+    "losses": 3
+   },
+   "self": {
+    "dpds": -0.03557,
+    "se_ratio": 0.9785,
+    "wins": 10,
+    "losses": 29
+   }
+  },
+  {
+   "k": 10,
+   "beta": 0.25,
+   "donor": {
+    "dpds": -0.00182,
+    "se_ratio": 0.9977,
+    "wins": 9,
+    "losses": 12
+   },
+   "random": {
+    "dpds": 0.00014,
+    "se_ratio": 0.9999,
+    "wins": 1,
+    "losses": 0
+   },
+   "self": {
+    "dpds": -0.00518,
+    "se_ratio": 0.9771,
+    "wins": 9,
+    "losses": 17
+   }
+  },
+  {
+   "k": 10,
+   "beta": 0.5,
+   "donor": {
+    "dpds": -0.00266,
+    "se_ratio": 0.997,
+    "wins": 17,
+    "losses": 14
+   },
+   "random": {
+    "dpds": 0.00028,
+    "se_ratio": 0.9999,
+    "wins": 2,
+    "losses": 0
+   },
+   "self": {
+    "dpds": -0.01415,
+    "se_ratio": 0.9631,
+    "wins": 10,
+    "losses": 20
+   }
+  },
+  {
+   "k": 10,
+   "beta": 0.75,
+   "donor": {
+    "dpds": -0.00938,
+    "se_ratio": 0.9981,
+    "wins": 14,
+    "losses": 21
+   },
+   "random": {
+    "dpds": 0.00028,
+    "se_ratio": 0.9999,
+    "wins": 2,
+    "losses": 0
+   },
+   "self": {
+    "dpds": -0.02591,
+    "se_ratio": 0.9579,
+    "wins": 10,
+    "losses": 25
+   }
+  },
+  {
+   "k": 10,
+   "beta": 1.0,
+   "donor": {
+    "dpds": -0.01835,
+    "se_ratio": 1.0009,
+    "wins": 14,
+    "losses": 23
+   },
+   "random": {
+    "dpds": 0.00042,
+    "se_ratio": 0.9999,
+    "wins": 3,
+    "losses": 2
+   },
+   "self": {
+    "dpds": -0.04454,
+    "se_ratio": 0.9616,
+    "wins": 10,
+    "losses": 27
+   }
+  },
+  {
+   "k": 14,
+   "beta": 0.25,
+   "donor": {
+    "dpds": -0.00196,
+    "se_ratio": 0.9968,
+    "wins": 11,
+    "losses": 11
+   },
+   "random": {
+    "dpds": 0.0,
+    "se_ratio": 0.9999,
+    "wins": 1,
+    "losses": 1
+   },
+   "self": {
+    "dpds": -0.0049,
+    "se_ratio": 0.9716,
+    "wins": 9,
+    "losses": 18
+   }
+  },
+  {
+   "k": 14,
+   "beta": 0.5,
+   "donor": {
+    "dpds": -0.00448,
+    "se_ratio": 0.996,
+    "wins": 13,
+    "losses": 14
+   },
+   "random": {
+    "dpds": 0.00028,
+    "se_ratio": 0.9999,
+    "wins": 3,
+    "losses": 1
+   },
+   "self": {
+    "dpds": -0.01359,
+    "se_ratio": 0.9541,
+    "wins": 11,
+    "losses": 19
+   }
+  },
+  {
+   "k": 14,
+   "beta": 0.75,
+   "donor": {
+    "dpds": -0.0112,
+    "se_ratio": 0.9975,
+    "wins": 14,
+    "losses": 22
+   },
+   "random": {
+    "dpds": 0.00028,
+    "se_ratio": 0.9998,
+    "wins": 4,
+    "losses": 2
+   },
+   "self": {
+    "dpds": -0.02633,
+    "se_ratio": 0.9472,
+    "wins": 10,
+    "losses": 25
+   }
+  },
+  {
+   "k": 14,
+   "beta": 1.0,
+   "donor": {
+    "dpds": -0.02171,
+    "se_ratio": 1.0014,
+    "wins": 9,
+    "losses": 26
+   },
+   "random": {
+    "dpds": 0.00056,
+    "se_ratio": 0.9998,
+    "wins": 6,
+    "losses": 4
+   },
+   "self": {
+    "dpds": -0.05238,
+    "se_ratio": 0.9512,
+    "wins": 9,
+    "losses": 32
+   }
+  },
+  {
+   "k": 20,
+   "beta": 0.25,
+   "donor": {
+    "dpds": -0.00252,
+    "se_ratio": 0.9933,
+    "wins": 8,
+    "losses": 12
+   },
+   "random": {
+    "dpds": -0.00028,
+    "se_ratio": 0.9999,
+    "wins": 2,
+    "losses": 3
+   },
+   "self": {
+    "dpds": -0.0035,
+    "se_ratio": 0.9634,
+    "wins": 8,
+    "losses": 15
+   }
+  },
+  {
+   "k": 20,
+   "beta": 0.5,
+   "donor": {
+    "dpds": -0.0042,
+    "se_ratio": 0.9907,
+    "wins": 17,
+    "losses": 12
+   },
+   "random": {
+    "dpds": -0.00042,
+    "se_ratio": 0.9998,
+    "wins": 3,
+    "losses": 5
+   },
+   "self": {
+    "dpds": -0.01204,
+    "se_ratio": 0.9405,
+    "wins": 12,
+    "losses": 23
+   }
+  },
+  {
+   "k": 20,
+   "beta": 0.75,
+   "donor": {
+    "dpds": -0.01246,
+    "se_ratio": 0.9923,
+    "wins": 13,
+    "losses": 16
+   },
+   "random": {
+    "dpds": -0.00056,
+    "se_ratio": 0.9997,
+    "wins": 4,
+    "losses": 6
+   },
+   "self": {
+    "dpds": -0.02563,
+    "se_ratio": 0.931,
+    "wins": 7,
+    "losses": 28
+   }
+  },
+  {
+   "k": 20,
+   "beta": 1.0,
+   "donor": {
+    "dpds": -0.02521,
+    "se_ratio": 0.998,
+    "wins": 11,
+    "losses": 29
+   },
+   "random": {
+    "dpds": -0.0007,
+    "se_ratio": 0.9998,
+    "wins": 4,
+    "losses": 8
+   },
+   "self": {
+    "dpds": -0.05406,
+    "se_ratio": 0.9352,
+    "wins": 9,
+    "losses": 30
+   }
+  },
+  {
+   "k": 30,
+   "beta": 0.25,
+   "donor": {
+    "dpds": -0.00252,
+    "se_ratio": 0.9905,
+    "wins": 10,
+    "losses": 12
+   },
+   "random": {
+    "dpds": -0.00014,
+    "se_ratio": 0.9998,
+    "wins": 1,
+    "losses": 2
+   },
+   "self": {
+    "dpds": -0.00294,
+    "se_ratio": 0.9499,
+    "wins": 11,
+    "losses": 14
+   }
+  },
+  {
+   "k": 30,
+   "beta": 0.5,
+   "donor": {
+    "dpds": -0.00602,
+    "se_ratio": 0.9863,
+    "wins": 14,
+    "losses": 16
+   },
+   "random": {
+    "dpds": -0.00014,
+    "se_ratio": 0.9997,
+    "wins": 2,
+    "losses": 3
+   },
+   "self": {
+    "dpds": -0.00868,
+    "se_ratio": 0.9179,
+    "wins": 12,
+    "losses": 20
+   }
+  },
+  {
+   "k": 30,
+   "beta": 0.75,
+   "donor": {
+    "dpds": -0.01555,
+    "se_ratio": 0.9875,
+    "wins": 11,
+    "losses": 22
+   },
+   "random": {
+    "dpds": -0.00014,
+    "se_ratio": 0.9996,
+    "wins": 4,
+    "losses": 5
+   },
+   "self": {
+    "dpds": -0.02507,
+    "se_ratio": 0.9038,
+    "wins": 11,
+    "losses": 28
+   }
+  },
+  {
+   "k": 30,
+   "beta": 1.0,
+   "donor": {
+    "dpds": -0.02843,
+    "se_ratio": 0.994,
+    "wins": 9,
+    "losses": 29
+   },
+   "random": {
+    "dpds": 0.0,
+    "se_ratio": 0.9996,
+    "wins": 5,
+    "losses": 5
+   },
+   "self": {
+    "dpds": -0.06162,
+    "se_ratio": 0.9078,
+    "wins": 9,
+    "losses": 32
+   }
+  }
+ ]
+}

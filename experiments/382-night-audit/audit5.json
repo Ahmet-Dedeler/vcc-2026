@@ -1,0 +1,14 @@
+{
+ "own_target_rows": 7617,
+ "own_target_neg_frac": 0.990284889063936,
+ "n_eligible": 58,
+ "universe_mapped": 7101,
+ "gate_gene_coverage_in_k562_mean": 0.6271482940884671,
+ "macro_weighted_acc": 0.5267226646690953,
+ "macro_unweighted_acc": 0.5153801101007877,
+ "pooled_weighted_acc": 0.5473522201447985,
+ "pooled_pairs": 41362,
+ "pi_macro": 0.527,
+ "pi_pooled": 0.547,
+ "report345": 0.275
+}

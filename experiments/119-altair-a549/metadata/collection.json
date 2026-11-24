@@ -1,0 +1,46 @@
+{
+  "authors": null,
+  "cell_line": "lung - lung adenocarcinoma",
+  "citation": "Liu et al. (2026) A multimodal perturbation atlas defines the phenotypic resolution of cellular morphology",
+  "citation_url": "https://doi.org/10.64898/2026.06.01.728087",
+  "collection_id": "6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3",
+  "datasets": [
+    {
+      "dataset_id": "f4a2e5c8-9b1d-4e3f-a7c6-3d8e9f1a2b5c",
+      "modality": "ops",
+      "n_cells": 56820937,
+      "slug": "altair-imaging",
+      "title": "Altair - A549 1k imaging"
+    },
+    {
+      "dataset_id": "7006c6c0-6487-43c5-b6ca-735acebb4375",
+      "modality": "cropseq",
+      "n_cells": 606075,
+      "slug": "altair-scrna",
+      "title": "Altair - A549 1k scRNA"
+    }
+  ],
+  "description": "A multimodal CRISPR perturbation atlas of 1,000 gene knockouts in A549 lung adenocarcinoma cells, profiling each perturbation across three orthogonal readouts: 1) high-content fluorescence imaging (39 live-cell + 13 fixed-cell markers spanning organelles and signaling pathways), 2) label-free quantitative phase imaging of the same cells (totaling ~58M cells), and 3) single-cell transcriptomes via CROP-seq (~600k cells).",
+  "disease": "lung adenocarcinoma",
+  "growth_conditions": "DMEM, 10% FBS, 37°C, 5% CO2",
+  "imaging_specs": {
+    "microscope": "Andor Dragonfly Confocal Microscope System"
+  },
+  "library_gene_selection": "puromycin 1 ug/ml",
+  "library_negative_controls": [
+    "NTCs (non-template controls), n=211 distinct sgRNAs"
+  ],
+  "library_positive_controls": [
+    "HSPA5 (UPRE reporter)"
+  ],
+  "library_vector": "PerturbView_CROPseq-puro-v2",
+  "organism": "human",
+  "perturbation_count": 1000,
+  "perturbation_duration": "89h",
+  "phenotype_objective": "Leica HC PL FLUOTAR 20x/0.55 (#506519, air)",
+  "seeding_density_cells_cm2": 8300.0,
+  "slug": "altair",
+  "tissue": "cell line cell",
+  "title": "Altair - A549 1k",
+  "version": null
+}

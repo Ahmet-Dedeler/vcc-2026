@@ -1,0 +1,18 @@
+{
+ "id": "bc-6cf5fb9c-ad1d-40ba-b0af-dcb42a4c5d8f",
+ "status": "CREATING",
+ "source": {
+  "repository": "https://github.com/Ahmet-Dedeler/virtual-cell-challenge-2026",
+  "ref": "master"
+ },
+ "target": {
+  "autoBranch": true,
+  "autoCreatePr": false,
+  "openAsCursorGithubApp": false,
+  "skipReviewerRequest": false,
+  "branchName": "cloud/484-builder-review",
+  "url": "https://cursor.com/agents/bc-6cf5fb9c-ad1d-40ba-b0af-dcb42a4c5d8f"
+ },
+ "name": "Production builder issues",
+ "createdAt": "2026-09-26T21:33:00.248Z"
+}

@@ -1,0 +1,20 @@
+{
+  "source": "data/external/nadig2025/hepg2_raw_singlecell.h5ad",
+  "control_label": "non-targeting",
+  "target_sum": 50000.0,
+  "n_perturbations": 2160,
+  "n_genes": 9623,
+  "n_control_cells": 4976,
+  "min_cells": 20,
+  "skipped_low_cells": 233,
+  "cells_per_pert": {
+    "min": 20,
+    "median": 49,
+    "max": 1213
+  },
+  "effect_norm": {
+    "min": 3.431318759918213,
+    "median": 14.428232192993164,
+    "max": 40.709590911865234
+  }
+}

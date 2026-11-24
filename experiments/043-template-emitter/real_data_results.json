@@ -1,0 +1,324 @@
+{
+  "arithmetic_mean_cpm": {
+    "quasi": {
+      "lfc_nmae_proxy_vs_real": 8.828272583343512,
+      "lfc_spearman_vs_real": 0.0680345149440811,
+      "mean_cpm_spearman_vs_real_target": 0.7582969359541694,
+      "relative_l1_vs_nominal_column_cpm": 0.00017555588980418287,
+      "relative_l1_vs_real_target_cpm": 0.9293764217957956,
+      "relative_l1_vs_template_scaled_cpm": 0.07305828613505728
+    },
+    "template_fixed_margin": {
+      "lfc_nmae_proxy_vs_real": 8.988178026893749,
+      "lfc_spearman_vs_real": 0.06467838755308275,
+      "mean_cpm_spearman_vs_real_target": 0.7638144735481277,
+      "relative_l1_vs_nominal_column_cpm": 0.03932700030915341,
+      "relative_l1_vs_real_target_cpm": 0.9287341367871063,
+      "relative_l1_vs_template_scaled_cpm": 0.06355426145791437
+    },
+    "tested_genes_control_cpm_gt_5_excluding_target": 10134
+  },
+  "cells": {
+    "quasi": 400,
+    "real_control_all": 18400,
+    "real_control_mwu_sample": 2000,
+    "real_target": 150,
+    "template": 400
+  },
+  "common_gene_count": 18077,
+  "date": "2026-08-22",
+  "detection_and_zeros": {
+    "quasi": {
+      "detected_gene_jaccard_vs_real_target_5pct": 0.7634236255810226,
+      "detected_gene_jaccard_vs_real_target_any": 0.7905814259405419,
+      "detected_genes_per_cell_quantiles": {
+        "q00": 7305.0,
+        "q01": 7319.94,
+        "q05": 7329.0,
+        "q100": 7422.0,
+        "q25": 7349.0,
+        "q50": 7365.5,
+        "q75": 7378.0,
+        "q95": 7397.0,
+        "q99": 7411.01
+      },
+      "gene_detection_rate_mae_vs_control": 0.20502076263135235,
+      "gene_detection_rate_mae_vs_real_target": 0.22324565285537792,
+      "gene_detection_rate_spearman_vs_control": 0.7561928080180875,
+      "gene_detection_rate_spearman_vs_real_target": 0.7564357840815531,
+      "mean_detected_genes_per_cell": 7363.96
+    },
+    "real_control_all": {
+      "mean_detected_genes_per_cell": 5084.151413043479
+    },
+    "real_target": {
+      "detected_genes_per_cell_quantiles": {
+        "q00": 1706.0,
+        "q01": 1923.93,
+        "q05": 2709.2,
+        "q100": 8327.0,
+        "q25": 3507.25,
+        "q50": 4408.0,
+        "q75": 5178.75,
+        "q95": 6551.949999999996,
+        "q99": 7136.829999999998
+      },
+      "mean_detected_genes_per_cell": 4426.96
+    },
+    "template_cellwise_support_jaccard_to_source": {
+      "mean": 0.7811762966703856,
+      "median": 0.7869794832152035,
+      "q05": 0.7504458215942202,
+      "q95": 0.798968338051324
+    },
+    "template_fixed_margin": {
+      "detected_gene_jaccard_vs_real_target_5pct": 0.8207195491980928,
+      "detected_gene_jaccard_vs_real_target_any": 0.7905814259405419,
+      "detected_genes_per_cell_quantiles": {
+        "q00": 353.0,
+        "q01": 2032.38,
+        "q05": 2627.3,
+        "q100": 9564.0,
+        "q25": 3805.25,
+        "q50": 4620.5,
+        "q75": 5516.25,
+        "q95": 7088.749999999999,
+        "q99": 8071.139999999998
+      },
+      "gene_detection_rate_mae_vs_control": 0.0719910118791354,
+      "gene_detection_rate_mae_vs_real_target": 0.08296490936918,
+      "gene_detection_rate_spearman_vs_control": 0.8060908464762405,
+      "gene_detection_rate_spearman_vs_real_target": 0.8140288719505605,
+      "mean_detected_genes_per_cell": 4719.25
+    }
+  },
+  "elapsed_seconds": 5.173804044723511,
+  "library_sizes": {
+    "hct116_control_all": {
+      "cv": 0.4642891393058073,
+      "mean": 18146.727336956523,
+      "median": 16797.5,
+      "quantiles": {
+        "q00": 392.0,
+        "q01": 4598.91,
+        "q05": 7305.9,
+        "q100": 111291.0,
+        "q25": 12467.0,
+        "q50": 16797.5,
+        "q75": 22066.0,
+        "q95": 33804.45,
+        "q99": 45848.009999999995
+      },
+      "relative_to_median_quantiles": {
+        "q00": 0.023336806072332194,
+        "q01": 0.2737853847298705,
+        "q05": 0.4349397231730912,
+        "q100": 6.625450215805923,
+        "q25": 0.7421937788361364,
+        "q50": 1.0,
+        "q75": 1.3136478642655156,
+        "q95": 2.0124691174281883,
+        "q99": 2.729454383092722
+      }
+    },
+    "hct116_control_template_original": {
+      "cv": 0.4612235645442083,
+      "mean": 18140.5575,
+      "median": 16796.0,
+      "quantiles": {
+        "q00": 2467.0,
+        "q01": 4713.65,
+        "q05": 7352.650000000001,
+        "q100": 63940.0,
+        "q25": 12478.0,
+        "q50": 16796.0,
+        "q75": 22054.25,
+        "q95": 33664.24999999998,
+        "q99": 44952.76999999998
+      },
+      "relative_to_median_quantiles": {
+        "q00": 0.14688020957370804,
+        "q01": 0.2806412241009764,
+        "q05": 0.4377619671350322,
+        "q100": 3.8068587758990238,
+        "q25": 0.7429149797570851,
+        "q50": 1.0,
+        "q75": 1.3130656108597285,
+        "q95": 2.004301619433197,
+        "q99": 2.676397356513454
+      }
+    },
+    "quasi": {
+      "cv": 0.0036052318335165244,
+      "mean": 19491.36,
+      "median": 19497.0,
+      "quantiles": {
+        "q00": 19292.0,
+        "q01": 19326.92,
+        "q05": 19368.0,
+        "q100": 19668.0,
+        "q25": 19443.75,
+        "q50": 19497.0,
+        "q75": 19537.0,
+        "q95": 19601.0,
+        "q99": 19641.17
+      },
+      "relative_to_median_quantiles": {
+        "q00": 0.9894855618813151,
+        "q01": 0.9912766066574344,
+        "q05": 0.9933835974765348,
+        "q100": 1.0087705800892446,
+        "q25": 0.9972688105862441,
+        "q50": 1.0,
+        "q75": 1.0020515976816946,
+        "q95": 1.005334153972406,
+        "q99": 1.007394470944248
+      }
+    },
+    "shape_ks_vs_hct116_control": {
+      "quasi": 0.4926086956521739,
+      "template_fixed_margin": 0.001630434782608714
+    },
+    "template_fixed_margin": {
+      "cv": 0.46122351471098066,
+      "mean": 19491.36,
+      "median": 18047.0,
+      "quantiles": {
+        "q00": 2651.0,
+        "q01": 5064.4,
+        "q05": 7900.25,
+        "q100": 68701.0,
+        "q25": 13407.25,
+        "q50": 18047.0,
+        "q75": 23696.25,
+        "q95": 36170.99999999998,
+        "q99": 48300.45999999998
+      },
+      "relative_to_median_quantiles": {
+        "q00": 0.14689422064609076,
+        "q01": 0.28062281819693025,
+        "q05": 0.437759738460686,
+        "q100": 3.8067822906854323,
+        "q25": 0.7429074084335346,
+        "q50": 1.0,
+        "q75": 1.3130298664597995,
+        "q95": 2.0042666371142004,
+        "q99": 2.6763705879093465
+      }
+    }
+  },
+  "notes": [
+    "No cell-eval2 command or API was invoked.",
+    "MWU diagnostics use 2,000 library-quantile-stratified real controls, not the official full-control scorer.",
+    "The experiment-040 artifact has 85 targets and 18,080 genes, while Orion-HCT116 has 132 targets and 18,533 genes; diagnostics use their 18,077 common genes.",
+    "Fixed column totals force the template row depths to the quasi block's grand total. Their HCT116 library-size distribution shape is preserved up to one global scale and integer rounding."
+  ],
+  "overlap_targets": [
+    "MED15",
+    "MED25",
+    "PLAGL2"
+  ],
+  "peak_rss_gib": 0.9520721435546875,
+  "prediction": "experiments/040-union-gamma/out/runs/g0.75_q1.0_a1.08_spread0.25/pred.h5ad",
+  "prediction_only_genes": [
+    "TBCE-1",
+    "HSPA14-1",
+    "TMSB15B-1"
+  ],
+  "prediction_shape": [
+    52400,
+    18080
+  ],
+  "prediction_target_count": 85,
+  "pseudobulk": {
+    "array_equal_bulk_lognorm": true,
+    "column_totals_exact": true,
+    "max_abs_bulk_lognorm_difference": 0.0,
+    "max_abs_column_total_difference": 0
+  },
+  "real": "data/harness/orion-hct116.h5ad",
+  "real_shape": [
+    38200,
+    18533
+  ],
+  "real_target_count": 132,
+  "selected_target": "MED25",
+  "selection_candidate_effect_rms": {
+    "MED15": 0.07350011617937253,
+    "MED25": 0.07609195509992463,
+    "PLAGL2": 0.06653450474928824
+  },
+  "selection_rule": "largest HCT116 real bulk-log effect RMS among overlap targets",
+  "simple_mwu_rank_diagnostic": {
+    "quasi": {
+      "bh05_direction_accuracy_in_intersection": 0.5570866141732284,
+      "bh05_jaccard_vs_real": 0.054588437567160975,
+      "bh05_n_sig": 9263,
+      "bh05_recall_vs_real": 0.9219600725952813,
+      "rank_biserial_spearman_vs_real": 0.0023563752112848815,
+      "real_bh05_n_sig": 551,
+      "signed_neglog10p_spearman_vs_real": 0.03192346967269107,
+      "top_k": {
+        "100": {
+          "direction_accuracy_on_pred_top": 0.66,
+          "direction_accuracy_on_real_top": 0.72,
+          "k_used": 100,
+          "set_overlap_fraction": 0.0
+        },
+        "1000": {
+          "direction_accuracy_on_pred_top": 0.605,
+          "direction_accuracy_on_real_top": 0.528,
+          "k_used": 1000,
+          "set_overlap_fraction": 0.117
+        },
+        "500": {
+          "direction_accuracy_on_pred_top": 0.622,
+          "direction_accuracy_on_real_top": 0.576,
+          "k_used": 500,
+          "set_overlap_fraction": 0.028
+        }
+      }
+    },
+    "template": {
+      "bh05_direction_accuracy_in_intersection": 0.6244444444444445,
+      "bh05_jaccard_vs_real": 0.06302521008403361,
+      "bh05_n_sig": 7039,
+      "bh05_recall_vs_real": 0.8166969147005445,
+      "rank_biserial_spearman_vs_real": -0.01528684862263612,
+      "real_bh05_n_sig": 551,
+      "signed_neglog10p_spearman_vs_real": 0.019327867752819892,
+      "top_k": {
+        "100": {
+          "direction_accuracy_on_pred_top": 0.6,
+          "direction_accuracy_on_real_top": 0.72,
+          "k_used": 100,
+          "set_overlap_fraction": 0.1
+        },
+        "1000": {
+          "direction_accuracy_on_pred_top": 0.516,
+          "direction_accuracy_on_real_top": 0.529,
+          "k_used": 1000,
+          "set_overlap_fraction": 0.205
+        },
+        "500": {
+          "direction_accuracy_on_pred_top": 0.558,
+          "direction_accuracy_on_real_top": 0.578,
+          "k_used": 500,
+          "set_overlap_fraction": 0.174
+        }
+      }
+    }
+  },
+  "template_emitter_diagnostics": {
+    "grand_total": 7796544,
+    "introduced_nnz": 164728,
+    "max_row_error_before_repair": 22621,
+    "moved_counts": 208628,
+    "output_nnz": 1888469,
+    "removed_template_nnz": 310573,
+    "retained_template_nnz": 1723741,
+    "row_l1_before_repair": 417256,
+    "template_cpm_relative_l1": 0.06369115861400178,
+    "template_nnz": 2034314
+  }
+}

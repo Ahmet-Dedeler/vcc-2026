@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "experiment": "111-depmap-context-program-gain",
+  "date_frozen": "2026-08-30",
+  "status": "frozen_before_source_model_outcomes",
+  "bindings": {
+    "source_manifest_sha256": "90e15f3c9d4c698805d0a680fc51085ee18fc6164b77adb2dfade1e7ad92a638",
+    "preregistered_protocol_sha256": "51051875b00057c0e4a23271784dbff30ba4909567ac15b04ee21cbeb533dcee",
+    "execution_authorization_sha256": "6276050b7b890cd1d51c93e10c5d65d37b9eed55b71e7fc510b8c7d84581878c",
+    "acquisition_schema_recovery_sha256": "e88f86013adbaf988c3b0fa6e5351b2966330f206f800d17842d08ef6357b231"
+  },
+  "inputs": {
+    "source_root": "data/external/depmap26q1/extracted",
+    "acquisition_receipt": "experiments/111-depmap-context-program-gain/audit/acquisition_receipt.json",
+    "primary_matrix": "processed/pseudobulk_sum_by_ko.csv",
+    "robustness_matrices": [
+      "processed/lfc_matrix.csv",
+      "processed/fdr_matrix.csv"
+    ],
+    "metadata": "metadata/cell_line_metadata.csv",
+    "challenge_gene_axis": "data/challenge/gene_names.csv",
+    "challenge_target_axis": "data/challenge/pert_counts.csv"
+  },
+  "effect_construction": {
+    "control_targets": "the ten frozen olfactory controls",
+    "control_profile": "sum control pseudobulk counts within each cell line, then log1p CPM",
+    "perturbation_profile": "each target pseudobulk column converted independently to log1p CPM",
+    "effect": "perturbation log1p CPM minus cell-line control log1p CPM",
+    "analysis_targets": "the 90 non-control targets",
+    "response_mask": "exact intersection of globally complete source response symbols with the 18,533 challenge genes, in challenge order, excluding all 300 VCC targets and all 100 Broad targets",
+    "expected_response_gene_count": 15211,
+    "expected_response_gene_ordered_sha256": "c699b0ee0d23cf091f12e64511c41b6d651e3c8acec2e1f5d555705e4d82b05e",
+    "missing_pairs": "retain the seven frozen missing pairs as unavailable; tune and test target splits must remain complete in all 16 contexts"
+  },
+  "target_split": {
+    "method": "sort the 90 analysis targets by lowercase SHA-256 of the UTF-8 target symbol, then symbol; first 54 fit, next 18 tune, final 18 test",
+    "fit": 54,
+    "tune": 18,
+    "test": 18
+  },
+  "model_fit": {
+    "response_basis": "deterministic randomized right SVD of uncentered fit-target effects from training batches, with equal total weight per batch and per target",
+    "response_basis_oversample": 8,
+    "response_basis_power_iterations": 1,
+    "response_basis_seed": 11120260830,
+    "control_basis": "global transductive PCA of the 16 control log1p-CPM profiles using equal total weight per batch; no perturbation outcomes enter this PCA",
+    "control_scores": "weighted-centered and standardized PCA scores",
+    "context_baseline_for_gain_fit": "for each training context and fit target, equal-batch mean over the other training batches",
+    "context_gain": "least-squares relative coefficient deviation per response program, then equal-batch weighted mean centering",
+    "ridge": "weighted no-intercept ridge from centered standardized control-PC scores to centered gains, using the exact preregistered lambda",
+    "held_input": "equal-batch mean target effect over all non-held training batches",
+    "transform": "q_prime = q + beta * U * (predicted_gain elementwise_multiply U_transpose_q)",
+    "angular_cap": "scale only the residual along its ray by deterministic 60-step bisection until the q-to-q_prime angle is at most the preregistered cap",
+    "row_norm": "restore the original q L2 norm after the angular cap",
+    "zero_rows": "leave exact zero rows unchanged"
+  },
+  "validation": {
+    "outer": "six experimental-batch holdouts; each batch receives equal macro weight and contexts are averaged within batch",
+    "inner": "for each outer fold, leave one of the remaining batches out on the 18 tune targets and select over the complete fixed Cartesian grid",
+    "selection_metric": "maximum inner macro raw PDS delta versus identity",
+    "selection_tie_break": [
+      "smaller beta",
+      "smaller response rank",
+      "smaller control-PC rank",
+      "larger ridge lambda",
+      "smaller angular cap"
+    ],
+    "test": "evaluate the selected candidate once on the untouched 18 test targets in the outer held batch",
+    "pds": "raw uncentered cosine ranking with exact midranks; each held context uses the complete 18-target gallery",
+    "bootstrap": {
+      "unit": "test target",
+      "replicates": 5000,
+      "seed": 11120260831,
+      "lower_95_method": "2.5th percentile with NumPy linear interpolation"
+    },
+    "shallow_deep": "within each outer fold split the 18 test targets at the median held-input L2 norm, with SHA-256 target order as the deterministic tie break"
+  },
+  "nulls": {
+    "replicates_each": 100,
+    "seed": 11120260832,
+    "context_label": "derange the 16 control-score rows globally while leaving effect outcomes fixed; repeat complete nested selection",
+    "target_pairing": "independently derange target labels within each cell line and within each fixed fit/tune/test split; repeat complete nested selection",
+    "target_pairing_basis_invariance": "within-split permutations preserve the exact response-row multiset used by every basis fit",
+    "p95_method": "95th percentile with NumPy higher interpolation",
+    "geometry_only": "zero gain and equal-batch mean centered gain both reduce exactly to identity",
+    "wrong_context": "diagnostic deterministic global context derangement applied to held control scores after real selection"
+  },
+  "final_candidate": {
+    "selection": "one six-fold leave-one-batch-out tune-target selection over all source batches",
+    "fit": "refit the selected model on all six batches using fit targets only",
+    "freeze_only_if_all_source_promotion_gates_pass": true,
+    "artifact_root": "experiments/111-depmap-context-program-gain/work/source-only-v1",
+    "refuse_overwrite": true
+  },
+  "prohibited": {
+    "held_truth_access": true,
+    "h1_or_orion_access": true,
+    "cell_eval2": true,
+    "counts": true,
+    "production_change": true,
+    "challenge_build": true,
+    "submission": true,
+    "commit": true,
+    "push": true
+  }
+}

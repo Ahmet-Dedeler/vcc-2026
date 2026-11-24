@@ -1,0 +1,9 @@
+1	0	22	4048	bash experiments/801-lab-folds/cloud801.sh verify
+2	0	69	2603032	bash experiments/801-lab-folds/cloud801.sh prep DEF
+5	0	412	12769224	FIT_THREADS=8 T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold DEF orion_hek293t
+4	0	417	12768916	FIT_THREADS=8 T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold DEF orion_hct116
+3	0	418	12583876	FIT_THREADS=8 T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold DEF k562_gwps
+9	0	421	36208	bash experiments/801-lab-folds/cloud801.sh regfrag DEF
+6	0	484	1570484	KA_DIR=def T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 DEF k562_gwps
+7	0	514	1199008	KA_DIR=def T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 DEF orion_hct116
+8	0	515	1210892	KA_DIR=def T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 DEF orion_hek293t

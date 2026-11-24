@@ -1,0 +1,3 @@
+baseline_pds,candidate,delta_vs_baseline,pds,role,weight_max,weight_mean,weight_min
+0.7528034018037789,fixed:gene_norm:cd4_mean3:none:f=0.5,0.01992387092349379,0.7727272727272727,selected_fixed,0.5,0.5,0.5
+0.7528034018037789,adaptive:gene_norm:cd4_mean3:none:f=0.5:slope=0.5:qc=0,0.017129042213915868,0.7699324440176948,selected_adaptive,0.8,0.4999999999999999,0.3480659221881706

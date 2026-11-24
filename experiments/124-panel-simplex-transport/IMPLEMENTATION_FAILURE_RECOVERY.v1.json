@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "experiment": "124-panel-simplex-transport",
+  "created_at_utc": "2026-08-30",
+  "failed_freeze_path": "experiments/124-panel-simplex-transport/IMPLEMENTATION_FREEZE.v1.json",
+  "failed_freeze_sha256": "1fd4587e7d8ec78593c83ac3677c557a5f8a93f05a788d6badc0623bbc163757",
+  "failure": {
+    "stage": "released control gene-axis validation before X/data access",
+    "exception": "AuditError: data/challenge/context_A.h5ad: gene order changed",
+    "cause": "The H5AD var/_index object uses AnnData nullable-string-array encoding as a group with values and mask datasets; the v1 decoder treated it as a plain dataset.",
+    "results_written": false,
+    "count_values_accessed": false,
+    "challenge_truth_accessed": false,
+    "held_perturbation_outcome_accessed": false
+  },
+  "authorized_repair": "Decode a nullable-string-array group from its values dataset, require its mask to be entirely false, retain the existing exact canonical-order assertion, and add a synthetic regression test. No arm, dose, metric, invariant, input, or decision rule changes.",
+  "forbidden": {
+    "candidate_change": true,
+    "dose_change": true,
+    "metric_change": true,
+    "invariant_change": true,
+    "input_change": true,
+    "held_outcome_access": true,
+    "submission": true,
+    "commit": true,
+    "push": true
+  }
+}
+

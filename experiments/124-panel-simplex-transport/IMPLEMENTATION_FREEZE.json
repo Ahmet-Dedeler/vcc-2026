@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "experiment": "124-panel-simplex-transport",
+  "created_at_utc": "2026-08-30",
+  "status": "recovery_v2_implementation_frozen_before_released_control_count_rerun",
+  "files": {
+    "experiments/124-panel-simplex-transport/preregistered_protocol.json": "a6d6c3b62f2b9d76100e2c1185fd296bbb332351705c5a2b12e377c365dce734",
+    "experiments/124-panel-simplex-transport/run.py": "fbdb693db8f4b938c862dc49e7147c82be723fcc6cef72433fdbc76b9611e5e7",
+    "experiments/124-panel-simplex-transport/test_run.py": "1a278a7636b34bbc316ad6828f34dd784cb5a5cd1fe3d8a55f1864ebac572527",
+    "experiments/124-panel-simplex-transport/IMPLEMENTATION_FREEZE.v1.json": "d10c90de26a00da8749b657fc251d6869646b619933009bb3713bd2e5ab5fd80",
+    "experiments/124-panel-simplex-transport/IMPLEMENTATION_FAILURE_RECOVERY.v1.json": "6d3bbc63716dc3cbc250a686925dac83db1c1f88608acf558c07ffc0c6b4ff1b",
+    "experiments/124-panel-simplex-transport/IMPLEMENTATION_FREEZE.v2.json": "64e88fd9fac873d2aa5a6663b8828aba9c3fa0ebc727dfbf5e18f6eae29631f8",
+    "experiments/124-panel-simplex-transport/IMPLEMENTATION_FAILURE_RECOVERY.v2.json": "2a915ff8decc643ace38a2a381ade5c86dbc07aba26e028b95a421efce59a0f6"
+  },
+  "preflight": {
+    "synthetic_tests": "6/6 passed",
+    "ruff": "passed",
+    "python_compile": "passed"
+  },
+  "authorization": {
+    "released_control_profiles": true,
+    "experiment_122_frozen_source_result": true,
+    "staged_a15_effects": true,
+    "challenge_truth": false,
+    "held_perturbation_outcomes": false,
+    "cell_eval2": false,
+    "count_or_submission_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  }
+}

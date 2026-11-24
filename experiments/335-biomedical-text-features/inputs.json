@@ -1,0 +1,18 @@
+{
+  "repository": "NeuML/pubmedbert-base-embeddings",
+  "revision": "b79526d6ef3645e0df4530322e266f24c829f5ef",
+  "sha256": {
+    "experiments/331-tabicl-runtime/requirements.lock": "2c0ee4675d570eb4dd0bf4755714db3c7bad4d2b4ebb4bb23effca893f757adc",
+    "experiments/333-genept-feature-feasibility/work/GenePT_emebdding_v2.zip": "6193575dcbd7bbf214c8ca3eb518cb3d13272443f98ecd6c26402411a7ca745e",
+    "experiments/334-text-conditioned-transfer/recovery-inputs.json": "d4b394c5821c3783339bd68ec3e533a563b2ecd1a6cbc4ecd6139c2bbc06f02f",
+    "experiments/334-text-conditioned-transfer/recovery-work/features.json": "ae8a630a3d319e68573743b2dd0cbad91f3d4c117235d380847394f999287b0a",
+    "experiments/334-text-conditioned-transfer/selection.json": "8e05c0167aa3974775213aafb1346f884519a454a9a2857c443c7c6fa914e413",
+    "experiments/335-biomedical-text-features/PREREGISTRATION.md": "472f06f0affb726560b2bf9058ed682c0749eafe713d2a9ad68413b94e256290",
+    "experiments/335-biomedical-text-features/requirements.in": "4339fa8d35528e9b5245e497af93a23964e457983d924dd34d01d19520f570aa",
+    "experiments/335-biomedical-text-features/requirements.lock": "1b14d2179daf19953a5e648f7ee465a30bf8056d96d7c360d330b2eda7ecf61d",
+    "experiments/335-biomedical-text-features/run335.py": "23d033720566d840188536783d82c522635ec47f1e915605602337aadf521e75",
+    "experiments/335-biomedical-text-features/test335.py": "86c2b763ab9eafa08fd444f839d8dcd2349f172903b094ca1fd5a4e511f26275",
+    "uv.lock": "2e458aacefa51a18d1057e09f4984357ad5340674466047350e7fb12a163d78f"
+  },
+  "weights_sha256": "929ddc16369bb4ff6f8e92a6ee9f5e0748f2bef33989b5617533dd50beebe4ef"
+}

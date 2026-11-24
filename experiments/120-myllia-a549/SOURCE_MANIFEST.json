@@ -1,0 +1,122 @@
+{
+  "authorization": {
+    "build_compact_source_donor": true,
+    "cell_eval2": false,
+    "challenge_build": false,
+    "commit": false,
+    "count_generation": false,
+    "evaluation": false,
+    "open_existing_outcome_directories": false,
+    "open_vcc_held_truth": false,
+    "push": false,
+    "submission": false
+  },
+  "dataset": "GSE337804",
+  "expected_audit": {
+    "canonical_common_covered_genes": 16777,
+    "canonical_transferable_nonpanel_genes": 16477,
+    "channels": {
+      "ch_1": {
+        "cells": 25702,
+        "gene_desert_cells": 988,
+        "genes": 18711,
+        "ncount_sum": 363210965,
+        "nnz": 121101403,
+        "ntc_cells": 1033,
+        "observed_guides": 671
+      },
+      "ch_2": {
+        "cells": 27809,
+        "gene_desert_cells": 1075,
+        "genes": 18808,
+        "ncount_sum": 402730416,
+        "nnz": 130604474,
+        "ntc_cells": 1060,
+        "observed_guides": 672
+      }
+    },
+    "combined_cells": 53511,
+    "combined_gene_desert_cells": 2063,
+    "combined_ntc_cells": 2093,
+    "guide_channel_rows_min_10_cells": 1016,
+    "observed_guide_channel_target_rows": 1263,
+    "observed_guides": 684,
+    "observed_symbols": 220,
+    "paired_guides_min_10_each_channel": 491,
+    "qc_passing_targets": 175,
+    "qc_passing_vcc_targets": 14,
+    "vcc_exact_overlap": 15,
+    "vcc_exact_overlap_symbols": [
+      "BRD1",
+      "BRPF1",
+      "CDK8",
+      "E2F1",
+      "HDAC1",
+      "KDM5A",
+      "KMT2A",
+      "MTM1",
+      "PCGF1",
+      "PCGF6",
+      "PSMB9",
+      "SIN3B",
+      "SMARCA5",
+      "SYVN1",
+      "UPF3B"
+    ],
+    "vcc_qc_failed_targets": [
+      "KMT2A"
+    ]
+  },
+  "experiment": "120-myllia-a549",
+  "inputs": {
+    "channel_1_h5ad": {
+      "gene_axis_sha256": "573fb88dcdecbcdcab5acf7cca469db814cdbfe69e5223ab4dff8992364b5ccb",
+      "local_path": "data/external/myllia-a549/GSE337804_A549_ch_1.RDS.h5ad",
+      "obs_axis_sha256": "82be2d110e5ddc33ca8e83240fba4998f4f2ca015ce74293054b6214f23d6274",
+      "sha256": "15230cd19d5958f3b1efa2f08160faf7b6a319dad3fbaeacbb0ed7f42ab9b448",
+      "size_bytes": 563808587
+    },
+    "channel_2_h5ad": {
+      "gene_axis_sha256": "b31a48c6c00dfa650baa457200af2bbb09f83d9f738fcd265e391aad46b70e42",
+      "local_path": "data/external/myllia-a549/GSE337804_A549_ch_2.RDS.h5ad",
+      "obs_axis_sha256": "05afd60de28d3a6d14ebb349c10d1cd61cc16ab25f2c5cee6c33758b1c6d0696",
+      "sha256": "a29d724ab5e4fa3dc698da2ef75ec5bc7cbdabfcb7b55efc43882bcd64d39215",
+      "size_bytes": 608829330
+    },
+    "description_pdf": {
+      "local_path": "data/external/myllia-a549/GSE337804_2cl_description.pdf",
+      "sha256": "6374660318364c2e3d407cecad5904c5fb42ad6b5ee3a36ebbb5cd8cebecd87e",
+      "size_bytes": 236820
+    },
+    "sgrna_library": {
+      "local_path": "data/external/myllia-a549/GSE337804_sgRNA_lib.csv.gz",
+      "sha256": "96f6eb62449ba276d36591af2f7e0fca47ffedb9f19d711bcc27671d50882df6",
+      "size_bytes": 12261
+    }
+  },
+  "local_axes": {
+    "canonical_genes": {
+      "local_path": "data/challenge/gene_names.csv",
+      "row_count": 18533,
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201"
+    },
+    "vcc_panel": {
+      "local_path": "data/challenge/pert_counts.csv",
+      "row_count": 300,
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    }
+  },
+  "qc_contract": {
+    "channel_pooling": "equal_weight_mean",
+    "control_symbol": "non-targeting",
+    "exact_symbols_only": true,
+    "guide_channel_min_cells": 10,
+    "guide_requires_both_channels": true,
+    "minimum_paired_guides_per_target": 2,
+    "panel_coordinates_transferable": false,
+    "pseudobulk_target_sum": 50000,
+    "target_pooling": "coordinate_wise_median_of_channel_pooled_guides"
+  },
+  "recorded_at": "2026-08-30",
+  "schema_version": 1
+}

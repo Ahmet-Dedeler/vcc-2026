@@ -1,0 +1,27 @@
+{
+  "dataset": "GSE295214",
+  "manifest_sha256": "cd57ac5692ce3f3e472067e37226b8f2a786a8f8b0cf271ab08d0915f7169050",
+  "output": {
+    "path": "data/external/gse295214/Pan2025_hESC_post_qc_targets.txt",
+    "row_count": 2354,
+    "sha256": "7060076272d411d4ee00b898cc26eedcb1eaaac5f5e94e2c60f3b45978320747",
+    "size_bytes": 14572
+  },
+  "schema_version": 1,
+  "source": {
+    "access_mode": "bounded_http_range_h5ad_obs_only",
+    "allowed_h5_paths": [
+      "/obs/dataset",
+      "/obs/perturbed_gene_name"
+    ],
+    "byte_cap": 67108864,
+    "bytes_fetched": 5242880,
+    "file_sha256": "0754d6206fe045744dfd9b21eb37c8e3435152c76b158b9810a84c64a029c0ac",
+    "file_size_bytes": 4425260319,
+    "forbidden_h5_paths": [
+      "/X",
+      "/layers"
+    ],
+    "repository_revision": "1d3f28d966772dcf75870beac052923efdc078c5"
+  }
+}

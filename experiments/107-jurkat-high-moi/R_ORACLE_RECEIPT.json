@@ -1,0 +1,28 @@
+{
+  "checks": [
+    "column_totals",
+    "barcode_ranks_knee",
+    "barcode_ranks_inflection",
+    "safe_good_turing_ambient_profile",
+    "multinomial_observed_data_log_probability",
+    "benjamini_hochberg"
+  ],
+  "edgeR_commit": "61de2f486eebbf9332efabb11c0c80b72e334111",
+  "edgeR_good_turing_c_sha256": "d8a6083152f3052e053f5c72bfada53fe0805e7a3ccd869913cab99fe62b70f7",
+  "edgeR_good_turing_r_sha256": "b1888b215c0c8c4da9e035bfd03c0c7976b8acb610601f99ce58812142ef59ce",
+  "edgeR_version": "4.99.0",
+  "executed_at_utc": "2026-08-30T09:07:03Z",
+  "python_port_sha256": "3e68398e68eb294a6bc0839230de7fc9127a054ffce0425b42b6a4b728d7edb9",
+  "r_oracle_sha256": "8e3d0ef9417b215208bccf7565bae944c0d128e948988d41c2b1b2c0ed9fbdc5",
+  "status": "pass",
+  "synthetic_nnz": 1754,
+  "synthetic_shape": [
+    13,
+    160
+  ],
+  "DropletUtils_commit": "b423c0fafe7271b173317b407a8538bbbcbede5c",
+  "DropletUtils_empty_drops_sha256": "a3fee383fe41a630b1afc7094ff18fc92813165b1dba16b6ede2e2efe3131c19",
+  "DropletUtils_ambient_profile_sha256": "9f4a39c0ef27fe67e026917d552e0c63e07a53bcdd9e9cfd8548649778a3b3c5",
+  "DropletUtils_barcode_ranks_sha256": "fe2704de5df903e8e7004cb36f6214d53c176151bcc4fd4239413f0b1ce8a6d9",
+  "DropletUtils_version": "1.31.2"
+}

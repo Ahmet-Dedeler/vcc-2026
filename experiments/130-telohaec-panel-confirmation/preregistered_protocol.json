@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "experiment": "130-telohaec-panel-confirmation",
+  "created_at": "2026-08-30",
+  "status": "frozen_before_any_telohaec_expression_or_candidate_value_access",
+  "objective": "Independently confirm one exact passing Experiment 125 panel-response candidate on 65 previously unopened TeloHAEC panel target rows, using Experiment 128 production_log1p source units and integer-budget transport.",
+  "source": {
+    "analysis_set": "IGVFDS7943IIWZ",
+    "matrix_accession": "IGVFFI8645YMGX",
+    "guide_accession": "IGVFFI9754AGFB",
+    "matrix_path": "data/external/igvf-telohaec/IGVFFI8645YMGX.h5ad",
+    "guide_manifest_path": "data/external/igvf-telohaec/IGVFFI9754AGFB.tsv.gz",
+    "guide_qc_path": "data/external/igvf-telohaec/guide_qc.csv",
+    "experiment_105_provenance": "experiments/105-telohaec-residual/PROVENANCE.json",
+    "metadata_receipt": "experiments/130-telohaec-panel-confirmation/SOURCE_METADATA_RECEIPT.v1.json",
+    "authorized_now": "HDF5 structure, obs/var names, guide labels, target labels, and already-recorded cell counts only",
+    "forbidden_now": "Any X or layer expression value, compact delta/b_ctrl value, candidate residual/confidence/support value, or biological metric"
+  },
+  "axes": {
+    "canonical_genes": "data/challenge/gene_names.csv",
+    "canonical_panel": "data/challenge/pert_counts.csv",
+    "expected_genes": 18533,
+    "expected_panel_targets": 300,
+    "expected_telohaec_targets": 65,
+    "expected_telohaec_response_symbols": 300
+  },
+  "guide_replication": {
+    "eligibility_is_frozen_to_experiment_105_guide_qc": true,
+    "minimum_cells_per_guide": 5,
+    "minimum_eligible_cells_per_target": 20,
+    "minimum_eligible_guides_per_target": 2,
+    "all_eligible_guides_are_retained": true,
+    "control_guides": "all Experiment 105 eligible safe-targeting and non-targeting guides, equal guide weight",
+    "guide_effect": "For each eligible guide, collapse duplicate feature symbols by summing counts; compute log1p(50000 * guide_pseudobulk / full unique-gene library); subtract the coordinate-wise median eligible-control-guide profile.",
+    "target_truth": "Coordinate-wise median of all eligible guide effects for the target. No guide may be selected, dropped, or reweighted using expression values.",
+    "replication_report": "Report per-target guide count, eligible-cell count, coordinate-wise guide sign agreement, and leave-one-guide range; these diagnostics cannot tune the candidate or gates."
+  },
+  "candidate_binding": {
+    "path": "experiments/130-telohaec-panel-confirmation/CANDIDATE_BINDING_AMENDMENT.json",
+    "absent_at_prevalue_freeze": true,
+    "required_before_any_telohaec_expression_value": true,
+    "experiment_125_must_be_immutable_go": true,
+    "selection_rule": "Choose the largest selected_candidate_counts_across_15_outer_target_folds value; break ties by earlier candidate_order. Require at least 8 of 15 folds and require the candidate definition transport to equal production_log1p.",
+    "required_candidate_artifacts": [
+      "300x300 residual in log1p(50000*q) units",
+      "300x300 confidence",
+      "300x300 boolean support",
+      "canonical panel axis",
+      "immutable artifact manifest and selection record"
+    ],
+    "no_telohaec_in_selection": true
+  },
+  "transport": {
+    "dependency": "experiments/128-panel-integer-budget-transport",
+    "implementation_freeze_sha256": "67df1b5c5e4f1960fc4ec7a1cc06d7f0754b485443b4e1b7478daefee3ac1426",
+    "run_py_sha256": "42a0ffadee3560a77636b3b6641e1d4eb7bf437839ca165a6bb8e3fa139e9123",
+    "source_units": "log1p(50000 * relative_abundance)",
+    "dose": 1.0,
+    "cells": 400,
+    "baseline": "TeloHAEC eligible-control-guide median profile over the full collapsed unique-gene axis",
+    "library": "floor of the median per-cell full-library count across cells assigned to eligible control guides",
+    "eligibility": "finite candidate residual and confidence, candidate support true, positive baseline abundance, control CPM strictly greater than 10, and response is not target-self",
+    "integer_semantics": "Use Experiment 128 source_coordinate_transform and deterministic largest-remainder redistribution of the pre-existing eligible off-diagonal panel integer budget. Copy target-self and every unsupported or ineligible coordinate exactly.",
+    "comparison": "Apply the exact same transport, baseline, library, eligibility, and fallback policy to Experiment 122 equal_mean_agreement."
+  },
+  "support_and_fallback": {
+    "structural_overlap_required": "exactly the frozen 65 target labels and all 300 canonical response labels",
+    "minimum_evaluable_targets": 60,
+    "minimum_truth_responses_per_target": 250,
+    "minimum_candidate_supported_responses_per_target": 20,
+    "minimum_supported_pair_retention_vs_comparator": 0.8,
+    "pair_fallback": "If the Experiment 125 candidate is unsupported at a coordinate, copy the transported Experiment 122 comparator effect and confidence exactly.",
+    "row_fallback": "If a target row has no candidate-supported off-diagonal coordinate, the entire row is the comparator and cannot count as candidate-supported.",
+    "evaluation_denominator": "All finite off-diagonal TeloHAEC truth coordinates are retained, including comparator fallbacks; unsupported candidate pairs are never dropped."
+  },
+  "metrics": {
+    "target_signed_credit": "sum(sign(truth_j) * prediction_j) / sum(abs(truth_j)) across retained off-diagonal truth coordinates; targets are weighted equally",
+    "top20_truth_magnitude_weighted_sign_precision": "Select ceil(0.20 * retained truth coordinates) by descending frozen candidate confidence with canonical response order tie-break; zero predicted sign is incorrect; weight correctness by abs(truth). Targets are weighted equally.",
+    "primary_effect": "Experiment 125 candidate minus Experiment 122 comparator under identical transport and truth coordinates",
+    "absolute_metrics_also_reported": true
+  },
+  "nulls": {
+    "draws_each": 200,
+    "target_label": {
+      "seed": 1302026,
+      "definition": "Fixed-point-free permutations of the 65 candidate target rows. Move residual, confidence, and support coherently; keep truth fixed; reapply destination target-self exclusion and the full fallback policy."
+    },
+    "response_label": {
+      "seed": 1302027,
+      "definition": "After candidate binding, derive 10 equal-frequency bins from TeloHAEC control panel abundance with canonical ties, freeze the bins before targeting-guide values are read, and draw fixed-point-free within-bin response permutations. Move residual, confidence, and support coherently; keep truth fixed; reapply destination target-self exclusion and fallback."
+    },
+    "complete_procedure": "Each draw recomputes candidate transport, fallback, both target metrics, and candidate-minus-comparator deltas.",
+    "threshold": "Observed macro delta must be strictly greater than each linear-method p95; add-one one-sided p must be <= 0.05."
+  },
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 1302028,
+    "unit": "TeloHAEC target label cluster",
+    "definition": "Sample the frozen 65 target labels with replacement and recompute equal-target macro candidate-minus-comparator deltas.",
+    "gate": "Linear-method 2.5th percentile strictly greater than zero for both endpoints."
+  },
+  "promotion_gates": {
+    "all_required": true,
+    "experiment_125_binding_valid": true,
+    "candidate_transport_is_production_log1p": true,
+    "candidate_selection_count_at_least_8_of_15": true,
+    "evaluable_targets_at_least_60": true,
+    "supported_pair_retention_at_least_0_8": true,
+    "candidate_absolute_signed_credit_strictly_positive": true,
+    "candidate_absolute_precision_at_least_0_5": true,
+    "macro_signed_credit_delta_at_least_0_005": true,
+    "macro_precision_delta_at_least_0_01": true,
+    "both_bootstrap_lower_95_strictly_positive": true,
+    "both_deltas_strictly_above_both_null_p95": true,
+    "both_add_one_null_p_values_at_most_0_05": true,
+    "all_experiment_128_integer_and_scorer_space_invariants_pass": true
+  },
+  "no_tuning_after_access": "After the first TeloHAEC X/layer value is read, no candidate, dose, support rule, aggregation, metric, seed, null, bootstrap, threshold, axis, or implementation may change. A defect makes Experiment 130 terminally invalid and requires a new experiment number.",
+  "hard_exclusions": [
+    "HCASMC",
+    "DLD1",
+    "Pan",
+    "KOLF",
+    "H1 or Orion held outcomes",
+    "challenge truth",
+    "challenge-context expression values",
+    "cell-eval2",
+    "count generation",
+    "challenge build or submission",
+    "commit",
+    "push"
+  ]
+}

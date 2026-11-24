@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "experiment": "114-depmap-coessentiality",
+  "date_frozen": "2026-08-30",
+  "status": "implemented_not_authorized_pending_role_artifacts_and_independent_review",
+  "lineage": {
+    "feature_build_protocol_sha256": "90c3c458f182ce4fa39a62757fdffac69ff105c26fa57bd6e28cec2e5804edc0",
+    "acquisition_protocol_sha256": "c1b7241a1423affe334c4bd52b2c0c730ade6925c0f7249b5e86eb0da2feac27",
+    "source_manifest_sha256": "5834bcd29a7e31b23aaafdcd02a5f56f509e06c87ad1fb0c2568df40510a5497",
+    "source_schema_amendment_sha256": "266f805bc80d011b53322bbf81c54bd69507e39c3752fa9a47c8b95cae886075",
+    "source_receipt_sha256": "ff33216dd9997026e0cfb756b2139f80724ed4d03fbaa75b283048e488e8330c",
+    "feature_receipt_sha256": "6e01f6daa6bb39203d8178ea693e39caad6246fbe96fa38dbc18d25deadd7b7b",
+    "feature_build_implementation_sha256": "e32cfd9f6ceecb140bb02214f74c40f6e1fde796e9be2bfe812423931081ce67",
+    "role_source_manifest_path": "experiments/114-depmap-coessentiality/ROLE_SOURCE_MANIFEST.json",
+    "role_source_manifest_sha256": "e05d877b5ea0a7aeae06f4c53ad363e984379678b5b61fd852e3e877d17d0248"
+  },
+  "canonical_axes": {
+    "panel": {
+      "path": "data/challenge/pert_counts.csv",
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+      "column": "target_gene",
+      "count": 300,
+      "ordered_sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4"
+    },
+    "genes": {
+      "path": "data/challenge/gene_names.csv",
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+      "column": "gene_name",
+      "count": 18533,
+      "ordered_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723"
+    }
+  },
+  "features": {
+    "depmap": {
+      "artifact_path": "experiments/114-depmap-coessentiality/work/source-features/depmap-features.npz",
+      "artifact_sha256": "7f42b585f788db95cdc345d44b44926bd76ce0fc5ae94c544fd2f6929b9ddc51",
+      "receipt_path": "experiments/114-depmap-coessentiality/work/source-features/feature-receipt.json",
+      "receipt_sha256": "6e01f6daa6bb39203d8178ea693e39caad6246fbe96fa38dbc18d25deadd7b7b",
+      "genes": 17916,
+      "dimensions": 1178,
+      "gene_order_sha256": "0f595cfb921ec95012e07ecd1928f00d29512cdadbbbc1b52733c3923112bb9c",
+      "matrix_sha256": "2444fadb3feec310b38823dd962694aea487ea9556e776c7fa545de7ebfe648e"
+    },
+    "string": {
+      "artifact_path": "data/external/slim/gene_string_embeddings.v0.3.h5",
+      "artifact_sha256": "789416877b8701ef6f800106d26bf7bb97ea8e72744e6ab93e24933a717f247d",
+      "genes": 21688,
+      "dimensions": 64
+    }
+  },
+  "eligibility": {
+    "incumbent_uncovered_count": 28,
+    "incumbent_uncovered_ordered_sha256": "2ca99e21178d85bb8e6fe8a49d9a304cce8de30786463cbb7f50f88c4cdbf91c",
+    "low_confidence_count": 13,
+    "low_confidence_ordered_sha256": "c12e419a49fe91ffb40cb235aa2841d64d869a3bac3b8def15f301eb74ec0a6b",
+    "eligible_count": 41,
+    "eligible_ordered_sha256": "508daf6356aeb62fd30e9048482bdaca9b1b001ec80e8aef9dabe5b32bc0dcb0"
+  },
+  "role_manifest_contract": {
+    "schema_version": 1,
+    "required_stage": "source_only_role_inputs",
+    "required_artifacts": [
+      "incumbent",
+      "source_bank"
+    ],
+    "artifact_directory": "experiments/114-depmap-coessentiality/work/roles/<role>",
+    "incumbent_stage": "role_incumbent_source_only",
+    "source_bank_stage": "role_source_bank_source_only",
+    "all_artifacts_must_be_sealed_before_held_truth": true,
+    "all_paths_and_receipts_must_be_hash_pinned_by_the_approved_role_manifest": true,
+    "held_surface_source_id_must_be_forbidden": true,
+    "source_ids_must_equal_the_role_allowlist": true,
+    "canonical_target_axis_required": true,
+    "canonical_gene_axis_required": true,
+    "exact_preregistered_eligibility_required": true,
+    "role_source_manifest_binding_required": true,
+    "role_specific_experiment_107_operator_required": true,
+    "held_surface_response_coordinates_must_be_excluded": true,
+    "source_bank_target_universe": "exact_top25_neighbour_closure_for_all_41_eligible_queries_and_three_noncontrol_arms"
+  },
+  "approved_roles": {},
+  "source_candidate_freeze_authorized": false
+}

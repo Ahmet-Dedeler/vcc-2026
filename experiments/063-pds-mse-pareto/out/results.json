@@ -1,0 +1,618 @@
+{
+  "experiment": "063-pds-mse-pareto",
+  "status": "completed",
+  "protocol": {
+    "predeclared_beta_raw_share": [
+      0.0,
+      0.05,
+      0.1,
+      0.2,
+      0.35,
+      0.5,
+      1.0
+    ],
+    "formula": "(1-beta)*union_whitened + beta*raw_consensus",
+    "gamma": 0.65,
+    "source_weighting": "equal across available source donors",
+    "source_effects": "raw centered donor effects with production per-donor norm and global effect-scale normalization",
+    "whitening_axis": "source-donor union on official VCC axis",
+    "whitening_renormalization": "production preserve median axis norm",
+    "outer_holdouts": [
+      "k562_gwps",
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "targets": 259,
+    "metric": "full-gallery rank PDS, mean row cosine, and row-wise theoretical minimum uncorrected normalized MSE",
+    "count_emission": false,
+    "cell_eval2": false,
+    "challenge_outcomes_used": false,
+    "submission": false
+  },
+  "leakage_audit": {
+    "challenge_target_coordinates_excluded": 300,
+    "challenge_target_order_sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4",
+    "shared_gallery_targets": 259,
+    "shared_gallery_order_sha256": "64d862833125a772eba7fa349c22810c9043f0951a56c3a66bd0e1bd98937f3e",
+    "held_donor_rows_in_operator": 0,
+    "held_values_opened_after_predictions_frozen": true,
+    "panel_overlap_with_any_operator": 0,
+    "panel_overlap_with_any_retrieval_axis": 0
+  },
+  "folds": [
+    {
+      "held_donor": "k562_gwps",
+      "source_donors": [
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "targets": 259,
+      "target_order_sha256": "64d862833125a772eba7fa349c22810c9043f0951a56c3a66bd0e1bd98937f3e",
+      "retrieval_genes": 7448,
+      "retrieval_genes_sha256": "4bb0c7429bd5c94029445a3bbff441cb6d434c1b4b2e81c37266f78adfd6a811",
+      "retrieval_columns_sha256": "9a9871382462feceb53797714f36afbaef5af50e98c7fb609e7c8370264fa9f3",
+      "retrieval_genes_outside_operator": 136,
+      "panel_overlap_with_retrieval": 0,
+      "source_vote_counts": {
+        "2": 259
+      },
+      "source_details": [
+        {
+          "name": "orion_hct116",
+          "raw_median_centered_norm": 7.129641298514131,
+          "mapped_genes": 18106,
+          "duplicate_symbols": [
+            "ELFN2",
+            "GOLGA8M",
+            "MKKS",
+            "SPATA13"
+          ]
+        },
+        {
+          "name": "orion_hek293t",
+          "raw_median_centered_norm": 6.221577264320966,
+          "mapped_genes": 18106,
+          "duplicate_symbols": [
+            "ELFN2",
+            "GOLGA8M",
+            "MKKS",
+            "SPATA13"
+          ]
+        }
+      ],
+      "operator": {
+        "source_donors": [
+          "orion_hct116",
+          "orion_hek293t"
+        ],
+        "source_only": true,
+        "operator_genes": 17806,
+        "operator_genes_sha256": "280aab34a0e86f27db8ade213e000f9066c8d5f9b89edd3ea966aba061ba9ae9",
+        "operator_columns_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+        "excluded_target_coordinates": 300,
+        "panel_overlap_with_operator": 0,
+        "basis_rows": 35744,
+        "basis_dtype": "float64",
+        "basis_normalization": "production equal-source renorm: median source norm / donor norm",
+        "evals_sha256": "cf771a7d9ace77d55b53671aa445c48fe2651157636f5d08491e03394c438a70",
+        "evecs_float32_sha256": "c90ad6890627bee25be0ba0b1adcbcfdf30818d3a66ab72e04970ba151feb3e9",
+        "sources": {
+          "orion_hct116": {
+            "basis_rows": 17767,
+            "mapped_operator_genes": 17806,
+            "raw_median_centered_norm": 7.129641298514131,
+            "basis_relative_scale": 0.9363176914396513,
+            "delta_sha256": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+            "genes_sha256": "ebd177c833a5f0582116dc9de2a65f2735cb76a349c0b847c204ab07d503d366",
+            "perts_sha256": "2280829df277b5efe070f021790d06e2d00b184ebffed1ded5c161ad621a74b9"
+          },
+          "orion_hek293t": {
+            "basis_rows": 17977,
+            "mapped_operator_genes": 17806,
+            "raw_median_centered_norm": 6.221577264320966,
+            "basis_relative_scale": 1.0729769956728388,
+            "delta_sha256": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+            "genes_sha256": "ebd177c833a5f0582116dc9de2a65f2735cb76a349c0b847c204ab07d503d366",
+            "perts_sha256": "0b3c0a1b04586604c99318f5e8c014cde83dae6d7fc6cb53624e42e0a2c53281"
+          }
+        }
+      },
+      "renormalization": {
+        "before_operator_median_norm": 4.852526612926358,
+        "after_operator_median_norm": 28.905584443124905,
+        "applied_scale": 0.1678750562014848
+      },
+      "metrics": [
+        {
+          "beta": 0.0,
+          "pds": 0.7997515788213463,
+          "raw_cosine": 0.03126626201784432,
+          "min_mse_unrestricted": 0.9976076605075529,
+          "min_mse_nonnegative_alpha": 0.9976298651776176,
+          "positive_cosine_targets": 213,
+          "negative_cosine_targets": 46
+        },
+        {
+          "beta": 0.05,
+          "pds": 0.7982999610906587,
+          "raw_cosine": 0.03170910260116234,
+          "min_mse_unrestricted": 0.9975409031855399,
+          "min_mse_nonnegative_alpha": 0.9975649064715012,
+          "positive_cosine_targets": 214,
+          "negative_cosine_targets": 45
+        },
+        {
+          "beta": 0.1,
+          "pds": 0.7966388315225524,
+          "raw_cosine": 0.03213071132962896,
+          "min_mse_unrestricted": 0.9974725785789345,
+          "min_mse_nonnegative_alpha": 0.9974990086219865,
+          "positive_cosine_targets": 213,
+          "negative_cosine_targets": 46
+        },
+        {
+          "beta": 0.2,
+          "pds": 0.790802430337314,
+          "raw_cosine": 0.03290997687339517,
+          "min_mse_unrestricted": 0.9973322972523204,
+          "min_mse_nonnegative_alpha": 0.997365518116386,
+          "positive_cosine_targets": 213,
+          "negative_cosine_targets": 46
+        },
+        {
+          "beta": 0.35,
+          "pds": 0.7799826404477567,
+          "raw_cosine": 0.033921160560934076,
+          "min_mse_unrestricted": 0.9971171602747215,
+          "min_mse_nonnegative_alpha": 0.9971657605802638,
+          "positive_cosine_targets": 212,
+          "negative_cosine_targets": 47
+        },
+        {
+          "beta": 0.5,
+          "pds": 0.7699260722516538,
+          "raw_cosine": 0.034750712654070225,
+          "min_mse_unrestricted": 0.9969033932122935,
+          "min_mse_nonnegative_alpha": 0.9969733445339513,
+          "positive_cosine_targets": 206,
+          "negative_cosine_targets": 53
+        },
+        {
+          "beta": 1.0,
+          "pds": 0.7425099518122773,
+          "raw_cosine": 0.03637340599697501,
+          "min_mse_unrestricted": 0.9962765672143649,
+          "min_mse_nonnegative_alpha": 0.996447760311265,
+          "positive_cosine_targets": 201,
+          "negative_cosine_targets": 58
+        }
+      ],
+      "held_delta_sha256": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+      "predictions_frozen_before_held_values_opened": true,
+      "peak_rss_gib": 16.797454833984375
+    },
+    {
+      "held_donor": "orion_hct116",
+      "source_donors": [
+        "k562_gwps",
+        "orion_hek293t"
+      ],
+      "targets": 259,
+      "target_order_sha256": "64d862833125a772eba7fa349c22810c9043f0951a56c3a66bd0e1bd98937f3e",
+      "retrieval_genes": 17806,
+      "retrieval_genes_sha256": "280aab34a0e86f27db8ade213e000f9066c8d5f9b89edd3ea966aba061ba9ae9",
+      "retrieval_columns_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+      "retrieval_genes_outside_operator": 0,
+      "panel_overlap_with_retrieval": 0,
+      "source_vote_counts": {
+        "2": 259
+      },
+      "source_details": [
+        {
+          "name": "k562_gwps",
+          "raw_median_centered_norm": 6.816794014382977,
+          "mapped_genes": 7679,
+          "duplicate_symbols": []
+        },
+        {
+          "name": "orion_hek293t",
+          "raw_median_centered_norm": 6.221577264320966,
+          "mapped_genes": 18106,
+          "duplicate_symbols": [
+            "ELFN2",
+            "GOLGA8M",
+            "MKKS",
+            "SPATA13"
+          ]
+        }
+      ],
+      "operator": {
+        "source_donors": [
+          "k562_gwps",
+          "orion_hek293t"
+        ],
+        "source_only": true,
+        "operator_genes": 17942,
+        "operator_genes_sha256": "0ec8aad027ff19e2188c4aa4f1a3bdd47665c12d53352f7733c54d2497f5c4eb",
+        "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+        "excluded_target_coordinates": 300,
+        "panel_overlap_with_operator": 0,
+        "basis_rows": 27764,
+        "basis_dtype": "float64",
+        "basis_normalization": "production equal-source renorm: median source norm / donor norm",
+        "evals_sha256": "eb803b7bda0417dfdc3c10e92f5c04f68bf4e5e998d646dfc6ec0d7a1159d3a2",
+        "evecs_float32_sha256": "497676e8d7971e5550193649a7331785819318d058a01b8d95e158bbb9afd623",
+        "sources": {
+          "k562_gwps": {
+            "basis_rows": 9787,
+            "mapped_operator_genes": 7448,
+            "raw_median_centered_norm": 6.816794014382977,
+            "basis_relative_scale": 0.956341885290494,
+            "delta_sha256": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+            "genes_sha256": "ff1e8ea1608fcad45c42bbf73b9eedaeb4ddca1ac1524e5091e4ae51c59973b2",
+            "perts_sha256": "1cf8b4c67b4fb0b0e12712e3236f27b83e1368a5a9946454c416f7aa7edae39c"
+          },
+          "orion_hek293t": {
+            "basis_rows": 17977,
+            "mapped_operator_genes": 17806,
+            "raw_median_centered_norm": 6.221577264320966,
+            "basis_relative_scale": 1.0478348756894345,
+            "delta_sha256": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+            "genes_sha256": "ebd177c833a5f0582116dc9de2a65f2735cb76a349c0b847c204ab07d503d366",
+            "perts_sha256": "0b3c0a1b04586604c99318f5e8c014cde83dae6d7fc6cb53624e42e0a2c53281"
+          }
+        }
+      },
+      "renormalization": {
+        "before_operator_median_norm": 5.0606518859004765,
+        "after_operator_median_norm": 29.58276416656293,
+        "applied_scale": 0.1710675803453308
+      },
+      "metrics": [
+        {
+          "beta": 0.0,
+          "pds": 0.8005746610397773,
+          "raw_cosine": 0.02358999886477814,
+          "min_mse_unrestricted": 0.9986321902843927,
+          "min_mse_nonnegative_alpha": 0.9986467114196927,
+          "positive_cosine_targets": 220,
+          "negative_cosine_targets": 39
+        },
+        {
+          "beta": 0.05,
+          "pds": 0.7928526533177696,
+          "raw_cosine": 0.02451690730863747,
+          "min_mse_unrestricted": 0.9985136301782273,
+          "min_mse_nonnegative_alpha": 0.9985394899041116,
+          "positive_cosine_targets": 218,
+          "negative_cosine_targets": 41
+        },
+        {
+          "beta": 0.1,
+          "pds": 0.7829607015653527,
+          "raw_cosine": 0.025433325692789603,
+          "min_mse_unrestricted": 0.9983723344410705,
+          "min_mse_nonnegative_alpha": 0.998414406587151,
+          "positive_cosine_targets": 215,
+          "negative_cosine_targets": 44
+        },
+        {
+          "beta": 0.2,
+          "pds": 0.7652270210409746,
+          "raw_cosine": 0.027227087843648277,
+          "min_mse_unrestricted": 0.998023234601287,
+          "min_mse_nonnegative_alpha": 0.9981137207118717,
+          "positive_cosine_targets": 214,
+          "negative_cosine_targets": 45
+        },
+        {
+          "beta": 0.35,
+          "pds": 0.741282811050253,
+          "raw_cosine": 0.02979354174205203,
+          "min_mse_unrestricted": 0.9973454931481759,
+          "min_mse_nonnegative_alpha": 0.9975487362543084,
+          "positive_cosine_targets": 207,
+          "negative_cosine_targets": 52
+        },
+        {
+          "beta": 0.5,
+          "pds": 0.7232647930322349,
+          "raw_cosine": 0.032174115093579266,
+          "min_mse_unrestricted": 0.9965125821272213,
+          "min_mse_nonnegative_alpha": 0.9968748546640622,
+          "positive_cosine_targets": 208,
+          "negative_cosine_targets": 51
+        },
+        {
+          "beta": 1.0,
+          "pds": 0.6849690221783246,
+          "raw_cosine": 0.03843724999987315,
+          "min_mse_unrestricted": 0.993187268587452,
+          "min_mse_nonnegative_alpha": 0.9942885919782541,
+          "positive_cosine_targets": 197,
+          "negative_cosine_targets": 62
+        }
+      ],
+      "held_delta_sha256": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+      "predictions_frozen_before_held_values_opened": true,
+      "peak_rss_gib": 16.797454833984375
+    },
+    {
+      "held_donor": "orion_hek293t",
+      "source_donors": [
+        "k562_gwps",
+        "orion_hct116"
+      ],
+      "targets": 259,
+      "target_order_sha256": "64d862833125a772eba7fa349c22810c9043f0951a56c3a66bd0e1bd98937f3e",
+      "retrieval_genes": 17806,
+      "retrieval_genes_sha256": "280aab34a0e86f27db8ade213e000f9066c8d5f9b89edd3ea966aba061ba9ae9",
+      "retrieval_columns_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+      "retrieval_genes_outside_operator": 0,
+      "panel_overlap_with_retrieval": 0,
+      "source_vote_counts": {
+        "2": 259
+      },
+      "source_details": [
+        {
+          "name": "k562_gwps",
+          "raw_median_centered_norm": 6.816794014382977,
+          "mapped_genes": 7679,
+          "duplicate_symbols": []
+        },
+        {
+          "name": "orion_hct116",
+          "raw_median_centered_norm": 7.129641298514131,
+          "mapped_genes": 18106,
+          "duplicate_symbols": [
+            "ELFN2",
+            "GOLGA8M",
+            "MKKS",
+            "SPATA13"
+          ]
+        }
+      ],
+      "operator": {
+        "source_donors": [
+          "k562_gwps",
+          "orion_hct116"
+        ],
+        "source_only": true,
+        "operator_genes": 17942,
+        "operator_genes_sha256": "0ec8aad027ff19e2188c4aa4f1a3bdd47665c12d53352f7733c54d2497f5c4eb",
+        "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+        "excluded_target_coordinates": 300,
+        "panel_overlap_with_operator": 0,
+        "basis_rows": 27554,
+        "basis_dtype": "float64",
+        "basis_normalization": "production equal-source renorm: median source norm / donor norm",
+        "evals_sha256": "1c6dc2f58cf5054f9ef44b0925f3bbedc255b53c7b84342c0bff982adb7f6485",
+        "evecs_float32_sha256": "e33718b7a286c633511ebf1ebcd6adf871429d7794b589bfeb77ca90b55faf42",
+        "sources": {
+          "k562_gwps": {
+            "basis_rows": 9787,
+            "mapped_operator_genes": 7448,
+            "raw_median_centered_norm": 6.816794014382977,
+            "basis_relative_scale": 1.0229468048668529,
+            "delta_sha256": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+            "genes_sha256": "ff1e8ea1608fcad45c42bbf73b9eedaeb4ddca1ac1524e5091e4ae51c59973b2",
+            "perts_sha256": "1cf8b4c67b4fb0b0e12712e3236f27b83e1368a5a9946454c416f7aa7edae39c"
+          },
+          "orion_hct116": {
+            "basis_rows": 17767,
+            "mapped_operator_genes": 17806,
+            "raw_median_centered_norm": 7.129641298514131,
+            "basis_relative_scale": 0.9780600965018847,
+            "delta_sha256": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+            "genes_sha256": "ebd177c833a5f0582116dc9de2a65f2735cb76a349c0b847c204ab07d503d366",
+            "perts_sha256": "2280829df277b5efe070f021790d06e2d00b184ebffed1ded5c161ad621a74b9"
+          }
+        }
+      },
+      "renormalization": {
+        "before_operator_median_norm": 5.114696844428909,
+        "after_operator_median_norm": 28.05071423227748,
+        "applied_scale": 0.1823374906633755
+      },
+      "metrics": [
+        {
+          "beta": 0.0,
+          "pds": 0.7823321660530963,
+          "raw_cosine": 0.021122365459250503,
+          "min_mse_unrestricted": 0.9988649555251367,
+          "min_mse_nonnegative_alpha": 0.9988778162586928,
+          "positive_cosine_targets": 210,
+          "negative_cosine_targets": 49
+        },
+        {
+          "beta": 0.05,
+          "pds": 0.7762712878991949,
+          "raw_cosine": 0.022100910477275238,
+          "min_mse_unrestricted": 0.9987448922095943,
+          "min_mse_nonnegative_alpha": 0.9987656385615271,
+          "positive_cosine_targets": 211,
+          "negative_cosine_targets": 48
+        },
+        {
+          "beta": 0.1,
+          "pds": 0.7698811768579211,
+          "raw_cosine": 0.023072076707491996,
+          "min_mse_unrestricted": 0.998604311044915,
+          "min_mse_nonnegative_alpha": 0.998636179355191,
+          "positive_cosine_targets": 211,
+          "negative_cosine_targets": 48
+        },
+        {
+          "beta": 0.2,
+          "pds": 0.7568764778067103,
+          "raw_cosine": 0.024984292096364446,
+          "min_mse_unrestricted": 0.9982633757136128,
+          "min_mse_nonnegative_alpha": 0.9983276926992771,
+          "positive_cosine_targets": 206,
+          "negative_cosine_targets": 53
+        },
+        {
+          "beta": 0.35,
+          "pds": 0.7389482505761577,
+          "raw_cosine": 0.02774916000158371,
+          "min_mse_unrestricted": 0.9976131290471408,
+          "min_mse_nonnegative_alpha": 0.9977544182615736,
+          "positive_cosine_targets": 202,
+          "negative_cosine_targets": 57
+        },
+        {
+          "beta": 0.5,
+          "pds": 0.7235341653946304,
+          "raw_cosine": 0.030350242043270567,
+          "min_mse_unrestricted": 0.9968198593078582,
+          "min_mse_nonnegative_alpha": 0.9970737723208393,
+          "positive_cosine_targets": 200,
+          "negative_cosine_targets": 59
+        },
+        {
+          "beta": 1.0,
+          "pds": 0.6887402352518632,
+          "raw_cosine": 0.037471428037158576,
+          "min_mse_unrestricted": 0.9935784301331996,
+          "min_mse_nonnegative_alpha": 0.9944199495840226,
+          "positive_cosine_targets": 191,
+          "negative_cosine_targets": 68
+        }
+      ],
+      "held_delta_sha256": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+      "predictions_frozen_before_held_values_opened": true,
+      "peak_rss_gib": 16.797454833984375
+    }
+  ],
+  "macro": [
+    {
+      "beta": 0.0,
+      "pds": 0.7942194686380732,
+      "raw_cosine": 0.02532620878062432,
+      "min_mse_unrestricted": 0.9983682687723606,
+      "min_mse_nonnegative_alpha": 0.9983847976186677
+    },
+    {
+      "beta": 0.05,
+      "pds": 0.7891413007692076,
+      "raw_cosine": 0.02610897346235835,
+      "min_mse_unrestricted": 0.9982664751911204,
+      "min_mse_nonnegative_alpha": 0.9982900116457133
+    },
+    {
+      "beta": 0.1,
+      "pds": 0.7831602366486088,
+      "raw_cosine": 0.026878704576636853,
+      "min_mse_unrestricted": 0.9981497413549733,
+      "min_mse_nonnegative_alpha": 0.9981831981881095
+    },
+    {
+      "beta": 0.2,
+      "pds": 0.7709686430616663,
+      "raw_cosine": 0.028373785604469296,
+      "min_mse_unrestricted": 0.9978729691890734,
+      "min_mse_nonnegative_alpha": 0.9979356438425117
+    },
+    {
+      "beta": 0.35,
+      "pds": 0.7534045673580558,
+      "raw_cosine": 0.030487954101523274,
+      "min_mse_unrestricted": 0.9973585941566795,
+      "min_mse_nonnegative_alpha": 0.9974896383653821
+    },
+    {
+      "beta": 0.5,
+      "pds": 0.7389083435595064,
+      "raw_cosine": 0.03242502326364002,
+      "min_mse_unrestricted": 0.996745278215791,
+      "min_mse_nonnegative_alpha": 0.9969739905062842
+    },
+    {
+      "beta": 1.0,
+      "pds": 0.7054064030808217,
+      "raw_cosine": 0.03742736134466892,
+      "min_mse_unrestricted": 0.9943474219783388,
+      "min_mse_nonnegative_alpha": 0.9950521006245139
+    }
+  ],
+  "pareto_frontier_betas": [
+    0.0,
+    0.05,
+    0.1,
+    0.2,
+    0.35,
+    0.5,
+    1.0
+  ],
+  "leaderboard_gap_proxy": {
+    "current_overall_gap": 0.007,
+    "anchors": {
+      "pds_span": 0.4525,
+      "mse_baseline": 0.989,
+      "mse_replicate": 0.0365
+    },
+    "assumption": "optimistic: oracle nonnegative per-target alpha, other four metrics unchanged",
+    "rows": [
+      {
+        "beta": 0.0,
+        "pds_scaled_delta_vs_beta0": 0.0,
+        "mse_scaled_delta_vs_beta0": 0.0,
+        "optimistic_overall_delta_vs_beta0": 0.0,
+        "could_close_0.007_gap": false
+      },
+      {
+        "beta": 0.05,
+        "pds_scaled_delta_vs_beta0": -0.011222470428432293,
+        "mse_scaled_delta_vs_beta0": 0.0,
+        "optimistic_overall_delta_vs_beta0": -0.0018704117380720488,
+        "could_close_0.007_gap": false
+      },
+      {
+        "beta": 0.1,
+        "pds_scaled_delta_vs_beta0": -0.024440291689424215,
+        "mse_scaled_delta_vs_beta0": 0.0,
+        "optimistic_overall_delta_vs_beta0": -0.004073381948237369,
+        "could_close_0.007_gap": false
+      },
+      {
+        "beta": 0.2,
+        "pds_scaled_delta_vs_beta0": -0.051383039947860545,
+        "mse_scaled_delta_vs_beta0": 0.0,
+        "optimistic_overall_delta_vs_beta0": -0.008563839991310091,
+        "could_close_0.007_gap": false
+      },
+      {
+        "beta": 0.35,
+        "pds_scaled_delta_vs_beta0": -0.09019867686191693,
+        "mse_scaled_delta_vs_beta0": 0.0,
+        "optimistic_overall_delta_vs_beta0": -0.015033112810319488,
+        "could_close_0.007_gap": false
+      },
+      {
+        "beta": 0.5,
+        "pds_scaled_delta_vs_beta0": -0.12223453056036869,
+        "mse_scaled_delta_vs_beta0": 0.0,
+        "optimistic_overall_delta_vs_beta0": -0.02037242176006145,
+        "could_close_0.007_gap": false
+      },
+      {
+        "beta": 1.0,
+        "pds_scaled_delta_vs_beta0": -0.19627196808232386,
+        "mse_scaled_delta_vs_beta0": 0.0,
+        "optimistic_overall_delta_vs_beta0": -0.03271199468038731,
+        "could_close_0.007_gap": false
+      }
+    ],
+    "plausible_betas": [],
+    "any_candidate_could_close_gap": false
+  },
+  "infrastructure": {
+    "provider": "AWS EC2",
+    "instance_id": "i-0f382ff6e160980e9",
+    "instance_type": "r7i.2xlarge",
+    "region": "us-east-1",
+    "s3_prefix": "s3://<your-s3-bucket>/output/exp063-pds-mse-pareto/20260822T215018Z",
+    "process_tree_guard_gib": 55.0
+  },
+  "peak_rss_gib": 16.797454833984375
+}

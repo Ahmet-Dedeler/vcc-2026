@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-31",
+  "stage": "after_development_evaluator_audit_before_prefreeze_authorization_or_prepare",
+  "status": "additive_control_plane_correction",
+  "supersedes_for_development_only": "DEVELOPMENT_INTERFACE.v2.json",
+  "source_only_chain_unchanged": true,
+  "findings": [
+    "The v2 evaluator consumed the Experiment 132 development-target and response-gene axes without requiring their hashes in both authorization stages.",
+    "The v2 prepare path dynamically imported Experiment 061, which executed local Python dependencies not closed by the v2 binding list.",
+    "A failed exclusive-lock acquisition could unlink the lock owned by another process.",
+    "The v2 preoutcome validator did not prove that the current prefreeze authorization was the authorization that created the prepared artifacts.",
+    "The v2 development path verified full truth-array bytes before recording the irreversible outcome-access lock.",
+    "The concentration zero rule used an epsilon although the frozen contract specified exact zero."
+  ],
+  "corrections": {
+    "development_interface": "DEVELOPMENT_INTERFACE.v3.json",
+    "implementation": "develop.py",
+    "tests": "test_develop.py",
+    "axis_closure": "Both authorization stages bind the Experiment 132 source authorization, plan manifest, selection_targets.txt, and response_genes.txt. The evaluator also verifies the Experiment 142 source-plan parent hashes before constructing any row-aligned artifact.",
+    "dependency_closure": "The evaluator implements the minimal frozen PerturbMatch loader locally and no longer imports Experiment 061 or its transitive local modules. Experiment 061 and the production builder remain hash-bound semantic references.",
+    "lock_ownership": "Only the process that successfully created a lock may remove that same inode.",
+    "authorization_lineage": "The preoutcome validator requires the current prefreeze authorization hash and schema to match the values recorded by prepare.",
+    "outcome_access_order": "Development authorization bindings are validated without reading truth arrays, the irreversible access lock is recorded, and only then are truth-array bytes verified and effect rows loaded.",
+    "concentration": "Positive concentration uses the contract's exact-zero denominator rule."
+  },
+  "authorization_sequence": [
+    "Review the amended evaluator and tests.",
+    "Create DEVELOPMENT_PREFREEZE_AUTHORIZATION.v1.json against DEVELOPMENT_INTERFACE.v3.json and every v2 plus v3 binding.",
+    "Run only the guarded preoutcome prepare command.",
+    "Review and hash the complete preoutcome artifact.",
+    "Create a separate DEVELOPMENT_ACCESS_AUTHORIZATION.v1.json before opening the 613-target development outcomes."
+  ],
+  "access_state": {
+    "development_613_outcomes_opened": false,
+    "sealed_410_outcomes_opened": false,
+    "reserved_confirmation_expression_opened": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "submission": false
+  }
+}

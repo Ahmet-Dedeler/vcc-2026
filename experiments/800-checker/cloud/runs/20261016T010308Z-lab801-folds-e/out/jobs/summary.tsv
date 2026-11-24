@@ -1,0 +1,25 @@
+1	0	17	3792	bash experiments/801-lab-folds/cloud801.sh verify
+4	1	62	2595392	bash experiments/801-lab-folds/cloud801.sh prep L3
+15	8	71	3232	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L3 orion_hct116
+14	8	71	3188	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L3 k562_gwps
+16	8	71	3244	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L3 orion_hek293t
+6	1	73	2593684	bash experiments/801-lab-folds/cloud801.sh prep L5
+20	8	81	3260	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L5 k562_gwps
+21	8	81	3252	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L5 orion_hct116
+22	8	81	3260	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L5 orion_hek293t
+3	1	83	2593820	bash experiments/801-lab-folds/cloud801.sh prep L2
+11	8	91	3180	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L2 k562_gwps
+13	8	91	3232	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L2 orion_hek293t
+12	8	91	3240	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L2 orion_hct116
+7	1	94	2593292	bash experiments/801-lab-folds/cloud801.sh prep L6
+23	8	101	3256	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L6 k562_gwps
+25	8	101	3240	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L6 orion_hek293t
+24	8	101	3272	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L6 orion_hct116
+5	1	105	2593832	bash experiments/801-lab-folds/cloud801.sh prep L4
+18	8	111	3256	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L4 orion_hct116
+17	8	111	3164	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L4 k562_gwps
+19	8	111	3192	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L4 orion_hek293t
+2	1	115	2594104	bash experiments/801-lab-folds/cloud801.sh prep L1
+10	8	121	3180	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L1 orion_hek293t
+9	8	121	3264	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L1 orion_hct116
+8	8	121	3228	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold L1 k562_gwps

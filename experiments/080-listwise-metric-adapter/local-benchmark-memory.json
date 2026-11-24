@@ -1,0 +1,18 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--python",
+    "3.12.12",
+    "--with",
+    "numpy==2.5.2",
+    "python",
+    "-",
+    "f472fde750c18f414a2dce9cfb5c8aa1af4d7b732e19130e73eea601cabc304f"
+  ],
+  "max_rss_gib": 1.0,
+  "peak_process_tree_rss_gib": 0.41278076171875,
+  "killed_for_memory": false,
+  "return_code": 0
+}

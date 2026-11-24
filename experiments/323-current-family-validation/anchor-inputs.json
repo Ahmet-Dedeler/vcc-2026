@@ -1,0 +1,12 @@
+{
+  "inputs_sha256": {
+    ".venv/lib/python3.12/site-packages/cell_eval2/anchor.py": "858f87400e2ecd15e1e6dd7204b7ae8844459e6d0c7a7c32996cafffb22ecf1b",
+    ".venv/lib/python3.12/site-packages/cell_eval2/baseline.py": "dac2f014cf41ac36e8160bfaa2a65508778adb8a5b1e3522d25d3f16642f3abf",
+    ".venv/lib/python3.12/site-packages/cell_eval2/ceiling.py": "9c5429274c65d02d387f0bf20912bde9b71e6c737e608c72a826c7c1bf7ad077",
+    ".venv/lib/python3.12/site-packages/cell_eval2/lfc_nmae_ref.py": "8047661f648d013152ce9eb5a093a26cb79b3301090337c40d7d00678bfc10d0",
+    "experiments/323-current-family-validation/ANCHOR-NOTE.md": "aafcf472d9e7ec6017922149169df7e393c27078be68b7458a16dee84cda427f",
+    "experiments/323-current-family-validation/anchors323.py": "b1eac30366de62582b41be407fd856d9570710d55299cf13949fb9c56c42a385",
+    "experiments/323-current-family-validation/work/anchor-selftest.json": "08c000c95019d61f59a0e5de4de6b5c12a3b6451d869a71f928de73f0da411e5",
+    "experiments/323-current-family-validation/work/metrics-known.json": "9b839b4e3a11a33bc5daa2d9e93ba86eef6bfdeb00831f6d74cf559968f7986c"
+  }
+}

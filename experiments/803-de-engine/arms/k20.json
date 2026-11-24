@@ -1,0 +1,13 @@
+{
+ "name": "k20",
+ "desc": "K20: zs with the CPM call block 2,000 (VCC_RC_CALLSET_CPM=2000 twin: run400.CALLSET (400, 2000, 1.9))",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2000,
+  "zs": true,
+  "dump": false
+ },
+ "stage": "zs"
+}

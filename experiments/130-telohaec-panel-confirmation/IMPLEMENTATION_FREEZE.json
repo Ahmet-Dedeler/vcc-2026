@@ -1,0 +1,38 @@
+{
+  "authorization": {
+    "candidate_arrays": false,
+    "cell_eval2": false,
+    "challenge_truth_or_context_values": false,
+    "commit_or_push": false,
+    "counts_or_submission": false,
+    "dld1": false,
+    "h1_or_orion_held_outcomes": false,
+    "hcasmc": false,
+    "kolf": false,
+    "metadata_only": true,
+    "pan": false,
+    "telohaec_X_or_layers": false
+  },
+  "biological_value_access": false,
+  "candidate_binding_present": false,
+  "created_at": "2026-08-30",
+  "experiment": "130-telohaec-panel-confirmation",
+  "files": {
+    "experiments/130-telohaec-panel-confirmation/CANDIDATE_BINDING_AMENDMENT.schema.json": "62b7286fc25bd83643e4ac16cbc192055903383a86da4dd6f068d19b63c95265",
+    "experiments/130-telohaec-panel-confirmation/README.md": "1a564a8f24019a504d2874fe145a9907f421d2e61f3a340dd42527a9bc75d240",
+    "experiments/130-telohaec-panel-confirmation/RESULTS.md": "84944406762b7d9aacae8977c72e276d0db712572a57c134559beb39ee133eed",
+    "experiments/130-telohaec-panel-confirmation/SOURCE_METADATA_RECEIPT.v1.json": "4e1582e61b5f23e8154bfb52ef73af181df1314f6f04eaa4270cf05448d1d393",
+    "experiments/130-telohaec-panel-confirmation/VALUE_ACCESS_BOUNDARY.v1.json": "865a884c87620af81c6858a1cfc599bf957b9889efb77fc5f992d876edf3dbf2",
+    "experiments/130-telohaec-panel-confirmation/freeze.py": "67e373b1e5bc9e11958aa073ef74275419327d1bb7de7c035a7b448a34a1416c",
+    "experiments/130-telohaec-panel-confirmation/preregistered_protocol.json": "8fd64b51aa9ef6af4cd6d3c6b63856e428a89b30a554b922f78b5dc2fc2ca2a5",
+    "experiments/130-telohaec-panel-confirmation/run.py": "401a00f5ad3fd2ebe36324bfa2bec921c576effc1c10525ed8d96137b86c0fe2",
+    "experiments/130-telohaec-panel-confirmation/test_run.py": "76d1043839e39552d6ea2d869d7cf66c2ce5667006dc491fc5d94df257a79cc8"
+  },
+  "preflight": {
+    "python_compile": "passed",
+    "ruff": "passed",
+    "synthetic_tests": "6/6 passed"
+  },
+  "schema_version": 1,
+  "status": "frozen_before_any_telohaec_expression_or_candidate_value_access"
+}

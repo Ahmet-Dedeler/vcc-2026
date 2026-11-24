@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "dataset": "broad-depmap-perturb-seq-2026",
+  "recorded_at": "2026-08-30",
+  "preprint": {
+    "doi": "10.64898/2026.08.24.746802",
+    "title": "Dissecting context-dependent cancer vulnerabilities using Perturb-seq"
+  },
+  "figshare": {
+    "data_article": {
+      "api_url": "https://api.figshare.com/v2/articles/33273600",
+      "doi": "10.6084/m9.figshare.33273600.v1",
+      "id": 33273600,
+      "license": "CC BY 4.0",
+      "modified_date": "2026-08-18T18:33:22Z",
+      "published_date": "2026-08-18T18:13:54Z",
+      "title": "Dissecting context-dependent cancer vulnerabilities using Perturb-seq - Data",
+      "files": [
+        {
+          "download_url": "https://ndownloader.figshare.com/files/67643355",
+          "id": 67643355,
+          "md5": "6bbe267ba864ef7ede1e15847bb6af90",
+          "name": "data.zip",
+          "permitted": false,
+          "size_bytes": 6891220
+        },
+        {
+          "download_url": "https://ndownloader.figshare.com/files/67643532",
+          "id": 67643532,
+          "md5": "8aa4600fbd27478841340fb9f56d9d70",
+          "name": "h2h_data_formatted.zip",
+          "permitted": false,
+          "size_bytes": 1835216779
+        },
+        {
+          "download_url": "https://ndownloader.figshare.com/files/67643358",
+          "id": 67643358,
+          "md5": "11ad26cc9c5ab272b80b20e0b97f86e0",
+          "name": "metadata.zip",
+          "permitted": true,
+          "sha256": "c7af8e03fb719efe350918d61ceeeaa85944023d33a92de854603ef98c3c360e",
+          "size_bytes": 1838227
+        },
+        {
+          "download_url": "https://ndownloader.figshare.com/files/67643565",
+          "id": 67643565,
+          "md5": "8ad0b34b854add4b28c29f7425470894",
+          "name": "processed.zip",
+          "permitted": "range_only_selected_members",
+          "sha256": null,
+          "sha256_status": "not_computable_without_forbidden_full_download",
+          "size_bytes": 3233927690
+        },
+        {
+          "download_url": "https://ndownloader.figshare.com/files/67643568",
+          "id": 67643568,
+          "md5": "78b6506f8cb40dd111ccc8480641ecb3",
+          "name": "single_cell_data.zip",
+          "permitted": false,
+          "size_bytes": 3171208158
+        },
+        {
+          "download_url": "https://ndownloader.figshare.com/files/67643802",
+          "id": 67643802,
+          "md5": "64d39184ee3edc6c815f84828f807dc8",
+          "name": "downloaded.zip",
+          "permitted": false,
+          "size_bytes": 461671192
+        }
+      ]
+    },
+    "code_article": {
+      "api_url": "https://api.figshare.com/v2/articles/33282171",
+      "doi": "10.6084/m9.figshare.33282171.v1",
+      "id": 33282171,
+      "license": "MIT",
+      "modified_date": "2026-08-18T18:32:54Z",
+      "published_date": "2026-08-18T18:24:00Z",
+      "title": "Dissecting context-dependent cancer vulnerabilities using Perturb-seq - Codebase",
+      "files": [
+        {
+          "download_url": "https://ndownloader.figshare.com/files/67644690",
+          "id": 67644690,
+          "md5": "8cda38df1924aa8c5ed483b49d2fad06",
+          "name": "perturb-seq-depmap.zip",
+          "normalized_tree_sha256": "a628ee689383bfab6296b25338c3ccf62119d253f3fbf4992999872dec31ae74",
+          "sha256": "21c106a80d4ba3049c3c5145bfc95e23ea6ae293a868fd73a90a53ae285f4908",
+          "size_bytes": 234195
+        }
+      ]
+    }
+  },
+  "github": {
+    "commit": "ccb9ee5c37fb5a117cd76d8e9a5a5217ce12338d",
+    "normalized_tree_algorithm": "sha256 over sorted safe relative files as path_utf8 NUL bytes NUL; strip one root; ignore __MACOSX, .DS_Store, and AppleDouble",
+    "commit_archive": {
+      "md5": "d784d96939f1366a4a06f7d9c359f534",
+      "normalized_tree_sha256": "a628ee689383bfab6296b25338c3ccf62119d253f3fbf4992999872dec31ae74",
+      "sha256": "44d499612d8922345178f1d12726056973b53e15635e939dc4126b0d0dc3eb40",
+      "size_bytes": 235188,
+      "url": "https://codeload.github.com/broadinstitute/perturb-seq-depmap-public/zip/ccb9ee5c37fb5a117cd76d8e9a5a5217ce12338d"
+    },
+    "repository": "https://github.com/broadinstitute/perturb-seq-depmap-public"
+  },
+  "archives": {
+    "metadata_zip": {
+      "asset_file_id": 67643358,
+      "central_directory": {
+        "entry_count": 9,
+        "offset": 1837296,
+        "sha256": "fce32e7bf52f9e1545848bafed4562a01fd3f8a7f37613a9680294eedd166e67",
+        "size_bytes": 909
+      },
+      "selected_member": {
+        "compressed_size": 318,
+        "compression_method": 8,
+        "content_md5": "61eca4b5cd5c664d37e543f0c1be3156",
+        "content_sha256": "a046816af92c2fa4433f7cad2e2108146ee43a95923fa020c5ba7e50ca64ad42",
+        "crc32": "b0d5c0c1",
+        "flag_bits": 8,
+        "local_header_offset": 1836424,
+        "name": "metadata/cell_line_metadata.csv",
+        "uncompressed_size": 621
+      }
+    },
+    "processed_zip": {
+      "asset_file_id": 67643565,
+      "central_directory": {
+        "entry_count": 1766,
+        "offset": 3233688116,
+        "sha256": "fc73eec23ea7623383b144bc2a3b00d4b4b189c9af5f4fe5d10b04dcb533304f",
+        "size_bytes": 239552,
+        "tail_probe_bytes": 131072
+      },
+      "selected_members": [
+        {
+          "compressed_size": 39746231,
+          "compression_method": 8,
+          "crc32": "06b0f386",
+          "flag_bits": 8,
+          "local_header_offset": 661169680,
+          "name": "processed/pseudobulk_sum_by_ko.csv",
+          "uncompressed_size": 225333430
+        },
+        {
+          "compressed_size": 139570084,
+          "compression_method": 8,
+          "crc32": "463f9829",
+          "flag_bits": 8,
+          "local_header_offset": 718857423,
+          "name": "processed/lfc_matrix.csv",
+          "uncompressed_size": 320425743
+        },
+        {
+          "compressed_size": 120671943,
+          "compression_method": 8,
+          "crc32": "354ec1c1",
+          "flag_bits": 8,
+          "local_header_offset": 242096428,
+          "name": "processed/fdr_matrix.csv",
+          "uncompressed_size": 305083633
+        },
+        {
+          "compressed_size": 22633,
+          "compression_method": 8,
+          "crc32": "ff7d6f0c",
+          "flag_bits": 8,
+          "local_header_offset": 225584184,
+          "name": "processed/crispr_table.csv",
+          "uncompressed_size": 76367
+        },
+        {
+          "compressed_size": 769,
+          "compression_method": 8,
+          "crc32": "7ca2b6eb",
+          "flag_bits": 8,
+          "local_header_offset": 1162180113,
+          "name": "processed/cell_quality_covariates.csv",
+          "uncompressed_size": 1508
+        }
+      ]
+    }
+  },
+  "dataset_contract": {
+    "cell_lines": [
+      {
+        "arxspan_id": "ACH-000997",
+        "batch": "apollo31",
+        "cell_line": "HCT15",
+        "lineage": "Bowel"
+      },
+      {
+        "arxspan_id": "ACH-000823",
+        "batch": "apollo31",
+        "cell_line": "KYSE140",
+        "lineage": "Esophagus/Stomach"
+      },
+      {
+        "arxspan_id": "ACH-000865",
+        "batch": "apollo31",
+        "cell_line": "KYSE450",
+        "lineage": "Esophagus/Stomach"
+      },
+      {
+        "arxspan_id": "ACH-000348",
+        "batch": "apollo31",
+        "cell_line": "RPMI7951",
+        "lineage": "Skin"
+      },
+      {
+        "arxspan_id": "ACH-001652",
+        "batch": "apollo32",
+        "cell_line": "SKGII",
+        "lineage": "Cervix"
+      },
+      {
+        "arxspan_id": "ACH-000246",
+        "batch": "apollo32",
+        "cell_line": "SLR23",
+        "lineage": "Kidney"
+      },
+      {
+        "arxspan_id": "ACH-000036",
+        "batch": "apollo32",
+        "cell_line": "U343",
+        "lineage": "CNS/Brain"
+      },
+      {
+        "arxspan_id": "ACH-001334",
+        "batch": "apollo33",
+        "cell_line": "C4I",
+        "lineage": "Cervix"
+      },
+      {
+        "arxspan_id": "ACH-002659",
+        "batch": "apollo34",
+        "cell_line": "JVE127",
+        "lineage": "Bowel"
+      },
+      {
+        "arxspan_id": "ACH-000359",
+        "batch": "apollo34",
+        "cell_line": "MG63",
+        "lineage": "Bone"
+      },
+      {
+        "arxspan_id": "ACH-001992",
+        "batch": "apollo34",
+        "cell_line": "ONE58",
+        "lineage": "Pleura"
+      },
+      {
+        "arxspan_id": "ACH-002042",
+        "batch": "apollo34",
+        "cell_line": "T3M5",
+        "lineage": "Head and Neck"
+      },
+      {
+        "arxspan_id": "ACH-000250",
+        "batch": "apollo35",
+        "cell_line": "KMRC20",
+        "lineage": "Kidney"
+      },
+      {
+        "arxspan_id": "ACH-000460",
+        "batch": "apollo35",
+        "cell_line": "SNU8",
+        "lineage": "Ovary/Fallopian Tube"
+      },
+      {
+        "arxspan_id": "ACH-001687",
+        "batch": "apollo35",
+        "cell_line": "UMRC3",
+        "lineage": "Kidney"
+      },
+      {
+        "arxspan_id": "ACH-001852",
+        "batch": "apollo38",
+        "cell_line": "HKGZCC",
+        "lineage": "Biliary Tract"
+      }
+    ],
+    "expected_batch_count": 6,
+    "expected_cell_line_count": 16,
+    "expected_lineage_count": 11,
+    "targets": [
+      "ADAR",
+      "ADAT2",
+      "AP2M1",
+      "ATF4",
+      "ATP5PO",
+      "AURKB",
+      "BCL2L2",
+      "BRD4",
+      "C3orf38",
+      "CAB39",
+      "CCDC51",
+      "CCNE1",
+      "CD46",
+      "CDK4",
+      "CLPB",
+      "COX5B",
+      "DCLRE1B",
+      "DNAJC13",
+      "EEFSEC",
+      "FBXO7",
+      "GET4",
+      "GPX4",
+      "HDAC3",
+      "IBA57",
+      "IER3IP1",
+      "KCTD5",
+      "KIF11",
+      "KIF2C",
+      "LRP8",
+      "MAD2L1",
+      "MAPK1",
+      "MDM2",
+      "METAP1",
+      "METTL1",
+      "MIB1",
+      "MIPEP",
+      "MTOR",
+      "MTPAP",
+      "MYC",
+      "N6AMT1",
+      "NFKB1",
+      "NHLRC2",
+      "NRBP1",
+      "OR10H2",
+      "OR10J3",
+      "OR11H1",
+      "OR11H4",
+      "OR13C4",
+      "OR13C7",
+      "OR13H1",
+      "OR4D2",
+      "OR4M2",
+      "OR9Q1",
+      "PIK3CA",
+      "PITRM1",
+      "PKMYT1",
+      "POLR2D",
+      "PPIL1",
+      "PPP2R2A",
+      "PRKRA",
+      "PSMA1",
+      "RAB18",
+      "RAB7A",
+      "RAD51",
+      "RHOA",
+      "RNF31",
+      "RRM1",
+      "SCYL1",
+      "SDHB",
+      "SEC23IP",
+      "SLC20A1",
+      "SLC25A3",
+      "SLC39A10",
+      "SLC39A9",
+      "SMCHD1",
+      "SMG6",
+      "SPRING1",
+      "STEAP3",
+      "STXBP3",
+      "SUZ12",
+      "TFRC",
+      "TOP2A",
+      "TRAF2",
+      "TRAIP",
+      "TWNK",
+      "TXN",
+      "TYMS",
+      "UBA5",
+      "UBE2C",
+      "UBE2D3",
+      "UBE2G2",
+      "UBE2H",
+      "UBE2S",
+      "UBE3A",
+      "UFL1",
+      "USP37",
+      "WDR48",
+      "WDR89",
+      "XRN1",
+      "YTHDF2"
+    ],
+    "control_targets": [
+      "OR10H2",
+      "OR10J3",
+      "OR11H1",
+      "OR11H4",
+      "OR13C4",
+      "OR13C7",
+      "OR13H1",
+      "OR4D2",
+      "OR4M2",
+      "OR9Q1"
+    ],
+    "expected_analysis_target_count": 90,
+    "expected_control_target_count": 10,
+    "expected_target_count": 100,
+    "matrix_missing_values": {
+      "encoding": "empty_csv_field",
+      "require_lfc_fdr_mask_identity": true
+    },
+    "pseudobulk": {
+      "expected_column_count": 1593,
+      "missing_context_target_pairs": [
+        [
+          "C4I",
+          "PSMA1"
+        ],
+        [
+          "C4I",
+          "RRM1"
+        ],
+        [
+          "HKGZCC",
+          "KIF11"
+        ],
+        [
+          "HKGZCC",
+          "RRM1"
+        ],
+        [
+          "KMRC20",
+          "RRM1"
+        ],
+        [
+          "U343",
+          "KIF11"
+        ],
+        [
+          "U343",
+          "RRM1"
+        ]
+      ]
+    },
+    "sceptre_matrices": {
+      "expected_column_count": 1440
+    }
+  },
+  "challenge_contract": {
+    "expected_panel_overlap": 0,
+    "expected_panel_target_count": 300,
+    "panel_path": "data/challenge/pert_counts.csv",
+    "panel_sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+  },
+  "safety": {
+    "download_root": "downloads",
+    "extraction_root": "extracted",
+    "forbidden_file_ids": [
+      67643355,
+      67643532,
+      67643568,
+      67643802
+    ],
+    "max_full_download_bytes": 10000000,
+    "max_range_chunk_bytes": 8388608,
+    "max_selective_compressed_bytes": 350000000,
+    "never_download_full_processed_zip": true,
+    "never_download_single_cell_data": true,
+    "only_https": true,
+    "selected_processed_member_count": 5
+  }
+}

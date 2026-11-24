@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "dataset": "GSE249595",
+  "recorded_at": "2026-08-30",
+  "assets": {
+    "file_inventory": {
+      "group": "metadata",
+      "filename": "filelist.txt",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249595/suppl/filelist.txt",
+      "size_bytes": 11869,
+      "sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca"
+    },
+    "guide_reference": {
+      "group": "metadata",
+      "filename": "GSE249595_guides_reference.fa.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249595/suppl/GSE249595_guides_reference.fa.gz",
+      "size_bytes": 847505,
+      "sha256": "99e99d6c14907a2cc60c4c11ed3d93e9da5cc113740489b7e8d1e8c0abe00ca6"
+    },
+    "supplementary_table": {
+      "group": "metadata",
+      "filename": "MOESM3_ESM.xlsx",
+      "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41556-025-01626-9/MediaObjects/41556_2025_1626_MOESM3_ESM.xlsx",
+      "size_bytes": 412522,
+      "sha256": "307f346279b4bda2e9c19aca39c692a144197c0117dfd9d595724cc353e2f7ff"
+    },
+    "raw_archive": {
+      "group": "raw",
+      "filename": "GSE249595_RAW.tar",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249595/suppl/GSE249595_RAW.tar",
+      "size_bytes": 3753820160,
+      "sha256": null,
+      "sha256_status": "not_source_pinned"
+    }
+  },
+  "archive_contract": {
+    "expected_member_count": 144,
+    "channels": [
+      {"channel": 1, "accession": "GSM7951413"},
+      {"channel": 2, "accession": "GSM7951414"},
+      {"channel": 3, "accession": "GSM7951415"},
+      {"channel": 4, "accession": "GSM7951416"},
+      {"channel": 5, "accession": "GSM7951417"},
+      {"channel": 6, "accession": "GSM7951418"},
+      {"channel": 7, "accession": "GSM7951419"},
+      {"channel": 8, "accession": "GSM7951420"},
+      {"channel": 9, "accession": "GSM7951421"},
+      {"channel": 10, "accession": "GSM7951422"},
+      {"channel": 11, "accession": "GSM7951423"},
+      {"channel": 12, "accession": "GSM7951424"},
+      {"channel": 13, "accession": "GSM7951425"},
+      {"channel": 14, "accession": "GSM7951426"},
+      {"channel": 15, "accession": "GSM7951427"},
+      {"channel": 16, "accession": "GSM7951428"}
+    ],
+    "modalities": {
+      "transcriptome": {
+        "feature_rows": 20606,
+        "barcode_columns": 6794880
+      },
+      "guides": {
+        "feature_rows": 83401,
+        "barcode_columns": 6794880
+      },
+      "labels": {
+        "feature_rows": 7,
+        "barcode_columns": 6794880
+      }
+    },
+    "roles": {
+      "barcode": ".tsv.gz",
+      "features": ".tsv.gz",
+      "matrix": ".mtx.gz"
+    }
+  },
+  "safety": {
+    "download_root": "downloads",
+    "report_root": "audit",
+    "max_assignment_nnz_total": 200000000,
+    "assignment_coordinate_order": "row_or_column_major_strict",
+    "never_scan_transcriptome_coordinates": true,
+    "never_extract_archive": true
+  },
+  "provenance_expectations": {
+    "source.geo_series": "GSE249595",
+    "source.parent_series": "GSE247601",
+    "source.bioproject": "PRJNA1049794",
+    "source.raw_archive_size_bytes": 3753820160,
+    "screen.channels": 16,
+    "screen.guide_records": 83401,
+    "screen.guide_reference_parsed_targets": 18601,
+    "screen.non_targeting_guide_records": 250,
+    "screen.reported_targeted_genes": 18595,
+    "screen.supplementary_table_1_rows": 18466,
+    "screen.supplementary_table_1_unique_symbols": 18465,
+    "screen.vcc_target_overlap": 299,
+    "screen.missing_vcc_target": "ZNF714",
+    "screen.transcriptome_features": 20606,
+    "screen.vcc_expression_gene_overlap": 18378,
+    "screen.enriched_response_genes": 374,
+    "screen.supplementary_table_2_unique_symbols": 375,
+    "screen.hash_oligos": 7,
+    "screen.estimated_pds_visible_high_sensitivity_genes_after_panel_mask": 349,
+    "status": "preregistered_before_acquisition"
+  }
+}

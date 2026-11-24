@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "experiment": "122-panel-response-atlas",
+  "phase": "phase_1_source_only",
+  "date": "2026-08-30",
+  "trigger": "The first authenticated source run stopped while reading the Orion HCT116 text gene axis because the generic axis validator rejected duplicate non-panel symbols.",
+  "result_status_at_trigger": "no result directory or null output existed",
+  "effect_access_before_failure": "The K562 panel slice had been loaded; Orion and CD4 effect slices had not been loaded.",
+  "failed_implementation_freeze_sha256": "08927a11b480beb72473a9163419854232ae72aaf8bb8f4fd5fac44a114ef235",
+  "failed_run_py_sha256": "655bbde0c9781d44e086c97160c1e7287a09379e0bf4fbf2b2c1d228200b19ae",
+  "authorized_repair": "Allow duplicate labels on a source gene axis only when none of the duplicated labels belongs to the 300-gene panel. Continue to require unique perturbation axes and fail if any panel response symbol is duplicated.",
+  "scientific_changes": {
+    "candidate_family": false,
+    "family_grouping": false,
+    "source_effect_values": false,
+    "metrics": false,
+    "eligibility_gates": false,
+    "selection_order": false,
+    "null_assignments": false,
+    "dld1_gate": false
+  }
+}

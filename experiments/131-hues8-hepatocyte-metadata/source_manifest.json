@@ -1,0 +1,93 @@
+[
+  {
+    "bytes": 1156,
+    "name": "production_h5mu.tsv",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/CRISPRi_lineage_atlas/manifests/production_h5mu.tsv",
+    "repo_path": "CRISPRi_lineage_atlas/manifests/production_h5mu.tsv",
+    "sha256": "d0641817e26e56ac3a2c8c776792ad9f84d90b42502dc8fc3e8082c64d8e3b7a"
+  },
+  {
+    "bytes": 10277,
+    "name": "pipeline_runs_catalog.tsv",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/pipeline_runs_catalog.tsv",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/pipeline_runs_catalog.tsv",
+    "sha256": "11ad8b64a425cad78a2e2ff2820d0ffc13746a7711d60c0f47ae2fb1c038a814"
+  },
+  {
+    "bytes": 5918,
+    "name": "pipeline_manifest.tsv",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/manifest.tsv",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/manifest.tsv",
+    "sha256": "d44c19d1f85d29eddc827f59f05a77f5e8a6e59fb4c447a7493f43765bc0c6f9"
+  },
+  {
+    "bytes": 183,
+    "name": "library_counts.tsv",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/summary/library_counts.tsv",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/summary/library_counts.tsv",
+    "sha256": "a54f5a0b2c10d6930c7dfd18fd54175ba18fd84025e2c1df23ac05349a931fb9"
+  },
+  {
+    "bytes": 1677617,
+    "name": "tf_notebook.ipynb",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/TF_expr/TF_expr_and_DEGs.ipynb",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/TF_expr/TF_expr_and_DEGs.ipynb",
+    "sha256": "2d6f5ef3ba98f3d4c0d2a06db524a3f20a96af83dffcaab11ba1324a27a24ff2"
+  },
+  {
+    "bytes": 65547,
+    "name": "Huangfu_ESC__cells_per_target.tsv",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Huangfu_ESC/cells_per_target.tsv",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Huangfu_ESC/cells_per_target.tsv",
+    "sha256": "6d9d26c3ac9b6b9c560f98451d9ec82fcb8266f39922c65c56f12f604ae6ed1e"
+  },
+  {
+    "bytes": 428973,
+    "name": "Huangfu_ESC__guide_var.tsv.gz",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Huangfu_ESC/guide_var.tsv.gz",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Huangfu_ESC/guide_var.tsv.gz",
+    "sha256": "b23217f6fdb9ab16dfd18856b428e7b5c07fe9b90c4fb6cb4932440c7019b238"
+  },
+  {
+    "bytes": 65828,
+    "name": "Huangfu_DE__cells_per_target.tsv",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Huangfu_DE/cells_per_target.tsv",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Huangfu_DE/cells_per_target.tsv",
+    "sha256": "3fa8e13ad2d611d0bdcaa325e87f1bc77d59a532a1f14fd3fa1d96b407057dca"
+  },
+  {
+    "bytes": 428973,
+    "name": "Huangfu_DE__guide_var.tsv.gz",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Huangfu_DE/guide_var.tsv.gz",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Huangfu_DE/guide_var.tsv.gz",
+    "sha256": "f71c423263429a61013de109750a30b270c596d759b9b06e0d096f5e3b8abc5e"
+  },
+  {
+    "bytes": 66014,
+    "name": "Gersbach_Hep__cells_per_target.tsv",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Gersbach_Hep/cells_per_target.tsv",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Gersbach_Hep/cells_per_target.tsv",
+    "sha256": "04f0cfbc2295c38e600977a01b4b924fd95f15773442ac43f8d58863f4f1309d"
+  },
+  {
+    "bytes": 444302,
+    "name": "Gersbach_Hep__guide_var.tsv.gz",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Gersbach_Hep/guide_var.tsv.gz",
+    "repo_path": "docs/jamborees/2026_UTSW/working_groups/wg1_data_qc/pipeline_qc/results/per_dataset_distributions/Gersbach_Hep/guide_var.tsv.gz",
+    "sha256": "2e4d8dd58ae223113f3f808cb7bddd97b49aace757374a3e6233748c540f0fc2"
+  },
+  {
+    "bytes": 1200137,
+    "name": "hues8_esc_scout_run__pval_edist_full.csv",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/datasets/Huangfu_HUES8-embryonic-stemcell-differentiation_TF-Perturb-seq/sceptre_v1/energy_distance/pval_edist_full.csv",
+    "repo_path": "datasets/Huangfu_HUES8-embryonic-stemcell-differentiation_TF-Perturb-seq/sceptre_v1/energy_distance/pval_edist_full.csv",
+    "sha256": "bc4d977469142d62cce9bb14dcdf87bb94b95ad3d6af5fab37e97e622460e618"
+  },
+  {
+    "bytes": 1146352,
+    "name": "hues8_endoderm__pval_edist_full.csv",
+    "raw_url": "https://raw.githubusercontent.com/IGVF/tf_perturb_seq/589f5ff606e7f9d09ad55e938b10727d206d5a60/datasets/Huangfu_HUES8-definitive-endoderm-differentiation_TF-Perturb-seq/muddy_penguin/energy_distance/pval_edist_full.csv",
+    "repo_path": "datasets/Huangfu_HUES8-definitive-endoderm-differentiation_TF-Perturb-seq/muddy_penguin/energy_distance/pval_edist_full.csv",
+    "sha256": "456447dada7b911eb75966d45dcdd1e952685b5fb3778010820a51e4a8231dba"
+  }
+]

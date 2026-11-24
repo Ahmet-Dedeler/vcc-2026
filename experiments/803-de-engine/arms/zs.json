@@ -1,0 +1,13 @@
+{
+ "name": "zs",
+ "desc": "446bj2z: g1pre + the exact-U zs pass dn_k250_zs (618's g1 / G1 arm)",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": true
+ },
+ "stage": "zs"
+}

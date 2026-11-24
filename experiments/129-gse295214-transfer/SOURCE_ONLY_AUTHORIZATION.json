@@ -1,0 +1,31 @@
+{
+  "cell_eval2_authorized": false,
+  "challenge_build_or_submission_authorized": false,
+  "commit_or_push_authorized": false,
+  "count_generation_authorized": false,
+  "created_before_source_effect_loading": true,
+  "created_utc": "2026-08-30T17:49:36.376559+00:00",
+  "experiment": "129-gse295214-transfer",
+  "held_outcome_access_authorized": false,
+  "implementation_files": {
+    "experiments/129-gse295214-transfer/IMPLEMENTATION_RECOVERY_001.json": "5bb5fd8757a3463a96e8f3e86e1f5a5b33dc47d4456ab25812a25dead1a68b4a",
+    "experiments/129-gse295214-transfer/README.md": "d7a5164bba5497ff4bc9d5fbac43828d11e6f71826d76af46401fe2cb7ff8693",
+    "experiments/129-gse295214-transfer/SOURCE_INVENTORY.json": "23cb28ba364a94ca4b73b728508d44e825454e43bcfe3ddb2fbc91b834f3f6a4",
+    "experiments/129-gse295214-transfer/preregistered_protocol.json": "05af0bb9da6321cdff81818209e0befa1f74552e96964562d37caef378bac998",
+    "experiments/129-gse295214-transfer/run.py": "21d22533a896ab530f1dd6a2329cb2666e348ffcd49fa8e0be9dc7464ebd5ccd",
+    "experiments/129-gse295214-transfer/test_run.py": "b3e74d0cac5183bd8ff7b67bacb067c1c7de4ccf9ddb448605292bb60cacb280"
+  },
+  "input_count": 41,
+  "inventory_sha256": "23cb28ba364a94ca4b73b728508d44e825454e43bcfe3ddb2fbc91b834f3f6a4",
+  "plan_manifest_sha256": "113ced458a702a8825f659505c212e548db77b2a91707f26d46df3efc4bea570",
+  "plan_summary": {
+    "candidate_count": 4,
+    "eligible_target_count": 155,
+    "score_gene_count": 5730,
+    "selection_target_count": 100,
+    "test_target_count": 55
+  },
+  "protocol_sha256": "05af0bb9da6321cdff81818209e0befa1f74552e96964562d37caef378bac998",
+  "schema_version": 1,
+  "source_only_authorized": true
+}

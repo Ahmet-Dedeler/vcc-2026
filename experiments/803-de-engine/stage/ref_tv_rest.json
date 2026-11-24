@@ -1,0 +1,18 @@
+{
+ "segments": [
+  {
+   "member": "cs.npy",
+   "target_off": 51793158,
+   "donor_off": 35252622,
+   "size": 1586668928
+  },
+  {
+   "member": "emit_cs.npy",
+   "target_off": 1638634985,
+   "donor_off": 1622094449,
+   "size": 1586668928
+  }
+ ],
+ "target_sha256": "5a567f09d1e806bffaae262e6083256e0566e9e65804c5c37307f6b9f89bc12b",
+ "donor_sha256": "304aa51133c9776a8d49c29b2075e82f6110671339fa1df77f163cba4843a8c6"
+}

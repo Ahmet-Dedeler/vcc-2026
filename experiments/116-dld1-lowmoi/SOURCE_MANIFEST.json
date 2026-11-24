@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "experiment": "116-dld1-lowmoi",
+  "dataset": "GSE337988",
+  "recorded_at": "2026-08-30",
+  "scope": "source_only_metadata",
+  "authorization": {
+    "download_small_public_metadata": true,
+    "bounded_http_range_header_probe": true,
+    "eligible_large_assets": [
+      "low1_lfc_matrix",
+      "low2_lfc_matrix"
+    ],
+    "authorized_large_assets": [],
+    "download_geo_raw_archive": false,
+    "download_any_other_processed_asset": false,
+    "open_vcc_held_perturbation_truth": false,
+    "model_fitting": false,
+    "evaluation": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_submission": false,
+    "commit": false,
+    "push": false
+  },
+  "large_asset_authorization_contract": {
+    "required_fields": [
+      "url",
+      "size_bytes",
+      "sha256",
+      "download_authorized"
+    ],
+    "sha256_must_be_full_file_digest": true,
+    "header_digest_is_not_a_full_file_digest": true,
+    "current_status": "locked_missing_public_full_file_digests",
+    "reason": "NCBI publishes exact URLs, byte counts, and modification timestamps for the two LFC matrices, but no ETag or checksum sidecar was publicly discoverable. A bounded gzip-header digest cannot authenticate the matrix payload."
+  },
+  "official_sources": {
+    "geo": {
+      "series": "GSE337988",
+      "title": "Joint analysis of multiply perturbed cells improves statistical power and cost efficiency in Perturb-seq screens",
+      "series_status": "Public on Jul 10 2026",
+      "series_submission_date": "Jul 08 2026",
+      "series_last_update": "Jul 28 2026",
+      "bioproject": "PRJNA1492064",
+      "sample_count": 48,
+      "cell_line": "DLD-1",
+      "cell_type": "colorectal adenocarcinoma",
+      "genotype": "TET_DD_inducible_Zim3dCas9",
+      "assay": "CRISPRi Perturb-seq with 10x Chromium Single Cell 3-prime GEM-X v4",
+      "scaled_screen_library": "6,455-guide CRISPRi sub-library 2",
+      "scaled_screen_moi": {
+        "low": "~0.3",
+        "medium": "~3",
+        "high": "~10"
+      },
+      "scaled_screen_channels": {
+        "low": 24,
+        "medium": 12,
+        "high": 8
+      },
+      "induction": "250 ng/mL doxycycline plus Shield-1 1:500 for 5 days",
+      "processing": "Cell Ranger 9.0.1 against GRCh38-2020-A with intron counting; MULTI-seq hashing; guide assignment; DropletQC-related QC; limma-voom differential expression with perturbation-matched controls"
+    },
+    "paper": {
+      "doi": "10.64898/2026.07.10.737863",
+      "version": "v1",
+      "posted": "2026-07-11",
+      "license": "CC BY 4.0"
+    },
+    "analysis_repository": {
+      "url": "https://github.com/Genentech/perturbmatch_analysis",
+      "commit": "41e1040ddefa381133b293911c55bc9218a2e7dc",
+      "code_license": "MIT",
+      "data_license": "CC BY 4.0"
+    },
+    "software_repository": {
+      "url": "https://github.com/Genentech/perturbmatch",
+      "commit": "dd97d287253c84a2d35f326462e36e0b498ee059",
+      "version": "0.1.0",
+      "license": "MIT"
+    }
+  },
+  "assets": {
+    "geo_family_soft": {
+      "group": "metadata",
+      "filename": "GSE337988_family.soft.gz",
+      "local_path": "metadata/GSE337988_family.soft.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE337nnn/GSE337988/soft/GSE337988_family.soft.gz",
+      "size_bytes": 10047,
+      "sha256": "2d5243b5f32e1dc6e0bbc6f3d8f5f78447a316103842c69724a83c2515a04561"
+    },
+    "geo_file_inventory": {
+      "group": "metadata",
+      "filename": "filelist.txt",
+      "local_path": "metadata/filelist.txt",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE337nnn/GSE337988/suppl/filelist.txt",
+      "size_bytes": 26662,
+      "sha256": "d7e25e183ccfb62e8d06e08bc321a7944c223d9999b70356e7346465471f2de1"
+    },
+    "scaled_crispr_library": {
+      "group": "metadata",
+      "filename": "GSE337988_NGS6475_crispr_feature_barcode_MENGNTCUPDATE.csv.gz",
+      "local_path": "metadata/GSE337988_NGS6475_crispr_feature_barcode_MENGNTCUPDATE.csv.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE337nnn/GSE337988/suppl/GSE337988_NGS6475_crispr_feature_barcode_MENGNTCUPDATE.csv.gz",
+      "size_bytes": 224078,
+      "sha256": "ffc3aa664f75f5687a8be45790f91d6e671cac9b2b80a89b652f1e44d883d10a"
+    },
+    "low1_lfc_matrix": {
+      "group": "large_candidate",
+      "filename": "GSE337988_sublib2_de_matrices_lfc_matrix_Low1.csv.gz",
+      "local_path": null,
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE337nnn/GSE337988/suppl/GSE337988_sublib2_de_matrices_lfc_matrix_Low1.csv.gz",
+      "size_bytes": 155201822,
+      "last_modified_http": "Tue, 30 Jun 2026 21:16:28 GMT",
+      "sha256": null,
+      "sha256_status": "not_publicly_discoverable_without_full_transfer",
+      "download_authorized": false,
+      "bounded_header_probe_bytes": 131072,
+      "header_line_bytes": 62617,
+      "header_sha256": "de441b374d2f020f67993fa36922e2195fb34e8de82e885c5091b601a0a878a4",
+      "target_label_count": 6451,
+      "target_labels_sha256": "d49fb70eb8a6c9c39f5ff72a86ca71fcf47cb66a507b8d1b1d5ed7804b4d3a0f"
+    },
+    "low2_lfc_matrix": {
+      "group": "large_candidate",
+      "filename": "GSE337988_sublib2_de_matrices_lfc_matrix_Low2.csv.gz",
+      "local_path": null,
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE337nnn/GSE337988/suppl/GSE337988_sublib2_de_matrices_lfc_matrix_Low2.csv.gz",
+      "size_bytes": 155251513,
+      "last_modified_http": "Tue, 30 Jun 2026 21:16:28 GMT",
+      "sha256": null,
+      "sha256_status": "not_publicly_discoverable_without_full_transfer",
+      "download_authorized": false,
+      "bounded_header_probe_bytes": 131072,
+      "header_line_bytes": 62617,
+      "header_sha256": "de441b374d2f020f67993fa36922e2195fb34e8de82e885c5091b601a0a878a4",
+      "target_label_count": 6451,
+      "target_labels_sha256": "d49fb70eb8a6c9c39f5ff72a86ca71fcf47cb66a507b8d1b1d5ed7804b4d3a0f"
+    },
+    "geo_raw_archive": {
+      "group": "denied_large",
+      "filename": "GSE337988_RAW.tar",
+      "local_path": null,
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE337nnn/GSE337988/suppl/GSE337988_RAW.tar",
+      "size_bytes": 26495651840,
+      "last_modified_http": "Tue, 28 Jul 2026 14:10:43 GMT",
+      "sha256": null,
+      "download_authorized": false
+    }
+  },
+  "derived_metadata": {
+    "target_labels": {
+      "path": "metadata/lfc_target_labels.txt",
+      "size_bytes": 62612,
+      "row_count": 6451,
+      "sha256": "d49fb70eb8a6c9c39f5ff72a86ca71fcf47cb66a507b8d1b1d5ed7804b4d3a0f",
+      "derivation": "Identical first CSV row from bounded 128 KiB HTTP range probes of Low1 and Low2, excluding the leading gene field."
+    }
+  },
+  "local_axes": {
+    "vcc_2026_panel": {
+      "path": "data/challenge/pert_counts.csv",
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+      "row_count": 300,
+      "column": "target_gene"
+    }
+  },
+  "expected_audit": {
+    "geo_sample_count": 48,
+    "raw_archive_size_bytes": 26495651840,
+    "guide_library_rows": 23480,
+    "guide_library_unique_labels": 23480,
+    "guide_library_promoter_labels": 6459,
+    "lfc_target_labels": 6451,
+    "lfc_headers_identical": true,
+    "lfc_unique_target_labels": 6451,
+    "lfc_non_ntc_target_labels": 5955,
+    "lfc_unique_non_ntc_gene_prefixes": 4954,
+    "vcc_panel_gene_overlap": 67,
+    "vcc_panel_promoter_label_overlap": 71,
+    "vcc_panel_overlap_genes": [
+      "AGO1",
+      "AKT2",
+      "ALG12",
+      "API5",
+      "BCL6",
+      "BRPF1",
+      "C5orf22",
+      "CAPRIN2",
+      "CARM1",
+      "CHD3",
+      "COIL",
+      "CYTH2",
+      "DCP2",
+      "DEK",
+      "DTNBP1",
+      "ELK1",
+      "EPC2",
+      "EZH2",
+      "FCGRT",
+      "GTF2IRD1",
+      "HMGXB3",
+      "KMT2A",
+      "LDLR",
+      "LENG1",
+      "LPCAT3",
+      "MAP2K2",
+      "MAPK7",
+      "MSANTD4",
+      "MTF1",
+      "MYPOP",
+      "NAIF1",
+      "PAN2",
+      "PARP3",
+      "PBLD",
+      "PHF19",
+      "PHF23",
+      "PIN1",
+      "PPIF",
+      "PRMT7",
+      "PRNP",
+      "PSKH1",
+      "RABEP2",
+      "RBM26",
+      "RFK",
+      "RNF141",
+      "SEMA4F",
+      "SH2D3A",
+      "SMARCA5",
+      "STT3A",
+      "TARBP2",
+      "THAP7",
+      "TRIM35",
+      "TTBK2",
+      "UPF3B",
+      "UROS",
+      "ZBTB34",
+      "ZC3HAV1",
+      "ZHX3",
+      "ZKSCAN2",
+      "ZKSCAN3",
+      "ZNF219",
+      "ZNF25",
+      "ZNF251",
+      "ZNF324",
+      "ZNF410",
+      "ZNF821",
+      "ZRANB3"
+    ],
+    "vcc_panel_multi_promoter_labels": {
+      "DEK": [
+        "DEK_P1",
+        "DEK_P2"
+      ],
+      "LDLR": [
+        "LDLR_P1",
+        "LDLR_P2"
+      ],
+      "PBLD": [
+        "PBLD_P1",
+        "PBLD_P2"
+      ],
+      "SMARCA5": [
+        "SMARCA5_P1",
+        "SMARCA5_P2"
+      ]
+    }
+  }
+}

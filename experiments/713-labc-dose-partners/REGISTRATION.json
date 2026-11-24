@@ -1,0 +1,58 @@
+{
+ "experiment": "713-labc-dose-partners",
+ "written": "2026-10-16T11:22:38Z (by the clock, before any 713 number exists)",
+ "by": "science session [d80a10]",
+ "purpose": "Held-out Arc-drawn prices (LABC) for the dose partners of 705's rider and 707's swap, so that a 10-19 s2 / 10-20 slot candidate, if a 10-17/18 board read lands at a bin edge, carries the coordinator's required instrument (10-16). LABC is ONE Arc-drawn panel (A/B/C's): a dose read here gives direction and rough size on an Arc-like panel; the 10-22 day doses come from 708's folds on D/E/F's panel.",
+ "surface": "LABC (A/B/C's 300 targets, def rules, day-recipe operators = ABCp's day fits; experiments/800-checker/wear/LABC-PROTOCOL.md)",
+ "dumps": {
+  "k562_gwps": "eba095c118837ae9a881f65d8dca1906d491733ac7d200b0427757963e0d20d3",
+  "orion_hct116": "e97f1fbd6bd86626533bf733c5d69aef3de2f5bf199943c03c0bc7e90dfb8337",
+  "orion_hek293t": "34ecd80e26bff4dc147de8d23326181898d3d0bb17381758134ed4638e60fb95"
+ },
+ "scorer": {
+  "path": "experiments/708-def-panel-repricing/score708.py",
+  "sha256": "117a1d7310bb203638809ca551b381a79558996974d5a184efc5a4900c0d7586",
+  "driver": "experiments/713-labc-dose-partners/price713.py",
+  "driver_sha256": "e11b0c7bb86307653d8fed276b572346aa7ed8985e3ec991d5212c30f1b10a8f",
+  "arithmetic": "score708's exactly (Fold, zsrc_fold, unit_mean, swap_fin, price imported): incumbent wp = percentile cap P 96.647 on the fold's LODO-V1 key, q 1.75 row sharpening on each frame's gate, minnorm render, ballast KMAX 16; price 522 units = 0.0710*(X_arm/X_inc - 1) + 0.1245*(pds_arm - pds_inc), k 1, ret 1; mean over the 3 folds",
+  "known_answers": [
+   "KA0: the incumbent's cos_agg and pds per fold == the lab's stored ka-labc/meta 'pct' arm (|d| < 1e-12)",
+   "KA1: the price recomputed from score708's per-target arrays == score708's summary price (|d| < 1e-12) for every row"
+  ]
+ },
+ "configs": [
+  {
+   "name": "s_b0.25",
+   "family": "707 swap",
+   "role": "reference dose (707's preregistered arm; already counted in the family's N on LABC by the lab, there vs pct+P2g)",
+   "definition": "score708 arm s: fin's non-panel rows of the top z_src tertile (targets with source rows) blended toward the sources' unit mean U at beta 0.25, norm-preserving; weights wp"
+  },
+  {
+   "name": "s_b0.125",
+   "family": "707 swap",
+   "role": "partner",
+   "definition": "as s_b0.25 with beta 0.125"
+  },
+  {
+   "name": "s_b0.5",
+   "family": "707 swap",
+   "role": "partner",
+   "definition": "as s_b0.25 with beta 0.5"
+  },
+  {
+   "name": "r_t0.25",
+   "family": "705 theta rider",
+   "role": "reference dose (705's arm; already counted on LABC by the lab, there vs pct+P2g)",
+   "definition": "score708 arm r: w' = max(0.5, wp * exp(0.25 z)) above the floor (wp <= 0.5 stays), z = mean over the fold's two source donors of crank(robust strength)"
+  },
+  {
+   "name": "r_t0.5",
+   "family": "705 theta rider",
+   "role": "partner",
+   "definition": "as r_t0.25 with theta 0.5"
+  }
+ ],
+ "ci": "paired target bootstrap within folds (same resampled targets for arm, reference and incumbent), 4,000 draws, seed 713; statistic = mean over the 3 folds",
+ "decision_rule": "A partner (s_b0.125, s_b0.5, r_t0.5) becomes a slot CANDIDATE only if ALL hold: (i) its paired difference against its family's reference dose (partner - reference, 522 units) is > 0 on 3/3 folds; (ii) the best-of-N-corrected lower bound of that paired difference (the lab's stats800.best_of_n with the family N the lab logs) is > 0; (iii) the family's 10-17/18 A/B/C board read is not HARM (705: not HARM; 707: not HARM). Otherwise the reference dose stands and the family sends no candidate. No configuration is added, dropped or re-defined after a number exists; anything else read is report-only.",
+ "tries_note": "Starting Arc-drawn N (lab, 10-16): 707 swap 3, 705 theta 3. This registration adds 2 partners to 707 (N 5) and 1 to 705 (N 4); the two references are re-reads of counted configurations in another incumbent form (the lab decides whether they count)."
+}

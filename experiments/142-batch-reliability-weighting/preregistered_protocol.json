@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date_preregistered": "2026-08-30",
+  "status": "written_before_source_expression_scan_or_613_target_development_outcome_access",
+  "hypothesis": "A production donor's response for a target is more transferable when that target remains identifiable across disjoint groups of that donor's experimental batches.",
+  "candidate_scope": {
+    "changes_only_target_level_donor_weights": true,
+    "donor_effect_coordinates_unchanged": true,
+    "controls_unchanged": true,
+    "signs_unchanged": true,
+    "whitening_unchanged": true,
+    "perturbmatch_unchanged": true,
+    "cd4_unchanged": true,
+    "target_dropping": false,
+    "hard_donor_selection": false
+  },
+  "parent_axes": {
+    "development_targets": {
+      "path": "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/selection_targets.txt",
+      "count": 613,
+      "sha256": "74a070a538455ffc2a528dae3094d21e047905463779b2a5206d681f5ca6ebb5"
+    },
+    "response_genes": {
+      "path": "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/response_genes.txt",
+      "count": 4992,
+      "sha256": "24743754eead5b8ddd81634bd12feac1df431eb2b9581197755b75c4c90949c8",
+      "excludes_all_300_vcc_targets": true,
+      "excludes_all_1023_experiment_132_gallery_targets": true
+    },
+    "sealed_410_effect_values_accessed": false
+  },
+  "production_sources": {
+    "donors": [
+      "k562_gwps",
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "metadata": "Reuse Experiment 140 source-preparation-v5 target-by-batch cell and total-UMI matrices. X-Atlas Orion defines sample as GEM batch, and each Batch*.parquet is one such batch rather than an arbitrary row shard.",
+    "expression": "Stream the raw production source once per donor and retain only the 613 frozen targets and 4,992 response genes. Orion duplicate gene symbols follow Experiment 140's last-occurrence coordinate rule.",
+    "one_donor_at_a_time": true,
+    "peak_rss_limit_gib": 18,
+    "k562": {
+      "raw": "data/external/scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+      "target_label": "obs.perturbation",
+      "batch": "obs.batch",
+      "total_umi": "obs.ncounts"
+    },
+    "orion": {
+      "raw": "data/external/orion/data/{HCT116,HEK293T}_Batch*.parquet",
+      "eligibility": "pass_guide_filter == 1",
+      "target_label": "gene_target",
+      "batch": "one Batch*.parquet file",
+      "total_umi": "total_counts",
+      "scan_batch_rows": 256,
+      "whole_parquet_materialization": false,
+      "reader": "polars.scan_parquet(...).collect_batches(engine='streaming')",
+      "parallel": "none",
+      "low_memory": true,
+      "rechunk": false,
+      "cache": false
+    }
+  },
+  "batch_splits": {
+    "pairs": 8,
+    "unit": "one donor-wide whole-batch partition shared by every target in a split",
+    "assignment": "For each donor and split seed, generate 512 deterministic candidate partitions by ordering all occupied donor batches from a SHA-256-derived seed, greedily assigning each whole batch against donor-wide total UMI, and applying deterministic improving moves/swaps. Choose the candidate that lexicographically maximizes supported targets and then target-level minimum, 1st-percentile, 5th-percentile, and median UMI balance. Apply the selected partition unchanged to every target in the gallery.",
+    "candidate_search_per_split": 512,
+    "seeds": [
+      142202610,
+      142202611,
+      142202612,
+      142202613,
+      142202614,
+      142202615,
+      142202616,
+      142202617
+    ],
+    "minimum_cells_per_half": 5,
+    "minimum_occupied_batches_per_half": 4,
+    "minimum_valid_pairs_per_target": 6,
+    "all_eight_fraction_minimum": 0.95,
+    "minimum_six_fraction": 1.0,
+    "all_eight_donor_wide_partitions_must_be_distinct": true
+  },
+  "half_effect": {
+    "pseudobulk": "log1p(50000 * response_gene_count_sum / all_gene_total_umi)",
+    "centering": "Subtract each split-half's source-wide mean target profile over nonzero-support frozen targets.",
+    "control_profile_subtraction": false,
+    "translation_invariant": true,
+    "split_rows_enter_whitener_fit": false,
+    "pooled_reconstruction_gate": "Before accepting a donor build, the pooled raw log-pseudobulk must reproduce frozen donor delta plus b_ctrl on the same target/response coordinates within max absolute error 2e-5."
+  },
+  "fixed_operators": {
+    "source": "experiments/140-batch-matched-controls/work/identity-reproduction-v5",
+    "gamma": 0.65,
+    "roles": {
+      "k562_gwps": [
+        "non_k562"
+      ],
+      "orion_hct116": [
+        "non_k562",
+        "k562"
+      ],
+      "orion_hek293t": [
+        "non_k562",
+        "k562"
+      ]
+    },
+    "orion_rule": "Both applicable operator roles must pass independently.",
+    "refit": false
+  },
+  "reliability": {
+    "retrieval": "Bidirectional split-half complete-gallery cosine PDS with exact midranks.",
+    "directional_values_per_target": 16,
+    "aggregation": "numpy linear lower quartile over available directional values",
+    "minimum_directional_values": 12,
+    "absolute_gate": "For each target, recompute lower-quartile reliability under every frozen matched target-pairing null. A target survives only when observed reliability is strictly above its own numpy-linear null p95.",
+    "within_donor_transform": "Null-level or unsupported targets receive z=0. Surviving targets alone receive exact average-tie midranks mapped linearly to [-1,1]."
+  },
+  "candidate_weights": {
+    "eta": [
+      0.0,
+      0.25,
+      0.5
+    ],
+    "raw": "1 + eta * z_dt",
+    "normalization": "Normalize across available donors for each target and outer operator group.",
+    "identity": "eta=0 is exact equal weighting among available donors.",
+    "k562_slot": "Weight the complete existing K562 slot after exact 50:50 PerturbMatch construction; PerturbMatch is not an independent replicate."
+  },
+  "ancestry_controls": {
+    "target_cell_count": "Apply the identical eta grid to within-donor midrank z of total target-cell count.",
+    "target_total_umi": "Apply the identical eta grid to within-donor midrank z of total target UMI.",
+    "occupied_batch_count": "Apply the identical eta grid to within-donor midrank z of occupied-batch count.",
+    "pooled_effect_norm": "Apply the identical eta grid to within-donor midrank z of the pooled source-target profile norm under the same fixed operator.",
+    "promotable": false
+  },
+  "source_only_pre_gate": {
+    "rank_stability": {
+      "statistic": "Spearman correlation between per-target lower-quartile reliability from split pairs 1-4 and split pairs 5-8.",
+      "bootstrap": "20000 individual-target resamples with replacement; rerank both variables independently inside every resample before computing Spearman correlation.",
+      "seed": 142202620,
+      "lower_95_strictly_positive": true
+    },
+    "target_pairing_null": {
+      "draws": 49,
+      "seed": 142202621,
+      "features": [
+        "rank-scaled log1p total target-cell count",
+        "rank-scaled occupied-batch count",
+        "rank-scaled log1p fixed-operator pooled-effect norm"
+      ],
+      "matching": "Deterministic greedy nearest-feature blocks of nominal size 8; each draw independently deranges target labels within every block.",
+      "observed": "Mean same-target directional split-retrieval PDS.",
+      "global_gate": "Observed strictly exceeds the numpy-linear null 95th percentile.",
+      "target_gate": "Observed lower-quartile reliability for a target must strictly exceed that target's numpy-linear null 95th percentile or its reliability rank is set to zero.",
+      "precision": "Observed and target-level null reliability remain float64 through the strict comparison."
+    },
+    "support": {
+      "fraction_all_8_at_least": 0.95,
+      "fraction_at_least_6": 1.0
+    },
+    "scope": "Every applicable donor/operator role must pass."
+  },
+  "later_development_interface": {
+    "status": "designed_but_not_authorized_or_executed",
+    "authorization_path": "experiments/142-batch-reliability-weighting/DEVELOPMENT_ACCESS_AUTHORIZATION.v1.json",
+    "authorization_created_by_this_experiment": false,
+    "requires_source_gate_pass": true,
+    "requires_exact_source_gate_manifest_sha256": true,
+    "frozen_targets": 613,
+    "folds": 5,
+    "folds_and_blocks": "Reuse Experiment 140 plan-arrays.npz byte-for-byte through Experiment 142 work/preregistered-plan-v2/plan-arrays.npz.",
+    "biological_exclusions": {
+      "k562": "Exclude K562-GWPS, K562-essential, PerturbMatch, and K562 reliability.",
+      "rpe1": "Use K562 slot, HCT116 and HEK293T only.",
+      "jurkat": "Use K562 slot, HCT116 and HEK293T only."
+    },
+    "inner_selection": "Select eta only on inner queries against an inner-only truth gallery.",
+    "held_scoring": "Held queries use the complete 613-target gallery.",
+    "donor_assignment_null": {
+      "draws": 49,
+      "seed": 142202622,
+      "construction": "Independently permute the available donor identities within each target while preserving that target's set of reliability values.",
+      "selection": "Every draw repeats nested and full-development eta selection."
+    },
+    "promotion_gates": {
+      "nonidentity_selected": true,
+      "each_biological_family_and_held_fold_pds_delta_min": 0.0,
+      "each_biological_family_and_held_fold_signed_credit_delta_min": 0.0,
+      "macro_pds_delta_min": 0.003,
+      "macro_signed_credit_delta_min": 0.003,
+      "bootstrap_lower_95_positive_both": true,
+      "above_both_null_p95_both": true,
+      "pds_beyond_each_ancestry_control_min": 0.001,
+      "incremental_signed_credit_beyond_controls_min": 0.0,
+      "maximum_positive_gain_concentration": 0.5
+    },
+    "sealed_410_remains_closed": true
+  },
+  "reserved_independent_confirmation": {
+    "status": "metadata_only_reservation_not_part_of_current_preoutcome_work",
+    "requires_frozen_613_candidate": true,
+    "requires_separate_additive_authorization": true,
+    "expression_values_accessed_now": false,
+    "surfaces": {
+      "xu_cao_hek293_crispri": {
+        "path": "data/external/scperturb/XuCao2023.h5ad",
+        "estimated_shared_non_panel_targets": 185,
+        "biological_family": "hek293",
+        "required_exclusions": [
+          "orion_hek293t donor effects",
+          "orion_hek293t reliability",
+          "orion_hek293t donor scaling",
+          "orion_hek293t operator-fit rows"
+        ]
+      },
+      "tian_kampmann_neuron_crispri": {
+        "path": "data/external/scperturb/TianKampmann2021_CRISPRi.h5ad",
+        "estimated_shared_target_range": [
+          141,
+          166
+        ],
+        "biological_family": "neuronal",
+        "required_exclusions": []
+      }
+    },
+    "does_not_block_current_source_only_implementation": true
+  },
+  "provenance": {
+    "atomic_no_overwrite": true,
+    "superseded_plan_preserved": "work/preregistered-plan-v1 was rejected before source expression access because it used target-specific rather than donor-wide partitions.",
+    "prefreeze_amendment": "PREFREEZE_AMENDMENT_001.json",
+    "numerical_repair_amendment": "PREFREEZE_AMENDMENT_002.json",
+    "control_plane_repair_amendment": "PREFREEZE_AMENDMENT_003.json",
+    "bounded_memory_repair_amendment": "PREFREEZE_AMENDMENT_004.json",
+    "explicit_artifact_timestamp_amendment": "PREFREEZE_AMENDMENT_005.json",
+    "parquet_engine_repair_amendment": "PREFREEZE_AMENDMENT_006.json",
+    "source_only_freeze_authorization": "SOURCE_ONLY_FREEZE_AUTHORIZATION.v6.json",
+    "authorized_freeze_timestamp_enforced": true,
+    "later_artifact_timestamp_override_required": true,
+    "later_artifact_utc_date": "2026-08-31",
+    "atomic_freeze_directory": "work/preoutcome-freeze-v4",
+    "atomic_heavy_stage_directories": [
+      "work/source-build-v4",
+      "work/source-evaluation-v4",
+      "work/source-gate-v4"
+    ],
+    "one_experiment_wide_heavy_stage_lock": true,
+    "implementation_and_plan_hash_binding_before_source_scan": true,
+    "raw_source_hash_revalidation_before_each_donor_scan": true,
+    "artifact_manifests_per_stage": true,
+    "fail_closed": true
+  },
+  "prohibited": {
+    "experiment_132_sealed_410_effect_values": true,
+    "reserved_confirmation_expression_before_candidate_freeze": true,
+    "development_outcomes_without_additive_authorization": true,
+    "split_rows_fit_whitener": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "challenge_build": true,
+    "submission": true,
+    "writes_outside_experiment_142": true
+  }
+}

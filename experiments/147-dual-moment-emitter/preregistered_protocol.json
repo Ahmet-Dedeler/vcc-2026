@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "experiment": "147-dual-moment-emitter",
+  "status": "source_only_preregistered",
+  "provenance": {
+    "user_reported_local_time": "2026-08-31T21:45:00+03:00",
+    "provenance_utc": "2026-08-31T18:45:00+00:00",
+    "host_clock_trusted": false
+  },
+  "inputs": {
+    "incumbent_prediction": "experiments/095-clean-harness/out-h1test/runs/g0.65_q1.0_a1.08_spread0.25/pred.h5ad",
+    "direction_prediction": "experiments/040-union-gamma/out/runs/g0.45_q1.0_a1.08_spread0.25/pred.h5ad",
+    "development_reference": "data/harness/h1-fast.h5ad"
+  },
+  "candidate_family": {
+    "lambdas": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "depth_contrast": 0.5,
+    "low_cells": 200,
+    "high_cells": 200,
+    "within_group_quasi_spread": 0.25,
+    "base_seed": 14700,
+    "column_totals": "exact_incumbent",
+    "row_totals": "exact_balanced_two_depth",
+    "low_group_gene_totals": "bounded_euclidean_projection_with_exact_integer_sum"
+  },
+  "source_only_access": {
+    "prediction_counts": true,
+    "development_obs": true,
+    "development_var": true,
+    "development_control_counts": false,
+    "development_perturbation_counts": false,
+    "cell_eval2": false
+  },
+  "source_only_gate": {
+    "exact_row_margins": true,
+    "exact_column_margins": true,
+    "bit_exact_pseudobulk": true,
+    "integer_nonnegative": true,
+    "max_counts_per_cell": 1000000,
+    "deterministic": true,
+    "median_relative_l1_limits": {
+      "0.25": 0.002,
+      "0.5": 0.005,
+      "1.0": 0.02
+    }
+  },
+  "source_bindings_sha256": {
+    "experiments/147-dual-moment-emitter/README.md": "f0b960eaa355cddaf2c6aa293d1f265ec95b98a13269544adf15e653ecaf3df1",
+    "experiments/147-dual-moment-emitter/dual_moment.py": "89dda8f617261f9b4cfb6ba44cb8ee85db41c3c55adf0e46991be7c5b81e5bcd",
+    "experiments/147-dual-moment-emitter/run_feasibility.py": "f56dd5c5bebbb90e04266e11b7055ab0faac92c5f964c70b72ef9bf2096fa66c",
+    "experiments/147-dual-moment-emitter/run_source_only_guarded.sh": "1d5ae3feb943cb1d3d002c22d4606b2ca01e36f26ad70ccc8d0aac420494133a",
+    "experiments/147-dual-moment-emitter/test_dual_moment.py": "de157287d77d4301b9ed19cd529b88373df859099af20db4faf18a753f705977"
+  },
+  "development_gate": {
+    "raw_pds_exactly_equal": true,
+    "minimum_scaled_avg_gain": 0.002,
+    "nmae_must_improve": true,
+    "fidelity_material_regression_forbidden": true,
+    "reach_material_regression_forbidden": true,
+    "mse_must_not_erase_net_gain": true
+  },
+  "forbidden_actions": [
+    "challenge_build",
+    "challenge_submission",
+    "lambda_retuning_after_truth",
+    "depth_contrast_retuning_after_truth",
+    "parallel_cell_eval2"
+  ]
+}

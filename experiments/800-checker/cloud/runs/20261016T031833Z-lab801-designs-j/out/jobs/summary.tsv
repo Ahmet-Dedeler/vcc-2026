@@ -1,0 +1,25 @@
+1	0	18	3788	bash experiments/801-lab-folds/cloud801.sh verify
+7	0	62	2594656	bash experiments/801-lab-folds/cloud801.sh prep L6
+3	0	73	2593824	bash experiments/801-lab-folds/cloud801.sh prep L2
+4	0	84	2593420	bash experiments/801-lab-folds/cloud801.sh prep L3
+23	0	95	3820056	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L6 k562_gwps
+6	0	95	2592880	bash experiments/801-lab-folds/cloud801.sh prep L5
+24	0	99	4196152	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L6 orion_hct116
+25	0	99	4198380	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L6 orion_hek293t
+11	0	106	3820056	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L2 k562_gwps
+2	0	107	2594052	bash experiments/801-lab-folds/cloud801.sh prep L1
+12	0	110	4194840	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L2 orion_hct116
+13	0	110	4200672	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L2 orion_hek293t
+14	0	116	3820452	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L3 k562_gwps
+5	0	118	2593796	bash experiments/801-lab-folds/cloud801.sh prep L4
+15	0	120	4194816	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L3 orion_hct116
+16	0	120	4199572	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L3 orion_hek293t
+20	0	126	3820448	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L5 k562_gwps
+21	0	130	4196496	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L5 orion_hct116
+22	0	130	4200088	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L5 orion_hek293t
+8	0	136	3819932	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L1 k562_gwps
+9	0	139	4196456	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L1 orion_hct116
+10	0	139	4199588	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L1 orion_hek293t
+17	0	145	3820080	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L4 k562_gwps
+18	0	148	4194860	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L4 orion_hct116
+19	0	149	4199484	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh designs-L L4 orion_hek293t

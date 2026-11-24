@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "experiment": "149-dual-moment-hek293t",
+  "status": "preregistered_source_only",
+  "provenance_utc": "2026-08-31T18:45:00+00:00",
+  "surface": {
+    "name": "Orion HEK293T thinned",
+    "real_harness": "data/harness/orion-hek293t-thinned.h5ad",
+    "safe_metadata": "data/harness/orion-hek293t-thinned.h5ad.meta.json",
+    "targets": 132,
+    "real_cells_per_target": 150,
+    "controls": 18400,
+    "control_expression_rows_allowed_during_build": 18400,
+    "perturbation_expression_forbidden_during_build": true
+  },
+  "model": {
+    "source_donors": [
+      "k562_gwps",
+      "orion_hct116"
+    ],
+    "held_donor": "orion_hek293t",
+    "alpha": 0.982,
+    "perturbmatch_fraction": 0.5,
+    "operator": "essential-pruned held-HEK union operator",
+    "incumbent_gamma": 0.65,
+    "direction_gamma": 0.45,
+    "cd4_fraction": 0.09472706196346517,
+    "panel_coordinates_zero": true
+  },
+  "emission": {
+    "cells_per_target": 400,
+    "min_cpm": 10.0,
+    "mode": "quasi exact-total",
+    "tail_spread": 1.0,
+    "keep_top": 8000,
+    "keep_spread": 0.25,
+    "spread_map": "block",
+    "overdispersion": 4.0,
+    "library_pick_seed": 0,
+    "emission_seed": 1000003,
+    "dual_moment_lambda": 1.0,
+    "depth_contrast": 0.5,
+    "within_group_quasi_spread": 0.25,
+    "dual_moment_seed": 14700
+  },
+  "source_only_gate": {
+    "experiment_104_unpruned_gamma065_cd4_solved_exact": true,
+    "experiment_106_pruned_gamma065_cd4_f005_exact": true,
+    "all_target_column_totals_exact": true,
+    "all_target_pseudobulks_exact": true,
+    "real_harness_control_rows_read": 18400,
+    "real_harness_perturbation_rows_read": 0
+  },
+  "confirmation_gate": {
+    "all_per_target_pds_exact": true,
+    "official_anchor_projected_avg_delta_min": 0.004,
+    "raw_nmae_delta_max": -0.004,
+    "raw_reach_delta_min": 0.01,
+    "raw_fidelity_delta_min": -0.003,
+    "raw_jaccard_delta_min": -0.01,
+    "raw_mse_delta_max": 0.01,
+    "target_bootstrap_95pct_lower_min": 0.0,
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 14900
+  },
+  "builder": {
+    "path": "experiments/149-dual-moment-hek293t/build_predictions.py",
+    "sha256": "a8b84bb6fbce9c9cf2eb712c3e437426dc174f450026b53b074f26f0e512859d"
+  },
+  "source_bindings_sha256": {
+    "experiments/149-dual-moment-hek293t/README.md": "e98004e67868f0338d251bbc04509fef96db68f1cb04a1e30d3bcfb75db8ecf0",
+    "experiments/104-context-heldout-credit-adapter/run.py": "7c0300992db400e5ad6a6e5be2e8d64955f4d00a06ab7d9738f14a8c5ad096dd",
+    "experiments/106-state-baseline/freeze_a14_endpoints.py": "e723fd1445593de97a29183e54b83b3f1159edc2649b3bd4ce2a6b8a7300065f",
+    "experiments/062-cd4-post-whiten/run.py": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176",
+    "experiments/064-pm-cd4-composition/run.py": "39d0f5a29731c5633f3d8fd4035a5a9c3a91cbd435780a201059eaa25a36df81",
+    "experiments/100-sign-confidence/run.py": "e47c5cff1671ebe49bc5c65f3af7f599c4e0a54907652f636b14c7143aa1492b",
+    "scripts/make_submission_pm_cd4.py": "7562cf5a16fd751c55ddf248e05f2e4281f907e27be0a5bb9da959d61991b62b",
+    "experiments/147-dual-moment-emitter/dual_moment.py": "89dda8f617261f9b4cfb6ba44cb8ee85db41c3c55adf0e46991be7c5b81e5bcd",
+    "experiments/147-dual-moment-emitter/build_candidates.py": "7ccac4e7fba73be3d69c1d7f4e7343cdbd5e11f3156a4c2125ef005866c699b0",
+    "experiments/104-context-heldout-credit-adapter/work-v2/hek293t/frozen.npz": "5d8d3f560bd772c5bb7c2578157496e237e1afa0d1f74633d8a0d90d317adc27",
+    "experiments/104-context-heldout-credit-adapter/work-v2/hek293t/manifest.json": "24027c5741a840dd4fb9b91270bd9cd832832ae8a90200c55dd2af3acb08cb0b",
+    "experiments/106-state-baseline/work/runs/20260830T064800Z/incumbent-a14/hek293t/frozen.npz": "adf15ea3ea58a7d622d1ddfb3ef851cc868633db51cc4918075ed3eae1d50752",
+    "experiments/106-state-baseline/work/runs/20260830T064800Z/incumbent-a14/hek293t/manifest.json": "4c4fdadbc8e849fc30c8ced317f08789b0b71215dce8ee13814afbe392570f14",
+    "experiments/062-cd4-post-whiten/cloud-output/whiteners/held_orion_hek293t.npz": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1",
+    "experiments/062-cd4-post-whiten/cloud-output/whiteners/held_orion_hek293t.json": "cb22406a7a529380c4348bf636f2532c29a43ab0fc4b00d6f6d98fb5e02360c6",
+    "experiments/106-state-baseline/operators/held_orion_hek293t_pruned.npz": "5684a5b155ba4f5f99d813c8f2ad91d5dda5b4127e16aa028d1963017887c394",
+    "experiments/106-state-baseline/operators/held_orion_hek293t_pruned.json": "f16557d221028b3e31b048f815d3ad1da37863dcdc73b9ad831330a43d77092d",
+    "data/harness/orion-hek293t-thinned.h5ad": "e37f39bb6aae9ce6334f133416b4780ac4226b5a407c4f1a511a5a09ef75d6be",
+    "data/harness/orion-hek293t-thinned.h5ad.meta.json": "2a3949d613854abbe21faf60c7d67ba27c52bec5d6c8eaa0de7f3536f4b2f657",
+    "submissions/a15-cd4f010.vcc.meta.json": "34223442e4e8816bb9be2b1fdfe6a563ed114c17a2893bee0ff603953f84287a",
+    "data/challenge/gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+  },
+  "forbidden_before_source_gate": [
+    "read HEK293T perturbation expression rows",
+    "run cell-eval2",
+    "change any frozen parameter"
+  ],
+  "forbidden_without_later_authorization": [
+    "challenge prediction build",
+    "challenge submission"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "experiment": "085-kolf-pm-gate",
+  "frozen_before_kolf_evaluation": true,
+  "training_truth": {
+    "source": "experiment-064 per-target arm outcomes",
+    "donors": [
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "targets": 221,
+    "kolf_rows": 0
+  },
+  "gate": {
+    "feature": "within-fold percentile rank of 1-cosine(arm_C, arm_D) on the frozen operator axis",
+    "percentile_rank": "(average_rank - 0.5) / n with exact-tie midranks",
+    "development_rank_scope": "separate complete 221-target rank inside each HCT116/HEK293T experiment-064 fold",
+    "production_rank_scope": "all 248 joint K562/PerturbMatch-supported targets inside the complete 300-target VCC panel before KOLF authentication; unsupported targets use sentinel -1 and exact D",
+    "feature_count": 1,
+    "alternative": "C",
+    "comparator": "D",
+    "directions": [
+      "low",
+      "high"
+    ],
+    "quantile_fractions": [
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6
+    ],
+    "identity_fallback": true,
+    "selection": "maximum two-donor macro realized raw-PDS gain among rules nonnegative in both donors",
+    "tie_tolerance": 1e-12,
+    "tie_break": "fewer switches, smaller quantile fraction, then low direction"
+  },
+  "training_gate": {
+    "selected_nonidentity": true,
+    "minimum_macro_raw_pds_delta": 0.0015,
+    "both_donor_deltas_nonnegative": true,
+    "full_selection_joint_target_label_permutations": 5000,
+    "permutation_seed": 8502026,
+    "maximum_one_sided_permutation_p": 0.05,
+    "all_required_before_kolf_open": true
+  },
+  "production_arms": {
+    "targets_built_before_kolf_open": 300,
+    "donors": [
+      "k562_gwps",
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "donor_weights": "equal among donors carrying each target",
+    "alpha": 1.0796,
+    "beta": 0.0,
+    "whitener": "pinned three-donor union operator",
+    "whitener_sha256": "5608e807230dea04f93f5e804ed26e8f7285d9487d16a2791283793ffb80fed3",
+    "gamma": 0.65,
+    "lambda": 0.0,
+    "renormalization": "candidate-specific on-axis preserve",
+    "arm_C": "incumbent main donors plus complete mean3 post-whitening CD4 residual",
+    "arm_D": "arm C with 50:50 PerturbMatch replacement of the K562 slot where jointly supported",
+    "excluded_coordinates": "all 300 VCC panel targets"
+  },
+  "held_truth": {
+    "name": "KOLF2.1J",
+    "role": "truth only",
+    "targets": 273,
+    "gallery": "complete 273-target gallery",
+    "score_genes": 17806,
+    "representation": "decoded raw quantized z-score, centered per gene",
+    "control_used": false,
+    "control_reason": "b_ctrl.npy is an all-ones compatibility placeholder, not an analogous biological control profile",
+    "candidate_count": 1,
+    "retuning": false
+  },
+  "source_clusters": {
+    "input": "complete 300-row production arm-D query on the production whitening-operator axis",
+    "method": "reciprocal-kNN connected components",
+    "reciprocal_k": 5,
+    "minimum_pairwise_cosine": 0.8,
+    "minimum_kolf_represented_clusters": 8,
+    "kolf_rows_or_values_used": false
+  },
+  "one_time_access": {
+    "full_pre_kolf_bundle_uploaded_before_marker": true,
+    "freeze_uploads_use_atomic_no_overwrite_and_sha256_metadata_verification": true,
+    "marker_written_after_pre_kolf_freeze": true,
+    "marker_is_single_global_atomic_no_overwrite_claim": true,
+    "marker_uploaded_and_content_sha256_verified_before_kolf_authentication": true,
+    "failed_or_completed_kolf_open_consumes_evaluation": true
+  },
+  "kolf_promotion_gate": {
+    "minimum_raw_pds_delta": 0.0015,
+    "cluster_bootstrap_replicates": 20000,
+    "cluster_bootstrap_seed": 8512026,
+    "cluster_bootstrap_lower_95_positive": true,
+    "matched_routing_permutations": 20000,
+    "matched_routing_seed": 8522026,
+    "matched_routing_null": "uniformly reallocate the frozen C-route count among PM-supported KOLF targets; unsupported targets remain D",
+    "matched_routing_p_value": "(1 + count(null >= observed)) / (replicates + 1)",
+    "maximum_one_sided_matched_routing_p": 0.05,
+    "both_arms_used_on_pm_supported_targets": true,
+    "unsupported_pm_targets_exact_identity": true,
+    "all_required": true
+  },
+  "forbidden": {
+    "kolf_feature_selection": true,
+    "kolf_model_selection": true,
+    "kolf_threshold_selection": true,
+    "kolf_control_feature": true,
+    "count_emission": true,
+    "cell_eval2": true,
+    "challenge_submission": true
+  }
+}

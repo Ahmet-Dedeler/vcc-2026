@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "experiment": "107-jurkat-high-moi",
+  "date_authorized": "2026-08-30",
+  "status": "final_validation_and_provenance_repair_before_any_held_outcome_access",
+  "decision": {
+    "score_axes_remain_frozen": true,
+    "operator_axes_remain_frozen": true,
+    "operator_missing_score_genes": [
+      "BTBD11"
+    ],
+    "required_policy": "retain_in_score_axis_require_zero_incumbent_and_source",
+    "cross_role_validation": "derive score_indices minus operator_columns and prove exact positive-zero incumbent/source plus bit-exact candidate fallback on every missing coordinate"
+  },
+  "bindings": {
+    "initial_repair_amendment": {
+      "path": "experiments/107-jurkat-high-moi/BTBD11_OPERATOR_SUPPORT_REPAIR.json",
+      "bytes": 2815,
+      "sha256": "c96e662d8bda8842ac6f9cd02c81b93e903ec128a9217343a1d78657053a22f5"
+    },
+    "initial_reseal_implementation": {
+      "path": "experiments/107-jurkat-high-moi/reseal_btbd11_repair.py",
+      "bytes": 14453,
+      "sha256": "f2c29ffeb85e7ffdaa3fdedfc75090234cda4e4ad4814619133b52138e407cad"
+    },
+    "initial_reseal_receipt": {
+      "path": "experiments/107-jurkat-high-moi/work/btbd11-reseal-receipt.json",
+      "bytes": 17732,
+      "sha256": "b46a2d9d6b5f010514fabc1a066b34ef6ca5aa4ce42333886a15320a11ac5ef8"
+    },
+    "parent_binding_reconciliation_receipt": {
+      "path": "experiments/107-jurkat-high-moi/work/btbd11-parent-binding-reconciliation-receipt.json",
+      "bytes": 19379,
+      "sha256": "f5b3919bd613cf182bb4e927b625bea5bb6d9bb2ec202109250253b3e47c4ca1"
+    },
+    "pre_final_top_level_manifest": {
+      "path": "experiments/107-jurkat-high-moi/work/strict-validation-inputs.json",
+      "bytes": 6181,
+      "sha256": "5739c97c3b9273a19a0eef58e5a6823c9232356761768b874df88232ea115bd3"
+    },
+    "final_strict_artifact_builder": {
+      "path": "experiments/107-jurkat-high-moi/strict_artifact_builder.py",
+      "bytes": 43289,
+      "sha256": "4e6d05ee786cbc435387cae89ef762466abe9c01f768e26a2dc2f738619978f1"
+    },
+    "final_strict_validator": {
+      "path": "experiments/107-jurkat-high-moi/strict_nadig_validation.py",
+      "bytes": 123048,
+      "sha256": "6a4d92cce4599b7d60ffcd2a983f924359df8d3696feab9fe5c98c8542ddd2a9"
+    },
+    "final_provenance_reseal_implementation": {
+      "path": "experiments/107-jurkat-high-moi/finalize_btbd11_provenance.py",
+      "bytes": 7387,
+      "sha256": "740c174eef4e6446b622c32f65683cf7c4f4e565c2ce5cc4c9d50f8ad079a2c0"
+    }
+  },
+  "lineage": {
+    "initial_reseal_receipt_precedes_parent_binding_reconciliation": true,
+    "parent_binding_reconciliation_receipt_binds_the_post_initial_reseal_manifests": true,
+    "final_reseal_must_preserve_all_27_npz_files_byte_for_byte": true,
+    "final_role_manifests_must_bind_every_file_in_this_amendment": true
+  },
+  "forbidden": {
+    "open_nadig_delta": true,
+    "open_held_expression_values": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "challenge_submission": true,
+    "commit": true,
+    "push": true
+  }
+}

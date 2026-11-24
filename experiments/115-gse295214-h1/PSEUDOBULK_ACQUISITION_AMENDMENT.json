@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "experiment": "115-gse295214-h1",
+  "dataset": "GSE295214",
+  "date_authorized": "2026-08-30",
+  "status": "pseudobulk_download_only_authorized",
+  "parent_manifest": {
+    "path": "experiments/115-gse295214-h1/SOURCE_MANIFEST.json",
+    "sha256": "cd57ac5692ce3f3e472067e37226b8f2a786a8f8b0cf271ab08d0915f7169050"
+  },
+  "authorization": {
+    "asset_name": "public_pseudobulk_database",
+    "download_public_pseudobulk_database": true,
+    "download_geo_raw_archive": false,
+    "confirmation_token": "I_CONFIRM_GSE295214_PSEUDOBULK_DOWNLOAD",
+    "max_download_bytes": 4425260319
+  },
+  "asset_binding": {
+    "repository": "xingjiepan/SCMG_data",
+    "repository_revision": "1d3f28d966772dcf75870beac052923efdc078c5",
+    "path": "data/pseudo_bulk_perturbation_database.h5ad",
+    "huggingface_file_oid": "5b49230eb742fb17a278f660ca97e6e4e3c9a71a",
+    "huggingface_lfs_oid_sha256": "0754d6206fe045744dfd9b21eb37c8e3435152c76b158b9810a84c64a029c0ac",
+    "huggingface_file_introducing_commit": "6c8ede815030c7672e960be42a36781b20bc830c",
+    "size_bytes": 4425260319
+  },
+  "source_semantics": {
+    "analysis_repository": "xingjiepan/SCMG_scripts",
+    "analysis_commit": "aa848b9d517071d27b141e058e9bdae1966a869f",
+    "pseudobulk_notebook_path": "manuscript2025/hESC_genome_scale_pert_seq_analysis/basic_perturb_seq_analysis/generate_pseudo_bulk.ipynb",
+    "pseudobulk_notebook_sha256": "1b57480326b7605bf2f7f1abd540405f7d127fa1a557cc0eec0c3bae7e801f74",
+    "effect_representation": "log1p(CPM10000_perturbed)-log1p(CPM10000_control)",
+    "required_layers": [
+      "control",
+      "measure_mask"
+    ],
+    "author_produced_derived_artifact": true,
+    "byte_reproduction_from_public_notebooks_claimed": false
+  },
+  "allowed_actions_after_download": [
+    "verify_size_and_sha256",
+    "inspect_h5ad_schema",
+    "extract_Pan2025_hESC_rows",
+    "convert_author_effects_to_project_TS50000_space",
+    "write_hash_pinned_compact_source_donor"
+  ],
+  "forbidden_actions": {
+    "open_vcc_held_perturbation_truth": true,
+    "model_fitting_before_compact_source_freeze": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "challenge_submission": true,
+    "commit": true,
+    "push": true
+  }
+}

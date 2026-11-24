@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "experiment": "110-state-disagreement-arbitration",
+  "date_preregistered": "2026-08-30",
+  "status": "preregistered_before_experiment_106_held_results",
+  "checkpoint": {
+    "source_experiment": "106-state-baseline",
+    "required_step": 20000,
+    "required_name": "last.ckpt",
+    "best_ckpt_forbidden": true
+  },
+  "hypothesis": "A sparse prediction-only gate can identify target-by-gene sign disagreements where STATE is more reliable than a14, improving directional metrics while preserving a14 retrieval geometry.",
+  "development_contexts": [
+    "rpe1",
+    "jurkat",
+    "hepg2"
+  ],
+  "development_selection": {
+    "scheme": "leave_one_context_out",
+    "one_identical_configuration_must_win_every_rotation": true,
+    "state_prediction_policy": {
+      "hepg2": "use the main fixed-step checkpoint where HepG2 is the frozen zeroshot test context",
+      "rpe1": "train a separate fixed-step checkpoint with every RPE1 row excluded",
+      "jurkat": "train a separate fixed-step checkpoint with every Jurkat row excluded",
+      "in_context_trained_predictions_forbidden": true
+    },
+    "fit_population": "a14_STATE_sign_disagreements_with_defined_significant_reference_lfc",
+    "equal_total_weight_per_perturbation": true
+  },
+  "features": [
+    "a14_abs_lfc",
+    "state_abs_lfc",
+    "signed_log_magnitude_ratio",
+    "absolute_log_magnitude_ratio",
+    "a14_cross_donor_agreement",
+    "control_log_cpm",
+    "target_level_a14_state_cosine",
+    "state_control_bank_sign_agreement",
+    "state_control_bank_variance"
+  ],
+  "forbidden_features": [
+    "gene_identity",
+    "target_identity",
+    "held_context_identity",
+    "literature_values",
+    "STRING",
+    "regulons"
+  ],
+  "model": {
+    "family": "weighted_ridge_logistic_regression",
+    "ridge_lambda": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "probability_threshold": [
+      0.6,
+      0.7,
+      0.8
+    ],
+    "state_blend_fraction": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "maximum_cosine_distance_from_a14": [
+      0.001,
+      0.003,
+      0.005
+    ],
+    "intercept": true,
+    "feature_standardization": "training_contexts_only"
+  },
+  "state_uncertainty": {
+    "control_banks": 4,
+    "retain_each_bank_prediction": true,
+    "aggregate_policy": "mean_only_after_uncertainty_features_are_frozen"
+  },
+  "coordinate_contract": {
+    "pds_excludes_all_300_vcc_targets": true,
+    "direction_credit_excludes_each_rows_own_target": true,
+    "unsupported_coordinates_equal_a14_exactly": true,
+    "raw_uncentered_truth": true,
+    "complete_gallery_required": true
+  },
+  "nulls": {
+    "within_target_label_permutation_repetitions": 100,
+    "complete_selection_repeated": true,
+    "frozen_before_held_truth": true
+  },
+  "held_evaluation": {
+    "primary": [
+      "h1_test",
+      "orion_hek293t"
+    ],
+    "pds_only_diagnostic": [
+      "orion_hct116"
+    ],
+    "hypothesis_specific_not_pristine": true,
+    "frozen_before_experiment_106_held_results": true
+  },
+  "promotion_gates": {
+    "oracle_directional_credit_headroom_each_primary_minimum": 0.015,
+    "same_configuration_wins_every_development_rotation": true,
+    "learned_macro_directional_credit_delta_minimum": 0.006,
+    "learned_directional_credit_delta_each_primary_minimum": 0.0,
+    "directional_credit_target_bootstrap_lower_95_minimum": 0.0,
+    "top20_weighted_sign_precision_macro_gain_minimum": 0.02,
+    "top20_weighted_sign_precision_each_primary_minimum": 0.0,
+    "raw_pds_delta_each_primary_minimum": -0.001,
+    "raw_pds_macro_delta_minimum": 0.0,
+    "observed_directional_gain_exceeds_all_permutation_nulls": true,
+    "unsupported_fallback_exact": true,
+    "forbidden_coordinate_abs_max": 0.0
+  },
+  "count_level_confirmation": {
+    "authorized_only_after_all_effect_level_gates": true,
+    "run_sequentially": true,
+    "nmae_delta_each_primary_minimum": 0.0,
+    "fidelity_precision_delta_each_primary_minimum": 0.0,
+    "reach_ordering_delta_each_primary_minimum": 0.0,
+    "maximum_absolute_call_count_fraction_change": 0.05
+  },
+  "prohibited": [
+    "using_best_ckpt",
+    "gene_or_target_identity_features",
+    "held_context_tuning",
+    "post_held_refit",
+    "partial_gallery_scoring",
+    "count_level_scoring_before_effect_level_promotion",
+    "challenge_build",
+    "challenge_submission",
+    "commit",
+    "push"
+  ]
+}

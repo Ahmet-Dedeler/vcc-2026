@@ -1,0 +1,76 @@
+{
+  "authorization": {
+    "authorized_action": "held_surface_pds_only_diagnostic",
+    "challenge_build": false,
+    "commit": false,
+    "count_generation": false,
+    "evaluation": true,
+    "held_truth_access": true,
+    "model_fitting": false,
+    "promotion": false,
+    "push": false,
+    "source_candidate_freeze": false,
+    "submission": false
+  },
+  "created_at": "2026-08-30",
+  "experiment": "114-depmap-coessentiality",
+  "files": {
+    "approval_amendment": {
+      "path": "experiments/114-depmap-coessentiality/HELD_SURFACE_EVALUATION_APPROVAL.v1.json",
+      "sha256": "9fd85f9df8cce2d917dcd5844eacccf9ba40fff4d70046a34d68bd018547e72c"
+    },
+    "entrypoint": {
+      "path": "experiments/114-depmap-coessentiality/evaluate_frozen_candidates_v1.py",
+      "sha256": "715ef282758df2c596e82e104a0e1f1e07f28b8a7b3d7a3b7171315a378ea126"
+    },
+    "tests": {
+      "path": "experiments/114-depmap-coessentiality/test_evaluate_frozen_candidates_v1.py",
+      "sha256": "fcadd6bffa5cffa7d126c2547f75de405d7b10b76f434cfc698cf461248d6953"
+    }
+  },
+  "real_execution": {
+    "access_receipt_created": false,
+    "evaluation_executed": false,
+    "held_truth_hashed": false,
+    "held_truth_opened": false,
+    "result_created": false
+  },
+  "schema_version": 1,
+  "sealed_freeze_outputs": {
+    "h1": {
+      "arms.npz": "6f8da350fe2f72e4ec12c655e80fc7d1c46e8dc88a2085261896ca68bf8c86ac",
+      "manifest.json": "e974d7466f14a0ed209da002d462021c6229958ed2d27e909c2dc8284e0cd488",
+      "permutation_nulls.npz": "9fcdc6dbf7daeaec414aa48237f50cbb750b7c53935f6df1ad3583e55a8a94ac"
+    },
+    "orion_hek293t": {
+      "arms.npz": "1d5a1ebc932e1f186798d21346fd40b042d44639fd8241b124d9b3194659c701",
+      "manifest.json": "b27b6bfadc0c2a3e0edfafadded3430fcba2b5e64c6060ddaeb46c312f002ef2",
+      "permutation_nulls.npz": "40a63e432b4cea4357a55ca7da4df8acfe9de30b0e5574b48c479fc5a9ad8843"
+    }
+  },
+  "stage": "held_surface_evaluation_approval_provenance",
+  "surface": {
+    "changed_target_count": 35,
+    "changed_target_ordered_sha256": "e81c113e76a627b4d8d44a6998d33f3fc533ee11e539b413016552a0c35b3587",
+    "diagnostic_only": true,
+    "direction_valid": false,
+    "id": "orion_hek293t_full_outer_holdout",
+    "metric": "raw_uncentered_pds",
+    "promotion_authorized": false
+  },
+  "validation": {
+    "pretruth_audit": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 uv run python experiments/114-depmap-coessentiality/evaluate_frozen_candidates_v1.py audit",
+      "result": "passed_all_frozen_bundles_35_target_mapping_and_100_null_regeneration_without_hashing_or_opening_held_arrays"
+    },
+    "ruff": {
+      "command": "uv run ruff check --no-cache experiments/114-depmap-coessentiality/evaluate_frozen_candidates_v1.py experiments/114-depmap-coessentiality/test_evaluate_frozen_candidates_v1.py",
+      "result": "passed"
+    },
+    "tests": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 uv run --with pytest python -m pytest -q -p no:cacheprovider experiments/114-depmap-coessentiality/test_evaluate_frozen_candidates_v1.py",
+      "result": "8_passed"
+    }
+  },
+  "write_scope": "new_files_only_under_experiments/114-depmap-coessentiality"
+}

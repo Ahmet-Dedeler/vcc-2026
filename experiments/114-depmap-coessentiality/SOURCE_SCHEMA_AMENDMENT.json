@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "experiment": "114-depmap-coessentiality",
+  "date_amended": "2026-08-30",
+  "status": "frozen_after_source_download_before_feature_construction_or_held_truth_access",
+  "reason": "The hash-pinned official DepMap Public 24Q4 file contains 17,916 unique SYMBOL (ENTREZ) gene columns, not the preregistered 17,289. The source identity, byte count, MD5, and SHA-256 all passed before this header-only schema discrepancy was observed.",
+  "source_manifest": {
+    "path": "experiments/114-depmap-coessentiality/SOURCE_MANIFEST.json",
+    "sha256": "5834bcd29a7e31b23aaafdcd02a5f56f509e06c87ad1fb0c2568df40510a5497",
+    "superseded_field": "depmap.expected_matrix.gene_columns",
+    "superseded_value": 17289
+  },
+  "acquisition_protocol_sha256": "c1b7241a1423affe334c4bd52b2c0c730ade6925c0f7249b5e86eb0da2feac27",
+  "source_receipt": {
+    "path": "experiments/114-depmap-coessentiality/work/source-features/source-receipt.json",
+    "sha256": "ff33216dd9997026e0cfb756b2139f80724ed4d03fbaa75b283048e488e8330c"
+  },
+  "source_file": {
+    "path": "experiments/114-depmap-coessentiality/work/source-features/CRISPRGeneEffect.csv",
+    "bytes": 428678699,
+    "md5": "6edf7ade09b9b34199210b559d4745d3",
+    "sha256": "3d8f3ec6dbf2db7ff834b79b508622ec0b226f3518003fe96ecf5a4fcf167e3b"
+  },
+  "header": {
+    "bytes": 254613,
+    "sha256": "1a72fa781f9514231b0631a8bc1ee7199659224c553f8084bbfb848e9e92fa1e",
+    "index_column_label": "",
+    "gene_columns": 17916,
+    "unique_symbol_prefixes": 17916,
+    "all_gene_labels_match_symbol_entrez_shape": true
+  },
+  "rows_cell_lines": 1178,
+  "held_truth_opened": false,
+  "candidate_construction_started": false,
+  "feature_construction_started": false
+}

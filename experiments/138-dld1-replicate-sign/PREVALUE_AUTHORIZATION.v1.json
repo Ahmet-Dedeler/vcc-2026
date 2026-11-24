@@ -1,0 +1,203 @@
+{
+  "cell_eval2_authorized": false,
+  "commit_or_push_authorized": false,
+  "counts_or_submission_authorized": false,
+  "created_before_development_or_test_outcome_access": true,
+  "created_utc": "2026-08-30T20:33:54.768100+00:00",
+  "development_access_authorized": true,
+  "dld1_manifest_sha256": "c592e2ec51cb56e7df085224b3ff75d8735ce87280683fd0967135472e22be79",
+  "experiment": "138-dld1-replicate-sign",
+  "implementation": {
+    "experiments/138-dld1-replicate-sign/README.md": "146e5abd3c7bf7445dde704ea265e70f098af6191bfd2ee80dfc8ae1f3eb80e9",
+    "experiments/138-dld1-replicate-sign/preregistered_protocol.json": "717a247631426665a151a97d99737d0fe0da6e27cb0e784ab76145e8322c9445",
+    "experiments/138-dld1-replicate-sign/run.py": "89dc233d3f86760e7312290c1b39db16f5ea45d6346ac515ca66a5d3afc86472",
+    "experiments/138-dld1-replicate-sign/test_run.py": "59fe0564d08bc2e5250e5c523038eb2eacb51f37345e58210fd3ed295183ce43"
+  },
+  "inputs": {
+    "data/challenge/pert_counts.csv": {
+      "bytes": 1906,
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    },
+    "data/donors/k562_essential/delta.npy": {
+      "bytes": 69223420,
+      "sha256": "4daf73cb932fdb089857c8629a70e83d8d3090570aa1f7d678c831b620ea281b"
+    },
+    "data/donors/k562_essential/genes.txt": {
+      "bytes": 55392,
+      "sha256": "7f1617ef778eb0a51a2b7998d42bc78ce1c58f6fdf5e08f2b8aa196d90c819d7"
+    },
+    "data/donors/k562_essential/perts.txt": {
+      "bytes": 12442,
+      "sha256": "b1e5279534eb240f0f3487f0814d379e05b12799b21f6cb3818f5c7f55557e2d"
+    },
+    "data/donors/k562_gwps/delta.npy": {
+      "bytes": 322892832,
+      "sha256": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9"
+    },
+    "data/donors/k562_gwps/genes.txt": {
+      "bytes": 53095,
+      "sha256": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba"
+    },
+    "data/donors/k562_gwps/perts.txt": {
+      "bytes": 62001,
+      "sha256": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec"
+    },
+    "data/donors/nadig_jurkat/delta.npy": {
+      "bytes": 80639608,
+      "sha256": "1fa16024c2d7115fc4b7c06f0ab7d9afe8ba6ebd0ae6dcef62c4955636e29129"
+    },
+    "data/donors/nadig_jurkat/genes.txt": {
+      "bytes": 57301,
+      "sha256": "3071f4366db6896b2dac2cb0d59fbfff18f89840f021d556e42ccee083c39830"
+    },
+    "data/donors/nadig_jurkat/perts.txt": {
+      "bytes": 14036,
+      "sha256": "f5a5c1bbbbdf97bcedb789277b13b0901447c28a5f091d798c37a93ef86197d7"
+    },
+    "data/donors/orion_hct116/delta.npy": {
+      "bytes": 2743651336,
+      "sha256": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33"
+    },
+    "data/donors/orion_hct116/genes.txt": {
+      "bytes": 392143,
+      "sha256": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e"
+    },
+    "data/donors/orion_hct116/perts.txt": {
+      "bytes": 113514,
+      "sha256": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8"
+    },
+    "data/donors/orion_hek293t/delta.npy": {
+      "bytes": 2776080376,
+      "sha256": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b"
+    },
+    "data/donors/orion_hek293t/genes.txt": {
+      "bytes": 392143,
+      "sha256": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e"
+    },
+    "data/donors/orion_hek293t/perts.txt": {
+      "bytes": 114878,
+      "sha256": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547"
+    },
+    "data/donors/rpe1/delta.npy": {
+      "bytes": 77131312,
+      "sha256": "253cc16e51f4635f23e8e597d91bd38a84162a1102486d4a5764c48c379c2b4a"
+    },
+    "data/donors/rpe1/genes.txt": {
+      "bytes": 55862,
+      "sha256": "ac7c7f7b141a74004a5363b2e1aba52f5769c02ea769d9a5b72fdb5eacdbd2f0"
+    },
+    "data/donors/rpe1/perts.txt": {
+      "bytes": 13617,
+      "sha256": "4377d2dc2fd57c523d6632416ca5b9f9e7c192192e32b0eebd91a84fabab8c67"
+    },
+    "experiments/114-depmap-coessentiality/work/source-features/depmap-features.npz": {
+      "bytes": 78072335,
+      "sha256": "7f42b585f788db95cdc345d44b44926bd76ce0fc5ae94c544fd2f6929b9ddc51"
+    },
+    "experiments/114-depmap-coessentiality/work/source-features/feature-receipt.json": {
+      "bytes": 1557,
+      "sha256": "6e01f6daa6bb39203d8178ea693e39caad6246fbe96fa38dbc18d25deadd7b7b"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/artifact-manifest.json": {
+      "bytes": 2025,
+      "sha256": "773895e0dcff2b6ae4aa9db22f98cd1376315a62b1a7cd193ef559330cf25cd2"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/delta.npy": {
+      "bytes": 174506856,
+      "sha256": "d0fa6555f9a62ce503d2ad55c8bfda954322657b52dcd48a24e29c330e718c7a"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/genes.txt": {
+      "bytes": 119285,
+      "sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/measured_mask.npy": {
+      "bytes": 43626810,
+      "sha256": "da468865f861be0714037c33357b93b9f747351f7478866e6e0dd6dff9d1ebcb"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/perts.txt": {
+      "bytes": 14572,
+      "sha256": "7060076272d411d4ee00b898cc26eedcb1eaaac5f5e94e2c60f3b45978320747"
+    },
+    "experiments/116-dld1-lowmoi/work/compact-source-v1/artifact-manifest.json": {
+      "bytes": 7431,
+      "sha256": "c592e2ec51cb56e7df085224b3ff75d8735ce87280683fd0967135472e22be79"
+    },
+    "experiments/116-dld1-lowmoi/work/compact-source-v1/canonical_genes.txt": {
+      "bytes": 119285,
+      "sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723"
+    },
+    "experiments/116-dld1-lowmoi/work/compact-source-v1/target_symbols.txt": {
+      "bytes": 30251,
+      "sha256": "db4847da3fd2312d66bc7e4808dcea597ed56af3fb2dee4bb91d8f25a801867d"
+    },
+    "experiments/116-dld1-lowmoi/work/compact-source-v1/transfer_lfc_low1.npy": {
+      "bytes": 349532508,
+      "sha256": "9eb958b76556d6f25aa94c6989b965b0ee895eba69a6cdb73b3e25dfc1ea7f6c"
+    },
+    "experiments/116-dld1-lowmoi/work/compact-source-v1/transfer_lfc_low2.npy": {
+      "bytes": 349532508,
+      "sha256": "c72b095bf12b3a20cb7d4a6d8bffaf1e3e47b2ca5d1e656779f1699876368533"
+    },
+    "experiments/116-dld1-lowmoi/work/compact-source-v1/transfer_measured_low1.npy": {
+      "bytes": 87383223,
+      "sha256": "8c7019eac573af5b5ac05865c427b8f2e7f4be3447821ebb09c20c97f0f7da64"
+    },
+    "experiments/116-dld1-lowmoi/work/compact-source-v1/transfer_measured_low2.npy": {
+      "bytes": 87383223,
+      "sha256": "8c7019eac573af5b5ac05865c427b8f2e7f4be3447821ebb09c20c97f0f7da64"
+    },
+    "experiments/132-response-decomposition-ridge/SOURCE_ONLY_AUTHORIZATION.v2.json": {
+      "bytes": 7124,
+      "sha256": "9bca6e620359e44b5440d0b8588412f40f274304ae67d9f55fd7e7d03341e197"
+    },
+    "experiments/132-response-decomposition-ridge/run.py": {
+      "bytes": 41560,
+      "sha256": "e78e079fc3b4a715e8b412b0a48bfe44a2f3f6cfcadb8a65a789351c53877778"
+    },
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/all_targets.txt": {
+      "bytes": 6254,
+      "sha256": "f5a9d65cc1d01765dc5c61649fb876c9e2ddf4f316791b28439324129fea4d51"
+    },
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/frozen-randomness.npz": {
+      "bytes": 9806702,
+      "sha256": "d103a9c511e749061b5ff969d0c528530bc6dd6296642d28241cae83fcb023ca"
+    },
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/plan-manifest.json": {
+      "bytes": 1541,
+      "sha256": "170d55ed5f812eb85f5503af4bb9d7dec8d17dce6e58fe966d85bf0eec5185d1"
+    },
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/response_genes.txt": {
+      "bytes": 31453,
+      "sha256": "24743754eead5b8ddd81634bd12feac1df431eb2b9581197755b75c4c90949c8"
+    },
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/selection_targets.txt": {
+      "bytes": 3722,
+      "sha256": "74a070a538455ffc2a528dae3094d21e047905463779b2a5206d681f5ca6ebb5"
+    },
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/test_targets.txt": {
+      "bytes": 2532,
+      "sha256": "bd37bcacb4eea90da11902bbb8f4736068a7ff67c001739e3407de2b4bf73fc6"
+    }
+  },
+  "parent_authorization_sha256": "9bca6e620359e44b5440d0b8588412f40f274304ae67d9f55fd7e7d03341e197",
+  "plan": {
+    "bootstrap_draws_each": 20000,
+    "candidate_grid": [
+      "identity",
+      "k050_beta0p025",
+      "k050_beta0p050",
+      "k100_beta0p025",
+      "k100_beta0p050",
+      "k200_beta0p025",
+      "k200_beta0p050"
+    ],
+    "development_count": 613,
+    "null_draws_each": 49,
+    "response_gene_count": 4992,
+    "test_count": 410
+  },
+  "plan_manifest_sha256": "c4a8475836242f401678142a0277f9bac1fe89e84ed764c075aeb5e9563c008d",
+  "protocol_sha256": "717a247631426665a151a97d99737d0fe0da6e27cb0e784ab76145e8322c9445",
+  "schema_version": 1,
+  "test_access_requires_passing_candidate_freeze": true
+}

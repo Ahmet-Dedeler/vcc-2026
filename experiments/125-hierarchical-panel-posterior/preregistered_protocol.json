@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "experiment": "125-hierarchical-panel-posterior",
+  "phase": "source_only_nested_evaluation",
+  "date_preregistered": "2026-08-30",
+  "status": "written_before_any_source_effect_array_was_loaded_by_experiment_125",
+  "objective": "Test whether a strictly target-cross-fitted hierarchical Gaussian random-effects posterior improves over frozen Experiment 122 equal_mean_agreement on source-only leave-one-biological-family-out signed credit and top-20-percent truth-magnitude-weighted sign precision.",
+  "inputs": {
+    "family_effects": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/family-effects.npy",
+    "family_valid": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/family-valid.npy",
+    "family_names": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/family-names.txt",
+    "panel_targets": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/panel-targets.txt",
+    "experiment_122_manifest": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/artifact-manifest.json",
+    "response_expression_bins": "experiments/118-pds-null-panel-residual/work/source-freeze-v1/response_expression_bins.npy",
+    "canonical_genes": "data/challenge/gene_names.csv",
+    "source_baselines": {
+      "replogle_k562": [
+        "data/donors/k562_gwps/b_ctrl.npy",
+        "data/donors/k562_gwps/genes.txt"
+      ],
+      "orion": [
+        "data/donors/orion_hct116/b_ctrl.npy",
+        "data/donors/orion_hct116/genes.txt",
+        "data/donors/orion_hek293t/b_ctrl.npy",
+        "data/donors/orion_hek293t/genes.txt"
+      ],
+      "cd4": [
+        "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/b_ctrl.npy",
+        "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/genes.txt",
+        "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/b_ctrl.npy",
+        "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/genes.txt",
+        "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/b_ctrl.npy",
+        "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/genes.txt"
+      ]
+    }
+  },
+  "biological_family_contract": {
+    "order": [
+      "replogle_k562",
+      "orion",
+      "cd4"
+    ],
+    "preserve_grouping": true,
+    "orion": "The immutable Experiment 122 family array is the coordinate-wise collapse of HCT116 and HEK293T and counts as one family.",
+    "cd4": "The immutable Experiment 122 family array is the coordinate-wise collapse of Rest, Stim8hr, and Stim48hr and counts as one family.",
+    "no_member_level_reweighting": true
+  },
+  "normalization": {
+    "row_scale": "For each family and target row, median absolute nonzero valid off-diagonal panel effect.",
+    "normalized_observation": "family effect divided by its positive finite row scale",
+    "output_scale": "For each target-response coordinate, median row scale among contributing observed training families, exactly matching Experiment 122.",
+    "self_coordinates": "always invalid and exact zero"
+  },
+  "hierarchical_model": {
+    "distribution": "For response gene g and target p, latent theta_pg is Normal(mu_g, tau_g_squared). Each observed normalized family response y_fpg is conditionally Normal(theta_pg, sigma_fg_squared).",
+    "fit_unit": "whole target rows",
+    "paired_moments": "For each response gene, use target rows where both current training families are valid. Compute sample variances v0_g and v1_g and covariance c_g after excluding every forbidden target row and every self coordinate.",
+    "raw_components": {
+      "prior_mean": "mu_g is the equally weighted mean of the two paired-family means.",
+      "latent_variance": "tau_raw_g_squared = max(c_g, 0).",
+      "family_0_observation_variance": "sigma0_raw_g_squared = max(v0_g - c_g, 0).",
+      "family_1_observation_variance": "sigma1_raw_g_squared = max(v1_g - c_g, 0)."
+    },
+    "global_moments": "Each global component is the degrees-of-freedom-weighted mean of finite response-specific raw components, using only the current nested fit targets. The global prior mean is zero.",
+    "empirical_bayes_shrinkage": "For component x_g with effective count n_g and grid pseudo-count k, x_shrunk_g = ((n_g * x_g) + (k * x_global)) / (n_g + k). Prior means shrink to zero with n_g / (n_g + k).",
+    "variance_floor": "floor = floor_fraction times max(global latent variance plus the mean global observation variance, 1e-8). Apply the floor independently to latent and both observation variances.",
+    "prior_scale": "Multiply the shrunken latent variance by the frozen prior_scale before applying the floor.",
+    "posterior": "posterior_precision = 1/tau_squared + sum_f(valid_f/sigma_f_squared); posterior_mean = posterior_variance times (mu/tau_squared + sum_f(valid_f*y_f/sigma_f_squared)).",
+    "effect": "posterior mean in normalized space times the Experiment 122 output scale.",
+    "confidence": "absolute value of 2*standard_normal_cdf(posterior_mean/posterior_sd)-1.",
+    "unsupported_pairs": "If no training family observes a coordinate, effect and confidence are exact zero.",
+    "family_reliability": "Family-specific observation variances are estimated from covariance decomposition; no family is split into correlated members."
+  },
+  "candidate_grid": [
+    {
+      "name": "eb_balanced",
+      "pseudo_count": 40.0,
+      "variance_floor_fraction": 0.05,
+      "prior_scale": 1.0
+    },
+    {
+      "name": "eb_conservative",
+      "pseudo_count": 80.0,
+      "variance_floor_fraction": 0.1,
+      "prior_scale": 0.5
+    },
+    {
+      "name": "eb_low_floor",
+      "pseudo_count": 40.0,
+      "variance_floor_fraction": 0.01,
+      "prior_scale": 1.0
+    },
+    {
+      "name": "eb_broad_prior",
+      "pseudo_count": 40.0,
+      "variance_floor_fraction": 0.05,
+      "prior_scale": 2.0
+    }
+  ],
+  "candidate_grid_justification": "One-factor-at-a-time low-capacity sensitivity grid around a balanced covariance posterior. It tests stronger global shrinkage and prior shrinkage, a lower numerical variance floor, and a broader latent prior without a combinatorial search.",
+  "transport_semantics": {
+    "fixed_dose": 1.0,
+    "target_sum": 50000.0,
+    "family_baseline": "Map each authorized member b_ctrl into relative abundance q=expm1(b_ctrl)/50000 on exact panel symbols, then take the coordinate-wise median over members within the already-defined biological family. Missing or nonpositive coordinates are immutable.",
+    "cd4_limitation": "CD4 b_ctrl is the frozen median DESeq2 baseMean proxy, not a control-only profile. It is used only to instantiate the predefined transport map, never for context matching, empirical-Bayes variance estimation, or count-noise calibration.",
+    "arms": [
+      {
+        "name": "production_log1p",
+        "definition": "For mutable off-diagonal panel coordinates, a=expm1(log1p(50000*q)+r)/50000, clip a below zero to zero, then renormalize only the mutable panel coordinates to their original compensated mass."
+      },
+      {
+        "name": "abundance_exponential",
+        "definition": "Experiment 124 semantics: for mutable off-diagonal panel coordinates, a=q*exp(r-max(r)), then renormalize only the mutable panel coordinates to their original compensated mass."
+      }
+    ],
+    "candidate_cross_product": "Each of the four hierarchical posterior settings is crossed with both transport arms, for exactly eight candidates. Candidate order is posterior-grid order, then transport-arm order.",
+    "comparator_fairness": "Each hierarchical arm is compared with Experiment 122 equal_mean_agreement passed through the same held-family transport arm and fixed dose.",
+    "required_invariants": [
+      "finite transported abundance",
+      "nonnegative transported abundance",
+      "exact target-self abundance identity",
+      "exact identity of every immutable panel coordinate",
+      "exact mutable-panel compensated mass conservation",
+      "exact total-panel compensated mass conservation",
+      "exact zero target-self realized effect",
+      "no write outside the 300 panel coordinates",
+      "expanded nonpanel residual is exact zero and therefore PDS-visible coordinates are unchanged"
+    ]
+  },
+  "comparator": {
+    "name": "equal_mean_agreement",
+    "effect": "Arithmetic mean of available normalized family effects times the median contributing row scale.",
+    "confidence": "Absolute normalized mean times observed-family support fraction times absolute mean nonzero sign, exactly as Experiment 122.",
+    "support": "At least one training family observes the coordinate."
+  },
+  "nested_validation": {
+    "outer": "Leave one complete biological family out.",
+    "target_folds": 5,
+    "target_fold_assignment": "Sort canonical target labels by SHA-256 of 'experiment-125-target-fold|' plus the label, then assign round-robin fold indices 0 through 4.",
+    "outer_test": "For each held biological family and target fold, evaluate only target rows in that fold.",
+    "inner_selection": "For each outer test-target fold, use each of the other four target folds as inner validation. For each inner fold and each direction between the two available training families, predict the inner held family from the other family. Hyperparameters are estimated using both available families only on target rows outside both outer-test and inner-validation folds.",
+    "held_target_exclusion": "Hyperparameter fitting excludes both destination rows in forbidden target folds and any source row whose original biological target label is in a forbidden fold after a target-label null permutation.",
+    "held_family_exclusion": "The outer held family is never used in hyperparameter fitting, inner selection, or prediction.",
+    "selection_rule": [
+      "Prefer candidates whose signed-credit and precision deltas versus equal_mean_agreement are nonnegative in both inner pseudo-held families.",
+      "Then maximize minimum pseudo-held-family signed-credit delta.",
+      "Then maximize minimum pseudo-held-family precision delta.",
+      "Then maximize macro signed-credit delta.",
+      "Then maximize macro precision delta.",
+      "Then use earlier candidate cross-product order."
+    ],
+    "outer_fit": "After selection, refit moments on all targets outside the outer test fold using both training families, then predict the outer test targets.",
+    "aggregation": "Concatenate cross-fitted per-target records within each held family; average targets equally within family; average the three families equally."
+  },
+  "metrics": {
+    "target_equal_signed_credit": "Per target, sum(sign(held_effect) * predicted_effect) divided by sum(abs(held_effect)) over held-valid off-diagonal response coordinates. Family score is the arithmetic mean over evaluable targets.",
+    "top20_truth_magnitude_weighted_sign_precision": "Per target, select ceil(0.20 times held-valid response count) coordinates by descending candidate confidence with stable canonical-order ties. Correct nonzero sign is weighted by absolute held effect. Family score is the arithmetic mean over evaluable targets.",
+    "minimum_held_valid_responses": 20,
+    "delta": "hierarchical candidate score minus its separately evaluated equal_mean_agreement comparator under the identical transport arm, target rows, and held-truth coordinates."
+  },
+  "nulls": {
+    "draws_each": 200,
+    "target_label": {
+      "seed": 1252026,
+      "assignment": "One frozen 300-row derangement is applied coherently to both training families while held truth stays fixed.",
+      "complete_procedure": true
+    },
+    "response_label_within_expression_bin": {
+      "seed": 1252027,
+      "expression_bins": "Byte-identical frozen 10-bin source-expression assignment from Experiment 118.",
+      "assignment": "Within every nonnegative expression bin, draw a fixed-point-free permutation and apply it coherently to effects and validity of both training families while held truth stays fixed. Reapply destination self exclusion.",
+      "complete_procedure": true
+    },
+    "statistics": "For both signed-credit delta and precision delta, use the macro three-family delta and numpy quantile p95 with method linear."
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 1252028,
+    "unit": "canonical target label cluster shared across all three held-family folds",
+    "assignment": "Each frozen draw samples 300 canonical target indices with replacement.",
+    "statistics": "Recompute each family mean from sampled evaluable target records, then average families equally. Lower bound is the linear-method 2.5th percentile."
+  },
+  "concentration": {
+    "family_share": "For each endpoint, divide the largest positive held-family delta by the sum of positive held-family deltas.",
+    "target_cluster_share": "For each endpoint, express the macro delta as the sum over canonical targets of one-third times each available family target delta divided by that family's evaluable-target count. Divide the largest positive target contribution by the sum of positive target contributions."
+  },
+  "promotion_gates": {
+    "nonnegative_signed_credit_delta_every_family": true,
+    "nonnegative_precision_delta_every_family": true,
+    "macro_signed_credit_gain_minimum": 0.005,
+    "macro_precision_gain_minimum": 0.01,
+    "signed_credit_bootstrap_lower_95_strictly_positive": true,
+    "precision_bootstrap_lower_95_strictly_positive": true,
+    "signed_credit_gain_strictly_above_target_null_p95": true,
+    "signed_credit_gain_strictly_above_response_null_p95": true,
+    "precision_gain_strictly_above_target_null_p95": true,
+    "precision_gain_strictly_above_response_null_p95": true,
+    "supported_pair_retention_minimum": 0.8,
+    "maximum_family_positive_gain_share": 0.5,
+    "maximum_target_cluster_positive_gain_share": 0.5,
+    "all_required": true
+  },
+  "hard_exclusions": {
+    "pan": true,
+    "dld1": true,
+    "h1": true,
+    "orion_held_harness_outcomes": true,
+    "challenge_truth": true,
+    "challenge_context_expression_values": true,
+    "cell_eval2": true,
+    "count_or_submission_build": true,
+    "submission": true,
+    "commit": true,
+    "push": true
+  },
+  "freeze": {
+    "plan_directory": "experiments/125-hierarchical-panel-posterior/work/preregistered-freeze-v1",
+    "result_directory": "experiments/125-hierarchical-panel-posterior/work/source-only-evaluation-v1",
+    "refuse_overwrite": true,
+    "protocol_folds_grid_formulas_nulls_input_hashes_gates_before_effect_loading": true,
+    "implementation_hash_frozen_before_effect_loading": true,
+    "immutable_results": true
+  }
+}

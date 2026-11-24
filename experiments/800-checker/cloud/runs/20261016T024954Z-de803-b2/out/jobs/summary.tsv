@@ -1,0 +1,1 @@
+1	0	10098	13988972	bash experiments/803-de-engine/cloud/batch803.sh 1 experiments/803-de-engine/cloud/b2/p1run.txt experiments/803-de-engine/cloud/b2/p2write.txt experiments/803-de-engine/cloud/b2/p3score.txt experiments/803-de-engine/cloud/b2/p4compare.txt

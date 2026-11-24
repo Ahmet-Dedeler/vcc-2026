@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "freeze_revision": 2,
+  "experiment": "117-pan-h1-direct-residual",
+  "stage": "held_evaluation_v1",
+  "date_frozen": "2026-08-30",
+  "status": "frozen_before_experiment_117_held_truth_access_after_independent_audit_repair",
+  "scientific_design_source": {
+    "path": "experiments/117-pan-h1-direct-residual/preregistered_protocol.json",
+    "sha256": "2adf7f9e25cd98653a523292cd57538dac7daa441c68b12e7458983fa836326b"
+  },
+  "source_candidate_contract": {
+    "root": "experiments/117-pan-h1-direct-residual/work/source-candidates",
+    "top_manifest": "source-candidate-inputs.json",
+    "required_roles": [
+      "h1",
+      "orion_hek293t",
+      "nadig.gallery_1",
+      "nadig.gallery_2",
+      "nadig.gallery_3",
+      "nadig.gallery_4",
+      "nadig.gallery_5",
+      "nadig.gallery_6"
+    ],
+    "required_arms": [
+      "identity_f000",
+      "pan_novel_f050",
+      "pan_novel_f100",
+      "pan_novel_f200",
+      "pan_all_f050",
+      "pan_all_f100",
+      "pan_all_f200"
+    ],
+    "primary_arm": "pan_novel_f100",
+    "h1_diagnostic_arm": "pan_all_f100",
+    "required_frozen_arrays": [
+      "targets",
+      "genes",
+      "score_indices",
+      "incumbent_effects",
+      "source_effects",
+      "coordinate_supported",
+      "target_supported",
+      "target_novel_vs_vcc2025_h1",
+      "normalized_residual",
+      "target_effective_all",
+      "target_effective_novel",
+      "identity_f000",
+      "pan_novel_f050",
+      "pan_novel_f100",
+      "pan_novel_f200",
+      "pan_all_f050",
+      "pan_all_f100",
+      "pan_all_f200",
+      "directional_rank_indices",
+      "directional_rank_indices_all",
+      "target_cluster_labels",
+      "target_label_null_permutations"
+    ],
+    "mutation_policy": "all_source_candidate_files_and_logical_arrays_must_authenticate_before_receipt_and_again_when_loaded_and_must_remain_byte_identical_after_evaluation"
+  },
+  "role_policy": {
+    "h1": {
+      "truth_source": "h1_h5ad_and_reference_de",
+      "candidate_arm": "pan_all_f100",
+      "effective_mask": "target_effective_all",
+      "directional_ranking": "directional_rank_indices_all",
+      "classification": "same_context_replication_diagnostic_only",
+      "promotion_authorizing": false
+    },
+    "orion_hek293t": {
+      "truth_source": "orion_hek293t_h5ad_and_reference_de",
+      "candidate_arm": "pan_novel_f100",
+      "effective_mask": "target_effective_novel",
+      "directional_ranking": "directional_rank_indices",
+      "classification": "mandatory_clean_cross_context_surface",
+      "promotion_authorizing": true
+    },
+    "nadig.gallery_1": {
+      "truth_source": "nadig_jurkat_pseudobulk",
+      "candidate_arm": "pan_novel_f100",
+      "effective_mask": "target_effective_novel",
+      "directional_ranking": "directional_rank_indices",
+      "classification": "mandatory_jurkat_gallery",
+      "promotion_authorizing": true
+    },
+    "nadig.gallery_2": {
+      "truth_source": "nadig_jurkat_pseudobulk",
+      "candidate_arm": "pan_novel_f100",
+      "effective_mask": "target_effective_novel",
+      "directional_ranking": "directional_rank_indices",
+      "classification": "mandatory_jurkat_gallery",
+      "promotion_authorizing": true
+    },
+    "nadig.gallery_3": {
+      "truth_source": "nadig_jurkat_pseudobulk",
+      "candidate_arm": "pan_novel_f100",
+      "effective_mask": "target_effective_novel",
+      "directional_ranking": "directional_rank_indices",
+      "classification": "mandatory_jurkat_gallery",
+      "promotion_authorizing": true
+    },
+    "nadig.gallery_4": {
+      "truth_source": "nadig_jurkat_pseudobulk",
+      "candidate_arm": "pan_novel_f100",
+      "effective_mask": "target_effective_novel",
+      "directional_ranking": "directional_rank_indices",
+      "classification": "mandatory_jurkat_gallery",
+      "promotion_authorizing": true
+    },
+    "nadig.gallery_5": {
+      "truth_source": "nadig_jurkat_pseudobulk",
+      "candidate_arm": "pan_novel_f100",
+      "effective_mask": "target_effective_novel",
+      "directional_ranking": "directional_rank_indices",
+      "classification": "mandatory_jurkat_gallery",
+      "promotion_authorizing": true
+    },
+    "nadig.gallery_6": {
+      "truth_source": "nadig_jurkat_pseudobulk",
+      "candidate_arm": "pan_novel_f100",
+      "effective_mask": "target_effective_novel",
+      "directional_ranking": "directional_rank_indices",
+      "classification": "mandatory_jurkat_gallery",
+      "promotion_authorizing": true
+    }
+  },
+  "held_outcome_exposure": {
+    "h1_scored_and_persisted_arms": [
+      "identity_f000",
+      "pan_all_f100"
+    ],
+    "authorizing_surface_scored_and_persisted_arms": [
+      "identity_f000",
+      "pan_novel_f100"
+    ],
+    "authorizing_surfaces": [
+      "orion_hek293t",
+      "nadig.gallery_1",
+      "nadig.gallery_2",
+      "nadig.gallery_3",
+      "nadig.gallery_4",
+      "nadig.gallery_5",
+      "nadig.gallery_6"
+    ],
+    "forbidden_held_outcomes": [
+      "pan_novel_f050",
+      "pan_novel_f200",
+      "pan_all_f050",
+      "pan_all_f200",
+      "pan_all_f100_on_authorizing_surfaces",
+      "pan_novel_f100_on_h1"
+    ],
+    "forbidden_arms_must_never_be_read_scored_or_persisted": true,
+    "nadig_score_columns_must_exactly_equal_frozen_bundle_score_genes_in_order_before_truth_slicing": true
+  },
+  "metrics": {
+    "raw_pds": {
+      "space": "raw_control_referenced_log_pseudobulk_effect",
+      "centering": "none",
+      "gallery": "complete_predeclared_role_gallery_including_exact_fallback_rows",
+      "distance": "cosine",
+      "ranking": "own_truth_against_every_truth_row",
+      "ties": "midrank",
+      "zero_prediction_row": 0.5,
+      "surface_statistic": "arithmetic_mean_candidate_minus_identity_over_all_targets",
+      "response_coordinates": "the_frozen_role_score_indices_only"
+    },
+    "directional_precision": {
+      "selection": "first_max_1_ceil_0.20_times_effective_supported_coordinate_count_entries_from_the_frozen_directional_ranking",
+      "eligible_rows": "the_role_policy_effective_mask_only",
+      "candidate_sign": "sign_of_the_frozen_candidate_effect_on_the_selected_coordinate",
+      "incumbent_sign": "sign_of_identity_f000_on_the_same_selected_coordinate",
+      "h1_and_hek_reference_directionality": "selected_coordinate_must_be_significant_in_the_hash_pinned_reference_de_and_have_finite_nonzero_reference_lfc",
+      "nadig_reference_directionality": "selected_coordinate_must_be_exact_symbol_representable_in_the_hash_pinned_Nadig_gene_axis_and_have_finite_nonzero_raw_truth_effect",
+      "incorrect_policy": "missing_nonsignificant_nonfinite_or_zero_reference_sign_is_incorrect",
+      "per_target_value": "arithmetic_fraction_of_selected_coordinates_with_matching_nonzero_sign",
+      "surface_statistic": "arithmetic_mean_candidate_precision_minus_incumbent_precision_over_effective_rows_only",
+      "h1": "diagnostic_only_and_excluded_from_promotion"
+    }
+  },
+  "null_and_uncertainty": {
+    "target_label_permutation": {
+      "replicates": 99,
+      "assignments": "use_the_frozen_target_label_null_permutations_array_byte_for_byte",
+      "reconstruction": "move_source_effect_and_coordinate_support_together_then_recompute_destination_norm_matching_and_apply_fraction_0.10_only_to_mapped_novel_destinations",
+      "surface_statistic": "complete_gallery_raw_pds_delta",
+      "aggregation": "equal_weight_six_Nadig_galleries_then_equal_weight_HEK293T_and_Jurkat",
+      "h1_excluded": true
+    },
+    "target_cluster_bootstrap": {
+      "replicates": 20000,
+      "labels": "use_the_frozen_target_cluster_labels_array_byte_for_byte",
+      "seed_namespace": "experiment-117-pan-direct-cluster-bootstrap-v1",
+      "seed_derivation": "little_endian_integer_from_first_8_bytes_of_SHA256_UTF8_namespace_NUL_role_NUL_zero_based_draw",
+      "bit_generator": "numpy_random_PCG64",
+      "resampling": "sample_sorted_unique_whole_cluster_labels_with_replacement_within_each_role",
+      "surface_statistic": "multiplicity_weighted_mean_primary_minus_identity_per_target_raw_pds_delta",
+      "aggregation": "equal_weight_six_Nadig_galleries_then_equal_weight_HEK293T_and_Jurkat",
+      "confidence_interval": "numpy_linear_Hyndman_Fan_type_7_quantiles_at_0.025_and_0.975",
+      "h1_excluded": true
+    }
+  },
+  "cross_context_aggregation": {
+    "required_surface_order": [
+      "orion_hek293t",
+      "nadig.gallery_1",
+      "nadig.gallery_2",
+      "nadig.gallery_3",
+      "nadig.gallery_4",
+      "nadig.gallery_5",
+      "nadig.gallery_6"
+    ],
+    "jurkat_macro": "math.fsum_of_all_six_Nadig_gallery_values_divided_by_6",
+    "cross_context_macro": "math.fsum_of_HEK293T_and_Jurkat_macro_divided_by_2",
+    "h1": "never_read_by_promotion_function"
+  },
+  "promotion_gate": {
+    "primary_comparison": "pan_novel_f100_minus_identity_f000",
+    "hek293t_raw_pds_delta_minimum_inclusive": 0.0,
+    "hek293t_directional_precision_delta_minimum_exclusive": 0.0,
+    "nadig_raw_pds_delta_each_gallery_minimum_inclusive": 0.0,
+    "nadig_macro_directional_precision_delta_minimum_exclusive": 0.0,
+    "cross_context_macro_raw_pds_delta_minimum_inclusive": 0.003,
+    "cross_context_target_cluster_bootstrap_lower_95_minimum_exclusive": 0.0,
+    "observed_cross_context_macro_gain_must_strictly_exceed_all_99_target_label_nulls": true,
+    "all_source_and_fallback_invariants_required": true,
+    "h1_cannot_promote": true,
+    "hek293t_and_all_six_nadig_galleries_are_mandatory": true
+  },
+  "truth_access": {
+    "authorization_file": "experiments/117-pan-h1-direct-residual/HELD_EVALUATION_AUTHORIZATION.v1.json",
+    "entrypoint": "experiments/117-pan-h1-direct-residual/evaluate_held_v1.py",
+    "access_receipt": "experiments/117-pan-h1-direct-residual/work/held-evaluation-v1-access-receipt.json",
+    "result_directory": "experiments/117-pan-h1-direct-residual/work/held-evaluation-v1",
+    "exclusive_create_and_fsync_receipt_before_any_truth_stat_hash_or_load": true,
+    "receipt_is_permanent_even_if_evaluation_fails": true,
+    "caller_supplied_paths_forbidden": true,
+    "result_overwrite_forbidden": true,
+    "result_manifest_and_output_files_read_only": true
+  },
+  "authorization": {
+    "source_candidate_read": true,
+    "held_truth_access_after_receipt": true,
+    "held_evaluation_after_receipt": true,
+    "model_refit": false,
+    "arm_or_fraction_selection": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  }
+}

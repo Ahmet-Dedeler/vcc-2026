@@ -1,0 +1,826 @@
+{
+  "all_members_read_to_gzip_eof": true,
+  "input_binding": {
+    "file_inventory_sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca",
+    "manifest_sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74",
+    "provenance_sha256": "0c3277a5ee1fa9b179d5f91683375c7f2a9b5a72dd38c2e00c35df4950a1c722",
+    "raw_archive_sha256": "3c0c5fa8cab2983dfe0fa3b38b31662bb68e191e6dbaf3d03af02a67587a67a9",
+    "raw_hash_recomputed_for_this_run": true
+  },
+  "inventory": {
+    "archive": {
+      "filename": "GSE249595_RAW.tar",
+      "size_bytes": 3753820160
+    },
+    "channels": [
+      {
+        "accession": "GSM7951413",
+        "channel": 1,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951414",
+        "channel": 2,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951415",
+        "channel": 3,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951416",
+        "channel": 4,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951417",
+        "channel": 5,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951418",
+        "channel": 6,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951419",
+        "channel": 7,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951420",
+        "channel": 8,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951421",
+        "channel": 9,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951422",
+        "channel": 10,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951423",
+        "channel": 11,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951424",
+        "channel": 12,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951425",
+        "channel": 13,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951426",
+        "channel": 14,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951427",
+        "channel": 15,
+        "member_count": 9
+      },
+      {
+        "accession": "GSM7951428",
+        "channel": 16,
+        "member_count": 9
+      }
+    ],
+    "file_inventory_sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca",
+    "member_count": 144,
+    "member_total_compressed_bytes": 3753694370,
+    "status": "pass"
+  },
+  "member_count": 144,
+  "members": [
+    {
+      "name": "GSM7951413_channel1_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951413_channel1_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951413_channel1_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 81580172,
+      "uncompressed_sha256": "cbc916e0053a7f42fba89e61bb21e6ccc6548cc0082d8359b52aafa52e3c17a1"
+    },
+    {
+      "name": "GSM7951413_channel1_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951413_channel1_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951413_channel1_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 25718224,
+      "uncompressed_sha256": "25e0e9cead85e85268c2b4da3dae974adb53893411513aa2d279461cd6a87b6a"
+    },
+    {
+      "name": "GSM7951413_channel1_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951413_channel1_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951413_channel1_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 646082231,
+      "uncompressed_sha256": "69a7b985a9be173b2e374e5010b202b79344f304efc637292658fd9de2593923"
+    },
+    {
+      "name": "GSM7951414_channel2_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951414_channel2_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951414_channel2_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 68204209,
+      "uncompressed_sha256": "606d255407db4d5bc9ca101bbba8e545a968476d28a3a70b1182671b570e4147"
+    },
+    {
+      "name": "GSM7951414_channel2_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951414_channel2_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951414_channel2_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 27956091,
+      "uncompressed_sha256": "0803c3e773c77ce2db60b2a66024244eb637cc36b6251a2ee39a7ef036637d59"
+    },
+    {
+      "name": "GSM7951414_channel2_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951414_channel2_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951414_channel2_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 600313629,
+      "uncompressed_sha256": "98d919fea83c7c00ca145e0e03d90f2d23373c4daf66e61bbdd50ed67ed193fe"
+    },
+    {
+      "name": "GSM7951415_channel3_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951415_channel3_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951415_channel3_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 76099706,
+      "uncompressed_sha256": "a2a09cadf70b5e87f321b416d29aafe8995710f547c157158c03597ecf4e1b72"
+    },
+    {
+      "name": "GSM7951415_channel3_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951415_channel3_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951415_channel3_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 29106363,
+      "uncompressed_sha256": "4ed4f3d89cc32a7fb481df6ed2a8fa90ff9d2fac0c3afc2cd5d5fc8ba441d1bb"
+    },
+    {
+      "name": "GSM7951415_channel3_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951415_channel3_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951415_channel3_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 613162822,
+      "uncompressed_sha256": "1949728c97236046012596ffe328fd3b3b3b689bad89e2df24c9452694ee6437"
+    },
+    {
+      "name": "GSM7951416_channel4_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951416_channel4_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951416_channel4_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 67176526,
+      "uncompressed_sha256": "50ee36161b7465dc995292c2c193323c64ffdbdde6b2c14ee4aeb781fa74bb99"
+    },
+    {
+      "name": "GSM7951416_channel4_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951416_channel4_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951416_channel4_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 23703726,
+      "uncompressed_sha256": "f0463fe319432faa437fd86a43fae4d08d0ecbd18cc978dca02259980d796bc0"
+    },
+    {
+      "name": "GSM7951416_channel4_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951416_channel4_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951416_channel4_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 547753650,
+      "uncompressed_sha256": "6e50ec092472b1c92d872bc07049795790e9309d64feb0cd43b25864a0a4094f"
+    },
+    {
+      "name": "GSM7951417_channel5_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951417_channel5_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951417_channel5_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 67734261,
+      "uncompressed_sha256": "4ca2ecd3537ddb6219cd075cb58c558a3b2d3ea4754ad8d39b9086cb6e03f29c"
+    },
+    {
+      "name": "GSM7951417_channel5_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951417_channel5_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951417_channel5_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 17935780,
+      "uncompressed_sha256": "7c917e021bae2e0235ef7a0dc96fe53688d1c385659cf3f38d0226197ebaacf8"
+    },
+    {
+      "name": "GSM7951417_channel5_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951417_channel5_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951417_channel5_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 425751170,
+      "uncompressed_sha256": "94a96b64f0f1fb0a0d55d82b54cb818f47930d26a70f43785b1b3dda0be20619"
+    },
+    {
+      "name": "GSM7951418_channel6_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951418_channel6_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951418_channel6_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 66000763,
+      "uncompressed_sha256": "c4c2b86daeae7ba8b09be083f580ba5017d9e4ec212e0bd8e870cdef0b29a8d2"
+    },
+    {
+      "name": "GSM7951418_channel6_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951418_channel6_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951418_channel6_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 25906385,
+      "uncompressed_sha256": "9fcca65f06835ffa9ab4b840ec60a20268ad4467cd8936e35fb8428ae051c047"
+    },
+    {
+      "name": "GSM7951418_channel6_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951418_channel6_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951418_channel6_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 563723163,
+      "uncompressed_sha256": "1eb26a042cbf0f6b1500942db0aa55231f30d16a0422b34a4a562666e67fd2ae"
+    },
+    {
+      "name": "GSM7951419_channel7_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951419_channel7_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951419_channel7_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 95700357,
+      "uncompressed_sha256": "47b40450ff56a088bf0292068ef3020f0a97e6201468d38181870b12888b43fb"
+    },
+    {
+      "name": "GSM7951419_channel7_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951419_channel7_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951419_channel7_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 23382988,
+      "uncompressed_sha256": "9cc8ab455152dc682b00a79a831bea7dcf3a761f143a02ba5d0add381adb8591"
+    },
+    {
+      "name": "GSM7951419_channel7_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951419_channel7_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951419_channel7_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 709589936,
+      "uncompressed_sha256": "c38df2a5eb2b4ead5dc003840526747724088c41953b94f6e2b033a5383c3869"
+    },
+    {
+      "name": "GSM7951420_channel8_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951420_channel8_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951420_channel8_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 100180126,
+      "uncompressed_sha256": "ec2b40109f1e8f59fc246e9d74ff3ebfe8e8f29530f41b90ad6b4f08600efa9f"
+    },
+    {
+      "name": "GSM7951420_channel8_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951420_channel8_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951420_channel8_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 19201997,
+      "uncompressed_sha256": "764d0b8f6b6b7096311a0358612cd8c121ed8aaf07544f944b1ad655bcd8309b"
+    },
+    {
+      "name": "GSM7951420_channel8_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951420_channel8_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951420_channel8_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 583791936,
+      "uncompressed_sha256": "d87bfd8bfd23324bbd93280d4f15b1964811624c1d28a55fda6e6bc399dccd4d"
+    },
+    {
+      "name": "GSM7951421_channel9_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951421_channel9_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951421_channel9_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 73833969,
+      "uncompressed_sha256": "55b7085172e81bd9e21959faa0d837976a18a352537127fb2578426381b62eb4"
+    },
+    {
+      "name": "GSM7951421_channel9_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951421_channel9_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951421_channel9_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 24888014,
+      "uncompressed_sha256": "3e33c2c7f20b8aa6b5f972343c8519aa7c9a9578dba76739eae17a43b2a798a0"
+    },
+    {
+      "name": "GSM7951421_channel9_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951421_channel9_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951421_channel9_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 646863650,
+      "uncompressed_sha256": "2f21dcef310fefa146721eb138df216d2a530152dba991c7baafb61b2d90bafd"
+    },
+    {
+      "name": "GSM7951422_channel10_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951422_channel10_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951422_channel10_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 86172130,
+      "uncompressed_sha256": "3b4195474c879a32280efb4f5fe21004cb6dce61c15eb0c43440e38f83bcad5c"
+    },
+    {
+      "name": "GSM7951422_channel10_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951422_channel10_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951422_channel10_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 25194454,
+      "uncompressed_sha256": "f8f4d2771b54e36791891ebae6f00ec876da36a3e19bb0fc86a4311b50d680b8"
+    },
+    {
+      "name": "GSM7951422_channel10_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951422_channel10_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951422_channel10_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 675299991,
+      "uncompressed_sha256": "8894e991edf2ec4f1073970a043be64ddb30513c8d68b2593a531053c2157598"
+    },
+    {
+      "name": "GSM7951423_channel11_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951423_channel11_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951423_channel11_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 70163841,
+      "uncompressed_sha256": "7b2ff07d8baa7884910b7547deff75912eedc5675a6ce39466ce789c1deefc3d"
+    },
+    {
+      "name": "GSM7951423_channel11_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951423_channel11_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951423_channel11_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 27193050,
+      "uncompressed_sha256": "0d9ab4e6091fdeac6236544bf581eb0e0222e9c4109b48d3e33c589ed227819b"
+    },
+    {
+      "name": "GSM7951423_channel11_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951423_channel11_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951423_channel11_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 664161476,
+      "uncompressed_sha256": "36a11a26b117f70b5fad21dd73e8d6ebd77ffd0a918c14b3f34da7967c5d5f92"
+    },
+    {
+      "name": "GSM7951424_channel12_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951424_channel12_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951424_channel12_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 77508451,
+      "uncompressed_sha256": "294dc6385e41367ea390fa9e1158be6008eb1cf709d6ca2cbd7c39b10d437ad9"
+    },
+    {
+      "name": "GSM7951424_channel12_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951424_channel12_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951424_channel12_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 26186973,
+      "uncompressed_sha256": "4f9c5c7cd2943e5b24fb96f887abff81bb547779c6de8ce097163d25e9cae30a"
+    },
+    {
+      "name": "GSM7951424_channel12_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951424_channel12_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951424_channel12_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 660732728,
+      "uncompressed_sha256": "d14544e088314581a731b02dbfae8d03eb20885a9b4ee85721abb86fd95c0c8d"
+    },
+    {
+      "name": "GSM7951425_channel13_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951425_channel13_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951425_channel13_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 85272806,
+      "uncompressed_sha256": "69fa207e40b5aa40cd759843c4a67bcfcebe43c95e7021d82ef477eb43da8719"
+    },
+    {
+      "name": "GSM7951425_channel13_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951425_channel13_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951425_channel13_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 31012482,
+      "uncompressed_sha256": "1060724a715d170cbbcfd9450d7f948b9677f2ada25a242adb4056483f803a86"
+    },
+    {
+      "name": "GSM7951425_channel13_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951425_channel13_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951425_channel13_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 801354322,
+      "uncompressed_sha256": "d22135d8392d122dc3ebb1856f47934029b0f92e24893cf9c0d3b9066a272a48"
+    },
+    {
+      "name": "GSM7951426_channel14_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951426_channel14_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951426_channel14_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 83614169,
+      "uncompressed_sha256": "c16d8a6f20be24e801bf7275117d0ec9054779a7ccf9639b9004eb7426b119ff"
+    },
+    {
+      "name": "GSM7951426_channel14_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951426_channel14_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951426_channel14_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 22696004,
+      "uncompressed_sha256": "18a4394614475faf2f1ae1bb054589d79c60c871e29c4ed5f09bdc9be2cabfed"
+    },
+    {
+      "name": "GSM7951426_channel14_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951426_channel14_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951426_channel14_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 740683321,
+      "uncompressed_sha256": "66fa8ff30fd7e6fee67caf5da9bd98ebe9598143b962da1a80e969dc5bb37098"
+    },
+    {
+      "name": "GSM7951427_channel15_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951427_channel15_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951427_channel15_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 76930703,
+      "uncompressed_sha256": "38c07ab8879c0cd65eeb6177f90b847c6cd4be17053cddc0e415e6b3ecf611f4"
+    },
+    {
+      "name": "GSM7951427_channel15_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951427_channel15_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951427_channel15_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 20444771,
+      "uncompressed_sha256": "1a24ac06015c5285dc3ff692926b907c50cadbb7f5fe55b6545c9df920d1cefe"
+    },
+    {
+      "name": "GSM7951427_channel15_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951427_channel15_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951427_channel15_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 738618706,
+      "uncompressed_sha256": "2f3f035ae58efedb520aef1a78f8d78054f4027186ad4830f1162212abe6668c"
+    },
+    {
+      "name": "GSM7951428_channel16_guides_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951428_channel16_guides_features.tsv.gz",
+      "uncompressed_bytes": 2742440,
+      "uncompressed_sha256": "f846b4fb6995bb3a25e42d8188f624fdcdb90def9ff512f7be601cb6e9e91f55"
+    },
+    {
+      "name": "GSM7951428_channel16_guides_matrix.mtx.gz",
+      "uncompressed_bytes": 94345969,
+      "uncompressed_sha256": "0fbc6390c0c409e40e36404522e0dd1c618d394d5e1e3a16d04ce83425367c6f"
+    },
+    {
+      "name": "GSM7951428_channel16_labels_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951428_channel16_labels_features.tsv.gz",
+      "uncompressed_bytes": 292,
+      "uncompressed_sha256": "391f7ac4839495572c30981cc8f0075bc90d0595f5ab1932d0195868d04859be"
+    },
+    {
+      "name": "GSM7951428_channel16_labels_matrix.mtx.gz",
+      "uncompressed_bytes": 19909142,
+      "uncompressed_sha256": "50468ec414658aea634f36c8c4dd8e75554a8188b7c727756e79f59768be396a"
+    },
+    {
+      "name": "GSM7951428_channel16_transcriptome_barcode.tsv.gz",
+      "uncompressed_bytes": 115512960,
+      "uncompressed_sha256": "843a6f7038db8cb3c06f3dc21cc69d04139ffa10689780518d7a9e42dc2e819b"
+    },
+    {
+      "name": "GSM7951428_channel16_transcriptome_features.tsv.gz",
+      "uncompressed_bytes": 851582,
+      "uncompressed_sha256": "419aeaeea1542b45bc19e0846d5f1a0716010de85f417d1b7dff7d04a360050c"
+    },
+    {
+      "name": "GSM7951428_channel16_transcriptome_matrix.mtx.gz",
+      "uncompressed_bytes": 828758703,
+      "uncompressed_sha256": "6a2a9c08996cf102332667162112dc80b75111ff2344014798dc46ab188fb9be"
+    }
+  ],
+  "status": "pass"
+}

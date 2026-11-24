@@ -1,0 +1,848 @@
+# 537 — The arm pipeline for 10-07 → 10-21: inventory, prices, transfer, and a slot plan
+
+Worker 537 (Claude Opus 5.5, headless), mandate `MANDATE.md` (2026-09-30 11:10Z). Analysis, real-emitter H1 runs and
+specifications only: no build, no `vcc`, no `cell-eval2` CLI, no git, nothing written outside this directory.
+**Status: v5 (2026-10-02 01:00Z; v4 2026-09-30 19:30Z + the 10-01 and 10-02 reads). The first complete ranked list (§0, §1, §5) is done; §3.2's prices are measured on the real
+production emitter (P1–P12; 2–3 seeds each). New in v4: §2.6 (why B1 is a board re-roll and DE knobs read below it: the
+emission stream, tested on H1), §3.2 P9–P10 (the hook at zero sign information: the D/E/F floor, at K 2,600 and 2,000) and
+P11–P12 (the dose partners, priced ahead; the Arc hook's D/E/F floor). From here to 10-05 18:00Z
+this file is updated as the 10-01 … 10-05 board reads land (§2.5's preregistered noise test; the CPH recalibration; the
+tree's branch).**
+
+---
+
+## 0. One screen for the coordinator
+
+**10-01 READ (01:10Z; `recalib537.py`, `work/recalib537.json`): 446bj2zcp = `K1Q0y2OFYjTNRqh9jKfk`, 0.272032 (−0.00079 vs
+446bj2z). 535's primary Δ(fid + jac) −0.00018 → NULL, with the RESCUE flag (Δjac +0.0040 ≥ +0.002, Δfid −0.0036 < 0).**
+- Members vs 446bj2z (raw): fid −0.00358, jac +0.00399, reach −0.00335, nmae +0.00010; pds 0, mse −2e-8 (DE-only, pinned).
+  Against H1's block-alone price (f 0.35): **fid 1.95× its cost, jac 0.48× its gain, reach −0.38×**. The composition
+  transferred at half strength; the unsteered swapped-in genes cost twice the fid; reach turned negative.
+- *Mechanism (a hypothesis CPH's fid tests):* the block's fid cost is the sign quality lost when steered CPM genes are swapped
+  out for unsteered swapped-in genes. With the swap sizes alike (546–684 vs ~616 genes), a 1.95× cost needs about twice H1's
+  accuracy gap (H1 ≈ 0.61 − 0.51 = 0.10). With CLEAN4 at ~0.65 on the swapped-out genes of the public folds, that puts the
+  design signs on A/B/C's swapped-in genes near 0.45. If so, the hook's sign repair (CLEAN4 0.55 on ~27 % of them, vs 19 % at
+  +0.07 on H1) is also ~2× H1's (sign part +0.0013 raw, plus the sign-free +0.0003): **CPH's Δfid vs 446bj2zcp ≥ +0.0010
+  raw supports it; ≤ +0.0004 refutes it** (that is the 0.07–0.67× sign-prior transfer of H1's +0.00095).
+- **The tree's rescue branch fires: 10-07 s1 = CPH** (`rule1007_draft537.py` v3 prints `CPH 459dr ALLSW | 459dr ALLSW` with
+  10-06 unread; **10-07 s2 becomes K20 if k16 reads ≥ MID**, because a block that only reached 10-07 by the rescue flag no
+  longer holds the K dose partner back).
+- **Re-priced (this read's ratios on H1's P1 / P8 increments; fid × 0.07 … 1.95, nmae × T 0.35 … 1.76):** CPH − 446bj2zcp
+  on the CPH draft's primary Δ(fid + nmae) **+0.0004 … +0.0023** (POSITIVE in most cases); but CPH − 446bj2z on 535's
+  shipping statistic Δ(fid + jac) is **−0.0001 … +0.0009 in every case, below the +0.0012 the block needs to ship**, and DE
+  overall vs 446bj2z −0.0007 … +0.0016. **Prediction: the block does not ship in October, with or without the hook.** CPH
+  stays worth its (cheap, built) slot as the test of that prediction and as a second board read of the CLEAN4 hook; the
+  10-08 list now reads CPH (v3): CPHK20 / CPMZ only if CPH ships, else K20 (if not read on 10-07) and MZ (496a on).
+- Ranking (C) re-ordered for D/E/F value: 524dr2, CPH, K20, 459dr, CPHK20, CPMZ/MZ, ALLSW, S1, re-roll pair, s-scale.
+- The built CPH file delivers the mechanism at H1's scale (its meta, median per block: 1,709 genes signed by the hook and 947
+  flipped, vs H1's 1,767 / 920 per target; swapped-in genes per context A / B / C 546 / 572 / 684 vs H1 ~616). Its read is
+  therefore a test of CLEAN4's sign information on A/B/C, not of delivery.
+- Noise pairs so far (§2.5): 460dr − 453dr (10-01), 479p2g − 446bj2 and 479sp2 − 446bj2 (10-02) are all inside every
+  preregistered band (reach +0.0012 / −0.0008 / +0.0008, fid ≤ 0.000004, jac ≤ 0.000017 raw); pooled reach rms with B1
+  0.00121 raw (n 10) = 0.00023 overall.
+
+**A. The DE channel's board READ noise is ~15–20× smaller than the rule in use. Re-price every DE bin.** (§2 has the
+entry ids, the known answer and the scope; `noise537b.py`, `work/noise537b.json`.)
+- **Known answer:** 230 §6's "sd 0.027011 scaled = 0.004502 overall" is reproduced to 1e-12 from 230's own table: it is the
+  sd of board Δreach over six arm pairs whose EMISSION LAW changed (overdispersion 0 → 4; spread/φ; 86 % resampling;
+  resample_mix; |z| re-assigned by |H|; a new call set with a new law). It is a spread of designs, not the re-roll of one.
+- **Why a bulk-only pair is a re-roll (mechanism read from the builder, measured on H1; §2.6, `redraw537.py`):** every
+  carrier in a file is drawn from ONE emission stream (`make_rngs(SEED)`), and each block draws `cells − K` carriers, K being
+  the ballast count set by the bulk. A bulk step moves K on some blocks, which shifts the stream for every later block: on H1 a
+  bulk-only step moved K on 28–33 of 85 targets from the first target on and re-drew pass 1 on 83–84 of 85 — including all
+  but 0–2 of the 52–57 targets whose own K did not move (3 seeds). A DE knob (block, hook, call-set size) moves no K and leaves pass 1
+  identical on 85 / 85 targets; it changes pass 2 only.
+- **Board, today's law (B1):** seven pairs of our own entries that keep the DE design, the emission law and the builder seed and
+  change only the bulk — seven re-rolls of pass 1 — move reach by rms **0.0013 raw [0.0009, 0.0026] = 0.00024 overall
+  [0.00016, 0.00050]**, fid by 0.000024, jac by 0.000013, nmae by 0.00013 raw (plus a known ballast term on the q steps). DE
+  overall rms **0.00027**. H1's per-target re-roll scaled to the board's 900 target-rows predicts 0.00123 raw reach (0.00032
+  overall for H1's own bulk step): **the board confirms the 85 → 900 scaling** that 548 flagged as an assumption.
+- **H1, DE knobs read BELOW that** (they share pass 1; 11 arm classes, 2–3 seeds each): the seed sd of the PAIRED effect,
+  scaled to 900 target-rows, is 0.00006–0.00025 overall per class, pooled **0.00017** (df 21) — 0.3–0.6× an independent
+  re-roll (same-seed per-target correlation with the base: reach +0.62 … +0.89, nmae +0.93 … +0.99). So B1's σ is an upper
+  bound for a DE-knob read.
+- So one DE board read resolves ±0.0005 overall (2σ). The best-of-5 luck bias (AGENTS 11.1c.4) is ~0.0003, not ~0.005. The
+  final-phase rule "a DE arm needs > ~0.009 overall or two seeds" (FINAL-PHASE-FEEDBACK-PLAN §1 rule 4) is ~20× too strict for
+  arms on this law; ~0.001 suffices. What stays large is the MODEL uncertainty of reach before a read (H1 → board ×1 …
+  ×−0.76), and 230's 0.0045 remains the right prior spread for a change of emission LAW.
+
+**B. New on H1 (real production emitter, 3 seeds, §3.2): the call-propensity block and the CLEAN4 uncalled-gene hook are
+super-additive.** Under the block's `kept` steering its ~616 swapped-in genes are called but unsteered (0.508 sign accuracy);
+the hook gives the CLEAN4-covered ones CLEAN4's sign. Block + hook vs 446bj2z: **+0.0067 / +0.0059 / +0.0059 / +0.0059**
+(f 1 / 0.5 / 0.35 / cmp; block alone +0.0051 / +0.0048 / +0.0045 / +0.0053; hook alone +0.0002 / +0.0004 / +0.0007 / −0.0002);
+the hook on the block is worth +0.0011 … +0.0016 (fid +0.0006 … +0.0010 raw, nmae −0.0018 … −0.0027 raw) and removes most of
+the block's extra call leaks (unsuppressible 20.4 → 8.3 per target). The hook covers 29 / 19 / 33 % of A / B / C's swapped-in
+genes vs 19 % on H1, so the mechanism reaches A/B/C at least as well. **If 446bj2zcp reads ≥ PARTIAL on 10-01, the block with
+the hook is the October DE form to read next.** (10-01: it read NULL with the rescue flag — fid 1.95× and jac 0.48× H1's
+block price; see the top block: CPH is read on 10-07 but is predicted not to make the block shippable.)
+**D/E/F (P9, 3 seeds; `dvalue537.py`):** with CLEAN4's signs shuffled among its covered genes (no sign information) the hook
+on the block still costs nothing at f ≤ 0.5 (+0.0001 … +0.0002; −0.0006 at f 1): it keeps stopping the block's leaks. Its
+break-even sign accuracy is ≤ 0.52 in every regime, and CLEAN4's accuracy over the hook's territory on the three held-out
+public lines is 0.59–0.67 (H1 0.60) → predicted +0.0012 … +0.0021 at f 0.35 on those lines. The hook ALONE needs 0.56–0.63
+and costs up to −0.0019 at zero information: **on an unseen line the hook belongs with the block.** The Arc source is the
+riskier D/E/F bet (P12): without sign information it leaks on the block (78 calls per target) and costs −0.0016 … −0.0034,
+so it replaces CLEAN4 in October only if CPMZ reads well above its r 0.37 prediction.
+
+**B2. The call-set size (523's K pair), measured on the real emitter (§3.2 P2/P3/P5/P6):** (1) K 2,000 ≥ K 1,600 on fid + jac
+in every regime and loses half as much at f 1 — **amend 523's dose-check bin before 10-06**: under §2's σ a non-monotone K pair
+is real, not noise, and H1 predicts K20 ≥ k16; (2) without the hook the block does not stack with a smaller K (102 / 377 leaked
+calls per target); **the CLEAN4 hook removes that leak** (9.6 per target at K 1,600) — without needing its signs (P10: 7.8 at
+K 2,000 with shuffled signs, worth +0.0020 at f 0.35) — and block + hook at K 2,000 then beats
+block + hook at K 2,600 in the small-n_real regimes (+0.0074 / +0.0075 vs +0.0059 at f 0.35 / cmp; 3 seeds) while losing at
+f 1 (−0.0040 vs +0.0067). So the October call set is decided by 10-06's regime read: K 2,600 with block + hook if the board
+reads H1-like, block + hook at K 2,000 if k16 / K20 read POS. (After 10-01 the block is expected off: then the choice is
+today's K 2,600 vs K 2,000 / 1,600 alone, by 523's amended dose check.)
+
+**C. Ranked arms for 10-07 → 10-21 (D/E/F value first; §5 has the tree, env diffs and bins; `rule1007_draft537.py`).**
+
+| rank | arm | when | env diff vs 446bj2z | predicted board Δ (overall) | in σ_DE (0.00025) | D/E/F class |
+|---|---|---|---|---|---|---|
+| 1 | **524dr2** (October recipe v2 DR) | 10-09/10 (after the 529/530 bundle + `patch_defday528.py`) | `october_recipe.py command` after the DE reads, vs 524dr | Σ of the DE switches added after 10-05 | ±0.0010 bin | the exact final configuration on the October path |
+| 2 | **CPH** `446bj2zcph` (built 09-30 21:49Z by 549; package by hand) | **10-07 s1: the rescue branch fired** (446bj2zcp NULL, Δjac +0.0040, Δfid −0.0036) | `VCC_RC_CALLSET_BLOCK=prop:…04fb24ec…` + `VCC_DE_MDE_SIGN=clean4:0.05` | re-priced on the 10-01 read: vs 446bj2zcp **+0.0004 … +0.0023** (fid + nmae); vs 446bj2z DE overall −0.0007 … +0.0016; **535's shipping Δ(fid + jac) −0.0001 … +0.0009 < +0.0012 in every case: the block is predicted not to ship** | 2–9σ on its primary | T + M: tests the block's last route into October + a second board read of the CLEAN4 hook |
+| 3 | **K20** `446bj2zk20` (READY) | **10-07 s2 iff k16 ≥ MID** (rule v3: a rescue-branch block no longer holds it back; the block is predicted off) | `VCC_RC_CALLSET_CPM=1600` | real emitter (3 seeds): fid + jac −0.0068 / +0.0011 / +0.0030 / +0.0034 overall (f 1 / 0.5 / 0.35 / cmp) → board 0.72× −0.0049 … +0.0024; ≥ K 1,600's in every regime | ~10–80σ on fid + jac | M (regime): October K when the block is off |
+| 4 | **459dr** (READY) | 10-07 s2 when K20 is not due, else the next free slot | (vs 453dr) H1 ×3 | +0.0004 (band −0.0005 … +0.0015) | bulk exact | whether October runs dayof438's H1 choice |
+| 5 | **CPHK20** `446bj2zcphk20` (build) | 10-08 iff CPH SHIPS (Δ(fid + jac) ≥ +0.0012 vs 446bj2z) and k16 reads POS — not expected after 10-01 | CPH's env + `VCC_RC_CALLSET_CPM=1600` | H1 (3 seeds): vs CPH −0.0107 / −0.0013 / +0.0015 / +0.0016 (f 1 / 0.5 / 0.35 / cmp); vs 446bj2z +0.0074 / +0.0075 at f 0.35 / cmp; floor with no sign information (P10) +0.0062 / +0.0059 | fid + jac +0.0023 / +0.0027 vs CPH at f 0.35 / cmp | M: October call-set size WITH the block (the hook removes the smaller-K leak) |
+| 6 | **CPMZ** `446bj2zmzcp` (build) / **MZ** `446bj2zmz` (READY) | 10-08 (after CPHK20) iff CPH ships and 496a ≥ PARTIAL (CPMZ); MZ iff the block is off (now the expected branch) | `…$CPB` + `VCC_DE_MDE_SIGN=file:…arch1meanz_ne…:0.05:0.05:le1` | H1 at r 0.37 (3 seeds): CPMZ vs CPH fid +0.0006, nmae −0.0008 … −0.0014 raw → Δ(fid + nmae) +0.0001 … +0.0007 overall; reach −0.013 … 0 raw; MZ alone nmae −0.0028 … −0.0040 raw. **D/E/F floor (P12): the Arc hook without sign information leaks on the block, −0.0030 vs CPH at f 0.35** → October keeps CLEAN4 unless CPMZ reads ≥ +0.0010 (draft v2) | 2–14σ on fid + nmae | T: October's hook source (A/B/C-only unless it beats r 0.37 by ~2×) |
+| 7 | **all-switches arm** (ALLSW) | after 10-06 | 498⟨P⟩'s env + zs + adopted DE switches | Σ of parts ≈ +0.005 … +0.009 vs 446bj2z | bulk exact | combination on the production path |
+| 8 | **518 S1** (build) | iff 495 FAILS | S1 dump + ntclevel (518 §6) | +0.0016 … +0.0024 vs 446bj2 | bulk exact | A/B/C contingency only |
+| 9 | **re-roll pair** `446bj2zrr` (knob patch ready) | any free slot ≤ 10-15 | `VCC_EMISSION_SEED=1000004` (patch_builder537_seed.py) | 0 ± 0.00025 | B1 already measures it (§2.6): an eighth, bulk-free pair | measurement: final-phase DE rule |
+| 10 | called-gene scale s (knob not built) | only if k16 reads POS | emitter knob (§6.1) | H1: +0.0006 … +0.0012 at f ≤ 0.5 (s 1.25), −0.0009 at f 1 | — | FINAL-PHASE rows 8–9 |
+
+**D. Nothing else on record is worth a slot** (§1: 38 rows, ~45 arms or riders, each with its reason). The pipeline is thin by construction: FINDINGS
+§2's closures plus 516/521/525's negatives leave the DE sign channel at the public-data limit, and the bulk's remaining
+levers are in flight (cap 6, per-target q, strength key). Expect 8–12 informative arms for the 30 slots; the rest are
+replicates of the final recipe or stay empty.
+
+---
+
+## 1. Inventory: every arm or rider on record that is neither on the board nor closed
+
+Channel: B = bulk (pds, mse; reads exactly), D = DE (fid, jac, reach, nmae; σ ≈ 0.0003 overall, §2). Board units are
+overall (mean of six scaled members). "H1" = the real production emitter on h1-test unless marked analytic.
+
+### 1.1 Already armed for 10-01 … 10-06 (context; each decides a switch)
+| arm | slot | source | channel | price on record | decides |
+|---|---|---|---|---|---|
+| 460dr | 10-01 s1 | `experiments/460-lodo-dayof/RESULTS.md:72` | B | vs 453dr, LODO key day-of | O (October path) |
+| 446bj2zcp | 10-01 s2 | `535-callprop-arm/PREREGISTRATION.md`; `528-callprop-block/RESULTS.md:61-63` | D | Δ(fid+jac) +0.0020 … +0.0025 | `DEF_DAY_CALLSET_BLOCK` |
+| 479p2g / 479sp2 | 10-02 | `479-pertarget-sharpen/PREREGISTRATION.md` | B | +0.0008 … +0.0013 each | `sharpen_pt` |
+| 495 / 471c | 10-03 | `495-lodo-cap6/PREREGISTRATION.md`; `471-h1full-union/PREREGISTRATION.md` | B | +0.0019 … +0.0029 / +0.0001 … +0.0006 | `lodo_hi_pct`; union source |
+| 498⟨P⟩ / 497dr | 10-04 | `498-combined-bulk/rule1004.py:1-20` | B | cap 6 + P; October path + pct + S_P2 | combination; October bulk |
+| 496a (+ s2 from list) | 10-05 | `496-uncalled-sign-hook/PREREGISTRATION-board.md` | D | nmae −0.0015 … −0.0035 raw | `mde_sign` |
+| 524dr / 446bj2zk16 | 10-06 | `524-october-recipe-dr/PREREGISTRATION.md`; `523-callset-size/PREREGISTRATION.md` | B+D / D | Σ switches ± 0.002 / fid+jac +0.0024 (f 0.35) | October recipe; K |
+
+### 1.2 Built (READY), unscored, not yet scheduled
+| id | arm | what | source | ch | best price (instrument) | status |
+|---|---|---|---|---|---|---|
+| R1 | **446bj2zmz** | 446bj2z + Arc meanz_ne uncalled-gene hook (strong targets; CLEAN4 on the weak third) | `527-arc-hook-arm/PREREGISTRATION.md`; `docs/FINDINGS.md:39-49` | D | H1 nmae −0.0183 raw (3 seeds, r 0); at A/B/C's r ≈ 0.37 (458d): board nmae −0.0011 … −0.0053 raw (`458-arc-lab-programme/BOARD-RESULT-458d-458g.md`, predict517) | waits for 496a (517 §6 HARM row, `517-flex-programme/RESULTS.md:306`) |
+| R2 | **446bj2zk20** | K 2,000 (`VCC_RC_CALLSET_CPM=1600`) | `523-callset-size/PREREGISTRATION.md` | D | fid+jac +0.0014 (f 0.35) / ≈ 0 (f 0.5) / < 0 (f 1) (521 §5 H1) | the K pair's dose check; 10-07 if 10-06 ran 524dr |
+| R3 | **459dr** | the October path with the stack's H1 at ×3 (`VCC_H1_UNION_G=0.84`), vs 453dr | `459-h1-axis-def/PREREGISTRATION.md`; `RESULTS.md` | B | +0.0004 (k 1) … +0.0005 (k 1.3), band −0.0005 … +0.0015 (438 `abcdef`); A at ρ 0.9712 costs ~−0.0001 | READY (`4ac6a81f`), never slotted (09-30 fallback) |
+| R4 | 498⟨not-P⟩ | the per-target form the 10-02 pair did not pick, on cap 6 | `496-uncalled-sign-hook/rule1005.py` | B | its 479 bin | rule1005 fallback |
+| R5 | 497dr | October path + pct cap + S_P2 (if not used 10-04) | `497-october-switches/RESULTS.md:34` | B | Σ(cap, S_P2) on the October path | rule1005 fallback |
+| R6 | 446bz, 446br2z | zs on superseded bases | `456-zs-riders/RESULTS.md` | D | zs already read (446bj2z) | **no information: do not slot** |
+| R7 | 458, 458e, 461dr, 469dr | Arc programme arms | `NEXT-SLOT-DECISION.md:1421-1422` | D | 458d HARM | **dropped** |
+| R8 | 471, 471b, 495.r2 | confounded / past the cliff / superseded | `471-h1full-union/PREREGISTRATION.md` addenda; `495-lodo-cap6/RESULTS.md` | B | — | **never ship** |
+
+### 1.3 Specified or priced, not built (follow-ups the scheduled reads open)
+| id | candidate | source | ch | best price (instrument) | status |
+|---|---|---|---|---|---|
+| F1 | **cp + CLEAN4 hook** (446bj2z + 528's block + 496's hook) | 535 PREREG caveats; this worker §3.2 P1 | D | measured (3 seeds): +0.0067 / +0.0059 / +0.0059 / +0.0059 vs 446bj2z (f 1 / 0.5 / 0.35 / cmp); the hook on the block +0.0011 … +0.0016; super-additive; at zero sign information (P9) the hook on the block ≈ 0 at f ≤ 0.5 | **rank 1** (10-07) if the block reads ≥ PARTIAL (or is rescued) |
+| F2 | **cp + Arc hook** (446bj2zmzcp) | `528-callprop-block/RESULTS.md:45-50` | D | H1 +0.0085 [+0.0064, +0.0108] over the hook base at r 0 (3 seeds); at r 0.37 (P4, 3 seeds) +0.0062 / +0.0054 / +0.0053 / +0.0061, and vs CPH fid +0.0006, nmae −0.0008 … −0.0014 raw, reach −0.007 … −0.013 raw at f ≥ 0.5 | rank 4 (CPMZ): only if 496a transfers AND cp positive |
+| F3 | **cp × K** (block at K 1,600 / 2,000) | `528-callprop-block/RESULTS.md:51-53, 233-246`; this worker §3.2 P2/P3 | D | measured (3 / 2 seeds): the block does not stack with a smaller K (102 / 377 leaked calls per target); block + hook at K 2,600 beats every smaller-K combination in every regime | **closed on H1**: K is the call-set lever only if the block is off |
+| F4 | cp dose / form partners | `528-callprop-block/RESULTS.md:43, 161-166` | D | kept swap 10 % / 25 % / 100 %: +0.0025 / +0.0041 / +0.0051 (H1 f 1; partials 1 seed); decoupled +0.0063 (f 1) / +0.0033 (f ≤ 0.5), 181 leaked calls/target | a dose partner only if 10-01 reads PARTIAL |
+| F5 | **all-switches production arm** | `NEXT-SLOT-DECISION.md:1335-1337, 1410-1411` | B+D | Σ of adopted parts | the scored combination (FINAL-PHASE rule 2 logic, applied to A/B/C) |
+| F6 | **524dr2**: October recipe v2 DR | `529-october-passthrough-bundle/PLAN.md`; `530-cloud-october-bundle/RESULTS.md` | B+D | Σ of switches decided after 10-05 | needs the bundle applied (after recipe_dr524 exits 10-05) |
+| F7 | **518 S1** strength key | `518-bulk-mse-gap/RESULTS.md:245-282` | B | +0.0016 … +0.0024 vs 446bj2 (PLOLO 3/3, kolf2 +5.6 %, H1 −0.0126 raw beating 20/20 permutations) | contingency iff 495 FAILS |
+| F8 | 518 S2 (cap 6 + strength θ 0.5) | `518-bulk-mse-gap/RESULTS.md:152` | B | +0.0001 … +0.0003 over 495 | not a slot |
+| F9 | called-gene magnitude scale s (513f; FINAL-PHASE rows 8–9) | `513-reach-walk-anatomy/RESULTS.md:55-59`; `docs/FINAL-PHASE-FEEDBACK-PLAN.md:42, 64, 71` | D | H1 analytic (this worker, §3.3): s* = 1 at f 1 (s 1.25: −0.0009); s* 1.25–1.4 at f 0.5 / 0.35 / cmp (+0.0006 / +0.0013 / +0.0009) | needs an emitter knob; conditional on the regime (k16) |
+| F10 | hook source follows the programme; Arc hook on g33 / programme block + hook; q70 reach contingency | `517-flex-programme/RESULTS.md:302-306`; `NEXT-SLOT-DECISION.md:1266-1268, 1277` | D | — | **moot** (`programme_source off`) |
+
+### 1.4 Priced riders below the bar, or October-only (no A/B/C slot)
+| id | rider | source | ch | best price | why no slot |
+|---|---|---|---|---|---|
+| N1 | 522 θ 0.25 strength rider (pct × exp(0.25 z_src)) | `522-october-bulk-key/RESULTS.md:90-114`; `docs/FINDINGS.md:126-127` | B | A/B/C +0.05 % (≈ +0.0001); October-like +0.7 … +1.9 % (9/9 folds) | unreadable on A/B/C; an October switch via 530's `DEF_DAY_LODO_STRENGTH` + rehearsal |
+| N2 | 477/480 magnitude-only consensus rider (k 0.1) | `477-consensus-rider/RESULTS.md:41` | D | H1 +0.0004 overall-equiv (3/3 seeds) → ≤ +0.001 | needs a mean-multiplier emitter hook; rides only with F9's knob |
+| N3 | 480 §4.6 mixed consensus rider (0.2 × log2 ratio) | `480-nmae-instrument/RESULTS.md:54-60`; `docs/FINDINGS.md:369` | D | nmae −0.0030 raw but seed-fragile reach | NOT GO (477) |
+| N4 | 515 Wiener-denoised donor signs | `515-lowrank-de-signs/RESULTS.md:1, 27` | D | +0.009 pool-sign accuracy (H1) | consensus-rider class, not queued |
+| N5 | 441 identity axis / 491c own-control PCs | `441-context-mean-response-signs/RESULTS.md:113`; `517-flex-programme/RESULTS.md` §3 | D | ~+0.001 / +0.0026 (H1 gated) | reverses in 3 of 6 public lines: unsafe for D/E/F |
+| N6 | 518 hybrid render (sub-gate genes) | `518-bulk-mse-gap/RESULTS.md:161` | B | +0.0001 (Orion, same frame) … +0.0026 (H1, k 1) | unresolved, needs a builder change; below the two-surface bar |
+| N7 | 518 panel-gene columns; expression tilt; centring; q 2; ρ* | `518-bulk-mse-gap/RESULTS.md:158-166` | B | +0.0007 / +0.0002 / ≤ +0.001 / — / ≤ +0.0002 | small; 512 found the panel coordinates already populated |
+| N8 | cap 8 (540) / raising P for October | `540-lodo-clip-scan/RESULTS.md:188`; `522-october-bulk-key/RESULTS.md:43` | B | uncapped / P99 lose on A/B/C's k562 fold (−3.5 / −2.2 %) | 522: do not raise |
+| N9 | 512 P1 (source-significance call key), P2 (genotype-stratified signs) | `512-cloud-lever-hunt/RESULTS.md:174-180` | D | +0.001 … +0.004 / 0 … +0.002 (priors) | not queued: tables not on disk / falsifier expected |
+| N10 | 490 A-channel dose margin | `490-de-emitter-review/RESULTS.md:98-103` | D | < 0.001 | no slot |
+| N11 | zs dose (k500 …) | `423-rank-preserving-magnitude/RESULTS.md:158-160, 231` | D | k500 −0.00255 vs k250 −0.00258 (capacity-bound) | no dose curve exists |
+| N12 | FINAL-PHASE rows (ρ* ×0.98/1.02, CD4 stack, q, cap 6 vs pct, same-line w) | `docs/FINAL-PHASE-FEEDBACK-PLAN.md` §2, §5 | B | D/E/F-only | rehearse the knobs locally (530); no A/B/C slot |
+| N13 | "truth-zero" gate genes (new idea checked here: a cis-silenced low-expressed neighbour whose truth mean is 0 would carry lfc ≈ −32 and dominate its target's nmae) | this worker | D | h1-test has **0** gate genes with lfc < −10 and 3 below −5 (target rows excluded; `truthzero537.py`) | no pot: dropped |
+
+### 1.5 Closed (FINDINGS §2) — not re-listed. Also closed since: the Arc programme as block prior (458d, 09-30),
+DLD-1 union (446bd2), per-target call-set sizing (521), target-specific public sign sources (516).
+
+---
+
+## 2. The DE channel's board noise for today's construction (`noise537.py`, `noise537b.py`, `work/noise537b.json`)
+
+**What is being claimed.** The noise that matters for READING a DE arm is the change in the DE members that the emission's
+random realization alone produces between two builds. The project's rule (AGENTS 11.1 rule 13; FINDINGS §1; the 11.1c.4
+luck bias; FINAL-PHASE-FEEDBACK-PLAN §1 rule 4) sets it at sd ≈ 0.0045 overall. For today's emission law it is ~0.0002.
+
+### 2.1 Known answer: where 0.0045 comes from (230 §6, `experiments/230-toll-magnitude/work/fit230.json`)
+`noise537b.py` recomputes it and aborts unless it reproduces to 1e-12: **sd 0.027010964677 (scaled) = 0.004501827446
+overall** over 230's six "digest-identical" pairs (identical per-gene totals). Every one changes the EMISSION LAW:
+
+| arm vs incumbent | board Δreach | emitted library CV | what changed |
+|---|---:|---:|---|
+| a8 vs a2-prune | +0.021398 | 0.0043 | overdispersion 0 → 4 |
+| a10 vs a8 | −0.000754 | 0.0187 | spread 0.25 → 0.15, φ 4 → 16 |
+| a21 vs a15 | −0.018482 | 0.3821 | 86 % of cells resampled |
+| a22 vs a15 | −0.010656 | 0.1050 | resample_mix, the complement |
+| rc_hybrid vs a15 | +0.054940 | 0.0187 | |z| re-assigned by |H| |
+| rc_callset vs rc_hybrid | +0.022590 | 0.0187 | new law + call set (n_pred 4,480 → 2,599) |
+
+These are six different designs with systematic reach effects of ±0.02–0.05; their spread is the prior uncertainty of a
+LAW change before its read. It says nothing about the re-roll of one law. One pair (rc_callset vs rc_hybrid) is a call-set
+change inside one law (n_pred −42 %): its +0.0226 is a systematic effect of the kind 523's K arms and 528's block will show,
+which is why reach's MODEL uncertainty before a read stays large while its READ noise is small.
+
+### 2.2 Board pairs of our own entries (raw members from `data/board-entries/<id>.json`; nothing else read)
+**B1 — same DE design, same emission law (K-class `rc_callset` + ballast, 410b onward), same builder seed (SEED 0); only
+the bulk changed.** The ballast count K changes on some blocks, which shifts the file's single emission stream for every
+later block, so pass 1 is re-drawn almost everywhere (§2.6): a re-roll of one design (plus the known ballast nmae term of a
+sharper render on the two q steps). The package metas agree: the median K or the carrier-total summary differs in all seven
+pairs (e.g. 446b − 433k: median K 4 → 6).
+
+| pair | entry ids (arm − ref) | Δfid | Δjac | Δreach | Δnmae | Δpds | Δmse | DE → overall |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| 417a − 410b | T88GsCjp53Bmk8xQcJMS − 4WgVi6FIE4iVw9PmRUP3 | +0.000010 | −0.000021 | +0.001127 | +0.000094 | +0.006388 | −0.024917 | +0.00018 |
+| 417e − 417a | wPP8U70kj4mOIvtA83CO − T88GsCjp53Bmk8xQcJMS | +0.000040 | +0.000003 | −0.000504 | −0.000147 | +0.001408 | −0.026238 | −0.00003 |
+| 433k − 433h | T76JWD3tOajk5IYvzwUW − wMoDAi1mca08FA2Bfqkd | +0.000011 | −0.000021 | +0.000230 | +0.000815 ¹ | +0.004623 | −0.017898 | −0.00018 |
+| 446b − 433k | UDgjOKL9gI1udAexq6ue − T76JWD3tOajk5IYvzwUW | +0.000012 | −0.000003 | +0.000700 | +0.001346 ¹ | +0.003170 | −0.007642 | −0.00023 |
+| 446bj2 − 446b | YvVru3DAF89Jiyr34olR − UDgjOKL9gI1udAexq6ue | −0.000022 | +0.000016 | −0.001963 | +0.000060 | +0.000208 | −0.014473 | −0.00039 |
+| 446bd2 − 446b | R5uE5Rve3R9nWXGbeSLM − UDgjOKL9gI1udAexq6ue | −0.000020 | 0.000000 | −0.002314 | +0.000121 | +0.002148 | −0.000471 | −0.00048 |
+| 457dr − 453dr | 1FfirZsGsAZvaXYTd39J − q3VuTImh4FRGKXH2waCp | −0.000034 | +0.000004 | +0.000711 | +0.000200 | +0.001713 | −0.014313 | +0.00006 |
+| **rms (n 7)** | | 0.000024 | 0.000013 | **0.00130** [0.00086, 0.00264] | 0.00061 (0.00013 w/o ¹) | | | **0.00027** |
+
+¹ the ballast term of a sharper render (median K 4 → 6; `446-q175-level/BOARD-RESULT-446b.md`): systematic, not noise.
+The interval is the χ² 95 % interval of the rms of seven paired differences. In overall units reach's rms is **0.00024
+[0.00016, 0.00050]**. B1's rms is an UPPER bound on the re-roll: each pair also carries whatever the bulk change did to
+the DE members systematically.
+
+**B2 — DE changes that share every emission draw (468) or change a post-pass or a few blocks: the deltas are the design's
+effect, not noise.**
+
+| pair | entry ids | Δfid | Δjac | Δreach | Δnmae | Δpds | Δmse |
+|---|---|---:|---:|---:|---:|---:|---:|
+| 446bj2z − 446bj2 (zs post-pass) | be90smZUDcIV7j5MgQ03 − YvVru3DAF89Jiyr34olR | 0 | 0 | 0 | −0.002179 | 0 | 0 |
+| 446bja − 446b (prior-only, one context) | AsHteaDAXCWQo57fLYti − UDgjOKL9gI1udAexq6ue | +0.000219 | −0.000002 | −0.007891 | −0.001026 | 0 | 0 |
+| 458d − 446b (prior-only) | b7UI3NRy1rdVNRRyZwmU − UDgjOKL9gI1udAexq6ue | −0.005545 | −0.000042 | −0.026694 | +0.001549 | 0 | 0 |
+| 458g − 458d (prior-only gate) | JL8llNLHaTyDQzm798TV − b7UI3NRy1rdVNRRyZwmU | +0.001432 | +0.000034 | +0.013557 | −0.000779 | 0 | 0 |
+| 446br2 − 446b (repair floor, few blocks) | wE7usCaR6TAlPp16TR0V − UDgjOKL9gI1udAexq6ue | 0 | 0 | −0.000039 | −0.001413 | +0.000007 | +0.000070 |
+
+### 2.3 H1: the read noise of a DE knob (it keeps pass 1 and changes pass 2; §2.6)
+For every DE-knob class with ≥ 2 emission seeds on record (528's and 517's real production-emitter runs), the seed-to-seed
+sd of the PAIRED effect (arm − its base, same seed) is exactly the read noise of one realization of that arm type. Scaled
+to the board's 900 target-rows (× √(85/900), a panel mean of independent per-target terms; B1 checks this scaling on the
+board, §2.6):
+
+| knob class (H1 runs) | seeds | fid | jac | reach | nmae | all four, overall |
+|---|---:|---:|---:|---:|---:|---:|
+| call-set block, kept (`lcap-kept` vs 435) | 3 | 0.00003 | 0.00001 | 0.00049 | 0.00002 | 0.00009 |
+| block, coupled / decoupled (`lcap`, `lcap-dec`) | 3 / 3 | 0.00003 / 0.00001 | 0.00000 / 0.00001 | 0.00029 / 0.00036 | 0.00004 / 0.00000 | 0.00006 / 0.00007 |
+| block falsifier / logit key (`shuf`, `ltv`) | 3 / 3 | 0.00001 / 0.00003 | 0.00001 / 0.00001 | 0.00076 / 0.00120 | 0.00003 / 0.00001 | 0.00014 / 0.00023 |
+| block on the Arc hook (`lcap-kept+mzg` vs `cpm+mzg`) | 3 | 0.00003 | 0.00001 | 0.00118 | 0.00001 | 0.00022 |
+| block at K 1,600 (`lcap-kept-n1200` vs `cpm-n1200`) | 2 | 0.00005 | 0.00003 | 0.00025 | 0.00002 | 0.00006 |
+| uncalled-gene hook (517: `c4-mzg0.05`, `c4-arcg0.05`, `-r0.25`, `g33-arcg0.05`) | 3 each | 0.00001–0.00006 | 0.00000 | 0.00100–0.00103 | 0.00002–0.00003 | 0.00019–0.00020 |
+| **pooled paired (df 21)** | | **0.000032** | **0.000009** | **0.00087** | **0.000026** | **0.00017** |
+| base re-roll, independent seeds (435 + zs; `noise537.py`) | 3 | 0.000033 | 0.000010 | 0.00057–0.00129 | 0.00004–0.00016 | 0.00012–0.00024 |
+
+(members raw on the board scale; the regimes f 1 / 0.5 / 0.35 / cmp move only the base row's reach, shown as its range)
+Today's runs (`redraw537.py`, all four members, overall, board-scaled): CLEAN4 hook 0.00025 (3 seeds), hook on the block
+0.00011, K 2,000 0.00010, the block 0.00007 — inside the table's range.
+
+### 2.4 Scope and the rule to use
+- **σ_DE(read) ≈ 0.0002–0.0003 overall (reach carries ~95 % of it; fid, jac, nmae ≤ 0.00005 each)** for any arm that keeps
+  the K-class ballast emission law of 410b onward (including the coarse MDE, the zero repair, zs) and the builder's SEED:
+  (i) bulk-only changes (B1: re-rolls of pass 1, measured on the board); (ii) DE knobs that change pass 2 within that law —
+  a different call set (528's block, 523's K), a different complement sign (496/517's hook), a different steering form: they
+  keep pass 1 (§2.6) and read at 0.3–0.6× a re-roll (§2.3); (iii) prior-only and post-pass knobs share every draw and read
+  with no re-roll at all (B2).
+- **Not covered:** a change of emission LAW (library classes, resampling, overdispersion, the |z| assignment): 230's 0.0045
+  is the right prior spread there. None of the arms in §0 changes the law.
+- **The scaling is checked, not assumed:** §2.3 scales H1's per-target noise to the board by √(85/900). B1's pairs are
+  re-rolls of pass 1 (§2.6), and their board rms (reach 0.00130 raw) matches H1's re-roll scaled the same way (0.00123 raw;
+  H1's own bulk step 0.00032 overall vs B1's 0.00027). A seed-only rebuild of the incumbent (one slot; the `SEED` knob in §5)
+  would add an eighth board pair of the same kind; it is no longer needed to establish σ.
+- **Rule:** read DE arms in units of σ_DE ≈ 0.00025 overall; 2σ ≈ 0.0005. Keep fid + jac as the primary statistic for call-set
+  arms (σ ≈ 0.00004 overall) and nmae for hook / magnitude arms (σ ≈ 0.00001 overall); reach is the noisy member.
+- **Proposed text for the coordinator** (AGENTS 11.1 rule 13 / 11.1c.4 and FINAL-PHASE-FEEDBACK-PLAN §1 rule 4; not edited here):
+  "On the K-class ballast emission law (410b onward), a DE arm's board read carries σ ≈ 0.00025 overall between two builds
+  (reach ~95 % of it; fid, jac, nmae ≤ 0.00005 each; 537 §2). A bulk-only change re-draws pass 1 (the ballast K shifts the
+  file's one emission stream) and reads at that σ; a DE knob keeps pass 1 and reads below it. One entry decides a DE switch whose primary statistic
+  (fid + jac for call-set arms, nmae for magnitude/hook arms) moves by ≥ 0.0005 overall. The sd 0.0045 of 230 is the prior
+  spread of a CHANGE OF EMISSION LAW and still prices such a change's reach before its read. The best of N identical arms reads
+  ~+0.0003 by luck (N = 5), not +0.005."
+
+### 2.5 A preregistered, slot-free confirmation on the 10-01 … 10-04 reads
+`PREREGISTRATION-noise.md` (sha256 `07fae392…`, written 13:40Z 09-30, before any 10-01 entry) lists the seven bulk-only
+pairs the scheduled reads will produce (460dr − 453dr, 479p2g / 479sp2 − 446bj2, 495 − 446bj2, 471c − 446b, 498⟨P⟩ − 495,
+497dr − 460dr) and fixes 3σ bands per pair (|Δfid| ≤ 0.0001, |Δjac| ≤ 0.00005, |Δreach| ≤ 0.0040 raw) with a
+CONFIRMED / REFUTED / UNRESOLVED rule; `noisecheck537.py` (`7d06dd41…`) applies it. Results are appended here as the reads land.
+
+**Pre-read check (20:05Z 09-30, `pairmeta537.py`, package configs only):** every candidate pair differs only in bulk keys
+(`bulk_ctx_scale`, `bulk_load(_sha256)`, `bulk_sharpen_q/_pt`) and, for the October-path pairs, `sameline` with no programme
+and no row changed. One extra key: 498sp2 − 495 also differs in `de_sign_emitter_sha256` (496p's emitter `1658ae2c` vs
+`edb5b8dc`); 496p's KA-1 rebuilt its reference byte for byte with the hook unset, so the difference is inert and the pair
+stays. (498p2g − 495 has no such key.)
+
+**Reads (appended as they land; `noisecheck537.py`; the verdict counts only when all scheduled pairs are in):**
+
+| read | pair (entry ids) | Δfid | Δjac | Δreach | Δnmae (reported) | bands | pooled reach rms with B1 |
+|---|---|---:|---:|---:|---:|---|---|
+| 10-01 s1 | 460dr − 453dr (`LrkhsIXWMjEsvRXSGToa` − `q3VuTImh4FRGKXH2waCp`) | +0.000003 | +0.000005 | +0.001223 | +0.000125 | inside all three | 0.00129 raw [0.00087, 0.00247] (n 8) = 0.00024 overall |
+| 10-02 s1 | 479p2g − 446bj2 (`ioNMsGwrG2EvYuoB5Zu7` − `YvVru3DAF89Jiyr34olR`) | +0.000004 | −0.000011 | −0.000836 | +0.000120 | inside all three | 0.00125 raw [0.00086, 0.00228] (n 9) |
+| 10-02 s2 | 479sp2 − 446bj2 (`NPiJoPH47VYhiWQHhoOG` − `YvVru3DAF89Jiyr34olR`) | −0.000000 | −0.000017 | +0.000777 | +0.001798 ¹ | inside all three | **0.00121 raw [0.00084, 0.00212] (n 10) = 0.00023 overall** |
+
+| 10-03 s1 | 495 − 446bj2 (`9Hxef2F6Clf4G2hIkNPq` − `YvVru3DAF89Jiyr34olR`) | +0.000058 | +0.000021 | +0.000699 | +0.000615 | inside all three | — |
+| 10-03 s2 | 471c − 446b (`yzNoMVih0pKqoDjdqrXm` − `UDgjOKL9gI1udAexq6ue`) | −0.000015 | +0.000006 | −0.002407 | −0.000142 | inside all three | **0.00132 raw [0.00095, 0.00218] (n 12) = 0.00025 overall** |
+¹ the ballast term of the sharper `sp2` render (fewer carrier cells; §2.2's q-step footnote), reported, not scored.
+
+**Verdict (coordinator, 10-03 17:00Z; this worker died ~10-03 01:30Z, so the coordinator ran `noisecheck537.py` itself):**
+**CONFIRMED.** 5 scored pairs, all inside every band (the rule needs 4 when fewer than 6), new reach rms 0.00135 raw (≤ 0.0026),
+0 fid / jac breaks. The remaining scheduled pairs cannot flip it: 498p2g − 495 (10-04 s1) is appended when it lands, and
+497dr − 460dr will never be read, since rule1004 gave 10-04 s2 to the fill. The re-roll sd ≈ 0.00025 overall is now AGENTS rule 13's
+figure for same-law arms, with 0.0045 kept only for changes of emission law.
+Interim (3 of 7): all inside the bands; new reach deltas +0.0012 / −0.0008 / +0.0008 raw (rms 0.00097, below B1's 0.0013);
+fid within ±0.000004 and jac within ±0.000017 raw on all three. The pooled estimate narrows to 0.00023 overall. (On the bulk:
+460dr +0.0029 vs 453dr; 479p2g 0.2733131, +0.0010 vs 446bj2 and +0.0005 vs 446bj2z, the new A/B/C best; 479sp2 −0.0007 vs
+446bj2.)
+
+### 2.6 Why B1 is a re-roll and a DE knob reads below it: the emission stream (`redraw537.py`, `work/redraw537.json`)
+**Mechanism (code).** The builder makes one emission stream per file (`pick_rng, emission_rng = make_rngs(SEED)`,
+`make_submission_pm_cd4.py` ~L5610) and, block by block, sets the ballast count `ballast_k = ballast_count(profile,
+profile_bulk, …)` and draws `carrier_libs = libraries[picks][: cells_per_pert − ballast_k]` carriers from it (~L6000–6030);
+pass 2 re-assigns with a per-row jitter seed. The H1 harness does the same (`run496.ballast_block`, one `emit_rng` for all 85
+targets). So a bulk change that moves K on any block changes how many carriers that block draws and shifts the stream for
+every later block; a DE knob that does not move K leaves every block's pass-1 draw where it was.
+
+**Test (H1, the production emitter, 3 seeds).** A bulk-only step (`cpm-bs1.2`: the 410b bulk's per-target scale raised to
+1.2, same energy; scale range 0.18–1.78 → 0.12–1.85; the DE design untouched) against 435's base, and four DE knobs against
+theirs. "Pass 1 equal" compares the emitter's own pass-1 call count per target; "carriers equal" the carriers' jackknife
+statistic. (`carrier_total` is no test: each emitted cell carries its library total, so it moves only with K.)
+
+| pair (3 seeds unless noted) | blocks with K moved | first | pass 1 re-drawn | of which K did NOT move | same-seed ρ, per-target reach / nmae / fid / jac | paired sd, overall (85 targets) | independent re-draw predicts | board-scaled |
+|---|---|---|---|---|---|---|---|---|
+| **bulk-only step** | 28 / 32 / 33 of 85 | target 0 | 84 / 83 / 84 | 57 / 51 / 51 (of 57 / 53 / 52) | **−0.21 / +0.15** / +0.42 / +0.60 | 0.00104 | 0.00094 | 0.00032 |
+| CLEAN4 hook | 0 | — | 0 | — | +0.62 / +0.98 / +0.72 / +0.26 | 0.00083 | 0.00148 | 0.00025 |
+| call-propensity block (kept) | 0 | — | 0 | — | +0.89 / +0.96 / +0.21 / +0.48 | 0.00022 | 0.00081 | 0.00007 |
+| K 2,000 | 0 | — | 0 | — | +0.89 / +0.95 / −0.07 / +0.14 | 0.00033 | 0.00076 | 0.00010 |
+| hook on the block | 0 | — | 0 | — | +0.85 / +0.99 / +0.61 / +0.54 | 0.00036 | 0.00085 | 0.00011 |
+
+- **The known answer holds and the mechanism is the one read from the code:** every DE knob leaves pass 1 identical on 85 /
+  85 targets (no K moves); the bulk step moves K from the first target on and re-draws pass 1 on 83–84 of 85, including all
+  but 0–2 of the targets whose own K did not move — the stream shift, not the K change itself, re-draws them.
+- **B1 is therefore a board measurement of the re-roll.** The bulk step's same-seed correlation of per-target reach and nmae
+  with its base is ≈ 0 (−0.21, +0.15), and its paired sd (0.00104) is what two independent draws predict (0.00094). Scaled to
+  900 target-rows it is 0.00032 overall; B1 on the board reads 0.00027 (reach 0.00130 raw vs the 0.00123 raw H1 predicts):
+  the 85 → 900 scaling holds on the board's own pairs. (fid and jac keep +0.4 … +0.6 of their per-target values across a
+  re-roll because the call set is prescribed, not drawn; they are 0.1 % of the noise.)
+- **DE knobs read below it** — they share pass 1, their per-target reach and nmae correlate +0.62 … +0.99 with the base's, and
+  their paired sd is 0.3–0.6× the independent prediction. For every arm in §0's table the read noise is ≤ B1's 0.00025 ± 0.0001
+  overall; the hook class (0.00025) is the noisiest.
+- **What this does not cover:** a change of emission LAW re-draws and re-designs at once (230's six pairs); a builder-seed
+  change (none on record: 548 counted `emission_seed` 1000003 in 99 / 99 metas) would be a full re-roll like B1.
+
+---
+
+## 3. Prices
+
+### 3.1 Known answers for the real-emitter runs (`run537.py`, `ka537.py`, `drive537.sh`; log `work/drive537.log`)
+The harness is 435's (run496.py, RUN426_EMITTER=prod) driving the committed production emitter `src/vcc2026/rc_emit_k.py`
+(sha asserted `0f56209d…`), with 528's block key, 523's call-set size and 496/517's hooks injected per target.
+
+| known answer | result |
+|---|---|
+| `cpm` s0 == 528's `h1_cpm` (== 435's production run), pre-zs and zs stats (p, q, lfc, sums) | **PASS**, bit-equal (11:42Z) |
+| `lcap-kept` s0 == 528's `h1_lcap-kept`, pre-zs and zs | **PASS**, bit-equal (11:48Z) |
+| `cpm+c4h` s0 pre-zs == 517's `h1_c4-c4t0.05` (== 496's real hook run) | **PASS**, bit-equal (11:53Z) |
+| `cpm-n1200` s0 == 528's `h1_cpm-n1200`, pre-zs and zs | **PASS**, bit-equal (12:50Z) |
+| `cpm+mzg` s0 == 528's `h1_cpm+mzg` (== 517's `c4-mzg0.05`), pre-zs and zs | **PASS**, bit-equal (13:05Z) |
+| price537 (528's pricing functions): 435's members from stats == its metrics json, seeds 0/1/2 | **PASS** (≤ 1e-12) |
+| price537 re-prices 528's recorded comparisons | `lcap-kept+mzg` vs `cpm+mzg` +0.00851 [+0.00642, +0.01084] (= 528's +0.0085 [+0.0064, +0.0108]); `cpm-n1200` vs base −0.0130 / −0.0008 / +0.0025 / +0.0051 (= 528 §1) |
+| the harness omits 446bj2z's zero repair (`VCC_DE_ZERO_REPAIR=-5`): does that matter? | **No, exactly:** across all 244 H1 stats files priced here (this directory's, 528's, 435's; pre-zs and zs) the only zero-total gated (target, gene) pair is NGRN's own gene, which the scorer and the repair both exclude — the repair would be a no-op on every construction (428's known answer for the base, now for every knob; checked 19:35Z) |
+
+Peak RSS per run 6.99–7.61 GB (`/usr/bin/time -l` and a 5-s watchdog capped at 8.0 GB).
+
+### 3.2 DE combinations (real production emitter, H1, 3 seeds; `price537.py`, `work/price537.{json,log}`)
+Each row is one arm against its base, same seed; overall = 192's board-fitted units; [95 % target CI] on the seed-averaged
+rows; members raw; board columns = 523's convention (fid, jac × 0.72; reach × 1 | × 0 | × −0.76). pds and mse: the per-gene
+sums are equal on every seed of every row (DE-only).
+
+**P1 — the call-propensity block (528, `kept`) and the CLEAN4 hook (496's `clean4:0.05`) are SUPER-ADDITIVE.**
+
+| comparison | f 1 | f 0.5 | f 0.35 | cmp | members at f 0.35 (fid / jac / reach / nmae) | board at f 0.35 |
+|---|---|---|---|---|---|---|
+| cp alone on 446bj2z (528's arm, 446bj2zcp) | +0.0051 [+0.0033, +0.0070] | +0.0048 | +0.0045 | +0.0053 | −0.0018 / +0.0083 / +0.0089 / −0.0001 | +0.0037 \| +0.0020 \| +0.0007 |
+| CLEAN4 hook alone on 446bj2z (496a's knob on the zs base) | +0.0002 [−0.0017, +0.0019] | +0.0004 | +0.0007 [+0.0002, +0.0011] | −0.0002 | +0.0001 / 0.0000 / −0.0000 / −0.0021 | +0.0006 \| +0.0006 \| +0.0006 |
+| **hook on the cp base** (CPH vs 446bj2zcp) | **+0.0016** [+0.0002, +0.0033] | **+0.0011** [+0.0003, +0.0018] | **+0.0014** [+0.0008, +0.0020] | +0.0006 [−0.0008, +0.0018] | **+0.0010** / +0.0003 / +0.0000 / **−0.0027** | +0.0012 \| +0.0012 \| +0.0012 |
+| cp on the hook base | +0.0065 [+0.0045, +0.0089] | +0.0055 | +0.0052 | +0.0061 | −0.0010 / +0.0086 / +0.0090 / −0.0007 | +0.0043 \| +0.0026 \| +0.0013 |
+| **cp + hook, total vs 446bj2z (CPH)** | **+0.0067** [+0.0047, +0.0088] | **+0.0059** [+0.0030, +0.0085] | **+0.0059** [+0.0035, +0.0085] | **+0.0059** [+0.0036, +0.0082] | −0.0009 / +0.0086 / +0.0089 / −0.0028 | **+0.0049 \| +0.0032 \| +0.0020** |
+| interaction = total − (cp alone + hook alone) | +0.0014 | +0.0007 | +0.0007 | +0.0008 | | |
+
+- Seeds (f 1, total): +0.00705 / +0.00660 / +0.00648. Hook on the cp base (f 0.35): +0.00143 / +0.00134 / +0.00142.
+- **Breadth (seed-averaged per-target rows):** the hook's increment on the block is positive on 61 / 60 / 55 of 85 targets
+  (f 1 / 0.35 / cmp), with the top 3 targets carrying 0.61 / 0.24 / 0.72 of it — broad at f 0.35, concentrated at f 1 and in
+  the compressed regime; block + hook vs 446bj2z gains on 64 / 61 / 67 targets (top-3 share 0.18 / 0.32 / 0.22).
+- **Mechanism.** Under the `kept` steering the ~616 swapped-in genes per target are CALLED but unsteered (design sign, 0.508
+  accuracy; 528 §4.3), and they sit in the hook's territory (complement of head ∪ steered block). The CLEAN4 hook gives the
+  covered ones CLEAN4's sign and an MDE-sized magnitude: fid recovers +0.0006 … +0.0010 raw (the block's fid cost was
+  −0.0013 … −0.0018), and nmae falls −0.0018 … −0.0027 raw (the hook alone: −0.0015 … −0.0022).
+- **Deliverability:** unsuppressible calls 8.3 per target with the hook against 20.4 for the block alone (base 7.0); prescribed
+  calls missed 28.3 (block alone 34.0, base 35.3). The hook also removes most of the kept block's extra leaks.
+- **Transfer of the mechanism:** the hook's CLEAN4 τ 0.05 signs cover 29 / 19 / 33 % of A / B / C's swapped-in genes against
+  19 % on H1 (`coverage537.py`), so the synergy's reach on A/B/C is at least H1's.
+- **Board prediction for 446bj2zcph** (vs 446bj2z): fid + jac +0.0023 … +0.0028 overall (0.72×); with reach ×1 / ×0 / ×−0.76:
+  +0.0048 … +0.0056 / +0.0032 … +0.0035 / +0.0013 … +0.0024. Versus 446bj2zcp (the hook's increment): +0.0006 … +0.0015
+  (the nmae half scales with the hook's own board factor, which 496a measures on 10-05).
+
+**P2/P3 — the call-set SIZE (523's K) alone and with the block: K 2,000 dominates K 1,600, and neither stacks with the block.**
+
+| comparison (seeds) | f 1 | f 0.5 | f 0.35 | cmp | fid + jac overall (f 1 / 0.5 / 0.35 / cmp) | unsuppressible / target |
+|---|---|---|---|---|---|---|
+| K 2,000 alone (`cpm-n1600`, 446bj2zk20's construction; 3) | −0.0073 [−0.0121, −0.0028] | +0.0003 | +0.0021 | +0.0040 [+0.0025, +0.0055] | −0.0068 / +0.0011 / +0.0030 / +0.0034 | 18.6 (base 7.0) |
+| K 1,600 alone (`cpm-n1200`, 446bj2zk16's; 3) | −0.0129 [−0.0217, −0.0049] | −0.0007 | +0.0026 | +0.0053 [+0.0029, +0.0078] | −0.0132 / +0.0002 / +0.0028 / +0.0033 | 66.3 |
+| **K 2,000 − K 1,600, paired (523's dose pair; 3)** | +0.0057 [+0.0012, +0.0101] | +0.0010 | −0.0006 | −0.0013 [−0.0035, +0.0006] | **+0.0064 / +0.0009 / +0.0002 / +0.0000** | — |
+| block kept at K 2,000, vs K 2,000 (2) | +0.0045 | +0.0026 | +0.0022 | +0.0014 | +0.0042 / +0.0015 / +0.0004 / +0.0007 | 102.0 (vs 18.6) |
+| block coupled at K 2,000, vs K 2,000 (1) | +0.0016 | +0.0010 | +0.0035 | +0.0027 | +0.0019 / +0.0021 / +0.0023 / +0.0028 | 8.9 (nmae +0.0010 … +0.0031 raw) |
+| block kept at K 1,600, vs K 1,600 (3) | +0.0053 | −0.0013 | −0.0027 | −0.0027 | +0.0062 / −0.0014 / −0.0022 / −0.0019 | 377.4 (vs 66.3) |
+| block kept + K 2,000, total vs 446bj2z (2) | −0.0029 | +0.0027 | +0.0041 | +0.0052 | −0.0026 / +0.0026 / +0.0034 / +0.0041 | 102.0 |
+| block kept + K 1,600, total vs 446bj2z (3) | −0.0076 | −0.0019 | −0.0001 | +0.0026 | −0.0070 / −0.0012 / +0.0006 / +0.0014 | 377.4 |
+| (block + hook at K 2,600, total vs 446bj2z; P1) | +0.0067 | +0.0059 | +0.0059 | +0.0059 | +0.0039 / +0.0037 / +0.0034 / +0.0038 | 8.3 |
+
+- **K 2,000 ≥ K 1,600 on the primary statistic (fid + jac) in every regime** (paired, 3 seeds: +0.0064 / +0.0009 / +0.0002 /
+  +0.0000; strictly at f ≥ 0.5, tied at f 0.35 and cmp, where reach and nmae favour K 1,600 by 0.0006–0.0013 overall) and
+  loses half as much at f 1. 523's bins treat "K 2,000 must sit between 446bj2z and K 1,600; a non-monotone pair is
+  noise-dominated" — under §2's σ (fid + jac ≈ 0.00004 overall) a non-monotone pair is REAL, and H1 predicts one.
+  **Amend 523's dose-check bin before 10-06: if K20's Δ(fid + jac) ≥ k16's, the October K is 2,000 (`DEF_DAY_RC_CALLSET_CPM=1600`).**
+- WITHOUT the hook the block does not stack with a smaller K: at K 2,000 / 1,600 the kept block leaks 102 / 377 unprescribed
+  calls per target (low-to-mid CPM complement genes, 528 §4.5) and its fid turns negative at f ≤ 0.5; the coupled form stops
+  the leak but pays nmae through the kf shrink. **P5/P6 below: the CLEAN4 hook removes that leak, and then block + hook +
+  a smaller K beats block + hook at K 2,600 in the small-n_real regimes.**
+
+**P5/P6 — block + CLEAN4 hook at K 2,000 / 1,600 (3 seeds each).** The hook stops the smaller-K leaks
+(unsuppressible calls per target: hook at K 2,000 6.8 vs 18.6 without; at K 1,600 7.5 vs 66.3; **block + hook at K 1,600
+9.6 vs 377** for the block alone).
+
+| block + CLEAN4 hook, total vs 446bj2z | f 1 | f 0.5 | f 0.35 | cmp | fid + jac overall (f 0.35 / cmp) |
+|---|---|---|---|---|---|
+| at K 2,600 (CPH; 3 seeds) | **+0.0067** | **+0.0059** | +0.0059 | +0.0059 | +0.0034 / +0.0038 |
+| at K 2,000 (`lcap-kept-n1600+c4h`; 3 seeds) | −0.0040 [−0.0091, +0.0009] | +0.0046 | **+0.0074** [+0.0024, +0.0132] | **+0.0075** [+0.0046, +0.0102] | +0.0057 / +0.0065 |
+| at K 1,600 (`lcap-kept-n1200+c4h`; 3 seeds) | −0.0131 [−0.0222, −0.0047] | +0.0016 | +0.0060 [+0.0004, +0.0122] | **+0.0084** [+0.0052, +0.0115] | +0.0059 / +0.0075 |
+
+- K 2,600 is the robust form (never below +0.0059); K 2,000 wins at f 0.35 and in the compressed regime (+0.0015 / +0.0016
+  over CPH; seeds at f 0.35 +0.0068 / +0.0079 / +0.0075) and costs −0.011 at f 1; K 1,600 wins only in the compressed regime
+  (+0.0084) and costs −0.020 at f 1. The board-calibrated `cmp` regime (521: the nmae cohort and the fid tail) sits where
+  smaller K pays; H1's own f 1 and 480's nmae anchor sit where it does not. The board's regime therefore decides the October call set: **if k16 / K20 read POS on 10-06, the next DE arm after CPH
+  is CPH at K 2,000** (`446bj2zcphk20` = CPH's env + `VCC_RC_CALLSET_CPM=1600`), not K alone.
+
+**P4 — the Arc-sourced hook at A/B/C's attenuation (r 0.37, predict517's reading of 458d; 3 seeds; KA `cpm+mzg` s0 == 528's).**
+
+| comparison | f 1 | f 0.5 | f 0.35 | cmp | members at f 0.5 (fid / jac / reach / nmae raw) |
+|---|---|---|---|---|---|
+| Arc hook alone (446bj2zmz's construction) at r 0.37 | −0.0014 | −0.0003 | +0.0012 [+0.0005, +0.0019] | +0.0004 | +0.0001 / −0.0000 / −0.0070 / −0.0036 |
+| (the same at r 0; 527's H1 price) | +0.0044 | +0.0048 | +0.0045 | +0.0039 | +0.0002 / −0.0001 / −0.0001 / −0.0174 |
+| Arc vs CLEAN4 hook, no block (source at fixed delivery) | −0.0016 | −0.0007 | +0.0005 [+0.0001, +0.0011] | +0.0006 | +0.0000 / −0.0000 / −0.0056 / −0.0014 |
+| block on the Arc-hook base at r 0.37 | +0.0062 | +0.0054 | +0.0053 | +0.0061 | −0.0003 / +0.0090 / +0.0075 / −0.0003 |
+| **block + Arc hook (CPMZ) − block + CLEAN4 hook (CPH)** | −0.0019 | −0.0008 | +0.0007 | +0.0006 | **+0.0006 / −0.0001 / −0.0068 / −0.0008** |
+| block + Arc hook at r 0.37, total vs 446bj2z | +0.0048 | +0.0051 | +0.0065 | +0.0065 | −0.0002 / +0.0090 / +0.0004 / −0.0039 |
+
+- At A/B/C's attenuation the Arc source still beats CLEAN4 on the two robust members (fid +0.0006 on the block, nmae −0.0008 …
+  −0.0014 raw), and pays reach at f ≥ 0.5 (−0.007 … −0.013 raw; the same small-gate lottery 458d paid on the board). The
+  synergy with the block shrinks from +0.0085 (r 0) to +0.0053 … +0.0062.
+- **Board reading of CPMZ vs CPH:** Δ(fid + nmae) +0.0001 … +0.0007 overall (fid × 0.07–0.67, nmae × T); reach anywhere in
+  −0.0026 … +0.0020 overall. A clean test of the source on the robust members; `PREREGISTRATION-draft-CPMZ.md`.
+
+**P7 — the hook's dose: τ 0.03 (3,829 signed genes) vs τ 0.05 (2,550), on the block (2 seeds).** τ 0.03 − τ 0.05: fid +0.0002,
+nmae −0.0005 … −0.0008 raw, but reach −0.003 … −0.009 raw → overall −0.0010 / −0.0014 / −0.0004 / +0.0001 (f 1 / 0.5 / 0.35 /
+cmp). **τ 0.05 stays** (496a's form); a τ 0.03 dose partner would buy ≤ +0.0002 on fid + nmae and is not worth a slot.
+
+**P8 — the CLEAN4 hook attenuated to A/B/C's measured CLEAN4 quality (r 0.17: 392's 0.67× fid transfer and the blob-free K562
+fold's 0.553 accuracy on swapped-in gate genes both imply it; 3 seeds).**
+
+| comparison | f 1 | f 0.5 | f 0.35 | cmp | members at f 0.35 (fid / jac / reach / nmae raw) |
+|---|---|---|---|---|---|
+| hook (r 0.17) on the block | +0.0013 [+0.0002, +0.0028] | +0.0008 [+0.0002, +0.0013] | +0.0008 [+0.0002, +0.0014] | +0.0005 [−0.0007, +0.0015] | +0.0006 / +0.0003 / +0.0000 / −0.0014 |
+| (unattenuated, P1) | +0.0016 | +0.0011 | +0.0014 | +0.0006 | +0.0010 / +0.0003 / +0.0000 / −0.0027 |
+| block + hook (r 0.17), total vs 446bj2z | +0.0064 | +0.0055 | +0.0053 | +0.0058 | −0.0013 / +0.0086 / +0.0089 / −0.0015 |
+
+At A/B/C-like CLEAN4 quality the hook keeps ~55–65 % of its value on the block and stays positive (CIs above 0 at f ≤ 0.5):
+**the A/B/C-calibrated H1 price of CPH's increment over 446bj2zcp is +0.0005 … +0.0014 overall** (fid +0.0005, nmae −0.0012 …
+−0.0014 raw). This is the central estimate for the CPH bins; the band in §5.2 (+0.0003 … +0.0017) brackets it.
+
+**P9 — the D/E/F floor: the hook with NO sign information (`+c4h-s`: CLEAN4's signs permuted among its own covered genes, a new
+permutation per seed; coverage, count and up/down balance kept; 3 seeds; KA: the edited harness reproduced 517's recorded
+hook run bit for bit, pre-zs, and this directory's own `cpm+c4h` s0, zs).** On an unseen line CLEAN4's sign accuracy is
+unknown; P9 prices the hook at zero information, and `dvalue537.py` maps the hook's value onto its realized sign accuracy.
+
+| comparison (3 seeds) | f 1 | f 0.5 | f 0.35 | cmp | members at f 0.35 (fid / jac / reach / nmae raw) |
+|---|---|---|---|---|---|
+| shuffled hook ON THE BLOCK | −0.0006 [−0.0024, +0.0011] | +0.0001 [−0.0005, +0.0006] | +0.0002 [−0.0003, +0.0008] | +0.0001 [−0.0011, +0.0012] | +0.0003 / +0.0003 / −0.0001 / +0.0002 |
+| shuffled hook ALONE (on 446bj2z) | −0.0019 [−0.0046, +0.0002] | −0.0004 [−0.0011, +0.0001] | −0.0000 [−0.0004, +0.0004] | −0.0007 [−0.0018, −0.0000] | +0.0001 / +0.0000 / −0.0003 / +0.0002 |
+| CLEAN4's signs vs shuffled signs, on the block (the sign information) | +0.0022 [+0.0009, +0.0037] | +0.0010 [+0.0003, +0.0017] | +0.0012 [+0.0008, +0.0015] | +0.0005 [−0.0008, +0.0018] | +0.0007 / −0.0001 / +0.0001 / −0.0029 |
+
+Value against the realized sign accuracy x of the hook's source on H1's covered gate genes in its territory (`dvalue537.py`,
+`work/dvalue537.json`; real 0.604, r 0.17 0.560, shuffles 0.494–0.503; least squares over the 9 (variant, seed) points; the
+territory fit leaves a residual sd of 0.00012 at f 0.35, better than the swapped-in genes alone, 0.00036):
+
+| hook | value at x = 0.5 (f 1 / 0.5 / 0.35 / cmp) | slope per +0.1 accuracy | break-even x | predicted at the held-out lines' x (f 0.35): K562 0.591 · HCT116 0.672 · HEK293T 0.621 |
+|---|---|---|---|---|
+| **on the block** | −0.0003 / +0.0001 / +0.0002 / +0.0002 | +0.0021 / +0.0010 / +0.0011 / +0.0005 | 0.52 / < 0.50 / 0.48 / 0.46 | **+0.0012 · +0.0021 · +0.0015** (H1 0.604: +0.0014) |
+| alone | −0.0016 / −0.0004 / +0.0000 / −0.0007 | +0.0020 / +0.0007 / +0.0006 / +0.0005 | 0.58 / 0.56 / 0.50 / 0.63 | +0.0005 · +0.0009 · +0.0009 at its own territory's x 0.586 · 0.649 · 0.651 (cmp −0.0002 … +0.0001) |
+
+(x on the public folds is `foldsign537.py`'s CLEAN4 accuracy pooled over the same territory; the held-out K562 fold uses
+CLEAN4 without its two K562 banks; HCT116 / HEK293T are Orion truths with a technical blob, relative direction only — their
+territory truths are balanced, 46–47 % down, so the blob does not set these accuracies.)
+
+- **The hook belongs WITH the block.** On the block, a sign source with no information costs nothing at f ≤ 0.5 (+0.0001 …
+  +0.0002: it still stops the block's leaks, jac +0.0003 and fid +0.0003 raw) and −0.0004 … −0.0006 at f 1; its break-even
+  accuracy is ≤ 0.52 in every regime. Alone, the same source costs −0.0004 … −0.0019 (reach and nmae) and needs 0.56–0.63 to
+  break even outside f 0.35.
+- CLEAN4's territory accuracy on the three held-out public lines is 0.59–0.67 (H1 0.60): above the on-block break-even with
+  margin 0.07–0.21, so the D/E/F expectation of the hook on the block is +0.0006 … +0.0032 by regime and line (f 0.35: +0.0012 …
+  +0.0021; cmp: +0.0006 … +0.0010), with a floor of
+  ≈ 0 if a D/E/F line is as uninformative as a shuffle. The hook alone (496a's form) is the weaker October bet: at the
+  board-calibrated `cmp` regime its prediction straddles 0 on every line.
+
+**P10 — CPHK20's D/E/F floor: the sign-shuffled hook on the block at K 2,000 (3 seeds; base = the block kept at K 2,000,
+3 seeds).**
+
+| comparison (3 seeds) | f 1 | f 0.5 | f 0.35 | cmp | members at f 0.35 (fid / jac / reach / nmae raw) |
+|---|---|---|---|---|---|
+| shuffled hook on the block at K 2,000 | −0.0040 [−0.0080, −0.0010] | +0.0003 [−0.0017, +0.0020] | **+0.0020** [+0.0007, +0.0035] | +0.0006 [−0.0011, +0.0024] | +0.0013 / +0.0020 / +0.0030 / +0.0006 |
+| CLEAN4's vs shuffled signs there (the sign information) | +0.0029 [+0.0016, +0.0044] | +0.0016 [+0.0006, +0.0024] | +0.0012 [+0.0001, +0.0021] | +0.0015 [+0.0000, +0.0031] | +0.0013 / −0.0000 / −0.0024 / −0.0035 |
+| block + shuffled hook at K 2,000, total vs 446bj2z | −0.0068 | +0.0030 | +0.0062 | +0.0059 | −0.0007 / +0.0119 / +0.0054 / −0.0005 |
+| (the same with CLEAN4's signs = CPHK20, P5) | −0.0040 | +0.0046 | +0.0074 | +0.0075 | +0.0005 / +0.0119 / +0.0031 / −0.0040 |
+| CPHK20 − CPH (K 2,000 − K 2,600, both with block + hook) | −0.0107 [−0.0160, −0.0058] | −0.0013 | +0.0015 | +0.0016 [−0.0001, +0.0030] | +0.0014 / +0.0034 / −0.0059 / −0.0012 |
+| the same at zero sign information (P10 total − P9 total) | −0.0114 | −0.0019 | +0.0015 | +0.0005 | |
+
+- **The hook's leak-stopping is sign-free.** At K 2,000 the kept block leaks 102.0 unsuppressible calls per target; with the
+  hook it leaks 9.4 (CLEAN4's signs) or 7.8 (shuffled signs). Stopping that leak is worth +0.0020 at f 0.35 even with no sign
+  information; the signs add +0.0012 … +0.0029 on top.
+- **So CPHK20's floor on an uninformative D/E/F line is +0.0062 / +0.0059 vs 446bj2z at f 0.35 / cmp** (with CLEAN4's
+  signs +0.0074 / +0.0075), and the K choice with block + hook barely depends on the sign information (K 2,000 − K 2,600:
+  +0.0015 at f 0.35 both ways; −0.011 at f 1 both ways). The 10-06 regime read decides K; the hook rides with the block at
+  either K.
+
+**P11 — the dose partners §5.1 schedules for a PARTIAL read, priced ahead (3 seeds each).**
+
+| comparison (3 seeds) | f 1 | f 0.5 | f 0.35 | cmp | members at f 0.35 (fid / jac / reach / nmae raw) |
+|---|---|---|---|---|---|
+| block at swap 0.5 (keep 1,100 CPM genes, `kept`) vs 446bj2z | +0.0049 [+0.0031, +0.0068] | +0.0043 | +0.0044 | +0.0054 | −0.0019 / +0.0082 / +0.0088 / +0.0001 |
+| (the full swap, 446bj2zcp's construction) | +0.0051 | +0.0048 | +0.0045 | +0.0053 | −0.0018 / +0.0083 / +0.0089 / −0.0001 |
+| swap-0.5 block + CLEAN4 hook − CPH | −0.0002 [−0.0004, +0.0001] | −0.0003 | −0.0002 | +0.0001 | −0.0001 / −0.0001 / −0.0000 / +0.0003 |
+| CLEAN4 hook at τ 0.10 on the block | +0.0007 [−0.0002, +0.0015] | +0.0005 [+0.0001, +0.0009] | +0.0006 [+0.0001, +0.0010] | +0.0007 | +0.0006 / +0.0002 / −0.0001 / −0.0005 |
+| (τ 0.05 on the block, P1) | +0.0016 | +0.0011 | +0.0014 | +0.0006 | +0.0010 / +0.0003 / +0.0000 / −0.0027 |
+| τ 0.10 − τ 0.05, on the block | −0.0009 [−0.0021, −0.0000] | −0.0006 | −0.0008 [−0.0014, −0.0003] | +0.0001 | −0.0003 / −0.0001 / −0.0001 / +0.0022 |
+| CLEAN4 hook at τ 0.10 alone (on 446bj2z) | +0.0000 | +0.0001 | +0.0001 | −0.0000 | +0.0001 / −0.0000 / −0.0001 / −0.0003 |
+
+- **The block's swap dose is flat from 0.5 to 1 on H1** (the key's best ~1,100 genes carry the capture; the fid cost is the
+  same): a swap-0.5 partner would read within 0.0003 of the full swap, so it cannot separate a dose from noise. **Not worth a
+  slot**. The full swap moves only ~616 genes per target (528 §4.4), and swap 0.5 already moves nearly all of them; if the
+  block reads PARTIAL, its useful partner is 528's 25 % form (431 genes, +0.0041 at f 1 = 0.8× the full swap) or 10 % form
+  (205 genes, +0.0025 = 0.5×), or none.
+- **The hook's τ is an inverted U with its top at τ 0.05** (τ 0.03: −0.0004 … −0.0014; τ 0.10: −0.0006 … −0.0009 at f ≥ 0.35;
+  both tie at cmp). τ 0.10 keeps ~40–50 % of the increment (nmae −0.0005 vs −0.0027 raw) and leaks slightly more (10.7 vs
+  8.3 unsuppressible calls per target). **If CPH reads PARTIAL, τ 0.10 is an informative dose partner** (predicted ≈ 0.45 × the
+  τ 0.05 increment, 3σ-separable at σ ≈ 0.0001); τ 0.05 stays the form.
+
+**P12 — the Arc hook's D/E/F floor (CPMZ / MZ): 527's source with its signs permuted among its covered genes (6,773 on the
+strong targets, CLEAN4's 2,550 on the weak third; 3 seeds; KA: the edited harness reproduced 528's `cpm+mzg` bit for bit,
+pre-zs and zs, as `cpm+mzg-r0`).**
+
+| comparison (3 seeds) | f 1 | f 0.5 | f 0.35 | cmp | members at f 0.35 (fid / jac / reach / nmae raw) |
+|---|---|---|---|---|---|
+| shuffled Arc hook ON THE BLOCK | −0.0026 [−0.0057, −0.0004] | −0.0034 [−0.0063, −0.0011] | −0.0016 [−0.0030, −0.0003] | −0.0022 [−0.0034, −0.0011] | −0.0013 / −0.0013 / −0.0024 / −0.0008 |
+| shuffled Arc hook alone | −0.0029 [−0.0064, −0.0003] | −0.0013 | +0.0003 | −0.0007 | −0.0000 / −0.0001 / +0.0002 / −0.0010 |
+| Arc − CLEAN4 source on the block: r 0 (H1's own information) | +0.0062 | +0.0064 | +0.0061 | +0.0062 | +0.0041 / −0.0004 / +0.0001 / −0.0146 |
+| … at r 0.37 (A/B/C's, P4) | −0.0019 | −0.0008 | +0.0007 | +0.0006 | +0.0006 / −0.0001 / +0.0000 / −0.0014 |
+| … with no Arc sign information (vs CLEAN4's real hook) | −0.0042 | −0.0045 | −0.0030 | −0.0028 | |
+
+- **Without sign information the Arc hook on the block leaks** (78.2 unsuppressible calls per target vs 20.4 for the block
+  alone and 8.3 with CLEAN4's hook): its coverage is 2.7× CLEAN4's, so random signs push thousands of complement genes, and
+  fid and jac both fall (−0.0013 raw each). CLEAN4's permuted hook, with the smaller coverage, costs ≈ 0 (P9).
+- **The Arc source's value is steep in its attenuation:** +0.006 over CLEAN4 at r 0, +0.0007 at r 0.37, −0.003 at zero
+  information; it crosses zero near r ≈ 0.40, just past A/B/C's measured 0.37. For D/E/F that is an expectation ≈ 0 with a
+  −0.003 downside, against CLEAN4's ≈ 0 downside: **October's hook source stays CLEAN4 unless the A/B/C read beats the r 0.37
+  prediction by ~2×**. `PREREGISTRATION-draft-CPMZ.md` v2 raises the ARC bin to Δ(fid + nmae) ≥ +0.0010 vs 446bj2zcph.
+- The same holds for MZ (the Arc hook without the block): its floor is −0.0029 / −0.0013 / +0.0003 / −0.0007.
+
+### 3.3 The called-gene magnitude scale s (analytic, `scale537.py`, `work/scale537.json`)
+Known answer: s = 1 reproduces 435's zs nmae on all three seeds exactly. Calls, signs and order held; only nmae moves.
+Seed-mean Δ overall vs s = 1 (192's nmae slope):
+
+| regime (called-gate sign accuracy) | s 0.8 | s 1.1 | s 1.25 | s 1.4 | s 1.6 | best |
+|---|---:|---:|---:|---:|---:|---|
+| f 1.0 (0.601) | −0.00087 | −0.00020 | −0.00092 | −0.00212 | −0.00423 | s 1.0 |
+| f 0.5 (0.618) | −0.00143 | +0.00043 | **+0.00061** | +0.00029 | −0.00070 | s 1.25 |
+| f 0.35 (0.625) | −0.00173 | +0.00064 | +0.00122 | **+0.00129** | +0.00077 | s 1.4 |
+| cmp (0.621) | −0.00211 | +0.00050 | **+0.00090** | +0.00071 | −0.00003 | s 1.25 |
+
+- With higher called-gene sign accuracy (emulated by correcting a random 10 / 20 / 35 % of the wrong-signed called gate
+  genes) the optimum moves to s 1.4–1.6 and the gain to +0.001 … +0.005 in every regime (f 1 included once accuracy ≥ 0.68).
+- Anatomy (f 1): called genes carry 25.5 % of the gate's |truth| mass; delivered |lfc| is 0.44× the truth (median) where
+  the sign is right; sign accuracy 0.601 called vs 0.537 uncalled.
+- Mass balance is not the obstacle: s 1.25 moves the called genes' arithmetic mass by −0.03 % of the gated mass (median);
+  compensating it over the uncalled genes shifts their lfc by +0.0012 log2.
+- **Reading:** 513f's "s = 1 is the H1 optimum" holds only at full power. At the n_real regimes 521/523 consider for the
+  board (f ≤ 0.5), s 1.25 is worth +0.0006 … +0.0012 on H1, ×1.6–2.3 on the board for pure magnitude levers. 480 §4.4's
+  replicate anchor puts A/B/C's nmae power near H1's f 1 (anchor 0.383 vs A/B/C 0.369–0.431), which argues for s ≈ 1;
+  523's k16 read on 10-06 measures the regime from the call-set side. Deliverability through the class channel is
+  unmeasured: the knob does not exist.
+
+---
+
+## 4. Transfer (what each candidate can add on D/E/F)
+
+Class per AGENTS 11.1c.1: **T** transfer (must also gain off-board), **M** scorer mechanics (nothing fitted to A/B/C),
+**A** A/B/C-specific (never enters October).
+
+| candidate | class | A/B/C information used | held-out / October-like evidence | what an A/B/C read adds for D/E/F |
+|---|---|---|---|---|
+| cp block (446bj2zcp) | T + M | none (beta 22 from h1-trainval; key from each context's own controls, median-rescaled) | excess dropout beats its expression-matched shuffle on 3/3 public cancer folds; the block beats the CPM block on K562 (+0.071 capture) and HEK293T (+0.039), not HCT116 (−0.012, the Orion blob) (528 §3). **10-01 board: NULL (−0.0008 overall): fid 1.95× H1's cost, jac 0.48× H1's gain, reach −0.38× — H1 over-read this call-set COMPOSITION knob by ~+0.006 overall**. The pre-read held-out instrument over-read it too: 528's
+public-fold capture screen gave +0.071 / +0.039 / −0.012 (K562 / HEK293T / HCT116; mean +0.033 = 0.87× H1's +0.038), the
+board's jac came at 0.48× — a calibration point for any future fold-instrument DE prediction | decides `DEF_DAY_CALLSET_BLOCK` (patch_defday528.py, tested 29/29): expected OFF unless CPH ships |
+| cp + CLEAN4 hook (CPH) | T + M | none | the hook's CLEAN4 τ 0.05 signs reach the called swapped-in genes: coverage of the swapped-in set is **29 / 19 / 33 % on A / B / C against 19 % on H1** (`coverage537.py`); CLEAN4's sign accuracy on the swapped-in GATE genes of public cancer truths (`foldsign537.py`; 528's `norm22` blocks, KA: swap counts == fold528b on 3/3 folds): **K562 0.553** (CLEAN4 without its K562 banks; the cross-study, blob-free fold), HCT116 0.477, HEK293T 0.746 (Orion: relative only), H1 0.582 — positive on 2 of 3 cancer folds; CLEAN4 as a sign prior transferred 0.67× on fid (392). **P9 (§3.2): the hook's value on the block tracks CLEAN4's accuracy over its whole territory (break-even ≤ 0.52; zero information ≈ 0 at f ≤ 0.5); that accuracy is 0.59 / 0.67 / 0.62 on the held-out K562 / HCT116 / HEK293T folds (H1 0.60) → +0.0012 … +0.0021 at f 0.35** | the October DE form if both parts hold: `DEF_DAY_CALLSET_BLOCK=prop` + `DEF_DAY_MDE_SIGN=clean4:0.05` (502's pass-through); the hook WITHOUT the block is the weaker D/E/F bet (break-even 0.56–0.63 outside f 0.35) |
+| K (k16 / K20) | M (regime) | none | 521: global K is regime-sensitive (K 1,600 −0.0155 at f 1, +0.0048 at f 0.35 on H1); the regime is a property of the panel design and depth, which D/E/F share (the BRIEF: 400 cells, 20k UMI) | decides `DEF_DAY_RC_CALLSET_CPM` (530's bundle) and the s-scale's prior (§6.1) |
+| Arc hook (446bj2zmz / CPMZ) | T | none (Arc's H1 programme minus h1-test's rows) | same-lab, other-line analogues on public banks: the partner line's programme helps the uncalled genes in 3/3 genome-wide cases (517 §2.5); on A/B/C the block read r ≈ 0.37 (458d) | the hook source for October (`hookbank:h1_2025_full…`, 530's bundle); D/E/F's attenuation should resemble A/B/C's (another lab-line pair of the same kind). **P12: the value over CLEAN4 is steep in the attenuation (+0.006 at r 0, +0.0007 at r 0.37, −0.003 with no sign information; zero near r ≈ 0.40)**, so an A/B/C read at the r 0.37 prediction leaves D/E/F an expectation ≈ 0 with a −0.003 downside |
+| all-switches production arm | combination | whatever its parts used | its parts' | additivity of bulk × DE on the production path (the October path's version is 524dr2) |
+| 524dr2 | combination, October path | none beyond the switches' own reads | — | the exact final configuration through `def_day.sh` and every pass-through: the only end-to-end proof before Oct 22 |
+| 518 S1 | T on A/B/C, **A in effect** | none | 522: loses to the percentile cap on every October-like panel | an A/B/C contingency only; October keeps the pct cap |
+| 459dr (H1 ×3, October path) | T / mechanics | none | 438: ×3–×5 on `real`, ×2 on efp/efr; R6: H1 ×2 retention 0.42 | whether the day should run `dayof438.py`'s panel-dependent H1 choice |
+| called-gene scale s | M (calibration) | the board's regime only | H1 regime curves (§3.3, §6.1) | FINAL-PHASE rows 8–9 decided before the dark board |
+| re-roll pair | measurement | none | — | the noise model behind every final-phase DE decision (§2) |
+
+---
+
+## 5. Plan 10-07 → 10-21
+
+### 5.1 Inputs and the tree
+Reads that feed it (bins are the arms' own preregistrations; `rule1007_draft537.py` v2 encodes them and passes 6 synthetic
+branches plus a 10-08 check): **CP** = 446bj2zcp vs 446bj2z (10-01; 535: POS ≥ +0.0012 fid+jac overall, PARTIAL ≥ +0.0004, NULL, NEG; plus a
+"rescue" flag when NULL/NEG with Δjac raw ≥ +0.002 and Δfid < 0: the composition transferred and only the unsteered signs cost
+fid, which is what the hook repairs); **H** = 496a vs 446bj2 (10-05: TRANSFERS Δnmae ≤ −0.0010, PARTIAL ≤ −0.0003, FAILS);
+**K** = 446bj2zk16 vs 446bj2z (10-06; 523: POS ≥ +0.0012, NEG ≤ −0.0005, MID); **C** = 495 (10-03: FAILS if overall < +0.0004
+or Δmse > −0.002); **P** = the 479 pick (10-02); **DR** = 524dr (10-06).
+
+A rule may reference entries that do not exist yet (rule1004 did); the 10-07 rule must be FIXED before any 10-06 entry.
+
+| day | slot 1 (first READY, unscored) | slot 2 | what the day decides |
+|---|---|---|---|
+| **10-07** | CP ≥ PARTIAL or rescue → **CPH** (446bj2zcph) — **taken: 10-01 read NULL + rescue**; else H ≥ PARTIAL → **MZ** (446bj2zmz); else K ≥ MID and K20 unscored → **K20**; else 459dr → ALLSW | K ≥ MID (k16, 10-06) and CP not ≥ PARTIAL → **K20** (rule v3: a rescue-branch block does not hold K20 back); else CP-off and H ≥ PARTIAL → MZ; else **459dr** (October's H1-dose rule) → ALLSW (v2: CPMZ moved to 10-08, §3.2 P12) | whether the block can ship with the hook; October's K |
+| **10-08** | (v3 reads CPH) CPH SHIPS (Δ(fid + jac) ≥ +0.0012 vs 446bj2z) and K POS → **CPHK20**; CPH SHIPS and H ≥ PARTIAL → **CPMZ**; CPH does not ship (expected) → K20 if not yet read, MZ if H ≥ PARTIAL → 459dr → ALLSW | the next of the same list; C FAILS → **S1** last (A/B/C only) | October's call-set size; the hook source only if the block lives |
+| **10-09 → 10-10** | **524dr2** = the October recipe after every read (the 529/530 bundle + `patch_defday528.py` for the block), vs 524dr | **459dr** → the all-switches arm | the exact final configuration through `def_day.sh` |
+| **10-11 → 10-14** | K POS: the **called-gene scale** pair (§6.1; head × 1.25 then × 1.5, one preregistered curve, knob permitting) | dose partner of any switch that read PARTIAL (the hook at τ 0.10: ≈ 0.45 × τ 0.05's increment; NOT the block at swap 0.5, flat on H1, §3.2 P11) → the re-roll pair (if `VCC_EMISSION_SEED` lands; a confirmation since §2.6) | FINAL-PHASE rows 8–9; the noise model's eighth board pair |
+| **10-15 → 10-21** | 524dr2 rebuilt at a second emission seed (the final entry's realisation spread) and, if a switch's October-path contribution lagged in 524dr2, its ablation on the October path | whatever of the above is left; empty slots stay empty rather than re-read a closed question | — |
+
+Expected count: 8–12 informative arms for 30 slots. The pipeline cannot be filled with arms worth a slot without re-reading
+closed questions; a measured negative (§1) is the answer for the rest.
+
+### 5.2 Specifications (the first six)
+Every arm below is built by `run_arm_generic.sh <TAG> 1.75 <REF_META> <name> <stem> 4daae237… 0f56209d… <EXPECT>` with 446bj2z's
+env (`experiments/535-callprop-arm/rebuild535.sh`'s block) plus the diff shown:
+```
+export VCC_BULK_LOAD=experiments/417-bulk-sharpen/work/dump_h1x2_cd4x15_lodo05.npz:00ccfcba1b67fa24ff743ee0c64067e01158147ffe49c5b8ca37cef67600b667
+export VCC_DE_MDE=0.1,0.1,0.3,coarse VCC_DE_ZERO_REPAIR=-5 VCC_BULK_CTX_SCALE="A=1.0962,B=1.1461,C=1.1681" VCC_DE_MAG=dn_k250_zs
+unset VCC_SAMELINE VCC_DE_PRIOR_GATE VCC_UNION_SOURCES VCC_RC_AUDIT_DUMP VCC_DE_MDE_SIGN VCC_RC_CALLSET_CPM VCC_RC_CALLSET_BLOCK
+CPB=prop:experiments/528-callprop-block/work/callblock528_abc.npz:04fb24ecf81582f0af49b4e44b4dfb7b35def66425b20afd6e834c0d907bf0dd
+MZH=file:experiments/517-flex-programme/work/arch1meanz_ne_hook_abc.npz:165c6b78a16de2990ed87ca0e3436ab8c4023f7dddcdb30cf00b8f5eebda9f6b:0.05:0.05:le1
+```
+REF_META = 446bj2z's meta; 446bj2z records `de_sign_emitter_sha256` edb5b8dc, so every DE arm on emitter 0f56209d adds that key.
+pds and mse must equal 446bj2z's to ≤ 1e-6 raw in every DE arm (falsifier: a bulk leak — stop).
+
+**1. CPH = 446bj2zcph** — `export VCC_RC_CALLSET_BLOCK=$CPB VCC_DE_MDE_SIGN=clean4:0.05`; EXPECT
+`de_mde_sign,de_sign_emitter_sha256,rc_callset_block`. Read vs 446bj2zcp (the hook's increment on the block) and vs 446bj2z.
+- H1 (§3.2, 3 seeds): vs 446bj2zcp +0.0011 … +0.0016 overall (fid +0.0006 … +0.0010, jac +0.0002 … +0.0003, nmae −0.0018 …
+  −0.0027 raw, reach −0.0013 … +0.0035); vs 446bj2z +0.0059 … +0.0067.
+- Board prediction vs 446bj2zcp: fid +0.00004 … +0.0007 raw (sign-prior class, 0.07–0.67×), jac +0.0002 × 0.72, nmae −0.0018 …
+  −0.0027 × T (T = 496a's board Δnmae / −0.00146; before 10-05: 0.35 … 1.76) → **+0.0003 … +0.0017 overall**.
+- Bins (primary Δ(fid + nmae) overall vs 446bj2zcp; σ ≈ 0.00005): **POSITIVE ≥ +0.0004** → October ships the block WITH
+  `DEF_DAY_MDE_SIGN=clean4:0.05`; **PARTIAL +0.0001 … +0.0004** → ships the hook only if 496a TRANSFERS; **NULL/NEG < +0.0001** → no
+  hook on the block. Falsifiers: pds/mse moved; |Δjac| > 0.001 raw vs 446bj2zcp (a call leak: compare
+  `call_set_unsuppressible`); Δfid < −0.0003 raw (the hook's signs reached the called genes the wrong way). Reach reported.
+- **Rescue branch (taken on 10-01; the CPH draft's last section):** the block ships in October only if CPH vs 446bj2z reads
+  ≥ +0.0012 on Δ(fid + jac) (535's bin, hook on); re-priced from the 10-01 read: −0.0001 … +0.0009, so not expected. The
+  primary bin above then records whether the hook repairs the block on the board (predicted +0.0004 … +0.0023, POSITIVE)
+  and its Δfid tests §0's mechanism (≥ +0.0010 raw: A/B/C's design signs on swapped-in genes are worse than chance).
+
+**2. CPMZ = 446bj2zmzcp** — `export VCC_RC_CALLSET_BLOCK=$CPB VCC_DE_MDE_SIGN=$MZH`; EXPECT as CPH. Read vs CPH (the source
+at fixed block and delivery) and vs 446bj2zcp. H1 at r 0 (528): block on the Arc-hook base +0.0085 [+0.0064, +0.0108]; at A/B/C's
+r 0.37 (P4, 3 seeds): block + Arc hook vs 446bj2z +0.0048 / +0.0051 / +0.0065 / +0.0065; vs CPH −0.0019 / −0.0008 / +0.0007 /
++0.0006 (fid +0.0006, nmae −0.0008 … −0.0014 raw, reach −0.007 … −0.013 raw at f ≥ 0.5; `PREREGISTRATION-draft-CPMZ.md`).
+Bins (draft v2, after P12's D/E/F floor): vs CPH, Δ(fid + nmae) overall ≥ +0.0010 with Δreach raw ≥ −0.005 → October's hook
+source is Arc's (`hookbank:h1_2025_full:0.05:0.05:le1` + `DEF_DAY_HOOK_ESTIMATOR=meanz_ne`, 530's bundle); +0.0003 … +0.0010
+(the r 0.37 prediction) → A/B/C-only: October keeps CLEAN4, whose floor is ≈ 0 where Arc's is −0.003; < +0.0003 → CLEAN4.
+
+**2b. CPHK20 = 446bj2zcphk20** (build after 10-06 if CP-on and k16 or K20 reads POS) — CPH's env +
+`export VCC_RC_CALLSET_CPM=1600`; EXPECT `de_mde_sign,de_sign_emitter_sha256,rc_callset_block,rc_callset_cpm`. Read vs CPH
+(the size at fixed composition + hook). H1 (3 seeds): vs CPH −0.0107 / −0.0013 / +0.0015 / +0.0016 overall
+(f 1 / 0.5 / 0.35 / cmp); fid + jac vs CPH +0.0023 / +0.0027 at f 0.35 / cmp; unsuppressible calls 9.4 per target (the hook
+removes the block's smaller-K leak: 102 without it). Bins (primary Δ(fid + jac) overall vs CPH): ≥ +0.0008 → October's call
+set is K 2,000 with the block + hook; ≤ −0.0008 → K 2,600; between → K 2,600 (the robust form). Falsifiers: pds/mse moved;
+unsuppressible calls in the meta > 50 per target (the leak came back).
+
+**3. K20 = 446bj2zk20** (READY; read only when the block is off) — `export VCC_RC_CALLSET_CPM=1600` (as built). Real-emitter H1
+price vs 446bj2z (3 seeds): overall −0.0073 / +0.0003 / +0.0021 / +0.0040 (f 1 / 0.5 / 0.35 / cmp); fid + jac −0.0068 / +0.0011 /
++0.0030 / +0.0034 overall (board 0.72×: −0.0049 / +0.0008 / +0.0022 / +0.0024); nmae −0.0022 … +0.0003 raw; reach unpriced.
+Bins (523's primary, Δ(fid + jac) overall vs 446bj2z; σ ≈ 0.00004): ≥ +0.0012 small-n_real regime; ≤ −0.0005 H1-like;
+between: f ≈ 0.5. **Replace 523's monotone dose check:** K20 ≥ k16 on Δ(fid + jac) is the H1 prediction in every regime, not a
+noise flag (paired K20 − k16 on H1, 3 seeds: +0.0064 / +0.0009 / +0.0002 / +0.0000 fid + jac overall). October takes whichever
+of K 1,600 / 2,000 (CPM 1200 / 1600) reads higher if either reads ≥ +0.0012, K 2,000 on a tie within ±0.0005 (the
+coordinator's 15:13Z draft; H1 predicts exactly that tie in the small-n_real regimes), else today's K 2,600 (CPM 2,200).
+
+**4. MZ = 446bj2zmz** (READY; only when the block is off) — 527's bins unchanged. At r 0.37 (P4, 3 seeds): −0.0014 / −0.0003 /
++0.0012 / +0.0004 overall (f 1 / 0.5 / 0.35 / cmp), nmae −0.0036 raw at f 0.5, reach −0.007 raw at f ≥ 0.5; predict517's
+band nmae −0.0011 … −0.0053 raw. With the block on, the same hook is CPMZ (item 2).
+
+**5. 524dr2** — `recipe_dr524.sh`'s procedure with `october_recipe.py command` after the DE switches are decided (needs 530's
+bundle and `patch_defday528.py` re-tested on the bundled `def_day.sh`, an inert KA and a rider-on rehearsal first). Read vs
+524dr. Prediction: Σ over the switches added since 524dr of each switch's own A/B/C board read (DE switches share their
+production reads' construction). Bins: |Δ − Σ| ≤ 0.0010 PASS (≈ 4σ_DE; 524's ±0.0020 was sized for the bulk spread of the
+re-level); Δ < Σ − 0.0010 LAG → find the switch that did not reach the emitter (meta keys; `riders_match`).
+
+**6. Re-roll pair = 446bj2zrr** — after `patch_builder537_seed.py` (and KA-1: unset → `ec3a5ae6` byte for byte):
+`export VCC_EMISSION_SEED=1000004`; EXPECT `emission_seed`. Bins §6.2.
+
+(ALLSW: 498⟨P⟩'s env from `498-combined-bulk/chain498.sh` + `VCC_DE_MAG=dn_k250_zs` + the adopted DE switches; REF_META 498⟨P⟩'s;
+EXPECT `de_mag,de_sign_emitter_sha256` + the switches' keys; pds/mse must equal 498⟨P⟩'s exactly — the combination's bulk is
+the already-read 498⟨P⟩. S1: 518 §6 as written. 459dr: its own preregistration.)
+
+
+### 5.3 What the coordinator does, by date
+- **After the 10-01 read of 446bj2zcp (≈ 00:30Z):** if CP ≥ PARTIAL or the rescue flag holds, build **CPH** (env-only, ~40 min,
+  disk ≥ 35 GiB) in the next free build window; CPMZ can wait (rule v2 reads it on 10-08 at the earliest, §3.2 P12).
+  **Done:** the read was NULL + rescue (01:02Z capture) and 549 had built CPH's artifact at 21:49Z 09-30 (config diff exactly
+  the three expected keys; zero-gene audit 0; cliff OK); its package step is pending by hand. Do not build CPHK20 or CPMZ
+  before CPH reads SHIP.
+  Adopt `PREREGISTRATION-draft-CPH.md` (and the CPMZ draft, §5.2 item 2) before 10-07's first entry.
+- **Before any 10-06 entry (≤ 10-05 23:59Z):** fix the 10-07 rule (`rule1007_draft537.py` v2: 6 synthetic branches + a 10-08 check pass; CPMZ on 10-08) and
+  **amend 523's K dose-check bin** (§5.2 item 3): a non-monotone K pair is real under §2's σ, and H1 predicts K20 ≥ k16.
+- **After recipe_dr524 exits (10-05 ≈ 04:00Z):** apply 530's bundle; re-test `patch_defday528.py` (the block's pass-through;
+  29/29 on def_day 0b53ba89) on the bundled `def_day.sh`; inert KA (efp relaxed == `ac49d319`); a rider-on rehearsal with
+  the block + CLEAN4 hook (+ K if adopted); then build **524dr2** once 10-07's reads settle the DE form.
+- **Any time a build logs "builder after restore":** apply `patch_builder537_seed.py` (3 hunks, `--check` PASS on 4daae237),
+  run KA-1 (446bj2z's env, knob unset → `ec3a5ae6`), and build the re-roll arm `446bj2zrr` for a free slot.
+
+### 5.4 What this changes for the final phase (FINAL-PHASE-FEEDBACK-PLAN; D/E/F members, if they come back)
+- **DE rows read in one entry** (§2): at σ_DE ≈ 0.00025 overall the plan's "a DE arm needs > ~0.009 overall or two seeds"
+  over-protects by ~20×. With one D/E/F arm a day (531's cadence), that frees the DE rows (6–9) to run at one slot each.
+- **Add a row: the call-set size WITH the block + hook** (K 2,600 vs 2,000). It is the most regime-dependent choice in the DE
+  recipe (§3.2 P5: −0.011 … +0.0016 by regime on H1) and D/E/F's own n_real regime decides it; the fid + jac primary reads with
+  σ ≈ 0.00004 overall, so a single D/E/F entry settles it.
+- **Rows 8–9 (the called-gene scale)** share the same regime dependence (§6.1): read them only after the K row says the regime
+  is small-n_real.
+- **Couple the hook to the block on D/E/F** (§3.2 P9): with the block on, CLEAN4's hook is ≥ 0 at f ≤ 0.5 even with no sign
+  information (it stops the block's leaks) and gains +0.0006 … +0.0032 by regime (f 0.35: +0.0012 … +0.0021) at the
+  accuracies seen on held-out lines; with the
+  block off, a D/E/F line on which CLEAN4 is uninformative costs up to −0.0019 (f 1) / −0.0007 (cmp). So the October recipe's
+  `DEF_DAY_MDE_SIGN=clean4:0.05` should be conditional on `DEF_DAY_CALLSET_BLOCK=prop` unless 496a's read and a D/E/F entry
+  both favour the hook alone. **After 10-01 (the block read NULL and is expected off), the hook's October case rests on 496a
+  (10-05) and CPH (10-07): require 496a TRANSFERS (Δnmae ≤ −0.0010 raw) before running the hook without the block.**
+- **Keep CLEAN4 as the October hook source by default** (§3.2 P12): Arc's H1 programme is worth +0.0007 over CLEAN4 at A/B/C's
+  attenuation and −0.003 at none, CLEAN4's floor is ≈ 0. A D/E/F read of the Arc source is the only thing that should move
+  it, and only a read well above the r 0.37 prediction.
+
+### 5.5 Mechanism note: why the hook removes the smaller-K leak (consistent with, not proven by, the diagnostics)
+Across the runs the harness's own unsuppressible count tracks the MDE's down-side balance factor fd: block at K 1,600 fd 0.919 /
+526 leaked calls per target, block at K 2,000 0.870 / 136, block at K 2,600 0.810 / 24; with the CLEAN4 hook 0.835 / 10, 0.815 / 9,
+0.786 / 7 (seed 0, `metrics-*.json`). With the hook many more complement genes carry a (mostly down) add, so the balance factor
+spreads the down mass thinner and fewer single genes cross BH.
+
+---
+
+## 6. Stretch: new mechanisms (priced where possible; none is a slot before its condition is met)
+
+### 6.1 The called-gene magnitude scale s, head first (FINAL-PHASE rows 8–9, re-priced by regime)
+- **Mechanism.** nmae is L1 on the reference's DE genes. Where our sign is right, our delivered |lfc| on called gate genes is
+  0.44× the truth (median, H1 f 1); the L1-optimal magnitude grows with the sign accuracy and with the strength of the gate
+  (a lower-power truth keeps only its strongest genes). The head (the 400 design genes) carries most of it: sign accuracy on
+  gate genes 0.72 (f 1) … 0.79 (f 0.35) against the CPM block's 0.58–0.59.
+- **Price (H1 analytic, `scale537.py`; calls, signs and order held; KA: s 1 == 435's zs nmae on 3 seeds):**
+
+  | regime | head × 1.25 | block × 1.25 | both × 1.25 | both × 1.5 | both × 0.8 |
+  |---|---:|---:|---:|---:|---:|
+  | f 1 | −0.00046 | −0.00045 | −0.00092 | −0.00309 | −0.00087 |
+  | f 0.5 | +0.00040 | +0.00022 | +0.00061 | −0.00012 | −0.00143 |
+  | f 0.35 | +0.00091 | +0.00031 | +0.00122 | +0.00112 | −0.00173 |
+  | cmp | +0.00085 | +0.00004 | +0.00090 | +0.00041 | −0.00211 |
+
+  Overall units (192's nmae slope). The head is unsteered today (it delivers the bulk's own log ratio E0v), so a knob must
+  steer it to s·E0v with a mass-balance factor; the compensating shift over the uncalled genes is +0.0012 log2 at s 1.25.
+- **Falsifier / condition:** the regime. 523's k16 read (10-06) measures the board's n_real regime from the call-set side;
+  480 §4.4's replicate anchor puts A/B/C's nmae power near H1's f 1 (where s* = 1). Build and price the knob on the real
+  emitter only if k16 reads POS (≥ +0.0012); then a preregistered pair s 1.25 / s 1.5 on the head.
+- **It stacks with the block + hook:** on CPH's construction (`scale537b.py`, 3 seeds) all-calls × 1.25 gives −0.0009 / +0.0006 /
+  +0.0013 / +0.0012 (f 1 / 0.5 / 0.35 / cmp), head × 1.25 −0.0005 / +0.0004 / +0.0009 / +0.0009 — the same curve as on 446bj2z.
+- **Known-answer row for any build:** s = 1 must rebuild 446bj2z's output byte for byte (the verbatim path).
+
+### 6.2 A direct board measurement of the DE re-roll noise (the re-roll pair)
+- **Mechanism.** §2's σ_DE ≈ 0.00025 overall rests on seven bulk-only board pairs, which §2.6 shows are re-rolls of pass 1
+  (the ballast K shifts the file's one emission stream), and on H1 scaled to the board (checked by those pairs). One slot
+  would add the first pair with the bulk ALSO fixed: the incumbent rebuilt with only the emission stream re-seeded. Since
+  §2.6 this is a confirmation, not a prerequisite (ranked 9 in §0).
+- **Knob:** `patch_builder537_seed.py` adds `VCC_EMISSION_SEED` (unset = SEED + EMISSION_SEED_OFFSET = 1,000,003, the stream
+  every build has used; set = only the count draws change, library picks unchanged; meta `emission_seed`). `--check` on
+  HEAD's builder 4daae237: 3 hunks, compiles, self-test PASS (unset reproduces both streams; set changes only the emission
+  stream; a malformed value is refused) → `26556e2a…`. Not applied.
+- **KA:** 446bj2z's env with the knob unset → `ec3a5ae6` byte for byte; the arm = 446bj2z's env + `VCC_EMISSION_SEED=1000004`,
+  config diff exactly `emission_seed`.
+- **Prediction and bins (vs 446bj2z):** DE members within fid ±0.0001, jac ±0.00005, nmae ±0.0004, reach ±0.004 raw (3σ);
+  overall |Δ| ≤ 0.0008. pds/mse move only through the carriers' composition under the ballast (H1 seed sd scaled: pds
+  ~0.0001, mse ~0.00003 raw). **Falsifier:** |ΔDE overall| > 0.001 → the noise model is wrong; keep 230's rule.
+- **Value:** the final phase can then adopt DE switches from single D/E/F reads (FINAL-PHASE §1 rule 4 at ~0.001), which
+  roughly doubles the number of DE questions its ~14 slots can settle.
+
+### 6.3 Two ideas checked and dropped
+- **Truth-zero gate genes** (a cis-silenced low-expressed neighbour whose reference mean is 0 carries lfc ≈ −32 and would
+  dominate its target's nmae; predicting the zero would win it): h1-test has **0** gate genes with lfc < −10 and 3 below −5 (`truthzero537.py`). No pot.
+- **Propensity-weighted MDE** (larger MDE adds on dropout-prone complement genes, which respond ×1.4): the MDE is capacity- and
+  cap-bound (doses above c 0.1 / cap 0.1 leak calls, 426/435), so a reallocation can only lower low-propensity adds. Not priced.
+- **"Programme genes go up in cancer lines"** (an up-sign prior for the block's swapped-in, dropout-prone genes): among the
+  public cancer truths' SIGNIFICANT swapped-in genes 74–88 % are up (H1 48 %), but over all adjudicable pairs (fid's population)
+  the blob-free K562 fold shows no lean (0.482 up) while the two Orion folds lean up (0.666 / 0.724): the Orion technical blob,
+  not biology. Dropped.
+- **Unresolved, not new:** 518's hybrid render for sub-gate genes (+0.0001 Orion … +0.0026 H1) is the one bulk lever with a
+  sizeable upper price left; it needs a render knob and a same-frame price on the sharpened, LODO-keyed bulk first.
+
+---
+
+## 7. Files
+| file | what | peak RSS |
+|---|---|---|
+| `run537.py` | real production-emitter H1 harness: 528's block key × 523's size × 496/517's hooks (`+c4h[τ]`, `+mzg`, `-r<r>` source attenuation, `-s` sign shuffle for either hook), `-bs<g>` bulk-only step; emitter sha asserted 0f56209d | 6.99–7.61 GB per run (watchdog cap 8.0 GB) |
+| `ka537.py` | known answers: `cpm`, `lcap-kept`, `cpm+c4h`, `cpm-n1200`, `cpm+mzg` s0 == 528's / 517's recorded runs; `cpm+c4h0.05` s0 (the harness after its `-s` / `-bs` edits) == 517's run pre-zs and this directory's `cpm+c4h` zs; `cpm+mzg-r0` s0 (after the `+mzg -s` edit) == 528's `cpm+mzg`, pre-zs and zs (all PASS) | < 0.5 GB |
+| `drive537.sh`, `work/queue537.txt`, `work/drive537.log` | serial gated driver (amendment-1 gate), its queue and log | — |
+| `price537.py`, `work/price537.{json,log}` | pricing (528's functions: 521's exact members, regimes, target CIs, board columns, deliverability) | < 1 GB |
+| `noise537.py`, `noise537b.py`, `work/noise537{,b}.json` | §2: board pairs, KA-230, H1 paired-effect noise | < 0.5 GB |
+| `PREREGISTRATION-noise.md`, `noisecheck537.py` | §2.5: the preregistered slot-free test on 10-01 … 10-04's bulk-only reads | < 0.2 GB |
+| `scale537.py`, `scale537b.py`, `work/scale537{,_cph}.json` | §3.3 / §6.1: the called-gene scale by regime, on 446bj2z's and CPH's constructions | < 1 GB |
+| `coverage537.py`, `foldsign537.py`, `work/coverage537.json`, `work/foldsign537.json` | §4: the hook's reach into the swapped-in set on A/B/C; CLEAN4's sign on swapped-in gate genes of public cancer truths | < 1 GB |
+| `truthzero537.py`, `work/truthzero537.json` | §6.3: the truth-zero check | < 0.5 GB |
+| `redraw537.py`, `work/redraw537.{json,log}` | §2.6: does a bulk-only step re-draw pass 1; do DE knobs share it (K, pass-1 and carrier diagnostics; same-seed correlations) | 0.63 GB |
+| `dvalue537.py`, `work/dvalue537.json` | §3.2 P9: the hook's value vs its realized sign accuracy; predictions at the held-out lines' accuracies | < 0.3 GB |
+| `wait537.py` | polls `data/board-entries/` (read-only) for the scheduled reads by arm label | < 0.1 GB |
+| `zerocheck537.py` | §3.1: the harness's missing zero repair is a no-op on all 244 H1 stats files | < 0.5 GB |
+| `pairmeta537.py` | §2.5: the preregistered noise pairs are bulk-only by their package configs | < 0.2 GB |
+| `patch_builder537_seed.py` | the `VCC_EMISSION_SEED` knob (not applied; `--check` PASS on 4daae237) | < 0.3 GB |
+| `rule1007_draft537.py` | a draft of the 10-07 / 10-08 rule, v2 after P12 (6 synthetic branches + a 10-08 check pass) | < 0.1 GB |
+| `recalib537.py` | re-prices CPH from the 10-01 block read and 10-05's hook read | < 0.2 GB |
+| `PREREGISTRATION-draft-CPH.md`, `PREREGISTRATION-draft-CPMZ.md` | draft board bins for the two hook arms | — |
+| `work/h1_<mode>/` | per-run stats / metrics / diag (~66 MB per seed; regenerable) | — |
+
+## 8. Deviations
+- **Memory gate:** the mandate's free+inactive ≥ 33 GiB was replaced by COORDINATOR AMENDMENT 1 (11:45Z): memory_pressure ≥ 40 %,
+  free+inactive ≥ 24 GiB, swap free ≥ 400 MiB, no builder; one heavy job at a time. The first driver (33 GiB) never ran a job;
+  the coordinator stopped it. Every real-emitter run started with free+inactive 25–30 GiB and peaked at 6.99–7.55 GB.
+- The only processes above 2 GB were run537 jobs (serial, one at a time). Everything else ≤ 1 GB.
+- **16:00Z harness edit + KA:** `run537.py` gained `-s` and `-bs<g>`. Re-running `cpm+c4h 0 ka` in place was refused by the
+  harness (it never overwrites a recorded run: rc 1 in 6 s; the recorded s0 stats / metrics / diag are byte-identical to a
+  backup taken before; only its `run537.json` was rewritten, with the two new keys null),
+  so the KA ran as `cpm+c4h0.05` in a fresh directory and passed bit for bit before any new number was read. The 18:55Z
+  edit (`-s` for the Arc hook) was checked the same way (`cpm+mzg-r0` == 528's `cpm+mzg`, pre-zs and zs) before P12.

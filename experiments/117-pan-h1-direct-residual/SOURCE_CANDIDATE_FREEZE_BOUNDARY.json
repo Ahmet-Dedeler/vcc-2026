@@ -1,0 +1,77 @@
+{
+  "schema_version": 4,
+  "experiment": "117-pan-h1-direct-residual",
+  "date_frozen": "2026-08-30",
+  "status": "zero_byte_hash_recovery_frozen_source_only_build_authorized",
+  "protocol": {
+    "path": "experiments/117-pan-h1-direct-residual/preregistered_protocol.json",
+    "sha256": "2adf7f9e25cd98653a523292cd57538dac7daa441c68b12e7458983fa836326b"
+  },
+  "source_manifest": {
+    "path": "experiments/117-pan-h1-direct-residual/SOURCE_INPUT_MANIFEST.json",
+    "sha256": "d237df1b48d1448d1c2a3b361e15ed5a6937ca7a9fd326fa4e3560db4d6de61d"
+  },
+  "builder": {
+    "path": "experiments/117-pan-h1-direct-residual/build_source_candidates.py",
+    "sha256": "6d9ddeb585f41a3a692615a72abc2a0f524db1332bee094a47ef45d8a6ddc005"
+  },
+  "satisfied_source_only_prerequisites": [
+    "Experiment 115 compact donor receipt exists and its receipt, artifact manifest, delta, measured mask, axes, and metadata are SHA-256 pinned",
+    "the final Experiment 117 builder SHA-256 is pinned",
+    "all eight role manifests and NPZ files still match SOURCE_INPUT_MANIFEST.json",
+    "an independent source-only review approves every role",
+    "the authorization update occurs before any Experiment 117 held outcome access"
+  ],
+  "authorization_basis": {
+    "compact_donor_review": "passed_independent_full_recomputation_audit_confirmed_in_thread_2026-08-30",
+    "experiment_117_review": "repaired_protocol_and_source_only_regression_suite",
+    "implementation_recovery": "sha256_array_preserves_the_existing_header_and_writes_no_payload_for_zero_byte_arrays",
+    "scope": "source_candidate_build_only"
+  },
+  "required_frozen_outputs_per_role": [
+    "source-candidates.npz",
+    "source-candidates.json"
+  ],
+  "required_frozen_arrays": [
+    "targets",
+    "genes",
+    "score_indices",
+    "incumbent_effects",
+    "source_effects",
+    "coordinate_supported",
+    "target_supported",
+    "target_novel_vs_vcc2025_h1",
+    "normalized_residual",
+    "target_effective_all",
+    "target_effective_novel",
+    "identity_f000",
+    "pan_novel_f050",
+    "pan_novel_f100",
+    "pan_novel_f200",
+    "pan_all_f050",
+    "pan_all_f100",
+    "pan_all_f200",
+    "directional_rank_indices",
+    "directional_rank_indices_all",
+    "target_cluster_labels",
+    "target_label_null_permutations"
+  ],
+  "top_level_manifest": "experiments/117-pan-h1-direct-residual/work/source-candidates/source-candidate-inputs.json",
+  "approved_roles": {
+    "h1": true,
+    "orion_hek293t": true,
+    "nadig.gallery_1": true,
+    "nadig.gallery_2": true,
+    "nadig.gallery_3": true,
+    "nadig.gallery_4": true,
+    "nadig.gallery_5": true,
+    "nadig.gallery_6": true
+  },
+  "source_candidate_build_authorized": true,
+  "held_truth_access_authorized": false,
+  "evaluation_authorized": false,
+  "cell_eval2_authorized": false,
+  "count_generation_authorized": false,
+  "challenge_build_authorized": false,
+  "submission_authorized": false
+}

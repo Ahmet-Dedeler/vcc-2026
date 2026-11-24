@@ -1,0 +1,74 @@
+{
+  "schema_version": 2,
+  "experiment": "086-sparse-responder-emission",
+  "exp077": {
+    "run_id": "20260823T060938Z",
+    "input_prefix": "s3://<your-s3-bucket>/input/exp077-low-alpha-union/20260823T060938Z/",
+    "output_prefix": "s3://<your-s3-bucket>/output/exp077-low-alpha-union/20260823T060938Z/",
+    "source_tar_sha256": "e1ec0cdb2b5647224431ce334931d9210d1d038494a92660cbff63bcecee3292",
+    "runner_sha256": "c15e4f50d49eaf7df848b5999dc420d7f6793ac48d008fefea543dd8f616bb7f",
+    "launch_metadata_sha256": "0fed5b97c6212cc70a1fd63593983bc057b655a64c6bbb3e0ce5c5fc379e8cd5",
+    "launch_ssm_command_id": "2eb4e082-e153-4ff1-810a-7124e77a2dd2",
+    "terminal_attestation_status": "required_missing_fail_closed",
+    "inner_source_sha256": {
+      "experiments/031-somatic/run.py": "ce4c41c715e76a0dc9490a72cbd9924460f747f2e6cbc8b3d542652aa8144ba3",
+      "src/vcc2026/donor_transfer.py": "cecb27035a6c301f96e7fe364032216b1211bb2a92fddd1f9439d9cf8730cb3e",
+      "experiments/077-low-alpha-union/grid.json": "75a4af2d08ad413ed17dcebfb925b8bbd2af44eceb2990307e08311e3c7a32ac",
+      "experiments/077-low-alpha-union/summarize.py": "70b28fc5a3ad0c5bdfc40888f290e9caf72047c572e3971edbcaaa692e2ff998"
+    },
+    "inputs_sha256": {
+      "orion-hct116.h5ad": "d20a1e9da59debca8db7d83b955d12c3e1384b530ae6154191d95039b1655863",
+      "whitener_union.npz": "a46264ebb6cb4b877032a6e4c68e76069eb9112c6f1bb7f15e1133fae04a8a77",
+      "whitener_union.json": "cf5c1de31d03875b15f6fd11d3f628aadfccf04e3346493c831c3a6f441b4793"
+    },
+    "donors_sha256": {
+      "k562_gwps": {
+        "b_ctrl.npy": "d06cf51d51cde1ae999e86bbd3be0bdc15471392bae153a1aa1e21dc5c81b957",
+        "delta.npy": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+        "genes.txt": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba",
+        "perts.txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec"
+      },
+      "orion_hek293t": {
+        "b_ctrl.npy": "e04234cffbe102731cc562e8fb06bddb8ef0644b2af894b8a0ee6ce079ca4984",
+        "delta.npy": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+        "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "perts.txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547"
+      }
+    }
+  },
+  "dependencies_sha256": {
+    "experiments/043-template-emitter/template_emitter.py": "6333d07ee6f18d62f23422b6af84fb267eb2d5614774c6819109e1f438a1d29d",
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "scripts/run_with_memory_guard.py": "53dff5d60e62cd0a4660b4b436a123a90475b3ca9bf20e944dd8f639f035be74"
+  },
+  "frozen_protocol": {
+    "candidate_responder_fractions": [
+      0.35,
+      0.5,
+      0.65
+    ],
+    "maximum_scored_candidates": 2,
+    "construction_selection": "two smallest fractions passing prediction-only construction gates",
+    "maximum_scored_nonresponder_clipped_mass_fraction": 0.01,
+    "minimum_response_mass_concentration": 0.95,
+    "jackknife_gate": "every target must be non-decreasing versus exact-total quasi",
+    "cell_eval2_jobs": 1,
+    "seed": 8602026,
+    "submission_authorized": false
+  },
+  "launch_safety": {
+    "identifier_validation_before_interpolation": true,
+    "reject_existing_local_work_or_metadata": true,
+    "reject_nonempty_s3_prefixes": true,
+    "conditional_s3_reservations": true,
+    "unique_temporary_source_archive": true,
+    "recursive_work_directory_deletion": false
+  },
+  "provenance_policy": {
+    "trusted_launch_snapshot": "experiments/086-sparse-responder-emission/exp077-launch-metadata.snapshot.json",
+    "trusted_provenance": "experiments/086-sparse-responder-emission/exp077-trusted-provenance.json",
+    "terminal_attestor": "experiments/086-sparse-responder-emission/aws/attest_exp077.py",
+    "authority": "AWS Systems Manager command metadata and invocation stdout",
+    "co_located_checksum_manifest_is_not_trust_root": true
+  }
+}

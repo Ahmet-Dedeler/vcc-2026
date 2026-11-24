@@ -1,0 +1,2 @@
+baseline_pds,delta_vs_baseline,fraction,held,mode,pds,post_add_preserve
+0.8101574020095332,0.004406570419395739,0.05,k562_gwps,gene_norm,0.814563972428929,"{""baseline_output_median_norm"": 4.835706961843327, ""candidate_pre_preserve_median_norm"": 4.850478280924007, ""fraction"": 0.05, ""post_add_global_preserve_scale"": 0.9969546675141764}"

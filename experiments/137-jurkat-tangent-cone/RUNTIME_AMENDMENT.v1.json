@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "experiment": "137-jurkat-tangent-cone",
+  "date_amended": "2026-08-30",
+  "status": "approved_numerically_blind_runtime_repair_after_development_open",
+  "reason": "Development terminated before emitting scores or writing result artifacts because the exact-identity byte assertion viewed a non-contiguous array as uint8.",
+  "repair": "Wrap both exact-identity operands with numpy.ascontiguousarray before the uint8 view. No geometry, scoring, selection, gate, random seed, target split, or outcome row changes.",
+  "pretruth_plan_sha256": "7f1d69716412c347ed1b6d1a0c15f7f7ed852f4ab815f659e8d1d5e5baef6f86",
+  "development_lock_sha256": "524318e0d0ad0264f85adb30dbc4f26bfb4f18ecc7a0c051bb459f18004f4fe6",
+  "old_evaluator_sha256": "9a305a532f34ff32dc0af1557046ec0356639d4cebcb2d0017bfe8879e127313",
+  "new_evaluator_sha256": "94ace338df0ea955519ab7d2e3ccf3fdd2641bbc0d90f5e94ced8d75660c7aa4",
+  "development_result_observed": false,
+  "development_artifact_written": false,
+  "test_rows_accessed": false,
+  "traceback_terminal": "ValueError: To change to a dtype of a different size, the last axis must be contiguous"
+}

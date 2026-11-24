@@ -1,0 +1,1 @@
+1	0	39	44088	uv run python experiments/804-known-answers/grade804.py --surfaces W,ABC > experiments/804-known-answers/work/grade804.txt 2>&1; cat experiments/804-known-answers/work/grade804.txt

@@ -1,0 +1,9 @@
+{
+  "artifact_manifest_sha256": "510cb2c9907f338420534e145edb76467bce074a197032e96afb6944e582a34e",
+  "authorization_sha256": "7fe11e9d6ae287e40efad7b5a628f36254b4c6348e75ab03b09e602a3f3b5cf9",
+  "conditional_inference_authorized": false,
+  "created_utc": "2026-08-30T22:51:43.251003+00:00",
+  "result_sha256": "d6386c4a1281d0cfb31ea5c7c079b5a81fbf5068c328cf25a3eae07fd1f7b874",
+  "schema_version": 1,
+  "sealed_410_test_authorized": false
+}

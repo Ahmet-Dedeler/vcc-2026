@@ -1,0 +1,20 @@
+{
+ "name": "s0c-805",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "data/harness/h1-test.h5ad",
+  "experiments/614-k562-real-emitter/work/targets_h1.txt",
+  "experiments/614-k562-real-emitter/work/ref_h1ka/reference.json",
+  "experiments/323-current-family-validation/work/reference_de.parquet",
+  "data/external/cd4_cell2026/suppl_tables_2026-08-24/DE_stats.suppl_table.csv",
+  "data/external/cd4_cell2026/suppl_tables_2026-08-24/guide_kd_efficiency.suppl_table.csv",
+  "data/external/cd4_cell2026/suppl_tables_2026-08-24/sgrna_library_metadata.suppl_table.csv",
+  "data/donors/k562_essential/perts.txt"
+ ],
+ "collect": [
+  "experiments/805-cd4-flex-surface/work/s0_ka",
+  "experiments/805-cd4-flex-surface/work/s0_Rest",
+  "experiments/805-cd4-flex-surface/work/s0_Stim48hr"
+ ]
+}

@@ -1,0 +1,12 @@
+{
+  "counts_build_submission_authorized": false,
+  "created_utc": "2026-08-30T22:22:03.009854+00:00",
+  "development_613_authorized": true,
+  "explicit_post_review_confirmation": "I_CONFIRM_EXPERIMENT_140_DEVELOPMENT_OUTCOME",
+  "identity_manifest_sha256": "1967a66f463ba78b02c674c09274c9c399fb68b405ff9b0deb045ec4772a5649",
+  "preoutcome_authorization_sha256": "395899b2a395fbbc9fec35f7a81fa20704eff95e83c84ba09b8ff8ec73314703",
+  "production_integration_authorized": false,
+  "schema_version": 1,
+  "source_preparation_manifest_sha256": "90439ff15cbb18d2e283fdee247ba5cb75d471dd07930a8ce49d9448367df4b2",
+  "untouched_410_test_authorized": false
+}

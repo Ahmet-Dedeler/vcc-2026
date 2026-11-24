@@ -1,0 +1,15 @@
+{
+  "cell_eval2_authorized": false,
+  "challenge_build_or_submission_authorized": false,
+  "conditional_nulls_authorized_only_after_raw_gate": true,
+  "count_generation_authorized": false,
+  "created_utc": "2026-08-30T22:51:24.333677+00:00",
+  "development_613_effect_access_authorized": true,
+  "explicit_post_review_confirmation": "I_CONFIRM_EXPERIMENT_141_DEVELOPMENT_OUTCOME",
+  "plan_manifest_sha256": "d4e9250531a76dc17532c0b6c4efa2a7bd631bc4b806030db0290eb4985af1c8",
+  "production_integration_authorized": false,
+  "protocol_sha256": "473734849949f1c96db31b75ef001c777c9e997998a1623921b20fc8196b23b5",
+  "schema_version": 1,
+  "sealed_410_effect_access_authorized": false,
+  "source_manifest_sha256": "b51a523908bd024d549d4310168b367984bba576bed6ba2059d17f706aefe678"
+}

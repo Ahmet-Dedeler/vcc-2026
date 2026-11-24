@@ -1,0 +1,12 @@
+{
+ "name": "aggtag811-labck",
+ "parallel": 3,
+ "venv": true,
+ "sync": [
+  "experiments/811-lolo-model/work/run-comp811kit-LABCk",
+  "experiments/811-lolo-model/work/ka800.copy.json"
+ ],
+ "collect": [
+  "experiments/811-lolo-model/work/run-comp811kit-LABCk"
+ ]
+}

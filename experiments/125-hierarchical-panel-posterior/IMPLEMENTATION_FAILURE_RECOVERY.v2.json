@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "experiment": "125-hierarchical-panel-posterior",
+  "date": "2026-08-30",
+  "failed_freeze_path": "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FREEZE.v2.json",
+  "failed_freeze_sha256": "0c871a05c3c734ac4a56599554448f96f021df9211ab7eb5c5699788a4690f60",
+  "failure_stage": "observed source-only inner candidate transport before any accepted observed result, null distribution, bootstrap result, or immutable output directory was produced",
+  "exception": "ExperimentError: could not enforce exact compensated sum",
+  "diagnosis": {
+    "mutable_coordinates": 223,
+    "target_compensated_sum": 0.026444077993670708,
+    "initial_compensated_sum": 0.026444077993670705,
+    "residual": -3.469446951953614e-18,
+    "cause": "Subtracting the residual from one coordinate and recomputing math.fsum crossed the target by the same representational quantum. Repeating the same subtraction oscillated and the frozen repair loop exhausted its attempts."
+  },
+  "authorized_mechanical_repair": "For each mutable coordinate in ascending-value order, solve coordinate = target_sum - compensated_sum(other coordinates), then search adjacent representable float64 values with math.nextafter for exact compensated equality. Restore the coordinate and try the next one if equality is not representable. This changes only the arithmetic method used to realize the already-frozen exact mass invariant.",
+  "synthetic_test_correction": "A draft recovery test attempted to reconstruct transported abundance from the returned log-effect and require bit-exact mass after an expm1-log1p round trip. That round trip is not the transport invariant and can differ by floating-point rounding. The test was removed before the recovered implementation freeze; direct internal abundance invariants remain asserted.",
+  "scientific_changes": {
+    "protocol": false,
+    "inputs": false,
+    "family_grouping": false,
+    "target_folds": false,
+    "model_formula": false,
+    "candidate_grid": false,
+    "transport_formula": false,
+    "transport_dose": false,
+    "selection": false,
+    "metrics": false,
+    "null_assignments": false,
+    "bootstrap_assignments": false,
+    "promotion_gates": false
+  },
+  "source_effect_values_opened_before_failure": true,
+  "accepted_source_results_before_failure": false,
+  "held_outcomes_accessed": false,
+  "cell_eval2_run": false,
+  "counts_or_submission_built": false,
+  "commit_or_push": false
+}

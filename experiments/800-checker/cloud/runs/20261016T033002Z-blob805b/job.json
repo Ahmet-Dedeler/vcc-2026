@@ -1,0 +1,13 @@
+{
+ "name": "blob805b",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "data/harness/h1-test.h5ad",
+  "data/harness/orion-hek293t-thinned.h5ad",
+  "experiments/805-cd4-flex-surface/work/truths"
+ ],
+ "collect": [
+  "experiments/805-cd4-flex-surface/work/blobdir"
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "id": "bc-0633cff1-91f4-4579-a80f-de025bb0e7ef",
+ "status": "CREATING",
+ "source": {
+  "repository": "https://github.com/Ahmet-Dedeler/virtual-cell-challenge-2026",
+  "ref": "master"
+ },
+ "target": {
+  "autoBranch": true,
+  "autoCreatePr": false,
+  "openAsCursorGithubApp": false,
+  "skipReviewerRequest": false,
+  "branchName": "cloud/503-claims-audit",
+  "url": "https://cursor.com/agents/bc-0633cff1-91f4-4579-a80f-de025bb0e7ef"
+ },
+ "name": "Manuscript claims audit",
+ "createdAt": "2026-09-27T07:44:53.945Z"
+}

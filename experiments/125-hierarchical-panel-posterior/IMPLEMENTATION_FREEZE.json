@@ -1,0 +1,27 @@
+{
+  "created_before_source_effect_loading": false,
+  "experiment": "125-hierarchical-panel-posterior",
+  "files": {
+    "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FAILURE_RECOVERY.v1.json": "b671f6be00932768117dd080d9177a59f0aade52a90e9737a9c26dea63d6bf9f",
+    "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FAILURE_RECOVERY.v2.json": "4166c226ca4f96f11096e44770df531c8d135f6081131e35a0df43977c4d5e37",
+    "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FREEZE.v1.json": "3f28202bdd8a3f52f3cfe4a3fc377062cb7164f201d6a699439e90f8681a7988",
+    "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FREEZE.v2.json": "0c871a05c3c734ac4a56599554448f96f021df9211ab7eb5c5699788a4690f60",
+    "experiments/125-hierarchical-panel-posterior/PREREGISTRATION.sha256": "ac26a83f1a8a3340e17c9a0ae77f7261e402656ebf6b09d123199fd40cd5b873",
+    "experiments/125-hierarchical-panel-posterior/README.md": "0b2c09d4706ea7247f989e95c31b4913fbb8f80d178ea8abab684446af8a7b45",
+    "experiments/125-hierarchical-panel-posterior/SOURCE_ONLY_AUTHORIZATION.json": "1be3ba7c0ce38394e7a178f5c9e1ebfee35a54cbf503bbaa23bda14ed9338c73",
+    "experiments/125-hierarchical-panel-posterior/freeze_implementation.py": "b5be4bff158d47d9c6137742ff49c297d7dbf2921d4179ad2397af71e5718aee",
+    "experiments/125-hierarchical-panel-posterior/freeze_plans.py": "21776d0493d226999491ae71568c4846e1da28ecc9c555b2f0f5cb26ced12d38",
+    "experiments/125-hierarchical-panel-posterior/preregistered_protocol.json": "383e4f857746ee4957b35550b03be99ef0378bc606e07f8ff9df545103147509",
+    "experiments/125-hierarchical-panel-posterior/run.py": "74844a146cee3042e3da09203805442dc0632ad9e68c9b040dae6bd70b707fb2",
+    "experiments/125-hierarchical-panel-posterior/test_run.py": "7272048346bfb3c2edbe814ada196284d6182cb781736b9c8655ad8e6d8bc6b3",
+    "experiments/125-hierarchical-panel-posterior/verify.py": "4a1edbc286fd451f7d5b528ff6eef8632bc9b6b54a213b264639a3e68cea8012"
+  },
+  "implementation_recovery": {
+    "path": "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FAILURE_RECOVERY.v1.json",
+    "sha256": "b671f6be00932768117dd080d9177a59f0aade52a90e9737a9c26dea63d6bf9f"
+  },
+  "phase": "source_only_nested_evaluation",
+  "plan_freeze_manifest_sha256": "51d06dd0d6275dbb6ae1471a9a5f9319cde16a19039dbe01c08999e3c4d4b5e4",
+  "schema_version": 1,
+  "scientific_spec_frozen_before_source_effect_loading": true
+}

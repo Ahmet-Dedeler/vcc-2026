@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "experiment": "132-response-decomposition-ridge",
+  "date": "2026-08-30",
+  "status": "written_before_any_accepted_selection_result_and_before_any_untouched_test_effect_access",
+  "failed_stage": "selection-v1",
+  "exact_error": "ContractError: Pan contains an unmeasured selected coordinate",
+  "cause": "The v1 metadata plan intersected source gene-name axes but did not intersect the Pan compact donor's frozen measured_mask. Pan genes.txt is canonical-wide while only 16,268 coordinates are measured in every row.",
+  "observed_state": {
+    "fit_started": false,
+    "metric_computed": false,
+    "candidate_selected": false,
+    "null_computed": false,
+    "untouched_test_effect_accessed": false,
+    "failed_selection_directory_contains_only_effect_access_receipt": true
+  },
+  "frozen_v1_provenance": {
+    "authorization_sha256": "f3f05fc88325b1d5643712c49ef0e1308a2de33f1b069a3551eb0e744e68038f",
+    "plan_manifest_sha256": "ad7ea3bb7ec1837fb67c6d7037e5f0fc9ad758694bb85ea023c387f83d5ce9a6",
+    "run_py_sha256": "98cd50d6a69010dbaf857728929932f768d569ff0e18d566c15ec79094b60d33",
+    "failed_effect_access_receipt_sha256": "7cf7e2371fb028971437def33b495f7541cc727f05aa6f67226a0ffc2c1ee29d"
+  },
+  "authorized_mechanical_change": {
+    "response_axis": "intersect the prior name-based axis with coordinates true in every row of the already-frozen Pan measured_mask",
+    "expected_response_gene_count": 4992,
+    "expected_response_gene_sha256": "5f61b28c4648af26e970bc5762a599dd8d4500f380a7ef6d9633b1e106404d3f",
+    "target_universe_and_split": "unchanged",
+    "candidate_grid_hyperparameters_nulls_bootstrap_and_gates": "unchanged",
+    "effect_loader_order": "validate Pan support before reading Pan delta values",
+    "new_outputs": "use v2 plan, authorization, selection, access-lock, and result paths; preserve all v1 artifacts"
+  },
+  "scientific_scope_change": false
+}

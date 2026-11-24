@@ -1,0 +1,108 @@
+{
+  "archive": {
+    "crc32c_base64": "MBP7uA==",
+    "gcs_generation": "1763329752965344",
+    "path": "~/Code/virtual-cell-challenge-2026/data/external/state-vcc/competition_support_set.zip",
+    "sha256": "f1d5fd56a2eee240e5585fac52bb75b0b830a7be6a5f6de1bf773bff4f507f7c",
+    "size_bytes": 8716992349
+  },
+  "extraction": {
+    "available_bytes_before": 251222691840,
+    "completed": true,
+    "destination": "~/Code/virtual-cell-challenge-2026/data/external/state-vcc/competition_support_set",
+    "requested": true,
+    "required_headroom_bytes": 58429520678
+  },
+  "verified_at": "2026-08-30T02:52:13.190600+00:00",
+  "zip": {
+    "compressed_bytes_total": 8716989665,
+    "member_count": 12,
+    "members": [
+      {
+        "compressed_bytes": 0,
+        "crc32": "00000000",
+        "is_dir": true,
+        "name": "competition_support_set/",
+        "uncompressed_bytes": 0
+      },
+      {
+        "compressed_bytes": 2028403618,
+        "crc32": "e29aa0ea",
+        "is_dir": false,
+        "name": "competition_support_set/competition_test_template.h5ad",
+        "uncompressed_bytes": 12365991970
+      },
+      {
+        "compressed_bytes": 96258478,
+        "crc32": "8cff7e12",
+        "is_dir": false,
+        "name": "competition_support_set/k562.h5",
+        "uncompressed_bytes": 1337939102
+      },
+      {
+        "compressed_bytes": 56485064,
+        "crc32": "b0a82dce",
+        "is_dir": false,
+        "name": "competition_support_set/hepg2.h5",
+        "uncompressed_bytes": 680426532
+      },
+      {
+        "compressed_bytes": 1175410999,
+        "crc32": "f94a5140",
+        "is_dir": false,
+        "name": "competition_support_set/competition_val_template.h5ad",
+        "uncompressed_bytes": 7162595509
+      },
+      {
+        "compressed_bytes": 115565611,
+        "crc32": "ebb31920",
+        "is_dir": false,
+        "name": "competition_support_set/rpe1.h5",
+        "uncompressed_bytes": 1616886534
+      },
+      {
+        "compressed_bytes": 294,
+        "crc32": "45b954ac",
+        "is_dir": false,
+        "name": "competition_support_set/starter.toml",
+        "uncompressed_bytes": 512
+      },
+      {
+        "compressed_bytes": 109379742,
+        "crc32": "f083f4a2",
+        "is_dir": false,
+        "name": "competition_support_set/jurkat.h5",
+        "uncompressed_bytes": 1551183536
+      },
+      {
+        "compressed_bytes": 59958,
+        "crc32": "bc8b10c5",
+        "is_dir": false,
+        "name": "competition_support_set/gene_names.csv",
+        "uncompressed_bytes": 116023
+      },
+      {
+        "compressed_bytes": 375278893,
+        "crc32": "85d91f50",
+        "is_dir": false,
+        "name": "competition_support_set/ESM2_pert_features.pt",
+        "uncompressed_bytes": 410886729
+      },
+      {
+        "compressed_bytes": 516238283,
+        "crc32": "e53e8f03",
+        "is_dir": false,
+        "name": "competition_support_set/k562_gwps.h5",
+        "uncompressed_bytes": 8083142186
+      },
+      {
+        "compressed_bytes": 4243908725,
+        "crc32": "ef65e15c",
+        "is_dir": false,
+        "name": "competition_support_set/competition_train.h5",
+        "uncompressed_bytes": 15482098599
+      }
+    ],
+    "uncompressed_bytes_total": 48691267232
+  }
+}

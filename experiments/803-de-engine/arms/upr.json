@@ -1,0 +1,13 @@
+{
+ "name": "upr",
+ "desc": "630arm: zs + 630's rank-neutral UP pass v3 (b_k100_q20r3p10 = VCC_DE_UPRN, K 1.0)",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": true
+ },
+ "stage": "rnup:b_k100_q20r3p10"
+}

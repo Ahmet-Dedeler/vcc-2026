@@ -1,0 +1,13 @@
+{
+ "name": "g1pre",
+ "desc": "446bj2's DE construction: production emitter, CLEAN4 q80 block prior, coarse MDE, zero repair -5, before the zs pass (618's g1 pre-zs)",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": true
+ },
+ "stage": "pre"
+}

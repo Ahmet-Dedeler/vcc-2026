@@ -1,0 +1,43 @@
+{
+  "authorization_revision": 2,
+  "cell_eval2_authorized": false,
+  "challenge_build_or_submission_authorized": false,
+  "commit_or_push_authorized": false,
+  "count_generation_authorized": false,
+  "created_before_any_accepted_result": true,
+  "created_before_source_effect_loading": false,
+  "created_before_source_test_effect_loading": true,
+  "created_utc": "2026-08-30T17:53:08.815551+00:00",
+  "experiment": "129-gse295214-transfer",
+  "held_outcome_access_authorized": false,
+  "implementation_files": {
+    "experiments/129-gse295214-transfer/IMPLEMENTATION_RECOVERY_001.json": "5bb5fd8757a3463a96e8f3e86e1f5a5b33dc47d4456ab25812a25dead1a68b4a",
+    "experiments/129-gse295214-transfer/IMPLEMENTATION_RECOVERY_002.json": "25d2f4458496f5c19554fb14162dc09336ac644c2916496677821a32da177308",
+    "experiments/129-gse295214-transfer/README.md": "d7a5164bba5497ff4bc9d5fbac43828d11e6f71826d76af46401fe2cb7ff8693",
+    "experiments/129-gse295214-transfer/SOURCE_INVENTORY.json": "23cb28ba364a94ca4b73b728508d44e825454e43bcfe3ddb2fbc91b834f3f6a4",
+    "experiments/129-gse295214-transfer/SOURCE_ONLY_AUTHORIZATION.json": "193a613903c754710e5b612e3cf007b64ae99f21c113e2700f908df72013fed4",
+    "experiments/129-gse295214-transfer/preregistered_protocol.json": "05af0bb9da6321cdff81818209e0befa1f74552e96964562d37caef378bac998",
+    "experiments/129-gse295214-transfer/run.py": "2018f7db99117c7020ca2ea4b979d10daa8b4c19c773ddc8acae628df62da19e",
+    "experiments/129-gse295214-transfer/test_run.py": "0a4923e61d3386d7ebc09f0ee1027869aaa4cbda3ea255cc509cf06cd6be0d2e"
+  },
+  "input_count": 41,
+  "inventory_sha256": "23cb28ba364a94ca4b73b728508d44e825454e43bcfe3ddb2fbc91b834f3f6a4",
+  "plan_manifest_sha256": "113ced458a702a8825f659505c212e548db77b2a91707f26d46df3efc4bea570",
+  "plan_summary": {
+    "candidate_count": 4,
+    "eligible_target_count": 155,
+    "score_gene_count": 5730,
+    "selection_target_count": 100,
+    "test_target_count": 55
+  },
+  "predecessor_authorization_sha256": "193a613903c754710e5b612e3cf007b64ae99f21c113e2700f908df72013fed4",
+  "protocol_sha256": "05af0bb9da6321cdff81818209e0befa1f74552e96964562d37caef378bac998",
+  "recovery_authorization": true,
+  "recovery_receipts": {
+    "IMPLEMENTATION_RECOVERY_001.json": "5bb5fd8757a3463a96e8f3e86e1f5a5b33dc47d4456ab25812a25dead1a68b4a",
+    "IMPLEMENTATION_RECOVERY_002.json": "25d2f4458496f5c19554fb14162dc09336ac644c2916496677821a32da177308"
+  },
+  "schema_version": 1,
+  "source_effect_loading_already_occurred": true,
+  "source_only_authorized": true
+}

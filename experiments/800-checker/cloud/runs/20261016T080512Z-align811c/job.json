@@ -1,0 +1,21 @@
+{
+ "name": "align811c",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "data/challenge",
+  "data/donors/k562_gwps",
+  "data/donors/orion_hct116",
+  "data/donors/orion_hek293t",
+  "experiments/811-lolo-model/work/banks",
+  "experiments/801-lab-folds/work/L1/bundle/pert_counts.csv",
+  "experiments/801-lab-folds/work/L2/bundle/pert_counts.csv",
+  "experiments/801-lab-folds/work/L3/bundle/pert_counts.csv",
+  "experiments/801-lab-folds/work/L4/bundle/pert_counts.csv",
+  "experiments/801-lab-folds/work/L5/bundle/pert_counts.csv",
+  "experiments/801-lab-folds/work/L6/bundle/pert_counts.csv"
+ ],
+ "collect": [
+  "experiments/811-lolo-model/work/align"
+ ]
+}

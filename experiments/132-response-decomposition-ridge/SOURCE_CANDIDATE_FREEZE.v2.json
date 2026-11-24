@@ -1,0 +1,11 @@
+{
+  "authorization_sha256": "9bca6e620359e44b5440d0b8588412f40f274304ae67d9f55fd7e7d03341e197",
+  "created_utc": "2026-08-30T18:00:51.088343+00:00",
+  "production_authorized": false,
+  "schema_version": 1,
+  "selected_candidate": "identity_source_mean",
+  "selection_artifact_manifest_sha256": "822f624f4de6c6e5b14a0fefe16fbe865d343c17fcf14f52fe854acf19e0b7ed",
+  "selection_passes": false,
+  "selection_result_sha256": "db703007b366267949194ca2272ec43c295328aebd5ba2b07b6c74e8413aa1d5",
+  "test_effect_access_authorized": false
+}

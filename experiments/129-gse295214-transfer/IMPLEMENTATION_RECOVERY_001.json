@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "experiment": "129-gse295214-transfer",
+  "date": "2026-08-30",
+  "failure_stage": "metadata-only plan before any source effect array access",
+  "exception": "ContractError: data/donors/orion_hct116/genes.txt: duplicate axis labels",
+  "failed_output_absent": true,
+  "failed_implementation": {
+    "run.py_sha256": "bea4189d60beaa4daadd218ac10989afecb3015e3e2e050bda054e9468dc1778",
+    "test_run.py_sha256": "29965cc5c9244183c610f1d0662ed321fa9579c4440d232e8909d849ec809f52",
+    "preregistered_protocol.json_sha256": "05af0bb9da6321cdff81818209e0befa1f74552e96964562d37caef378bac998",
+    "SOURCE_INVENTORY.json_sha256": "23cb28ba364a94ca4b73b728508d44e825454e43bcfe3ddb2fbc91b834f3f6a4"
+  },
+  "diagnosis": "The Orion donor gene axis legitimately contains duplicate symbols. Validated production helpers resolve duplicate donor symbols by last occurrence. The first Experiment 129 metadata reader incorrectly required gene-axis uniqueness.",
+  "authorized_mechanical_repair": "Permit duplicate labels only for donor gene axes and preserve last-occurrence symbol mapping in bank_indices. Perturbation axes, experiment target axes, and frozen plan axes remain uniqueness-enforced.",
+  "scientific_changes": {
+    "hypothesis": false,
+    "target_pool": false,
+    "target_split": false,
+    "response_axis_set": false,
+    "candidate_grid": false,
+    "folds": false,
+    "nulls": false,
+    "bootstrap": false,
+    "metrics": false,
+    "promotion_gates": false
+  },
+  "source_effect_values_loaded": false,
+  "accepted_result_produced": false,
+  "held_outcomes_accessed": false,
+  "cell_eval2_run": false,
+  "counts_or_submission_built": false,
+  "commit_or_push": false
+}

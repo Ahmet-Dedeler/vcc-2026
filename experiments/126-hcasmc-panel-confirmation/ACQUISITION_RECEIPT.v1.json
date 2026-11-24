@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "experiment": "126-hcasmc-panel-confirmation",
+  "completed_at_utc": "2026-08-30T17:33:52Z",
+  "status": "opaque_acquisition_verified",
+  "source_identity": {
+    "provider": "IGVF Data Portal",
+    "analysis_set": "IGVFDS6248NDUW",
+    "effect_file": "IGVFFI0206LUDV",
+    "canonical_download_url": "https://api.data.igvf.org/tabular-files/IGVFFI0206LUDV/@@download/IGVFFI0206LUDV.tsv.gz",
+    "s3_version_id": "3SZ8L36Fg16OblDXxZeouTLr5P7MSIvE"
+  },
+  "local_effect_asset": {
+    "path": "data/external/hcasmc-igvf/IGVFFI0206LUDV.tsv.gz",
+    "download_completed_at_utc": "2026-08-30T17:33:21Z",
+    "size_bytes_expected": 1531381676,
+    "size_bytes_observed": 1531381676,
+    "size_match": true,
+    "published_compressed_md5": "4d3067b3e934842c88b9ea52d74780f9",
+    "observed_compressed_md5": "4d3067b3e934842c88b9ea52d74780f9",
+    "compressed_md5_match": true,
+    "local_compressed_sha256": "b87452c2db1f508f5013bc15dff8088828ab931b35492d77ed6aea569fb5d9b9",
+    "published_sha256": null,
+    "mode_after_acceptance": "0444",
+    "temporary_part_file_remaining": false,
+    "aria2_control_file_remaining": false
+  },
+  "guide_metadata_asset": {
+    "path": "data/external/hcasmc-igvf/IGVFFI9546UECF.tsv.gz",
+    "size_bytes_expected": 76842,
+    "size_bytes_observed": 76842,
+    "published_compressed_md5": "1b444eb41eaec5162e7bf9d72c8ee171",
+    "observed_compressed_md5": "1b444eb41eaec5162e7bf9d72c8ee171",
+    "local_compressed_sha256": "157415851b66433c6832a0ee19ff6b31ad34e77f4509362d16f9a5c76fa7c7fd",
+    "data_rows": 3163,
+    "targeting_rows": 2913,
+    "non_targeting_rows": 250,
+    "unique_target_symbols": 971
+  },
+  "metadata_only_overlap": {
+    "vcc_target_count": 300,
+    "hcasmc_target_count": 971,
+    "exact_overlap_count": 27,
+    "overlap_file": "experiments/126-hcasmc-panel-confirmation/VCC_TARGET_OVERLAP.v1.txt",
+    "overlap_file_sha256": "1eca70b0690b367dd8e980e9175634a2c900c7907e98904f3d2e68f20b378232",
+    "effect_values_used": false
+  },
+  "frozen_artifacts": {
+    "ACQUISITION_PROTOCOL.v1.json": "bd8787ba52042733baed33ace93b042cd1053ff3445ddd4ba73375d126a34b11",
+    "SOURCE_MANIFEST.expected.v1.json": "f008b7af91e43f20e4b74c6469fa394497b166ae5033243575e543d985917e25",
+    "VALUE_ACCESS_BOUNDARY.v1.json": "ca4e6cda907b08a3107c33a7bed6b62e8a300a689fed493adb323d8062906919",
+    "PRE_DOWNLOAD_FREEZE.v1.json": "7bc280fdad2b3c76c5c6513eb407b893665dc02199263d461abce84c495e006d"
+  },
+  "value_access_attestation": {
+    "effect_gzip_decompressed": false,
+    "gzip_test_run": false,
+    "effect_header_inspected": false,
+    "effect_strings_inspected": false,
+    "effect_table_parsed": false,
+    "effect_rows_or_columns_counted": false,
+    "effect_values_opened": false,
+    "published_uncompressed_content_md5_verified": false,
+    "value_access_authorized": false,
+    "boundary_remains_closed_even_if_experiment_125_finishes": true,
+    "new_explicit_user_authorization_required": true
+  },
+  "excluded_actions_attestation": {
+    "confirmation_candidate_defined_or_run": false,
+    "dld1_accessed": false,
+    "pan_accessed": false,
+    "h1_or_orion_held_outcomes_accessed": false,
+    "cell_eval2_run": false,
+    "counts_or_submission_built": false,
+    "challenge_submission_made": false,
+    "commit_or_push_made": false
+  },
+  "acceptance": "PASS"
+}

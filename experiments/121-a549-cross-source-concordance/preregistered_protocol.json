@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "experiment": "121-a549-cross-source-concordance",
+  "date_preregistered": "2026-08-30",
+  "status": "frozen_before_either_source_expression_array_was_opened",
+  "scientific_question": "Are independently derived Altair A549 and Myllia A549 same-target perturbation directions reproducible enough to justify a later held-context donor experiment?",
+  "scope": {
+    "classification": "source_only",
+    "datasets": [
+      "Experiment 119 Altair A549 compact source",
+      "Experiment 120 Myllia A549 compact donor"
+    ],
+    "held_context_truth": false,
+    "existing_outcomes": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "submission_paths": false
+  },
+  "source_representation": {
+    "altair": "unaltered source log2 fold change",
+    "myllia": "median replicated-guide target effect in log1p TS50000 pseudobulk coordinates",
+    "cross_source_transform": "none",
+    "row_centering": false,
+    "gene_standardization": false,
+    "imputation": false,
+    "rationale": "The question concerns source-native perturbation directions. Cosine removes row magnitude but no outcome-dependent or source-fitted coordinate transform is allowed."
+  },
+  "target_axis": {
+    "construction": "exact UTF-8 string intersection of the two frozen perturbation text axes",
+    "ordering": "ascending bytewise C-locale order",
+    "count": 20,
+    "complete_gallery_required": true,
+    "labels": [
+      "ATRX",
+      "ATXN7L3",
+      "CNOT10",
+      "CNOT4",
+      "CREBBP",
+      "CTDSPL2",
+      "DYRK1A",
+      "ETS1",
+      "HDAC3",
+      "KDM6A",
+      "MTA2",
+      "PDIA6",
+      "PTEN",
+      "RAB5C",
+      "RNF146",
+      "SMARCD1",
+      "SMC3",
+      "STK40",
+      "SYVN1",
+      "TGFBR1"
+    ],
+    "target_dropping_after_value_access": false
+  },
+  "response_axis": {
+    "gene_join": "exact_symbol_only",
+    "canonical_axes_must_be_bit_identical": true,
+    "complete_case_rule": "one global mask requiring measured finite support in every selected target row from both sources",
+    "excluded_coordinates": "union of all 300 VCC panel response coordinates and all 20 common target-gene response coordinates",
+    "same_mask_for_every_metric_and_direction": true,
+    "row_specific_or_pair_specific_masks": false,
+    "aliases_case_folding_and_symbol_rewrites": false
+  },
+  "primary_metric": {
+    "name": "bidirectional_own_target_cosine_retrieval_pds",
+    "directions": [
+      "altair_to_myllia",
+      "myllia_to_altair"
+    ],
+    "gallery": "complete frozen 20-target gallery",
+    "cosine": "float64 uncentered cosine over the single frozen response mask",
+    "ranking": "descending cosine similarity",
+    "ties": "exact float64 ties receive arithmetic midrank",
+    "per_target_score": "1 - (midrank - 1) / 19",
+    "zero_row": "if predictor row or its assigned own-target reference row has zero L2 norm, assign PDS 0.5",
+    "direction_aggregation": "arithmetic mean over all 20 targets",
+    "macro": "equal arithmetic mean of the two directional PDS values",
+    "chance": 0.5
+  },
+  "secondary_metrics": {
+    "own_target_cosine": {
+      "definition": "cosine between exact same-target source rows over the frozen response mask",
+      "zero_pair": 0.0,
+      "aggregation": "arithmetic mean over all 20 targets",
+      "report_each_direction": true
+    },
+    "top20_predictor_magnitude_sign_precision": {
+      "selection": "max(1, ceil(0.20 times response coordinate count)) coordinates per target",
+      "ranking": "descending absolute predictor magnitude with canonical gene index ascending as exact tie break",
+      "correct": "both signs nonzero and exactly equal",
+      "zero_in_either_source": "incorrect",
+      "aggregation": "arithmetic mean of per-target precision"
+    },
+    "directional_sign_credit": {
+      "selection": "same frozen top-20-percent predictor-selected coordinates",
+      "per_target": "sum(abs(predictor) * sign(predictor) * sign(reference)) / sum(abs(predictor))",
+      "zero_predictor_denominator": 0.0,
+      "zero_reference_sign": "zero credit",
+      "aggregation": "arithmetic mean over all 20 targets"
+    }
+  },
+  "target_label_derangement_null": {
+    "replicates": 10000,
+    "seed": 1212026,
+    "bit_generator": "numpy.random.PCG64",
+    "generation": "rejection sample numpy permutation until every position differs from identity",
+    "assignment": "a frozen derangement maps each Altair label to a Myllia row; the inverse map is used for Myllia to Altair so each replicate represents one bijective cross-source relabeling",
+    "gallery": "all 20 reference rows remain present",
+    "statistic": "equal macro bidirectional PDS",
+    "p95": "numpy quantile method linear at 0.95",
+    "p_value": "(1 + count(null macro PDS >= observed macro PDS)) / 10001",
+    "frozen_before_expression_values": true
+  },
+  "whole_target_bootstrap": {
+    "replicates": 20000,
+    "seed": 1212027,
+    "bit_generator": "numpy.random.PCG64",
+    "resampling": "sample 20 target indices with replacement; use the same sampled target multiplicities in both directions",
+    "statistic": "equal macro of the two resampled directional mean PDS values",
+    "confidence_interval": "numpy quantile method linear at 0.025 and 0.975",
+    "frozen_before_expression_values": true
+  },
+  "go_gate": {
+    "all_required": true,
+    "altair_to_myllia_pds_minus_chance_strictly_positive": true,
+    "myllia_to_altair_pds_minus_chance_strictly_positive": true,
+    "macro_pds_minimum_inclusive": 0.6,
+    "macro_pds_strictly_above_derangement_null_p95": true,
+    "whole_target_bootstrap_macro_lower_95_strictly_above": 0.5,
+    "altair_to_myllia_directional_sign_credit_strictly_positive": true,
+    "myllia_to_altair_directional_sign_credit_strictly_positive": true,
+    "threshold_adjustment": "none"
+  },
+  "freeze_contract": {
+    "protocol_and_authorization_created_before_expression_value_access": true,
+    "derangements_and_bootstrap_indices_written_before_expression_value_access": true,
+    "output_directory": "experiments/121-a549-cross-source-concordance/work/preregistered-freeze-v1",
+    "evaluation_output_directory": "experiments/121-a549-cross-source-concordance/work/source-only-evaluation-v1",
+    "refuse_overwrite": true,
+    "source_arrays_must_match_hashes_pinned_by_the_authorization_manifest": true,
+    "post_outcome_target_mask_metric_threshold_resampling_or_code_changes_forbidden": true
+  }
+}

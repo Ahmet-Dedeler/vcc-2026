@@ -1,0 +1,12 @@
+{
+ "name": "smoke",
+ "parallel": 2,
+ "venv": true,
+ "sync": [
+  "experiments/800-checker/tests/smoke/in.txt",
+  "experiments/522-october-bulk-key/work/analyse522.json"
+ ],
+ "collect": [
+  "experiments/800-checker/tests/smoke/out"
+ ]
+}

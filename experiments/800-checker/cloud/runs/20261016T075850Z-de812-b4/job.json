@@ -1,0 +1,27 @@
+{
+ "name": "de812-b4",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "experiments/435-zs-on-coarse/work/h1/stats-base_s0_bps_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.npz",
+  "experiments/435-zs-on-coarse/work/h1/metrics-base_s0_bps_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.json",
+  "experiments/618-h1-trainval-surface/work/g1/stats-base_s0_bps_zr-5_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.npz",
+  "experiments/618-h1-trainval-surface/work/g1/metrics-base_s0_bps_zr-5_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.json",
+  "experiments/435-zs-on-coarse/work/h1/stats-base_s1_bps_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.npz",
+  "experiments/435-zs-on-coarse/work/h1/metrics-base_s1_bps_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.json",
+  "experiments/618-h1-trainval-surface/work/g1/stats-base_s1_bps_zr-5_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.npz",
+  "experiments/618-h1-trainval-surface/work/g1/metrics-base_s1_bps_zr-5_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.json",
+  "experiments/435-zs-on-coarse/work/h1/stats-base_s2_bps_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.npz",
+  "experiments/435-zs-on-coarse/work/h1/metrics-base_s2_bps_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.json",
+  "experiments/618-h1-trainval-surface/work/g1/stats-base_s2_bps_zr-5_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.npz",
+  "experiments/618-h1-trainval-surface/work/g1/metrics-base_s2_bps_zr-5_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.json",
+  "experiments/812-de-signs/work/stage",
+  "experiments/618-h1-trainval-surface/work/tv/effects.npz",
+  "experiments/425-crispri-cis-neighbours/work/tss_v44.tsv",
+  "experiments/323-current-family-validation/work/effects.npz",
+  "experiments/391-consensus-block-signs/work/clean4_prior_challenge.npz"
+ ],
+ "collect": [
+  "experiments/812-de-signs/work/cis812.json"
+ ]
+}

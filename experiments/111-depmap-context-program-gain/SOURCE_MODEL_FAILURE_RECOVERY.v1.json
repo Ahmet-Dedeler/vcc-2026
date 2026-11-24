@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "experiment": "111-depmap-context-program-gain",
+  "date_recorded": "2026-08-30",
+  "status": "authorized_mechanical_parser_recovery",
+  "failed_execution_freeze_sha256": "e920e0f5408ed3db0b45cf2018dd8b836919fa25d698897dd314d45e0421e22b",
+  "failure": {
+    "stage": "source CSV parser initialization before expression matrix load",
+    "exception": "ValueError",
+    "message": "could not convert string to float: 'MIR1302-2HG'",
+    "cause": "Pandas dtype=float32 was applied to the gene-symbol index column",
+    "source_model_outcomes_observed": false,
+    "output_directory_created": false
+  },
+  "authorized_change": {
+    "remove_index_wide_dtype_coercion_from_read_csv": true,
+    "retain_explicit_float32_conversion_after_gene-axis selection": true,
+    "scientific_model_change": false,
+    "grid_change": false,
+    "gate_change": false,
+    "null_change": false
+  },
+  "prohibited": {
+    "held_truth_access": true,
+    "cell_eval2": true,
+    "counts": true,
+    "production_change": true,
+    "challenge_build": true,
+    "submission": true,
+    "commit": true,
+    "push": true
+  }
+}

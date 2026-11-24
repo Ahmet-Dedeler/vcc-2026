@@ -1,0 +1,4 @@
+candidate,is_primary,pds,delta_vs_baseline
+baseline_hct116_hek293t,False,0.8101574020095332,0.0
+cd4_mean3_f0.5_gene_norm,True,0.6670724597921881,-0.14308494221734513
+cd4_mean3_f0.5_raw_diagnostic,False,0.7171907684921641,-0.09296663351736911

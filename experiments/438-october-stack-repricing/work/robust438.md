@@ -1,0 +1,38 @@
+| step | panel | all targets | minus each fold's top-3 (targets) | minus the 4 screens' targets (Arc-like) | minus K562-essential |
+|---|---|---|---|---|---|
+| H1 x2 half | abc | +0.00238 3/3 | +0.00143 3/3 (SIN3B, SMARCA5, TAF4, UPF3B) | +0.00238 3/3 | +0.00238 3/3 |
+| H1 x2 half | real | +0.00511 3/3 | +0.00382 3/3 (METTL3, NME6, OGT, TPR) | +0.00319 3/3 | +0.00316 3/3 |
+| H1 x2 half | efp | +0.00255 3/3 | +0.00074 2/3 (ACAT2, PRCC, SNRPB2, TAF11, TBPL1) | +0.00254 2/3 | +0.00255 3/3 |
+| H1 x2 half | efr | +0.00031 1/3 | -0.00042 1/3 (ARID4B, CDC25A, FKBPL, MICU1, RPRD1A, SUB1, TCF7L1) | +0.00093 2/3 | +0.00031 1/3 |
+| CD4 x1.5 half | abc | +0.00183 3/3 | +0.00130 2/3 (ACLY, CARM1, DCP2, FOXN2, GIGYF2, SIN3B, SYVN1) | +0.00183 3/3 | +0.00183 3/3 |
+| CD4 x1.5 half | real | -0.00149 1/3 | -0.00186 1/3 (PTDSS2, RPTOR, RTRAF, SP2, THRAP3, UBAP2L) | -0.00148 1/3 | -0.00161 1/3 |
+| CD4 x1.5 half | efp | -0.00096 0/3 | -0.00167 0/3 (OGA, SNRPB2, TADA1, TAF11) | -0.00077 1/3 | -0.00096 0/3 |
+| CD4 x1.5 half | efr | -0.00242 0/3 | -0.00294 0/3 (ARID4B, ARRDC4, ATP5PO, MYSM1, PIM3, THAP2) | -0.00243 0/3 | -0.00242 0/3 |
+| stack | abc | +0.00406 3/3 | +0.00334 3/3 (ACLY, PHF23, PQBP1, SIN3B, SMARCA5) | +0.00406 3/3 | +0.00406 3/3 |
+| stack | real | +0.00351 3/3 | +0.00217 2/3 (EIF3L, FNBP4, METTL3, NME6, TPR) | +0.00159 2/3 | +0.00145 2/3 |
+| stack | efp | +0.00143 2/3 | -0.00096 0/3 (PRCC, SNRPB2, TADA1, TAF11, TBPL1) | +0.00161 2/3 | +0.00143 2/3 |
+| stack | efr | -0.00205 0/3 | -0.00291 0/3 (ARID4B, ARRDC4, CDC25A, SUB1, TCF7L1, THAP2, TP53) | -0.00149 1/3 | -0.00205 0/3 |
+| CD4 x1.5 on top of H1 x2 | abc | +0.00170 3/3 | +0.00128 2/3 (ACLY, CARM1, DCP2, FOXN2, PQBP1, SIN3B, SYVN1) | +0.00170 3/3 | +0.00170 3/3 |
+| CD4 x1.5 on top of H1 x2 | real | -0.00160 1/3 | -0.00197 0/3 (CCDC6, NUP188, RPTOR, RTRAF, SP2, THRAP3) | -0.00161 1/3 | -0.00172 1/3 |
+| CD4 x1.5 on top of H1 x2 | efp | -0.00111 0/3 | -0.00189 0/3 (NDUFA5, OGA, SNRPB2, TADA1, TAF11) | -0.00092 1/3 | -0.00111 0/3 |
+| CD4 x1.5 on top of H1 x2 | efr | -0.00236 0/3 | -0.00278 0/3 (ARRDC4, ATP5PO, MYSM1, PIM3, THAP2) | -0.00242 0/3 | -0.00236 0/3 |
+| H1 x2 -> x3 (CD4 x1) | abc | +0.00047 2/3 | -0.00034 1/3 (PHF23, SIN3B, SMARCA5, TAF4, UPF3B) | +0.00047 2/3 | +0.00047 2/3 |
+| H1 x2 -> x3 (CD4 x1) | real | +0.00355 3/3 | +0.00276 3/3 (METTL3, NME6, OGT, TPR) | +0.00263 3/3 | +0.00231 3/3 |
+| H1 x2 -> x3 (CD4 x1) | efp | +0.00124 2/3 | -0.00032 1/3 (ACAT2, PRCC, SNRPB2, TAF11, TBPL1) | +0.00145 2/3 | +0.00124 2/3 |
+| H1 x2 -> x3 (CD4 x1) | efr | -0.00021 1/3 | -0.00070 1/3 (ARID4B, CDC25A, DCAF7, FKBPL, MICU1, SUB1, TCF7L1) | +0.00045 2/3 | -0.00021 1/3 |
+| H1 x3 -> x5 (CD4 x1) | abc | -0.00227 0/3 | -0.00329 0/3 (PHF23, SIN3B, SMARCA5, TAF4, UPF3B) | -0.00227 0/3 | -0.00227 0/3 |
+| H1 x3 -> x5 (CD4 x1) | real | +0.00307 3/3 | +0.00228 3/3 (METTL3, NME6, OGT, TPR) | +0.00238 2/3 | +0.00169 2/3 |
+| H1 x3 -> x5 (CD4 x1) | efp | +0.00087 2/3 | -0.00162 1/3 (ACAT2, NDUFB1, PRCC, SNRPB2, TAF11, TBPL1) | +0.00137 2/3 | +0.00087 2/3 |
+| H1 x3 -> x5 (CD4 x1) | efr | -0.00058 0/3 | -0.00133 0/3 (ARID4B, CDC25A, DCAF7, FKBPL, MICU1, SUB1, TCF7L1) | +0.00052 2/3 | -0.00058 0/3 |
+| CD4 x1.5 -> x1 at H1 x2 | abc | -0.00172 0/3 | -0.00223 0/3 (CHKB, GMEB2, SLIRP, TAF4, UPF3B) | -0.00172 0/3 | -0.00172 0/3 |
+| CD4 x1.5 -> x1 at H1 x2 | real | +0.00160 2/3 | +0.00074 2/3 (ADNP2, METTL3, NME6, OGT, TPR) | +0.00161 2/3 | +0.00171 2/3 |
+| CD4 x1.5 -> x1 at H1 x2 | efp | +0.00111 3/3 | +0.00069 2/3 (ANKRD17, INTS11, UTP11) | +0.00092 2/3 | +0.00111 3/3 |
+| CD4 x1.5 -> x1 at H1 x2 | efr | +0.00236 3/3 | +0.00203 3/3 (ACP1, BMP1, CDC25A, DMRTC2, GKAP1, RPRD1A, UCHL3) | +0.00241 3/3 | +0.00236 3/3 |
+| q 1.25 -> 1.5 on the stack | abc | +0.00847 3/3 | +0.00872 3/3 (ACLY, FOXN2, GIGYF2, SIN3B, SYVN1, UPF3B) | +0.00847 3/3 | +0.00847 3/3 |
+| q 1.25 -> 1.5 on the stack | real | +0.00492 3/3 | +0.00473 3/3 (ACSS2, METTL3, OGT, PUM1, TPR) | +0.00446 3/3 | +0.00515 3/3 |
+| q 1.25 -> 1.5 on the stack | efp | +0.00412 3/3 | +0.00362 3/3 (ACAT2, INTS11, LMAN2L, PRCC, SDCBP, SMAD4, TBPL1, TCEAL1) | +0.00527 3/3 | +0.00412 3/3 |
+| q 1.25 -> 1.5 on the stack | efr | +0.00454 3/3 | +0.00409 3/3 (CCDC12, LMX1B, MTRR, MYSM1, RPRD1A, SNX5, TENT4A) | +0.00449 3/3 | +0.00454 3/3 |
+| key K3 -> LODO V1 (0.5, 3) on the stack | abc | +0.00274 3/3 | +0.00214 3/3 (BRPF1, EZH2, GPATCH8, HMGN4, LDLR, PCGF1, RBM5, SCAF8) | +0.00274 3/3 | +0.00274 3/3 |
+| key K3 -> LODO V1 (0.5, 3) on the stack | real | +0.00318 2/3 | +0.00210 2/3 (GLMN, MAU2, MRTO4, PGK1, PUM1, RC3H1, RPTOR) | +0.00410 3/3 | +0.00485 3/3 |
+| key K3 -> LODO V1 (0.5, 3) on the stack | efp | +0.00306 3/3 | +0.00210 3/3 (ACAT2, EME2, LAMTOR5, NRAS, PRCC, SPEN, TADA1) | +0.00537 3/3 | +0.00306 3/3 |
+| key K3 -> LODO V1 (0.5, 3) on the stack | efr | +0.00169 3/3 | +0.00103 1/3 (ACTN1, ATP5PO, CDC25A, GKAP1, PIGF, PMVK, R3HDM2, TP53) | +0.00169 3/3 | +0.00169 3/3 |

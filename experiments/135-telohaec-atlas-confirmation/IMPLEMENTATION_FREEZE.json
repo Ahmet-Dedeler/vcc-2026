@@ -1,0 +1,114 @@
+{
+  "candidate": "equal_mean_agreement",
+  "created_at": "2026-08-30",
+  "dose": 1.0,
+  "experiment": "135-telohaec-atlas-confirmation",
+  "experiment_105_excluded_all_panel_coordinates_before_aggregation": true,
+  "files": {
+    "data/challenge/gene_names.csv": {
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+      "size_bytes": 119295
+    },
+    "data/challenge/pert_counts.csv": {
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+      "size_bytes": 1906
+    },
+    "data/external/igvf-telohaec/guide_qc.csv": {
+      "sha256": "7fae32e59990acb58bcc662044cb0cd31fd8c759f3debb51d6ce8a53c0cd58a7",
+      "size_bytes": 4167502
+    },
+    "experiments/103-residual-only-production/work/staged-a15-linux/a15-effects.npy": {
+      "sha256": "6f2b0488d67a31b59aff2ce6c7868f1de443f5153f28386b6a07f7489e12eb6f",
+      "size_bytes": 44479328
+    },
+    "experiments/103-residual-only-production/work/staged-a15-linux/a15-effects.npy.json": {
+      "sha256": "a1808f6af4fd803ed2084dbf02387d9f573b932a207683eab6110874b727ebb0",
+      "size_bytes": 431
+    },
+    "experiments/105-telohaec-residual/PROVENANCE.json": {
+      "sha256": "f177612b26a7fd325fa2160552fe9013a511b0218e73acbef4f7eb6f5af21dbd",
+      "size_bytes": 7271
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/all-candidate-panel-confidence.npy": {
+      "sha256": "49fc0811c31a46aae8ec543149578d78d0e4009b5bbdea4e4c4cb9ece1c9de58",
+      "size_bytes": 2160128
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/all-candidate-panel-residuals.npy": {
+      "sha256": "6af22753bf0aea9db8201c6ad9b6cc91f84a5d888334d1009bea094d9cb6627e",
+      "size_bytes": 2160128
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/all-candidate-panel-support.npy": {
+      "sha256": "6aa4993f43e6b38c041ab628f594921d1824db805920b23ea5d54ed5e9c66103",
+      "size_bytes": 1080128
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/artifact-manifest.json": {
+      "sha256": "f4b1a42bfffde3c2499130ac378bf2c2cfbf5b07e58dca11a1046d4cce661472",
+      "size_bytes": 3253
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/candidate-names.txt": {
+      "sha256": "b07e6b45ee3af8ccc03ad8487e6d414d0ae378fdf530f26fff3cd18e4d70ec7a",
+      "size_bytes": 124
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/panel-targets.txt": {
+      "sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4",
+      "size_bytes": 1894
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/result-receipt.json": {
+      "sha256": "bfd137cba001ff43b617ab245b4cd08676652a829e1c44194139ee2ba75d6d24",
+      "size_bytes": 446
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/results.json": {
+      "sha256": "12f6f8146a750a812976b6611545f39c544a04d43142c5c1fa1f325f6b6435f4",
+      "size_bytes": 1226923
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/selected-panel-confidence.npy": {
+      "sha256": "01f2884408d4fde02549abd9b40fe4204961cf711567ab4b32d08c2fc56d6b65",
+      "size_bytes": 360128
+    },
+    "experiments/122-panel-response-atlas/work/source-only-phase1-v1/selected-panel-residual.npy": {
+      "sha256": "6ad50b0dbd134b6074da69bf42e94f75aa4cd999abce0d614e7b6cc73f70ec63",
+      "size_bytes": 360128
+    },
+    "experiments/128-panel-integer-budget-transport/IMPLEMENTATION_FREEZE.json": {
+      "sha256": "67df1b5c5e4f1960fc4ec7a1cc06d7f0754b485443b4e1b7478daefee3ac1426",
+      "size_bytes": 1354
+    },
+    "experiments/128-panel-integer-budget-transport/run.py": {
+      "sha256": "42a0ffadee3560a77636b3b6641e1d4eb7bf437839ca165a6bb8e3fa139e9123",
+      "size_bytes": 30799
+    },
+    "experiments/130-telohaec-panel-confirmation/SOURCE_METADATA_RECEIPT.v1.json": {
+      "sha256": "4e1582e61b5f23e8154bfb52ef73af181df1314f6f04eaa4270cf05448d1d393",
+      "size_bytes": 210643
+    },
+    "experiments/135-telohaec-atlas-confirmation/README.md": {
+      "sha256": "db8c175fb57ce8bdea8f45c74a211e4352f024b0f70048a8cd4b114d52af157a",
+      "size_bytes": 3831
+    },
+    "experiments/135-telohaec-atlas-confirmation/freeze.py": {
+      "sha256": "7d795b0aa9e53e3e30aabbce03663ccfb4179078ee0976b4ea517028eb9fdd48",
+      "size_bytes": 4416
+    },
+    "experiments/135-telohaec-atlas-confirmation/preregistered_protocol.json": {
+      "sha256": "b73462cd381c17ec89bdf6b5e15ffe6738dc532a5308f59c42ac7d2334357b2a",
+      "size_bytes": 10385
+    },
+    "experiments/135-telohaec-atlas-confirmation/run.py": {
+      "sha256": "2c60656d201baed4e05533cbd39b101330204e85a3ca401e53a568fb2471ac02",
+      "size_bytes": 55225
+    },
+    "experiments/135-telohaec-atlas-confirmation/test_run.py": {
+      "sha256": "fdc505ab6d9952cb6b7558935e36161f06b786a9f1feb62668f72dd0f1681a93",
+      "size_bytes": 10795
+    }
+  },
+  "large_source": {
+    "path": "data/external/igvf-telohaec/IGVFFI8645YMGX.h5ad",
+    "sha256_from_verified_experiment_105_provenance": "e11b252c1f05689bb7a7916921f6ac0b83cc0381df295102b12b9e0cdd8d3e04",
+    "size_bytes": 1473190952
+  },
+  "prior_raw_chunk_streaming_disclosed": true,
+  "schema_version": 1,
+  "status": "frozen_before_experiment_135_telohaec_panel_response_aggregation_or_analysis",
+  "telohaec_panel_response_aggregation_or_analysis": false
+}

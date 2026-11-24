@@ -1,0 +1,58 @@
+{
+  "downloaded_assets": {
+    "file_inventory": {
+      "filename": "filelist.txt",
+      "sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca",
+      "sha256_recomputed_now": true,
+      "size_bytes": 11869,
+      "source_sha256_pinned": true
+    },
+    "guide_reference": {
+      "filename": "GSE249595_guides_reference.fa.gz",
+      "sha256": "99e99d6c14907a2cc60c4c11ed3d93e9da5cc113740489b7e8d1e8c0abe00ca6",
+      "sha256_recomputed_now": true,
+      "size_bytes": 847505,
+      "source_sha256_pinned": true
+    },
+    "raw_archive": {
+      "filename": "GSE249595_RAW.tar",
+      "sha256": "3c0c5fa8cab2983dfe0fa3b38b31662bb68e191e6dbaf3d03af02a67587a67a9",
+      "sha256_recomputed_now": true,
+      "size_bytes": 3753820160,
+      "source_sha256_pinned": false
+    },
+    "supplementary_table": {
+      "filename": "MOESM3_ESM.xlsx",
+      "sha256": "307f346279b4bda2e9c19aca39c692a144197c0117dfd9d595724cc353e2f7ff",
+      "sha256_recomputed_now": true,
+      "size_bytes": 412522,
+      "source_sha256_pinned": true
+    }
+  },
+  "manifest_sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74",
+  "provenance_sha256": "0c3277a5ee1fa9b179d5f91683375c7f2a9b5a72dd38c2e00c35df4950a1c722",
+  "raw_hash_interpretation": "The raw archive has no source-pinned SHA-256. Its receipt hash is a locally observed transport hash, not an independent source checksum.",
+  "status": "pass",
+  "verified_fields": {
+    "screen.channels": 16,
+    "screen.enriched_response_genes": 374,
+    "screen.estimated_pds_visible_high_sensitivity_genes_after_panel_mask": 349,
+    "screen.guide_records": 83401,
+    "screen.guide_reference_parsed_targets": 18601,
+    "screen.hash_oligos": 7,
+    "screen.missing_vcc_target": "ZNF714",
+    "screen.non_targeting_guide_records": 250,
+    "screen.reported_targeted_genes": 18595,
+    "screen.supplementary_table_1_rows": 18466,
+    "screen.supplementary_table_1_unique_symbols": 18465,
+    "screen.supplementary_table_2_unique_symbols": 375,
+    "screen.transcriptome_features": 20606,
+    "screen.vcc_expression_gene_overlap": 18378,
+    "screen.vcc_target_overlap": 299,
+    "source.bioproject": "PRJNA1049794",
+    "source.geo_series": "GSE249595",
+    "source.parent_series": "GSE247601",
+    "source.raw_archive_size_bytes": 3753820160,
+    "status": "preregistered_before_acquisition"
+  }
+}

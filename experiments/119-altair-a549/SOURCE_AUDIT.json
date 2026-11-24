@@ -1,0 +1,191 @@
+{
+  "axis_bindings": {
+    "canonical_genes_sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "source_ensembl_ids_sha256": "09f3b41c150a632f962feef87d425a20a34599bf938c03ef3f00ea91f4666bbd",
+    "source_gene_symbols_sha256": "b75332c4c5b33459816d97fc49b4947ed0d3d1c365ae05db6517cc6d3ff844e8",
+    "source_perturbations_sha256": "3ffb0e0674dfebb8e14de3adb60b210973371abd927609a6e4d9442ba38ed3b4",
+    "vcc_panel_sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+  },
+  "experiment": "119-altair-a549",
+  "metadata": {
+    "aggregates": {
+      "path": "metadata/aggregates.json",
+      "sha256": "c88a392d2fbd73d8bd06d158d3273a43e3d1f0f5dbf8dfa34209fd46d5cd70da",
+      "size_bytes": 71056
+    },
+    "alg12_diff_expression": {
+      "path": "metadata/alg12-diff-expression.json",
+      "sha256": "e7973452de43506f2c6166e96ce4418901591a47ee7b964e563211ce9e23632b",
+      "size_bytes": 484551
+    },
+    "collection": {
+      "path": "metadata/collection.json",
+      "sha256": "37c8cdbfc2ecf42450104fa8153bea5e3f1ba29c695df9529483452713cc4b21",
+      "size_bytes": 1914
+    },
+    "dataset": {
+      "path": "metadata/dataset.json",
+      "sha256": "9c3d6f6b7c44015dca868a190f88bd62254c0b75e0a3f851d1dcfbd5964ad388",
+      "size_bytes": 449
+    },
+    "public_object_head": {
+      "path": "metadata/public-object-head.json",
+      "sha256": "b2b366bb60e8eb4f3f9c3a50cc52c79fe824343f9cc753edd772c6fbf56650cb",
+      "size_bytes": 305
+    }
+  },
+  "official_ids": {
+    "collection_id": "6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3",
+    "dataset_id": "7006c6c0-6487-43c5-b6ca-735acebb4375"
+  },
+  "safety": {
+    "counts_generated": false,
+    "evaluation_run": false,
+    "existing_outcome_opened": false,
+    "held_truth_opened": false,
+    "model_fitted": false,
+    "submission_built": false
+  },
+  "schema": {
+    "layers": [
+      "adj_p_value",
+      "baseMean",
+      "lfcSE",
+      "neg_log10_fdr",
+      "p_value",
+      "stat"
+    ],
+    "matrix_X": {
+      "dtype": "float32",
+      "finite": 9969003,
+      "maximum": 34.533782958984375,
+      "meaning": "log2_fold_change",
+      "minimum": -3.857694387435913,
+      "nan": 39996
+    },
+    "neg_log10_fdr": {
+      "finite": 7633933,
+      "maximum": 44.85346984863281,
+      "minimum": -0.0,
+      "nan": 2375066
+    },
+    "source_shape": [
+      1001,
+      9999
+    ]
+  },
+  "schema_version": 1,
+  "semantics_evidence": {
+    "api_fdr_max_abs_error_after_five_decimal_serialization": 4.999179840092793e-06,
+    "api_lfc_max_abs_error_after_five_decimal_serialization": 4.9997365474709066e-06,
+    "api_probe_aggregate": "ALG12",
+    "core_nan_pattern_consistent": true,
+    "fdr_support_is_subset_of_x_support": true,
+    "interpretation": {
+      "alias_merge": false,
+      "api_rounding_tolerance": 5.1e-06,
+      "comparison": "each targeting aggregate relative to the dataset non-targeting control aggregate",
+      "deseq_stat_tolerance": 0.0001,
+      "fdr_available_definition": "finite value in source layers/neg_log10_fdr",
+      "layers": [
+        "adj_p_value",
+        "baseMean",
+        "lfcSE",
+        "neg_log10_fdr",
+        "p_value",
+        "stat"
+      ],
+      "mapping": "exact gene symbol only",
+      "matrix_X": "official OPS API field log2_fold_change",
+      "measured_definition": "finite value in source X",
+      "not_counts": true,
+      "not_project_log1p_delta": true,
+      "unsupported_representation": "NaN"
+    },
+    "max_abs_neglog10fdr_plus_log10padj": 1.925281303272186e-06,
+    "max_abs_x_over_lfcse_minus_stat": 7.568634487142845e-06,
+    "official_api_field": "log2_fold_change"
+  },
+  "source": {
+    "path": "data/external/altair-a549/altair-scrna.h5ad",
+    "sha256": "4632972e6c2871603f4ca9108489787d7761aae05dc6a4bf3488f1ed78a63c9f",
+    "size_bytes": 281474102
+  },
+  "status": "official_source_authenticated_and_semantics_verified",
+  "summary": {
+    "all_nan_rows": [
+      "COQ10B",
+      "HSD17B12",
+      "NEK1",
+      "Nontargeting"
+    ],
+    "canonical_exact_overlap": 7843,
+    "canonical_symbols_uncovered": 10690,
+    "cells_total": 606075,
+    "control_cells_total": 45320,
+    "control_rows": 1,
+    "source_fdr_finite": 7633933,
+    "source_fdr_nan": 2375066,
+    "source_response_genes": 9999,
+    "source_shape": [
+      1001,
+      9999
+    ],
+    "source_symbols_unmapped": 2156,
+    "source_x_finite": 9969003,
+    "source_x_nan": 39996,
+    "supported_target_rows": 997,
+    "target_cells_max": 1196,
+    "target_cells_median": 565.0,
+    "target_cells_min": 73,
+    "target_cells_total": 560755,
+    "target_rows": 1000,
+    "vcc_panel_supported_overlap": 20,
+    "vcc_panel_supported_targets": [
+      "ALG12",
+      "ANP32B",
+      "C5orf22",
+      "LDLR",
+      "MSANTD4",
+      "NUP37",
+      "PAN2",
+      "PATL1",
+      "PHF23",
+      "PIM2",
+      "PRKACA",
+      "RBM26",
+      "RBM5",
+      "SCAF8",
+      "STT3A",
+      "SYVN1",
+      "TIMM17B",
+      "WBP4",
+      "ZNF219",
+      "ZNF496"
+    ],
+    "vcc_panel_target_overlap": 21,
+    "vcc_panel_targets": [
+      "ALG12",
+      "ANP32B",
+      "C5orf22",
+      "COQ10B",
+      "LDLR",
+      "MSANTD4",
+      "NUP37",
+      "PAN2",
+      "PATL1",
+      "PHF23",
+      "PIM2",
+      "PRKACA",
+      "RBM26",
+      "RBM5",
+      "SCAF8",
+      "STT3A",
+      "SYVN1",
+      "TIMM17B",
+      "WBP4",
+      "ZNF219",
+      "ZNF496"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+ "name": "sh175zs",
+ "desc": "(a) uniform q 1.75 on every target's ballast render (446bj2's scalar VCC_BULK_SHARPEN_Q 1.75); surface's own ps bulk (410b key, clip 0.3/3); E0's DE config (coarse MDE, zr -5); stage zs",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": false,
+  "sharpen": "scalar:1.75"
+ },
+ "stage": "zs"
+}

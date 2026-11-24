@@ -1,0 +1,40 @@
+{
+  "cell_eval2_version": "0.16.0",
+  "inputs_sha256": {
+    ".venv/lib/python3.12/site-packages/cell_eval2/catalog.py": "d371aa454ec07dbaa7aa21fcbc2929ef9b8a55691aae39a471f90f0d4e5752df",
+    ".venv/lib/python3.12/site-packages/cell_eval2/config.py": "30381857e42b7bdc03f0d0779f83885656e9e19f8a6747483976a5342f49f8ec",
+    ".venv/lib/python3.12/site-packages/cell_eval2/configs/vcc2026.yaml": "1a385a53ba9c59d44b56755ef48d8a6713eefe8822fbeef96fc20ab9a8047a32",
+    ".venv/lib/python3.12/site-packages/cell_eval2/de.py": "525b19837c7b42c15838d9f2c053ae19f4108872329d183e4d977620ebe316df",
+    ".venv/lib/python3.12/site-packages/cell_eval2/metrics/de.py": "6cb7bee7cad59c2a20e45d68ca75b8696723cacc56b8dc94da92ac7676813038",
+    ".venv/lib/python3.12/site-packages/cell_eval2/metrics/delta.py": "6067d0c5bd7cac4715406cd4935ec86326e91c6217f204f6bfc5b0a7bb948a8c",
+    ".venv/lib/python3.12/site-packages/cell_eval2/metrics/direction.py": "50624ad3253d1bbb213c90110dd309711579e26479174a88e1ed60444f5637b5",
+    ".venv/lib/python3.12/site-packages/cell_eval2/metrics/discrimination.py": "34802605c5bec46a845088048cb5bff2c7b4266d17ce1a68936a94bb72188b5d",
+    ".venv/lib/python3.12/site-packages/cell_eval2/moments.py": "117aa11b3ab611795bc5be5af7a84ae9ae6fef6a451fbf4c94b730fee7d55679",
+    ".venv/lib/python3.12/site-packages/cell_eval2/prep.py": "d07b7d314c69aff6168c6334da95aed8c46d5e27ec59f45a0215d973f59a6912",
+    ".venv/lib/python3.12/site-packages/cell_eval2/run.py": "4c889611b4726ac574546af50bce15f830243c46f7609746e0b3e0fafe9cf0c3",
+    "experiments/096-mse-floor/msekit.py": "5dda415227fbeb29b5cd61b504d2689ce55ec39783697bb5c0891b7261293f14",
+    "experiments/170-gamma-mse/work/eff/h1_g0.65.npz": "7b5cb1bf7735df1c4511902071ed2d1d46f2885d6d32a34bf95ded2ef493871e",
+    "experiments/221-cloud-scorer/cloud-output/ladder5-20260904/prologue-out/build221.json": "67f670eadc6e948a742b87658ceeeb8885c297c1d1f2804ce92f20563ec7afbf",
+    "experiments/221-cloud-scorer/cloud-output/ladder8-20260904/rc_callset/run/agg_results.csv": "0d46f6aa37634714b453f41a58ff55c26a21acc96ebac00a8c9ccb6227c47310",
+    "experiments/221-cloud-scorer/cloud-output/ladder8-20260904/rc_callset/run/results.csv": "e4a8951b3468d4cb0f6b5579a9e88ef94d7331725300a52bcadc9c37b7f5e09b",
+    "experiments/323-current-family-validation/EVALUATION-NOTE.md": "c375944401d9f047aab62caa198bff8bfa2d9be80490e0a4444272a005582317",
+    "experiments/323-current-family-validation/evaluate323.py": "10f7ba375c3fd9161348a10cf84eb45b364eba5e8bab5cd183aefe3f6b2ceb0c",
+    "experiments/323-current-family-validation/EVALUATION-AMENDMENT-1.md": "2a08e3b35bc22b953d4e276c6bb9dd3e9a27407b88d65eb15219a03d3a4e2bb6",
+    "experiments/323-current-family-validation/test_evaluate323.py": "2cd91a634cdac75aadcb750edf263417f5b0929a022a75609c8c52d5ed43ed6d",
+    "experiments/323-current-family-validation/exact_de323.py": "7a3a0b406ede3963b3e5ae9b6ed4f993b1afc87d8efd1e95f113a25f0d183f91",
+    "experiments/323-current-family-validation/EVALUATION-AMENDMENT-3.md": "452fffb95ab569f3a863c696c395b627441aff5387999bb2750d08b4374298ff",
+    ".venv/lib/python3.12/site-packages/cell_eval2/de_compute.py": "d2ab56cd4c0fed1d4f6d9a1861ae696917d0cef8bdc01a806dfa74bc215f1bde",
+    ".venv/lib/python3.12/site-packages/scanpy/preprocessing/_normalization.py": "087e93d04c1ef3b5dea22dc19e0945e574532c695acdac92fba415c4f8f225eb",
+    "experiments/323-current-family-validation/EVALUATION-AMENDMENT-2.md": "fddba287893751488b73d5e910e74a9a4bdb7143032e9f2583cb9590351baa8e",
+    "experiments/323-current-family-validation/work/compose.json": "8b279403584561e2dbbb62ba5561ea8fe25b3c363180d33b5e8b50bdaf8ce2c3",
+    "experiments/323-current-family-validation/work/effects.npz": "1ab617c14973ca9d6a071b1fd966059b7c6596c460b21ae099862394766dfd05"
+  },
+  "known_answer_absolute_tolerances": {
+    "fid": 1e-06,
+    "jac": 1e-06,
+    "mse": 1e-10,
+    "nmae": 1e-06,
+    "pds": 1e-12,
+    "reach": 1e-06
+  }
+}

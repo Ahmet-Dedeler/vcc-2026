@@ -1,0 +1,13 @@
+{
+ "name": "grade804",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "experiments/804-known-answers/work/run",
+  "experiments/804-known-answers/work/board_pairs.json"
+ ],
+ "collect": [
+  "experiments/804-known-answers/work/grade804.json",
+  "experiments/804-known-answers/work/grade804.txt"
+ ]
+}

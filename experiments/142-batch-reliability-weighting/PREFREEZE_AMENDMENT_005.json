@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-31",
+  "stage": "after_v4_authorization_before_v4_freeze_or_any_v3_source_scan",
+  "finding": "The replacement freeze required its exact corrected timestamp, but later artifact stages still permitted provenance_utc to fall back to the unreliable host clock.",
+  "correction": {
+    "artifact_timestamp": "Every artifact-producing plan, source-build, source-evaluate, and source-gate stage must receive VCC_PROVENANCE_UTC explicitly.",
+    "authorized_utc_date": "2026-08-31",
+    "host_clock_fallback": false,
+    "replacement_authorization": "SOURCE_ONLY_FREEZE_AUTHORIZATION.v5.json"
+  },
+  "access_state": {
+    "v4_freeze_run": false,
+    "v3_source_build_run": false,
+    "v3_source_evaluation_run": false,
+    "v3_source_gate_run": false,
+    "hek293t_source_expression_opened": false,
+    "development_613_outcomes_opened": false,
+    "sealed_410_outcomes_opened": false,
+    "reserved_confirmation_expression_opened": false,
+    "count_generation": false,
+    "cell_eval2": false,
+    "challenge_build": false,
+    "submission": false
+  }
+}

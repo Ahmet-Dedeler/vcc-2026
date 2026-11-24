@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "experiment": "127-panel-metric-ceiling",
+  "date_preregistered": "2026-08-30",
+  "status": "written_before_experiment_127_loaded_any_biological_value_array",
+  "objective": "Quantify the oracle maximum movement in nMAE, fidelity, Jaccard, and reach when only off-diagonal VCC panel response genes are changed and all non-panel predictions remain fixed.",
+  "evidence_class": "reused_development_evidence_only_never_independent_confirmation",
+  "surfaces": {
+    "h1": {
+      "reference_de": {
+        "path": "experiments/098-nmae/work/refde_h1.npz",
+        "sha256": "fdff36498e655c079debec356ed163b560e4db4745876f69547a244c4f814d3c"
+      },
+      "incumbent_prediction": {
+        "path": "experiments/100-sign-confidence/work/h1/frozen_predictions.npz",
+        "sha256": "b725987cfc4a415b4cc3dde7962719db0cc0b1b34fb6d14fc23cb78cb187f631",
+        "effect_key": "dh_identity"
+      },
+      "exact_prediction_de_table": null,
+      "scaled_nmae_calibration": {
+        "method": "fit affine raw-to-official mapping from already-recorded runs on the same H1-test reference bundle",
+        "sources": [
+          {
+            "path": "experiments/031-somatic/out_h1test/results.json",
+            "sha256": "784e7ba2cf4726fb7a57dad114b65ffac33aae4b2d1677b7d440bc27e7131bf4"
+          },
+          {
+            "path": "experiments/095-clean-harness/out-h1test/results.json",
+            "sha256": "e5f8d9ee822d31c47ad6751930e43aba8fc06b9f424133187b6144e4f511d9e7"
+          }
+        ]
+      }
+    },
+    "orion_hct116_repaired": {
+      "reference_de": {
+        "path": "experiments/098-nmae/work/refde_orion.npz",
+        "sha256": "605ed63dead1871e167b1c3ca00d70fafecedc227920a2ba8d1d476f4bfb510a"
+      },
+      "incumbent_prediction": {
+        "path": "experiments/100-sign-confidence/work/hct116/frozen_predictions.npz",
+        "sha256": "7456a23bc8ada786006f7078d5c59b51eda45b77142b9ae86d70d526bb797b46",
+        "effect_key": "dh_identity"
+      },
+      "exact_prediction_de_table": {
+        "path": "experiments/095-clean-harness/de_thinned.npz",
+        "sha256": "955b58907a00c89602f5e89bec03ac45aa25a4e8735042575e7d7ccb3139e5bd",
+        "identity": "legacy repaired-HCT116 production prediction at g0.65_q1.0_a1.08_spread0.25; used only for exact-table fidelity, Jaccard, and reach ceilings, not represented as current a14"
+      },
+      "scaled_nmae_calibration": null
+    },
+    "orion_hek293t_repaired": {
+      "reference_de": {
+        "path": "experiments/099-donors/work/refde_hek293t.npz",
+        "sha256": "5b358881d3c669d02575817646f4ea03cd28317571f37435947885f56aaf2f63"
+      },
+      "incumbent_prediction": {
+        "path": "experiments/100-sign-confidence/work/hek293t/frozen_predictions.npz",
+        "sha256": "c1d94cc04d24d34c3ba2ed7bd359520da7ac999e907504989200e2626aec8a38",
+        "effect_key": "dh_identity"
+      },
+      "exact_prediction_de_table": null,
+      "scaled_nmae_calibration": null
+    }
+  },
+  "shared_inputs": {
+    "panel_targets": {
+      "path": "data/challenge/pert_counts.csv",
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    }
+  },
+  "target_cohort": "Exact intersection of each reused surface's target labels with the canonical 300 VCC panel targets. Target-self is always immutable and excluded.",
+  "reference_composition": {
+    "reference_de_panel_fraction": "Number of finite, nonzero, reference-significant off-diagonal VCC panel response genes divided by the full finite, nonzero, reference-significant gate size.",
+    "reference_abs_lfc_panel_fraction": "Sum absolute reference LFC over those panel genes divided by sum absolute reference LFC over the full gate.",
+    "aggregation": "Compute per target first, then arithmetic mean over evaluable target rows within each surface; the three-surface macro is an equal-weight mean of surface macros."
+  },
+  "nmae": {
+    "incumbent": "Exact deterministic predicted LFC from the frozen incumbent mean profile against the cached reference control mean.",
+    "unconstrained_perfect_panel_oracle": "Replace every mutable panel predicted LFC in the reference-significant gate by its reference LFC independently; leave every non-panel predicted LFC and target-self unchanged.",
+    "oracle_raw_gain": "Incumbent NMAE minus perfect-panel NMAE.",
+    "zero_to_perfect_panel_fraction": "Reference absolute-LFC panel fraction; this is the raw NMAE movement from zero prediction to perfect panel prediction, not necessarily the incumbent correction.",
+    "scaled_gain": "Where an exact affine local raw-to-scaled mapping is derivable from already-recorded same-bundle results, multiply raw gain by the absolute fitted slope. Otherwise report null."
+  },
+  "fidelity_oracle": {
+    "availability": "Only where an exact incumbent prediction DE table already exists.",
+    "fixed_part": "All non-panel predicted calls, signs, and adjudicability remain fixed.",
+    "mutable_part": "The panel call set and signs may be chosen independently for this metric.",
+    "optimization": "Enumerate the number of correctly signed adjudicable mutable-panel calls from zero through all available panel coordinates and maximize k/max(n_pred,n_real). Current panel calls are replaced, not added."
+  },
+  "jaccard_oracle": {
+    "availability": "Only where an exact incumbent prediction DE table already exists.",
+    "fixed_part": "All non-panel predicted calls remain fixed.",
+    "mutable_part": "Choose exactly the reference-significant mutable panel genes and no other panel calls, which maximizes intersection while adding no panel false positives."
+  },
+  "reach_oracle": {
+    "availability": "Only where an exact incumbent prediction DE table already exists.",
+    "fixed_part": "The relative order and predicted signs of all non-panel genes in the reference-significant pool remain exactly as in the incumbent table.",
+    "mutable_part": "Every reference-significant mutable panel gene is assigned the correct sign and placed before the fixed non-panel sequence.",
+    "bound": "Run the exact deepest-prefix purity calculation at 0.9 on that concatenated sequence. This respects the metric's nonmonotone deepest-prefix semantics."
+  },
+  "pan_handling": {
+    "value_arrays_loaded": false,
+    "use": "No Pan values or outcome arrays are loaded by Experiment 127.",
+    "reason_not_in_metric_ceiling": "No scorer-equivalent genome-wide reference significance table and incumbent prediction DE table are available for Pan."
+  },
+  "buildable_transport": {
+    "status": "deferred_to_experiment_128",
+    "experiment_124_used": false,
+    "reason": "Experiment 124 was independently rejected because q*exp(r) mixes units and its per-gene floor check does not preserve the summed emitted panel budget."
+  },
+  "hard_exclusions": {
+    "new_held_outcome": true,
+    "challenge_truth": true,
+    "dld1_values": true,
+    "hcasmc_values": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "submission_build": true,
+    "submission": true,
+    "commit": true,
+    "push": true,
+    "writes_outside_experiment_127": true
+  },
+  "outputs": {
+    "directory": "experiments/127-panel-metric-ceiling/work/analysis-v1",
+    "files": [
+      "summary.json",
+      "per-target.csv",
+      "artifact-manifest.json"
+    ],
+    "refuse_overwrite": true
+  }
+}

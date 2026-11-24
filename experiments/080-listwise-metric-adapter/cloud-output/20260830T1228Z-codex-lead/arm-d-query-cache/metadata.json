@@ -1,0 +1,860 @@
+{
+  "schema_version": 5,
+  "experiment": "080-listwise-metric-adapter",
+  "status": "arm_d_query_cache_complete",
+  "arm": "D",
+  "arm_definition": "50:50 incumbent/PerturbMatch K562 slot, source-only gamma=0.65 union whitening, then CD4 mean3 gene_norm residual at fraction 0.05",
+  "baseline_reproduction_contract": "panel_query uses exp064's original all-mapped-coordinate source normalization followed by VCC-coordinate blocking; each development fold is independently reconstructed from raw banks at <=1e-6",
+  "learned_feature_contract": "train_query and cluster_query centering, norm calibration, and whitening restriction exclude all VCC and historical target coordinates; only train_query enters adapter fitting/selection and only cluster_query enters source clustering",
+  "development_folds": [
+    "orion_hct116",
+    "orion_hek293t"
+  ],
+  "final_folds": [
+    "orion_hct116",
+    "orion_hek293t",
+    "kolf2"
+  ],
+  "invalid_outer_donor": "k562_gwps omitted because PerturbMatch is a reanalysis of the same assay",
+  "training_targets": 600,
+  "outer_targets": 259,
+  "training_outer_overlap": 0,
+  "vcc_targets": 300,
+  "training_blocked_targets": 900,
+  "training_blocked_target_coordinates": 851,
+  "training_blocked_target_coordinates_sha256": "731476361e4fd6de13b0cfc389d470a3ff2b9bb7dbcdf6a409de78ebabc4b4ad",
+  "training_targets_without_official_coordinate": 49,
+  "training_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605",
+  "panel_blocked_target_coordinates": 300,
+  "panel_blocked_target_coordinates_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+  "historical_target_coordinates_restored_for_panel": 551,
+  "train_score_genes": 6821,
+  "cluster_score_genes": 6821,
+  "panel_score_genes": 17806,
+  "correction_genes": 5582,
+  "train_score_gene_order_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+  "cluster_score_gene_order_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+  "cluster_score_official_positions_sha256": "1aeb7f922f7ee12de73f0708070d23f276f928f79b2f82da82376854f986d937",
+  "panel_score_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+  "panel_score_official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+  "correction_gene_order_sha256": "015b59dc3d059f984bff2e5b2dd7a08b66978ca9e05cfb6a85b525670d9416d8",
+  "correction_in_train_score_sha256": "7085202ace0b6bbeaf266566203421dc11d0227306c62f7bd8d51a3bed0b6c3d",
+  "correction_in_panel_score_sha256": "d3dd86516037d2edbdeec92e95799c5b7a233c5dae966ea7e8695106e63b4b43",
+  "train_order_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+  "outer_order_sha256": "3f5a41d98fc2b4e6e8d3b69dba41b5db1e2d2e44dda230814bb53eb3b97d0ffb",
+  "panel_order_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+  "exp064_target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+  "folds": {
+    "orion_hct116": {
+      "held_donor": "orion_hct116",
+      "source_donors": [
+        "k562_gwps",
+        "orion_hek293t"
+      ],
+      "held_donor_used_in_prediction": false,
+      "held_donor_used_in_operator": false,
+      "operator_npz_sha256": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+      "operator_json_sha256": "c4e00ad1fa5fbba7b9b0f93e4dae91b76da73638ef9431316923bb6ca4b585bc",
+      "operator_columns": 17942,
+      "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+      "panel_targets": 259,
+      "panels": {
+        "train": {
+          "rows": 600,
+          "columns": 6821,
+          "source_vote_histogram": {
+            "2": 600
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 5.915366082646031,
+            "after_operator_median_norm": 32.5282894946322,
+            "applied_scale": 0.18185297089237298,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605"
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 5.915366082646031,
+            "after_operator_median_norm": 32.5282894946322,
+            "applied_scale": 0.18185297089237298,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605"
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 5.915366082646032,
+            "candidate_pre_preserve_median_norm": 5.915366082646032,
+            "post_add_global_preserve_scale": 1.0
+          },
+          "cd4_targets_with_any_condition": 0,
+          "cd4_targets_with_all_conditions": 0,
+          "support": {
+            "normalization_contract": "leakage-safe: center and norm only retained coordinates; blocked target coordinates never enter a learned statistic",
+            "used_for_adapter_fit_or_selection": true,
+            "blocked_coordinates": 900,
+            "blocked_coordinates_sha256": "79e2bf5154011139714d9661f26e12d0661e6c021a6d1b8f4ba61185d225f73b",
+            "pm_shared_unblocked_genes": 6590,
+            "pm_shared_columns_sha256": "1fd950e5d333fa7d0fb8c1210607c92141bf9c071ab584cc15d75c68c063554c",
+            "pm_support": {
+              "targets_total": 600,
+              "targets_pm_modified": 583,
+              "targets_incumbent_preserved": 17
+            },
+            "pm_fallback_rows": 17,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 600
+            },
+            "source_coverage": {
+              "k562_gwps": 600,
+              "orion_hek293t": 600
+            }
+          },
+          "query_sha256": "3282fda83e4b1871095dbc79cbb5188acbcf71045a8bb2a9c86db5ee41d42a52"
+        },
+        "cluster": {
+          "rows": 259,
+          "columns": 6821,
+          "source_vote_histogram": {
+            "2": 259
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.89455154290488,
+            "after_operator_median_norm": 29.974452380274037,
+            "applied_scale": 0.16329077445051,
+            "preserve_rows": 259,
+            "all_vcc_and_historical_target_coordinates_excluded": true
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.89455154290488,
+            "after_operator_median_norm": 29.974452380274037,
+            "applied_scale": 0.16329077445051,
+            "preserve_rows": 259,
+            "all_vcc_and_historical_target_coordinates_excluded": true
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 4.89455154290488,
+            "candidate_pre_preserve_median_norm": 4.911039588553906,
+            "post_add_global_preserve_scale": 0.9966426567426876
+          },
+          "cd4_targets_with_any_condition": 255,
+          "cd4_targets_with_all_conditions": 242,
+          "support": {
+            "normalization_contract": "leakage-safe: center and norm only retained coordinates; blocked target coordinates never enter a learned statistic",
+            "used_for_adapter_fit_or_selection": false,
+            "blocked_coordinates": 900,
+            "blocked_coordinates_sha256": "79e2bf5154011139714d9661f26e12d0661e6c021a6d1b8f4ba61185d225f73b",
+            "pm_shared_unblocked_genes": 6590,
+            "pm_shared_columns_sha256": "1fd950e5d333fa7d0fb8c1210607c92141bf9c071ab584cc15d75c68c063554c",
+            "pm_support": {
+              "targets_total": 259,
+              "targets_pm_modified": 238,
+              "targets_incumbent_preserved": 21
+            },
+            "pm_fallback_rows": 21,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 4,
+              "1": 4,
+              "2": 9,
+              "3": 242
+            },
+            "source_coverage": {
+              "k562_gwps": 259,
+              "orion_hek293t": 259
+            },
+            "used_for_source_clustering": true,
+            "used_for_promotion_inference": true
+          },
+          "query_sha256": "971ebf2c739190befde5f2a4d86387f4b43d047270cd6004113c3ebf2937ccfc",
+          "target_order_sha256": "3f5a41d98fc2b4e6e8d3b69dba41b5db1e2d2e44dda230814bb53eb3b97d0ffb",
+          "score_gene_count": 6821,
+          "score_gene_order_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+          "score_official_positions_sha256": "1aeb7f922f7ee12de73f0708070d23f276f928f79b2f82da82376854f986d937",
+          "saved_query_is_complete_cluster_axis": true
+        },
+        "panel": {
+          "rows": 259,
+          "columns": 17806,
+          "source_vote_histogram": {
+            "2": 259
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.765334996703425,
+            "after_operator_median_norm": 29.13413453415538,
+            "applied_scale": 0.16356535290646057,
+            "preserve_rows": 221
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.765334996703425,
+            "after_operator_median_norm": 29.13413453415538,
+            "applied_scale": 0.16356535290646057,
+            "preserve_rows": 221
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 4.765334996703425,
+            "candidate_pre_preserve_median_norm": 4.786164431888556,
+            "post_add_global_preserve_scale": 0.9956479900593569
+          },
+          "cd4_targets_with_any_condition": 255,
+          "cd4_targets_with_all_conditions": 242,
+          "support": {
+            "normalization_contract": "exp064 original: center and norm on all mapped source coordinate, then zero the 300 VCC target coordinates",
+            "inference_only_fixed_baseline": true,
+            "used_for_adapter_fit_or_selection": false,
+            "blocked_coordinates": 300,
+            "blocked_coordinates_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+            "pm_shared_unblocked_genes": 7075,
+            "pm_shared_columns_sha256": "58a5985b38fed6d16e0c74f8b21b4ea84134c7bcfcff61c1b8222e661ad65418",
+            "pm_support": {
+              "targets_total": 259,
+              "targets_pm_modified": 238,
+              "targets_incumbent_preserved": 21
+            },
+            "pm_fallback_rows": 21,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 4,
+              "1": 4,
+              "2": 9,
+              "3": 242
+            },
+            "source_coverage": {
+              "k562_gwps": 259,
+              "orion_hek293t": 259
+            }
+          },
+          "query_sha256": "3b740ecf0a9d642c4f6b23d8af54c4977b26b549498e80a30130125c299e9175",
+          "target_order_sha256": "3f5a41d98fc2b4e6e8d3b69dba41b5db1e2d2e44dda230814bb53eb3b97d0ffb",
+          "score_axis_excludes_exactly_vcc_coordinates": true,
+          "score_gene_count": 17806,
+          "score_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+          "score_official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+          "saved_query_is_complete_scored_axis": true
+        }
+      },
+      "exp064_reproduction": {
+        "passed": true,
+        "comparison": "saved panel_query compared to an independent raw-bank reconstruction through exp064's original all-mapped-coordinate normalization, target blocking, whitening, and CD4 composition",
+        "independent_from_staged_panel_preparation": true,
+        "normalization_contract": "center and norm on all mapped source coordinates, then block the 300 VCC target coordinates exactly as exp064",
+        "learned_statistics_contract": "this reconstruction is baseline verification only; adapter training, selection, and permutation nulls use the separate retained-coordinate-safe train_query, while clustering uses the separate retained-coordinate-safe panel-row cluster_query",
+        "absolute_tolerance": 1e-06,
+        "max_abs_error": 5.5197502124570974e-08,
+        "validated_targets": 221,
+        "validated_target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+        "retrieval_genes": 17806,
+        "retrieval_columns_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+        "retrieval_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+        "saved_query_score_axis_exact": true,
+        "source_vote_histogram": {
+          "2": 221
+        },
+        "extension_targets": 38,
+        "extension_target_order_sha256": "31c089f9c81cd0c81a259314f54a8b85d5f8df3eb6eb0a0b34160907175dc569",
+        "extension_audit": {
+          "pm_missing_rows": 21,
+          "cd4_condition_histogram": {
+            "0": 4,
+            "1": 4,
+            "2": 9,
+            "3": 21
+          },
+          "fallback_policy": "preserve incumbent K562 row when PerturbMatch lacks a target; average only available main donors; add CD4 only where measured"
+        }
+      }
+    },
+    "orion_hek293t": {
+      "held_donor": "orion_hek293t",
+      "source_donors": [
+        "k562_gwps",
+        "orion_hct116"
+      ],
+      "held_donor_used_in_prediction": false,
+      "held_donor_used_in_operator": false,
+      "operator_npz_sha256": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1",
+      "operator_json_sha256": "cb22406a7a529380c4348bf636f2532c29a43ab0fc4b00d6f6d98fb5e02360c6",
+      "operator_columns": 17942,
+      "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+      "panel_targets": 259,
+      "panels": {
+        "train": {
+          "rows": 600,
+          "columns": 6821,
+          "source_vote_histogram": {
+            "2": 600
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 6.032620845783466,
+            "after_operator_median_norm": 31.09486150620273,
+            "applied_scale": 0.1940070015934978,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605"
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 6.032620845783466,
+            "after_operator_median_norm": 31.09486150620273,
+            "applied_scale": 0.1940070015934978,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605"
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 6.032620845783466,
+            "candidate_pre_preserve_median_norm": 6.032620845783466,
+            "post_add_global_preserve_scale": 1.0
+          },
+          "cd4_targets_with_any_condition": 0,
+          "cd4_targets_with_all_conditions": 0,
+          "support": {
+            "normalization_contract": "leakage-safe: center and norm only retained coordinates; blocked target coordinates never enter a learned statistic",
+            "used_for_adapter_fit_or_selection": true,
+            "blocked_coordinates": 900,
+            "blocked_coordinates_sha256": "79e2bf5154011139714d9661f26e12d0661e6c021a6d1b8f4ba61185d225f73b",
+            "pm_shared_unblocked_genes": 6590,
+            "pm_shared_columns_sha256": "1fd950e5d333fa7d0fb8c1210607c92141bf9c071ab584cc15d75c68c063554c",
+            "pm_support": {
+              "targets_total": 600,
+              "targets_pm_modified": 583,
+              "targets_incumbent_preserved": 17
+            },
+            "pm_fallback_rows": 17,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 600
+            },
+            "source_coverage": {
+              "k562_gwps": 600,
+              "orion_hct116": 600
+            }
+          },
+          "query_sha256": "e54acf7d91af56b93a5400a0c7aebed0f0114c85e4517b2e907cda00809f10e6"
+        },
+        "cluster": {
+          "rows": 259,
+          "columns": 6821,
+          "source_vote_histogram": {
+            "2": 259
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.940959439983384,
+            "after_operator_median_norm": 28.660305053983922,
+            "applied_scale": 0.17239730807738093,
+            "preserve_rows": 259,
+            "all_vcc_and_historical_target_coordinates_excluded": true
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.940959439983384,
+            "after_operator_median_norm": 28.660305053983922,
+            "applied_scale": 0.17239730807738093,
+            "preserve_rows": 259,
+            "all_vcc_and_historical_target_coordinates_excluded": true
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 4.940959439983384,
+            "candidate_pre_preserve_median_norm": 4.953296632185555,
+            "post_add_global_preserve_scale": 0.997509296713222
+          },
+          "cd4_targets_with_any_condition": 255,
+          "cd4_targets_with_all_conditions": 242,
+          "support": {
+            "normalization_contract": "leakage-safe: center and norm only retained coordinates; blocked target coordinates never enter a learned statistic",
+            "used_for_adapter_fit_or_selection": false,
+            "blocked_coordinates": 900,
+            "blocked_coordinates_sha256": "79e2bf5154011139714d9661f26e12d0661e6c021a6d1b8f4ba61185d225f73b",
+            "pm_shared_unblocked_genes": 6590,
+            "pm_shared_columns_sha256": "1fd950e5d333fa7d0fb8c1210607c92141bf9c071ab584cc15d75c68c063554c",
+            "pm_support": {
+              "targets_total": 259,
+              "targets_pm_modified": 238,
+              "targets_incumbent_preserved": 21
+            },
+            "pm_fallback_rows": 21,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 4,
+              "1": 4,
+              "2": 9,
+              "3": 242
+            },
+            "source_coverage": {
+              "k562_gwps": 259,
+              "orion_hct116": 259
+            },
+            "used_for_source_clustering": true,
+            "used_for_promotion_inference": true
+          },
+          "query_sha256": "8ebbaf4056f0944c318087642ac16344ffe5a4f66bc823a192ca49450ee53355",
+          "target_order_sha256": "3f5a41d98fc2b4e6e8d3b69dba41b5db1e2d2e44dda230814bb53eb3b97d0ffb",
+          "score_gene_count": 6821,
+          "score_gene_order_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+          "score_official_positions_sha256": "1aeb7f922f7ee12de73f0708070d23f276f928f79b2f82da82376854f986d937",
+          "saved_query_is_complete_cluster_axis": true
+        },
+        "panel": {
+          "rows": 259,
+          "columns": 17806,
+          "source_vote_histogram": {
+            "2": 259
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.851996718942089,
+            "after_operator_median_norm": 27.787244107710432,
+            "applied_scale": 0.17461237610086536,
+            "preserve_rows": 221
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.851996718942089,
+            "after_operator_median_norm": 27.787244107710432,
+            "applied_scale": 0.17461237610086536,
+            "preserve_rows": 221
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 4.851996718942089,
+            "candidate_pre_preserve_median_norm": 4.870914043345976,
+            "post_add_global_preserve_scale": 0.9961162680688793
+          },
+          "cd4_targets_with_any_condition": 255,
+          "cd4_targets_with_all_conditions": 242,
+          "support": {
+            "normalization_contract": "exp064 original: center and norm on all mapped source coordinate, then zero the 300 VCC target coordinates",
+            "inference_only_fixed_baseline": true,
+            "used_for_adapter_fit_or_selection": false,
+            "blocked_coordinates": 300,
+            "blocked_coordinates_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+            "pm_shared_unblocked_genes": 7075,
+            "pm_shared_columns_sha256": "58a5985b38fed6d16e0c74f8b21b4ea84134c7bcfcff61c1b8222e661ad65418",
+            "pm_support": {
+              "targets_total": 259,
+              "targets_pm_modified": 238,
+              "targets_incumbent_preserved": 21
+            },
+            "pm_fallback_rows": 21,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 4,
+              "1": 4,
+              "2": 9,
+              "3": 242
+            },
+            "source_coverage": {
+              "k562_gwps": 259,
+              "orion_hct116": 259
+            }
+          },
+          "query_sha256": "676535d5cb0a421d64de8d48801e6b59978d807bba69abe00e4bf4be2eb71982",
+          "target_order_sha256": "3f5a41d98fc2b4e6e8d3b69dba41b5db1e2d2e44dda230814bb53eb3b97d0ffb",
+          "score_axis_excludes_exactly_vcc_coordinates": true,
+          "score_gene_count": 17806,
+          "score_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+          "score_official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+          "saved_query_is_complete_scored_axis": true
+        }
+      },
+      "exp064_reproduction": {
+        "passed": true,
+        "comparison": "saved panel_query compared to an independent raw-bank reconstruction through exp064's original all-mapped-coordinate normalization, target blocking, whitening, and CD4 composition",
+        "independent_from_staged_panel_preparation": true,
+        "normalization_contract": "center and norm on all mapped source coordinates, then block the 300 VCC target coordinates exactly as exp064",
+        "learned_statistics_contract": "this reconstruction is baseline verification only; adapter training, selection, and permutation nulls use the separate retained-coordinate-safe train_query, while clustering uses the separate retained-coordinate-safe panel-row cluster_query",
+        "absolute_tolerance": 1e-06,
+        "max_abs_error": 5.88053108430131e-08,
+        "validated_targets": 221,
+        "validated_target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+        "retrieval_genes": 17806,
+        "retrieval_columns_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+        "retrieval_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+        "saved_query_score_axis_exact": true,
+        "source_vote_histogram": {
+          "2": 221
+        },
+        "extension_targets": 38,
+        "extension_target_order_sha256": "31c089f9c81cd0c81a259314f54a8b85d5f8df3eb6eb0a0b34160907175dc569",
+        "extension_audit": {
+          "pm_missing_rows": 21,
+          "cd4_condition_histogram": {
+            "0": 4,
+            "1": 4,
+            "2": 9,
+            "3": 21
+          },
+          "fallback_policy": "preserve incumbent K562 row when PerturbMatch lacks a target; average only available main donors; add CD4 only where measured"
+        }
+      }
+    },
+    "kolf2": {
+      "held_donor": "kolf2",
+      "source_donors": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "held_donor_used_in_prediction": false,
+      "held_donor_used_in_operator": false,
+      "operator_npz_sha256": "5608e807230dea04f93f5e804ed26e8f7285d9487d16a2791283793ffb80fed3",
+      "operator_json_sha256": "a77f9425ac524cdcf3a53a1744520e1e63cb8b925ef77fae2864c4d8b72337b6",
+      "operator_columns": 17942,
+      "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+      "panel_targets": 300,
+      "panels": {
+        "train": {
+          "rows": 600,
+          "columns": 6821,
+          "source_vote_histogram": {
+            "3": 600
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 5.1226672928522845,
+            "after_operator_median_norm": 28.24292568004011,
+            "applied_scale": 0.1813787760831232,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605"
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 5.1226672928522845,
+            "after_operator_median_norm": 28.24292568004011,
+            "applied_scale": 0.1813787760831232,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605"
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 5.1226672928522845,
+            "candidate_pre_preserve_median_norm": 5.1226672928522845,
+            "post_add_global_preserve_scale": 1.0
+          },
+          "cd4_targets_with_any_condition": 0,
+          "cd4_targets_with_all_conditions": 0,
+          "support": {
+            "normalization_contract": "leakage-safe: center and norm only retained coordinates; blocked target coordinates never enter a learned statistic",
+            "used_for_adapter_fit_or_selection": true,
+            "blocked_coordinates": 900,
+            "blocked_coordinates_sha256": "79e2bf5154011139714d9661f26e12d0661e6c021a6d1b8f4ba61185d225f73b",
+            "pm_shared_unblocked_genes": 6590,
+            "pm_shared_columns_sha256": "1fd950e5d333fa7d0fb8c1210607c92141bf9c071ab584cc15d75c68c063554c",
+            "pm_support": {
+              "targets_total": 600,
+              "targets_pm_modified": 583,
+              "targets_incumbent_preserved": 17
+            },
+            "pm_fallback_rows": 17,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 600
+            },
+            "source_coverage": {
+              "k562_gwps": 600,
+              "orion_hct116": 600,
+              "orion_hek293t": 600
+            }
+          },
+          "query_sha256": "03377835b365ef3b6d9354d1433e9e2c3d50f217bba02e3433172a78a22cdfdb"
+        },
+        "cluster": {
+          "rows": 300,
+          "columns": 6821,
+          "source_vote_histogram": {
+            "1": 6,
+            "2": 35,
+            "3": 259
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.257119778958089,
+            "after_operator_median_norm": 26.067247888012833,
+            "applied_scale": 0.163312974090976,
+            "preserve_rows": 300,
+            "all_vcc_and_historical_target_coordinates_excluded": true
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.257119778958089,
+            "after_operator_median_norm": 26.067247888012833,
+            "applied_scale": 0.163312974090976,
+            "preserve_rows": 300,
+            "all_vcc_and_historical_target_coordinates_excluded": true
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 4.257119778958089,
+            "candidate_pre_preserve_median_norm": 4.269570518533911,
+            "post_add_global_preserve_scale": 0.9970838426202883
+          },
+          "cd4_targets_with_any_condition": 291,
+          "cd4_targets_with_all_conditions": 276,
+          "support": {
+            "normalization_contract": "leakage-safe: center and norm only retained coordinates; blocked target coordinates never enter a learned statistic",
+            "used_for_adapter_fit_or_selection": false,
+            "blocked_coordinates": 900,
+            "blocked_coordinates_sha256": "79e2bf5154011139714d9661f26e12d0661e6c021a6d1b8f4ba61185d225f73b",
+            "pm_shared_unblocked_genes": 6590,
+            "pm_shared_columns_sha256": "1fd950e5d333fa7d0fb8c1210607c92141bf9c071ab584cc15d75c68c063554c",
+            "pm_support": {
+              "targets_total": 300,
+              "targets_pm_modified": 248,
+              "targets_incumbent_preserved": 21
+            },
+            "pm_fallback_rows": 21,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 9,
+              "1": 4,
+              "2": 11,
+              "3": 276
+            },
+            "source_coverage": {
+              "k562_gwps": 269,
+              "orion_hct116": 290,
+              "orion_hek293t": 294
+            },
+            "used_for_source_clustering": true,
+            "used_for_promotion_inference": true
+          },
+          "query_sha256": "9f9f92c1437301889d0db6f4d4b4aafcf9a586ff8f7827aec2cc4a88efca0565",
+          "target_order_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+          "score_gene_count": 6821,
+          "score_gene_order_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+          "score_official_positions_sha256": "1aeb7f922f7ee12de73f0708070d23f276f928f79b2f82da82376854f986d937",
+          "saved_query_is_complete_cluster_axis": true
+        },
+        "panel": {
+          "rows": 300,
+          "columns": 17806,
+          "source_vote_histogram": {
+            "1": 6,
+            "2": 35,
+            "3": 259
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.193939463683785,
+            "after_operator_median_norm": 25.448927303930972,
+            "applied_scale": 0.16479828063464064,
+            "preserve_rows": 300
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.193939463683785,
+            "after_operator_median_norm": 25.448927303930972,
+            "applied_scale": 0.16479828063464064,
+            "preserve_rows": 300
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 4.193939463683785,
+            "candidate_pre_preserve_median_norm": 4.206147268387589,
+            "post_add_global_preserve_scale": 0.9970976278468529
+          },
+          "cd4_targets_with_any_condition": 291,
+          "cd4_targets_with_all_conditions": 276,
+          "support": {
+            "normalization_contract": "exp064 original: center and norm on all mapped source coordinate, then zero the 300 VCC target coordinates",
+            "inference_only_fixed_baseline": true,
+            "used_for_adapter_fit_or_selection": false,
+            "blocked_coordinates": 300,
+            "blocked_coordinates_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+            "pm_shared_unblocked_genes": 7075,
+            "pm_shared_columns_sha256": "58a5985b38fed6d16e0c74f8b21b4ea84134c7bcfcff61c1b8222e661ad65418",
+            "pm_support": {
+              "targets_total": 300,
+              "targets_pm_modified": 248,
+              "targets_incumbent_preserved": 21
+            },
+            "pm_fallback_rows": 21,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 9,
+              "1": 4,
+              "2": 11,
+              "3": 276
+            },
+            "source_coverage": {
+              "k562_gwps": 269,
+              "orion_hct116": 290,
+              "orion_hek293t": 294
+            }
+          },
+          "query_sha256": "728671b01af029a2e98c5112bc81b6eadfddbca2cf4d69cac057795cb7d31c9d",
+          "target_order_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+          "score_axis_excludes_exactly_vcc_coordinates": true,
+          "score_gene_count": 17806,
+          "score_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+          "score_official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+          "saved_query_is_complete_scored_axis": true
+        }
+      }
+    }
+  },
+  "final_score_axis": {
+    "gene_count": 17806,
+    "gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+    "official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+    "development_donor_axes_equal": true,
+    "excludes_exactly_vcc_coordinates_within_held_support": true
+  },
+  "leakage_audit": {
+    "all_vcc_target_coordinates_removed": true,
+    "all_nonpanel_target_coordinates_removed_from_training": true,
+    "nonpanel_target_coordinates_present_in_final_panel_scoring": true,
+    "training_dense_whitener_principally_restricted": true,
+    "final_panel_excludes_exactly_the_vcc_target_set": true,
+    "coordinate_less_nonpanel_targets_treated_as_no_coordinate_to_remove": true,
+    "saved_panel_query_uses_complete_17806_gene_score_axis": true,
+    "cluster_queries_exclude_all_vcc_and_historical_target_coordinates": true,
+    "exp064_baseline_reproduction_is_inference_only": true,
+    "learned_statistics_use_only_retained_coordinates": true,
+    "held_truth_opened": false,
+    "held_donor_used_in_query": false,
+    "held_donor_used_in_operator": false
+  },
+  "peak_rss_gib": 6.109443664550781
+}

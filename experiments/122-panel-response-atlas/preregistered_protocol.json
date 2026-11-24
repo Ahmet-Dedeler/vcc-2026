@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "experiment": "122-panel-response-atlas",
+  "phase": "phase_1_source_only",
+  "date_preregistered": "2026-08-30",
+  "status": "written_before_any_authorized_effect_matrix_was_loaded",
+  "objective": "Build a source-only panel-response atlas that predicts, for each of the 300 VCC targets, effects on the other 299 VCC-panel genes while leaving every non-panel coordinate and every target-self coordinate exactly zero.",
+  "authorized_biological_families": {
+    "replogle_k562": [
+      "data/donors/k562_gwps"
+    ],
+    "orion": [
+      "data/donors/orion_hct116",
+      "data/donors/orion_hek293t"
+    ],
+    "cd4": [
+      "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest",
+      "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr",
+      "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr"
+    ]
+  },
+  "hard_exclusions": {
+    "a549_sources": true,
+    "dld1_experiment_116_values": true,
+    "pan_h1": true,
+    "vcc_held_harness_or_outcome_directories": true,
+    "challenge_perturbation_truth": true,
+    "challenge_context_expression_values": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "challenge_build": true,
+    "submission": true,
+    "commit": true,
+    "push": true
+  },
+  "axes": {
+    "target_rows": "data/challenge/pert_counts.csv target_gene in canonical file order",
+    "response_columns": "the same 300 target_gene symbols in the same order",
+    "mapping": "exact UTF-8 gene symbol only; no aliases or case folding",
+    "target_self": "exact zero",
+    "non_panel": "exact zero in the expanded 300 by 18533 artifact"
+  },
+  "source_loading": {
+    "k562_gwps": {
+      "effect": "existing compact delta.npy in log1p TS50000 pseudobulk coordinates",
+      "valid": "exact target and response symbols present in compact axes"
+    },
+    "orion_hct116": {
+      "effect": "existing compact delta.npy in log1p TS50000 pseudobulk coordinates",
+      "valid": "exact target and response symbols present in compact axes"
+    },
+    "orion_hek293t": {
+      "effect": "existing compact delta.npy in log1p TS50000 pseudobulk coordinates",
+      "valid": "exact target and response symbols present in compact axes"
+    },
+    "cd4_conditions": {
+      "effect": "existing compact delta.npy, defined as ln(2) times source DESeq2 log2 fold change",
+      "target_qc": "ontarget_significant true, neighboring_gene_KD false, distal_offtarget_flag false, low_target_gex false, n_guides at least 2",
+      "coordinate_valid": "valid_log_fc true and finite delta",
+      "family_minimum_condition_support": 2
+    }
+  },
+  "correlated_source_grouping": {
+    "orion": "HCT116 and HEK293T are collapsed coordinate-wise before cross-family modeling and count as one family",
+    "cd4": "Rest, Stim8hr, and Stim48hr are collapsed coordinate-wise before cross-family modeling and count as one family",
+    "within_family_default": "coordinate-wise median over valid members",
+    "family_weights": "equal across replogle_k562, orion, and cd4"
+  },
+  "row_scale_normalization": {
+    "definition": "for each family and target row, median absolute nonzero valid off-diagonal panel effect",
+    "fallback": "row invalid when the scale is nonfinite or nonpositive",
+    "consensus_space": "divide each valid family row by its row scale",
+    "output_rescaling": "multiply consensus by the median row scale of contributing families"
+  },
+  "candidate_family": [
+    {
+      "name": "identity",
+      "location": "zero",
+      "confidence": "zero",
+      "minimum_family_support": 0
+    },
+    {
+      "name": "equal_mean_magnitude",
+      "location": "arithmetic mean of normalized family effects",
+      "confidence": "absolute normalized consensus magnitude",
+      "minimum_family_support": 1
+    },
+    {
+      "name": "equal_mean_agreement",
+      "location": "arithmetic mean of normalized family effects",
+      "confidence": "absolute normalized consensus magnitude times family-support fraction times absolute mean nonzero sign",
+      "minimum_family_support": 1
+    },
+    {
+      "name": "equal_median_magnitude",
+      "location": "median of normalized family effects",
+      "confidence": "absolute normalized consensus magnitude",
+      "minimum_family_support": 1
+    },
+    {
+      "name": "equal_median_agreement",
+      "location": "median of normalized family effects",
+      "confidence": "absolute normalized consensus magnitude times family-support fraction times absolute mean nonzero sign",
+      "minimum_family_support": 1
+    },
+    {
+      "name": "sign_consensus_median_min2",
+      "location": "median of normalized effects only where at least two families are valid and a strict nonzero sign majority exists; otherwise zero",
+      "confidence": "absolute normalized consensus magnitude times family-support fraction times absolute mean nonzero sign",
+      "minimum_family_support": 2
+    }
+  ],
+  "primary_validation": {
+    "scheme": "leave_one_biological_family_out",
+    "families": [
+      "replogle_k562",
+      "orion",
+      "cd4"
+    ],
+    "training": "build each candidate from the other two family aggregates only",
+    "held_truth": "held-family finite off-diagonal panel effects",
+    "target_evaluable": "held target row valid, at least one training family carries the target, and at least 20 held response coordinates are valid",
+    "signed_credit_per_target": "sum(sign(held_effect) times predicted_effect) divided by sum(abs(held_effect)) over all held-valid off-diagonal panel coordinates",
+    "top20_sign_precision_per_target": "select ceil(0.20 times held-valid response count) coordinates by descending confidence with canonical column order as tie break; zero predicted sign is incorrect; weight correctness by abs(held_effect)",
+    "aggregation": "arithmetic mean over targets within family, then conservative minimum over the three held families",
+    "eligibility_every_family": {
+      "minimum_evaluable_targets": 20,
+      "signed_credit_strictly_positive": true,
+      "top20_weighted_sign_precision_minimum": 0.5
+    },
+    "selection_order": [
+      "eligible before ineligible",
+      "larger worst-family signed credit",
+      "larger worst-family top20 weighted sign precision",
+      "larger macro signed credit",
+      "larger macro top20 weighted sign precision",
+      "earlier candidate order in this protocol"
+    ],
+    "identity_policy": "identity is the fallback and wins only if no nonidentity candidate passes every-family gates"
+  },
+  "complete_selection_nulls": {
+    "draws_per_family": 200,
+    "target_label": {
+      "seed": 1222026,
+      "assignment": "one frozen 300-row derangement is applied coherently to every training family in each LOFO fold while held truth remains fixed",
+      "rerun": "recompute every candidate, every family metric, eligibility, and final selection"
+    },
+    "response_label": {
+      "seed": 1222027,
+      "assignment": "one frozen 300-column derangement is applied coherently to effects and validity of every training family in each LOFO fold while held truth remains fixed",
+      "rerun": "recompute every candidate, every family metric, eligibility, and final selection"
+    },
+    "p95": "numpy quantile with method linear",
+    "gate": "observed selected worst-family signed credit must be strictly above the p95 selected worst-family credit from both complete-selection null families"
+  },
+  "future_dld1_confirmation_gate": {
+    "all_required": true,
+    "selected_candidate_nonidentity": true,
+    "all_three_family_eligibility_gates_pass": true,
+    "observed_worst_family_signed_credit_above_both_null_p95": true,
+    "selected_output_has_exact_pds_null_invariants": true,
+    "dld1_values_accessed_in_phase_1": false
+  },
+  "freeze_and_output": {
+    "plan_directory": "experiments/122-panel-response-atlas/work/preregistered-freeze-v1",
+    "result_directory": "experiments/122-panel-response-atlas/work/source-only-phase1-v1",
+    "refuse_overwrite": true,
+    "target_and_response_derangements_written_before_effect_loading": true,
+    "input_hashes_checked_before_effect_loading": true,
+    "result_files_sha256_manifested": true,
+    "source_only": true
+  }
+}

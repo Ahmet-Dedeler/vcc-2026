@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-31",
+  "stage": "after_source_gate_v4_before_any_613_target_development_outcome_access",
+  "status": "additive_preoutcome_correction",
+  "supersedes_for_development_only": "DEVELOPMENT_INTERFACE.v1.json",
+  "source_only_chain_unchanged": true,
+  "findings": [
+    "Experiment 140's contiguous development folds split 22 of 23 multi-target DepMap blocks across folds, affecting 103 targets.",
+    "Experiment 140's identity-reproduction directory stores combined baselines and matched-control corrections, not the individual donor slots required for target-specific donor reweighting.",
+    "The non-K562 K562 slot in the Experiment 142 protocol must include the production 50:50 PerturbMatch replacement, while Experiment 140's stored baseline uses K562-GWPS alone.",
+    "The source gate did not materialize the 49 per-target target-pairing-null reliability weight tensors required to repeat development selection under that null.",
+    "The ancestry-control comparison, fold-by-family robustness gate, bootstrap arithmetic, concentration arithmetic, and exact eta-selection tie-break require an explicit development-stage contract.",
+    "The original development authorization validator did not bind every interface dependency or the future evaluator implementation and tests."
+  ],
+  "corrections": {
+    "development_interface": "DEVELOPMENT_INTERFACE.v2.json",
+    "implementation": "develop.py",
+    "tests": "test_develop.py",
+    "preoutcome_artifact_directory": "work/development-preoutcome-v1",
+    "development_result_directory": "work/development-result-v1",
+    "folds": {
+      "input_blocks": "experiments/140-batch-matched-controls/work/preregistered-plan-v2/plan-arrays.npz:development_blocks",
+      "algorithm": "Sort block ids by descending block size then ascending block id. Assign each complete block to the currently smallest fold, breaking load ties by ascending fold id.",
+      "expected_fold_sizes": [
+        123,
+        123,
+        123,
+        122,
+        122
+      ],
+      "block_splitting_allowed": false
+    },
+    "donor_geometry": {
+      "outer_k562_slots": [
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "outer_non_k562_slots": [
+        "k562_composite",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "ordinary_slot": "Reproduce Experiment 140 float32 centering and fixed donor renormalization, then apply its fixed full-coordinate gamma-0.65 whitener.",
+      "k562_composite": "Before the non-K562 whitener, replace the standardized K562-GWPS slot 50:50 with standardized PerturbMatch only when both sources contain the target and only on PerturbMatch-observed response genes. Missing targets and genes retain K562-GWPS exactly. Multiply the standardized composite by the frozen non-K562 reference norm before whitening.",
+      "eta_zero": "The evaluator returns the frozen equal-slot baseline by exact copy when eta equals zero."
+    },
+    "target_pairing_null": {
+      "draws": 49,
+      "construction": "For each donor and operator role, recompute every frozen false-pair directional PDS from the frozen half-centered source rows, fixed operator, and stored matched-null permutation. Aggregate the 16 directional values per target by numpy linear lower quartile, require the frozen minimum directional support, gate strictly against that donor-target's frozen target-null p95, and midrank only survivors to z in [-1,1], assigning zero to all other targets.",
+      "outer_combination": "For one null draw, combine the same draw index across the available donors, normalize 1 + eta*z across donors, and materialize all eta weights.",
+      "persist": true
+    },
+    "donor_assignment_null": {
+      "draws": 49,
+      "construction": "Permute each target's observed donor reliability z values by the frozen donor-assignment array, then normalize 1 + eta*z across donors for every eta.",
+      "persist": true
+    },
+    "selection": {
+      "etas": [
+        0.0,
+        0.25,
+        0.5
+      ],
+      "epsilon": 1e-12,
+      "eligibility": "Every K562, RPE1, and Jurkat family mean must be at least -epsilon for both raw PDS delta and continuous signed-credit delta.",
+      "ordering": "Maximize biological-family macro PDS, then macro signed credit, then prefer smaller eta.",
+      "nonidentity_definition": "The full-development selected eta is strictly greater than zero."
+    },
+    "scoring": {
+      "datasets": [
+        "k562_gwps",
+        "k562_essential",
+        "rpe1",
+        "nadig_jurkat"
+      ],
+      "k562_family": "Average K562-GWPS and K562-essential per target before family and macro aggregation.",
+      "inner_selection_gallery": "Inner queries against the same inner-only truth gallery.",
+      "held_scoring_gallery": "Held queries against the complete 613-target truth gallery.",
+      "metrics": [
+        "raw complete-gallery cosine PDS with exact midranks",
+        "continuous signed credit"
+      ]
+    },
+    "null_evaluation": "Every target-pairing and donor-assignment null draw independently repeats nested and full-development eta selection.",
+    "ancestry_controls": "Each of cell count, total UMI, occupied batch count, and pooled-effect norm independently repeats nested and full-development eta selection. Reliability-minus-control comparisons are paired per target.",
+    "promotion": {
+      "fold_family_cells_nonnegative": "All 5 folds by 3 biological families by 2 metrics must be at least -epsilon.",
+      "macro_minimum": 0.003,
+      "bootstrap_draws": 20000,
+      "bootstrap_lower_95_strictly_positive": true,
+      "null_quantile_method": "linear",
+      "observed_strictly_above_both_null_p95": true,
+      "add_one_p_minimum_resolution": 0.02,
+      "reliability_minus_each_ancestry_control_pds_minimum": 0.001,
+      "reliability_minus_each_ancestry_control_signed_credit_strictly_positive": true,
+      "reliability_minus_each_ancestry_control_bootstrap_lower_95_strictly_positive": true,
+      "positive_gain_concentration_maximum": 0.5,
+      "concentration": "For each metric and scope, compute family means and target-block sums, take positive parts, and divide the largest positive value by the positive total. If the positive total is zero, concentration equals one."
+    }
+  },
+  "authorization_sequence": [
+    "Create and review develop.py and test_develop.py without opening development outcomes.",
+    "Create DEVELOPMENT_PREFREEZE_AUTHORIZATION.v1.json binding the complete source chain, this amendment, DEVELOPMENT_INTERFACE.v2.json, develop.py, and test_develop.py.",
+    "Run only the preoutcome prepare command to materialize corrected folds, exact donor slots, and both null-weight families under work/development-preoutcome-v1.",
+    "Review and hash the preoutcome artifact manifest.",
+    "Create DEVELOPMENT_ACCESS_AUTHORIZATION.v1.json binding every required dependency, truth-source hash, evaluator, test, and preoutcome artifact.",
+    "Only then run the development outcome command."
+  ],
+  "access_state": {
+    "development_613_outcomes_opened": false,
+    "sealed_410_outcomes_opened": false,
+    "reserved_confirmation_expression_opened": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "submission": false
+  }
+}

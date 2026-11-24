@@ -1,0 +1,30 @@
+{
+  "authorization": {
+    "cell_eval2": false,
+    "challenge_perturbation_truth": false,
+    "commit": false,
+    "count_h5ad_or_vcc_build": false,
+    "experiment_122_frozen_source_result": true,
+    "held_outcomes": false,
+    "push": false,
+    "released_control_values_after_this_freeze": true,
+    "staged_a15_effects": true,
+    "submission": false
+  },
+  "created_at_utc": "2026-08-30",
+  "experiment": "128-panel-integer-budget-transport",
+  "files": {
+    "experiments/128-panel-integer-budget-transport/README.md": "3ad32f0fb1b1204091abe61b83ae708064b437162aa55715047657a6aab3f677",
+    "experiments/128-panel-integer-budget-transport/freeze.py": "59aaf43e16f8dc7e702e5ff9503d2d3857c5c0d4c7d7e4cf1ef55e25f5fb0e8f",
+    "experiments/128-panel-integer-budget-transport/preregistered_protocol.json": "43054d968098834528947ad360e37fe2d8ea42f269b9406db2bcd66b632e27d5",
+    "experiments/128-panel-integer-budget-transport/run.py": "42a0ffadee3560a77636b3b6641e1d4eb7bf437839ca165a6bb8e3fa139e9123",
+    "experiments/128-panel-integer-budget-transport/test_run.py": "a9d6850cde3baac8f3de165ea264a1fa5079a7bda5b19ec63a02ea5533edfbb3"
+  },
+  "preflight": {
+    "python_compile": "passed",
+    "ruff": "passed",
+    "synthetic_tests": "8/8 passed"
+  },
+  "schema_version": 1,
+  "status": "frozen_before_experiment_128_released_control_value_access"
+}

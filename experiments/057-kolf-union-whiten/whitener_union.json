@@ -1,0 +1,38 @@
+{
+  "axis": "union",
+  "source_donors_only": [
+    "orion_hct116",
+    "orion_hek293t"
+  ],
+  "forbidden_fit_donors": [
+    "k562_gwps",
+    "kolf2"
+  ],
+  "basis_per_donor_cap": 6000,
+  "basis_rows": 12000,
+  "operator_seed": 0,
+  "operator_genes": 17806,
+  "operator_genes_sha256": "280aab34a0e86f27db8ade213e000f9066c8d5f9b89edd3ea966aba061ba9ae9",
+  "operator_wcols_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+  "excluded_target_coordinates": 300,
+  "excluded_targets_sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4",
+  "panel_overlap_with_operator": 0,
+  "source_selections": {
+    "orion_hct116": {
+      "rows": 6000,
+      "row_indices_sha256": "231baf13e200eb920f82889544d2d1b8ff5fe3b49b518243757bccccd9f15365",
+      "mapped_operator_genes": 17806,
+      "donor_scale": 7.129641298514131,
+      "basis_relative_scale": 0.9363176914396513
+    },
+    "orion_hek293t": {
+      "rows": 6000,
+      "row_indices_sha256": "e3ba410fcb892535f427359a79aab48eedf54ebac836f984a231e267cbdd6589",
+      "mapped_operator_genes": 17806,
+      "donor_scale": 6.221577264320966,
+      "basis_relative_scale": 1.0729769956728388
+    }
+  },
+  "operator_npz": "/work/repo/experiments/057-kolf-union-whiten/out/whitener_union.npz",
+  "operator_npz_sha256": "1718c54f230929ac1b8f62f67f721855f4564b35a73f99345730dcd6e537ffa7"
+}

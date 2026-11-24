@@ -1,0 +1,9 @@
+name: exp070-viperturb
+channels:
+  - conda-forge
+dependencies:
+  - r-base=4.4.3
+  - r-seurat=5.3.1
+  - r-seuratobject=5.1.0
+  - r-matrix
+  - r-jsonlite=2.0.0

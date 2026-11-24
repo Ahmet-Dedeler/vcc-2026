@@ -1,0 +1,76 @@
+{
+  "assets": {
+    "file_inventory": {
+      "binding": {
+        "asset_name": "file_inventory",
+        "expected_filename": "filelist.txt",
+        "expected_sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca",
+        "expected_size_bytes": 11869,
+        "group": "metadata",
+        "manifest_sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74",
+        "sha256_status": "source_pinned",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249595/suppl/filelist.txt"
+      },
+      "filename": "filelist.txt",
+      "sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca",
+      "size_bytes": 11869,
+      "source_sha256_pinned": true,
+      "status": "downloaded_source_verified"
+    },
+    "guide_reference": {
+      "binding": {
+        "asset_name": "guide_reference",
+        "expected_filename": "GSE249595_guides_reference.fa.gz",
+        "expected_sha256": "99e99d6c14907a2cc60c4c11ed3d93e9da5cc113740489b7e8d1e8c0abe00ca6",
+        "expected_size_bytes": 847505,
+        "group": "metadata",
+        "manifest_sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74",
+        "sha256_status": "source_pinned",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249595/suppl/GSE249595_guides_reference.fa.gz"
+      },
+      "filename": "GSE249595_guides_reference.fa.gz",
+      "sha256": "99e99d6c14907a2cc60c4c11ed3d93e9da5cc113740489b7e8d1e8c0abe00ca6",
+      "size_bytes": 847505,
+      "source_sha256_pinned": true,
+      "status": "downloaded_source_verified"
+    },
+    "raw_archive": {
+      "binding": {
+        "asset_name": "raw_archive",
+        "expected_filename": "GSE249595_RAW.tar",
+        "expected_sha256": null,
+        "expected_size_bytes": 3753820160,
+        "group": "raw",
+        "manifest_sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74",
+        "sha256_status": "not_source_pinned",
+        "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249595/suppl/GSE249595_RAW.tar"
+      },
+      "filename": "GSE249595_RAW.tar",
+      "sha256": "3c0c5fa8cab2983dfe0fa3b38b31662bb68e191e6dbaf3d03af02a67587a67a9",
+      "size_bytes": 3753820160,
+      "source_sha256_pinned": false,
+      "status": "downloaded_local_hash_observed"
+    },
+    "supplementary_table": {
+      "binding": {
+        "asset_name": "supplementary_table",
+        "expected_filename": "MOESM3_ESM.xlsx",
+        "expected_sha256": "307f346279b4bda2e9c19aca39c692a144197c0117dfd9d595724cc353e2f7ff",
+        "expected_size_bytes": 412522,
+        "group": "metadata",
+        "manifest_sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74",
+        "sha256_status": "source_pinned",
+        "source_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41556-025-01626-9/MediaObjects/41556_2025_1626_MOESM3_ESM.xlsx"
+      },
+      "filename": "MOESM3_ESM.xlsx",
+      "sha256": "307f346279b4bda2e9c19aca39c692a144197c0117dfd9d595724cc353e2f7ff",
+      "size_bytes": 412522,
+      "source_sha256_pinned": true,
+      "status": "downloaded_source_verified"
+    }
+  },
+  "dataset": "GSE249595",
+  "manifest_sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74",
+  "schema_version": 2,
+  "updated_at_utc": "2026-08-30T08:15:43.337261+00:00"
+}

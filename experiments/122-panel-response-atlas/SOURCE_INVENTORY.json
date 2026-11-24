@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "experiment": "122-panel-response-atlas",
+  "phase": "phase_1_source_only",
+  "created_date": "2026-08-30",
+  "created_before_authorized_effect_matrix_loading": true,
+  "canonical_panel": {
+    "targets": 300,
+    "target_axis_path": "data/challenge/pert_counts.csv",
+    "gene_axis_path": "data/challenge/gene_names.csv"
+  },
+  "families": {
+    "replogle_k562": {
+      "members": [
+        {
+          "name": "k562_gwps",
+          "compact_root": "data/donors/k562_gwps",
+          "compact_target_rows": 9787,
+          "compact_response_genes": 8248,
+          "vcc_target_rows": 269,
+          "vcc_response_columns": 231,
+          "panel_coordinates_zeroed": false,
+          "evidence": "scripts/build_donor_table.py writes the full donor-axis log1p TS50000 delta and contains no panel-coordinate exclusion",
+          "nearest_raw_local_source": "data/external/scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+          "nearest_raw_local_size_bytes": 8805466154,
+          "raw_reextraction_feasible": true,
+          "raw_reextraction_needed_for_phase_1": false
+        }
+      ],
+      "effective_family_count": 1
+    },
+    "orion": {
+      "members": [
+        {
+          "name": "orion_hct116",
+          "compact_root": "data/donors/orion_hct116",
+          "compact_target_rows": 17767,
+          "compact_response_genes": 38606,
+          "vcc_target_rows": 290,
+          "vcc_response_columns": 300,
+          "panel_coordinates_zeroed": false
+        },
+        {
+          "name": "orion_hek293t",
+          "compact_root": "data/donors/orion_hek293t",
+          "compact_target_rows": 17977,
+          "compact_response_genes": 38606,
+          "vcc_target_rows": 294,
+          "vcc_response_columns": 300,
+          "panel_coordinates_zeroed": false
+        }
+      ],
+      "evidence": "scripts/build_orion_donor.py writes the full Orion token-axis log1p TS50000 delta and contains no panel-coordinate exclusion",
+      "nearest_raw_local_source": {
+        "metadata": "data/external/orion/metadata/gene_metadata.parquet",
+        "hct116_batches": 109,
+        "hct116_total_bytes": 46576484789,
+        "hek293t_batches": 223,
+        "hek293t_total_bytes": 79683336248
+      },
+      "raw_reextraction_feasible": true,
+      "raw_reextraction_needed_for_phase_1": false,
+      "effective_family_count": 1
+    },
+    "cd4": {
+      "members": [
+        {
+          "name": "cd4_rest",
+          "compact_root": "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest",
+          "compact_target_rows": 283,
+          "compact_response_genes": 10113,
+          "vcc_target_rows": 283,
+          "vcc_response_columns": 285,
+          "panel_coordinates_zeroed": false
+        },
+        {
+          "name": "cd4_stim8hr",
+          "compact_root": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr",
+          "compact_target_rows": 287,
+          "compact_response_genes": 10113,
+          "vcc_target_rows": 287,
+          "vcc_response_columns": 285,
+          "panel_coordinates_zeroed": false
+        },
+        {
+          "name": "cd4_stim48hr",
+          "compact_root": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr",
+          "compact_target_rows": 284,
+          "compact_response_genes": 10113,
+          "vcc_target_rows": 284,
+          "vcc_response_columns": 285,
+          "panel_coordinates_zeroed": false
+        }
+      ],
+      "evidence": "the compact manifest defines delta as ln(2) times source DESeq2 log2 fold change on the mapped gene axis and does not apply panel exclusion",
+      "raw_reextraction_feasible": "not required; compact matrices and validity/QC metadata are sufficient",
+      "raw_reextraction_needed_for_phase_1": false,
+      "effective_family_count": 1
+    }
+  },
+  "coverage_summary": {
+    "all_required_compact_panel_coordinates_recoverable": true,
+    "compact_reconstruction_required": false,
+    "raw_reconstruction_required": false,
+    "zeroed_compact_artifacts_detected": []
+  },
+  "excluded_sources": [
+    "all A549 artifacts",
+    "Experiment 116 DLD1 matrix values",
+    "Pan2025 H1",
+    "VCC held harnesses and outcome directories",
+    "challenge perturbation truth"
+  ]
+}

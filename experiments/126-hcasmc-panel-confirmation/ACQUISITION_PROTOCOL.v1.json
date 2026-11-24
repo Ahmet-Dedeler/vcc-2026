@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "experiment": "126-hcasmc-panel-confirmation",
+  "created_at_utc": "2026-08-30T17:11:02Z",
+  "scope": "acquisition_only",
+  "objective": "Acquire and byte-verify the official IGVF HCASMC global differential-expression gzip as an opaque binary for a possible future independent panel-response confirmation.",
+  "ownership": [
+    "experiments/126-hcasmc-panel-confirmation",
+    "data/external/hcasmc-igvf"
+  ],
+  "candidate_dependency": {
+    "required_before_effect_value_access": "Experiment 125 candidate must be frozen and hash-addressed",
+    "status_at_protocol_freeze": "not_present_in_shared_worktree",
+    "consequence": "Effect values remain inaccessible. Opaque acquisition is permitted by the user."
+  },
+  "permitted_actions": [
+    "Read official IGVF JSON metadata.",
+    "Download and inspect the separate guide-RNA metadata asset IGVFFI9546UECF.",
+    "Derive exact target overlap from guide identifiers and the local VCC perturbation list.",
+    "Download IGVFFI0206LUDV.tsv.gz as an opaque binary after PRE_DOWNLOAD_FREEZE.v1.json exists.",
+    "Measure the compressed object's byte size.",
+    "Compute hashes over the raw compressed bytes.",
+    "Compare compressed byte size and MD5 against official IGVF metadata.",
+    "Record transport headers and an acquisition receipt."
+  ],
+  "prohibited_actions": [
+    "Decompress IGVFFI0206LUDV.tsv.gz by any method.",
+    "Run gzip -t or any command that inflates the effect stream.",
+    "Inspect the effect gzip header, TSV header, strings, rows, columns, values, or statistics.",
+    "Open the older global differential-expression table or the local differential-expression table.",
+    "Define, fit, select, tune, or evaluate a confirmation candidate.",
+    "Access DLD1, Pan, H1, Orion held outcomes, cell-eval2, count generation, submission building, or challenge submission.",
+    "Commit or push."
+  ],
+  "metadata_only_overlap_rule": {
+    "guide_asset": "IGVFFI9546UECF",
+    "include_rows_where": "targeting == TRUE",
+    "target_symbol_derivation": "Remove the terminal underscore followed by decimal guide number from guide_id.",
+    "deduplication": "Exact unique symbols.",
+    "vcc_panel": "data/challenge/pert_counts.csv target_gene column",
+    "matching": "Exact case-sensitive symbol intersection.",
+    "effect_values_used": false
+  },
+  "transport_acceptance": {
+    "required_size_bytes": 1531381676,
+    "required_published_md5": "4d3067b3e934842c88b9ea52d74780f9",
+    "required_accession": "IGVFFI0206LUDV",
+    "required_analysis_set": "IGVFDS6248NDUW",
+    "required_status": "released",
+    "required_upload_status": "validated",
+    "required_controlled_access": false,
+    "require_local_sha256": true,
+    "published_content_md5_is_metadata_only": "17de2109d8babe7a05670dfc3d9f8047",
+    "content_md5_must_not_be_verified_before_value_access": true
+  },
+  "stop_conditions": [
+    "Official source accession, analysis-set membership, status, URL, byte size, or published compressed MD5 cannot be established.",
+    "Downloaded compressed byte size differs from 1531381676.",
+    "Downloaded compressed MD5 differs from 4d3067b3e934842c88b9ea52d74780f9.",
+    "Any tool would require decompression or tabular parsing of IGVFFI0206LUDV.tsv.gz."
+  ],
+  "future_access_rule": "A future value-access authorization must be a new permanent file that names and hashes the frozen Experiment 125 candidate, this protocol, PRE_DOWNLOAD_FREEZE.v1.json, VALUE_ACCESS_BOUNDARY.v1.json, SOURCE_MANIFEST.expected.v1.json, and ACQUISITION_RECEIPT.v1.json. This acquisition protocol must never be edited to grant access."
+}

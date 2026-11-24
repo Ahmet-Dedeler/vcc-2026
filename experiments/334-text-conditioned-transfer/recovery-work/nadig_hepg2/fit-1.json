@@ -1,0 +1,12 @@
+{
+  "block": 1,
+  "evaluation_sha256": "6ade04d1fb055aab6a999935000e2f7300c80c2fd02682644d2f70d62f8f4b13",
+  "inputs_sha256": "853661cd4656fbc6f9515fb478ebb4f89f07e48b9f078078212be73cfa99b1e7",
+  "models_sha256": "1c6e648642f791310045324fbc740b1e24bfce3bd5ea64e23f5df634ea69f56a",
+  "outer": "nadig_hepg2",
+  "poison_isolation_pass": true,
+  "prediction_sha256": "0b2651ed3754f1a1c4b13caa8b6640e89f07c00907d2bc3cfd56cdd660ef2e08",
+  "seconds": 4.877904374996433,
+  "selection_sha256": "8e05c0167aa3974775213aafb1346f884519a454a9a2857c443c7c6fa914e413",
+  "training_sha256": "da167d09f786f27410b27f1b9f0e094bdb1770ae913a08dac9837db34533ef4a"
+}

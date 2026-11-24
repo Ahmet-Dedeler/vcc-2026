@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "sample_per_replicate": 512,
+  "strata": 32,
+  "target_sum": 1000000.0,
+  "sd_definition": "1%-99% winsorized sample SD of log1p(CPM)",
+  "mad_definition": "1.4826 * median absolute deviation of log1p(CPM)",
+  "files": {
+    "k562_h5ad": {
+      "path": "~/Code/virtual-cell-challenge-2026/data/external/scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+      "size": 8805466154,
+      "mtime_ns": 1787314395619464976
+    },
+    "hct116_h5ad": {
+      "path": "~/Code/virtual-cell-challenge-2026/data/harness/orion-hct116.h5ad",
+      "size": 1010256893,
+      "mtime_ns": 1787348187886829331
+    },
+    "orion_gene_metadata": {
+      "path": "~/Code/virtual-cell-challenge-2026/data/external/orion/metadata/gene_metadata.parquet",
+      "size": 881915,
+      "mtime_ns": 1787324001337740133
+    },
+    "hek_file_count": 223,
+    "hek_total_bytes": 79683336248
+  },
+  "details": {
+    "k562_gwps": {
+      "source": "~/Code/virtual-cell-challenge-2026/data/external/scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+      "available_controls": 75328,
+      "sample_per_replicate": 512,
+      "strata": 32,
+      "hdf5_row_chunk": 3886
+    },
+    "orion_hct116": {
+      "source": "~/Code/virtual-cell-challenge-2026/data/harness/orion-hct116.h5ad",
+      "available_controls": 18400,
+      "sample_per_replicate": 512,
+      "selection": "disjoint seeded sample without replacement",
+      "seed": 670116
+    },
+    "orion_hek293t": {
+      "source": "~/Code/virtual-cell-challenge-2026/data/external/orion/data",
+      "line": "HEK293T",
+      "available_files": 223,
+      "sampled_files": [
+        "HEK293T_Batch1.parquet",
+        "HEK293T_Batch8.parquet",
+        "HEK293T_Batch15.parquet",
+        "HEK293T_Batch22.parquet",
+        "HEK293T_Batch30.parquet",
+        "HEK293T_Batch37.parquet",
+        "HEK293T_Batch44.parquet",
+        "HEK293T_Batch51.parquet",
+        "HEK293T_Batch58.parquet",
+        "HEK293T_Batch65.parquet",
+        "HEK293T_Batch73.parquet",
+        "HEK293T_Batch80.parquet",
+        "HEK293T_Batch87.parquet",
+        "HEK293T_Batch94.parquet",
+        "HEK293T_Batch101.parquet",
+        "HEK293T_Batch108.parquet",
+        "HEK293T_Batch116.parquet",
+        "HEK293T_Batch123.parquet",
+        "HEK293T_Batch130.parquet",
+        "HEK293T_Batch137.parquet",
+        "HEK293T_Batch144.parquet",
+        "HEK293T_Batch151.parquet",
+        "HEK293T_Batch159.parquet",
+        "HEK293T_Batch166.parquet",
+        "HEK293T_Batch173.parquet",
+        "HEK293T_Batch180.parquet",
+        "HEK293T_Batch187.parquet",
+        "HEK293T_Batch194.parquet",
+        "HEK293T_Batch202.parquet",
+        "HEK293T_Batch209.parquet",
+        "HEK293T_Batch216.parquet",
+        "HEK293T_Batch223.parquet"
+      ],
+      "sample_per_replicate": 512,
+      "controls_read_per_file": {
+        "HEK293T_Batch1.parquet": 32,
+        "HEK293T_Batch8.parquet": 32,
+        "HEK293T_Batch15.parquet": 32,
+        "HEK293T_Batch22.parquet": 32,
+        "HEK293T_Batch30.parquet": 32,
+        "HEK293T_Batch37.parquet": 32,
+        "HEK293T_Batch44.parquet": 32,
+        "HEK293T_Batch51.parquet": 32,
+        "HEK293T_Batch58.parquet": 32,
+        "HEK293T_Batch65.parquet": 32,
+        "HEK293T_Batch73.parquet": 32,
+        "HEK293T_Batch80.parquet": 32,
+        "HEK293T_Batch87.parquet": 32,
+        "HEK293T_Batch94.parquet": 32,
+        "HEK293T_Batch101.parquet": 32,
+        "HEK293T_Batch108.parquet": 32,
+        "HEK293T_Batch116.parquet": 32,
+        "HEK293T_Batch123.parquet": 32,
+        "HEK293T_Batch130.parquet": 32,
+        "HEK293T_Batch137.parquet": 32,
+        "HEK293T_Batch144.parquet": 32,
+        "HEK293T_Batch151.parquet": 32,
+        "HEK293T_Batch159.parquet": 32,
+        "HEK293T_Batch166.parquet": 32,
+        "HEK293T_Batch173.parquet": 32,
+        "HEK293T_Batch180.parquet": 32,
+        "HEK293T_Batch187.parquet": 32,
+        "HEK293T_Batch194.parquet": 32,
+        "HEK293T_Batch202.parquet": 32,
+        "HEK293T_Batch209.parquet": 32,
+        "HEK293T_Batch216.parquet": 32,
+        "HEK293T_Batch223.parquet": 32
+      },
+      "worker_peak_rss_gib": {
+        "HEK293T_Batch1.parquet": 0.4490814208984375,
+        "HEK293T_Batch8.parquet": 0.4808502197265625,
+        "HEK293T_Batch15.parquet": 0.4522552490234375,
+        "HEK293T_Batch22.parquet": 0.4822845458984375,
+        "HEK293T_Batch30.parquet": 0.2374420166015625,
+        "HEK293T_Batch37.parquet": 0.4607391357421875,
+        "HEK293T_Batch44.parquet": 0.44378662109375,
+        "HEK293T_Batch51.parquet": 0.461212158203125,
+        "HEK293T_Batch58.parquet": 0.3634033203125,
+        "HEK293T_Batch65.parquet": 0.3470458984375,
+        "HEK293T_Batch73.parquet": 0.3001251220703125,
+        "HEK293T_Batch80.parquet": 0.4990386962890625,
+        "HEK293T_Batch87.parquet": 0.529052734375,
+        "HEK293T_Batch94.parquet": 0.5211944580078125,
+        "HEK293T_Batch101.parquet": 0.442291259765625,
+        "HEK293T_Batch108.parquet": 0.3409576416015625,
+        "HEK293T_Batch116.parquet": 0.457794189453125,
+        "HEK293T_Batch123.parquet": 0.483642578125,
+        "HEK293T_Batch130.parquet": 0.4647216796875,
+        "HEK293T_Batch137.parquet": 0.3524017333984375,
+        "HEK293T_Batch144.parquet": 0.332366943359375,
+        "HEK293T_Batch151.parquet": 0.344573974609375,
+        "HEK293T_Batch159.parquet": 0.3431243896484375,
+        "HEK293T_Batch166.parquet": 0.3731842041015625,
+        "HEK293T_Batch173.parquet": 0.4507598876953125,
+        "HEK293T_Batch180.parquet": 0.456756591796875,
+        "HEK293T_Batch187.parquet": 0.46087646484375,
+        "HEK293T_Batch194.parquet": 0.4016265869140625,
+        "HEK293T_Batch202.parquet": 0.3630523681640625,
+        "HEK293T_Batch209.parquet": 0.41351318359375,
+        "HEK293T_Batch216.parquet": 0.3983001708984375,
+        "HEK293T_Batch223.parquet": 0.3267822265625
+      },
+      "worker_cache_removed_after_use": true
+    }
+  },
+  "stability": {
+    "k562_gwps": {
+      "sd": {
+        "valid_genes": 7679,
+        "pearson": 0.9730104378304556,
+        "median_abs_log_ratio": 0.020932286977767944
+      },
+      "mad": {
+        "valid_genes": 2043,
+        "pearson": 0.9639367132769134,
+        "median_abs_log_ratio": 0.07758378982543945
+      }
+    },
+    "orion_hct116": {
+      "sd": {
+        "valid_genes": 11960,
+        "pearson": 0.9684519186907276,
+        "median_abs_log_ratio": 0.029588475823402405
+      },
+      "mad": {
+        "valid_genes": 4574,
+        "pearson": 0.9613132862407104,
+        "median_abs_log_ratio": 0.08949985355138779
+      }
+    },
+    "orion_hek293t": {
+      "sd": {
+        "valid_genes": 12960,
+        "pearson": 0.9746769656248213,
+        "median_abs_log_ratio": 0.023114927113056183
+      },
+      "mad": {
+        "valid_genes": 5476,
+        "pearson": 0.9561527143937903,
+        "median_abs_log_ratio": 0.07747197896242142
+      }
+    }
+  },
+  "peak_rss_gib": 0.3211822509765625
+}

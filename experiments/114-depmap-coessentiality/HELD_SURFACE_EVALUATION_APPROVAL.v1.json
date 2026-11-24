@@ -1,0 +1,397 @@
+{
+  "amendment_id": "experiment-114-held-surface-evaluation-approval-v1",
+  "authorization": {
+    "challenge_build": false,
+    "commit": false,
+    "count_generation": false,
+    "evaluation": true,
+    "held_truth_access": true,
+    "metadata_only_audit": true,
+    "model_fitting": false,
+    "push": false,
+    "source_candidate_freeze": false,
+    "submission": false
+  },
+  "date_approved": "2026-08-30",
+  "entrypoint_path": "experiments/114-depmap-coessentiality/evaluate_frozen_candidates_v1.py",
+  "experiment": "114-depmap-coessentiality",
+  "frozen_bundles": {
+    "h1": {
+      "arms": {
+        "path": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/h1/arms.npz",
+        "sha256": "6f8da350fe2f72e4ec12c655e80fc7d1c46e8dc88a2085261896ca68bf8c86ac"
+      },
+      "directory": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/h1",
+      "manifest": {
+        "path": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/h1/manifest.json",
+        "sha256": "e974d7466f14a0ed209da002d462021c6229958ed2d27e909c2dc8284e0cd488"
+      },
+      "permutation_nulls": {
+        "path": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/h1/permutation_nulls.npz",
+        "sha256": "9fcdc6dbf7daeaec414aa48237f50cbb750b7c53935f6df1ad3583e55a8a94ac"
+      },
+      "role_manifest": {
+        "path": "experiments/114-depmap-coessentiality/work/roles/h1/manifest.json",
+        "sha256": "357244f5515db1e51686facc1d923da6209fe9ac95c3ce686c28b7474bece017"
+      },
+      "source_role_artifacts": {
+        "incumbent": {
+          "path": "experiments/114-depmap-coessentiality/work/roles/h1/incumbent.npz",
+          "sha256": "2781873296273a93253d91061bca6b7f67ac11ac767368a071a9257dd33d5437"
+        },
+        "incumbent_receipt": {
+          "path": "experiments/114-depmap-coessentiality/work/roles/h1/incumbent-receipt.json",
+          "sha256": "b3ab332142e4f396b857c17b79ef9a9585079998d901910c7da83a75d4c9e92c"
+        },
+        "source_bank": {
+          "path": "experiments/114-depmap-coessentiality/work/roles/h1/source-bank.npz",
+          "sha256": "69b3c67ebb256522b7e1928760066b8097499055a8c503daa1f18667089e9ba6"
+        },
+        "source_bank_receipt": {
+          "path": "experiments/114-depmap-coessentiality/work/roles/h1/source-bank-receipt.json",
+          "sha256": "b1b3fe2f97d2433eedaa8604c925a80a9b117546be60c0c2608cc47fcf50bdd6"
+        }
+      }
+    },
+    "orion_hek293t": {
+      "arms": {
+        "path": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/orion_hek293t/arms.npz",
+        "sha256": "1d5a1ebc932e1f186798d21346fd40b042d44639fd8241b124d9b3194659c701"
+      },
+      "directory": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/orion_hek293t",
+      "manifest": {
+        "path": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/orion_hek293t/manifest.json",
+        "sha256": "b27b6bfadc0c2a3e0edfafadded3430fcba2b5e64c6060ddaeb46c312f002ef2"
+      },
+      "permutation_nulls": {
+        "path": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/orion_hek293t/permutation_nulls.npz",
+        "sha256": "40a63e432b4cea4357a55ca7da4df8acfe9de30b0e5574b48c479fc5a9ad8843"
+      },
+      "role_manifest": {
+        "path": "experiments/114-depmap-coessentiality/work/roles/orion_hek293t/manifest.json",
+        "sha256": "939c43916c3addb0a2fd2ff7753a8c69dd866d39e33a0481d901f0dc87247ad3"
+      },
+      "source_role_artifacts": {
+        "incumbent": {
+          "path": "experiments/114-depmap-coessentiality/work/roles/orion_hek293t/incumbent.npz",
+          "sha256": "706f9f0f9178d4425423bceb65148a2409b5a9eeacfe7a60ee7b97f9ae066c34"
+        },
+        "incumbent_receipt": {
+          "path": "experiments/114-depmap-coessentiality/work/roles/orion_hek293t/incumbent-receipt.json",
+          "sha256": "0327ad8f9f8d1a9eef11a9aeb47b3d5e7df5d0599580d58dc748dac616270e53"
+        },
+        "source_bank": {
+          "path": "experiments/114-depmap-coessentiality/work/roles/orion_hek293t/source-bank.npz",
+          "sha256": "5d534ef78cd9b18474aecadd25a29fdcb338836a5058be56c73213326d34ff7d"
+        },
+        "source_bank_receipt": {
+          "path": "experiments/114-depmap-coessentiality/work/roles/orion_hek293t/source-bank-receipt.json",
+          "sha256": "68f97276c82903dac7e80f4cd3b3d63be7bd431cc0628fc140742464447b12fe"
+        }
+      }
+    }
+  },
+  "invariants": {
+    "all_frozen_bundles_must_validate_before_truth_path_acceptance": true,
+    "caller_supplied_paths_forbidden": true,
+    "evaluation_is_diagnostic_only": true,
+    "exclusive_fsynced_access_receipt_before_truth_hash_or_open": true,
+    "frozen_predecessors_must_not_be_mutated": true,
+    "minimum_changed_target_rows_for_pds": 2,
+    "no_overwrite": true,
+    "null_mappings_must_regenerate_before_truth_path_acceptance": true,
+    "only_predeclared_target_and_gene_mappings_allowed": true,
+    "pds_only": true,
+    "promotion_authorized": false
+  },
+  "predecessors": {
+    "build_role_inputs": {
+      "path": "experiments/114-depmap-coessentiality/build_role_inputs.py",
+      "sha256": "8be06f48cd57e20f8176e3ce86019182fc6ddb30372e7b08a93bc191f06ff526"
+    },
+    "preregistered_protocol": {
+      "path": "experiments/114-depmap-coessentiality/preregistered_protocol.json",
+      "sha256": "cfd495175d87cba7e7cad1ff171b7a817664eabc3e836aa311ec7417f0c59b91"
+    },
+    "role_source_manifest": {
+      "path": "experiments/114-depmap-coessentiality/ROLE_SOURCE_MANIFEST.json",
+      "sha256": "e05d877b5ea0a7aeae06f4c53ad363e984379678b5b61fd852e3e877d17d0248"
+    },
+    "run_implementation": {
+      "path": "experiments/114-depmap-coessentiality/run.py",
+      "sha256": "737d0bf225c5ee5e5108a54a07e9fdfc3ee6e8728f1ad559def5ff2c03569fd9"
+    },
+    "source_candidate_freeze_approval": {
+      "path": "experiments/114-depmap-coessentiality/SOURCE_CANDIDATE_FREEZE_APPROVAL.v1.json",
+      "sha256": "fa360e7b04c61d5effb137de3d990925b899f9f15cf0e2551459fb28752113a4"
+    },
+    "source_candidate_freeze_boundary": {
+      "path": "experiments/114-depmap-coessentiality/SOURCE_CANDIDATE_FREEZE_BOUNDARY.json",
+      "sha256": "a22ca21f51e7d6729c9c7f09c2901ba0fa9cf1ecb067fc75ab91d9324ef18025"
+    },
+    "source_candidate_freeze_entrypoint": {
+      "path": "experiments/114-depmap-coessentiality/freeze_source_candidates_v1.py",
+      "sha256": "6724e92a4f35fe2efa57006af1623ddcb8b51f09d1d9e9ef56bc93cdbd58ce72"
+    },
+    "source_candidate_freeze_provenance": {
+      "path": "experiments/114-depmap-coessentiality/SOURCE_CANDIDATE_FREEZE_APPROVAL.v1.PROVENANCE.json",
+      "sha256": "7b5740bfc8e04a305c4f9a62b482af10a8e2a48faace137dd9f72454ba842918"
+    },
+    "source_candidate_freeze_tests": {
+      "path": "experiments/114-depmap-coessentiality/test_freeze_source_candidates_v1.py",
+      "sha256": "1caab22a87c638fa95b912b9ac25cd03a6be7d8dd8e46cde8dd0de4dc05fb058"
+    },
+    "source_manifest": {
+      "path": "experiments/114-depmap-coessentiality/SOURCE_MANIFEST.json",
+      "sha256": "5834bcd29a7e31b23aaafdcd02a5f56f509e06c87ad1fb0c2568df40510a5497"
+    },
+    "source_schema_amendment": {
+      "path": "experiments/114-depmap-coessentiality/SOURCE_SCHEMA_AMENDMENT.json",
+      "sha256": "266f805bc80d011b53322bbf81c54bd69507e39c3752fa9a47c8b95cae886075"
+    }
+  },
+  "schema_version": 1,
+  "stage": "held_surface_evaluation_approval",
+  "status": "approved_for_full_orion_hek293t_outer_holdout_pds_only_diagnostic_pending_independent_review_and_execution",
+  "surface": {
+    "diagnostic_only": true,
+    "direction_valid": false,
+    "frozen_role": "orion_hek293t",
+    "id": "orion_hek293t_full_outer_holdout",
+    "metric": {
+      "centering": "none",
+      "gallery": "exact_metadata_fixed_35_target_overlap",
+      "name": "raw_uncentered_pds",
+      "promotion_authorized": false,
+      "response_coordinates": "truth_representable_official_genes_excluding_all_300_vcc_panel_targets",
+      "ties": "midrank"
+    },
+    "output": {
+      "access_receipt": "experiments/114-depmap-coessentiality/work/held-surface-evaluation-v1/orion_hek293t_full/OUTCOME_ACCESS_RECEIPT.v1.json",
+      "directory": "experiments/114-depmap-coessentiality/work/held-surface-evaluation-v1/orion_hek293t_full",
+      "result": "experiments/114-depmap-coessentiality/work/held-surface-evaluation-v1/orion_hek293t_full/result.json"
+    },
+    "response_coordinate_mapping": {
+      "allowed_count": 17806,
+      "allowed_indices_int64_sha256": "6c88682f92ba64afb13feede10c979ba40a2d4887ec5f039b0ceb01355c5199b",
+      "allowed_mask_uint8_sha256": "e1b2437ce52f5f9e9d8c87dd9aa174f03528108051f5aa47f4cf2f3136dc002d",
+      "canonical_gene_count": 18533,
+      "canonical_gene_ordered_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+      "canonical_indices_int64_sha256": "4850432ff15fbc16abec7fc83418a53fdbd0d7603cb8d21076f8372ca8b997ee",
+      "duplicate_policy": "last_occurrence_on_canonical_axis",
+      "mapped_count": 18106,
+      "mapped_mask_uint8_sha256": "bcd1acb101e2a08de1f503dce7a972492649166a94551ccf342476cae4ee7e03",
+      "truth_gene_count": 38606,
+      "truth_gene_indices_int64_sha256": "20dbd482b63458d01e6a62b40c36683bb4282193d9841fec42cdf2152bbca4fd",
+      "truth_gene_ordered_sha256": "ebd177c833a5f0582116dc9de2a65f2735cb76a349c0b847c204ab07d503d366",
+      "unmapped_canonical_gene_count": 427
+    },
+    "target_mapping": {
+      "changed_target_count": 35,
+      "eligible_missing_ordered_sha256": "89fb1fca47e65a56117f2e26755e6c68fe884d1dec3cb5df058b982dfe400337",
+      "eligible_missing_targets": [
+        "C5orf22",
+        "CDK8",
+        "GLYR1",
+        "IL10RB",
+        "RFK",
+        "UNK"
+      ],
+      "eligible_overlap_count": 35,
+      "eligible_target_count": 41,
+      "frozen_row_indices": [
+        0,
+        8,
+        18,
+        22,
+        45,
+        57,
+        77,
+        92,
+        100,
+        102,
+        103,
+        109,
+        125,
+        132,
+        134,
+        140,
+        142,
+        143,
+        167,
+        172,
+        189,
+        196,
+        202,
+        205,
+        206,
+        215,
+        218,
+        220,
+        222,
+        231,
+        236,
+        244,
+        246,
+        251,
+        258
+      ],
+      "frozen_row_indices_int64_sha256": "8afa60e2e947cddac371afbfd62202589ac15b0ae62f0d9730418b3bc73baab4",
+      "null_row_indices": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        7,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        39,
+        40
+      ],
+      "null_row_indices_int64_sha256": "98878f7504ffd611e8257ab880a523f12776ead5846e5226940febb64bd57c02",
+      "ordered_sha256": "e81c113e76a627b4d8d44a6998d33f3fc533ee11e539b413016552a0c35b3587",
+      "targets": [
+        "ABCD1",
+        "ANKRD52",
+        "BRD1",
+        "CAPRIN2",
+        "DLAT",
+        "EPHB2",
+        "HEATR6",
+        "KIF21B",
+        "MAN2A1",
+        "MAPK12",
+        "MAPK7",
+        "MLKL",
+        "NICN1",
+        "PARP3",
+        "PBLD",
+        "PDK3",
+        "PHF11",
+        "PHF19",
+        "PSMB9",
+        "RAB11FIP5",
+        "SEMA4F",
+        "SLC44A1",
+        "SNN",
+        "SOCS5",
+        "SPATA20",
+        "TAF4",
+        "TBC1D19",
+        "TDRD7",
+        "TESK2",
+        "TMEM104",
+        "TMEM79",
+        "TTBK2",
+        "TXNDC16",
+        "VAPB",
+        "ZC2HC1A"
+      ],
+      "truth_row_indices": [
+        60,
+        700,
+        1570,
+        2043,
+        4032,
+        4712,
+        6510,
+        7629,
+        8604,
+        8668,
+        8675,
+        9044,
+        9881,
+        10963,
+        10997,
+        11181,
+        11329,
+        11333,
+        12205,
+        12416,
+        13595,
+        14183,
+        14433,
+        14495,
+        14588,
+        15158,
+        15252,
+        15374,
+        15423,
+        15693,
+        15896,
+        16394,
+        16510,
+        16840,
+        17272
+      ],
+      "truth_row_indices_int64_sha256": "2b80ccaab6203edd530403c4932d3dbde5a5d44809db496589f3632a1e2449d3"
+    },
+    "truth": {
+      "b_ctrl": {
+        "bytes": 154552,
+        "path": "data/donors/orion_hek293t/b_ctrl.npy",
+        "sha256": "e04234cffbe102731cc562e8fb06bddb8ef0644b2af894b8a0ee6ce079ca4984"
+      },
+      "delta": {
+        "bytes": 2776080376,
+        "dtype": "<f4",
+        "path": "data/donors/orion_hek293t/delta.npy",
+        "sha256": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+        "shape": [
+          17977,
+          38606
+        ]
+      },
+      "genes": {
+        "bytes": 392143,
+        "count": 38606,
+        "ordered_sha256": "ebd177c833a5f0582116dc9de2a65f2735cb76a349c0b847c204ab07d503d366",
+        "path": "data/donors/orion_hek293t/genes.txt",
+        "sha256": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e"
+      },
+      "meta": {
+        "bytes": 372,
+        "path": "data/donors/orion_hek293t/meta.json",
+        "sha256": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f"
+      },
+      "provenance_manifest": {
+        "bytes": 4207,
+        "path": "experiments/107-jurkat-high-moi/work/strict-validation/orion_hek293t/donor.json",
+        "sha256": "9ff15ec208e5b8e3f441b83ebcf3a879c2f92cc83e862738862abd7c17ac32f8"
+      },
+      "targets": {
+        "bytes": 114878,
+        "count": 17977,
+        "ordered_sha256": "0b3c0a1b04586604c99318f5e8c014cde83dae6d7fc6cb53624e42e0a2c53281",
+        "path": "data/donors/orion_hek293t/perts.txt",
+        "sha256": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547"
+      }
+    }
+  }
+}

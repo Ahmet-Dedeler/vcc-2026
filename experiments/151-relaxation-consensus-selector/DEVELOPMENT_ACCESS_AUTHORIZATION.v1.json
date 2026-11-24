@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "experiment": "151-relaxation-consensus-selector",
+  "status": "authorized_once",
+  "authorization_scope": "Score exactly one frozen Experiment 151 candidate on the held HCT116-thinned harness, then compare the preregistered 120-target primary subset against the frozen Experiment 150 incumbent and uniform candidate.",
+  "scorer": {
+    "path": "experiments/151-relaxation-consensus-selector/score_candidate.py",
+    "sha256": "ea37ad5decec3c93d2f075771cdf86a7771de3e849c73127a7f14bfe939af9ae"
+  },
+  "target_count": 120,
+  "target_order_sha256": "ecbfb06f75a6c275cd1f06f4ea10a13cf4512ca279ef507b7bc0aca0fbbfa90a",
+  "bindings_sha256": {
+    "experiments/151-relaxation-consensus-selector/PREREGISTRATION.v1.json": "bc27f9461b8bf7b36bb301d31eb0001e1bb9ecb5e56bdff31848881328a5e2b1",
+    "experiments/151-relaxation-consensus-selector/PREREGISTRATION.v1.sha256": "f16350cef3250c9cc4a01b4feace41f8f385b92c6074aa66d3604acfdf379064",
+    "experiments/151-relaxation-consensus-selector/SOURCE_BUILD_AUTHORIZATION.v1.json": "bbb626cf876eebc9b21f6787c221156bf3e46eaf4871747677bd7e0037459d56",
+    "experiments/151-relaxation-consensus-selector/build_candidate.py": "24351f4dc8c2f33eb869effb1b43fe3a51a37c4386a8cfd7255d796c4005c95a",
+    "experiments/151-relaxation-consensus-selector/test_experiment151.py": "1e93c21cb27e7c081aeea1d1e85d0ee33905b208a8c99a4928b2dc5b82921fb4",
+    "experiments/151-relaxation-consensus-selector/work/source-build-v1/build-report.json": "b53d0137d8391c2b9bceea168c69135af758720cc3dff6469f0a430e941edb9f",
+    "experiments/151-relaxation-consensus-selector/work/source-build-v1/selector.json": "3edc8279de7661af0efffaa1f9c37df1207c79c0dde0cc7d8f41cff350abd0dc",
+    "experiments/151-relaxation-consensus-selector/work/source-build-v1/candidate.h5ad": "24f355a7541e1dfa79c8ac0ee8003fe0f6d6eaa9e0376078f6f88c6b11f5c23a",
+    "experiments/150-dual-moment-score-level-hct116/work/scoring-v1/results.json": "3ca2aca1f1858656689d3aace9ea5c9c04dfa2d19f106c096001e6ea846ba010",
+    "experiments/150-dual-moment-score-level-hct116/work/scoring-v1/incumbent/run/results.csv": "3417d9d451ba3fbe7d2f4aa3c110ca1cc79bdb5e7d4cef4d162c2fec3307dc29",
+    "experiments/150-dual-moment-score-level-hct116/work/scoring-v1/candidate/run/results.csv": "e7c59113bebdad6e417b43f6843d9d3012257566ed484a242e557cccf9f53884",
+    "experiments/147-dual-moment-emitter/dual_moment.py": "89dda8f617261f9b4cfb6ba44cb8ee85db41c3c55adf0e46991be7c5b81e5bcd",
+    "experiments/149-dual-moment-hek293t/build_predictions.py": "a8b84bb6fbce9c9cf2eb712c3e437426dc174f450026b53b074f26f0e512859d",
+    "experiments/149-dual-moment-hek293t/score_confirmation.py": "f87413f5d4e986c45a091fbce512c625c0e2d2207c4d88e395c817e38916e1d1",
+    "scripts/make_submission_pm_cd4.py": "7562cf5a16fd751c55ddf248e05f2e4281f907e27be0a5bb9da959d61991b62b",
+    "scripts/run_with_memory_guard.py": "3be02ceaa44ea0c0ed4641827dd9305095255ec6cbacb82d667cefb4f7915198",
+    "data/harness/orion-hct116-thinned.h5ad": "04f98cd764bfa428cae4cd1060e814a327cdcf1a2167e6485d7c57646403b401",
+    "data/harness/orion-hct116-thinned.h5ad.meta.json": "98e0d4577d0133d02e61272ed2d24ac5e75b2bcaa84027a6c2c26cacb5f075ff"
+  },
+  "bootstrap": {
+    "draws": 20000,
+    "seed_vs_incumbent": 15100,
+    "seed_vs_uniform": 15101
+  },
+  "memory_guard": {
+    "max_process_group_rss_gib": 24,
+    "minimum_system_free_percent": 15,
+    "parallel_scorers_forbidden": true
+  },
+  "forbidden": [
+    "change any preregistered selector, lambda, gate, or bootstrap seed",
+    "run more than one cell-eval2 process",
+    "prepare a challenge prediction",
+    "submit to the challenge"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+ "id": "bc-f6800f81-07eb-41fc-9fca-2fc3288d0840",
+ "status": "CREATING",
+ "createdAt": "2026-10-02T12:29:00.181Z",
+ "target": {
+  "autoBranch": true,
+  "autoCreatePr": false,
+  "openAsCursorGithubApp": false,
+  "skipReviewerRequest": false,
+  "branchName": "cloud/605-council-review",
+  "url": "https://cursor.com/agents/bc-f6800f81-07eb-41fc-9fca-2fc3288d0840"
+ }
+}

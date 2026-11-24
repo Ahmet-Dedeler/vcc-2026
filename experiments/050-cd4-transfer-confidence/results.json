@@ -1,0 +1,202 @@
+{
+  "protocol": {
+    "panel_targets_in_comparison": 87,
+    "rows": 261,
+    "conditions": [
+      "Rest",
+      "Stim8hr",
+      "Stim48hr"
+    ],
+    "confidence_features_use_cd4_only": true,
+    "k562_correlation_used_only_as_diagnostic_truth": true
+  },
+  "condition_summary": {
+    "Rest": {
+      "n": 87,
+      "mean_transfer_r": 0.3392197378278257,
+      "median_transfer_r": 0.3298250491624259,
+      "fraction_positive": 1.0,
+      "fraction_above_0_2": 0.8505747126436781
+    },
+    "Stim8hr": {
+      "n": 87,
+      "mean_transfer_r": 0.35721379465945396,
+      "median_transfer_r": 0.3507157230319967,
+      "fraction_positive": 1.0,
+      "fraction_above_0_2": 0.9080459770114943
+    },
+    "Stim48hr": {
+      "n": 87,
+      "mean_transfer_r": 0.35488309057089934,
+      "median_transfer_r": 0.3495285287056038,
+      "fraction_positive": 1.0,
+      "fraction_above_0_2": 0.8620689655172413
+    }
+  },
+  "feature_correlations": {
+    "Rest": {
+      "own_mash_de": {
+        "n": 87,
+        "rho": 0.5003258875675083,
+        "pvalue": 8.033702670766776e-07
+      },
+      "n_downstream": {
+        "n": 87,
+        "rho": 0.41347750874649475,
+        "pvalue": 6.875687439813638e-05
+      },
+      "n_total_de_genes": {
+        "n": 87,
+        "rho": 0.41347750874649475,
+        "pvalue": 6.875687439813638e-05
+      },
+      "donor_correlation_mean": {
+        "n": 31,
+        "rho": 0.12338709677419356,
+        "pvalue": 0.5084243743035574
+      },
+      "n_cells_target": {
+        "n": 87,
+        "rho": -0.1533610669531666,
+        "pvalue": 0.15614063788610322
+      }
+    },
+    "Stim8hr": {
+      "own_mash_de": {
+        "n": 87,
+        "rho": 0.5818404047404131,
+        "pvalue": 3.414528482086889e-09
+      },
+      "n_downstream": {
+        "n": 87,
+        "rho": 0.5974972972437718,
+        "pvalue": 9.998160232774708e-10
+      },
+      "n_total_de_genes": {
+        "n": 87,
+        "rho": 0.5974972972437718,
+        "pvalue": 9.998160232774708e-10
+      },
+      "donor_correlation_mean": {
+        "n": 36,
+        "rho": 0.022136422136422137,
+        "pvalue": 0.89803289705063
+      },
+      "n_cells_target": {
+        "n": 87,
+        "rho": -0.15658703508564153,
+        "pvalue": 0.14751278958278521
+      }
+    },
+    "Stim48hr": {
+      "own_mash_de": {
+        "n": 87,
+        "rho": 0.6150620979974314,
+        "pvalue": 2.3244682608742322e-10
+      },
+      "n_downstream": {
+        "n": 87,
+        "rho": 0.6158171619623286,
+        "pvalue": 2.1787493445505065e-10
+      },
+      "n_total_de_genes": {
+        "n": 87,
+        "rho": 0.6166459898620714,
+        "pvalue": 2.0288879809048366e-10
+      },
+      "donor_correlation_mean": {
+        "n": 38,
+        "rho": 0.21413721413721412,
+        "pvalue": 0.1967139768304346
+      },
+      "n_cells_target": {
+        "n": 87,
+        "rho": -0.20668820454194076,
+        "pvalue": 0.05476061670579648
+      }
+    }
+  },
+  "condition_pairwise_transfer_correlation": {
+    "Rest__Stim8hr": {
+      "n": 87,
+      "rho": 0.9534701465334985,
+      "pvalue": 4.9434844664265386e-46
+    },
+    "Rest__Stim48hr": {
+      "n": 87,
+      "rho": 0.9529780564263322,
+      "pvalue": 7.652079423044944e-46
+    },
+    "Stim8hr__Stim48hr": {
+      "n": 87,
+      "rho": 0.9534154698549243,
+      "pvalue": 5.190596896184365e-46
+    }
+  },
+  "breadth_condition_choice": {
+    "fixed_best_condition": "Stim8hr",
+    "choice_counts": {
+      "Rest": 23,
+      "Stim8hr": 27,
+      "Stim48hr": 37
+    },
+    "fixed_mean_transfer_r": 0.357213794659454,
+    "breadth_selected_mean_transfer_r": 0.35616714220293594,
+    "oracle_mean_transfer_r": 0.3713026345596953,
+    "breadth_vs_fixed": {
+      "mean": -0.001046652456518053,
+      "ci95_low": -0.00605929203612661,
+      "ci95_high": 0.004157729917890555,
+      "positive_probability": 0.34365
+    },
+    "oracle_vs_fixed": {
+      "mean": 0.014088839900241304,
+      "ci95_low": 0.009713811226422769,
+      "ci95_high": 0.01927146658235856,
+      "positive_probability": 1.0
+    }
+  },
+  "panel_coverage": {
+    "existing_count_histogram": {
+      "1": 6,
+      "2": 35,
+      "3": 259
+    },
+    "with_cd4_count_histogram": {
+      "1": 1,
+      "2": 9,
+      "3": 35,
+      "4": 255
+    },
+    "cd4_present_k562_missing": [
+      "ANKRD52",
+      "CAPRIN2",
+      "DLAT",
+      "HEATR6",
+      "MAPK7",
+      "MLKL",
+      "PARP3",
+      "PBLD",
+      "PDK3",
+      "PHF11",
+      "PHF19",
+      "PSMB9",
+      "RAB11FIP5",
+      "SEMA4F",
+      "SLC44A1",
+      "SNN",
+      "SOCS5",
+      "SPATA20",
+      "TAF4",
+      "TBC1D19",
+      "TDRD7",
+      "TESK2",
+      "TMEM104",
+      "TMEM79",
+      "TTBK2",
+      "TXNDC16",
+      "ZC2HC1A"
+    ],
+    "missing_from_all_existing": []
+  }
+}

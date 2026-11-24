@@ -1,0 +1,121 @@
+{
+  "cell_eval2_counts_build_submission_authorized": false,
+  "created_utc": "2026-08-30T22:02:40.967231+00:00",
+  "development_outcome_authorized": false,
+  "implementation": {
+    "experiments/140-batch-matched-controls/PREFREEZE_AMENDMENT_001.json": "7be9584b2118fab4def1f0996bfc559db0b17a9606beac61bff6d2e8c1b5a8ce",
+    "experiments/140-batch-matched-controls/PREFREEZE_AMENDMENT_002.json": "6f68fb9f7383cd6964122e724321204cfa3dac9fcc7ac94b6c51bd129a00be49",
+    "experiments/140-batch-matched-controls/PREFREEZE_AMENDMENT_003.json": "a5ee2b33d4307aa4b382a451033723406fc45a3c85c7ee07417efe5137535958",
+    "experiments/140-batch-matched-controls/PREFREEZE_AMENDMENT_004.json": "6721ae2acc4ef61b7c932127738064c3ad72edc9824bf4444b7270d0ee669d7b",
+    "experiments/140-batch-matched-controls/README.md": "f61c595b15bf4894c98942f915bf1cc009bf6482afcf37d4403bd9e47e8addc9",
+    "experiments/140-batch-matched-controls/preregistered_protocol.json": "e8023179446ae4187457faaaf17a3b7eabfb86f00b59411c317bf060977cd69f",
+    "experiments/140-batch-matched-controls/run.py": "4e1f2d6b3613e5e94e4c670c9f31c27ece32d2866337d8ddb9e1eed275208343",
+    "experiments/140-batch-matched-controls/test_run.py": "3370c3c8d25e92cc7fe08d13aebfc4a92bfe109c647a0930e55b6cd811b81bf7"
+  },
+  "peak_rss_gib": 0.5322418212890625,
+  "plan": {
+    "bootstrap_draws": 20000,
+    "created_before_development_outcome_access": true,
+    "development_targets": 613,
+    "etas": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "files": {
+      "plan-arrays.npz": {
+        "bytes": 15425495,
+        "sha256": "bdd17742d8691ff5174631c11c00c7d3dfb23f51c9e225ca672549608d466d5b"
+      },
+      "source-schema.json": {
+        "bytes": 7087,
+        "sha256": "3586dbca2c6d29bc0187fce090ad9616a3e72a16f4d000c234ca9df8f17ced86"
+      }
+    },
+    "fold_sizes": [
+      123,
+      123,
+      123,
+      122,
+      122
+    ],
+    "maximum_target_block_size": 26,
+    "null_draws_each": 49,
+    "outer_operator_basis": {
+      "k562": {
+        "basis_per_donor_cap": 12000,
+        "donors": [
+          "orion_hct116",
+          "orion_hek293t"
+        ],
+        "post_cap_prune": "data/donors/k562_essential/perts.txt",
+        "row_index_sha256": {
+          "orion_hct116": "8d8001a999dc8270f39051998990e89ac233163d3465943d896690e23d65da36",
+          "orion_hek293t": "40b54949f1626fa5f46d2b96b44e7ec08a46bf238bb42e39549a340cd536c462"
+        },
+        "rows_dropped_after_cap": {
+          "orion_hct116": 1193,
+          "orion_hek293t": 1197
+        },
+        "rows_kept": {
+          "orion_hct116": 10807,
+          "orion_hek293t": 10803
+        },
+        "rows_kept_total": 21610,
+        "seed": 0,
+        "source_rows": {
+          "orion_hct116": 17767,
+          "orion_hek293t": 17977
+        }
+      },
+      "non_k562": {
+        "basis_per_donor_cap": 12000,
+        "donors": [
+          "k562_gwps",
+          "orion_hct116",
+          "orion_hek293t"
+        ],
+        "post_cap_prune": "data/donors/k562_essential/perts.txt",
+        "row_index_sha256": {
+          "k562_gwps": "adf7cf446e9b3633fc05d07b66461a168a33325a8282a57403b092061e42f55a",
+          "orion_hct116": "8d8001a999dc8270f39051998990e89ac233163d3465943d896690e23d65da36",
+          "orion_hek293t": "40b54949f1626fa5f46d2b96b44e7ec08a46bf238bb42e39549a340cd536c462"
+        },
+        "rows_dropped_after_cap": {
+          "k562_gwps": 2003,
+          "orion_hct116": 1193,
+          "orion_hek293t": 1197
+        },
+        "rows_kept": {
+          "k562_gwps": 7784,
+          "orion_hct116": 10807,
+          "orion_hek293t": 10803
+        },
+        "rows_kept_total": 29394,
+        "seed": 0,
+        "source_rows": {
+          "k562_gwps": 9787,
+          "orion_hct116": 17767,
+          "orion_hek293t": 17977
+        }
+      }
+    },
+    "response_genes": 4992,
+    "schema_version": 1,
+    "seeds": {
+      "batch_mixture": 140202611,
+      "bootstrap": 140202612,
+      "target_label": 140202610
+    },
+    "target_blocks": 531,
+    "targets_in_multi_target_blocks": 105,
+    "untouched_test_targets": 410
+  },
+  "plan_manifest_sha256": "2f91872b1318ab7f0ee608600f5acfaaad0397f508e833707e28c2f379e6007c",
+  "preoutcome_work_authorized": true,
+  "protocol_sha256": "e8023179446ae4187457faaaf17a3b7eabfb86f00b59411c317bf060977cd69f",
+  "schema_version": 1,
+  "source_hash_manifest_sha256": "f90695c09735856a2478ab89daa504bbe11d4bbfd0a1cda60cfb2c60915bd90f",
+  "untouched_test_outcome_authorized": false
+}

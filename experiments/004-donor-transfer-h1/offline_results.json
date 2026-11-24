@@ -1,0 +1,44 @@
+[
+  {
+    "variant": "s only (gene-specific)",
+    "raw_mean": 0.06946491192386145,
+    "centered_mean": 0.07266384461156432,
+    "centered_median": 0.061250578736125175,
+    "centered_frac_pos": 1.0
+  },
+  {
+    "variant": "s only + expression gate",
+    "raw_mean": 0.06967665295329387,
+    "centered_mean": 0.07288013309011017,
+    "centered_median": 0.06135868561567878,
+    "centered_frac_pos": 1.0
+  },
+  {
+    "variant": "m only (mean response)",
+    "raw_mean": 0.027721922974363617,
+    "centered_mean": 0.0017537390534851283,
+    "centered_median": 0.0027004690019535546,
+    "centered_frac_pos": 0.6341463414634146
+  },
+  {
+    "variant": "m + s",
+    "raw_mean": 0.0721587769083675,
+    "centered_mean": 0.07288013350391968,
+    "centered_median": 0.06135868560432368,
+    "centered_frac_pos": 1.0
+  },
+  {
+    "variant": "full delta via profile()",
+    "raw_mean": 0.07183366989444183,
+    "centered_mean": 0.07261453453262046,
+    "centered_median": 0.06186110314608959,
+    "centered_frac_pos": 1.0
+  },
+  {
+    "variant": "s only, covered genes",
+    "raw_mean": 0.0909589325243004,
+    "centered_mean": 0.09517633525269237,
+    "centered_median": 0.0824972355044604,
+    "centered_frac_pos": 1.0
+  }
+]

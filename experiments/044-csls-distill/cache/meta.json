@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "train_count": 600,
+  "seed": 44,
+  "donors": [
+    "k562_gwps",
+    "orion_hct116",
+    "orion_hek293t",
+    "rpe1",
+    "nadig_jurkat"
+  ],
+  "master_genes_sha256": "8472db60f3dc3515478e3b9539efe45755772461d00590835314ec3381f4605a",
+  "train_perts_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+  "outer_perts_sha256": "3f5a41d98fc2b4e6e8d3b69dba41b5db1e2d2e44dda230814bb53eb3b97d0ffb"
+}

@@ -1,0 +1,173 @@
+{
+  "expected_support_tables": 32,
+  "input_binding": {
+    "file_inventory_sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca",
+    "manifest_sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74",
+    "provenance_sha256": "0c3277a5ee1fa9b179d5f91683375c7f2a9b5a72dd38c2e00c35df4950a1c722",
+    "raw_archive_sha256": "3c0c5fa8cab2983dfe0fa3b38b31662bb68e191e6dbaf3d03af02a67587a67a9",
+    "raw_hash_recomputed_for_this_run": true
+  },
+  "status": "complete",
+  "support_tables": [
+    {
+      "path": "audit/support/channel01_guides_row_support.tsv.gz",
+      "sha256": "98ebca59da8371918f1842f762ef8136372403b8c2216eb4aa3fc95aa4fc770e",
+      "size_bytes": 625462
+    },
+    {
+      "path": "audit/support/channel01_labels_row_support.tsv.gz",
+      "sha256": "edc865d11ce1cbfb8c4c585483a8d7f95e1048431a746eaaaf7ad5144482ebcb",
+      "size_bytes": 156
+    },
+    {
+      "path": "audit/support/channel02_guides_row_support.tsv.gz",
+      "sha256": "2a8857b9ae332c33f81661252910ce4a56c2f41fedf5a83d55334beea50766e3",
+      "size_bytes": 619271
+    },
+    {
+      "path": "audit/support/channel02_labels_row_support.tsv.gz",
+      "sha256": "e767eb3bcf1069bc812c2b62121de37cae365f747a543ff1f6c4b8bd43a29a9c",
+      "size_bytes": 155
+    },
+    {
+      "path": "audit/support/channel03_guides_row_support.tsv.gz",
+      "sha256": "4ec4d7fd9f22a0620d91def3938b64217aee64bf38684d28459508f2406a193e",
+      "size_bytes": 622742
+    },
+    {
+      "path": "audit/support/channel03_labels_row_support.tsv.gz",
+      "sha256": "404f34d68ae810de4b6cfa6d3a4df4c007033d836561be11eb43d52181aabf2f",
+      "size_bytes": 153
+    },
+    {
+      "path": "audit/support/channel04_guides_row_support.tsv.gz",
+      "sha256": "728dd24e06806657c047e0c1816f01906367c887721652ba1bd33d88b1d39a32",
+      "size_bytes": 619086
+    },
+    {
+      "path": "audit/support/channel04_labels_row_support.tsv.gz",
+      "sha256": "5eede8a7c2793230dccba420ce8658ab308b8a472af63875b1c966bf7aa15138",
+      "size_bytes": 155
+    },
+    {
+      "path": "audit/support/channel05_guides_row_support.tsv.gz",
+      "sha256": "94f1f9b67bcdb4682d5c265fb59e8de94ed157a07dbf07e042b38eb946d9fcf5",
+      "size_bytes": 619438
+    },
+    {
+      "path": "audit/support/channel05_labels_row_support.tsv.gz",
+      "sha256": "3f5be10178141e88c0cf01b555c14452bd327267d374caba4547881d66fab0b0",
+      "size_bytes": 156
+    },
+    {
+      "path": "audit/support/channel06_guides_row_support.tsv.gz",
+      "sha256": "0f00fafe5bad65c16e0d92c4e833e39113eecc6846c296aef5c63cca24f8b9a4",
+      "size_bytes": 618031
+    },
+    {
+      "path": "audit/support/channel06_labels_row_support.tsv.gz",
+      "sha256": "137c0cb4f01e5e091515d95d711aad38f2e90aef43b8f2f536060c5ca2bdaf85",
+      "size_bytes": 154
+    },
+    {
+      "path": "audit/support/channel07_guides_row_support.tsv.gz",
+      "sha256": "09f41ea8ffc60186e52b97997dbc77cf8510d9906b74461dd22331b98224b704",
+      "size_bytes": 632134
+    },
+    {
+      "path": "audit/support/channel07_labels_row_support.tsv.gz",
+      "sha256": "7bc9ef4b9960779f2a7b9e8195a54e852e696df08468df8e94e1565c7cd65086",
+      "size_bytes": 155
+    },
+    {
+      "path": "audit/support/channel08_guides_row_support.tsv.gz",
+      "sha256": "66ec6a00e9c58c788953d27f6a25273efeacb20571d5cf38714585dfc9cfd1ea",
+      "size_bytes": 634004
+    },
+    {
+      "path": "audit/support/channel08_labels_row_support.tsv.gz",
+      "sha256": "4e001cf0d357bb28ef26e2fb9b0670b158ddc5b87edd527c1994f2dfd21eff2a",
+      "size_bytes": 153
+    },
+    {
+      "path": "audit/support/channel09_guides_row_support.tsv.gz",
+      "sha256": "06f7c6d95def67c341d44f788114e17d6d8e0155fa009c541e8eb23d7ccf3cfa",
+      "size_bytes": 620665
+    },
+    {
+      "path": "audit/support/channel09_labels_row_support.tsv.gz",
+      "sha256": "c96fc981ebd6f93960409b4d43762d2244b948b1f855121e89e445ebc035b14f",
+      "size_bytes": 154
+    },
+    {
+      "path": "audit/support/channel10_guides_row_support.tsv.gz",
+      "sha256": "09d49fb6d5bb52e40bf30af03c4d463e629798d688e0320f62f7205d6a511446",
+      "size_bytes": 626699
+    },
+    {
+      "path": "audit/support/channel10_labels_row_support.tsv.gz",
+      "sha256": "69bd9b17c9b82ecd3aff23a94fc4f7a1de40d23154469dbca0335d5b5e3e0e53",
+      "size_bytes": 155
+    },
+    {
+      "path": "audit/support/channel11_guides_row_support.tsv.gz",
+      "sha256": "a3f8c966fd0e2a01e1dd72cc04093eaafa8ec1e018b9b928154080bc4eb50a8e",
+      "size_bytes": 619583
+    },
+    {
+      "path": "audit/support/channel11_labels_row_support.tsv.gz",
+      "sha256": "c8ee9e0e838462c25f0c746b46002551116bc7043b51655c3dfbe088231502ae",
+      "size_bytes": 155
+    },
+    {
+      "path": "audit/support/channel12_guides_row_support.tsv.gz",
+      "sha256": "db1560c67453bbda263e4b48ccd115605305103f1ce8e5bc4968c9d28e45ae3a",
+      "size_bytes": 622424
+    },
+    {
+      "path": "audit/support/channel12_labels_row_support.tsv.gz",
+      "sha256": "79dfdb9344b4e4a87e218f89f4e4e3effb0cbd5f45d8be64baee1bcc456f5190",
+      "size_bytes": 156
+    },
+    {
+      "path": "audit/support/channel13_guides_row_support.tsv.gz",
+      "sha256": "144f752a9ecf0c66f40c2c17a2f57732ee50c4503201e6050f0152a99dbd230a",
+      "size_bytes": 626503
+    },
+    {
+      "path": "audit/support/channel13_labels_row_support.tsv.gz",
+      "sha256": "a760ad2323d02c30639b0f68a987f6427ebfac6c716c4b1e503d2966415b87c6",
+      "size_bytes": 156
+    },
+    {
+      "path": "audit/support/channel14_guides_row_support.tsv.gz",
+      "sha256": "317ff9978f616db4afceb69a429d438623b243bf981bee6ce921a563353f08d4",
+      "size_bytes": 625569
+    },
+    {
+      "path": "audit/support/channel14_labels_row_support.tsv.gz",
+      "sha256": "fc0fc661af70916fea3b298e29e247ce441c65ce796c5aa5ebeac394913e45d8",
+      "size_bytes": 155
+    },
+    {
+      "path": "audit/support/channel15_guides_row_support.tsv.gz",
+      "sha256": "3c8545eedac1a3c2547f7ff049a6b028f95a78fd75138c1af85db5b579ba2cd7",
+      "size_bytes": 622106
+    },
+    {
+      "path": "audit/support/channel15_labels_row_support.tsv.gz",
+      "sha256": "dd65bbdb7d80e5d57e8605c2a7f967a875e4c2c8e9320aa544590e8f9fe435cd",
+      "size_bytes": 153
+    },
+    {
+      "path": "audit/support/channel16_guides_row_support.tsv.gz",
+      "sha256": "cf5dbcb956f4dc73b4df35b51411ca33ea1ca7fc9b52a7e1b79d845834e851ce",
+      "size_bytes": 630818
+    },
+    {
+      "path": "audit/support/channel16_labels_row_support.tsv.gz",
+      "sha256": "cb6288b308d022b7d40d2b9e251404d301924138b57aa4928c5fbb7d57a02e14",
+      "size_bytes": 157
+    }
+  ]
+}

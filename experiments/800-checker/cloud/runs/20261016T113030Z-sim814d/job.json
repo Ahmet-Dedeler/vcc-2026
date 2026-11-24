@@ -1,0 +1,12 @@
+{
+ "name": "sim814d",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "experiments/814-panel-rule/work/run1",
+  "experiments/814-panel-rule/work/flags"
+ ],
+ "collect": [
+  "experiments/814-panel-rule/work/sim2"
+ ]
+}

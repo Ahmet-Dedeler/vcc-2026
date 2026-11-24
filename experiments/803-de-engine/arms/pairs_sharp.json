@@ -1,0 +1,108 @@
+{
+ "pairs": [
+  {
+   "name": "P2g \u2212 a (pre)",
+   "arm": "shp2gpre",
+   "base": "sh175pre",
+   "board": {
+    "pds": 0.001587,
+    "mse": -0.003739,
+    "nmae": 0.00012,
+    "fid": 4e-06,
+    "reach": -0.000836,
+    "jac": -1.1e-05,
+    "overall": 0.0010364
+   },
+   "board_pair": "479p2g \u2212 446bj2 (446bj2 = scalar q 1.75, pre-zs)"
+  },
+  {
+   "name": "S_P2 \u2212 a (pre)",
+   "arm": "shsp2pre",
+   "base": "sh175pre",
+   "board": {
+    "pds": -0.001033,
+    "mse": -0.000287,
+    "nmae": 0.001798,
+    "fid": -0.0,
+    "reach": 0.000777,
+    "jac": -1.7e-05,
+    "overall": -0.0007141
+   },
+   "board_pair": "479sp2 \u2212 446bj2"
+  },
+  {
+   "name": "S_P2 \u2212 P2g (pre)",
+   "arm": "shsp2pre",
+   "base": "shp2gpre",
+   "board": {
+    "pds": -0.00262,
+    "mse": 0.003452,
+    "nmae": 0.0016779999999999998,
+    "fid": -4e-06,
+    "reach": 0.001613,
+    "jac": -6e-06,
+    "overall": -0.0017504999999999999
+   },
+   "board_pair": "479sp2 \u2212 479p2g"
+  },
+  {
+   "name": "a \u2212 unsharpened (pre, info)",
+   "arm": "sh175pre",
+   "base": "shnooppre",
+   "board": null,
+   "board_pair": "none"
+  },
+  {
+   "name": "P2g \u2212 a (zs)",
+   "arm": "shp2gzs",
+   "base": "sh175zs",
+   "board": {
+    "pds": 0.001587,
+    "mse": -0.003739,
+    "nmae": 0.00012,
+    "fid": 4e-06,
+    "reach": -0.000836,
+    "jac": -1.1e-05,
+    "overall": 0.0010364
+   },
+   "board_pair": "479p2g \u2212 446bj2 (446bj2 = scalar q 1.75, pre-zs)"
+  },
+  {
+   "name": "S_P2 \u2212 a (zs)",
+   "arm": "shsp2zs",
+   "base": "sh175zs",
+   "board": {
+    "pds": -0.001033,
+    "mse": -0.000287,
+    "nmae": 0.001798,
+    "fid": -0.0,
+    "reach": 0.000777,
+    "jac": -1.7e-05,
+    "overall": -0.0007141
+   },
+   "board_pair": "479sp2 \u2212 446bj2"
+  },
+  {
+   "name": "S_P2 \u2212 P2g (zs)",
+   "arm": "shsp2zs",
+   "base": "shp2gzs",
+   "board": {
+    "pds": -0.00262,
+    "mse": 0.003452,
+    "nmae": 0.0016779999999999998,
+    "fid": -4e-06,
+    "reach": 0.001613,
+    "jac": -6e-06,
+    "overall": -0.0017504999999999999
+   },
+   "board_pair": "479sp2 \u2212 479p2g"
+  },
+  {
+   "name": "a \u2212 unsharpened (zs, info)",
+   "arm": "sh175zs",
+   "base": "shnoopzs",
+   "board": null,
+   "board_pair": "none"
+  }
+ ]
+}

@@ -1,0 +1,154 @@
+{
+  "schema_version": 2,
+  "status": "corrected_interface_only_not_authorized",
+  "supersedes_for_development_only": "DEVELOPMENT_INTERFACE.v1.json",
+  "source_only_chain_unchanged": true,
+  "required_prefreeze_authorization": "DEVELOPMENT_PREFREEZE_AUTHORIZATION.v1.json",
+  "required_development_authorization": "DEVELOPMENT_ACCESS_AUTHORIZATION.v1.json",
+  "required_bindings": [
+    "preregistered_protocol.json",
+    "PREFREEZE_AMENDMENT_001.json",
+    "PREFREEZE_AMENDMENT_002.json",
+    "PREFREEZE_AMENDMENT_003.json",
+    "PREFREEZE_AMENDMENT_004.json",
+    "PREFREEZE_AMENDMENT_005.json",
+    "PREFREEZE_AMENDMENT_006.json",
+    "DEVELOPMENT_PREFREEZE_AMENDMENT_001.json",
+    "DEVELOPMENT_INTERFACE.v1.json",
+    "DEVELOPMENT_INTERFACE.v2.json",
+    "SOURCE_ONLY_FREEZE_AUTHORIZATION.v6.json",
+    "work/preregistered-plan-v2/plan-manifest.json",
+    "work/preoutcome-freeze-v4/PREOUTCOME_AUTHORIZATION.v1.json",
+    "work/source-build-v4/k562_gwps/artifact-manifest.json",
+    "work/source-build-v4/orion_hct116/artifact-manifest.json",
+    "work/source-build-v4/orion_hek293t/artifact-manifest.json",
+    "work/source-evaluation-v4/k562_gwps/artifact-manifest.json",
+    "work/source-evaluation-v4/orion_hct116/artifact-manifest.json",
+    "work/source-evaluation-v4/orion_hek293t/artifact-manifest.json",
+    "work/source-gate-v4/artifact-manifest.json",
+    "experiments/140-batch-matched-controls/work/preregistered-plan-v2/plan-arrays.npz",
+    "experiments/140-batch-matched-controls/work/identity-reproduction-v5/artifact-manifest.json",
+    "experiments/140-batch-matched-controls/SOURCE_HASH_MANIFEST.v5.json",
+    "experiments/061-perturbmatch-hct-count/build_candidate.py",
+    "scripts/make_submission_pm_cd4.py",
+    "data/external/perturbmatch/delta.npy",
+    "data/external/perturbmatch/genes.txt",
+    "data/external/perturbmatch/perts.txt",
+    "data/external/perturbmatch/meta.json",
+    "develop.py",
+    "test_develop.py"
+  ],
+  "prefreeze_prepare": {
+    "development_outcomes_authorized": false,
+    "sealed_410_test_authorized": false,
+    "output": "work/development-preoutcome-v1",
+    "atomic_no_overwrite": true,
+    "artifacts": {
+      "plan": "development-plan.npz",
+      "geometry_k562": "geometry-k562.npz",
+      "geometry_non_k562": "geometry-non_k562.npz",
+      "target_pairing_null_weights_k562": "target-pairing-null-weights-k562.npz",
+      "target_pairing_null_weights_non_k562": "target-pairing-null-weights-non_k562.npz",
+      "donor_assignment_null_weights_k562": "donor-assignment-null-weights-k562.npz",
+      "donor_assignment_null_weights_non_k562": "donor-assignment-null-weights-non_k562.npz",
+      "report": "result.json",
+      "manifest": "artifact-manifest.json"
+    },
+    "fold_algorithm": {
+      "blocks_source": "Experiment 140 development_blocks",
+      "sort": "descending block size then ascending block id",
+      "assignment": "smallest current fold load then ascending fold id",
+      "expected_sizes": [
+        123,
+        123,
+        123,
+        122,
+        122
+      ],
+      "split_blocks": 0
+    },
+    "eta_grid": [
+      0.0,
+      0.25,
+      0.5
+    ],
+    "null_draws": 49,
+    "bootstrap_draws": 20000
+  },
+  "development": {
+    "development_613_authorized_only_after_additive_authorization": true,
+    "untouched_410_test_authorized": false,
+    "count_generation_authorized": false,
+    "cell_eval2_authorized": false,
+    "challenge_build_authorized": false,
+    "submission_authorized": false,
+    "truth_loader": "Experiment 132 Bank.from_root and load_effect_rows on selection_targets.txt plus response_genes.txt only",
+    "truth_datasets": [
+      "k562_gwps",
+      "k562_essential",
+      "rpe1",
+      "nadig_jurkat"
+    ],
+    "metrics": [
+      "pds",
+      "signed_credit"
+    ],
+    "selection": {
+      "eligibility_epsilon": 1e-12,
+      "all_family_means_nonnegative_for_both_metrics": true,
+      "lexicographic_order": [
+        "macro_pds",
+        "macro_signed_credit",
+        "smaller_eta"
+      ],
+      "inner_gallery_only": true,
+      "held_complete_613_gallery": true,
+      "final_nonidentity_means_eta_gt_zero": true
+    },
+    "nulls": {
+      "families": [
+        "target_pairing",
+        "donor_assignment"
+      ],
+      "draws_each": 49,
+      "repeat_nested_selection": true,
+      "repeat_fixed_selection": true,
+      "quantile_method": "linear",
+      "strictly_above_p95": true,
+      "add_one_p_minimum_resolution": 0.02
+    },
+    "ancestry_controls": [
+      "cell_count",
+      "total_umi",
+      "occupied_batch_count",
+      "pooled_effect_norm"
+    ],
+    "ancestry_control_selection_independent": true,
+    "promotion_gates": {
+      "final_eta_gt_zero": true,
+      "all_15_fold_family_cells_nonnegative_for_both_metrics": true,
+      "nested_macro_pds_minimum": 0.003,
+      "nested_macro_signed_credit_minimum": 0.003,
+      "fixed_macro_pds_minimum": 0.003,
+      "fixed_macro_signed_credit_minimum": 0.003,
+      "nested_and_fixed_block_bootstrap_lower_95_positive_both_metrics": true,
+      "nested_and_fixed_above_both_null_p95_both_metrics": true,
+      "nested_and_fixed_reliability_minus_each_control_pds_minimum": 0.001,
+      "nested_and_fixed_reliability_minus_each_control_signed_credit_strictly_positive": true,
+      "nested_and_fixed_reliability_minus_each_control_block_bootstrap_lower_95_positive_both_metrics": true,
+      "nested_and_fixed_family_and_target_block_positive_gain_concentration_maximum": 0.5
+    }
+  },
+  "forbidden": {
+    "modify_source_bound_run_protocol_readme_amendments_or_interface_v1": true,
+    "experiment_132_test_targets_path_or_values": true,
+    "reserved_confirmation_expression": true,
+    "operator_refit": true,
+    "post_outcome_retuning": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "challenge_build": true,
+    "submission": true,
+    "writes_outside_experiment_142": true
+  }
+}

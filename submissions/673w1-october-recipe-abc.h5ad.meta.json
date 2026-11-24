@@ -1,0 +1,1487 @@
+{
+ "config": {
+  "alpha": 0.982,
+  "beta": 0.0,
+  "bulk_ctx_scale": {
+   "D": 1.0501,
+   "E": 1.0927,
+   "F": 1.107
+  },
+  "bulk_load": "dump_h1x25_cd4x1_s0.25.npz",
+  "bulk_load_sha256": "a5098c63f71600e90eb640242bd4121f3b6af1cf21cc469aa8281cf2d934684c",
+  "bulk_sharpen_pt": {
+   "carried_key": "lodo_lo0.5_pct_def",
+   "carried_key_sha256": "ece4d6b40cb58149bc886709f3186a4e561b050a646972283a290265433dee73",
+   "counts": [
+    99,
+    103,
+    98
+   ],
+   "edges": [
+    0.1964980486376067,
+    0.6382141691258306
+   ],
+   "floor_to_low": 99,
+   "key_ratio_c": 0.39299609727521095,
+   "key_ratio_maxdev": 7.771561172376096e-15,
+   "mode": "tercilec",
+   "moved_vs_tercile": {
+    "AKAP1": [
+     2,
+     1
+    ],
+    "PIM2": [
+     0,
+     1
+    ],
+    "SLC25A13": [
+     2,
+     1
+    ]
+   },
+   "n_carried": 294,
+   "noncarried_to_mid": 6,
+   "nonfinite": 0,
+   "q": [
+    2.5,
+    2.0,
+    1.75
+   ],
+   "tie_to_mid": 99
+  },
+  "cd4_conditions": [
+   "cd4_rest",
+   "cd4_stim8hr",
+   "cd4_stim48hr"
+  ],
+  "cd4_deflate_basis": "V5_abc",
+  "cd4_fraction": 0.05,
+  "cd4_mode": "gene_norm",
+  "cd4_partial_g": 0.5,
+  "cd4_sizing": "carrying",
+  "cd4_target_f": 0.34,
+  "cd4_target_g": 0.3443655278649641,
+  "cd4_target_policy": "complete mean3 only",
+  "cells_per_target_context": 400,
+  "contexts": [
+   "D",
+   "E",
+   "F"
+  ],
+  "de_dnmag": {
+   "module_sha256": "b9d6cfcf17ad783c1ea2607f95366173a0fc1f7920c4104604f9ee925ac55c87",
+   "variant": "d_m200",
+   "where": "after zs and 630's UP pass; called DOWN genes' counts top carrier -> ballast; totals, libraries exact; |dAUC| <= 1e-4 per gene; 0 call flips"
+  },
+  "de_mag": {
+   "module_sha256": "ed6728327a15f039d89b05bfc8f65281f138242ea914544116d54ec99ecde638",
+   "variant": "dn_k250_zs",
+   "where": "after ballast_rows and the zero repair; carriers only; zero-sum between library classes inside each cell's control interval (evaluator-order control block)"
+  },
+  "de_mde": {
+   "c": 0.1,
+   "cap": 0.1,
+   "coarse": true,
+   "law": "min(c/sqrt(ref_lin*median_lib/1e6), cap)",
+   "min_count": 0.3,
+   "scope": "all"
+  },
+  "de_mde_sign": {
+   "source": "clean4",
+   "tau": 0.05
+  },
+  "de_sign_classes": "equal thirds at the context control-library q25/q50/q75",
+  "de_sign_emitter_sha256": "0f56209d57e8385abd08a7a15692ae3241b9373b436b4921546e546d571e5876",
+  "de_sign_prior": "clean4q80",
+  "de_sign_prior_sha256": "7e532f84a2425176a4582a2e42e458bc3fd25bc3267f890b27a530565df5936e",
+  "de_sign_protect_q": 0.8,
+  "de_sign_shrink_floor": 0.002,
+  "de_uprn": {
+   "module_sha256": "7e6b3e52e2ad374b7b6e21e92327fcf65771433693eb3846c09c0189f3f2959f",
+   "variant": "b_k100_q20r3p10",
+   "where": "after the zs pass; one promoted carrier per uncalled UP gene fed from the ballast rows; totals, libraries exact; |dAUC| <= 1e-4 per gene; 0 call flips"
+  },
+  "de_zero_repair": {
+   "floor_log2": -5.0,
+   "where": "after ballast_rows; carriers only; paid by each cell's largest sub-gate gene"
+  },
+  "dispersion_argument": 0.1,
+  "donor_weights": {
+   "k562_gwps": 1.0,
+   "orion_hct116": 1.0,
+   "orion_hek293t": 1.0
+  },
+  "donors": [
+   "k562_gwps",
+   "orion_hct116",
+   "orion_hek293t"
+  ],
+  "effect_scale": 1.0,
+  "emission": "quasi exact-total",
+  "emission_seed": 1000003,
+  "emitter": "rc_callset",
+  "expect_contexts": "D,E,F",
+  "gate_unexpressed": true,
+  "genes": 18533,
+  "h1_union_g": 0.28,
+  "h1_union_sizing_rule": "median over carrying rows",
+  "h1_union_sources": [
+   "gse295214_h1",
+   "h1_2025"
+  ],
+  "keep_key": "effect",
+  "keep_spread": 0.25,
+  "keep_top": 8000,
+  "keep_top_frac": null,
+  "library_pick_seed": 0,
+  "min_cpm": 10.0,
+  "normrel_exp": -1.5,
+  "normrel_mode": "cap",
+  "overdispersion": 4.0,
+  "pert_scale": "wshare_lo0.3_hi3_def",
+  "pert_scale_ballast": {
+   "kmax": 16,
+   "lb": 995000
+  },
+  "pert_scale_sha256": "d7f76a22f62ad6991d7220ce8a65218db38b2d71dcfe3c3781ec6a8f70409e0e",
+  "perturbmatch_blend": 0.5,
+  "perturbmatch_target_policy": "replace K562 slot only when K562 and PerturbMatch both support the target",
+  "rc_callset_cpm": 2200,
+  "rc_callset_head": 400,
+  "rc_callset_z_cap": 1.9,
+  "rc_jitter_seed_base": 1000,
+  "rc_key": "gated_effect",
+  "rc_scorer_min_cpm": 5.0,
+  "rc_sign_policy": "abs",
+  "resample_invert": null,
+  "resample_x": null,
+  "sameline": {
+   "contexts": {
+    "D": {
+     "covered_targets": 0,
+     "programme_default": false,
+     "programme_down_frac": 0.8408244752603464,
+     "pt": false,
+     "rows_changed": 0,
+     "w": 0.5
+    }
+   },
+   "path": "~/Code/virtual-cell-challenge-2026/experiments/673-h1x25-abc/work/run/sameline.npz",
+   "prog": false,
+   "pt": false,
+   "sha256": "21a19d5e0fccfad0bc7db01ff26c2cacae1ad97ee5c8cd7261f4b321069f4e52",
+   "w": 0.5
+  },
+  "seed": 0,
+  "shrink_gamma": null,
+  "shrink_key": "none",
+  "shrink_pert_floor": null,
+  "shrink_pert_gamma": null,
+  "shrink_pert_key": "none",
+  "shrink_pert_missing": null,
+  "shrink_rank_scale": 2000.0,
+  "shrink_toward": null,
+  "spread": 0.25,
+  "spread_hi": 0.6,
+  "spread_lo": 0.0,
+  "spread_map": "block",
+  "tail_spread": 1.0,
+  "targets": 300,
+  "whiten_axis": "union",
+  "whiten_gamma": 0.65,
+  "whiten_lambda": 0.0,
+  "whiten_renorm": "candidate-specific on-axis preserve, as v9",
+  "whitener_id": "union_pruned_def"
+ },
+ "donor_coverage": {
+  "any": 1.0,
+  "k562_gwps": 0.8966666666666666,
+  "orion_hct116": 0.9666666666666667,
+  "orion_hek293t": 0.98
+ },
+ "effects": {
+  "baseline_pre_sha256": "b2522cc4337389bebc482bfed9f7a8f2ce9d993f16687e246ee495933c5b9f34",
+  "bulk_load": {
+   "dump_env": {
+    "VCC_ALPHA": "0.982",
+    "VCC_BULK_DUMP": "experiments/673-h1x25-abc/work/run/dump_h1x25_cd4x1_s0.25.npz",
+    "VCC_BULK_SHARPEN_Q": "1.75",
+    "VCC_CD4_DEFLATE_BASIS": "V5_abc",
+    "VCC_CD4_PARTIAL_G": "0.5",
+    "VCC_CD4_SIZING": "carrying",
+    "VCC_CD4_TARGET_F": "0.34",
+    "VCC_CD4_TARGET_G": "0.3443655278649641",
+    "VCC_DE_MDE": "0.1,0.1,0.3,coarse",
+    "VCC_DE_SIGN_PRIOR": "clean4q80",
+    "VCC_DE_ZERO_REPAIR": "-5",
+    "VCC_H1_UNION_G": "0.7",
+    "VCC_NORMREL_EXP": "-1.5",
+    "VCC_NORMREL_MODE": "cap",
+    "VCC_PERT_SCALE": "lodo_lo0.5_pct_def",
+    "VCC_PERT_SCALE_BALLAST": "1"
+   },
+   "max_abs_diff_vs_own_bulk": 1.1234780878597754,
+   "path": "experiments/673-h1x25-abc/work/run/dump_h1x25_cd4x1_s0.25.npz",
+   "sha256": "a5098c63f71600e90eb640242bd4121f3b6af1cf21cc469aa8281cf2d934684c"
+  },
+  "candidate_pre_sha256": "571be04401b79f87cfd7022758c081634f2f5f54af41da2363909fb5c4027dee",
+  "cd4": {
+   "conditions": [
+    "cd4_rest",
+    "cd4_stim8hr",
+    "cd4_stim48hr"
+   ],
+   "deflation": {
+    "basis": "V5_abc",
+    "basis_path": "data/donors/cd4_deflation_basis/V5_abc.npz",
+    "basis_sha256": "ba7ade3fc4f59de5c2de5d8bf270f243ab8e8ddfd0728be9e2c8c71c9b18122b",
+    "basis_u_k_sha256": "f06e0262cec2affb6c0594d2cebf8285888fd36ed73b518d514c7f0129b74e4c",
+    "basis_v_sha256": "dabf88f7f95ffc4dac109de640ad29b943773ec4e45c5ddb2a4231b0003cce61",
+    "captured_frac_of_centred": 0.19823595471029617,
+    "centred_energy_frac_of_raw": 0.9994705295738762,
+    "energy_removed_frac": 0.19866046506100588,
+    "gene_axis_verified": true,
+    "k": 5,
+    "mode": "pinned",
+    "n_carried": 291,
+    "n_genes": 18533,
+    "orthonormality_err": 3.9968028886505635e-15,
+    "own_top_k_energy_frac_of_centred": 0.19823595471029556,
+    "provenance": {
+     "date": "2026-09-04",
+     "experiment": "251-pinned-basis",
+     "fitted_on": "A/B/C (data/challenge, panel vcc2026-val-1): 249's staged production CD4 residual, 300 rows, 291 carried (target_condition_count > 0), 276 complete",
+     "source": {
+      "gene_votes_sha256": "1e95fb5c26b7668c04556185ad7a79ffa32ab49c5993c3e794a986c702ab7390",
+      "mean_effect_sha256": "2f1e23a39b0c016a792056015cf84599456c775d1095b150c0fd9f52504ffc97",
+      "n_carried": 291,
+      "n_complete": 276,
+      "n_rows": 300,
+      "path": "experiments/249-cd4-deflate/work/stage/cd4-off.npz",
+      "sha256": "3a99dd3b37bf356ab2b99cb15c3b809b551ae7d0c315c24727f5dd84a24b894c",
+      "target_condition_count_sha256": "485d77f0723c9e6aec8733028b2d6d304f2ad74b30bf173c8ed363427e9b8cd0",
+      "what": "the CD4 residual as scripts/make_submission_pm_cd4.py holds it BEFORE deflation (prepare_frozen_cd4 -> freeze_complete_mean3), staged by 249 (stage249.py, builder 2d63b979...) at VCC_ALPHA=0.982 VCC_CD4_TARGET_F=0.34 VCC_H1_UNION_G=0.28"
+     }
+    }
+   },
+   "enabled": true,
+   "fraction": 0.34321387302404327,
+   "fully_supported_targets": 276,
+   "incomplete_targets_preserved_before_global_scale": 24,
+   "mode": "gene_norm",
+   "panel_residual_nonzero_entries": 0,
+   "post_add_preserve": {
+    "baseline_output_median_norm": 4.163705464459607,
+    "candidate_pre_preserve_median_norm": 4.601410280640186,
+    "fraction": 0.34321387302404327,
+    "post_add_global_preserve_scale": 0.9048759424861192
+   },
+   "residual_frame": {
+    "carrying_rows": 276,
+    "coverage_frac": 0.92,
+    "definition": "median row norm of the added residual over the rows it CARRIES, divided by the median row norm of the whitened base over all rows (experiment 218 section 7.1)",
+    "delivered_carrying_row_dose_x_base": 0.3443655278649641,
+    "fraction_source": "VCC_CD4_TARGET_G",
+    "g_per_unit_fraction": 1.0033555020103753,
+    "legacy_all_rows_f_per_unit_fraction": 0.9822600326165798,
+    "legacy_all_rows_rule_would_solve": 0.3461405215626006,
+    "legacy_target_f": 0.34,
+    "overdose_factor_all_rows_rule": 1.0214764611134597,
+    "residual_median_row_norm_over_all_rows": 4.2162920214222215,
+    "residual_median_row_norm_over_carrying_rows": 4.306843053063286,
+    "shipped_median_rule_would_solve": 0.3505848924216439,
+    "sizing_rule": "carrying",
+    "solved_fraction": 0.34321387302404327,
+    "target_g_requested": 0.3443655278649641,
+    "whitened_base_median_row_norm": 4.292439762809763
+   },
+   "supported_entries": 2712528,
+   "target_condition_count_histogram": {
+    "0": 9,
+    "1": 4,
+    "2": 11,
+    "3": 276
+   }
+  },
+  "cd4_partial": {
+   "carrying_rows": 15,
+   "conditions": [
+    "cd4_rest",
+    "cd4_stim8hr",
+    "cd4_stim48hr"
+   ],
+   "median_complete_row_norm": 4.522043409698855,
+   "merged_add": true,
+   "merged_preserve": {
+    "baseline_output_median_norm": 4.163705464459607,
+    "candidate_pre_preserve_median_norm": 4.601410280640186,
+    "fraction": 1.0,
+    "post_add_global_preserve_scale": 0.9048759424861192
+   },
+   "mode": "cd4_partial",
+   "panel_residual_nonzero_entries": 0,
+   "residual_frame": {
+    "applied_fraction": 0.16782347281583834,
+    "carrying_rows": 15,
+    "coverage_frac": 0.05,
+    "definition": "median row norm of the added residual over the rows it CARRIES, divided by the median row norm of the whitened base over all rows (experiment 218 section 7.1)",
+    "entries_outside_cd4_support": 147420,
+    "g_per_unit_fraction": 2.979321018750915,
+    "residual_median_row_norm_over_all_rows": 0.0,
+    "residual_median_row_norm_over_carrying_rows": 12.788556007061318,
+    "shipped_median_rule_would_solve": 0.0,
+    "solved_fraction": 0.16782347281583834,
+    "target_g_requested": 0.5,
+    "targets_outside_cd4_support": 0,
+    "whitened_base_median_row_norm": 4.292439762809763
+   },
+   "rows": 15,
+   "rows_one_condition": 4,
+   "rows_two_conditions": 11,
+   "rule": "rows with target_condition_count in {1, 2} of the SAME prepare_cd4_mean object the complete-row residual is frozen from (production's `complete mean3 only` zeroes them); effect = mean over the conditions that carry the row, gene_norm, the banks' own rescale; no re-normalisation (246 section 3.7, lib246.cd4_partial equalise=False)",
+   "sizing_rule": "median over CARRYING rows (coverage-aware)",
+   "supported_entries": 147420,
+   "target_condition_count_histogram": {
+    "0": 285,
+    "1": 4,
+    "2": 11
+   },
+   "target_g": 0.5
+  },
+  "final_sha256": "ef12a9d68213001370dcadd48900db11e0d7bf3d702f542962675e070a6eb1af",
+  "h1_union": {
+   "carrying_targets": 77,
+   "merged_add": true,
+   "merged_preserve": {
+    "baseline_output_median_norm": 4.163705464459607,
+    "candidate_pre_preserve_median_norm": 4.601410280640186,
+    "fraction": 1.0,
+    "post_add_global_preserve_scale": 0.9048759424861192
+   },
+   "mode": "union:gene_norm:gse295214_h1+gene_norm:h1_2025",
+   "panel_residual_nonzero_entries": 0,
+   "residual_frame": {
+    "applied_fraction": 0.1949392841211579,
+    "carrying_rows": 77,
+    "coverage_frac": 0.25666666666666665,
+    "definition": "median row norm of the added residual over the rows it CARRIES, divided by the median row norm of the whitened base over all rows (experiment 218 section 7.1)",
+    "entries_outside_cd4_support": 740065,
+    "g_per_unit_fraction": 1.436344661171401,
+    "residual_median_row_norm_over_all_rows": 0.0,
+    "residual_median_row_norm_over_carrying_rows": 6.1654229367116375,
+    "shipped_median_rule_would_solve": 0.0,
+    "solved_fraction": 0.1949392841211579,
+    "target_g_requested": 0.28,
+    "targets_outside_cd4_support": 1,
+    "whitened_base_median_row_norm": 4.292439762809763
+   },
+   "sizing_rule": "median over CARRYING rows (coverage-aware)",
+   "source_coverage": {
+    "gse295214_h1": 64,
+    "h1_2025": 20
+   },
+   "source_details": [
+    {
+     "background_perturbations": 2354,
+     "condition": "gse295214_h1",
+     "coverage_frac": 0.21333333333333335,
+     "covered_targets": 64,
+     "duplicate_symbols": 0,
+     "gene_normalized_median_before_rescale": 140.2711427079268,
+     "mapped_non_panel_genes": 18233,
+     "path": "experiments/115-gse295214-h1/work/compact-donor",
+     "raw_median_centered_norm": 7.084942901352942
+    },
+    {
+     "background_perturbations": 255,
+     "condition": "h1_2025",
+     "coverage_frac": 0.06666666666666667,
+     "covered_targets": 20,
+     "duplicate_symbols": 0,
+     "gene_normalized_median_before_rescale": 130.44886030037927,
+     "mapped_non_panel_genes": 17777,
+     "path": "data/donors/h1_2025",
+     "raw_median_centered_norm": 5.027205005412602
+    }
+   ],
+   "sources": [
+    {
+     "name": "gse295214_h1",
+     "path": "experiments/115-gse295214-h1/work/compact-donor",
+     "sha256": {
+      "b_ctrl.npy": "c88816a57c57c3a088183ae24bca406d8ded374871e3d330aa444fcb13811b4f",
+      "delta.npy": "d0fa6555f9a62ce503d2ad55c8bfda954322657b52dcd48a24e29c330e718c7a",
+      "genes.txt": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+      "perts.txt": "7060076272d411d4ee00b898cc26eedcb1eaaac5f5e94e2c60f3b45978320747"
+     }
+    },
+    {
+     "name": "h1_2025",
+     "path": "data/donors/h1_2025",
+     "sha256": {
+      "b_ctrl.npy": "bd527b8373d56dab8bfa4d6a1a54560987977e37e22630709fcbbd8f7ce42d7a",
+      "delta.npy": "269628f6eae749857e619bad4556ce9ac8b8810882e7af8a9925e3178eec0cc8",
+      "genes.txt": "da2b383939d0939e911d273539b136c7a10f0482b2ee509d294e1632d5629822",
+      "perts.txt": "977b808e723c73eea5dc4a60cec6e71512387dc520512bf133d3b18fce7287dd"
+     }
+    }
+   ],
+   "supported_entries": 1398013,
+   "target_g": 0.28,
+   "targets_by_source_count": {
+    "0": 223,
+    "1": 70,
+    "2": 7
+   },
+   "targets_carried_by_both_sources": 7
+  },
+  "pert_scale": {
+   "artifact": "experiments/673-h1x25-abc/work/run/pert_scale_def_lo0.3_hi3.npz",
+   "ballast": {
+    "kmax": 16,
+    "lb": 995000
+   },
+   "energy_constant": 0.6242858559852607,
+   "final_scale_quantiles": [
+    0.18728575679557818,
+    0.18728575679557818,
+    0.18728575679557818,
+    0.6242858559852607,
+    1.2331186578963589,
+    1.872857567955782,
+    1.872857567955782
+   ],
+   "frac_final_below_half": 0.42333333333333334,
+   "mode": "wshare_lo0.3_hi3_def",
+   "nonpanel_frobenius_after": 79.23910727144259,
+   "nonpanel_frobenius_before": 79.2391072714426,
+   "scaled_sha256": "89f67ee0895bdb83279e5023e58b19aabb3276b19d8c7c0f97f5ff9a3fd3062b",
+   "sha256": "d7f76a22f62ad6991d7220ce8a65218db38b2d71dcfe3c3781ec6a8f70409e0e"
+  },
+  "perturbmatch": {
+   "blend": 0.5,
+   "both_supported_modified": [
+    "ACLY",
+    "ADNP",
+    "AGO1",
+    "AKAP1",
+    "AKIRIN1",
+    "AKT2",
+    "ALG12",
+    "ANKZF1",
+    "ANP32B",
+    "AP2A2",
+    "API5",
+    "ARL14EP",
+    "ASCC2",
+    "BCKDK",
+    "BCL6",
+    "BCL7C",
+    "BRD1",
+    "BRPF1",
+    "C5orf22",
+    "CAND1",
+    "CARM1",
+    "CAT",
+    "CCDC112",
+    "CDK8",
+    "CHD3",
+    "CHD6",
+    "CHKB",
+    "CLCN6",
+    "COIL",
+    "COMMD8",
+    "COQ10B",
+    "CSNK2A1",
+    "CYTH2",
+    "DBF4B",
+    "DBN1",
+    "DCAF16",
+    "DCP2",
+    "DDHD1",
+    "DEAF1",
+    "DEK",
+    "DHRS1",
+    "DHX35",
+    "DMTF1",
+    "DNTTIP1",
+    "DRG2",
+    "DTNBP1",
+    "DVL3",
+    "E2F1",
+    "E2F4",
+    "EAPP",
+    "EEF1A2",
+    "ELK1",
+    "EPC2",
+    "EPM2AIP1",
+    "EZH2",
+    "FAM120A",
+    "FCGRT",
+    "FHL3",
+    "FOXN2",
+    "FOXO4",
+    "FUBP3",
+    "FXYD5",
+    "FZD2",
+    "GIGYF2",
+    "GLI3",
+    "GLYR1",
+    "GMEB2",
+    "GPATCH8",
+    "GRAMD1A",
+    "GTF2IRD1",
+    "HDAC1",
+    "HDAC8",
+    "HMGN3",
+    "HMGN4",
+    "HMGXB3",
+    "HOMEZ",
+    "HSBP1",
+    "HSP90AB1",
+    "IFI27L2",
+    "IFNAR2",
+    "IFNGR2",
+    "IL10RB",
+    "IREB2",
+    "KDM5A",
+    "KHDRBS1",
+    "KHSRP",
+    "KIF2A",
+    "KMT2A",
+    "LDLR",
+    "LENG1",
+    "LMAN1",
+    "LMBRD2",
+    "LPCAT3",
+    "MAN2A1",
+    "MAP2K2",
+    "MAPK12",
+    "MARCKSL1",
+    "MBD4",
+    "MED13",
+    "MED15",
+    "MED25",
+    "MLLT10",
+    "MSANTD4",
+    "MSI2",
+    "MTA1",
+    "MTF1",
+    "MTHFSD",
+    "MTM1",
+    "MYD88",
+    "MYPOP",
+    "MYRF",
+    "NABP2",
+    "NAIF1",
+    "NCLN",
+    "NFE2L1",
+    "NGLY1",
+    "NIPAL3",
+    "NIPSNAP3A",
+    "NT5DC1",
+    "NUP37",
+    "PAN2",
+    "PAPOLA",
+    "PATL1",
+    "PCGF1",
+    "PCGF6",
+    "PDCD4",
+    "PDE6D",
+    "PDK1",
+    "PGLS",
+    "PHF23",
+    "PHF8",
+    "PI4KB",
+    "PIM2",
+    "PIN1",
+    "PINK1",
+    "PKN3",
+    "PLAGL2",
+    "PLCG1",
+    "PNP",
+    "POLD4",
+    "POR",
+    "PPIF",
+    "PPIP5K2",
+    "PQBP1",
+    "PRDX3",
+    "PRKAB2",
+    "PRKACA",
+    "PRMT2",
+    "PRMT6",
+    "PRMT7",
+    "PRNP",
+    "PSKH1",
+    "PTMS",
+    "PTOV1",
+    "PYCR1",
+    "R3HCC1L",
+    "RAB5A",
+    "RABEP2",
+    "RBM18",
+    "RBM26",
+    "RBM4B",
+    "RBM5",
+    "RC3H2",
+    "REV1",
+    "RFK",
+    "RNF10",
+    "RNF141",
+    "RNF2",
+    "RSRC1",
+    "S100A11",
+    "SAP30L",
+    "SCAF8",
+    "SFXN4",
+    "SH2D3A",
+    "SHPRH",
+    "SIN3B",
+    "SLC25A13",
+    "SLC39A1",
+    "SLIRP",
+    "SMARCA5",
+    "SMARCC2",
+    "SMYD2",
+    "SND1",
+    "SNRK",
+    "SNX4",
+    "SRSF5",
+    "SSR4",
+    "STAT6",
+    "STK3",
+    "STT3A",
+    "SUPT7L",
+    "SYVN1",
+    "TAF15",
+    "TARBP2",
+    "TBC1D13",
+    "TBCK",
+    "TEAD4",
+    "TEX2",
+    "TFCP2",
+    "THAP3",
+    "THAP7",
+    "TIMM17B",
+    "TIMM50",
+    "TMCO6",
+    "TMED3",
+    "TMEM147",
+    "TMEM186",
+    "TMEM209",
+    "TMEM41B",
+    "TMF1",
+    "TRAPPC6A",
+    "TRIB3",
+    "TRIM35",
+    "TRIP4",
+    "TRMT1",
+    "TRPC4AP",
+    "TWF2",
+    "UNK",
+    "UPF3B",
+    "UROS",
+    "USP28",
+    "VAPB",
+    "VIM",
+    "WBP4",
+    "YIPF6",
+    "ZBTB34",
+    "ZBTB41",
+    "ZBTB48",
+    "ZC3HAV1",
+    "ZDHHC12",
+    "ZDHHC4",
+    "ZFP62",
+    "ZHX3",
+    "ZKSCAN1",
+    "ZKSCAN2",
+    "ZKSCAN3",
+    "ZNF16",
+    "ZNF174",
+    "ZNF219",
+    "ZNF22",
+    "ZNF25",
+    "ZNF251",
+    "ZNF280C",
+    "ZNF282",
+    "ZNF32",
+    "ZNF324",
+    "ZNF397",
+    "ZNF410"
+   ],
+   "both_supported_modified_count": 248,
+   "enabled": true,
+   "gene_policy": "experiment-061 broad official-gene support; PM-missing genes retain the incumbent K562 slot",
+   "genes_observed_by_perturbmatch": 9373,
+   "incumbent_k562_scale": 6.8167853355407715,
+   "k562_supported_pm_missing_preserved": [
+    "ZNF444",
+    "ZNF462",
+    "ZNF496",
+    "ZNF507",
+    "ZNF514",
+    "ZNF526",
+    "ZNF530",
+    "ZNF543",
+    "ZNF627",
+    "ZNF628",
+    "ZNF641",
+    "ZNF670",
+    "ZNF714",
+    "ZNF740",
+    "ZNF768",
+    "ZNF777",
+    "ZNF783",
+    "ZNF784",
+    "ZNF786",
+    "ZNF821",
+    "ZRANB3"
+   ],
+   "k562_supported_pm_missing_preserved_count": 21,
+   "modified_target_source_vote_histogram": {
+    "1": 5,
+    "2": 5,
+    "3": 238
+   },
+   "neither_supported_preserved": [
+    "ABCD1",
+    "CAPRIN2",
+    "EPHB2",
+    "HEATR6",
+    "KIF21B",
+    "MAPK7",
+    "MLKL",
+    "NICN1",
+    "PARP3",
+    "PBLD",
+    "PDK3",
+    "PHF11",
+    "PSMB9",
+    "RAB11FIP5",
+    "SEMA4F",
+    "SLC44A1",
+    "SNN",
+    "SOCS5",
+    "SPATA20",
+    "TAF4",
+    "TBC1D19",
+    "TDRD7",
+    "TESK2",
+    "TMEM104",
+    "TMEM79",
+    "TTBK2",
+    "TXNDC16",
+    "ZC2HC1A"
+   ],
+   "neither_supported_preserved_count": 28,
+   "perturbmatch_scale": 4.562122602023052,
+   "pm_supported_k562_missing_preserved": [
+    "ANKRD52",
+    "DLAT",
+    "PHF19"
+   ],
+   "pm_supported_k562_missing_preserved_count": 3,
+   "targets_total": 300
+  },
+  "post_whiten_sha256": "09c0de412da6bb2c616d9f9a7da2402cafc02db7860366130c232d577248e702",
+  "whitening": {
+   "after_all_median_norm": 4.292439762809763,
+   "after_operator_median_norm": 26.324287864481036,
+   "before_all_median_norm": 4.27961660788873,
+   "before_operator_median_norm": 4.163705464459611,
+   "gamma": 0.65,
+   "lambda": 0.0,
+   "operator_preserve_scale": 0.1581697284991947
+  }
+ },
+ "frozen_bundle": {
+  "cells_per_pert": 400,
+  "contexts": [
+   "D",
+   "E",
+   "F"
+  ],
+  "n_constructs": 300,
+  "panel_id": "vcc2026-synthetic-def-1",
+  "panel_support": {
+   "cd4_complete_targets": 276,
+   "perturbmatch_replacement_targets": 248
+  },
+  "panel_support_observed": {
+   "cd4_complete_targets": 276,
+   "perturbmatch_replacement_targets": 248
+  },
+  "panel_support_pinned": true,
+  "path": "~/Code/virtual-cell-challenge-2026/experiments/673-h1x25-abc/work/run/frozen_inputs.json",
+  "sha256": "3fd4c2a6157ef3c51d33d8289f98edb898da140fbb8286d64f0390e1843e59ba"
+ },
+ "hashes": {
+  "implementation": {
+   "experiments/061-perturbmatch-hct-count/build_candidate.py": "77e6fbf7edf1aeea6d39be4fe801591d0b0c2867f95042b697f0fc4042a2fae4",
+   "experiments/062-cd4-post-whiten/run.py": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176",
+   "scripts/build_submission.py": "3e0a7643f604c59b5ff8494af2fa36dc08c37303dae19bc7557ac95a8dde4e44",
+   "scripts/make_submission.py": "e85879effd33334cd6b1ddd189b02e1373ea6f918add30298e9cf9bebb6a0ab1",
+   "scripts/make_submission_pm_cd4.py": "a3509a134c9b02997148ce6a89ef6f5fa8316bc7cfbf5ce5034c26685fc3edce",
+   "src/vcc2026/donor_transfer.py": "9ffca7ecac591954fdc5f4f4fe18646a4e67be4f1edf7d57a73b79f4865c7dfc",
+   "src/vcc2026/multi_donor.py": "1daf35d97b50fb234a37255cf4136d34580f98f9d54faf175dca48461a33129a",
+   "src/vcc2026/whiten.py": "5dbddefde17192cda4bc7f8f7eceb202faf672de1833c42251366078e7e18bc1"
+  },
+  "inputs": {
+   "bundle/context_D.h5ad": "a3b6621302991881551771e8fb572deccf57ed70ab6159deefb66460b4f5b666",
+   "bundle/context_E.h5ad": "c6f58df46cf27d656a4048210d9606ca1d84af462fad2f9285622bab0c7517bf",
+   "bundle/context_F.h5ad": "81af8449ba23e39d79cab84ecf2993ca4573929ae056acd9c59edc1b73c48280",
+   "bundle/gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+   "bundle/manifest.json": "42c0fffebbff886c934bc14f5452c11c5d8aab01ca54198d1c1aec3e659995f3",
+   "bundle/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+   "cd4/cd4_rest/b_ctrl.npy": "5c47ef6b15a00a867b7b24034273bf3aba118d7cdf87ce58ec58427751313d81",
+   "cd4/cd4_rest/delta.npy": "b2bafd6e24c2aa34b03ec17836db34fcd9512f78920aed207413a9d727f9e765",
+   "cd4/cd4_rest/genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+   "cd4/cd4_rest/meta.json": "1ae0d3dd0886c0688bfb6a37f4757d550a833191ea2a0557430baaf03350c274",
+   "cd4/cd4_rest/perts.txt": "ddcd8ff07e2f38d93fc035ce2aadebe4bcaeb097ef95e1f26e8e4860b641374b",
+   "cd4/cd4_stim48hr/b_ctrl.npy": "a35f6c639937332cc483c82b9717dec9ff8a3fc70e6030e1b9f6df5fcc6658fd",
+   "cd4/cd4_stim48hr/delta.npy": "568119ac25c8d16116d8953d3ee61762fe3c45d9ee8c22a6e7b2669c39837a9a",
+   "cd4/cd4_stim48hr/genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+   "cd4/cd4_stim48hr/meta.json": "0b5e7384278b9c2c662a18202fe9a6cff5b772308d89dc93fdd84cc39dba763f",
+   "cd4/cd4_stim48hr/perts.txt": "4bf6468927fc11f0709bb0e63d14852f5a49f4f577455f0fa92e88719777d618",
+   "cd4/cd4_stim8hr/b_ctrl.npy": "75e35371ec33677462acdbc56938c2cc266d583dc2e75ed50b6b825c4a20161e",
+   "cd4/cd4_stim8hr/delta.npy": "eea7996d6694450fb1167b9ebbb6b709a3477e6d0347b49a4475e13ff7800c99",
+   "cd4/cd4_stim8hr/genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+   "cd4/cd4_stim8hr/meta.json": "9c6f08204914fb1f8eacb1075e0e6af73d0afcaa736be22c792c872b9e065cdb",
+   "cd4/cd4_stim8hr/perts.txt": "639feb3fba1d6cf3b5bb5e2ef9dfdc0ff3044adb4c7477b4588c82ff096d828e",
+   "donors/k562_gwps/b_ctrl.npy": "d06cf51d51cde1ae999e86bbd3be0bdc15471392bae153a1aa1e21dc5c81b957",
+   "donors/k562_gwps/delta.npy": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+   "donors/k562_gwps/genes.txt": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba",
+   "donors/k562_gwps/meta.json": "0bd3478aa6b63164bd4816cd8bbb439b805b6b93b2a267ddf8114b196c5e19aa",
+   "donors/k562_gwps/perts.txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec",
+   "donors/orion_hct116/b_ctrl.npy": "b3044d439cfac932024e0a48152196387714e4b460a339fb9a03e32fcb2fe069",
+   "donors/orion_hct116/delta.npy": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+   "donors/orion_hct116/genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+   "donors/orion_hct116/meta.json": "7a1ec5a9323c6ebd4b586aa300b28bcd9ddf271e67f04bdaf353cb15b8b2d6c8",
+   "donors/orion_hct116/perts.txt": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8",
+   "donors/orion_hek293t/b_ctrl.npy": "e04234cffbe102731cc562e8fb06bddb8ef0644b2af894b8a0ee6ce079ca4984",
+   "donors/orion_hek293t/delta.npy": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+   "donors/orion_hek293t/genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+   "donors/orion_hek293t/meta.json": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f",
+   "donors/orion_hek293t/perts.txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547",
+   "perturbmatch/delta.npy": "efa20944f6f6485a7cc7f484c7ab70bd2ba491a6e07b231f306e104b2e1e4cf2",
+   "perturbmatch/genes.txt": "e889994e2d0462d064018408ca456fc8be428e660523fb1bd9a7bcd7b3ab5959",
+   "perturbmatch/meta.json": "0b8224c2e04b1d2e4a331ecb26c5d1733eb32c143f949424b1cd518299066a41",
+   "perturbmatch/perts.txt": "1131758c3ab0d0c781a17580894511986d9baeadc1ad1304251f5a133086998e",
+   "whitener/whitener_union.json": "70c3cc5ff94025316cbd09fbd3c6aa659e2fc6fe2112298016c6d0e4d786b195",
+   "whitener/whitener_union.npz": "66610be766ff44b266e076dbf5434833b79730568d030e4e4a22f83c1ffaaebe"
+  }
+ },
+ "main_source_support": {
+  "per_donor_target_counts": {
+   "k562_gwps": 269,
+   "orion_hct116": 290,
+   "orion_hek293t": 294
+  },
+  "source_vote_count_histogram": {
+   "1": 6,
+   "2": 35,
+   "3": 259
+  },
+  "targets_with_any_source": 300,
+  "targets_without_source": 0
+ },
+ "model": "v9 + frozen PerturbMatch K562-slot replacement + post-whiten CD4",
+ "operator": {
+  "all_panel_coordinates_excluded": true,
+  "axis_sha256": "edf6ba886286d7837fa6adaef152372cee481331a81987789151862d5c0a400f",
+  "axis_sha256_checked_against": "metadata:whitener_union_pruned_def.json",
+  "columns": 17942,
+  "columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+  "metadata": {
+   "axis_sha256": "edf6ba886286d7837fa6adaef152372cee481331a81987789151862d5c0a400f",
+   "basis": [
+    29394,
+    17942
+   ],
+   "basis_per_donor_cap": 12000,
+   "basis_prune": "essential",
+   "donors": [
+    "k562_gwps",
+    "orion_hct116",
+    "orion_hek293t"
+   ],
+   "dropped_in_panel": [],
+   "essential_list": "data/donors/k562_essential/perts.txt",
+   "essential_list_size": 2021,
+   "n_cols": 17942,
+   "panel_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+   "rehearsal453": {
+    "resaved_from_sha256": "e2f65ecf69b7e0b0b817d02d850c7be07a78b442644a239c4b0e520cda1db123",
+    "why": "453 dress rehearsal on A/B/C's panel: the day's fit equals the pinned A/B/C operator byte for byte, which the October guards refuse; the same arrays re-saved compressed give the day's operator its own identity"
+   },
+   "rows_dropped_per_donor": {
+    "k562_gwps": 2003,
+    "orion_hct116": 1193,
+    "orion_hek293t": 1197
+   },
+   "rows_dropped_total": 4393,
+   "rows_kept_per_donor": {
+    "k562_gwps": 7784,
+    "orion_hct116": 10807,
+    "orion_hek293t": 10803
+   },
+   "seed": 0,
+   "sha256": "66610be766ff44b266e076dbf5434833b79730568d030e4e4a22f83c1ffaaebe"
+  },
+  "metadata_path": "~/Code/virtual-cell-challenge-2026/experiments/673-h1x25-abc/work/run/whitener_union_pruned_def.json",
+  "metadata_sha256": "70c3cc5ff94025316cbd09fbd3c6aa659e2fc6fe2112298016c6d0e4d786b195",
+  "panel_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+  "path": "~/Code/virtual-cell-challenge-2026/experiments/673-h1x25-abc/work/run/whitener_union_pruned_def.npz",
+  "sha256": "66610be766ff44b266e076dbf5434833b79730568d030e4e4a22f83c1ffaaebe"
+ },
+ "output": {
+  "bytes": 11969326264,
+  "contexts": {
+   "D": {
+    "control_rows": 18400,
+    "emitted_rows": 120000,
+    "median_control_library": 20109.0,
+    "stored_entries": 508969321
+   },
+   "E": {
+    "control_rows": 18400,
+    "emitted_rows": 120000,
+    "median_control_library": 19946.0,
+    "stored_entries": 479573883
+   },
+   "F": {
+    "control_rows": 18400,
+    "emitted_rows": 120000,
+    "median_control_library": 20034.0,
+    "stored_entries": 504289590
+   }
+  },
+  "n_rows": 360000,
+  "nnz": 1492832794,
+  "nnz_per_cell": 4146.757761111111,
+  "path": "~/Code/virtual-cell-challenge-2026/experiments/673-h1x25-abc/work/run/w1-lvl2.h5ad",
+  "pct_of_density_cap": 31.42805882105263,
+  "rc_callset": {
+   "ballast_K": {
+    "max": 16.0,
+    "median": 4.0,
+    "min": 1.0
+   },
+   "ballast_carrier_total": {
+    "max": 8839641.0,
+    "median": 7841036.0,
+    "min": 6823736.0
+   },
+   "ballast_clip_genes": {
+    "max": 66.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ballast_clip_mass": {
+    "max": 20472.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ballast_jk_ratio": {
+    "max": 1.0747041993300803,
+    "median": 1.0332746867222697,
+    "min": 0.8213919142012108
+   },
+   "ballast_jk_rho": {
+    "max": 0.5072355105277411,
+    "median": 0.3697910722310681,
+    "min": 0.0
+   },
+   "ballast_lib_max": {
+    "max": 996397.0,
+    "median": 995043.0,
+    "min": 995000.0
+   },
+   "ballast_lib_min": {
+    "max": 996184.0,
+    "median": 994971.0,
+    "min": 994890.0
+   },
+   "ballast_ratio": {
+    "max": 0.9501985002389564,
+    "median": 0.6979145153982351,
+    "min": 0.0
+   },
+   "ballast_trim": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "blocks": 900,
+   "call_set_delivered": {
+    "max": 2689.0,
+    "median": 2591.0,
+    "min": 2555.0
+   },
+   "call_set_first": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 1.0
+   },
+   "call_set_jaccard": {
+    "max": 1.0,
+    "median": 0.9961538461538462,
+    "min": 0.9669021941242097
+   },
+   "call_set_missed": {
+    "max": 47.0,
+    "median": 9.0,
+    "min": 0.0
+   },
+   "call_set_prescribed": {
+    "max": 2600.0,
+    "median": 2600.0,
+    "min": 2600.0
+   },
+   "call_set_unsuppressible": {
+    "max": 89.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "call_set_z_scale": {
+    "max": 0.6593553617017484,
+    "median": 0.5788288120147669,
+    "min": 0.37842245002990055
+   },
+   "call_set_z_target_max": {
+    "max": 1.9000000000000001,
+    "median": 1.9,
+    "min": 1.8999999999999997
+   },
+   "clip_frac": {
+    "max": 0.2268855183877,
+    "median": 0.12766693006716712,
+    "min": 0.016819417866854668
+   },
+   "dn_counts": {
+    "max": 60563.0,
+    "median": 34139.0,
+    "min": 11569.0
+   },
+   "dn_frac": {
+    "max": 0.36717216793497154,
+    "median": 0.20009442376601236,
+    "min": 0.08644770414431552
+   },
+   "dn_got": {
+    "max": 6964.642784291684,
+    "median": 3459.7669293443214,
+    "min": 1494.4423515368596
+   },
+   "dn_guard_excluded": {
+    "max": 2.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "dn_guard_failed": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "dn_guard_rounds": {
+    "max": 1.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "dn_invariant_failed": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "dn_moved": {
+    "max": 1681.0,
+    "median": 1541.5,
+    "min": 808.0
+   },
+   "dn_need": {
+    "max": 28564.089020766827,
+    "median": 17544.524977699974,
+    "min": 12297.12557274479
+   },
+   "dn_sel": {
+    "max": 1732.0,
+    "median": 1578.0,
+    "min": 1269.0
+   },
+   "dose_delivered": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 0.0
+   },
+   "dose_nominal": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 1.0
+   },
+   "forced": {
+    "max": 11715.0,
+    "median": 3925.5,
+    "min": 2709.0
+   },
+   "max_abs_resid": {
+    "max": 89.0,
+    "median": 30.0,
+    "min": 22.0
+   },
+   "mde_fd": {
+    "max": 0.907668227205294,
+    "median": 0.7867820082440468,
+    "min": 0.7109446558874226
+   },
+   "mde_fu": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 1.0
+   },
+   "mde_lambda": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 0.0
+   },
+   "mde_mass_residual": {
+    "max": 9.094947017729282e-12,
+    "median": 0.0,
+    "min": -1.4551915228366852e-11
+   },
+   "mde_n_dn": {
+    "max": 5062.0,
+    "median": 4694.5,
+    "min": 4186.0
+   },
+   "mde_n_sign_cover": {
+    "max": 1684.0,
+    "median": 1511.0,
+    "min": 1444.0
+   },
+   "mde_n_sign_flip": {
+    "max": 1135.0,
+    "median": 838.0,
+    "min": 635.0
+   },
+   "mde_n_up": {
+    "max": 4177.0,
+    "median": 3644.0,
+    "min": 3274.0
+   },
+   "mde_scope_code": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "moves": {
+    "max": 11715.0,
+    "median": 3925.5,
+    "min": 2709.0
+   },
+   "n_classes": {
+    "max": 3.0,
+    "median": 3.0,
+    "min": 3.0
+   },
+   "n_genes_de_universe": {
+    "max": 10124.0,
+    "median": 9929.0,
+    "min": 9626.0
+   },
+   "n_pred_pass1": {
+    "max": 5896.0,
+    "median": 4381.5,
+    "min": 3543.0
+   },
+   "per_cell_total": {
+    "max": 22322.0,
+    "median": 20006.5,
+    "min": 17770.0
+   },
+   "prior_lambda": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 0.0
+   },
+   "prior_mass_residual": {
+    "max": 9.634959496906959e-12,
+    "median": 2.2737367544323206e-13,
+    "min": -9.890754881780595e-12
+   },
+   "prior_n_block": {
+    "max": 2200.0,
+    "median": 2200.0,
+    "min": 2200.0
+   },
+   "prior_n_flip_target": {
+    "max": 991.0,
+    "median": 907.0,
+    "min": 801.0
+   },
+   "prior_shrink_k": {
+    "max": 0.9080239044438172,
+    "median": 0.6069423424474829,
+    "min": 0.37105770133173044
+   },
+   "rebalanced": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "sign_flip_frac": {
+    "max": 0.4507583627675047,
+    "median": 0.36478241862542105,
+    "min": 0.23192414065586725
+   },
+   "steer_clip_hi": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "steer_clip_lo": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "steer_max_log2_err": {
+    "max": 9.610279511444756e-16,
+    "median": 6.406853007629837e-16,
+    "min": 0.0
+   },
+   "steer_mean_log2_err": {
+    "max": 1.393490529159489e-16,
+    "median": 4.2436592135663903e-17,
+    "min": 0.0
+   },
+   "steer_unsteered": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 1.0
+   },
+   "sub_gate_counts_per_cell": {
+    "max": 95.78391959798995,
+    "median": 85.01921063651591,
+    "min": 65.88541666666667
+   },
+   "sub_gate_spread_max": {
+    "max": 1.0,
+    "median": 1.0,
+    "min": 1.0
+   },
+   "unresolved": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ur_capU": {
+    "max": 1472.0,
+    "median": 1472.0,
+    "min": 1472.0
+   },
+   "ur_counts": {
+    "max": 37113.0,
+    "median": 30022.5,
+    "min": 9460.0
+   },
+   "ur_frac_got": {
+    "max": 0.3804232220405638,
+    "median": 0.2663269952772904,
+    "min": 0.10577664245308778
+   },
+   "ur_got": {
+    "max": 4572.109166563409,
+    "median": 3684.0130074915214,
+    "min": 1414.813149209461
+   },
+   "ur_guard_excluded": {
+    "max": 2.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ur_guard_failed": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ur_guard_rounds": {
+    "max": 1.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ur_invariant_failed": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ur_max_abs_dlog10p": {
+    "max": 0.01592979307336506,
+    "median": 0.008981671851777784,
+    "min": 0.005917878326834769
+   },
+   "ur_max_dAUC": {
+    "max": 0.0001,
+    "median": 0.0001,
+    "min": 9.85054347826087e-05
+   },
+   "ur_median_dAUC": {
+    "max": 8.790760869565217e-05,
+    "median": 6.227921195652174e-05,
+    "min": 2.0108695652173915e-05
+   },
+   "ur_n_mean_revert": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ur_n_moved": {
+    "max": 2313.0,
+    "median": 1625.0,
+    "min": 431.0
+   },
+   "ur_n_neg_donor_rows": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ur_n_no_candidate": {
+    "max": 8895.0,
+    "median": 7192.0,
+    "min": 5205.0
+   },
+   "ur_n_no_pos_donor": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "ur_n_reverted": {
+    "max": 1104.0,
+    "median": 188.5,
+    "min": 4.0
+   },
+   "ur_n_sel": {
+    "max": 3655.0,
+    "median": 3124.5,
+    "min": 2555.0
+   },
+   "ur_need": {
+    "max": 21820.28605153545,
+    "median": 14100.289752330942,
+    "min": 10168.755529726359
+   },
+   "z_realised_vs_designed_max": {
+    "max": 0.009282849500406698,
+    "median": 0.001503540209182308,
+    "min": 3.552713678800501e-15
+   },
+   "zero_counts_moved": {
+    "max": 10.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "zero_repaired": {
+    "max": 1.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "zs_counts_moved": {
+    "max": 10276.0,
+    "median": 2594.0,
+    "min": 214.0
+   },
+   "zs_dU_car_abs_sum": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "zs_frac_full": {
+    "max": 0.0021082220660576245,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "zs_frac_massw": {
+    "max": 0.006782027896483356,
+    "median": 0.0014505113732387648,
+    "min": 6.0911617696789666e-05
+   },
+   "zs_frac_massw_dn": {
+    "max": 0.006782027896483357,
+    "median": 0.0014505113732387648,
+    "min": 6.0911617696789666e-05
+   },
+   "zs_frac_mean": {
+    "max": 0.006790529277998085,
+    "median": 0.001855296857148205,
+    "min": 5.696089813806352e-05
+   },
+   "zs_frac_zero": {
+    "max": 0.9998227892964735,
+    "median": 0.9946972007217376,
+    "min": 0.9851090232228328
+   },
+   "zs_n_moved": {
+    "max": 93.0,
+    "median": 40.0,
+    "min": 8.0
+   },
+   "zs_n_touch": {
+    "max": 6056.0,
+    "median": 5633.0,
+    "min": 5126.0
+   },
+   "zs_sign_guard": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0
+   },
+   "zs_sub_budget_exhausted_cells": {
+    "max": 30.0,
+    "median": 1.0,
+    "min": 0.0
+   },
+   "zs_sub_used": {
+    "max": 5036.0,
+    "median": 1283.5,
+    "min": 107.0
+   }
+  },
+  "sha256": "621371bd5d741fad43cfddae0abb5d9c2bc8b8d523b8b7d759eee1d0be46167c"
+ },
+ "peak_rss_gib": 13.951522827148438,
+ "runtime": {
+  "packages": {
+   "anndata": "0.13.2",
+   "h5py": "3.16.0",
+   "numpy": "2.5.2",
+   "scipy": "1.18.0"
+  },
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "python": "3.12.12"
+ },
+ "status": "challenge_h5ad_built",
+ "submission": false,
+ "relabel453": {
+  "source": "experiments/673-h1x25-abc/work/run/w1_final.h5ad",
+  "map": {
+   "D": "A",
+   "E": "B",
+   "F": "C"
+  },
+  "categories_before": [
+   "D",
+   "E",
+   "F"
+  ],
+  "categories_after": [
+   "A",
+   "B",
+   "C"
+  ],
+  "cells": {
+   "A": 120000,
+   "B": 120000,
+   "C": 120000
+  },
+  "source_output_sha256": "cced34d0fd9f68e6c91c11e742c57c66e35274e409dc983ee6fa51c7f61083ae"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "name": "idall3",
+ "desc": "zs + idall3 (618's hk_id)",
+ "emit": {
+  "hook": "idall3",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": false
+ },
+ "stage": "zs"
+}

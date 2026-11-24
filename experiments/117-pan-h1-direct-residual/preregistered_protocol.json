@@ -1,0 +1,222 @@
+{
+  "schema_version": 4,
+  "experiment": "117-pan-h1-direct-residual",
+  "date_preregistered": "2026-08-30",
+  "status": "source_only_protocol_repaired_zero_byte_hash_fixed_and_candidate_build_authorized",
+  "scientific_question": "Does a direct same-target Pan2025 H1 residual improve the exact a14 predictor across clean non-H1 contexts, especially on source rows absent from the older VCC-2025 H1 donor?",
+  "source_hypothesis": {
+    "dataset": "GSE295214/Pan2025_hESC",
+    "assay": "CRISPRi Perturb-seq",
+    "representation": "author_post_qc_pseudobulk_converted_to_project_TS50000_log1p_effects_by_experiment_115",
+    "vcc_panel_supported_count": 64,
+    "vcc_panel_supported_ordered_sha256": "f7fee89539444565949d9f7d3ac39e3b5ffa727c165fbc39165d86fa2ee48bc2",
+    "vcc_panel_new_vs_vcc2025_h1_count": 57,
+    "vcc_panel_new_vs_vcc2025_h1_ordered_sha256": "9761fd655ac15dcb16dee00a55b6fe56c977b76acc86246f79b65cb49be87f1d",
+    "primary_population": "Pan-supported targets absent from the frozen VCC-2025 H1 donor target axis",
+    "secondary_population": "all Pan-supported targets"
+  },
+  "incumbent_contract": {
+    "name": "exact_a14_held_role_geometry",
+    "source": "experiments/107-jurkat-high-moi/work/strict-validation",
+    "alpha": 0.982,
+    "donor_weights": "equal_over_leave_surface_out_real_donors_that_carry_the_target",
+    "gene_norm": false,
+    "empirical_bayes": false,
+    "perturbmatch_fraction": 0.5,
+    "cd4_fraction": 0.05,
+    "whiten_gamma": 0.65,
+    "whiten_lambda": 0.0,
+    "basis_prune": "common_essential_after_sampling",
+    "basis_row_cap_per_donor": 12000,
+    "basis_rng": "numpy_default_rng_seed_0_one_stream_in_role_donor_order",
+    "coordinate_exclusion": "union_of_all_300_vcc_targets_and_the_complete_role_held_target_axis",
+    "serialized_operator_reload_required": true,
+    "operator_fit_must_exclude_pan_source": true
+  },
+  "candidate_construction": {
+    "source_target_join": "exact_gene_symbol_same_target_only",
+    "source_axis": "canonical_18533_gene_axis",
+    "allowed_coordinate_mask": "Pan_row_measured_mask AND role_operator_columns AND NOT_VCC_panel_coordinate AND NOT_role_held_target_coordinate",
+    "source_whitening": "zero_pad_supported_raw_source_values_to_the_role_operator_axis_apply_the_exact_serialized_a14_operator_then_mask_again_equivalent_to_the_supported_principal_submatrix",
+    "source_row_scaling": "match_transformed_Pan_L2_norm_to_incumbent_L2_norm_on_the_exact_row_specific_supported_coordinate_set",
+    "normalized_residual_definition": "for_each_effective_destination_row_scaled_pan_minus_destination_incumbent_on_the_effective_supported_coordinates_and_exact_zero_elsewhere",
+    "effective_row_definition": "eligible_target_with_at_least_one_supported_coordinate_finite_source_and_destination_values_positive_finite_source_and_incumbent_L2_norms_and_positive_finite_L2_norm_of_scaled_pan_minus_incumbent",
+    "persisted_effective_masks": {
+      "all_supported_arm": "target_effective_all",
+      "primary_novel_only_arm": "target_effective_novel"
+    },
+    "formula": "candidate_supported = incumbent_supported + f * (scaled_pan_supported - incumbent_supported)",
+    "primary_fraction": 0.1,
+    "diagnostic_fractions": [
+      0.05,
+      0.2
+    ],
+    "primary_arm": "pan_novel_f100",
+    "secondary_arm": "pan_all_f100",
+    "identity_arm": "identity_f000",
+    "unsupported_target_policy": "bit_exact_incumbent_fallback",
+    "unsupported_coordinate_policy": "bit_exact_incumbent_fallback",
+    "zero_or_nonfinite_source_norm_policy": "bit_exact_incumbent_fallback_and_effective_mask_false",
+    "zero_or_nonfinite_incumbent_norm_policy": "bit_exact_incumbent_fallback_and_effective_mask_false",
+    "zero_or_nonfinite_normalized_residual_policy": "bit_exact_incumbent_fallback_and_effective_mask_false",
+    "panel_coordinates": "must_remain_exactly_zero_and_bit_identical_to_incumbent",
+    "held_target_coordinates": "must_remain_exactly_zero_and_bit_identical_to_incumbent",
+    "target_order": "role_incumbent_target_order",
+    "gene_order": "role_incumbent_canonical_gene_order"
+  },
+  "frozen_arms": [
+    "identity_f000",
+    "pan_novel_f050",
+    "pan_novel_f100",
+    "pan_novel_f200",
+    "pan_all_f050",
+    "pan_all_f100",
+    "pan_all_f200"
+  ],
+  "validation_design": {
+    "held_truth_access_time": "only_after_all_real_candidate_arrays_masks_rankings_null_assignments_cluster_labels_code_hashes_and_input_hashes_are_frozen_and_independently_reviewed",
+    "roles": {
+      "h1": {
+        "context": "H1_hESC",
+        "classification": "same_context_replication_diagnostic_only",
+        "promotion_authorizing": false,
+        "expected_pan_overlap": 30,
+        "expected_novel_overlap": 0,
+        "interpretation": "may_support_mechanism_or_detect_failure_but_can_never_authorize_promotion"
+      },
+      "orion_hek293t": {
+        "context": "HEK293T",
+        "classification": "clean_cross_context_authorizing_surface",
+        "promotion_authorizing": true,
+        "expected_pan_overlap": 30,
+        "expected_novel_overlap": 26
+      },
+      "nadig_jurkat": {
+        "context": "Jurkat",
+        "classification": "clean_cross_context_reused_development_benchmark",
+        "promotion_authorizing": true,
+        "gallery_count": 6,
+        "gallery_weighting": "equal",
+        "cannot_authorize_without_hek293t": true
+      }
+    },
+    "pds": {
+      "space": "raw_control_referenced_effect",
+      "centering": "none",
+      "gallery": "complete_predeclared_role_gallery_including_unsupported_targets",
+      "ties": "midrank",
+      "response_coordinate_exclusion": "all_300_vcc_targets_union_role_held_target_axis"
+    },
+    "directional_credit": {
+      "ranking": "descending_absolute_actual_normalized_residual_scaled_pan_minus_destination_incumbent_on_row_specific_effective_supported_coordinates_with_canonical_gene_index_ascending_as_the_exact_tie_break",
+      "fraction": 0.2,
+      "selected_coordinate_count": "max_1_ceil_0.20_times_the_number_of_effective_supported_coordinates_for_that_row",
+      "truth": "held_reference_directional_sign",
+      "reference_nonsignificant_or_zero_sign_selected_gene": "incorrect",
+      "eligible_rows": "target_effective_novel_only_for_the_primary_arm_fallback_zero_and_nonfinite_rows_are_excluded",
+      "surface_aggregation": "arithmetic_mean_over_effective_primary_rows_only",
+      "cross_context_aggregation": "HEK293T_surface_value_and_the_equal_weight_mean_of_nadig_gallery_1_through_gallery_6_then_receive_equal_one_half_context_weight_H1_is_excluded",
+      "source_blind": true
+    },
+    "cross_context_aggregation": {
+      "surface_order": [
+        "orion_hek293t",
+        "nadig.gallery_1",
+        "nadig.gallery_2",
+        "nadig.gallery_3",
+        "nadig.gallery_4",
+        "nadig.gallery_5",
+        "nadig.gallery_6"
+      ],
+      "surface_raw_pds": "arithmetic_mean_of_per_target_raw_uncentered_midrank_PDS_over_the_complete_predeclared_gallery_including_exact_zero_candidate_minus_incumbent_deltas_for_fallback_rows",
+      "jurkat_macro": "math.fsum_of_the_six_gallery_values_in_surface_order_divided_by_6",
+      "cross_context_macro": "math.fsum_of_orion_hek293t_and_jurkat_macro_divided_by_2",
+      "h1": "excluded_from_every_promotion_statistic"
+    },
+    "target_label_permutation_null": {
+      "replicates": 99,
+      "seed_namespace": "experiment-117-pan-direct-target-null-v1",
+      "bit_generator": "numpy_random_PCG64",
+      "seed_derivation": "little_endian_integer_from_the_first_8_bytes_of_SHA256_UTF8_of_namespace_NUL_role_name_NUL_zero_based_replicate_decimal",
+      "operation": "freeze_a_destination_to_source_row_map_by_permuting_only_target_effective_all_rows_within_each_role_and_within_novel_vs_existing_strata_leaving_every_other_destination_at_minus_one",
+      "null_reconstruction": "for_each_mapped_destination_move_the_assigned_source_effect_and_its_source_measured_coordinate_mask_together_then_recompute_norm_matching_against_that_destination_incumbent_on_the_assigned_support_and_form_destination_incumbent_plus_0.10_times_the_reconstructed_normalized_residual; never_permute_or_reuse_the_observed_normalized_residual; invalid_reconstructed_rows_fall_back_bit_exactly",
+      "primary_population": "only_mapped_novel_destinations_are_modified_existing_and_unmapped_destinations_remain_exact_identity",
+      "surface_statistic": "complete_gallery_raw_PDS_delta_from_identity",
+      "cross_context_statistic": "the_frozen_equal_context_aggregation_in_validation_design.cross_context_aggregation",
+      "gate": "observed_cross_context_macro_raw_PDS_gain_strictly_exceeds_the_maximum_of_all_99_null_cross_context_macro_gains",
+      "assignments_frozen_before_truth": true
+    },
+    "target_cluster_bootstrap": {
+      "replicates": 20000,
+      "seed_namespace": "experiment-117-pan-direct-cluster-bootstrap-v1",
+      "bit_generator": "numpy_random_PCG64",
+      "seed_derivation": "little_endian_integer_from_the_first_8_bytes_of_SHA256_UTF8_of_namespace_NUL_role_name_NUL_zero_based_replicate_decimal",
+      "cluster_definition": "reciprocal_5_nearest_neighbors_on_pretruth_incumbent_score_axis_effects_with_cosine_at_least_0.80",
+      "cluster_labels_frozen_before_truth": true,
+      "resampling_unit": "within_each_role_sort_unique_integer_cluster_labels_sample_exactly_that_many_labels_with_replacement_and_assign_each_target_the_multiplicity_of_its_whole_cluster",
+      "surface_statistic": "multiplicity_weighted_mean_of_complete_gallery_primary_minus_identity_per_target_raw_PDS_deltas",
+      "cross_context_statistic": "for_each_replicate_aggregate_the_seven_role_surface_statistics_with_the_frozen_equal_context_rule",
+      "confidence_interval": "numpy_quantile_method_linear_equivalent_to_Hyndman_Fan_type_7_at_probabilities_0.025_and_0.975",
+      "gate": "the_0.025_type_7_quantile_is_strictly_greater_than_zero"
+    }
+  },
+  "promotion_gate": {
+    "primary_comparison": "pan_novel_f100_minus_identity_f000",
+    "hek293t_raw_pds_delta_minimum": 0.0,
+    "hek293t_directional_credit_delta_minimum_exclusive": 0.0,
+    "nadig_raw_pds_delta_each_gallery_minimum": 0.0,
+    "nadig_macro_directional_credit_delta_minimum_exclusive": 0.0,
+    "cross_context_macro_raw_pds_delta_minimum": 0.003,
+    "cross_context_target_cluster_bootstrap_lower_95_minimum_exclusive": 0.0,
+    "observed_cross_context_macro_gain_must_exceed_all_99_target_label_nulls": true,
+    "h1_same_context_result_cannot_replace_any_cross_context_gate": true,
+    "nadig_alone_cannot_authorize_promotion": true,
+    "unsupported_targets_must_be_bit_identical_to_incumbent": true,
+    "unsupported_coordinates_must_be_bit_identical_to_incumbent": true,
+    "excluded_coordinates_must_be_bit_identical_to_incumbent": true,
+    "identity_must_be_bit_identical_to_incumbent": true,
+    "all_invariants_required": true
+  },
+  "freeze_boundary": {
+    "source_manifest": "experiments/117-pan-h1-direct-residual/SOURCE_INPUT_MANIFEST.json",
+    "authorization_file": "experiments/117-pan-h1-direct-residual/SOURCE_CANDIDATE_FREEZE_BOUNDARY.json",
+    "logical_array_hash": {
+      "algorithm": "SHA256_over_exp107-array-v1_NUL_dtype_NUL_compact_JSON_shape_NUL_raw_C_order_payload",
+      "zero_byte_array": "write_the_same_prefix_dtype_and_shape_header_then_no_payload_bytes_when_array_nbytes_is_zero"
+    },
+    "real_build_requires_compact_receipt_and_artifact_hashes": true,
+    "real_build_requires_builder_hash_pin": true,
+    "real_build_requires_every_role_approval": true,
+    "post_truth_refit_reselection_or_fraction_change_forbidden": true
+  },
+  "current_authorization": {
+    "source_metadata_read": true,
+    "synthetic_tests": true,
+    "real_compact_donor_read": true,
+    "real_role_array_read": true,
+    "real_candidate_build": true,
+    "held_truth_access": false,
+    "evaluation": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  },
+  "prohibited": [
+    "opening_any_held_outcome_array_before_a_complete_reviewed_source_candidate_freeze",
+    "opening_data/donors/nadig_jurkat/delta.npy",
+    "opening_any_harness_expression_matrix",
+    "using_Pan_in_any_whitener_fit",
+    "using_H1_same_context_results_as_sufficient_promotion_evidence",
+    "using_target_or_panel_coordinates_as_response_features",
+    "imputing_unsupported_targets_or_coordinates",
+    "post_truth_arm_fraction_mask_or_gate_selection",
+    "cell_eval2",
+    "count_generation",
+    "challenge_build",
+    "submission",
+    "writes_outside_experiment_117"
+  ]
+}

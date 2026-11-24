@@ -1,0 +1,29 @@
+{
+  "max_rss_gib": 55.0,
+  "peak_process_tree_rss_gib": 15.650028228759766,
+  "return_code": 0,
+  "killed_for_memory": false,
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "uvx",
+    "--python",
+    "3.12",
+    "--from",
+    "cell-eval2==0.16.0",
+    "cell-eval2",
+    "run",
+    "-ap",
+    "/work/exp065/output/candidate.h5ad",
+    "-ar",
+    "/work/exp061/repo/data/harness/orion-hct116.h5ad",
+    "-o",
+    "/work/exp065/output/candidate-run",
+    "--preset",
+    "vcc2026",
+    "--pert-col",
+    "target_gene",
+    "--control",
+    "non-targeting"
+  ]
+}

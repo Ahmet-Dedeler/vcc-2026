@@ -1,0 +1,26 @@
+[
+  {
+    "raw": {
+      "de_wilcoxon_direction_fidelity_yield_raw": 0.5410469694936161,
+      "de_wilcoxon_direction_reach_raw": 0.0740408607441551,
+      "de_wilcoxon_lfc_nmae": 0.928394718934996,
+      "de_wilcoxon_sig_jaccard": 0.012059889516048,
+      "expr_distance_unbiased": 0.0015080003209939,
+      "expr_mse_unbiased": 0.0029198240210728,
+      "expr_mse_unbiased_capped": 0.0029198240210728,
+      "expr_mse_unbiased_capped_norm": 1.936222413499408,
+      "expr_real_mass_ratio": 1.0,
+      "pds_cosine": 0.7951075641915337
+    },
+    "official": {
+      "pds_cosine": 0.6521714125779751,
+      "expr_mse_unbiased_capped_norm": 0.0,
+      "de_wilcoxon_lfc_nmae": 0.12124610188758364,
+      "de_wilcoxon_direction_fidelity_yield_raw": 0.09182323164538707,
+      "de_wilcoxon_direction_reach_raw": 0.0022777463662445358,
+      "de_wilcoxon_sig_jaccard": -0.04578408238905946,
+      "avg6": 0.13695573501468847
+    },
+    "tag": "g0.65_q1.0_a1.08_spread0.25"
+  }
+]

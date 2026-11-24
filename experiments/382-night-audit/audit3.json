@@ -1,0 +1,45 @@
+{
+ "known_answers": {
+  "shape": [
+   18400,
+   18533
+  ],
+  "gene_head_match_csv_and_h5ad": true,
+  "median_library": 20109.0,
+  "median_library_match_20109": true,
+  "own_target_rows": 2045,
+  "own_target_neg_frac": 0.9970660146699266
+ },
+ "splits": {
+  "fit_even_eval_odd": {
+   "prior_acc": 0.5762058576496693,
+   "alldown_acc": 0.5168893197554646,
+   "n_eval": 2393110,
+   "n_zero_dropped": 2
+  },
+  "fit_odd_eval_even": {
+   "prior_acc": 0.5769008643673703,
+   "alldown_acc": 0.5122421398733955,
+   "n_eval": 2392964,
+   "n_zero_dropped": 1
+  }
+ },
+ "block": {
+  "size": 2200,
+  "cutoff_cpm": 130.43034187927648,
+  "n_mapped": 8284
+ },
+ "mean": {
+  "prior_acc": 0.5765533610085198,
+  "alldown_acc": 0.51456572981443
+ },
+ "expected": {
+  "prior_acc": 0.5766,
+  "alldown_acc": 0.5147,
+  "tol": 0.003
+ },
+ "match": {
+  "prior_acc": true,
+  "alldown_acc": true
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "name": "tab814p",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "data/challenge",
+  "data/donors/k562_gwps",
+  "data/donors/orion_hct116",
+  "data/donors/orion_hek293t",
+  "data/donors/h1_2025/genes.txt",
+  "data/donors/h1_2025/b_ctrl.npy",
+  "data/donors/rpe1/perts.txt",
+  "data/donors/nadig_jurkat/perts.txt",
+  "data/donors/viperturb_k562/perts.txt",
+  "experiments/115-gse295214-h1/work/compact-donor",
+  "data/external/cd4t/guide_kd_efficiency.suppl_table.csv",
+  "data/external/cd4t/DE_stats.suppl_table.csv",
+  "experiments/814-panel-rule/work/run1"
+ ],
+ "collect": [
+  "experiments/814-panel-rule/work/predict"
+ ]
+}

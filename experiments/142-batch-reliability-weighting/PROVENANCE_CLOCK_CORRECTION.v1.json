@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-30",
+  "user_reported_local_time": "2026-08-30T21:45:00+03:00",
+  "user_reported_utc_anchor": "2026-08-30T18:45:00+00:00",
+  "host_clock_observation": "The Mac reported 2026-08-31T02:23:00+03:00 during the same turn.",
+  "correction": "Experiment 142 artifact commands must set VCC_PROVENANCE_UTC explicitly from the user-reported August 30 clock rather than use the skewed host clock.",
+  "plan_v1_timestamp_status": "invalid_for_chronology_and_superseded_for_scientific_design",
+  "plan_v2_timestamp_status": "anchored_to_user_reported_time",
+  "source_expression_opened_before_correction": false,
+  "development_or_test_outcomes_opened_before_correction": false
+}

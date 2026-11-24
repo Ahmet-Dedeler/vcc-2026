@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "experiment": "087-string-target-kernel",
+  "created_utc_date": "2026-08-29",
+  "hypothesis_source": "experiments/087-string-target-kernel/README.md",
+  "final_score_axis": {
+    "gene_count": 17806,
+    "gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+    "official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02"
+  },
+  "development_split": {
+    "source": "experiment 082 deterministic hash split",
+    "seed": 8202026,
+    "training_target_count": 600,
+    "training_target_order_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+    "fit_count": 360,
+    "fit_targets_sha256": "17040e750280cf96a8241ec5b3cdb05e32176b0ca3073b386ddc852071b7739c",
+    "tune_count": 120,
+    "tune_targets_sha256": "c7d68ccb71567daff155c4a17ae92c830e91532c7231112db48064aa58549d52",
+    "test_count": 120,
+    "test_targets_sha256": "b4fdee9f0e5c0ff3b4f9cefcce90261c4b7d27f4b7868c3a7c0eaeaa396ecaf8"
+  },
+  "arm_d_sources": [
+    "experiments/062-cd4-post-whiten/run.py",
+    "experiments/064-pm-cd4-composition/run.py",
+    "experiments/064-pm-cd4-composition/cloud-output/results.json"
+  ],
+  "exp064_reproduction": {
+    "gallery_targets": 221,
+    "target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+    "required_max_abs_error": 1e-06
+  },
+  "kolf_confirmation": {
+    "supported": true,
+    "expected_targets": 273,
+    "target_order_sha256": "27c77da3f1a59733468b2b9ee4ac42c7a058d1bf7b71e661fbad68448b893dfd",
+    "truth_prefix": "input/exp079-kolf-local-centering/20260823T064635Z/kolf2",
+    "operator_prefix": "input/production-challenge"
+  },
+  "held_panel_galleries": {
+    "orion_hct116": {
+      "targets": 290,
+      "target_order_sha256": "b4d62e504c487d5cea40548ecb8c1672fbd49c651cc039b182b14ab2325213c4"
+    },
+    "orion_hek293t": {
+      "targets": 294,
+      "target_order_sha256": "b971c471a3533a436cb0f3ed9fcecfb9c4dac786a0a8182b28c1bb44b982a11b"
+    }
+  },
+  "embedding": {
+    "repository": "RasmussenLab/SLIM",
+    "repository_type": "git",
+    "revision": "5a7e9ade5d0a",
+    "filename": "data/gene_string_embeddings.v0.3.h5",
+    "local_path": "data/external/slim/gene_string_embeddings.v0.3.h5",
+    "size_bytes": 19502608,
+    "sha256": "789416877b8701ef6f800106d26bf7bb97ea8e72744e6ab93e24933a717f247d",
+    "rows": 21688,
+    "numeric_features": 64,
+    "dtype": "float64",
+    "layout": "one root-level dataset per gene symbol",
+    "root_gene_order_sha256": "881fe6f352f78cc857c6bff2e4b703ffecdff4566bb717cad0b025a6daeab17b",
+    "feature_order_sha256": "b21a85e099b34b6973584305ec84fe9087b9b3b33795acc37c68229a2c39e266",
+    "vcc_panel_coverage": 298,
+    "missing_vcc_panel_targets": [
+      "EEF1A2",
+      "KIF21B"
+    ],
+    "citation_source": "data/external/slim/README.md",
+    "citation_source_sha256": "034e15175ef8472220ab918cac4cac511fad9bc9030350aa4d5309eacccdd6b4",
+    "inspection": "Pinned local HDF5 metadata and SHA-256 verified; no SLIM expression data, fitted model, or prediction is an input."
+  },
+  "forbidden_inputs": [
+    "*.h5ad",
+    "*.h5ad.gz",
+    "SLIM expression datasets",
+    "SLIM fitted models",
+    "SLIM predictions"
+  ],
+  "protocol_repairs": {
+    "coordinate_less_training_targets_are_valid_rows": true,
+    "blocked_coordinates_excluded_from_source_statistics": true,
+    "exact_split_lists_serialized_before_any_fit": true,
+    "string_missing_rows_are_zero_with_explicit_mask": true,
+    "primary_folds": [
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "kolf_is_independent_confirmation": true,
+    "final_null_strata_are_fold_specific": true,
+    "reused_s3_prefixes_rejected": true,
+    "orion_duplicate_axis_rows_preserved": true,
+    "duplicate_symbol_projection": "last occurrence",
+    "strict_timestamp_run_ids": true,
+    "existing_local_run_directories_rejected_without_deletion": true,
+    "canonical_work_root_containment_required": true,
+    "cloud_test_axes_packaged": true,
+    "cd4_stim8hr_perts_hash_corrected_pre_truth": true
+  },
+  "execution": {
+    "cloud_launched": true,
+    "authoritative_run_id": "20260830T011413Z",
+    "authoritative_run_status": "pre_gate_failed",
+    "outer_held_truth_files_hashed_and_memory_mapped_during_staging": true,
+    "outer_held_truth_values_used_for_fit_selection_prediction_or_score": false,
+    "artifacts_verified_against_manifest": true,
+    "worker_stopped_after_completion": true,
+    "submission_performed": false
+  }
+}

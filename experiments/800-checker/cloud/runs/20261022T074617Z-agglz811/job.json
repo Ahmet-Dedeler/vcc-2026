@@ -1,0 +1,12 @@
+{
+ "name": "agglz811",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "experiments/811-lolo-model/work/run-comp811-LZ",
+  "experiments/811-lolo-model/work/ka800.copy.json"
+ ],
+ "collect": [
+  "experiments/811-lolo-model/work/run-comp811-LZ"
+ ]
+}

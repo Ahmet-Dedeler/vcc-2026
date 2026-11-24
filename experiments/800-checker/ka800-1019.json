@@ -1,0 +1,628 @@
+{
+ "calibration": {
+  "bulk-direction|W": {
+   "n": 1,
+   "rho": 4.690426080114306,
+   "rho_range": [
+    4.690426080114306,
+    4.690426080114306
+   ],
+   "rho_loo": [
+    4.690426080114306,
+    4.690426080114306
+   ],
+   "sign_fail": 0
+  },
+  "bulk-external|W": {
+   "n": 1,
+   "rho": 0.18720546767810628,
+   "rho_range": [
+    0.18720546767810628,
+    0.18720546767810628
+   ],
+   "rho_loo": [
+    0.18720546767810628,
+    0.18720546767810628
+   ],
+   "sign_fail": 0
+  },
+  "bulk-key|W": {
+   "n": 1,
+   "rho": 4.749346734998235,
+   "rho_range": [
+    4.749346734998235,
+    4.749346734998235
+   ],
+   "rho_loo": [
+    4.749346734998235,
+    4.749346734998235
+   ],
+   "sign_fail": 0
+  },
+  "bulk-shape|W": {
+   "n": 3,
+   "rho": 3.097340115783283,
+   "rho_range": [
+    2.9648497086435475,
+    3.2298305229230184
+   ],
+   "rho_loo": [
+    2.9648497086435475,
+    3.2298305229230184
+   ],
+   "sign_fail": 1
+  },
+  "bulk-any|W": {
+   "n": 6,
+   "rho": 3.2298305229230184,
+   "rho_range": [
+    0.18720546767810628,
+    4.749346734998235
+   ],
+   "rho_loo": [
+    3.097340115783283,
+    3.960128301518662
+   ],
+   "sign_fail": 1
+  },
+  "bulk-direction|ABC": {
+   "n": 1,
+   "rho": 0.4272493746636967,
+   "rho_range": [
+    0.4272493746636967,
+    0.4272493746636967
+   ],
+   "rho_loo": [
+    0.4272493746636967,
+    0.4272493746636967
+   ],
+   "sign_fail": 0
+  },
+  "bulk-external|ABC": {
+   "n": 1,
+   "rho": 0.9250161070478579,
+   "rho_range": [
+    0.9250161070478579,
+    0.9250161070478579
+   ],
+   "rho_loo": [
+    0.9250161070478579,
+    0.9250161070478579
+   ],
+   "sign_fail": 0
+  },
+  "bulk-key|ABC": {
+   "n": 1,
+   "rho": 1.4629345563728875,
+   "rho_range": [
+    1.4629345563728875,
+    1.4629345563728875
+   ],
+   "rho_loo": [
+    1.4629345563728875,
+    1.4629345563728875
+   ],
+   "sign_fail": 0
+  },
+  "bulk-shape|ABC": {
+   "n": 3,
+   "rho": 3.477251443119391,
+   "rho_range": [
+    3.4440951408843135,
+    3.510407745354468
+   ],
+   "rho_loo": [
+    3.4440951408843135,
+    3.510407745354468
+   ],
+   "sign_fail": 1
+  },
+  "bulk-any|ABC": {
+   "n": 6,
+   "rho": 1.4629345563728875,
+   "rho_range": [
+    0.4272493746636967,
+    3.510407745354468
+   ],
+   "rho_loo": [
+    1.1939753317103727,
+    2.4535148486286005
+   ],
+   "sign_fail": 1
+  },
+  "bulk-direction|ABCp": {
+   "n": 1,
+   "rho": 1.7231853104765127,
+   "rho_range": [
+    1.7231853104765127,
+    1.7231853104765127
+   ],
+   "rho_loo": [
+    1.7231853104765127,
+    1.7231853104765127
+   ],
+   "sign_fail": 0
+  },
+  "bulk-external|ABCp": {
+   "n": 1,
+   "rho": 0.7929758220239544,
+   "rho_range": [
+    0.7929758220239544,
+    0.7929758220239544
+   ],
+   "rho_loo": [
+    0.7929758220239544,
+    0.7929758220239544
+   ],
+   "sign_fail": 0
+  },
+  "bulk-key|ABCp": {
+   "n": 1,
+   "rho": 1.4373644781087076,
+   "rho_range": [
+    1.4373644781087076,
+    1.4373644781087076
+   ],
+   "rho_loo": [
+    1.4373644781087076,
+    1.4373644781087076
+   ],
+   "sign_fail": 0
+  },
+  "bulk-shape|ABCp": {
+   "n": 3,
+   "rho": 3.0526622333937885,
+   "rho_range": [
+    3.0359029667734,
+    3.069421500014177
+   ],
+   "rho_loo": [
+    3.0359029667734,
+    3.069421500014177
+   ],
+   "sign_fail": 1
+  },
+  "bulk-any|ABCp": {
+   "n": 6,
+   "rho": 1.7231853104765127,
+   "rho_range": [
+    0.7929758220239544,
+    3.069421500014177
+   ],
+   "rho_loo": [
+    1.5802748942926101,
+    2.3795441386249565
+   ],
+   "sign_fail": 1
+  },
+  "de-callset|DE-H1|f0.35": {
+   "n": 2,
+   "rho": null,
+   "sign_fail": 2
+  },
+  "de-mag|DE-H1|f0.35": {
+   "n": 3,
+   "rho": 2.9224493051723734,
+   "rho_range": [
+    0.926235268374734,
+    2.998586157435183
+   ],
+   "rho_loo": [
+    1.9243422867735538,
+    2.9605177313037783
+   ],
+   "sign_fail": 0
+  },
+  "de-sign|DE-H1|f0.35": {
+   "n": 2,
+   "rho": 0.9600187221447734,
+   "rho_range": [
+    0.9600187221447734,
+    0.9600187221447734
+   ],
+   "rho_loo": [
+    0.9600187221447734,
+    0.9600187221447734
+   ],
+   "sign_fail": 1
+  },
+  "de-callset|DE-H1|f0.61": {
+   "n": 2,
+   "rho": 0.8580112941263284,
+   "rho_range": [
+    0.8259534106269883,
+    0.8900691776256684
+   ],
+   "rho_loo": [
+    0.8259534106269883,
+    0.8900691776256684
+   ],
+   "sign_fail": 0
+  },
+  "de-mag|DE-H1|f0.61": {
+   "n": 3,
+   "rho": 1.4283205444980511,
+   "rho_range": [
+    1.01239848252348,
+    3.0214511887253144
+   ],
+   "rho_loo": [
+    1.2203595135107657,
+    2.224885866611683
+   ],
+   "sign_fail": 0
+  },
+  "de-sign|DE-H1|f0.61": {
+   "n": 2,
+   "rho": 0.7495555309590343,
+   "rho_range": [
+    0.7495555309590343,
+    0.7495555309590343
+   ],
+   "rho_loo": [
+    0.7495555309590343,
+    0.7495555309590343
+   ],
+   "sign_fail": 1
+  }
+ },
+ "members": {},
+ "rows": {
+  "495|W": {
+   "row": "495",
+   "surface": "W",
+   "cls": "bulk-key",
+   "checker": 0.007760907499660745,
+   "board": 0.0016341000000000272,
+   "rho": 4.749346734998235,
+   "rho_pds": -1.2640309364215674,
+   "rho_mse": 3.4026601059799706,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "479p2g|W": {
+   "row": "479p2g",
+   "surface": "W",
+   "cls": "bulk-shape",
+   "checker": 0.0033477193370096948,
+   "board": 0.0010364999999999958,
+   "rho": 3.2298305229230184,
+   "rho_pds": 4.503043626481478,
+   "rho_mse": 1.1321712279613103,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "479sp2|W": {
+   "row": "479sp2",
+   "surface": "W",
+   "cls": "bulk-shape",
+   "checker": 0.003794663757670213,
+   "board": -0.0007140999999999953,
+   "rho": -5.3139108775665,
+   "rho_pds": -7.902214444454516,
+   "rho_mse": 12.26667057848507,
+   "decision": "SHIP",
+   "grade": "MISS"
+  },
+  "498p2g|W": {
+   "row": "498p2g",
+   "surface": "W",
+   "cls": "bulk-shape",
+   "checker": 0.0029894579612253407,
+   "board": 0.0010083000000000175,
+   "rho": 2.9648497086435475,
+   "rho_pds": 5.4054515235339835,
+   "rho_mse": 0.8180186799782737,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "702|W": {
+   "row": "702",
+   "surface": "W",
+   "cls": "bulk-external",
+   "checker": -0.00047670000289553064,
+   "board": -0.002546400000000004,
+   "rho": 0.18720546767810628,
+   "rho_pds": 0.1316293964148911,
+   "rho_mse": 0.32634788372881796,
+   "decision": "NULL",
+   "grade": "HIT"
+  },
+  "707|W": {
+   "row": "707",
+   "surface": "W",
+   "cls": "bulk-direction",
+   "checker": 0.004845210140758078,
+   "board": 0.001033,
+   "rho": 4.690426080114306,
+   "rho_pds": 4.556133323052158,
+   "rho_mse": 5.537382339866544,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "495|ABC": {
+   "row": "495",
+   "surface": "ABC",
+   "cls": "bulk-key",
+   "checker": 0.0023905813585689754,
+   "board": 0.0016341000000000272,
+   "rho": 1.4629345563728875,
+   "rho_pds": -1.0928244807260503,
+   "rho_mse": 0.889934016322389,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "479p2g|ABC": {
+   "row": "479p2g",
+   "surface": "ABC",
+   "cls": "bulk-shape",
+   "checker": 0.0036385376280598913,
+   "board": 0.0010364999999999958,
+   "rho": 3.510407745354468,
+   "rho_pds": 4.730742764494236,
+   "rho_mse": 1.374504663848852,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "479sp2|ABC": {
+   "row": "479sp2",
+   "surface": "ABC",
+   "cls": "bulk-shape",
+   "checker": 0.0036256004239601965,
+   "board": -0.0007140999999999953,
+   "rho": -5.077160655314691,
+   "rho_pds": -6.502591996411883,
+   "rho_mse": 19.830263717329963,
+   "decision": "SHIP",
+   "grade": "MISS"
+  },
+  "498p2g|ABC": {
+   "row": "498p2g",
+   "surface": "ABC",
+   "cls": "bulk-shape",
+   "checker": 0.0034726811305537137,
+   "board": 0.0010083000000000175,
+   "rho": 3.4440951408843135,
+   "rho_pds": 5.787108324189776,
+   "rho_mse": 1.4527716347750845,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "702|ABC": {
+   "row": "702",
+   "surface": "ABC",
+   "cls": "bulk-external",
+   "checker": -0.002355461014986669,
+   "board": -0.002546400000000004,
+   "rho": 0.9250161070478579,
+   "rho_pds": 0.6298356314489064,
+   "rho_mse": 1.6490127727970396,
+   "decision": "HARM",
+   "grade": "HIT (HARM)"
+  },
+  "707|ABC": {
+   "row": "707",
+   "surface": "ABC",
+   "cls": "bulk-direction",
+   "checker": 0.00044134860402759876,
+   "board": 0.001033,
+   "rho": 0.4272493746636967,
+   "rho_pds": 5.206419610485383,
+   "rho_mse": 1.3759152651021507,
+   "decision": "WEAK",
+   "grade": "MISS"
+  },
+  "495|ABCp": {
+   "row": "495",
+   "surface": "ABCp",
+   "cls": "bulk-key",
+   "checker": 0.0023487972936774783,
+   "board": 0.0016341000000000272,
+   "rho": 1.4373644781087076,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "479p2g|ABCp": {
+   "row": "479p2g",
+   "surface": "ABCp",
+   "cls": "bulk-shape",
+   "checker": 0.003181455384764681,
+   "board": 0.0010364999999999958,
+   "rho": 3.069421500014177,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "479sp2|ABCp": {
+   "row": "479sp2",
+   "surface": "ABCp",
+   "cls": "bulk-shape",
+   "checker": 0.002952973603883238,
+   "board": -0.0007140999999999953,
+   "rho": -4.1352382073704765,
+   "decision": "SHIP",
+   "grade": "MISS"
+  },
+  "498p2g|ABCp": {
+   "row": "498p2g",
+   "surface": "ABCp",
+   "cls": "bulk-shape",
+   "checker": 0.0030611009613976726,
+   "board": 0.0010083000000000175,
+   "rho": 3.0359029667734,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "702|ABCp": {
+   "row": "702",
+   "surface": "ABCp",
+   "cls": "bulk-external",
+   "checker": -0.002019233633201801,
+   "board": -0.002546400000000004,
+   "rho": 0.7929758220239544,
+   "decision": "HARM",
+   "grade": "HIT (HARM)"
+  },
+  "707|ABCp": {
+   "row": "707",
+   "surface": "ABCp",
+   "cls": "bulk-direction",
+   "checker": 0.0017800504257222377,
+   "board": 0.001033,
+   "rho": 1.7231853104765127,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "446bj2z zs|DE-H1|f0.35": {
+   "row": "446bj2z zs",
+   "surface": "DE-H1",
+   "regime": "f0.35",
+   "cls": "de-mag",
+   "checker": 0.0005088736564451096,
+   "board": 0.0005494000000000332,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "DN|DE-H1|f0.35": {
+   "row": "DN",
+   "surface": "DE-H1",
+   "regime": "f0.35",
+   "cls": "de-mag",
+   "checker": 0.0010918270604124848,
+   "board": 0.00037360000000002946,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "630arm UPRN|DE-H1|f0.35": {
+   "row": "630arm UPRN",
+   "surface": "DE-H1",
+   "regime": "f0.35",
+   "cls": "de-mag",
+   "checker": 0.002787485691951671,
+   "board": 0.0009295999999999749,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "496a hook (618 form)|DE-H1|f0.35": {
+   "row": "496a hook (618 form)",
+   "surface": "DE-H1",
+   "regime": "f0.35",
+   "cls": "de-sign",
+   "checker": 0.0005330023945348103,
+   "board": 0.0005552000000000334,
+   "decision": "SHIP",
+   "grade": "HIT"
+  },
+  "idall3 vs hook|DE-H1|f0.35": {
+   "row": "idall3 vs hook",
+   "surface": "DE-H1",
+   "regime": "f0.35",
+   "cls": "de-sign",
+   "checker": 0.00029212592789953164,
+   "board": -0.000501,
+   "decision": "SHIP",
+   "grade": "MISS"
+  },
+  "K20|DE-H1|f0.35": {
+   "row": "K20",
+   "surface": "DE-H1",
+   "regime": "f0.35",
+   "cls": "de-callset",
+   "checker": 0.0007089938806352749,
+   "board": -0.000716300000000003,
+   "decision": "SHIP",
+   "grade": "MISS"
+  },
+  "K16|DE-H1|f0.35": {
+   "row": "K16",
+   "surface": "DE-H1",
+   "regime": "f0.35",
+   "cls": "de-callset",
+   "checker": 0.0023441037285121605,
+   "board": -0.0021068000000000198,
+   "decision": "SHIP",
+   "grade": "MISS"
+  },
+  "446bj2z zs|DE-H1|f0.61": {
+   "row": "446bj2z zs",
+   "surface": "DE-H1",
+   "regime": "f0.61",
+   "cls": "de-mag",
+   "checker": 0.0005562117262984335,
+   "board": 0.0005494000000000332,
+   "decision": "SHIP",
+   "grade": null
+  },
+  "DN|DE-H1|f0.61": {
+   "row": "DN",
+   "surface": "DE-H1",
+   "regime": "f0.61",
+   "cls": "de-mag",
+   "checker": 0.000533620555424514,
+   "board": 0.00037360000000002946,
+   "decision": "SHIP",
+   "grade": null
+  },
+  "630arm UPRN|DE-H1|f0.61": {
+   "row": "630arm UPRN",
+   "surface": "DE-H1",
+   "regime": "f0.61",
+   "cls": "de-mag",
+   "checker": 0.0028087410250389765,
+   "board": 0.0009295999999999749,
+   "decision": "SHIP",
+   "grade": null
+  },
+  "496a hook (618 form)|DE-H1|f0.61": {
+   "row": "496a hook (618 form)",
+   "surface": "DE-H1",
+   "regime": "f0.61",
+   "cls": "de-sign",
+   "checker": 0.0004161532307884809,
+   "board": 0.0005552000000000334,
+   "decision": "SHIP",
+   "grade": null
+  },
+  "idall3 vs hook|DE-H1|f0.61": {
+   "row": "idall3 vs hook",
+   "surface": "DE-H1",
+   "regime": "f0.61",
+   "cls": "de-sign",
+   "checker": 0.0003583527428639087,
+   "board": -0.000501,
+   "decision": "SHIP",
+   "grade": null
+  },
+  "K20|DE-H1|f0.61": {
+   "row": "K20",
+   "surface": "DE-H1",
+   "regime": "f0.61",
+   "cls": "de-callset",
+   "checker": -0.0005916304280321143,
+   "board": -0.000716300000000003,
+   "decision": "HARM",
+   "grade": null
+  },
+  "K16|DE-H1|f0.61": {
+   "row": "K16",
+   "surface": "DE-H1",
+   "regime": "f0.61",
+   "cls": "de-callset",
+   "checker": -0.0018751977434217759,
+   "board": -0.0021068000000000198,
+   "decision": "HARM",
+   "grade": null
+  }
+ },
+ "note": "rho = checker / board; projection = checker / rho (DESIGN 7)",
+ "post_hoc": {
+  "de-callset|DE-H1|f0.61": "chosen after the frozen f 0.35 read; non-decisive until a later board read confirms it (coordinator 10-16)",
+  "pdsl (board-emulated pds)": "diagnostic found after the first read; not a validated unit",
+  "f061_call_set_rule": {
+   "status": "REFUTED",
+   "by": "board ku38 (K 4,200) vs ku30 (K 3,400) vs 446bj2z (K 2,600), 10-18; docs/BOARD-LEDGER.md",
+   "finding": "board reach rises monotonically with call-set size (+0 / +0.0054 / +0.0094 raw); both H1 dials (f 0.87, f 0.61) got the direction wrong, so the DE-H1 harness cannot price call-set size",
+   "consequence": "DE-H1's de-callset class (f 0.35 / f 0.61) is not a valid instrument for call-set size; any lab candidate that moves ballast K reads its call-set effect as unmeasured, not as priced",
+   "recorded": "2026-10-18 04:18Z"
+  }
+ }
+}

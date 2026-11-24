@@ -1,0 +1,8 @@
+1	0	16	4064	bash experiments/801-lab-folds/cloud801.sh verify
+8	0	586	12577368	bash experiments/801-lab-folds/cloud801.sh refit-efp k562_gwps
+4	1	1571	12761908	bash experiments/801-lab-folds/cloud801.sh panel L3
+6	1	1598	12762860	bash experiments/801-lab-folds/cloud801.sh panel L5
+5	1	1619	12761772	bash experiments/801-lab-folds/cloud801.sh panel L4
+2	1	1647	12762300	bash experiments/801-lab-folds/cloud801.sh panel L1
+3	1	1650	12762396	bash experiments/801-lab-folds/cloud801.sh panel L2
+7	1	1650	12762228	bash experiments/801-lab-folds/cloud801.sh panel L6

@@ -1,0 +1,43 @@
+1	0	21	3796	bash experiments/801-lab-folds/cloud801.sh verify
+3	0	73	2595552	bash experiments/801-lab-folds/cloud801.sh prep A2
+2	0	83	2596040	bash experiments/801-lab-folds/cloud801.sh prep A1
+5	0	94	2595980	bash experiments/801-lab-folds/cloud801.sh prep A4
+6	0	105	2595200	bash experiments/801-lab-folds/cloud801.sh prep A5
+7	0	117	2595920	bash experiments/801-lab-folds/cloud801.sh prep A6
+4	0	127	2595844	bash experiments/801-lab-folds/cloud801.sh prep A3
+13	0	1162	12759816	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A2 orion_hek293t
+12	0	1191	12760280	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A2 orion_hct116
+11	0	1218	12575308	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A2 k562_gwps
+10	0	1238	12759780	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A1 orion_hek293t
+8	0	1289	12575276	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A1 k562_gwps
+9	0	1294	12758688	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A1 orion_hct116
+18	0	1296	12759084	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A4 orion_hct116
+19	0	1299	12757932	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A4 orion_hek293t
+21	0	1308	12759976	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A5 orion_hct116
+20	0	1309	12575088	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A5 k562_gwps
+17	0	1311	12575628	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A4 k562_gwps
+23	0	1318	12574164	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A6 k562_gwps
+29	0	1322	1584228	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A2 k562_gwps
+31	0	1333	1204188	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A2 orion_hek293t
+16	0	1339	12760136	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A3 orion_hek293t
+25	0	1346	12758756	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A6 orion_hek293t
+14	0	1351	12575832	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A3 k562_gwps
+24	0	1352	12760592	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A6 orion_hct116
+30	0	1353	1188568	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A2 orion_hct116
+22	0	1361	12759236	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A5 orion_hek293t
+26	0	1368	1484120	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A1 k562_gwps
+15	0	1370	12759628	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh fold A3 orion_hct116
+28	0	1374	1199972	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A1 orion_hek293t
+41	0	1390	1483980	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A6 k562_gwps
+38	0	1391	1483636	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A5 k562_gwps
+35	0	1391	1578732	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A4 k562_gwps
+27	0	1414	1184516	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A1 orion_hct116
+36	0	1414	1188344	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A4 orion_hct116
+37	0	1415	1208028	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A4 orion_hek293t
+32	0	1416	1484500	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A3 k562_gwps
+39	0	1426	1188180	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A5 orion_hct116
+42	0	1450	1191464	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A6 orion_hct116
+43	0	1450	1195088	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A6 orion_hek293t
+34	0	1451	1208508	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A3 orion_hek293t
+40	0	1462	1203780	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A5 orion_hek293t
+33	0	1472	1192580	T801_THREADS=2 bash experiments/801-lab-folds/cloud801.sh ka804 A3 orion_hct116

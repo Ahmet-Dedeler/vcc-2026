@@ -1,0 +1,174 @@
+{
+ "gates": {
+  "gate1_operator_anchors": {
+   "pass": true,
+   "detail": {
+    "a15": {
+     "before_operator_median_norm": {
+      "want": 4.122892101713489,
+      "got": 4.122892101713494,
+      "rel": 1.1102230246251565e-15,
+      "pass": true
+     },
+     "after_operator_median_norm": {
+      "want": 25.73792992728807,
+      "got": 25.73792992728807,
+      "rel": 0.0,
+      "pass": true
+     },
+     "operator_preserve_scale": {
+      "want": 0.16018740098217024,
+      "got": 0.16018740098217024,
+      "rel": 0.0,
+      "pass": true
+     },
+     "after_all_median_norm": {
+      "want": 4.2292956044543,
+      "got": 4.2292956044543,
+      "rel": 0.0,
+      "pass": true
+     },
+     "cd4_f_per_unit": {
+      "want": 1.055664536904655,
+      "got": 1.055664536904655,
+      "rel": 0.0,
+      "pass": true
+     },
+     "cd4_solved_fraction": {
+      "want": 0.09472706196346517,
+      "got": 0.09472706196346517,
+      "rel": 0.0,
+      "pass": true
+     },
+     "cd4_candidate_pre_preserve_median_norm": {
+      "want": 4.166553356202115,
+      "got": 4.166553356202115,
+      "rel": 0.0,
+      "pass": true
+     },
+     "cd4_post_add_global_preserve_scale": {
+      "want": 0.9895210139518232,
+      "got": 0.9895210139518232,
+      "rel": 0.0,
+      "pass": true
+     }
+    },
+    "a19": {
+     "before_operator_median_norm": {
+      "want": 4.122892101713494,
+      "got": 4.122892101713494,
+      "rel": 0.0,
+      "pass": true
+     },
+     "after_operator_median_norm": {
+      "want": 22.030919431001,
+      "got": 22.030919431000996,
+      "rel": 1.1102230246251565e-16,
+      "pass": true
+     },
+     "operator_preserve_scale": {
+      "want": 0.1871411728696139,
+      "got": 0.18714117286961393,
+      "rel": 2.220446049250313e-16,
+      "pass": true
+     },
+     "after_all_median_norm": {
+      "want": 4.235393246076997,
+      "got": 4.235393246076998,
+      "rel": 2.220446049250313e-16,
+      "pass": true
+     },
+     "cd4_f_per_unit": {
+      "want": 1.0541447101386758,
+      "got": 1.0541447101386756,
+      "rel": 2.220446049250313e-16,
+      "pass": true
+     },
+     "cd4_solved_fraction": {
+      "want": 0.094863635929876,
+      "got": 0.09486363592987601,
+      "rel": 2.220446049250313e-16,
+      "pass": true
+     }
+    }
+   }
+  },
+  "gate3_cd4_fraction": {
+   "f_per_unit": 1.055664536904655,
+   "fraction_f010": 0.09472706196346517,
+   "fraction_f034_resolved": 0.32207201067578156,
+   "fraction_f034_scaled": 0.3220720106757816,
+   "rel": 2.220446049250313e-16,
+   "pass": true
+  },
+  "gate2_h1_effect_vs_170": {
+   "frobenius_ratio": 6.46162596976674e-15,
+   "one_minus_min_row_cosine": 2.220446049250313e-16,
+   "max_abs": 1.3433698597964394e-14,
+   "median_row_norm": 4.655956672269269,
+   "pass": true
+  },
+  "gate4_panel_total_digest": {
+   "kt16000_vs_base": {
+    "blocks_identical": 85,
+    "expected_identical": 85,
+    "of": 85,
+    "why": "EMISSION arm: the quasi law repairs every gene total, so the delivered pseudobulk MUST be bit-identical => `pds` and `mse` are pinned",
+    "pass": true
+   }
+  },
+  "gate5_base_is_221_rc_callset": {
+   "got": "048b9286030ff0124514134b55d935fdb79a4d002cc04d590d83676b32553c77",
+   "want": "048b9286030ff0124514134b55d935fdb79a4d002cc04d590d83676b32553c77",
+   "pass": true
+  }
+ },
+ "configs": {
+  "base": {
+   "cd4_target_f": 0.1,
+   "emitter": "rc_callset",
+   "library_pick_seed": 0,
+   "emission_seed": 1000003,
+   "path": "/work/cloud-score/preds/base.h5ad",
+   "sha256": "048b9286030ff0124514134b55d935fdb79a4d002cc04d590d83676b32553c77",
+   "cells": 52400,
+   "genes": 18080,
+   "nnz": 278156402,
+   "seconds": 285.3,
+   "median_n_pred_pass1": 3684,
+   "median_call_set_delivered": 2600,
+   "panel_total_digest_sha256": "453cdc8d4ec90cb6b861384a1afcb86c7a783840dfa3abea390aeae6623f7a61"
+  },
+  "kt16000": {
+   "cd4_target_f": 0.1,
+   "emitter": "rc_callset",
+   "library_pick_seed": 0,
+   "emission_seed": 1000003,
+   "path": "/work/cloud-score/preds/kt16000.h5ad",
+   "sha256": "ea6b87bd48a73b0cf7808fdb342b1b84aa2e2d133cadb736b91c679adef361ca",
+   "cells": 52400,
+   "genes": 18080,
+   "nnz": 289787641,
+   "seconds": 232.1,
+   "median_n_pred_pass1": 1981,
+   "median_call_set_delivered": 1978,
+   "panel_total_digest_sha256": "453cdc8d4ec90cb6b861384a1afcb86c7a783840dfa3abea390aeae6623f7a61"
+  }
+ },
+ "builder_sha256": "d87396e5c9467e38e9ea74937e71a8c318f6d317bef90f9dbe59d9e152970c87",
+ "exp062_sha256": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176",
+ "cd4_support": {
+  "challenge_of_300": 276,
+  "h1_of_85": 4
+ },
+ "axis": {
+  "0.1": {
+   "h1_genes_absent_from_production": 3
+  },
+  "0.34": {
+   "h1_genes_absent_from_production": 3
+  }
+ },
+ "peak_rss_gib": 7.6272125244140625,
+ "seconds_total": 553.5
+}

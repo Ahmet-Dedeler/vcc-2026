@@ -1,0 +1,40 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::<your-s3-bucket>",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "input/*",
+            "output/*",
+            "output-clean-hct/*",
+            "output-cd4/*"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::<your-s3-bucket>/input/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::<your-s3-bucket>/output/*",
+        "arn:aws:s3:::<your-s3-bucket>/output-clean-hct/*",
+        "arn:aws:s3:::<your-s3-bucket>/output-cd4/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "as-is (divide by n_donors) g=0": {
+    "orion_hct116": 0.7030020053275866,
+    "orion_hek293t": 0.7060698572326479,
+    "macro": 0.7045359312801173
+  },
+  "as-is (divide by n_donors) g=0.65": {
+    "orion_hct116": 0.8053485379066774,
+    "orion_hek293t": 0.783050492352818,
+    "macro": 0.7941995151297476
+  },
+  "per-gene (divide by coverage) g=0": {
+    "orion_hct116": 0.6921971805692736,
+    "orion_hek293t": 0.6956690910179283,
+    "macro": 0.6939331357936009
+  },
+  "per-gene (divide by coverage) g=0.65": {
+    "orion_hct116": 0.7887671724881027,
+    "orion_hek293t": 0.7611714704737961,
+    "macro": 0.7749693214809494
+  }
+}

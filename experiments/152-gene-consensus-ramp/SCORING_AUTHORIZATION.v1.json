@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment": "152-gene-consensus-ramp",
+  "status": "authorized_once_scoring",
+  "authorized_utc": "2026-08-31T16:52:00+00:00",
+  "authorized_by": "Claude Code, on Ahmet Dedeler's instruction, after taking over from the Codex session",
+  "review_basis": {
+    "preregistration_digest_verified": true,
+    "tests": "experiments/152-gene-consensus-ramp/test_experiment152.py: 8 passed",
+    "build_report_cell_eval2_invoked": false,
+    "build_report_challenge_build_created": false,
+    "experiment_151_outcome_known_at_authorization": true,
+    "experiment_151_decision": "RETAIN_EXPERIMENT_150_UNIFORM_DECISION",
+    "note": "Experiment 152's preregistration and source build were both frozen before any HCT outcome existed. Only the scoring step is authorized here; no gate, lambda, seed, or comparator was changed after 150 or 151 were read."
+  },
+  "scorer": {
+    "path": "experiments/152-gene-consensus-ramp/score_candidate.py",
+    "sha256": "63c42936d59967056383f42d2ccd57e6eb877222509ca31a118d3baef9f9b339"
+  },
+  "bindings_sha256": {
+    "data/harness/orion-hct116-thinned.h5ad": "04f98cd764bfa428cae4cd1060e814a327cdcf1a2167e6485d7c57646403b401",
+    "data/harness/orion-hct116-thinned.h5ad.meta.json": "98e0d4577d0133d02e61272ed2d24ac5e75b2bcaa84027a6c2c26cacb5f075ff",
+    "experiments/149-dual-moment-hek293t/score_confirmation.py": "f87413f5d4e986c45a091fbce512c625c0e2d2207c4d88e395c817e38916e1d1",
+    "experiments/150-dual-moment-score-level-hct116/work/scoring-v1/candidate/run/results.csv": "e7c59113bebdad6e417b43f6843d9d3012257566ed484a242e557cccf9f53884",
+    "experiments/150-dual-moment-score-level-hct116/work/scoring-v1/incumbent/run/results.csv": "3417d9d451ba3fbe7d2f4aa3c110ca1cc79bdb5e7d4cef4d162c2fec3307dc29",
+    "experiments/150-dual-moment-score-level-hct116/work/scoring-v1/results.json": "3ca2aca1f1858656689d3aace9ea5c9c04dfa2d19f106c096001e6ea846ba010",
+    "experiments/151-relaxation-consensus-selector/work/scoring-v1/candidate/run/results.csv": "2f6bfa7d8ebe6b3dca8cc6052daae4b97bc6a76d4135d4a8826c1ed9c780be8c",
+    "experiments/151-relaxation-consensus-selector/work/scoring-v1/results.json": "60b88d5df836c665441548f0c6c609545b54cba6a9c5de979efd598b95a6134b",
+    "experiments/152-gene-consensus-ramp/PREREGISTRATION.v1.json": "e560d0acca01d318490f6fc70e0d362222e6f7555f3174924e06db75c21b6f25",
+    "experiments/152-gene-consensus-ramp/PREREGISTRATION.v1.sha256": "92e88d1981d7b5427daf87245510d8f524d8bf5d12e45118117228ad495ed2c1",
+    "experiments/152-gene-consensus-ramp/SOURCE_BUILD_AUTHORIZATION.v1.json": "b97952669e3b2d40105dd922ce262dd6506028370a4e1996d96be67ac4b25dc9",
+    "experiments/152-gene-consensus-ramp/build_candidate.py": "c0f6e56b5b71c0d2cfa26c0463588b951fbf91f249e3a2481ff083dc2fcea4f8",
+    "experiments/152-gene-consensus-ramp/test_experiment152.py": "932a9548ea04864e9536cf64c7302b03c934953e72f661939b50cd15b72d9ff8",
+    "experiments/152-gene-consensus-ramp/work/source-build-v1/build-report.json": "61dbbd723e2079ee03c11fb88762a069b5a522001d4217d6ac7b54392e779e80",
+    "experiments/152-gene-consensus-ramp/work/source-build-v1/candidate.h5ad": "797f85202737646f9989fdab27b6971cbaf52cef8358b98d3d28941f5acee8c5",
+    "experiments/152-gene-consensus-ramp/work/source-build-v1/gene-ramp.json": "71e783e873cebac5011c8d5b614c1dbda5975376f5350c1be74d7d0d3fde0579",
+    "scripts/run_with_memory_guard.py": "3be02ceaa44ea0c0ed4641827dd9305095255ec6cbacb82d667cefb4f7915198"
+  },
+  "forbidden_without_later_authorization": [
+    "challenge prediction build",
+    "challenge submission"
+  ]
+}

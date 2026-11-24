@@ -1,0 +1,31 @@
+{
+  "real": "s3://<your-s3-bucket>/input/harness/h1-test.h5ad",
+  "preds": [
+    {
+      "name": "a15",
+      "uri": "PROLOGUE"
+    },
+    {
+      "name": "a15_seed1",
+      "uri": "PROLOGUE"
+    },
+    {
+      "name": "rc_hybrid",
+      "uri": "PROLOGUE"
+    },
+    {
+      "name": "rc_callset",
+      "uri": "PROLOGUE"
+    },
+    {
+      "name": "cd4f034",
+      "uri": "PROLOGUE"
+    }
+  ],
+  "preset": "vcc2026",
+  "pert_col": "target_gene",
+  "control": "non-targeting",
+  "cell_eval2_version": "0.16.0",
+  "prologue": "build_h1_candidates.sh",
+  "bundle": ""
+}

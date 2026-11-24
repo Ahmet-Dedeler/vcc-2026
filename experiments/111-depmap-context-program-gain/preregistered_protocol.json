@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "experiment": "111-depmap-context-program-gain",
+  "date_preregistered": "2026-08-30",
+  "status": "acquisition_scaffold_only_no_source_payload_acquired",
+  "hypothesis": "A low-rank, target-independent program-gain operator learned from repeated perturbations across diverse source contexts can use a target context's control expression to improve an a14-shaped effect while preserving retrieval geometry.",
+  "primary_use": "learned_cross_context_response_basis",
+  "rejected_primary_uses": {
+    "auxiliary_whitening_covariance": "Experiment 042 found that zero-overlap auxiliary rows worsened the covariance operator; simple pooling is forbidden.",
+    "direct_prediction_donor": "The Broad targets have zero overlap with the VCC panel.",
+    "immediate_STATE_retraining": "The active fixed-step STATE reproduction and held screen must finish before any separate retraining proposal; KO-versus-CRISPRi modality mismatch requires an independent protocol."
+  },
+  "source": {
+    "manifest": "SOURCE_MANIFEST.json",
+    "allowed_members": [
+      "metadata/cell_line_metadata.csv",
+      "processed/pseudobulk_sum_by_ko.csv",
+      "processed/lfc_matrix.csv",
+      "processed/fdr_matrix.csv",
+      "processed/crispr_table.csv",
+      "processed/cell_quality_covariates.csv"
+    ],
+    "forbidden_archives": [
+      "single_cell_data.zip",
+      "h2h_data_formatted.zip",
+      "downloaded.zip",
+      "data.zip"
+    ],
+    "primary_effect_representation": "control-referenced log1p CPM reconstructed from pseudobulk_sum_by_ko.csv",
+    "robustness_only": [
+      "lfc_matrix.csv",
+      "fdr_matrix.csv"
+    ],
+    "forbidden_primary_representation": "zscore_matrix.csv"
+  },
+  "coordinate_contract": {
+    "remove_all_300_vcc_target_coordinates_before_any_fit_or_transform": true,
+    "remove_all_100_broad_target_coordinates_before_any_fit_or_transform": true,
+    "raw_uncentered_truth_for_PDS": true,
+    "complete_predeclared_gallery_required": true,
+    "unsupported_coordinates_equal_incumbent_exactly": true
+  },
+  "source_model": {
+    "input_target_effect": "equal-batch mean over non-held source batches",
+    "response_basis_rank": [
+      4,
+      8
+    ],
+    "control_pc_rank": [
+      2,
+      4
+    ],
+    "ridge_lambda": [
+      1.0,
+      10.0,
+      100.0
+    ],
+    "beta": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "angular_cap_degrees": [
+      1.0,
+      3.0,
+      5.0
+    ],
+    "formula": "q_prime = q + beta * U * (a_hat(context) elementwise_multiply (U_transpose * q))",
+    "restore_original_row_norm": true,
+    "context_gain_mean_centered": true,
+    "additive_context_vector_forbidden": true,
+    "target_or_gene_identity_features_forbidden": true,
+    "target_embeddings_forbidden": true
+  },
+  "source_validation": {
+    "target_split": {
+      "method": "sha256_sorted",
+      "fit": 54,
+      "tune": 18,
+      "test": 18
+    },
+    "outer_unit": "experimental_batch",
+    "expected_outer_batches": 6,
+    "equal_total_weight_per_batch": true,
+    "tune_scheme": "leave_one_batch_out_on_tune_targets",
+    "test_scheme": "leave_one_batch_out_on_untouched_test_targets",
+    "nulls": {
+      "context_label_permutations": 100,
+      "target_pairing_permutations": 100,
+      "geometry_only_zero_or_mean_gain": true,
+      "wrong_context_gain_assignment": true,
+      "repeat_complete_selection": true
+    }
+  },
+  "source_promotion_gates": {
+    "minimum_complete_noncontrol_targets": 60,
+    "minimum_response_genes_after_masks": 10000,
+    "test_macro_raw_pds_delta_minimum": 0.01,
+    "nonnegative_outer_batches_minimum": 5,
+    "worst_outer_batch_delta_minimum": -0.003,
+    "target_bootstrap_lower_95_minimum": 0.0,
+    "paired_minus_geometry_only_delta_minimum": 0.005,
+    "exceed_context_permutation_p95": true,
+    "exceed_target_permutation_p95": true,
+    "shallow_half_delta_minimum": 0.0,
+    "deep_half_delta_minimum": 0.0
+  },
+  "external_confirmation": {
+    "incumbent": "exact a14-shaped held endpoints from experiment 106",
+    "primary_pds_surfaces": [
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "direction_surfaces": [
+      "h1_test_broad_target_disjoint",
+      "orion_hek293t"
+    ],
+    "hct116_direction_metrics_forbidden": true,
+    "freeze_before_held_truth": true,
+    "pds_macro_delta_minimum": 0.003,
+    "pds_delta_each_primary_minimum": 0.0,
+    "pds_target_bootstrap_lower_95_minimum": 0.0,
+    "directional_credit_macro_delta_minimum": 0.004,
+    "directional_credit_each_surface_minimum": 0.0,
+    "top20_sign_precision_each_surface_minimum": 0.0,
+    "median_angular_displacement_degrees_maximum": 3.0,
+    "unsupported_fallback_exact": true
+  },
+  "count_level_confirmation": {
+    "authorized_only_after_all_effect_level_gates": true,
+    "surfaces": [
+      "h1_test",
+      "orion_hek293t"
+    ],
+    "run_sequentially": true,
+    "overall_scaled_delta_each_surface_minimum": 0.003,
+    "pds_scaled_delta_each_surface_minimum": -0.001,
+    "nmae_delta_each_surface_minimum": 0.0,
+    "fidelity_precision_delta_each_surface_minimum": 0.0,
+    "reach_ordering_delta_each_surface_minimum": 0.0
+  },
+  "current_authorization": {
+    "remote_metadata_audit": true,
+    "small_code_archive_verification": true,
+    "selective_member_acquisition": false,
+    "model_fitting": false,
+    "held_truth_access": false,
+    "count_generation": false,
+    "production_change": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  },
+  "prohibited": [
+    "full_processed_zip_download",
+    "single_cell_data_download",
+    "unlisted_processed_member_extraction",
+    "source_model_fit_before_acquisition_and_schema_gates",
+    "using_sceptre_zscore_as_primary_effect",
+    "post_held_refit",
+    "partial_gallery_scoring",
+    "challenge_truth_access",
+    "production_change",
+    "submission",
+    "commit",
+    "push"
+  ]
+}
+

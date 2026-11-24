@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-30",
+  "stage": "after_v4_freeze_but_before_v4_preparation_identity_or_any_development_outcome_access",
+  "superseded_source_hash_manifest": "SOURCE_HASH_MANIFEST.v4.json",
+  "superseded_preoutcome_authorization": "PREOUTCOME_AUTHORIZATION.v4.json",
+  "replacement_source_hash_manifest": "SOURCE_HASH_MANIFEST.v5.json",
+  "replacement_preoutcome_authorization": "PREOUTCOME_AUTHORIZATION.v5.json",
+  "replacement_source_preparation": "work/source-preparation-v5",
+  "replacement_identity": "work/identity-reproduction-v5",
+  "finding": "A final read-only audit found that Experiment 132's Python module was imported before its pinned hash was checked, and freeze could adopt drifted pinned inputs because schema_report was not rerun.",
+  "repair": [
+    "Hash Experiment 132 run.py against the hard-pinned expected digest before executing the module.",
+    "Run the complete hard-pinned schema and provenance audit at the start of freeze before recording the v5 source manifest.",
+    "Retain stage-specific content revalidation for preparation, identity, and development."
+  ],
+  "scientific_design_changed": false,
+  "candidate_grid_changed": false,
+  "weighting_changed": false,
+  "outcomes_accessed": false,
+  "untouched_test_accessed": false
+}

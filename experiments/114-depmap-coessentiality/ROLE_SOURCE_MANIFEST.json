@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "experiment": "114-depmap-coessentiality",
+  "date_frozen": "2026-08-30",
+  "status": "builders_defined_real_role_bundles_not_built_or_approved",
+  "canonical_axes": {
+    "targets": {
+      "path": "data/challenge/pert_counts.csv",
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+      "column": "target_gene",
+      "count": 300,
+      "ordered_sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4"
+    },
+    "genes": {
+      "path": "data/challenge/gene_names.csv",
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+      "column": "gene_name",
+      "count": 18533,
+      "ordered_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723"
+    }
+  },
+  "eligibility": {
+    "definition": "global_a14_support_contract_independent_of_leave_surface_out_role",
+    "incumbent_uncovered_count": 28,
+    "incumbent_uncovered_ordered_sha256": "2ca99e21178d85bb8e6fe8a49d9a304cce8de30786463cbb7f50f88c4cdbf91c",
+    "low_confidence_count": 13,
+    "low_confidence_ordered_sha256": "c12e419a49fe91ffb40cb235aa2841d64d869a3bac3b8def15f301eb74ec0a6b",
+    "eligible_count": 41,
+    "eligible_ordered_sha256": "508daf6356aeb62fd30e9048482bdaca9b1b001ec80e8aef9dabe5b32bc0dcb0",
+    "expected_source_count": 3,
+    "metadata_only_held_source_policy": "orion_hek293t/perts.txt_may_only_reproduce_the_predeclared_global_41_row_mask_for_the_orion_hek293t_role;_its_delta_and_control_arrays_are_forbidden"
+  },
+  "a14": {
+    "alpha": 0.982,
+    "effect_scale": 6.817,
+    "donor_weights": "equal_over_role_donors_that_carry_the_target",
+    "gene_norm": false,
+    "empirical_bayes": false,
+    "beta": 0.0,
+    "perturbmatch_blend": 0.5,
+    "perturbmatch_policy": "replace_only_the_k562_slot_when_both_k562_and_perturbmatch_carry_the_target",
+    "cd4_fraction": 0.05,
+    "cd4_target_solve": null,
+    "cd4_policy": "complete_three_condition_mean_residual_after_whitening",
+    "whitening_gamma": 0.65,
+    "whitening_lambda": 0.0,
+    "basis_prune": "common_essential_after_sampling",
+    "basis_row_cap_per_donor": 12000,
+    "basis_rng": "numpy_default_rng_seed_0_one_stream_in_role_donor_order",
+    "basis_coordinate_exclusion": "union_of_canonical_300_vcc_targets_and_role_held_surface_targets",
+    "basis_target_row_exclusion": "all_role_held_surface_targets",
+    "eigenvalue_floor_relative": 1e-12,
+    "eigenvalue_dtype": "<f8",
+    "eigenvector_dtype": "<f4",
+    "duplicate_gene_policy": "last_occurrence_on_canonical_axis",
+    "incumbent_effect_dtype": "<f8",
+    "source_effect_dtype": "<f8"
+  },
+  "source_bank": {
+    "row_definition": "one_row_per_allowed_source_id_and_unique_source_target_pair",
+    "row_order": "role_allowed_source_id_order_then_lexicographic_target_symbol",
+    "target_duplicate_policy": "last_occurrence",
+    "target_universe": "union_of_exact_positive_top25_leave_query_target_out_neighbours_for_all_41_eligible_queries_across_string_neighbor_depmap_neighbor_and_string_depmap_blend_w1",
+    "target_universe_tie_policy": "descending_similarity_then_frozen_lexicographic_source_target_order",
+    "neighbours": 25,
+    "similarity_floor": 0.0,
+    "feature_blend_weight": 1.0,
+    "prewhiten_transform": "donor_delta_minus_donor_gene_mean_then_last_occurrence_scatter_to_canonical_axis_then_float32_round_after_role_reference_over_donor_scale_then_multiply_by_alpha_times_effect_scale_over_role_reference",
+    "response_mask_before_whitening": "only_role_operator_columns_are_retained;_canonical_panel_and_role_held_surface_coordinates_are_zero_and_uncovered",
+    "whitening": "role_operator_gamma_0.65_lambda_0_without_global_median_renorm",
+    "whitening_scale_rationale": "the_omitted_positive_bank_global_scalar_cancels_when_each_candidate_is_restored_to_its_incumbent_allowed_coordinate_norm",
+    "postwhiten_coverage": "every_role_operator_column_is_covered_for_each_retained_source_row;_all_other_coordinates_are_uncovered",
+    "perturbmatch_in_source_bank": false,
+    "cd4_in_source_bank": false,
+    "effect_space": "a14_role_donor_deviation_role_whitened_no_global_renorm_v1"
+  },
+  "upstream_contracts": {
+    "experiment_107_contract": {
+      "path": "experiments/107-jurkat-high-moi/strict_validation_contract.json",
+      "sha256": "8a6b874dddcfb2d4f172dacb6ed608c321b6039b82df15789364d727e1e572ee"
+    },
+    "experiment_107_builder": {
+      "path": "experiments/107-jurkat-high-moi/strict_artifact_builder.py",
+      "sha256": "4e6d05ee786cbc435387cae89ef762466abe9c01f768e26a2dc2f738619978f1"
+    },
+    "experiment_107_validator": {
+      "path": "experiments/107-jurkat-high-moi/strict_nadig_validation.py",
+      "sha256": "6a4d92cce4599b7d60ffcd2a983f924359df8d3696feab9fe5c98c8542ddd2a9"
+    }
+  },
+  "implementation_inputs": {
+    "scripts/make_submission_pm_cd4.py": "7562cf5a16fd751c55ddf248e05f2e4281f907e27be0a5bb9da959d61991b62b",
+    "scripts/build_union_whitener.py": "2337092687eaa973e2d141a869dfdb45969b4d4c48e9c0b166bb738c1eb1116e",
+    "scripts/build_submission.py": "3e0a7643f604c59b5ff8494af2fa36dc08c37303dae19bc7557ac95a8dde4e44",
+    "scripts/make_submission.py": "e85879effd33334cd6b1ddd189b02e1373ea6f918add30298e9cf9bebb6a0ab1",
+    "src/vcc2026/donor_transfer.py": "c91cb05e1204138900058be2c82a227f132e373493a3b3e15914cd18f807f3b9",
+    "src/vcc2026/multi_donor.py": "1daf35d97b50fb234a37255cf4136d34580f98f9d54faf175dca48461a33129a",
+    "src/vcc2026/whiten.py": "5dbddefde17192cda4bc7f8f7eceb202faf672de1833c42251366078e7e18bc1",
+    "experiments/061-perturbmatch-hct-count/build_candidate.py": "77e6fbf7edf1aeea6d39be4fe801591d0b0c2867f95042b697f0fc4042a2fae4",
+    "experiments/062-cd4-post-whiten/run.py": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176"
+  },
+  "source_inputs": {
+    "challenge_manifest": {
+      "path": "data/challenge/manifest.json",
+      "sha256": "2c2b5d425df817ca35e9edf08282d12494ce42913ba824375bf0f98a1cc676f5"
+    },
+    "eligibility_cross_check": {
+      "path": "submissions/a15-cd4f010.vcc.meta.json",
+      "sha256": "34223442e4e8816bb9be2b1fdfe6a563ed114c17a2893bee0ff603953f84287a"
+    },
+    "common_essential_targets": {
+      "path": "data/donors/k562_essential/perts.txt",
+      "sha256": "b1e5279534eb240f0f3487f0814d379e05b12799b21f6cb3818f5c7f55557e2d"
+    },
+    "depmap_features": {
+      "path": "experiments/114-depmap-coessentiality/work/source-features/depmap-features.npz",
+      "sha256": "7f42b585f788db95cdc345d44b44926bd76ce0fc5ae94c544fd2f6929b9ddc51"
+    },
+    "depmap_feature_receipt": {
+      "path": "experiments/114-depmap-coessentiality/work/source-features/feature-receipt.json",
+      "sha256": "6e01f6daa6bb39203d8178ea693e39caad6246fbe96fa38dbc18d25deadd7b7b"
+    },
+    "string_features": {
+      "path": "data/external/slim/gene_string_embeddings.v0.3.h5",
+      "sha256": "789416877b8701ef6f800106d26bf7bb97ea8e72744e6ab93e24933a717f247d"
+    },
+    "donors": {
+      "k562_gwps": {
+        "delta": {
+          "path": "data/donors/k562_gwps/delta.npy",
+          "sha256": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9"
+        },
+        "b_ctrl": {
+          "path": "data/donors/k562_gwps/b_ctrl.npy",
+          "sha256": "d06cf51d51cde1ae999e86bbd3be0bdc15471392bae153a1aa1e21dc5c81b957"
+        },
+        "genes": {
+          "path": "data/donors/k562_gwps/genes.txt",
+          "sha256": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba"
+        },
+        "perts": {
+          "path": "data/donors/k562_gwps/perts.txt",
+          "sha256": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec"
+        },
+        "meta": {
+          "path": "data/donors/k562_gwps/meta.json",
+          "sha256": "0bd3478aa6b63164bd4816cd8bbb439b805b6b93b2a267ddf8114b196c5e19aa"
+        }
+      },
+      "orion_hct116": {
+        "delta": {
+          "path": "data/donors/orion_hct116/delta.npy",
+          "sha256": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33"
+        },
+        "b_ctrl": {
+          "path": "data/donors/orion_hct116/b_ctrl.npy",
+          "sha256": "b3044d439cfac932024e0a48152196387714e4b460a339fb9a03e32fcb2fe069"
+        },
+        "genes": {
+          "path": "data/donors/orion_hct116/genes.txt",
+          "sha256": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e"
+        },
+        "perts": {
+          "path": "data/donors/orion_hct116/perts.txt",
+          "sha256": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8"
+        },
+        "meta": {
+          "path": "data/donors/orion_hct116/meta.json",
+          "sha256": "7a1ec5a9323c6ebd4b586aa300b28bcd9ddf271e67f04bdaf353cb15b8b2d6c8"
+        }
+      },
+      "orion_hek293t": {
+        "delta": {
+          "path": "data/donors/orion_hek293t/delta.npy",
+          "sha256": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b"
+        },
+        "b_ctrl": {
+          "path": "data/donors/orion_hek293t/b_ctrl.npy",
+          "sha256": "e04234cffbe102731cc562e8fb06bddb8ef0644b2af894b8a0ee6ce079ca4984"
+        },
+        "genes": {
+          "path": "data/donors/orion_hek293t/genes.txt",
+          "sha256": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e"
+        },
+        "perts": {
+          "path": "data/donors/orion_hek293t/perts.txt",
+          "sha256": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547"
+        },
+        "meta": {
+          "path": "data/donors/orion_hek293t/meta.json",
+          "sha256": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f"
+        }
+      }
+    },
+    "perturbmatch": {
+      "delta": {
+        "path": "data/external/perturbmatch/delta.npy",
+        "sha256": "efa20944f6f6485a7cc7f484c7ab70bd2ba491a6e07b231f306e104b2e1e4cf2"
+      },
+      "genes": {
+        "path": "data/external/perturbmatch/genes.txt",
+        "sha256": "e889994e2d0462d064018408ca456fc8be428e660523fb1bd9a7bcd7b3ab5959"
+      },
+      "perts": {
+        "path": "data/external/perturbmatch/perts.txt",
+        "sha256": "1131758c3ab0d0c781a17580894511986d9baeadc1ad1304251f5a133086998e"
+      },
+      "meta": {
+        "path": "data/external/perturbmatch/meta.json",
+        "sha256": "0b8224c2e04b1d2e4a331ecb26c5d1733eb32c143f949424b1cd518299066a41"
+      }
+    },
+    "cd4": {
+      "cd4_rest": {
+        "delta": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/delta.npy",
+          "sha256": "b2bafd6e24c2aa34b03ec17836db34fcd9512f78920aed207413a9d727f9e765"
+        },
+        "b_ctrl": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/b_ctrl.npy",
+          "sha256": "5c47ef6b15a00a867b7b24034273bf3aba118d7cdf87ce58ec58427751313d81"
+        },
+        "genes": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/genes.txt",
+          "sha256": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd"
+        },
+        "perts": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/perts.txt",
+          "sha256": "ddcd8ff07e2f38d93fc035ce2aadebe4bcaeb097ef95e1f26e8e4860b641374b"
+        },
+        "meta": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/meta.json",
+          "sha256": "cece9564be470b133ac6399012af42bcfa1934776c1820838c6aa8ab6a15b9cc"
+        }
+      },
+      "cd4_stim8hr": {
+        "delta": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/delta.npy",
+          "sha256": "eea7996d6694450fb1167b9ebbb6b709a3477e6d0347b49a4475e13ff7800c99"
+        },
+        "b_ctrl": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/b_ctrl.npy",
+          "sha256": "75e35371ec33677462acdbc56938c2cc266d583dc2e75ed50b6b825c4a20161e"
+        },
+        "genes": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/genes.txt",
+          "sha256": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd"
+        },
+        "perts": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/perts.txt",
+          "sha256": "639feb3fba1d6cf3b5bb5e2ef9dfdc0ff3044adb4c7477b4588c82ff096d828e"
+        },
+        "meta": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/meta.json",
+          "sha256": "9ca1e9b8ccbf785d88b2a31bc47818479327c205145faa78d9b8eaa215bff4cc"
+        }
+      },
+      "cd4_stim48hr": {
+        "delta": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/delta.npy",
+          "sha256": "568119ac25c8d16116d8953d3ee61762fe3c45d9ee8c22a6e7b2669c39837a9a"
+        },
+        "b_ctrl": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/b_ctrl.npy",
+          "sha256": "a35f6c639937332cc483c82b9717dec9ff8a3fc70e6030e1b9f6df5fcc6658fd"
+        },
+        "genes": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/genes.txt",
+          "sha256": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd"
+        },
+        "perts": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/perts.txt",
+          "sha256": "4bf6468927fc11f0709bb0e63d14852f5a49f4f577455f0fa92e88719777d618"
+        },
+        "meta": {
+          "path": "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/meta.json",
+          "sha256": "62390f52782a592b2a144349bebebffc2675309a614bff0eef99c0b315668ef8"
+        }
+      }
+    }
+  },
+  "roles": {
+    "h1": {
+      "surface": "h1",
+      "held_surface_source_id": "h1_2025",
+      "allowed_source_ids": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "forbidden_source_ids": [
+        "h1_2025"
+      ],
+      "incumbent_endpoint": "a14-role-heldout-canonical-300-v1",
+      "source_effect_space": "a14_role_donor_deviation_role_whitened_no_global_renorm_v1",
+      "operator": {
+        "role": "operator.h1",
+        "artifact_path": "experiments/107-jurkat-high-moi/work/strict-validation/h1/operator.npz",
+        "manifest_path": "experiments/107-jurkat-high-moi/work/strict-validation/h1/operator.json",
+        "target_exclusion_count": 85,
+        "target_exclusion_ordered_sha256": "f49f8343fe877c378fc258884def4a66241adac43d4c2798e9257cecd6d6bd1f",
+        "column_count": 17862,
+        "columns_int64_sha256": "00242e6a8fdd1f5c6dd5b8ee6a511a949c730537b9352865d653a1361d80a622",
+        "basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7720,
+            "int64_sha256": "024e9e6181f0147013f6181a78e70f08d713f193c4b9cfe9f20eda0e5e6b195f"
+          },
+          "orion_hct116": {
+            "count": 10766,
+            "int64_sha256": "2c40f33a6901ab5a5e0a2dcd783aa70d1572d91e74dea79bdb5192e062a7449e"
+          },
+          "orion_hek293t": {
+            "count": 10758,
+            "int64_sha256": "c6497e786ef947621f20ab4abc2c1b6341a37aa344cf1a97d6fa397625f6083f"
+          }
+        }
+      },
+      "output_directory": "experiments/114-depmap-coessentiality/work/roles/h1"
+    },
+    "orion_hek293t": {
+      "surface": "orion_hek293t",
+      "held_surface_source_id": "orion_hek293t",
+      "allowed_source_ids": [
+        "k562_gwps",
+        "orion_hct116"
+      ],
+      "forbidden_source_ids": [
+        "orion_hek293t"
+      ],
+      "incumbent_endpoint": "a14-role-heldout-canonical-300-v1",
+      "source_effect_space": "a14_role_donor_deviation_role_whitened_no_global_renorm_v1",
+      "operator": {
+        "role": "operator.orion_hek293t",
+        "artifact_path": "experiments/107-jurkat-high-moi/work/strict-validation/orion_hek293t/operator.npz",
+        "manifest_path": "experiments/107-jurkat-high-moi/work/strict-validation/orion_hek293t/operator.json",
+        "target_exclusion_count": 132,
+        "target_exclusion_ordered_sha256": "d4fbc4d5e296f9eb73a87a4df84e01ae91aead80aa52e110bd166782f87fccca",
+        "column_count": 17942,
+        "columns_int64_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+        "basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7652,
+            "int64_sha256": "aba1323325bb26391d670544050f9fb8738a0f513491fa88e730efdc54b0eb32"
+          },
+          "orion_hct116": {
+            "count": 10718,
+            "int64_sha256": "82c7601522a2244ae990fc1738308f3632703752c6a06593e9ea282d6d92f051"
+          }
+        }
+      },
+      "output_directory": "experiments/114-depmap-coessentiality/work/roles/orion_hek293t"
+    }
+  },
+  "authorization": {
+    "real_role_build": true,
+    "source_candidate_freeze": false,
+    "held_truth_access": false,
+    "evaluation": false,
+    "count_generation": false,
+    "submission": false,
+    "approved_roles": {}
+  }
+}

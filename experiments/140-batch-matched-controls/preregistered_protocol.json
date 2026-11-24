@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "experiment": "140-batch-matched-controls",
+  "date_preregistered": "2026-08-30",
+  "status": "written_before_any_experiment_140_development_outcome_access",
+  "hypothesis": "A target-specific control profile matched to the target's batch composition removes batch, depth, and state confounding from production donor rows and improves transferable per-gene direction.",
+  "production_overlap": {
+    "a15_k562_path": "The live a15 model already uses a 50:50 incumbent-K562/PerturbMatch K562-slot ensemble on PerturbMatch-supported genes.",
+    "perturbmatch": "PerturbMatch is a limma-voom matched-control reanalysis of the same Replogle K562 assay.",
+    "interpretation": "K562 batch matching is a processing-replicate diagnostic with partial mechanism overlap. Orion batch matching is the genuinely new production lever.",
+    "development_pass_is_not_a15_readiness": true,
+    "separate_production_integration_gate_required": true
+  },
+  "weighting_audit": {
+    "selected_variant": "target_total_umi",
+    "derivation": "For batch count sums S_tb and U_tb=sum_g S_tbg, the pooled target composition is sum_b S_tb / sum_b U_tb = sum_b (U_tb/sum_b U_tb)*(S_tb/U_tb). Therefore a control counterfactual for the same sum-then-normalize pseudobulk must weight batch-normalized controls by target total UMI, not target-cell count.",
+    "k562_depth_field": "obs.ncounts",
+    "k562_schema_fact": "On the preregistration control-only audit, ncounts equaled the analyzed X row sum exactly; UMI_count did not and is excluded.",
+    "orion_depth_field": "total_counts",
+    "orion_schema_fact": "On the preregistration control-only audit, total_counts equaled the sparse gene_expression sum exactly.",
+    "cell_count_weight_candidate": false,
+    "post_outcome_weight_choice": false
+  },
+  "candidate_sources": {
+    "production_family_only": [
+      "k562_gwps",
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "raw_k562": "data/external/scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+    "raw_orion": "data/external/orion/data/{HCT116,HEK293T}_Batch*.parquet",
+    "orion_gene_metadata": "data/external/orion/metadata/gene_metadata.parquet",
+    "retention": {
+      "k562": "exact incumbent target axis; all source cells carrying each retained perturbation label; control label control",
+      "orion": "pass_guide_filter == 1; exact incumbent target axis; candidate controls use the explicit allowlist gene_target == Non-Targeting; NEGR1 is always a perturbation"
+    },
+    "target_profile": "Reconstruct exact incumbent b_target as delta_global + b_ctrl_global.",
+    "eta_zero_rule": "Eta zero literally copies the existing delta.npy rows; it never traverses a reconstructed arithmetic path.",
+    "global_control_reconstruction_audit": "K562 and a separately scanned legacy-Orion control pool reconstruct the frozen b_ctrl.npy within max absolute log-profile error <= 2e-6. Exact Non-Targeting-only Orion controls are not required to equal the legacy artifact; their discrepancy is measured and recorded.",
+    "orion_legacy_control_bug": "The incumbent regex ^neg classified NEGR1 as control. The candidate never does so. Legacy pooling is retained only as a provenance reconstruction audit.",
+    "orion_frozen_control_counts": {
+      "HCT116": {
+        "exact_non_targeting": 165777,
+        "legacy_negr1": 154,
+        "legacy_total": 165931
+      },
+      "HEK293T": {
+        "exact_non_targeting": 218838,
+        "legacy_negr1": 233,
+        "legacy_total": 219071
+      }
+    },
+    "matched_control": "Normalize controls separately within every contributing batch, then average those normalized profiles with target total-UMI weights.",
+    "blend": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "unsupported": "Zero correction and bit-exact incumbent row at every eta.",
+    "development_support_expectation": "All 613 development targets are common to all three production donor tables and are expected to have valid control mixtures."
+  },
+  "parent_132": {
+    "run_sha256": "e78e079fc3b4a715e8b412b0a48bfe44a2f3f6cfcadb8a65a789351c53877778",
+    "authorization_sha256": "9bca6e620359e44b5440d0b8588412f40f274304ae67d9f55fd7e7d03341e197",
+    "plan_manifest_sha256": "170d55ed5f812eb85f5503af4bb9d7dec8d17dce6e58fe966d85bf0eec5185d1",
+    "development_targets_sha256": "74a070a538455ffc2a528dae3094d21e047905463779b2a5206d681f5ca6ebb5",
+    "untouched_test_targets_sha256": "bd37bcacb4eea90da11902bbb8f4736068a7ff67c001739e3407de2b4bf73fc6",
+    "response_genes_sha256": "24743754eead5b8ddd81634bd12feac1df431eb2b9581197755b75c4c90949c8",
+    "development_targets": 613,
+    "untouched_test_targets": 410,
+    "response_genes": 4992,
+    "test_effect_access": false
+  },
+  "outcomes": {
+    "scored_datasets": [
+      "k562_gwps",
+      "k562_essential",
+      "rpe1",
+      "nadig_jurkat"
+    ],
+    "biological_exclusion_groups": {
+      "k562": [
+        "k562_gwps",
+        "k562_essential"
+      ],
+      "rpe1": [
+        "rpe1"
+      ],
+      "jurkat": [
+        "nadig_jurkat"
+      ]
+    },
+    "prediction_donors": {
+      "k562": [
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "rpe1": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "jurkat": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ]
+    },
+    "truth": "raw uncentered source delta",
+    "metrics": [
+      "complete-gallery raw cosine PDS with exact midranks",
+      "continuous signed credit sum(sign(truth)*prediction)/sum(abs(prediction))"
+    ],
+    "k562_macro_weighting": "K562-GWPS and K562-essential average to one biological-family contribution."
+  },
+  "geometry": {
+    "gene_norm": false,
+    "empirical_bayes": false,
+    "donor_weights": "equal among allowed carrying production donors",
+    "donor_renormalization": "eta-zero incumbent median centered-row norm, fixed for every eta and null",
+    "production_precision": "Reproduce Donor.decompose and donor median-norm scaling in float32 exactly as the live MultiDonorModel, then cast selected centered basis rows to float64 before covariance accumulation as scripts/build_union_whitener.py does.",
+    "correction_centering": "For raw control correction r_t=b_ctrl_global-b_ctrl_matched,t and mu_r=mean(r_t over supported source rows), use centered correction r_t-mu_r on supported rows and exactly zero on unsupported rows.",
+    "unsupported_production_warning": "The 613-target development set does not exercise unsupported rows. Any a15 integration involving unsupported rows requires a separate frozen integration gate.",
+    "whitener": "a15 union_pruned signal covariance from exact eta-zero/global-control centered production donor rows",
+    "whitener_gamma": 0.65,
+    "whitener_floor_relative": 1e-12,
+    "whitener_basis": "One numpy default_rng(0) consumed in production donor order; retain all rows when a donor has <=12000 rows, otherwise choose 12000 without replacement and sort; after the cap, remove rows whose perturbation is in data/donors/k562_essential/perts.txt. Apply this algorithm separately to each allowed outer-source donor set on the 4,992-gene response axis.",
+    "production_three_donor_expected_rows": {
+      "k562_gwps": 7784,
+      "orion_hct116": 10807,
+      "orion_hek293t": 10803,
+      "total": 29394
+    },
+    "k562_held_two_orion_expected_rows": {
+      "orion_hct116": 10807,
+      "orion_hek293t": 10803,
+      "total": 21610
+    },
+    "basis_selection_provenance": "Each outer group freezes source-row counts, post-cap/prune retained counts, dropped counts, and SHA-256 hashes of the selected int64 row-index arrays.",
+    "whitener_fit": "separate inside each outer held-source calculation; K562-held excludes K562-GWPS; RPE1/Jurkat use all three production donors",
+    "candidate_dependent_refit": false,
+    "reason_fixed_operator": "Reuses the exact incumbent geometry and isolates the target-specific control correction from covariance and donor-scale changes.",
+    "preserve_renorm": "One positive panel-global scalar after transformation; omitted from endpoint arithmetic because both PDS and signed credit are exactly invariant to it."
+  },
+  "coordinate_exclusion": {
+    "all_300_vcc_targets": true,
+    "all_1023_gallery_targets": true,
+    "before_operator_fit": true,
+    "before_transform": true,
+    "before_score": true,
+    "axis": "Experiment 132 frozen 4,992 response genes"
+  },
+  "development": {
+    "folds": 5,
+    "fold_definition": "contiguous numpy.array_split blocks preserving Experiment 132's frozen development-target order",
+    "selection": "Within each fold, select among eta 0, 0.25, 0.5, 1.0 on inner targets with an inner-only PDS gallery. Eligible candidates must have nonnegative PDS and signed-credit deltas in every scored biological family. Maximize biological-family macro PDS, then macro signed credit, then smaller eta.",
+    "held_scoring": "Evaluate held queries against the complete 613-target gallery.",
+    "final_eta": "Apply the same deterministic selection rule once on all 613 development targets.",
+    "component_diagnostics": "After the primary all-donor eta selections are frozen, report all-donor, Orion-only, and K562-only arms using those same fold-specific and final eta values without retuning. Diagnostics do not change the primary PASS decision; they are frozen evidence for later a15 integration.",
+    "outcome_access_requires_separate_post_review_authorization": true
+  },
+  "randomness": {
+    "target_label_null_seed": 140202610,
+    "batch_mixture_null_seed": 140202611,
+    "bootstrap_seed": 140202612,
+    "null_draws_each": 49,
+    "bootstrap_draws": 20000,
+    "target_label_null": "Apply one common derangement to matched-control correction rows across all allowed donors, preserving cross-donor correction coherence while breaking target identity.",
+    "batch_mixture_null": "Apply independent donor-specific derangements to target-to-batch-mixture correction rows, preserving each donor's correction distribution while breaking target identity and cross-donor alignment.",
+    "bootstrap_blocks": "Connected components of reciprocal five-nearest-neighbor DepMap target-feature edges at cosine >= 0.40, using the frozen 613 development targets."
+  },
+  "gates": {
+    "eta_zero_raw_row_identity_exact": true,
+    "eta_zero_centered_row_identity_exact": true,
+    "eta_zero_pre_whitening_identity_exact": true,
+    "eta_zero_post_whitening_identity_exact": true,
+    "unsupported_fallback_exact": true,
+    "each_scored_biological_family_pds_delta_min": 0.0,
+    "each_scored_biological_family_signed_credit_delta_min": 0.0,
+    "macro_pds_delta_min": 0.003,
+    "macro_signed_credit_delta_min": 0.003,
+    "bootstrap_lower_95_positive_both": true,
+    "observed_above_target_label_null_p95_both": true,
+    "observed_above_batch_mixture_null_p95_both": true,
+    "maximum_positive_gain_concentration": 0.5,
+    "concentration_scopes": [
+      "biological_family",
+      "target_block"
+    ],
+    "same_gates_on_nested_oof_and_final_fixed_candidate": "Family nonnegativity, macro thresholds, target-block bootstrap, both null p95 comparisons, and both concentration checks are required independently for nested OOF and the final fixed candidate."
+  },
+  "freeze": {
+    "protocol_implementation_plan_randomness_source_paths_and_source_sha256_before_development_outcome_access": true,
+    "source_preparation_access": "Candidate construction uses only control expression plus target batch/depth metadata. K562 additionally streams all X rows solely to verify ncounts equals the row sum; Orion additionally reads NEGR1 expression solely to reconstruct the frozen legacy control. No targeting expression vector contributes to the candidate correction.",
+    "stage_specific_source_hash_revalidation": true,
+    "identity_reproduction_before_development_scoring": true,
+    "atomic_no_overwrite": true,
+    "fail_closed": true
+  },
+  "preoutcome_execution_amendments": [
+    "PREFREEZE_AMENDMENT_001.json",
+    "PREFREEZE_AMENDMENT_002.json",
+    "PREFREEZE_AMENDMENT_003.json",
+    "PREFREEZE_AMENDMENT_004.json",
+    "PREFREEZE_AMENDMENT_005.json"
+  ],
+  "incumbent_provenance": {
+    "a15_meta": "submissions/a15-cd4f010.vcc.meta.json",
+    "a15_meta_sha256": "34223442e4e8816bb9be2b1fdfe6a563ed114c17a2893bee0ff603953f84287a",
+    "whitener_id": "union_pruned",
+    "operator": "data/donors/whitener_union_pruned.npz",
+    "operator_sha256": "e2f65ecf69b7e0b0b817d02d850c7be07a78b442644a239c4b0e520cda1db123",
+    "operator_metadata": "data/donors/whitener_union_pruned.json",
+    "operator_metadata_sha256": "838f263c6a4e1bed069d5faeb3bc3bb2b9234c5a5a933219a94241037a801f4d",
+    "operator_builder": "scripts/build_union_whitener.py",
+    "operator_builder_sha256": "2337092687eaa973e2d141a869dfdb45969b4d4c48e9c0b166bb738c1eb1116e",
+    "essential_list": "data/donors/k562_essential/perts.txt",
+    "essential_list_sha256": "b1e5279534eb240f0f3487f0814d379e05b12799b21f6cb3818f5c7f55557e2d"
+  },
+  "authorization_boundary": {
+    "preoutcome_source_schema_hashing_control_preparation_and_identity_reproduction": true,
+    "development_outcome_access": false,
+    "development_requires_explicit_post_review_authorization": true,
+    "untouched_410_target_test": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false,
+    "writes_outside_experiment_140": false
+  }
+}

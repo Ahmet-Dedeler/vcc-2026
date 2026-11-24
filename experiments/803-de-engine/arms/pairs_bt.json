@@ -1,0 +1,67 @@
+{
+ "pairs": [
+  {
+   "name": "c0_l25 on inc",
+   "arm": "c0l25inc",
+   "base": "inc",
+   "board": null,
+   "board_pair": "none (no board point)"
+  },
+  {
+   "name": "c0_l25 on c4hupr",
+   "arm": "c0l25c4hupr",
+   "base": "c4hupr",
+   "board": null,
+   "board_pair": "none (no board point)"
+  },
+  {
+   "name": "c0_l25 on c4h",
+   "arm": "c0l25c4h",
+   "base": "c4h",
+   "board": null,
+   "board_pair": "none (no board point)"
+  },
+  {
+   "name": "c0_l25 on c4hpre",
+   "arm": "c0l25c4hpre",
+   "base": "c4hpre",
+   "board": null,
+   "board_pair": "none (no board point)"
+  },
+  {
+   "name": "c0_l10 on inc",
+   "arm": "c0l10inc",
+   "base": "inc",
+   "board": null,
+   "board_pair": "none (no board point)"
+  },
+  {
+   "name": "c0_l10 on c4hupr",
+   "arm": "c0l10c4hupr",
+   "base": "c4hupr",
+   "board": null,
+   "board_pair": "none (no board point)"
+  },
+  {
+   "name": "c0_l10 on c4h",
+   "arm": "c0l10c4h",
+   "base": "c4h",
+   "board": null,
+   "board_pair": "none (no board point)"
+  },
+  {
+   "name": "c0_l10 on c4hpre",
+   "arm": "c0l10c4hpre",
+   "base": "c4hpre",
+   "board": null,
+   "board_pair": "none (no board point)"
+  },
+  {
+   "name": "c0_l25 \u2212 c0_l10 (inc)",
+   "arm": "c0l25inc",
+   "base": "c0l10inc",
+   "board": null,
+   "board_pair": "none"
+  }
+ ]
+}

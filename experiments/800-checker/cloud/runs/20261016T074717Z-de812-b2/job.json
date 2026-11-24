@@ -1,0 +1,17 @@
+{
+ "name": "de812-b2",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "data/harness/h1-test.h5ad",
+  "experiments/812-de-signs/work/stage",
+  "experiments/323-current-family-validation/work/reference_de.parquet",
+  "experiments/435-zs-on-coarse/work/h1/stats-base_s0_bps_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.npz",
+  "experiments/618-h1-trainval-surface/work/g1/stats-base_s0_bps_zr-5_prodem_mde0.1cap0.1min0.3coarse_dnk250zs.npz",
+  "experiments/618-h1-trainval-surface/work/ref_tv/reference_de.parquet",
+  "experiments/391-consensus-block-signs/work/clean4_prior_challenge.npz"
+ ],
+ "collect": [
+  "experiments/812-de-signs/work/ntcbias812.json"
+ ]
+}

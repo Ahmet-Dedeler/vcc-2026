@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-31",
+  "stage": "after_v3_k562_source_evaluation_before_any_published_orion_build",
+  "finding": [
+    "The v3 K562 source build and source evaluation passed, but are not accepted into the replacement chain.",
+    "The first HCT116 source-build attempt materialized one filtered Parquet file at a time and failed closed at batch 40 of 109 when process peak RSS reached 17.713 GiB against the 17.5 GiB internal ceiling.",
+    "A second identical-arithmetic attempt using Arrow's system allocator failed closed at batch 80 of 109 when process-tree RSS reached 18.28 GiB against the 18 GiB external guard.",
+    "Neither HCT116 attempt published a final donor directory. Both stale lock files were removed only after their recorded PID no longer existed."
+  ],
+  "correction": {
+    "orion_reader": "Use a filtered pyarrow.dataset scanner with 256-row record batches, use_threads false, batch_readahead 1, and fragment_readahead 1.",
+    "aggregation": "Apply the unchanged sparse target and response aggregation to each record batch and sum the resulting float64 arrays.",
+    "scientific_contract": "Target eligibility, source rows, total UMI, response coordinates, split assignments, arithmetic, reconstruction tolerance, operators, nulls, and gates remain unchanged.",
+    "replacement_authorization": "SOURCE_ONLY_FREEZE_AUTHORIZATION.v4.json",
+    "replacement_freeze": "work/preoutcome-freeze-v3",
+    "replacement_source_build": "work/source-build-v3",
+    "replacement_source_evaluation": "work/source-evaluation-v3",
+    "replacement_source_gate": "work/source-gate-v3"
+  },
+  "access_state": {
+    "k562_v2_source_build_completed": true,
+    "k562_v2_source_evaluation_completed": true,
+    "hct116_source_expression_opened": true,
+    "hct116_final_artifact_published": false,
+    "hek293t_source_expression_opened": false,
+    "development_613_outcomes_opened": false,
+    "sealed_410_outcomes_opened": false,
+    "reserved_confirmation_expression_opened": false,
+    "count_generation": false,
+    "cell_eval2": false,
+    "challenge_build": false,
+    "submission": false
+  }
+}

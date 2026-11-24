@@ -1,0 +1,23 @@
+{
+  "sha256": {
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "experiments/147-dual-moment-emitter/dual_moment.py": "89dda8f617261f9b4cfb6ba44cb8ee85db41c3c55adf0e46991be7c5b81e5bcd",
+    "experiments/323-current-family-validation/evaluate323.py": "10f7ba375c3fd9161348a10cf84eb45b364eba5e8bab5cd183aefe3f6b2ceb0c",
+    "experiments/323-current-family-validation/evaluation-inputs.json": "ba0d3ae08e29ce890fa9f657579a18d9d755289eccafeb3e3c5e7d38fbfd2306",
+    "experiments/323-current-family-validation/exact_de323.py": "7a3a0b406ede3963b3e5ae9b6ed4f993b1afc87d8efd1e95f113a25f0d183f91",
+    "experiments/323-current-family-validation/inputs.json": "50ff05fe589f0b45625ef0913b87d190c7cfa4d1009c6fa5844789b4b980d6ea",
+    "experiments/323-current-family-validation/run323.py": "22c92b60e09fc22da9f8774adac4ed09e7ea521b1bb00f52d190e6b58c6033ac",
+    "experiments/323-current-family-validation/work/compose.json": "8b279403584561e2dbbb62ba5561ea8fe25b3c363180d33b5e8b50bdaf8ce2c3",
+    "experiments/323-current-family-validation/work/effects.npz": "1ab617c14973ca9d6a071b1fd966059b7c6596c460b21ae099862394766dfd05",
+    "experiments/323-current-family-validation/work/metrics-cap15.json": "8586e9d024268c23ee985d264bb5d70099f3b0ad48f013514b2f6610f34091bb",
+    "experiments/323-current-family-validation/work/reference.json": "dceff2cb228a98b0a60e23196fa03162e2180519341054cc828d6c17ce2e17eb",
+    "experiments/323-current-family-validation/work/reference.npz": "304aa51133c9776a8d49c29b2075e82f6110671339fa1df77f163cba4843a8c6",
+    "experiments/323-current-family-validation/work/stats-cap15.npz": "080ba7094cf3654fd059b7aa4d19a094853408452dab0eb1a0d50896bd118271",
+    "experiments/338-rank-moment-feasibility/PREREGISTRATION.md": "86fce310435668b4be472ba35e92e0650e48a2991a2dfffe993a1187ea5f6ae3",
+    "experiments/338-rank-moment-feasibility/core338.py": "4e448e6573f0897c045ba754645d50be41d893e881e2688692e7007b1a71fecc",
+    "experiments/338-rank-moment-feasibility/run338.py": "7d9cbca4e1287a84cb55288cfb54efc6440012f737ba61d3d39b591a9657a482",
+    "experiments/338-rank-moment-feasibility/selection.json": "85547d0568b6cee0ba0922f19fc25ef72ba1ee07697fdeea7ea203960c2d5f71",
+    "experiments/338-rank-moment-feasibility/test338.py": "d47008b32de559a9281d17733145558e118ef9f312076ac3aa21559b1d43cab6",
+    "uv.lock": "2e458aacefa51a18d1057e09f4984357ad5340674466047350e7fb12a163d78f"
+  }
+}

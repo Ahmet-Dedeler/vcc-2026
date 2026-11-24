@@ -1,0 +1,11 @@
+{
+  "identifier_policy": "canonical-exact-case-sensitive-only",
+  "sha256": {
+    "experiments/333-genept-feature-feasibility/NAME-GATE-FAILURE.md": "d3d460004844708da8dc66a4f230340d39e2c351594c659069ec09eb7005581c",
+    "experiments/333-genept-feature-feasibility/RECOVERY-002.md": "36dc21af63b70bec00b233694487c7ac5e5663d7071fbe93282409d6f27f9bf1",
+    "experiments/333-genept-feature-feasibility/convert_canonical333.py": "a73bc9cfac8b178626bfe016e783019a16f2900f794dabc548a2188fe8f1c26b",
+    "experiments/333-genept-feature-feasibility/recovery-inputs.json": "4c65f7a7dd0d03d6c315f78a63e59d0c6df94d22d96210a4d8b0192a793d737d",
+    "experiments/333-genept-feature-feasibility/test_canonical333.py": "b0d16c541af6f8cade000c649f6a3d9bed5b429984bc49142b47ed1fb3797112",
+    "experiments/333-genept-feature-feasibility/work/name-audit.json": "b81f72854aaa4415ce83f06aedbcb06164ce23db25d2be3f258fbe811d4d9da7"
+  }
+}

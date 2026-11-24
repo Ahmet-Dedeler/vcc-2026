@@ -1,0 +1,29 @@
+1	0	0	3516	bash experiments/801-lab-folds/cloud801.sh verify
+3	7	3	3776	bash experiments/801-lab-folds/cloud801.sh prep L2
+15	8	10	3624	bash experiments/810-strong-direction/cloud/job810.sh L2/k562_gwps
+16	8	10	3560	bash experiments/810-strong-direction/cloud/job810.sh L2/orion_hct116
+17	8	10	3596	bash experiments/810-strong-direction/cloud/job810.sh L2/orion_hek293t
+7	7	16	3780	bash experiments/801-lab-folds/cloud801.sh prep L6
+4	7	16	3780	bash experiments/801-lab-folds/cloud801.sh prep L3
+5	7	16	3780	bash experiments/801-lab-folds/cloud801.sh prep L4
+2	7	16	3776	bash experiments/801-lab-folds/cloud801.sh prep L1
+6	7	16	3756	bash experiments/801-lab-folds/cloud801.sh prep L5
+12	8	20	3436	bash experiments/810-strong-direction/cloud/job810.sh L1/k562_gwps
+13	8	20	3556	bash experiments/810-strong-direction/cloud/job810.sh L1/orion_hct116
+29	8	20	3516	bash experiments/810-strong-direction/cloud/job810.sh L6/orion_hek293t
+25	8	20	3608	bash experiments/810-strong-direction/cloud/job810.sh L5/orion_hct116
+19	8	20	3432	bash experiments/810-strong-direction/cloud/job810.sh L3/orion_hct116
+20	8	20	3432	bash experiments/810-strong-direction/cloud/job810.sh L3/orion_hek293t
+22	8	20	3472	bash experiments/810-strong-direction/cloud/job810.sh L4/orion_hct116
+18	8	20	3412	bash experiments/810-strong-direction/cloud/job810.sh L3/k562_gwps
+28	8	20	3492	bash experiments/810-strong-direction/cloud/job810.sh L6/orion_hct116
+14	8	20	3608	bash experiments/810-strong-direction/cloud/job810.sh L1/orion_hek293t
+26	8	20	3396	bash experiments/810-strong-direction/cloud/job810.sh L5/orion_hek293t
+27	8	20	3616	bash experiments/810-strong-direction/cloud/job810.sh L6/k562_gwps
+23	8	20	3492	bash experiments/810-strong-direction/cloud/job810.sh L4/orion_hek293t
+24	8	20	3612	bash experiments/810-strong-direction/cloud/job810.sh L5/k562_gwps
+21	8	20	3592	bash experiments/810-strong-direction/cloud/job810.sh L4/k562_gwps
+10	1	98	5447136	bash experiments/810-strong-direction/cloud/job810.sh ABC/orion_hek293t
+8	1	111	4896584	bash experiments/810-strong-direction/cloud/job810.sh ABC/k562_gwps
+11	1	113	5508244	bash experiments/810-strong-direction/cloud/job810.sh ABC/kolf2
+9	1	151	5359708	bash experiments/810-strong-direction/cloud/job810.sh ABC/orion_hct116

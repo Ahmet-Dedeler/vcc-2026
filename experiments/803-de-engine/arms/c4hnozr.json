@@ -1,0 +1,13 @@
+{
+ "name": "c4hnozr",
+ "desc": "KA only: zs + plain CLEAN4 hook without zero repair (612's h1_c4kgall)",
+ "emit": {
+  "hook": "c4h",
+  "mde": "coarse",
+  "zero_repair": 0,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": false
+ },
+ "stage": "zs"
+}

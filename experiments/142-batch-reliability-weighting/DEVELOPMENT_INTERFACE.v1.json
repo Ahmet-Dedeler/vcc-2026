@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "interface_only_not_authorized",
+  "required_additive_authorization": "DEVELOPMENT_ACCESS_AUTHORIZATION.v1.json",
+  "authorization_must_bind": [
+    "preregistered_protocol.json",
+    "PREFREEZE_AMENDMENT_001.json",
+    "PREFREEZE_AMENDMENT_002.json",
+    "PREFREEZE_AMENDMENT_003.json",
+    "PREFREEZE_AMENDMENT_004.json",
+    "PREFREEZE_AMENDMENT_005.json",
+    "PREFREEZE_AMENDMENT_006.json",
+    "work/preregistered-plan-v2/plan-manifest.json",
+    "SOURCE_ONLY_FREEZE_AUTHORIZATION.v6.json",
+    "work/preoutcome-freeze-v4/PREOUTCOME_AUTHORIZATION.v1.json",
+    "DEVELOPMENT_INTERFACE.v1.json",
+    "work/source-gate-v4/artifact-manifest.json"
+  ],
+  "authorization_required_values": {
+    "development_613_authorized": true,
+    "untouched_410_test_authorized": false,
+    "count_generation_authorized": false,
+    "challenge_build_authorized": false,
+    "submission_authorized": false
+  },
+  "inputs_after_authorization": {
+    "candidate_weights": "work/source-gate-v4/candidate-weights-{outer_group}.npz",
+    "folds_and_blocks": "experiments/140-batch-matched-controls/work/preregistered-plan-v2/plan-arrays.npz",
+    "incumbent_geometry": "experiments/140-batch-matched-controls/work/identity-reproduction-v5",
+    "truth": "Experiment 132 613-target development rows only"
+  },
+  "outputs": {
+    "nested_oof": "per-target PDS and signed-credit deltas for every eta and all four ancestry controls",
+    "fixed": "full-development selected eta evaluated with the same gates",
+    "nulls": "Use the 49 frozen per-target donor-assignment arrays and the 49 source-evaluation target-pairing draws; each repeats nested selection",
+    "bootstrap": "20000 Experiment 140 target-block draws"
+  },
+  "post_freeze_optional_confirmation": {
+    "requires_separate_authorization": true,
+    "xu_cao_hek293": "Exclude Orion HEK293T from donor effects, reliability, scaling, and operator fitting.",
+    "tian_kampmann_neurons": "Use only after the 613-target candidate is frozen.",
+    "current_expression_access": false
+  },
+  "implementation_note": "The pre-outcome runner validates this interface and the authorization boundary but intentionally contains no held-outcome loader."
+}

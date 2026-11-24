@@ -1,0 +1,11 @@
+archive_member,target_gene,pathway,is_vcc_panel,rows,unique_genes,duplicate_gene_rows,mapped_vcc_genes,common_finite_vcc_genes,compressed_bytes,uncompressed_bytes,crc32,finite_log2fc_A549,finite_log2fc_BXPC3,finite_log2fc_HAP1,finite_log2fc_HT29,finite_log2fc_K562,finite_log2fc_MCF7
+DE_results_all_pathway/Parse_IFNB/ELK1_IFNB_pathway_DE_results.txt,ELK1,IFNB,True,8408,8408,0,7597,3942,1269732,2735339,c0afce30,5216,6456,6642,6145,5895,6938
+DE_results_all_pathway/Parse_IFNB/IFNAR2_IFNB_pathway_DE_results.txt,IFNAR2,IFNB,True,8276,8276,0,7483,4051,1261154,2711344,2cb8b431,5330,6555,6533,6054,5905,6815
+DE_results_all_pathway/Parse_IFNB/SMARCA5_IFNB_pathway_DE_results.txt,SMARCA5,IFNB,True,8539,8539,0,7709,4064,1292212,2779342,3dc9dc21,5334,6645,6756,6263,5997,7073
+DE_results_all_pathway/Parse_IFNB/STAT6_IFNB_pathway_DE_results.txt,STAT6,IFNB,True,8475,8475,0,7652,4067,1281268,2752447,44af7606,5454,6553,6704,6191,5938,6999
+DE_results_all_pathway/Parse_IFNG/IFNGR2_IFNG_pathway_DE_results.txt,IFNGR2,IFNG,True,7759,7759,0,7060,3963,1195435,2573499,afae6c5e,5737,5468,6016,6333,5677,6431
+DE_results_all_pathway/Parse_INS/ELK1_INS_pathway_DE_results.txt,ELK1,INS,True,8078,8078,0,7302,3906,1226134,2646933,f798bf87,4995,6452,5981,6480,6026,6329
+DE_results_all_pathway/Parse_INS/FOXO4_INS_pathway_DE_results.txt,FOXO4,INS,True,8700,8700,0,7817,4206,1312654,2813496,b9168834,5408,6846,6242,6931,6338,6963
+DE_results_all_pathway/Parse_TGFB1/MED15_TGFB1_pathway_DE_results.txt,MED15,TGFB1,True,7672,7672,0,7010,3972,1177510,2530559,4e0fd681,5516,6418,6160,6058,5247,6230
+DE_results_all_pathway/Parse_TNFA/MTF1_TNFA_pathway_DE_results.txt,MTF1,TNFA,True,7786,7786,0,7089,3850,1185285,2564265,0a0a69d5,5433,5847,5845,6195,5807,6188
+DE_results_all_pathway/Parse_TNFA/ZNF22_TNFA_pathway_DE_results.txt,ZNF22,TNFA,True,7713,7713,0,7029,3883,1171951,2527262,b5bf64be,5375,5899,5827,6254,5831,6122

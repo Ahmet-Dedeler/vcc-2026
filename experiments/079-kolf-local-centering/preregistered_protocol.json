@@ -1,0 +1,58 @@
+{
+  "experiment": "079-kolf-local-centering",
+  "frozen_before_kolf_evaluation": true,
+  "question": "Does experiment 075's frozen reciprocal local query-centering transform improve exact production-v9 effect retrieval against untouched KOLF2.1J truth?",
+  "production_query": {
+    "targets": 300,
+    "donors": [
+      "k562_gwps",
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "donor_weights": "equal among donors carrying each target",
+    "alpha": 1.0796,
+    "beta": 0.0,
+    "gene_norm": false,
+    "empirical_bayes": false,
+    "whitener": "exact v9 three-donor union-axis operator",
+    "whitener_sha256": "5608e807230dea04f93f5e804ed26e8f7285d9487d16a2791283793ffb80fed3",
+    "gamma": 0.65,
+    "lambda": 0.0,
+    "renormalization": "candidate-specific on-axis preserve",
+    "excluded_whitener_coordinates": "all 300 VCC target genes"
+  },
+  "candidate": {
+    "k": 64,
+    "beta": 0.5,
+    "minimum_mutual": 2
+  },
+  "candidate_grid": null,
+  "retuning_on_kolf": false,
+  "query_neighbor_population": "all 300 VCC queries on all 18233 non-panel official genes",
+  "held_truth": {
+    "name": "KOLF2.1J",
+    "role": "truth only",
+    "targets": "all 273 KOLF/VCC shared targets",
+    "gallery": "complete 273-target gallery",
+    "genes": "all 17806 KOLF/VCC shared non-panel genes",
+    "representation": "raw decoded quantized z-score, per-gene centered only",
+    "source_rows": 0,
+    "operator_rows": 0,
+    "neighbor_graph_rows": 0
+  },
+  "bootstrap": {
+    "unit": "target_gene",
+    "replicates": 20000,
+    "seed": 7902026,
+    "interval": "percentile_95"
+  },
+  "promotion_gate": {
+    "raw_pds_delta_positive": true,
+    "lower_95_positive": true,
+    "minimum_raw_pds_delta": 0.0015,
+    "all_required": true
+  },
+  "no_count_emission": true,
+  "no_cell_eval2": true,
+  "no_submission": true
+}

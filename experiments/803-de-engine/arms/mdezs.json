@@ -1,0 +1,13 @@
+{
+ "name": "mdezs",
+ "desc": "435's coarse + zs run (no zero repair): KA a's second file on h1test",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": 0,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": false
+ },
+ "stage": "zs"
+}

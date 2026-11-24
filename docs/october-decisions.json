@@ -1,0 +1,441 @@
+{
+ "schema": 1,
+ "about": "Machine-readable October D/E/F switches. DEF-RUNBOOK.md carries the reasoning; this file carries the values. Update ONLY with `uv run python scripts/october_recipe.py decide <switch> <value> --evidence '...'` right after the board read that settles it. `october_recipe.py command` turns the DECIDED values into the exact def_day.sh call.",
+ "updated": "2026-10-18T03:22:43Z",
+ "switches": {
+  "q": {
+   "status": "DECIDED",
+   "value": "1.75",
+   "at": "2026-09-26T00:37:00Z",
+   "evidence": "446b +0.0023 (pds +0.0032, mse -0.0076 raw); experiments/446-q175-level/BOARD-RESULT-446b.md. The q curve stops at 1.75 (438).",
+   "held_out": "TRANSFER (534 \u00a74): 438 \u00a73.4 q 1.5 step +0.0041..+0.0049, q 1.75 step +0.0020..+0.0030 (k 1), 3/3 folds on real/efp/efr; kolf2 fold predicted 417a's board pds; retention ~0.5 | SEALED R6 (534 Part B, C10a): q steps retain 0.53 (q1.5) and 0.61 (q1.75); cumulative October bulk recipe retains 0.70 [0.62, 0.78]"
+  },
+  "sameline_w": {
+   "status": "DECIDED",
+   "value": "0.5",
+   "at": "2026-09-27T07:46:00Z",
+   "evidence": "487 section 1 (peer review): likely October matches are banks already in the mix (lift x1.16-1.29); w 0.5 priced +0.0166 on the flip-0.3 bank, w 2 ~0 with worse mse.",
+   "held_out": "HELD-OUT ONLY (534 \u00a74): 450 same-line bank from another lab on the H1 truth +0.053..+0.079 at 35 % coverage, K562 replication; applies only if a D/E/F line matches a registry bank (520: unlikely)"
+  },
+  "sameline_flags": {
+   "status": "DECIDED",
+   "value": "noprog",
+   "at": "2026-09-27T07:46:00Z",
+   "evidence": "487 section 1. With programme_source on, pass the empty string instead (def_day.sh >= e29e793a; the resolver does this).",
+   "with_programme_source": "",
+   "held_out": "as sameline_w (534 \u00a74)"
+  },
+  "max_levels": {
+   "status": "DECIDED",
+   "value": "4",
+   "at": "2026-09-25T00:00:00Z",
+   "evidence": "448/452 rehearsals converge in <= 3 levelled builds.",
+   "held_out": "operational (448/452 rehearsals)"
+  },
+  "lodo": {
+   "status": "DECIDED",
+   "value": "1",
+   "at": "2026-09-27T00:30:00Z",
+   "evidence": "446bj2 key_ok: +0.0022338 overall, mse -0.0145 raw, pds +0.0002, DE pinned; experiments/446-q175-level/BOARD-RESULT-446bj2.md.",
+   "held_out": "TRANSFER (534 \u00a74): 438 \u00a73.5 +0.0031 efp, +0.0032 real, +0.0017 efr (A/B/C +0.0027); permuted-key control negative everywhere; retention ~1 | SEALED R6 (534 Part B, C10a, 2026-09-29): LODO key +0.00099 [+0.00033, +0.00181] pooled on 4 never-used Arc-like panels, retention 0.30 [0.10, 0.55], 7/12 folds, S4 -0.0006: the weakest October switch off-board, still TRANSFERS by the rule; permuted-key control -0.0102, 0/12"
+  },
+  "lodo_hi_pct": {
+   "status": "DECIDED",
+   "value": "96.64697522769474",
+   "decided_by": "495 (cap 6) vs 446bj2 on 10-03: experiments/495-lodo-cap6/read1003.py",
+   "if_transfers": "96.64697522769474",
+   "otherwise": "off",
+   "needs": "DEF_DAY_LODO=1; def_day.sh with DEF_DAY_LODO_HI_PCT (497)",
+   "held_out": "OFF-BOARD VALUE (534 \u00a74): 522 pct cap vs cap 6 +5.95 % efp, +6.16 % efr, +5.41 % real (bootstrap CIs > 0), >= cap 6 on 8/9 Arc-like re-draws; on A/B/C pct == cap 6, so 10-03 reads cap 6 vs cap 3 (predicted +0.0019..+0.0029 by the same PLOLO instrument): a flat read is a failed prediction of that instrument (coordinator note 09-29) | SEALED R6 (534 Part B, C10a): percentile cap +0.00694 [+0.00517, +0.00828] pooled, retention 3.31x its A/B/C value (S1 +0.0142, S4 +0.0007): most of R6's October bulk value sits here. The 10-03 A/B/C read (cap 6 vs cap 3) still tests the instrument's A/B/C prediction; the preregistered bins stand",
+   "at": "2026-10-03T10:02:43Z",
+   "evidence": "495 entry 9Hxef2F6Clf4G2hIkNPq (0.2739107, +0.0016340 vs 446bj2; mse -0.0120 raw): read1003.py BIN TRANSFERS; experiments/495-lodo-cap6/BOARD-RESULT-495.md",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "96.64697522769474",
+     "at": "2026-10-03T10:02:43Z"
+    }
+   ]
+  },
+  "sharpen_pt": {
+   "status": "DECIDED",
+   "value": "tercilec:2.5,2.0,1.75",
+   "decided_by": "479's pair on 10-02: experiments/479-pertarget-sharpen/read1002.py",
+   "if_s_p2": "stercile:2.5,2.0,1.75",
+   "if_p2g": "tercile:2.5,2.0,1.75 (needs 493h's carried-only cut points first)",
+   "otherwise": "off",
+   "needs": "def_day.sh with DEF_DAY_SHARPEN_PT (497); builder >= d09a986c; driver >= 44714b9a",
+   "held_out": "HELD-OUT POSITIVE (534 \u00a74): PLOLO on the LODO stack P2g +0.0035, S_P2 +0.0038 (3/3 cancer folds); kolf2 +0.0020/+0.0032; 9/9 October-like folds (493, 540c)",
+   "at": "2026-10-05T23:19:45Z",
+   "evidence": "APPLY DAY v2 step 9 (652 F4 conditions met): KA598b tercile == 479p2g dd82740d and KA598c tercilec ka598.py PASS on builder fe4678c3 (76d0b2ed); held-out bulk read = C10b on sealed R6 (f6aa2ed9): P2g = the carried-only form = tercilec TRANSFERS on the percentile-cap base, +0.00208 overall-eq [+0.00132, +0.00287], 11/12 folds, calibrated board projection +0.00093 (board read +0.0010 twice: 479p2g, 498p2g); DE side clean on H1's real emitter (599, 7db7938c): tercilec - tercile DE +0.00002 at f 0.35, 5 seeds. Tries: one form switch (tercile -> tercilec), no board read of tercilec itself (A/B/C moves 4 targets).",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "tercile:2.5,2.0,1.75",
+     "at": "2026-10-02T00:58:13Z"
+    },
+    {
+     "from": [
+      "DECIDED",
+      "tercile:2.5,2.0,1.75"
+     ],
+     "to": "tercilec:2.5,2.0,1.75",
+     "at": "2026-10-05T23:19:45Z"
+    }
+   ]
+  },
+  "programme_source": {
+   "status": "DECIDED",
+   "value": "off",
+   "decided_by": "458d vs 446b and 458g vs 458d on 09-30: experiments/468-prior-gate/read468.py (combined October table)",
+   "if_on": "h1_2025_full",
+   "otherwise": "off",
+   "needs": "sameline_flags '' (not noprog)",
+   "held_out": "H1 ONLY (534 \u00a74): H1 is the programme's own line (462e/f); public sign sources read ~0 on every cancer fold (516); lines share ~1/3 of a programme (462). The 09-30 A/B/C read is the only cross-line test; AGENTS 11.1c: treat a small positive as board-only",
+   "at": "2026-09-30T06:36:47Z",
+   "evidence": "458d b7UI3NRy1rdVNRRyZwmU 0.2615288 vs 446b: -0.0085141, fid -0.005545 raw (458's HARM bin <= -0.0010), reach -0.0267, pds/mse bit-identical, jac -0.00004 (no leak); read468.py: OCTOBER no programme. Arc's H1 programme does not carry to cancer lines (predict517: attenuation r ~0.37)",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-09-30T06:36:47Z"
+    }
+   ]
+  },
+  "prior_gate": {
+   "status": "DECIDED",
+   "value": "off",
+   "decided_by": "the same 09-30 read: le1 unless 458g vs 458d reads HARM (<= -0.0005); 468 addendum 2026-09-27 07:58Z",
+   "if_on": "le1",
+   "otherwise": "off",
+   "needs": "programme_source on; builder >= efb8c9dc",
+   "held_out": "H1 ONLY (534 \u00a74): as programme_source",
+   "at": "2026-09-30T06:36:47Z",
+   "evidence": "moot without a programme source (458g JL8llNLHaTyDQzm798TV 0.2650949: +0.0035661 vs 458d, the gate recovers part of the harm; still -0.0049 vs 446b)",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-09-30T06:36:47Z"
+    }
+   ]
+  },
+  "cd4_stack": {
+   "status": "DECIDED",
+   "value": "x1",
+   "at": "2026-09-26T02:45:00Z",
+   "evidence": "438: CD4 x1.5 loses on October-like panels. 457dr (09-29) re-opens it only if it reads >= +0.0040 (then re-price x1.25). 530: x1 is today's dump and is not exported; x1.5 exports DEF_DAY_CD4_STACK (457's dump-subshell VCC_CD4_TARGET_G).",
+   "held_out": "A/B/C-SPECIFIC (534 \u00a74): 457dr +0.0031 on A/B/C but 438 CD4 x1.5 -0.0011 efp, -0.0024 efr, -0.0016 real: x1 ships | SEALED R6 (534 Part B, C10a): CD4 x1.5 on M4 -0.00087 [-0.00165, -0.00006]: x1 confirmed off-board"
+  },
+  "de_mag": {
+   "status": "DECIDED",
+   "value": "dn_k250_zs",
+   "decided_by": "446bj2z vs 446bj2 on 09-28: experiments/456-zs-riders/read0928.py (zs TRANSFERS iff dnmae <= -0.001, others pinned)",
+   "if_transfers": "dn_k250_zs",
+   "otherwise": "off",
+   "needs": "502's def_day pass-through DEF_DAY_DE_MAG (patch_defday502.py, not applied)",
+   "at": "2026-09-28T13:07:13Z",
+   "evidence": "446bj2z entry be90smZUDcIV7j5MgQ03 (0.2728260): nmae -0.002179 raw vs 446bj2, other five members bit-identical; zs TRANSFERS (bin <= -0.001); experiments/456-zs-riders/BOARD-RESULT-446bj2z.md. Needs 502's DEF_DAY_DE_MAG pass-through (applied after chain511).",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "dn_k250_zs",
+     "at": "2026-09-28T13:07:13Z"
+    }
+   ],
+   "held_out": "SCORER MECHANICS (534 \u00a74): 446bj2z nmae -0.0022 raw, H1 predicted -0.0013..-0.0029; A/B/C capacity 0.70x H1's"
+  },
+  "mde_sign": {
+   "status": "DECIDED",
+   "value": "clean4:0.05",
+   "decided_by": "496a vs 446bj2 on 10-05: experiments/496-uncalled-sign-hook/PREREGISTRATION-board.md",
+   "if_transfers": "clean4:0.05",
+   "otherwise": "off",
+   "needs": "builder with VCC_DE_MDE_SIGN including the file form (517); 530 accepts clean4, programme and hookbank",
+   "held_out": "TRANSFER-CLASS for the CLEAN4 hook (cross-line prior; H1 3 seeds nmae -0.00146); 517's Arc-hook form is H1's own programme and inherits programme_source's caveat (534 \u00a74)",
+   "if_hookbank": "hookbank:<bank>:<tau>[:<tau_c4>[:le<N>]] (the meta records source file; pair with hook_estimator meanz_ne)",
+   "at": "2026-10-05T10:36:41Z",
+   "evidence": "496a HoQY4xrzYer5y232oh85 0.2728318 (+0.0005552 vs 446bj2 YvVru3DAF89Jiyr34olR): dnmae -0.001577 raw <= -0.0010 -> TRANSFERS (496 PREREGISTRATION-board.md bins via experiments/663-idall3-arm/read1005.py); pds bit-identical, mse -4.6e-8 raw (DE-only jackknife move, falsifier 1e-6); held-out: H1 3 seeds nmae -0.00146, 618 I-662 -0.0014 predicted and held; idall3 4R0FMEtcLtvZMmg2X0G5 read BELOW the plain hook, so the CLEAN4 source stays; decided 10-05 after 524dr resolved with it OFF (658) and after CHECKLIST v2 step 9 (633d0ab6). experiments/496-uncalled-sign-hook/BOARD-RESULT-496a.md",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "clean4:0.05",
+     "at": "2026-10-05T10:36:41Z"
+    }
+   ]
+  },
+  "rho_scale": {
+   "status": "DECIDED",
+   "value": "off",
+   "decided_by": "FINAL-PHASE row 2: run rho* x 0.98 / x 1.02 if the members come back. 1 is today's rho*",
+   "if_on": "a scale s with 0.9 <= s <= 1.1",
+   "otherwise": "off",
+   "needs": "530 DEF_DAY_RHO_SCALE (relevel_iter --rho-scale; inband and best_safe take the same scale)",
+   "held_out": "FINAL-PHASE feedback only: rho* is the A/B/C-calibrated NTC-proxy target; no A/B/C board read can move it",
+   "at": "2026-10-14T22:33:01Z",
+   "evidence": "R0 ships rho* x1 (the NTC-proxy re-level target validated on 453dr/524dr/524dr2); x0.98 / x1.02 is FINAL-PHASE row 2, read on D/E/F only; no A/B/C read exists ([17adab] 690 proposal, coordinator 10-14)",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-10-14T22:33:01Z"
+    }
+   ]
+  },
+  "rc_callset_cpm": {
+   "status": "DECIDED",
+   "value": "off",
+   "decided_by": "523's K pair (10-06/07)",
+   "if_on": "an integer n with 100 <= n <= 5000",
+   "otherwise": "off",
+   "needs": "530 DEF_DAY_RC_CALLSET_CPM on the level builds; builder VCC_RC_CALLSET_CPM (523). Unset = 2200",
+   "held_out": "521: H1 regime analysis (K 1,600 +0.0048 at f 0.35, -0.0155 at f 1); the board's n_real regime is what 523 reads",
+   "at": "2026-10-18T03:22:43Z",
+   "evidence": "Re-confirmed off 2026-10-18 by 711's preregistered October K rule (Amendments 1+2), read711 on ku38 aiUKL3IOpD4miuD5LpEu (K 4,200, 0.2736785) vs 446bj2z be90smZUDcIV7j5MgQ03: board dReach raw +0.00942 > +0.0019 refutes the f 0.61 dial, so condition (i) at f 0.87 (reach701.json: H1 reach falls with K) stands and fails; dOverall K 3,400 (ku30 HAbelEdgYYziqwfjTgdI) +0.0011785, K 4,200 +0.0008526; step-down ends at K 2,600. The board size gain has no held-out confirmation (AGENTS 11.1c). Coordinator confirmed (64d49fda); experiments/711-kup-dose. Earlier evidence (10-06): 523's K pair on the board: K20 kJfe2dP9LEJawDEf0pMm d(fid+jac) -0.00086 and K16 Imj3EXViNco8rT4eLLlE -0.0023398 overall vs 446bj2z; no adoption (experiments/523-callset-size/BOARD-RESULT-446bj2zk16.md).",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-10-06T18:30:57Z"
+    },
+    {
+     "from": [
+      "DECIDED",
+      "off"
+     ],
+     "to": "off",
+     "at": "2026-10-18T03:22:43Z"
+    }
+   ]
+  },
+  "hook_estimator": {
+   "status": "DECIDED",
+   "value": "off",
+   "decided_by": "527's arm 446bj2zmz (10-01 null branch or 10-07) and 496a",
+   "if_on": "meanz_ne",
+   "otherwise": "off",
+   "needs": "DEF_DAY_MDE_SIGN=hookbank:<bank>:<tau>...; 517's def_sameline --programme-estimator (530 folds both patches)",
+   "held_out": "H1 only (the Arc programme's own line; h1-test targets excluded, control halves checked, 517): inherits programme_source's caveat",
+   "at": "2026-10-05T10:36:41Z",
+   "evidence": "652 F1 (c1301c3c): the Arc hook (meanz_ne / MZ / CPMZ) is dropped - its held-out read is circular, its A/B/C value is fitted to 458d's read, P12's floor is -0.003, and 629 finds Arc's programme uninformative off-line; the frozen 10-07 rule (653 v4) runs without --arc-hook; October's hook is the plain CLEAN4 mde_sign (496a TRANSFERS, 10-05). Set at the 10-05 decide step as 652 F1 prescribes.",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-10-05T10:36:41Z"
+    }
+   ]
+  },
+  "lodo_strength": {
+   "status": "DECIDED",
+   "value": "0.25",
+   "decided_by": "only if 495 (cap 6) transfers on 10-03",
+   "if_on": "theta, a non-zero plain decimal in [-1, 1] (522's priced arm is 0.25)",
+   "otherwise": "off",
+   "needs": "DEF_DAY_LODO=1 and lodo_hi_pct (the percentile cap); 522's def_strength_key522.py, run between the LODO key and its pin",
+   "held_out": "522: pct x exp(0.25 z_src) +0.7 ... +1.9 % direction on all 9 October-like folds, ~0 on A/B/C (off-board value)",
+   "at": "2026-10-17T00:31:58Z",
+   "evidence": "705 CLEARED 10-17: lstr705 entry o7ObvpGu05zvmCwsFtiC 0.2757977, primary d(pds+mse) -0.0002397 > -0.0005 (HARM line), doverall -0.0002874 vs ALLSW 4WNmsNfdQhYx6bfib0dR; read705.py (coordinator fc8c0710); 9/9 October-like folds > 0 (705 prereg). Day path: DEF_DAY_LODO_STRENGTH (530), KA def_strength_key522 --ka 3/3; rehearsals R-ABC2 (695) + rider690",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-10-14T22:33:01Z"
+    },
+    {
+     "from": [
+      "DECIDED",
+      "off"
+     ],
+     "to": "0.25",
+     "at": "2026-10-17T00:31:58Z"
+    }
+   ]
+  },
+  "lodo_hi": {
+   "status": "DECIDED",
+   "value": "off",
+   "decided_by": "FINAL-PHASE row 4a / 531 finding 12: a fixed cap (row 4a uses 6) if it transfers",
+   "if_on": "a cap h with 1 < h <= 20",
+   "otherwise": "off (cap 3, or the percentile form when lodo_hi_pct is on)",
+   "needs": "DEF_DAY_LODO=1; refused together with lodo_hi_pct (one cap form only). Recorded on the pinned key json (hi) and its id lodo_lo0.5_hi<h>_def",
+   "held_out": "a fixed cap still has to clear a held-out line before it is DECIDED (531 #12); the percentile form's held-out read does not stand in for it",
+   "at": "2026-10-14T22:33:01Z",
+   "evidence": "Superseded by lodo_hi_pct 96.64697522769474 (DECIDED 10-03 on 495); def_day refuses both cap forms together ([17adab] 690, coordinator 10-14)",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-10-14T22:33:01Z"
+    }
+   ]
+  },
+  "callset_block": {
+   "status": "DECIDED",
+   "value": "off",
+   "decided_by": "528's H1 price, then a board read; not DECIDED here",
+   "if_on": "prop or prop:<swap>[:<steer>] with 0 < swap <= 1 and steer kept|key|cpm",
+   "otherwise": "off",
+   "needs": "528's pass-through (builder VCC_RC_CALLSET_BLOCK, emitter block_steer, callblock528.py). Meta config.rc_callset_block carries source, sha256, swap, steer",
+   "held_out": "528 priced the block on H1; it enters the recipe only if that price is positive and a held-out read agrees",
+   "at": "2026-10-14T22:28:57Z",
+   "evidence": "CPH 446bj2zcph FRGEXV8WiqxcX5Es6SyI 0.2734755 (10-07): primary d(fid+nmae) vs 446bj2zcp +0.00120 (hook repairs the block) but the prereg's fired branch ships the block only if d(fid+jac) vs 446bj2z >= +0.0012 (535's bin): read +0.00052 -> no ship. BOARD-LEDGER 10-07/08 (recorded 10-14).",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-10-14T22:28:57Z"
+    }
+   ]
+  },
+  "de_uprn": {
+   "status": "DECIDED",
+   "value": "b_k100_q20r3p10",
+   "decided_by": "630arm's board read (446bj2z + VCC_DE_UPRN=b_k100_q20r3p10, entry QJRJK6OC6Zw1kjwnZqid, 10-08) against its preregistered bins, plus a held-out read",
+   "if_on": "<s|b>_k<K*100>[_q<n>r<n>p<n>] with K in [0.5, 3] (e.g. b_k100_q20r3p10)",
+   "otherwise": "off",
+   "needs": "de_mag on (the UP pass runs after zs); def_day 630dd; builder 630 (rank_up module 7e6b3e52). Meta config.de_uprn carries variant and module_sha256; def_day checks both and reports FAILSAFE_TOTAL",
+   "held_out": "a prior-only DE arm: price it on H1's real emitter (618 / f 0.35) before it is DECIDED on",
+   "added_by": "690a (2026-10-15)",
+   "at": "2026-10-15T01:53:22Z",
+   "evidence": "630arm QJRJK6OC6Zw1kjwnZqid (10-08) 0.2737556 vs 446bj2z be90smZUDcIV7j5MgQ03 0.2728260: +0.00093 overall; raw dnmae -0.003055 = 630 prereg PARTIAL bin (-0.0040..-0.0015); falsifiers clean (pds/mse/fid/jac/reach exactly 0); U075 never scored; prereg PARTIAL text: October adopts mechanism-only, flagged. Class: scorer mechanics. Coordinator 10-15.",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "b_k100_q20r3p10",
+     "at": "2026-10-15T01:53:22Z"
+    }
+   ]
+  },
+  "mde_sign_keygate": {
+   "status": "DECIDED",
+   "value": "off",
+   "decided_by": "a board read of 612's key-gated hook against the plain CLEAN4 hook (496a), plus a held-out read",
+   "if_on": "a quantile 0 < q < 1 (e.g. 0.5)",
+   "otherwise": "off",
+   "needs": "mde_sign on; def_day 612dd; builder VCC_DE_MDE_SIGN_KEYGATE (612). Meta config.de_mde_sign_keygate.q",
+   "held_out": "612's H1 / fold reads; the board read decides (prior-only arms read near-exactly, rule 13)",
+   "added_by": "690a (2026-10-15)",
+   "at": "2026-10-15T01:53:22Z",
+   "evidence": "612's key gate never read on the board alone; idall3 (4R0FMEtcLtvZMmg2X0G5, ungated identity hook) read BELOW the plain hook; KGID retired 10-02; the plain clean4:0.05 hook (496a) is the October hook. Coordinator 10-15.",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-10-15T01:53:22Z"
+    }
+   ]
+  },
+  "de_dnmag": {
+   "status": "DECIDED",
+   "value": "d_m200",
+   "decided_by": "the DN671 arm's board read (631's DOWN magnitude on the October base) against its preregistered bins, plus a held-out read",
+   "if_on": "d_m<m*100>[_q<n>] with m in [1.25, 4] (e.g. d_m200)",
+   "otherwise": "off",
+   "needs": "de_mag on (the DOWN pass runs after zs and 630's UP pass); def_day 690a; builder 631 (dn_mag module 0a8cc560). Meta config.de_dnmag carries variant and module_sha256; def_day checks both",
+   "held_out": "631's H1 price on the real emitter with production's zero repair (AGENTS 6.5, 654: count lfc < -30 cells on any DOWN-magnitude price)",
+   "added_by": "690a (2026-10-15)",
+   "at": "2026-10-15T01:53:22Z",
+   "evidence": "DN wzaVLFTmlAMW3Mfw0dD8 (10-15) 0.2741292 vs 630arm QJRJK6OC6Zw1kjwnZqid 0.2737556: +0.0003736; raw dnmae -0.001646 = 631 prereg PARTIAL bin (-0.0025..-0.0008); falsifiers clean (pds/mse/fid/jac 0, reach +9.6e-8); fail-safes 0. Prereg PARTIAL: October adopts, flagged, if the capacity floor holds on D/E/F's blocks (day-of postbuild report). experiments/671-dnmag-arm/BOARD-RESULT-DN.md. Coordinator 10-15.",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "d_m200",
+     "at": "2026-10-15T01:53:22Z"
+    }
+   ]
+  },
+  "dump_hook": {
+   "status": "DECIDED",
+   "value": "off",
+   "decided_by": "a PIE arm's A/B/C board read (700) plus its held-out read; the value is the committed day-of hook script",
+   "if_on": "a committed script path, e.g. experiments/700-pie-transfer/<hook>.sh, honouring 690g's interface",
+   "otherwise": "off",
+   "needs": "def_day 690g; scripts/def_dumphook_check.py; builder 672 if the hook writes bulk_ctx.npz. The PIE assets (~75 GB, HF_HUB_OFFLINE=1, warm cache) on disk before 10-21",
+   "held_out": "700's held-out reads (10-15: bulk blend +0.0008\u2026+0.0017 predicted; PIE's signs lose to ours)",
+   "added_by": "690g (2026-10-15)",
+   "at": "2026-10-17T01:31:49Z",
+   "evidence": "707 WEAK 10-17 s2: sw707 entry AYbAiHRjuHdil2zCjlsk 0.2771181, primary d(pds+mse) +0.0008417 in WEAK (+0.0005..+0.0010): NOT adopted for R0 (read707.py, coordinator fde78fb3). Not HARM, so 708 AMENDMENT 2's swap route stays live (decide708 may turn it on from D/E/F's own folds, as a 6a replacement entry)",
+   "history": [
+    {
+     "from": [
+      "PENDING",
+      null
+     ],
+     "to": "off",
+     "at": "2026-10-15T04:35:52Z"
+    },
+    {
+     "from": [
+      "DECIDED",
+      "off"
+     ],
+     "to": "off",
+     "at": "2026-10-17T01:31:49Z"
+    }
+   ]
+  },
+  "h1_stack": {
+   "status": "DECIDED",
+   "value": "x2",
+   "at": "2026-10-15T22:00:00Z",
+   "evidence": "438 \u00a75: H1 x2 / CD4 x1 is the October default (q 1.75); def_day has always dumped at VCC_H1_UNION_G=0.56. 690i makes the dose a knob (DEF_DAY_H1_STACK) so 708 (prereg 69bd6105) can re-price it on D/E/F's real panel after R0 and ship a move only as a LATER final entry with its own def_day build and gates.",
+   "held_out": "438's October-like panels (x2 kept); on A/B/C's own panel 438's rule picks H1 x2.5 / CD4 x1.5 (+0.0022, 708/work/expected_abcdef.txt): panel-dependent, hence 708",
+   "added_by": "690i (2026-10-15)"
+  },
+  "cd4_thresholds": {
+   "status": "DAY-OF",
+   "value": "default",
+   "evidence": "481 F1: the CD4 extraction gate (275/290) fires on an Arc-style panel. On the day, if stage 1 stops with the CD4-gate message, check the mapping (244's mapping244.py) and rerun with DEF_DAY_CD4_THRESHOLDS=relaxed. Never set it pre-emptively.",
+   "held_out": "operational (481 F1)"
+  }
+ },
+ "notes": [
+  "2026-09-29: every switch carries a held_out line (534 Part A, AGENTS 11.1c): an October switch needs a board read AND a held-out read"
+ ]
+}

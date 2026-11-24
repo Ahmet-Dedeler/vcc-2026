@@ -1,0 +1,12 @@
+{
+  "donor_a": "data/donors/k562_gwps",
+  "donor_b": "data/donors/rpe1",
+  "n_shared_genes": 7094,
+  "n_shared_perts": 2187,
+  "transfer_mean": 0.14161965250968933,
+  "transfer_median": 0.124688059091568,
+  "mismatch_mean": 0.04369904473423958,
+  "meanresp_mean": 0.09710696339607239,
+  "centered_mean": 0.1275092363357544,
+  "centered_null_mean": 0.0033836401998996735
+}

@@ -1,0 +1,70 @@
+{
+  "biological_value_arrays_loaded": false,
+  "experiment": "127-panel-metric-ceiling",
+  "implementation": {
+    "README.md": {
+      "bytes": 1434,
+      "sha256": "e16a42e0204d6e7585a78238da70328d60df041f92f54a39b4c45ab65d33c1d1"
+    },
+    "freeze.py": {
+      "bytes": 2531,
+      "sha256": "642084fbad2d6faa8ded59489b82b78459b87dafaf078c67b3d9a70b90fc60c5"
+    },
+    "run.py": {
+      "bytes": 20732,
+      "sha256": "570b80bed77b2e01e346198a7cae729bf94aff54abf5046568abc9bd03f8ffa0"
+    },
+    "test_run.py": {
+      "bytes": 2032,
+      "sha256": "b82d4bc4820b63cc9690e18dfcb4ddf563353ace6b8177507a1e4cb8ea1e9a13"
+    }
+  },
+  "inputs_verified_as_opaque_bytes": {
+    "data/challenge/pert_counts.csv": {
+      "bytes": 1906,
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    },
+    "experiments/031-somatic/out_h1test/results.json": {
+      "bytes": 2913,
+      "sha256": "784e7ba2cf4726fb7a57dad114b65ffac33aae4b2d1677b7d440bc27e7131bf4"
+    },
+    "experiments/095-clean-harness/de_thinned.npz": {
+      "bytes": 55650056,
+      "sha256": "955b58907a00c89602f5e89bec03ac45aa25a4e8735042575e7d7ccb3139e5bd"
+    },
+    "experiments/095-clean-harness/out-h1test/results.json": {
+      "bytes": 972,
+      "sha256": "e5f8d9ee822d31c47ad6751930e43aba8fc06b9f424133187b6144e4f511d9e7"
+    },
+    "experiments/098-nmae/work/refde_h1.npz": {
+      "bytes": 5770079,
+      "sha256": "fdff36498e655c079debec356ed163b560e4db4745876f69547a244c4f814d3c"
+    },
+    "experiments/098-nmae/work/refde_orion.npz": {
+      "bytes": 8531357,
+      "sha256": "605ed63dead1871e167b1c3ca00d70fafecedc227920a2ba8d1d476f4bfb510a"
+    },
+    "experiments/099-donors/work/refde_hek293t.npz": {
+      "bytes": 9443796,
+      "sha256": "5b358881d3c669d02575817646f4ea03cd28317571f37435947885f56aaf2f63"
+    },
+    "experiments/100-sign-confidence/work/h1/frozen_predictions.npz": {
+      "bytes": 30561977,
+      "sha256": "b725987cfc4a415b4cc3dde7962719db0cc0b1b34fb6d14fc23cb78cb187f631"
+    },
+    "experiments/100-sign-confidence/work/hct116/frozen_predictions.npz": {
+      "bytes": 45272949,
+      "sha256": "7456a23bc8ada786006f7078d5c59b51eda45b77142b9ae86d70d526bb797b46"
+    },
+    "experiments/100-sign-confidence/work/hek293t/frozen_predictions.npz": {
+      "bytes": 47780277,
+      "sha256": "c1d94cc04d24d34c3ba2ed7bd359520da7ac999e907504989200e2626aec8a38"
+    }
+  },
+  "protocol": {
+    "bytes": 7337,
+    "sha256": "b735425e124c76b0b9f5cf388869af50446f109e89af90034f49df3d0be27616"
+  },
+  "schema_version": 1,
+  "status": "frozen_before_biological_value_array_access"
+}

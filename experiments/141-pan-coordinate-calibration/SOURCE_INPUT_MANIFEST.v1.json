@@ -1,0 +1,87 @@
+{
+  "created_before_experiment_141_development_access": true,
+  "created_utc": "2026-08-30T22:51:19.563310+00:00",
+  "implementation": {
+    "experiments/141-pan-coordinate-calibration/README.md": {
+      "bytes": 5463,
+      "sha256": "6057f6c9e584d7a64e57a187c368266a51995d4428fc6df39959c66f92206da9"
+    },
+    "experiments/141-pan-coordinate-calibration/preregistered_protocol.json": {
+      "bytes": 6187,
+      "sha256": "473734849949f1c96db31b75ef001c777c9e997998a1623921b20fc8196b23b5"
+    },
+    "experiments/141-pan-coordinate-calibration/run.py": {
+      "bytes": 46798,
+      "sha256": "3eb249dc591ab5122a8b7ecc652eb099d7bdf52ceffd3d0423a14f0b42045ba9"
+    },
+    "experiments/141-pan-coordinate-calibration/test_run.py": {
+      "bytes": 4812,
+      "sha256": "09716d4dfd0d95eabea27aace7af8482aab8268a18fb00fc329960108a08a0c5"
+    }
+  },
+  "plan_manifest_sha256": "d4e9250531a76dc17532c0b6c4efa2a7bd631bc4b806030db0290eb4985af1c8",
+  "schema_version": 1,
+  "sealed_410_effect_access_authorized": false,
+  "sources": {
+    "experiments/115-gse295214-h1/work/compact-donor/artifact-manifest.json": {
+      "bytes": 2025,
+      "sha256": "773895e0dcff2b6ae4aa9db22f98cd1376315a62b1a7cd193ef559330cf25cd2"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/compact-donor-receipt.json": {
+      "bytes": 983,
+      "sha256": "2d24b8fcf86cf6fd6c5fc0a02d1da5525393692e9f67d70f865c72189f875348"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/delta.npy": {
+      "bytes": 174506856,
+      "sha256": "d0fa6555f9a62ce503d2ad55c8bfda954322657b52dcd48a24e29c330e718c7a"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/genes.txt": {
+      "bytes": 119285,
+      "sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/measured_mask.npy": {
+      "bytes": 43626810,
+      "sha256": "da468865f861be0714037c33357b93b9f747351f7478866e6e0dd6dff9d1ebcb"
+    },
+    "experiments/115-gse295214-h1/work/compact-donor/perts.txt": {
+      "bytes": 14572,
+      "sha256": "7060076272d411d4ee00b898cc26eedcb1eaaac5f5e94e2c60f3b45978320747"
+    },
+    "experiments/132-response-decomposition-ridge/run.py": {
+      "bytes": 41560,
+      "sha256": "e78e079fc3b4a715e8b412b0a48bfe44a2f3f6cfcadb8a65a789351c53877778"
+    },
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/response_genes.txt": {
+      "bytes": 31453,
+      "sha256": "24743754eead5b8ddd81634bd12feac1df431eb2b9581197755b75c4c90949c8"
+    },
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/selection_targets.txt": {
+      "bytes": 3722,
+      "sha256": "74a070a538455ffc2a528dae3094d21e047905463779b2a5206d681f5ca6ebb5"
+    },
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/test_targets.txt": {
+      "bytes": 2532,
+      "sha256": "bd37bcacb4eea90da11902bbb8f4736068a7ff67c001739e3407de2b4bf73fc6"
+    },
+    "experiments/140-batch-matched-controls/SOURCE_HASH_MANIFEST.v5.json": {
+      "bytes": 64798,
+      "sha256": "70c860e308bdf433fbd8e6812e95c5e24b090173f2cc3ac4e6d689ab9195a149"
+    },
+    "experiments/140-batch-matched-controls/run.py": {
+      "bytes": 98098,
+      "sha256": "3bea7cb91e7b5d86cb41d2921b156de164e79d9c3dc0837c20f416c4d3fc1a93"
+    },
+    "experiments/140-batch-matched-controls/work/identity-reproduction-v5/artifact-manifest.json": {
+      "bytes": 1816,
+      "sha256": "1967a66f463ba78b02c674c09274c9c399fb68b405ff9b0deb045ec4772a5649"
+    },
+    "experiments/140-batch-matched-controls/work/preregistered-plan-v2/plan-arrays.npz": {
+      "bytes": 15425495,
+      "sha256": "bdd17742d8691ff5174631c11c00c7d3dfb23f51c9e225ca672549608d466d5b"
+    },
+    "experiments/140-batch-matched-controls/work/preregistered-plan-v2/plan-manifest.json": {
+      "bytes": 2580,
+      "sha256": "2f91872b1318ab7f0ee608600f5acfaaad0397f508e833707e28c2f379e6007c"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "channel_combos": [],
+  "dataset_id": "7006c6c0-6487-43c5-b6ca-735acebb4375",
+  "embeddings": [
+    {
+      "display_name": "PHATE",
+      "type": "PHATE"
+    },
+    {
+      "display_name": "UMAP",
+      "type": "umap"
+    }
+  ],
+  "features": [],
+  "markers": [],
+  "modality": "cropseq",
+  "n_cells": 606075,
+  "observation_unit": [
+    "perturbation_id"
+  ],
+  "slug": "altair-scrna",
+  "title": "Altair - A549 1k scRNA",
+  "version": null
+}

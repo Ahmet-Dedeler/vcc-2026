@@ -1,0 +1,9 @@
+{
+  "provider": "AWS EC2",
+  "instance_id": "i-0e05556f09944111f",
+  "instance_type": "r7i.2xlarge",
+  "market": "spot",
+  "source_prefix": "s3://<your-s3-bucket>/input/exp073-postwhiten-csls-distill/20260823T060938Z/",
+  "output_prefix": "s3://<your-s3-bucket>/output/exp073-postwhiten-csls-distill/20260823T060938Z/",
+  "submission": false
+}

@@ -1,0 +1,33 @@
+{
+  "retrieved_utc": "2026-08-23",
+  "source": "IGVF Data Portal official API and released file endpoints",
+  "analysis_set": {
+    "accession": "IGVFDS6332VCTO",
+    "url": "https://data.igvf.org/analysis-sets/IGVFDS6332VCTO/",
+    "summary": "CRISPR interference Perturb-seq in WTC11-derived cardiac muscle cells"
+  },
+  "files": {
+    "IGVFFI0830FXFI.csv.gz": {
+      "accession": "IGVFFI0830FXFI",
+      "api_url": "https://api.data.igvf.org/files/IGVFFI0830FXFI/?format=json",
+      "download_url": "https://api.data.igvf.org/tabular-files/IGVFFI0830FXFI/@@download/IGVFFI0830FXFI.csv.gz",
+      "status": "released",
+      "file_format": "csv",
+      "content_type": "global differential expression per element",
+      "file_size": 1887277,
+      "md5sum": "39097b9eb95bb1e43e245480d242fea9",
+      "observed_sha256": "e4a68a15db8609b4f57b0e1387da0848f7447346fec2fbf19cc7c9ffdc41477f"
+    },
+    "IGVFFI8270UPKB.csv.gz": {
+      "accession": "IGVFFI8270UPKB",
+      "api_url": "https://api.data.igvf.org/files/IGVFFI8270UPKB/?format=json",
+      "download_url": "https://api.data.igvf.org/tabular-files/IGVFFI8270UPKB/@@download/IGVFFI8270UPKB.csv.gz",
+      "status": "released",
+      "file_format": "csv",
+      "content_type": "guide RNA sequences",
+      "file_size": 348103,
+      "md5sum": "766b1fd06fe7d641104d2569a735a63f",
+      "observed_sha256": "dcd5eb865e1caa61557cf7c39ca39b42745f1ada4f8465bcfb53b91fc1c4925b"
+    }
+  }
+}

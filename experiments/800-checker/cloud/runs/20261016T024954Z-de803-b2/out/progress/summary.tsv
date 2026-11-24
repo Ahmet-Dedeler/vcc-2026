@@ -1,0 +1,2 @@
+p1run	1	0	737	6041896	uv run python experiments/803-de-engine/de803.py run --surface h1test --arms g1pre,zs --seed 0
+p2write	1	0	176	8929448	sha256sum -c experiments/803-de-engine/stage/SHA256SUMS.real && uv run python experiments/803-de-engine/cells803.py write --surface h1test --arm zs --seed 0 --real data/harness/h1-test.h5ad --out experiments/803-de-engine/work/xpred.h5ad

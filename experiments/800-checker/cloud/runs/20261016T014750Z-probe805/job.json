@@ -1,0 +1,9 @@
+{
+ "name": "probe805",
+ "parallel": 1,
+ "venv": true,
+ "sync": [],
+ "collect": [
+  "experiments/805-cd4-flex-surface/work/probe805.json"
+ ]
+}

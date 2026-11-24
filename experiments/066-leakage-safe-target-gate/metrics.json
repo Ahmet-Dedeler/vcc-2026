@@ -1,0 +1,489 @@
+{
+  "experiment": "066-leakage-safe-target-gate",
+  "status": "completed",
+  "decision": "REJECT",
+  "decision_checks": {
+    "macro_gain_at_least_0_003": false,
+    "both_outer_folds_nonnegative": true,
+    "bootstrap_ci_low_positive": false,
+    "full_pipeline_permutation_p_at_most_0_05": true,
+    "matched_routing_p_at_most_0_05": true
+  },
+  "protocol": {
+    "primary_estimand": "macro effect-level PDS gain over fixed experiment-064 arm D",
+    "outer_validation": "two directional donor holdouts: train HCT116/test HEK293T and train HEK293T/test HCT116",
+    "inner_validation": "5-fold deterministic target CV within the outer training donor; all feature scaling and model fitting are inner-train-only",
+    "models": "fixed arms, univariate decision stumps, and ridge gain models with at most 14 features and three alternative-arm outputs",
+    "candidate_count": 126,
+    "selection": "highest inner out-of-fold realized PDS gain; D is eligible",
+    "ship_rule": {
+      "macro_gain_at_least_0_003": false,
+      "both_outer_folds_nonnegative": true,
+      "bootstrap_ci_low_positive": false,
+      "full_pipeline_permutation_p_at_most_0_05": true,
+      "matched_routing_p_at_most_0_05": true
+    },
+    "no_cell_eval2": true,
+    "no_eigendecomposition": true,
+    "no_cloud": true,
+    "no_download": true,
+    "one_python_process": true,
+    "rss_limit_gib": 0.75
+  },
+  "feature_audit": {
+    "targets": 221,
+    "target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+    "feature_axis_genes": 6102,
+    "feature_axis_sha256": "0caeafeb3b48ca7d9653bd6443e834bfb85dfa7ba1ca4a8a6660a511fde104db",
+    "dependencies": {
+      "orion_hct116": {
+        "effect_banks": [
+          "k562_gwps",
+          "perturbmatch",
+          "orion_hek293t",
+          "cd4_rest",
+          "cd4_stim8hr",
+          "cd4_stim48hr"
+        ],
+        "held_effect_bank_excluded": "orion_hct116",
+        "held_input_used": "orion_hct116/b_ctrl.npy target-gene coordinate only"
+      },
+      "orion_hek293t": {
+        "effect_banks": [
+          "k562_gwps",
+          "perturbmatch",
+          "orion_hct116",
+          "cd4_rest",
+          "cd4_stim8hr",
+          "cd4_stim48hr"
+        ],
+        "held_effect_bank_excluded": "orion_hek293t",
+        "held_input_used": "orion_hek293t/b_ctrl.npy target-gene coordinate only"
+      }
+    },
+    "features": [
+      "source_agreement",
+      "pm_incumbent_cosine",
+      "pm_companion_advantage",
+      "pm_slot_companion_advantage",
+      "pm_shift_size",
+      "pm_log_norm_ratio",
+      "cd4_source_cosine",
+      "cd4_condition_agreement",
+      "cd4_log_norm",
+      "cd4_breadth_log_mean",
+      "cd4_quality_mean",
+      "held_target_log_control",
+      "held_target_control_rank",
+      "held_minus_source_log_control"
+    ]
+  },
+  "leakage_audit": {
+    "features_built_before_outcomes_loaded": true,
+    "outcome_columns_in_features": false,
+    "target_identity_encoded": false,
+    "held_perturbation_effects_used_in_own_outer_fold": false,
+    "held_control_target_expression_used": true,
+    "held_control_is_available_at_challenge_inference": true,
+    "source_effects_are_public_training_inputs": true,
+    "all_300_panel_coordinates_excluded_from_effect_geometry": true,
+    "experiment_058_pds_used_as_feature": false,
+    "experiment_062_pds_used_as_feature": false,
+    "experiment_064_pds_used_only_as_outer_or_inner_labels": true,
+    "compact_prior_outputs_used_only_for_diagnostic_consistency": true,
+    "outer_test_outcomes_used_for_tuning": false,
+    "permutation_preserves_joint_A_B_C_gain_structure": true
+  },
+  "outer_results": [
+    {
+      "train_fold": "orion_hek293t",
+      "test_fold": "orion_hct116",
+      "selected_candidate": "stump:C:pm_shift_size",
+      "selected_kind": "stump",
+      "fitted_model": {
+        "kind": "stump",
+        "feature": "pm_shift_size",
+        "alternative": "C",
+        "threshold": 0.04721492528915405,
+        "direction": "low"
+      },
+      "inner_oof_gain": 0.0028177704648292847,
+      "inner_oof_arm_counts": {
+        "A": 0,
+        "B": 0,
+        "C": 88,
+        "D": 133
+      },
+      "inner_oof_switches": 88,
+      "test_fixed_D_pds": 0.8250925545043191,
+      "test_selected_pds": 0.8265322912381734,
+      "test_gain_vs_D": 0.0014397367338543797,
+      "test_count_A": 0,
+      "test_count_B": 0,
+      "test_count_C": 85,
+      "test_count_D": 136
+    },
+    {
+      "train_fold": "orion_hct116",
+      "test_fold": "orion_hek293t",
+      "selected_candidate": "stump:C:pm_slot_companion_advantage",
+      "selected_kind": "stump",
+      "fitted_model": {
+        "kind": "stump",
+        "feature": "pm_slot_companion_advantage",
+        "alternative": "C",
+        "threshold": 0.0035127876326441765,
+        "direction": "high"
+      },
+      "inner_oof_gain": 0.0018099547511312218,
+      "inner_oof_arm_counts": {
+        "A": 0,
+        "B": 0,
+        "C": 84,
+        "D": 137
+      },
+      "inner_oof_switches": 84,
+      "test_fixed_D_pds": 0.8006581653640477,
+      "test_selected_pds": 0.8018510900863841,
+      "test_gain_vs_D": 0.0011929247223364877,
+      "test_count_A": 0,
+      "test_count_B": 0,
+      "test_count_C": 108,
+      "test_count_D": 113
+    }
+  ],
+  "macro": {
+    "fixed_D_pds": 0.8128753599341834,
+    "selected_pds": 0.8141916906622788,
+    "gain_vs_D": 0.0013163307280954337,
+    "bootstrap": {
+      "estimate": 0.0013163307280954337,
+      "ci95": [
+        -0.0019127930892636788,
+        0.004781982723159193
+      ],
+      "positive_probability": 0.7801,
+      "target_clusters": 221,
+      "reps": 20000,
+      "seed": 6602026
+    },
+    "matched_routing_null": {
+      "method": "permute predicted arm assignments within each outer test fold",
+      "reps": 20000,
+      "seed": 6602027,
+      "mean": -0.0020370958453311393,
+      "p95": 0.00046277252159604974,
+      "p99": 0.0014191690662278898,
+      "one_sided_p": 0.01184940752962352
+    },
+    "full_pipeline_label_permutation_null": {
+      "method": "permute training target labels jointly across A/B/C gains and rerun the complete inner-CV candidate selection in both outer directions",
+      "reps": 500,
+      "seed": 6602028,
+      "mean": -0.002002365281777047,
+      "p95": 0.0003805018510900846,
+      "p99": 0.0012148292883586975,
+      "one_sided_p": 0.011976047904191617
+    }
+  },
+  "forced_nontrivial_gate": {
+    "folds": [
+      {
+        "train_fold": "orion_hek293t",
+        "test_fold": "orion_hct116",
+        "selected_candidate": "stump:C:pm_shift_size",
+        "inner_oof_gain": 0.0028177704648292847,
+        "test_gain_vs_D": 0.0014397367338543797,
+        "test_arm_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 85,
+          "D": 136
+        }
+      },
+      {
+        "train_fold": "orion_hct116",
+        "test_fold": "orion_hek293t",
+        "selected_candidate": "stump:C:pm_slot_companion_advantage",
+        "inner_oof_gain": 0.0018099547511312218,
+        "test_gain_vs_D": 0.0011929247223364877,
+        "test_arm_counts": {
+          "A": 0,
+          "B": 0,
+          "C": 108,
+          "D": 113
+        }
+      }
+    ],
+    "macro_gain_vs_D": 0.0013163307280954337
+  },
+  "oracle_headroom": {
+    "folds": {
+      "orion_hct116": {
+        "fixed_D": 0.8250925545043191,
+        "D_or_B": {
+          "pds": 0.8309543397778691,
+          "gain_vs_D": 0.00586178527355008,
+          "arm_counts": {
+            "A": 0,
+            "B": 53,
+            "C": 0,
+            "D": 168
+          }
+        },
+        "D_or_C": {
+          "pds": 0.8403331962155491,
+          "gain_vs_D": 0.015240641711230074,
+          "arm_counts": {
+            "A": 0,
+            "B": 0,
+            "C": 57,
+            "D": 164
+          }
+        },
+        "D_or_A": {
+          "pds": 0.8406211435623199,
+          "gain_vs_D": 0.015528589058000808,
+          "arm_counts": {
+            "A": 55,
+            "B": 0,
+            "C": 0,
+            "D": 166
+          }
+        },
+        "four_arm": {
+          "pds": 0.8463800904977377,
+          "gain_vs_D": 0.021287535993418594,
+          "arm_counts": {
+            "A": 99,
+            "B": 51,
+            "C": 32,
+            "D": 39
+          }
+        }
+      },
+      "orion_hek293t": {
+        "fixed_D": 0.8006581653640477,
+        "D_or_B": {
+          "pds": 0.8074454956807897,
+          "gain_vs_D": 0.006787330316742057,
+          "arm_counts": {
+            "A": 0,
+            "B": 50,
+            "C": 0,
+            "D": 171
+          }
+        },
+        "D_or_C": {
+          "pds": 0.8150349650349651,
+          "gain_vs_D": 0.014376799670917428,
+          "arm_counts": {
+            "A": 0,
+            "B": 0,
+            "C": 68,
+            "D": 153
+          }
+        },
+        "D_or_A": {
+          "pds": 0.8178321678321678,
+          "gain_vs_D": 0.017174002468120175,
+          "arm_counts": {
+            "A": 67,
+            "B": 0,
+            "C": 0,
+            "D": 154
+          }
+        },
+        "four_arm": {
+          "pds": 0.8218017276840807,
+          "gain_vs_D": 0.021143562320033005,
+          "arm_counts": {
+            "A": 113,
+            "B": 43,
+            "C": 29,
+            "D": 36
+          }
+        }
+      }
+    },
+    "same_target_other_donor_lookup": {
+      "capacity": "221 target-specific arm choices; diagnostic only",
+      "folds": [
+        {
+          "train_fold": "orion_hek293t",
+          "test_fold": "orion_hct116",
+          "gain_vs_D": -0.006993006993006999,
+          "arm_counts": {
+            "A": 113,
+            "B": 43,
+            "C": 29,
+            "D": 36
+          }
+        },
+        {
+          "train_fold": "orion_hct116",
+          "test_fold": "orion_hek293t",
+          "gain_vs_D": -0.0064788153023447115,
+          "arm_counts": {
+            "A": 99,
+            "B": 51,
+            "C": 32,
+            "D": 39
+          }
+        }
+      ],
+      "macro_gain_vs_D": -0.006735911147675855
+    }
+  },
+  "cross_fold_stability": [
+    {
+      "quantity": "A_minus_D",
+      "pearson": 0.0024565416185295934,
+      "spearman": 0.01316215812919694,
+      "same_sign_fraction": 0.5520361990950227
+    },
+    {
+      "quantity": "B_minus_D",
+      "pearson": -0.28553016794936187,
+      "spearman": -0.07952429242268691,
+      "same_sign_fraction": 0.5158371040723982
+    },
+    {
+      "quantity": "C_minus_D",
+      "pearson": 0.09209664898528865,
+      "spearman": 0.04841210096309114,
+      "same_sign_fraction": 0.5565610859728507
+    },
+    {
+      "quantity": "B_minus_A",
+      "pearson": 0.10241715081784192,
+      "spearman": 0.009855132216751985,
+      "same_sign_fraction": 0.5384615384615384
+    },
+    {
+      "quantity": "C_minus_A",
+      "pearson": -0.27389096386280276,
+      "spearman": -0.1185680887151718,
+      "same_sign_fraction": 0.502262443438914
+    },
+    {
+      "quantity": "D_minus_A",
+      "pearson": 0.0024565416185295934,
+      "spearman": 0.01316215812919694,
+      "same_sign_fraction": 0.5520361990950227
+    }
+  ],
+  "compact_output_consistency": [
+    {
+      "source_experiment": "058",
+      "held": "orion_hct116",
+      "comparison": "PM gain: exp058 f0.50 vs exp064 B-A",
+      "targets": 221,
+      "prior_mean": 0.004333963380873282,
+      "current_mean": 0.005635540929658577,
+      "pearson": 0.8459853480732807,
+      "spearman": 0.7697356446432937
+    },
+    {
+      "source_experiment": "058",
+      "held": "orion_hek293t",
+      "comparison": "PM gain: exp058 f0.50 vs exp064 B-A",
+      "targets": 221,
+      "prior_mean": 0.004181224583309461,
+      "current_mean": 0.0035376388317564784,
+      "pearson": 0.8917056614928072,
+      "spearman": 0.7900080603861279
+    },
+    {
+      "source_experiment": "062",
+      "held": "orion_hct116",
+      "comparison": "CD4 gain: exp062 selected vs exp064 C-A",
+      "targets": 221,
+      "prior_mean": 0.004693866055838232,
+      "current_mean": 0.005039078568490335,
+      "pearson": 0.9975431436880959,
+      "spearman": 0.9919012809583507
+    },
+    {
+      "source_experiment": "062",
+      "held": "orion_hek293t",
+      "comparison": "CD4 gain: exp062 selected vs exp064 C-A",
+      "targets": 221,
+      "prior_mean": 0.0025910140628227067,
+      "current_mean": 0.0024681201151789344,
+      "pearson": 0.9972359255118882,
+      "spearman": 0.9845852540831389
+    }
+  ],
+  "tests": {
+    "inner_folds_nonempty": true,
+    "feature_names_exclude_outcome_tokens": true,
+    "synthetic_stump_recovers_signal": true
+  },
+  "resource_audit": {
+    "peak_self_rss_gib": 0.2129669189453125,
+    "limit_gib": 0.75,
+    "within_limit": true,
+    "large_npy_strategy": "tiny direct row/column streams; no retained multi-GB mmap pages"
+  },
+  "input_hashes": {
+    "run_py": "a4fc2fa7e009b116b4be4df9c7534bb21d31fe719071994788328f4fbc18ddff",
+    "exp064_per_target_pds_csv": "ecb8927f76684695e8a9a0a93251b9475e991596b9951a516792f7bcd3ef467f",
+    "exp064_results_json": "723c7e94b3aee687b001be435bf7b7a7b55d6a54991404e0ce9dcdd3f59a6113",
+    "exp058_per_target_pds_csv": "fff0259deb6bdb3bd922082aae15774870130e211020daa86d12c0a6be2a2a1f",
+    "exp058_results_json": "1037fce3033230f4baacf195015dceddee8e5e48fc43eb6edbe8f10615fe9f1b",
+    "exp062_development_per_target_pds_csv": "a2046de6cf8be1eb9199805491d9eaafeeadd69baaf8d7539c247fa510e212ca",
+    "panel_csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "genes_csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "exp064_bank_delta_hashes_inherited": {
+      "k562_gwps": {
+        "delta.npy": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+        "b_ctrl.npy": "d06cf51d51cde1ae999e86bbd3be0bdc15471392bae153a1aa1e21dc5c81b957",
+        "genes.txt": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba",
+        "perts.txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec",
+        "meta.json": "0bd3478aa6b63164bd4816cd8bbb439b805b6b93b2a267ddf8114b196c5e19aa"
+      },
+      "orion_hct116": {
+        "delta.npy": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+        "b_ctrl.npy": "b3044d439cfac932024e0a48152196387714e4b460a339fb9a03e32fcb2fe069",
+        "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "perts.txt": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8",
+        "meta.json": "7a1ec5a9323c6ebd4b586aa300b28bcd9ddf271e67f04bdaf353cb15b8b2d6c8"
+      },
+      "orion_hek293t": {
+        "delta.npy": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+        "b_ctrl.npy": "e04234cffbe102731cc562e8fb06bddb8ef0644b2af894b8a0ee6ce079ca4984",
+        "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "perts.txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547",
+        "meta.json": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f"
+      },
+      "perturbmatch": {
+        "delta.npy": "efa20944f6f6485a7cc7f484c7ab70bd2ba491a6e07b231f306e104b2e1e4cf2",
+        "genes.txt": "e889994e2d0462d064018408ca456fc8be428e660523fb1bd9a7bcd7b3ab5959",
+        "perts.txt": "1131758c3ab0d0c781a17580894511986d9baeadc1ad1304251f5a133086998e",
+        "meta.json": "0b8224c2e04b1d2e4a331ecb26c5d1733eb32c143f949424b1cd518299066a41"
+      },
+      "cd4_rest": {
+        "delta.npy": "b2bafd6e24c2aa34b03ec17836db34fcd9512f78920aed207413a9d727f9e765",
+        "b_ctrl.npy": "5c47ef6b15a00a867b7b24034273bf3aba118d7cdf87ce58ec58427751313d81",
+        "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+        "perts.txt": "ddcd8ff07e2f38d93fc035ce2aadebe4bcaeb097ef95e1f26e8e4860b641374b",
+        "meta.json": "cece9564be470b133ac6399012af42bcfa1934776c1820838c6aa8ab6a15b9cc"
+      },
+      "cd4_stim8hr": {
+        "delta.npy": "eea7996d6694450fb1167b9ebbb6b709a3477e6d0347b49a4475e13ff7800c99",
+        "b_ctrl.npy": "75e35371ec33677462acdbc56938c2cc266d583dc2e75ed50b6b825c4a20161e",
+        "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+        "perts.txt": "639feb3fba1d6cf3b5bb5e2ef9dfdc0ff3044adb4c7477b4588c82ff096d828e",
+        "meta.json": "9ca1e9b8ccbf785d88b2a31bc47818479327c205145faa78d9b8eaa215bff4cc"
+      },
+      "cd4_stim48hr": {
+        "delta.npy": "568119ac25c8d16116d8953d3ee61762fe3c45d9ee8c22a6e7b2669c39837a9a",
+        "b_ctrl.npy": "a35f6c639937332cc483c82b9717dec9ff8a3fc70e6030e1b9f6df5fcc6658fd",
+        "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+        "perts.txt": "4bf6468927fc11f0709bb0e63d14852f5a49f4f577455f0fa92e88719777d618",
+        "meta.json": "62390f52782a592b2a144349bebebffc2675309a614bff0eef99c0b315668ef8"
+      }
+    }
+  }
+}

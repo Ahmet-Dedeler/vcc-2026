@@ -1,0 +1,6 @@
+1	0	21	4184	bash experiments/801-lab-folds/cloud801.sh verify
+2	0	37	334852	bash experiments/801-lab-folds/cloud801.sh prep-labc
+3	0	140	4124600	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh labc k562_gwps
+5	0	192	4201216	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh labc orion_hek293t
+4	0	212	4196220	T801_THREADS=3 bash experiments/801-lab-folds/cloud801.sh labc orion_hct116
+6	0	222	111860	bash experiments/801-lab-folds/cloud801.sh profile

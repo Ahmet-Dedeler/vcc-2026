@@ -1,0 +1,13 @@
+{
+ "name": "updn",
+ "desc": "DN: upr + 631's DOWN magnitude pass d_m200 (_D200 = VCC_DE_DNMAG d_m200; 618's t618b)",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": true
+ },
+ "stage": "rnup:b_k100_q20r3p10_D200"
+}

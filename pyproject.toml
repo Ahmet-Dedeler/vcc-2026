@@ -1,0 +1,29 @@
+[project]
+name = "vcc2026"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Ahmet Dedeler", email = "105894172+Ahmet-Dedeler@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "anndata>=0.13.2",
+    "cell-eval2>=0.16.0",
+    "h5py>=3.16.0",
+    "numpy>=2.5.2",
+    "pandas>=3.0.5",
+    "polars>=1.43.2",
+    "pyarrow>=25.0.1",
+    "scanpy>=1.12.3",
+    "scikit-learn>=1.9.0",
+    "scipy>=1.18.0",
+    "tqdm>=4.70.0",
+]
+
+[project.scripts]
+vcc2026 = "vcc2026:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"

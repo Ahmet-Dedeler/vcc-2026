@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "experiment": "146-context-gated-sign-repair",
+  "stage": "source-only-evaluate",
+  "status": "authorized",
+  "authorized_on": "2026-08-31",
+  "authority": "Ahmet explicitly authorized continued VCC scientific experiments and delegated lead execution. An independent read-only audit returned GO for evaluation of the immutable v4-prepared source package. This does not authorize protected development or sealed outcomes, challenge-control expression, count generation, challenge builds, or submission.",
+  "confirmation": "I_CONFIRM_EXPERIMENT_146_SOURCE_EVALUATE_V1",
+  "prepared_package": {
+    "artifact_manifest_sha256": "5f0c73f939c7b86dbaa649a246b60f55074054ea803cb5c03d239a7748afe44c",
+    "plan_sha256": "07b74376e6e34838559363071cb39b0b9aadb7ea525f3e2d3de4f8e7114cdc4a",
+    "source_data_sha256": "398dce4086546977236c255aa6d5c42cb14304e57fa413fb53eb92348c567645",
+    "memory_report_sha256": "58199c4ef5a66a7c352ddec85c9afa709e35aed6f0f16492f50213a04e48bc20"
+  },
+  "independent_audit": {
+    "auditor_thread": "01a05619-caa0-7811-ac30-453a6dcdb06a",
+    "verdict": "GO",
+    "scope": "create evaluation authorization and start guarded source-only evaluation"
+  },
+  "permissions": {
+    "source_prepare": false,
+    "source_evaluate": true,
+    "development_613": false,
+    "sealed_410": false,
+    "challenge_control_expression": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "submission": false,
+    "authorization_creation": false,
+    "writes_outside_experiment_146": false
+  },
+  "bindings": {
+    "experiments/146-context-gated-sign-repair/README.md": "a56cbf8ae6b3fcb02e2771c6fb16cbe88bcd226d0160729ecbd5fe6950f45914",
+    "experiments/146-context-gated-sign-repair/preregistered_protocol.json": "44e1e91d0a13f095a090cacebf4f40d6c13aa97ff4014cdf00a6e6bf4c2b843c",
+    "experiments/146-context-gated-sign-repair/run.py": "198f9041ba7a7f11c01b8c2ae01405271c7aa7a6c888266b8fedd163c5dbb4b8",
+    "experiments/146-context-gated-sign-repair/test_run.py": "d7e6836a1ed30913742d49d7b266dcf28ea43aa39a63a5a3ba85f101abb15750",
+    "experiments/146-context-gated-sign-repair/work/source-prepared-v1/artifact-manifest.json": "5f0c73f939c7b86dbaa649a246b60f55074054ea803cb5c03d239a7748afe44c",
+    "scripts/run_with_memory_guard.py": "3be02ceaa44ea0c0ed4641827dd9305095255ec6cbacb82d667cefb4f7915198"
+  }
+}

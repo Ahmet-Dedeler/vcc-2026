@@ -1,0 +1,11 @@
+{
+ "name": "pie804",
+ "parallel": 1,
+ "venv": false,
+ "sync": [
+  "data/external/pie/local_sources/context_text"
+ ],
+ "collect": [
+  "experiments/804-known-answers/pie804/out"
+ ]
+}

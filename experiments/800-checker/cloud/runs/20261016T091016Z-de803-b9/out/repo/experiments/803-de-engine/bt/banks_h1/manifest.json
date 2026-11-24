@@ -1,0 +1,369 @@
+{
+ "ext811_sha256": "ccd606f2d29f52fb5826eb0421e025c91efc2305fff4d724cb4289bcd8dee843",
+ "n_wanted": 211,
+ "banks": {
+  "viperturb_k562": {
+   "sources": {
+    "data/donors/viperturb_k562": {
+     "delta.npy": "aa237710ec813287c993e3de3fe996bf861bec6ee1925f8f6ee5f0fa0107dfa9",
+     "genes.txt": "1ff4d767a860ad86de4b891afd0beab44b2e5cb341b1f162e039c5e81583413a",
+     "perts.txt": "0400570014531a826c1916accdda93af849af28d16b11696af24bc68db1d94dc"
+    }
+   },
+   "n_targets": 201,
+   "h1test": 80,
+   "h1tv": 121,
+   "out_sha256": "4b4d21818b6c9a73e9180cbfa60e9c5788428bb3a404ed5e4a663237f20a976e"
+  },
+  "telohaec_pilot": {
+   "sources": {
+    "data/external/igvf-telohaec": {
+     "delta.npy": "6dfd8f69c26f7beb9b36ab8f08f824003af08e8dcfe8a1b4f149efbc3348501b",
+     "genes.txt": "a55a422e73af1a0b10e46092905559ea1c32883fdd5e60961f708a92ff398890",
+     "perts.txt": "e5b9f8a4b69f79a5577ffeed6fc844c859d4f3b92696fd875536bd343730c5f0"
+    }
+   },
+   "n_targets": 41,
+   "h1test": 15,
+   "h1tv": 26,
+   "out_sha256": "7f77ff8ac546d862d31fbfd7f80c48002681363738961c042a624bb277478290"
+  },
+  "dld1_lowmoi": {
+   "sources": {
+    "experiments/223-silent-zero-audit/work/tables/dld1_lowmoi": {
+     "delta.npy": "fd7bd0637cf9949971040f6c184b28f288391191f2e956c7cb16bb92d266aaee",
+     "genes.txt": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+     "perts.txt": "db4847da3fd2312d66bc7e4808dcea597ed56af3fb2dee4bb91d8f25a801867d"
+    }
+   },
+   "n_targets": 64,
+   "h1test": 28,
+   "h1tv": 36,
+   "out_sha256": "6d884bf18d88af688e8f7867bb905675c0c328a90487ff5fd35b52467209c664"
+  },
+  "altair_a549": {
+   "sources": {
+    "experiments/223-silent-zero-audit/work/tables/altair_a549": {
+     "delta.npy": "1ffecff7e8476b712c8d42a864a85ed86e66b8b9d04d1dcdf1bf0416df915021",
+     "genes.txt": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+     "perts.txt": "3c77d1bec8416cdc1b00df04c90172786ccd0656b324f6589e31ab816250193e"
+    }
+   },
+   "n_targets": 15,
+   "h1test": 6,
+   "h1tv": 9,
+   "out_sha256": "3296aef55aa65c9e57e92c27523d9d47e8e2bb9378fd588adef400a437476364"
+  },
+  "rpe1": {
+   "sources": {
+    "data/donors/rpe1": {
+     "delta.npy": "253cc16e51f4635f23e8e597d91bd38a84162a1102486d4a5764c48c379c2b4a",
+     "genes.txt": "ac7c7f7b141a74004a5363b2e1aba52f5769c02ea769d9a5b72fdb5eacdbd2f0",
+     "perts.txt": "4377d2dc2fd57c523d6632416ca5b9f9e7c192192e32b0eebd91a84fabab8c67"
+    }
+   },
+   "n_targets": 57,
+   "h1test": 21,
+   "h1tv": 36,
+   "out_sha256": "f2a3ba703b94794f43837f2c3379723381264c19b50d1ed0e0df0969c01ce205"
+  },
+  "nadig_jurkat": {
+   "sources": {
+    "data/donors/nadig_jurkat": {
+     "delta.npy": "1fa16024c2d7115fc4b7c06f0ab7d9afe8ba6ebd0ae6dcef62c4955636e29129",
+     "genes.txt": "3071f4366db6896b2dac2cb0d59fbfff18f89840f021d556e42ccee083c39830",
+     "perts.txt": "f5a5c1bbbbdf97bcedb789277b13b0901447c28a5f091d798c37a93ef86197d7"
+    }
+   },
+   "n_targets": 56,
+   "h1test": 21,
+   "h1tv": 35,
+   "out_sha256": "1bbfe068c12673736d3bf39b9f270535998fdb061d6930d1c89f76b836194d07"
+  },
+  "jiang_K562": {
+   "sources": {
+    "experiments/225-source-sweep/work/tables/jiang_K562": {
+     "delta.npy": "faa92fbd8b56111eefa0f0373abe35cd649ac5b62ec48a596b9ead52630c02da",
+     "genes.txt": "f80ef5928572bc67229c33d62f95cb253f61ccdbea81e1dc74b2bae4c80b3dfd",
+     "perts.txt": "254d8388adad410ad40ab20923aefb738751d703165a2580f7c125980e63363e"
+    }
+   },
+   "n_targets": 20,
+   "h1test": 6,
+   "h1tv": 14,
+   "out_sha256": "069a2c08c8ec7aa1ad64470056d8b8cc11d34dfdc58f6f767307ed2e69001186"
+  },
+  "jiang_A549": {
+   "sources": {
+    "experiments/225-source-sweep/work/tables/jiang_A549": {
+     "delta.npy": "b61761e57c98feb56e372a2cd25ce0a81dae9978f25fae126d577caa6f938039",
+     "genes.txt": "f80ef5928572bc67229c33d62f95cb253f61ccdbea81e1dc74b2bae4c80b3dfd",
+     "perts.txt": "254d8388adad410ad40ab20923aefb738751d703165a2580f7c125980e63363e"
+    }
+   },
+   "n_targets": 20,
+   "h1test": 6,
+   "h1tv": 14,
+   "out_sha256": "e649155b4e3633f6307c04f1adc9bcfea7f1b649406c3d0e3fe6d5c974476749"
+  },
+  "jiang_BXPC3": {
+   "sources": {
+    "experiments/225-source-sweep/work/tables/jiang_BXPC3": {
+     "delta.npy": "a0ad2ffbc4b767f3ead6393aeccb68ffd67e831b99f3c19f077a67cf74ef01bc",
+     "genes.txt": "f80ef5928572bc67229c33d62f95cb253f61ccdbea81e1dc74b2bae4c80b3dfd",
+     "perts.txt": "254d8388adad410ad40ab20923aefb738751d703165a2580f7c125980e63363e"
+    }
+   },
+   "n_targets": 20,
+   "h1test": 6,
+   "h1tv": 14,
+   "out_sha256": "33c42f1f5418541bad154414db1fd28644a625fc0ef453ee916e2fcbb2a4b432"
+  },
+  "jiang_HAP1": {
+   "sources": {
+    "experiments/225-source-sweep/work/tables/jiang_HAP1": {
+     "delta.npy": "5585b22f2fc31efb9d7c041479e8f15f46e1442589bea1781ae1544382a69195",
+     "genes.txt": "f80ef5928572bc67229c33d62f95cb253f61ccdbea81e1dc74b2bae4c80b3dfd",
+     "perts.txt": "254d8388adad410ad40ab20923aefb738751d703165a2580f7c125980e63363e"
+    }
+   },
+   "n_targets": 20,
+   "h1test": 6,
+   "h1tv": 14,
+   "out_sha256": "069725362af29673175473642d9bd22af9e276a0e41db06821eeadb9e52d7e4b"
+  },
+  "jiang_HT29": {
+   "sources": {
+    "experiments/225-source-sweep/work/tables/jiang_HT29": {
+     "delta.npy": "210d47b9c5645f0bd270a353d4a547735046f58ee38938b2d0541e4d618f8109",
+     "genes.txt": "f80ef5928572bc67229c33d62f95cb253f61ccdbea81e1dc74b2bae4c80b3dfd",
+     "perts.txt": "254d8388adad410ad40ab20923aefb738751d703165a2580f7c125980e63363e"
+    }
+   },
+   "n_targets": 20,
+   "h1test": 6,
+   "h1tv": 14,
+   "out_sha256": "1510a62669464f0ca1541ecb234467d92503277b8d95401a56031088bc9fb434"
+  },
+  "jiang_MCF7": {
+   "sources": {
+    "experiments/225-source-sweep/work/tables/jiang_MCF7": {
+     "delta.npy": "73ce348757f787520c03eb0131afaee74b197265dae748e86e5c2d1edab9e4d5",
+     "genes.txt": "f80ef5928572bc67229c33d62f95cb253f61ccdbea81e1dc74b2bae4c80b3dfd",
+     "perts.txt": "254d8388adad410ad40ab20923aefb738751d703165a2580f7c125980e63363e"
+    }
+   },
+   "n_targets": 20,
+   "h1test": 6,
+   "h1tv": 14,
+   "out_sha256": "746d25d33ec352406be9ce4b46efdecacc67b612ce656170aafb1eef499e6895"
+  },
+  "cd4_rest": {
+   "sources": {
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest": {
+     "delta.npy": "b2bafd6e24c2aa34b03ec17836db34fcd9512f78920aed207413a9d727f9e765",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "ddcd8ff07e2f38d93fc035ce2aadebe4bcaeb097ef95e1f26e8e4860b641374b"
+    },
+    "experiments/801-lab-folds/work/L1/cd4/cd4_compact/cd4_rest": {
+     "delta.npy": "b7b76ba2efc297924c1c7e646b3c9c207bdc0ad0720ae201c09940de3672fb5b",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "e1c082ba8fa079665e9703137e2b4227e475260c00df471cc8242582116e673f"
+    },
+    "experiments/801-lab-folds/work/L2/cd4/cd4_compact/cd4_rest": {
+     "delta.npy": "9cf6642c9b1f8d7c02c64f411fb06954d3dd50800ea4537258d396703d634720",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "a4c8ef28d670bb8cfce16b6d2cf5f7bc01d6870ec37c7ec4d0237866ac3e3127"
+    },
+    "experiments/801-lab-folds/work/L3/cd4/cd4_compact/cd4_rest": {
+     "delta.npy": "ef10de7c8560c6571c83d55307cdbe3a4091b80b85dadac46770b122200913a8",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "674a4c2336d7aa1717986f083f6c22047fdb3f34539a8b0fde4213844e0ea754"
+    },
+    "experiments/801-lab-folds/work/L4/cd4/cd4_compact/cd4_rest": {
+     "delta.npy": "9a1a62fdff4df84a61d2331919677c144942a1b0d8ea70a6cc4274019e20fa7d",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "bfa6f9ddabca16b74c285e0c122f65571765efca2b44ec38922dd38f2a1e6013"
+    },
+    "experiments/801-lab-folds/work/L5/cd4/cd4_compact/cd4_rest": {
+     "delta.npy": "6163b374d3d85f3cd5635274dbe1580b7a2a398646139e96593e3ff673573113",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "c1b7a18ac8a4453daa1e087ccabbdd46525076df1e874ea6821c1b937a629425"
+    },
+    "experiments/801-lab-folds/work/L6/cd4/cd4_compact/cd4_rest": {
+     "delta.npy": "928bcfe6babe21026255af114a1f83b1e7950c6f04ff1ace715592a799b54981",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "83b622a166276078702d58533d9d09ba7a88b8d85c65caad5ad9bfe58b6dcfca"
+    }
+   },
+   "n_targets": 16,
+   "h1test": 5,
+   "h1tv": 11,
+   "out_sha256": "6af070105c3b95c2a692686d9970aaf53043992dede76d75cd5a4da109ef7eca"
+  },
+  "cd4_stim8hr": {
+   "sources": {
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr": {
+     "delta.npy": "eea7996d6694450fb1167b9ebbb6b709a3477e6d0347b49a4475e13ff7800c99",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "639feb3fba1d6cf3b5bb5e2ef9dfdc0ff3044adb4c7477b4588c82ff096d828e"
+    },
+    "experiments/801-lab-folds/work/L1/cd4/cd4_compact/cd4_stim8hr": {
+     "delta.npy": "72a7118205ae800ecdfebb32deb6d909a4a5516170a0a05f686f2914dc54e48c",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "561cf92a80d27a78c186046ef0895794289c7251ada7b5be44c7a79ed6e89a53"
+    },
+    "experiments/801-lab-folds/work/L2/cd4/cd4_compact/cd4_stim8hr": {
+     "delta.npy": "bd66d9aeb78935b2469d4c2bb4343cbeaa044cbfe0830b431ad3c0b6f9a0fe90",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "f4e69acd75b106c5890a4f00dd9b5976e8be682ec0a35bda9b151f4350119113"
+    },
+    "experiments/801-lab-folds/work/L3/cd4/cd4_compact/cd4_stim8hr": {
+     "delta.npy": "91b63623e20afe4db155c704b5970ff341d9b5fa1c0e324d1b1c2a0b0d6b5631",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "5bfe05555437073b6edcc655cb1716aad128e4979e69005eaafe1f291c999878"
+    },
+    "experiments/801-lab-folds/work/L4/cd4/cd4_compact/cd4_stim8hr": {
+     "delta.npy": "67f7282d3b4db19aaa4dfe773cd241ab707a6d90061bcb25508edbde9abfe8fd",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "ca48ae903268e6cec96c268a67b275de32eb7e0bac963f183eba9a64c547aced"
+    },
+    "experiments/801-lab-folds/work/L5/cd4/cd4_compact/cd4_stim8hr": {
+     "delta.npy": "bdccb32b002f444418ebc2b6152c6b9b758cdfd1cbf898a34ce5f51afb384afe",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "dfc61c9775182653f27a8d18cc96f2e71c0aeeed269f59384cd8fe1b503fd7c1"
+    },
+    "experiments/801-lab-folds/work/L6/cd4/cd4_compact/cd4_stim8hr": {
+     "delta.npy": "8832cf9d8e7190245bafa9a504179cd4823440a620a42c45c052731e6fd02912",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "9eeffc639088be2ade062ed04d31fff7a6d4f1a8e97172f1e79a45e812faa6f8"
+    }
+   },
+   "n_targets": 15,
+   "h1test": 4,
+   "h1tv": 11,
+   "out_sha256": "e1c42c087c4bfd6f827432f5405fe3e3b1a4a61e1bdc73db8746303756d31d8f"
+  },
+  "cd4_stim48hr": {
+   "sources": {
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr": {
+     "delta.npy": "568119ac25c8d16116d8953d3ee61762fe3c45d9ee8c22a6e7b2669c39837a9a",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "4bf6468927fc11f0709bb0e63d14852f5a49f4f577455f0fa92e88719777d618"
+    },
+    "experiments/801-lab-folds/work/L1/cd4/cd4_compact/cd4_stim48hr": {
+     "delta.npy": "1636c6b359ff056d1a6aeacff36c9a3c522a171bd34a6e76cf3745259cf91d36",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "a162105d0305bd86849701f4a5aa010f0d6a8424401e5194815c81d79aa2983b"
+    },
+    "experiments/801-lab-folds/work/L2/cd4/cd4_compact/cd4_stim48hr": {
+     "delta.npy": "5799f2efece2324dfb8f1d69a22d7d83b4fd022b7145f3005c85fe1e8226c9ae",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "1ea44d6829fda02a9619352fed19ffda18c67aadadd4d137a4506d04ac553ecb"
+    },
+    "experiments/801-lab-folds/work/L3/cd4/cd4_compact/cd4_stim48hr": {
+     "delta.npy": "a175f36a05f5b14efa3fca955d4b157a45805e381b61f63503da35477bed08ee",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "f29f45781b680a29f5efe94de5706230ecf2e2f448edd69000f83d133e84b3f4"
+    },
+    "experiments/801-lab-folds/work/L4/cd4/cd4_compact/cd4_stim48hr": {
+     "delta.npy": "00fd50a5efe8c671991e61994aeec9fa1ec489abaf7e2ad42337e22de850ea1a",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "bbf70ce0be03069cb37659f2f7cc511fe61d4a95cbfe8528a41bda0ab8ec1900"
+    },
+    "experiments/801-lab-folds/work/L5/cd4/cd4_compact/cd4_stim48hr": {
+     "delta.npy": "3a793495cef396b0af10f8d7f9654df1b167aab3e2193ed97c1cddece1ff7ede",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "6123554d794695504aa64f4ab78f5fcc3399a5b5dac41fd6c4e058091a13134a"
+    },
+    "experiments/801-lab-folds/work/L6/cd4/cd4_compact/cd4_stim48hr": {
+     "delta.npy": "10b20d8cc5f450bfb8ec4cb103c5610eccf4839ccaef4fb5177c7043ccccaf08",
+     "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+     "perts.txt": "3d096a2d9f3acbc4a9a35ade7db598b0aa4e26aefc84bd9fe684be7dfb05b54d"
+    }
+   },
+   "n_targets": 15,
+   "h1test": 4,
+   "h1tv": 11,
+   "out_sha256": "093b37f89bcb3bfc6b40c72129c4497232ebc20b03121c5049fc05bc77601f6e"
+  }
+ },
+ "ka": {
+  "viperturb_k562": {
+   "sources_equal": true,
+   "abc_rows_checked": 39,
+   "abc_rows_equal": true
+  },
+  "telohaec_pilot": {
+   "sources_equal": true,
+   "abc_rows_checked": 10,
+   "abc_rows_equal": true
+  },
+  "dld1_lowmoi": {
+   "sources_equal": true,
+   "abc_rows_checked": 13,
+   "abc_rows_equal": true
+  },
+  "altair_a549": {
+   "sources_equal": true,
+   "abc_rows_checked": 3,
+   "abc_rows_equal": true
+  },
+  "rpe1": {
+   "sources_equal": true,
+   "abc_rows_checked": 0,
+   "abc_rows_equal": true
+  },
+  "nadig_jurkat": {
+   "sources_equal": true,
+   "abc_rows_checked": 0,
+   "abc_rows_equal": true
+  },
+  "jiang_K562": {
+   "sources_equal": true,
+   "abc_rows_checked": 0,
+   "abc_rows_equal": true
+  },
+  "jiang_A549": {
+   "sources_equal": true,
+   "abc_rows_checked": 0,
+   "abc_rows_equal": true
+  },
+  "jiang_BXPC3": {
+   "sources_equal": true,
+   "abc_rows_checked": 0,
+   "abc_rows_equal": true
+  },
+  "jiang_HAP1": {
+   "sources_equal": true,
+   "abc_rows_checked": 0,
+   "abc_rows_equal": true
+  },
+  "jiang_HT29": {
+   "sources_equal": true,
+   "abc_rows_checked": 0,
+   "abc_rows_equal": true
+  },
+  "jiang_MCF7": {
+   "sources_equal": true,
+   "abc_rows_checked": 0,
+   "abc_rows_equal": true
+  },
+  "cd4_rest": {
+   "sources_equal": true,
+   "abc_rows_checked": 37,
+   "abc_rows_equal": true
+  },
+  "cd4_stim8hr": {
+   "sources_equal": true,
+   "abc_rows_checked": 38,
+   "abc_rows_equal": true
+  },
+  "cd4_stim48hr": {
+   "sources_equal": true,
+   "abc_rows_checked": 38,
+   "abc_rows_equal": true
+  }
+ },
+ "ka_pass": true
+}

@@ -1,0 +1,408 @@
+{
+  "schema_version": 5,
+  "experiment": "109-global-guide-nuisance",
+  "date_preregistered": "2026-08-30",
+  "status": "source_only_runner_ready_after_prefit_extraction_repair",
+  "amendments": [
+    {
+      "date": "2026-08-30",
+      "stage": "after one failed source extraction and before cache publication, fitting, or held-outcome access",
+      "reason": "the experiment-083 extractor applied its per-guide >=20-cell filter to target-level compact reconstruction even though the compact donor was built from all cells of targets with >=20 total cells",
+      "repair": "retain the per-guide threshold for guide effects, independently reconstruct every compact target from all target-assigned cells, and preserve the 2e-5 maximum-absolute-error gate",
+      "scientific_hypothesis_or_candidate_grid_changed": false,
+      "source_cache_published_before_repair": false,
+      "model_fit_before_repair": false,
+      "held_outcomes_opened": false
+    }
+  ],
+  "canonical_source_axes": {
+    "path": "experiments/109-global-guide-nuisance/source-axes.json",
+    "sha256": "0b4e82a9766fbb47b3555c3b0bf4c68d6b88fbaf21df2177a4534573e466046a",
+    "status": "canonical_source_axes_frozen_before_expression",
+    "expression_values_opened": false
+  },
+  "hypothesis": "A guide-sequence-predictable component of K562 guide effects can be estimated from within-target contrasts and removed from singleton source rows through a globally mean-zero, gauge-invariant correction restricted to the stable feature-contrast subspace.",
+  "estimand": {
+    "formula": "correction_t = -eta * (n(P_R x_t) - mean_{s in S} n(P_R x_s))",
+    "stable_subspace": "P_R is the right-singular-vector subspace of within-target centered fit features with sigma/sigma_max > 1e-6",
+    "centering_population": "every sequence-supported target with exactly one retained source construct in the complete pinned K562 source bank",
+    "absolute_singleton_nuisance_identifiable": false,
+    "gauge_invariant": true,
+    "source_singleton_correction_sum_zero": true,
+    "unsupported_target_correction": "exact_zero",
+    "multi_guide_target_correction": "exact_zero"
+  },
+  "frozen_source_audit_expectations": {
+    "identifiable_nonpanel_multiguide_targets": 506,
+    "split_counts": {
+      "fit": 303,
+      "tune": 101,
+      "test": 102
+    },
+    "guide_features": 229,
+    "varying_fit_features": 225,
+    "stable_contrast_dimensions": 188,
+    "source_sequence_supported_singletons": 6689,
+    "source_targets_with_one_identifiable_guide_but_multiple_retained_guides": [
+      "CDK11B",
+      "DST",
+      "TAL1"
+    ],
+    "panel_sequence_supported": 223,
+    "panel_sequence_supported_singletons": 215,
+    "panel_sequence_and_perturbmatch_supported": 212,
+    "panel_sequence_perturbmatch_singletons": 206,
+    "panel_sequence_perturbmatch_multiguide": 6,
+    "median_panel_singleton_stable_subspace_norm_fraction": 0.995,
+    "must_match_pinned_source_or_abort": true
+  },
+  "reuse": {
+    "experiment_083_compact_guide_cache_contract": true,
+    "experiment_083_sequence_feature_cache_contract": true,
+    "experiment_083_extractor_pooling_contract": {
+      "guide_effects": "only guide categories with at least 20 cells",
+      "compact_target_reconstruction": "all cells assigned to targets with at least 20 total cells",
+      "maximum_absolute_error": 2e-5
+    },
+    "experiment_083_artifact_manifest_sha256": "5a69d8225d02ea70ff2fdc05bfe3c69f8948cc2bca4b68af9ca3d480681e21d8",
+    "experiment_083_source_code_sha256": {
+      "experiment_083_model.py": "40def216ba30ce9000bcb9edb028935129ca40e6bde4dfb75a6d0cd07ee11457",
+      "experiment_083_extract_guide_effects.py": "d53d4424a6bbf508fbd716bbb68724fd314572e2d18c3c57ed282351815c1102",
+      "experiment_083_build_seed_features.py": "0a1ccd8fe570697f17378a49f7f3ee65d7ad2908a006a9add1ea8bc60c021ca9",
+      "experiment_083_inspect_source.py": "214e773cbcc8354ba7ca4470c12868309c1e5905602e840f9aabc703f77ca421"
+    },
+    "experiment_083_pure_helpers": [
+      "deterministic_target_split",
+      "assert_split_contract",
+      "robust_center",
+      "randomized_right_basis",
+      "guide_prediction_metrics",
+      "stable_seed"
+    ],
+    "experiment_083_absolute_singleton_adjustment_reused": false,
+    "experiment_080_artifacts_allowed": false
+  },
+  "fit_tune_test": {
+    "population": "identifiable nonpanel multi-guide targets only",
+    "unit": "target",
+    "split_fraction": {
+      "fit": 0.6,
+      "tune": 0.2,
+      "test": 0.2
+    },
+    "seed": 1092026,
+    "all_guides_for_target_stay_together": true,
+    "panel_targets_allowed": false,
+    "selection": "leave every guide out in turn on tune targets; define the raw held-versus-sibling residual and score the nuisance component removed by deployment cleaning against that residual; aggregate metrics within target before macro averaging",
+    "raw_guide_reconstruction": "diagnostic_only_never_used_for_selection_or_promotion",
+    "untouched_test": "after tune selection, refit the selected configuration on fit plus tune, evaluate exactly once on untouched test, then refit the unchanged configuration on all 506 development targets only if every source gate passes",
+    "source_test_model_population": "fit_plus_tune",
+    "deployment_model_population": "all_506_development_targets"
+  },
+  "coordinate_contract": {
+    "response_mask_must_be_derived_from_authenticated_axes": true,
+    "remove_all_300_vcc_target_coordinates_before_fit": true,
+    "remove_all_506_development_target_coordinates_before_fit": true,
+    "remove_all_300_vcc_target_coordinates_from_frozen_corrections": true,
+    "remove_all_506_development_target_coordinates_from_frozen_corrections": true,
+    "final_held_retrieval_excludes_exactly_each_gallery_target_axis_plus_vcc_panel_as_required_by_existing_harness": true
+  },
+  "feature_model": {
+    "standardization_population": "fit-target guide rows only",
+    "within_target_center_features": true,
+    "stable_singular_ratio_strictly_greater_than": 1e-6,
+    "full_untruncated_feature_fit_forbidden": true,
+    "ridge_intercept": false,
+    "response_basis_source": "within-target centered fit effects",
+    "response_ranks": [
+      8,
+      16,
+      32
+    ],
+    "ridge_lambdas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ]
+  },
+  "candidate_grid": {
+    "identity_eta": 0.0,
+    "eta": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "guide_cell_weight_power": [
+      0.0
+    ],
+    "guide_cell_weight_power_is_validation_fixed_not_deployment_selected": true,
+    "huber_c": 2.0,
+    "tie_break_order": [
+      "higher_target_macro_cosine_delta",
+      "lower_target_macro_nmse_delta",
+      "lower_rank",
+      "lower_eta",
+      "lower_ridge"
+    ]
+  },
+  "source_validation": {
+    "held_unit": "each guide in turn as a pseudo-singleton",
+    "reference": "raw held-guide residual relative to the robust raw sibling center",
+    "baseline": "zero recovered nuisance",
+    "candidate": "raw residual minus the cleaned held-guide residual relative to the robust cleaned sibling center",
+    "translation_invariant": true,
+    "target_constant_nuisance_credit": 0.0,
+    "target_macro_weighting": true,
+    "sibling_center_weight_power": 0.0,
+    "test_cosine_delta_strictly_positive": true,
+    "test_nmse_delta_maximum": 0.0,
+    "test_target_cluster_bootstrap_repetitions": 20000,
+    "test_target_cluster_bootstrap_seed": 1092026,
+    "test_target_cluster_bootstrap_lower_95_strictly_positive": true
+  },
+  "nulls": {
+    "identity": {
+      "eta": 0.0,
+      "must_be_bit_exact": true
+    },
+    "within_target_guide_feature_permutation": {
+      "repetitions": 100,
+      "repeat_complete_selection": true
+    },
+    "cross_target_guide_row_permutation": {
+      "repetitions": 100,
+      "split_local": true,
+      "expression_or_effect_outcomes_used_for_strata": false,
+      "matching": [
+        "identifiable guide count exactly",
+        "split-local decile of sequence-feature bundle Frobenius norm"
+      ],
+      "deterministic_coarsening_order": [
+        "guide count plus sequence-feature norm decile",
+        "guide count",
+        "all targets in the same fit/tune/test split"
+      ],
+      "assignment_unit": "eligible guide row",
+      "every_eligible_guide_row_and_target_must_move_in_every_replicate": true,
+      "repeat_complete_selection": true
+    },
+    "direction_preserving_shrink": {
+      "definition": "for every pseudo-singleton guide, scale its raw response vector to the norm of its cleaned response while preserving raw direction; apply the same operation to siblings; score the nuisance recovered from the resulting held-versus-sibling residual",
+      "must_be_recomputed_from_source_test_holdouts": true
+    },
+    "held_singleton_correction_label_permutation": {
+      "repetitions": 100,
+      "seed": 1092027,
+      "frozen_before_held_truth": true,
+      "unsupported_and_multiguide_rows_fixed": true,
+      "permutation_strata": [
+        "supported_singleton_with_perturbmatch",
+        "supported_singleton_without_perturbmatch"
+      ],
+      "every_row_must_be_a_nonidentity_bijection": true
+    },
+    "gauge_shift": {
+      "add_bounded_finite_constant_response_vector": true,
+      "maximum_absolute_shift": 1000000.0,
+      "deployed_corrections_must_be_unchanged_within_scale_aware_roundoff": true,
+      "tolerance": "128 * float64_eps * max(1, max_abs(original), max_abs(shifted))"
+    }
+  },
+  "freeze_boundary": {
+    "refit_population_after_source_gate": "all 506 nonpanel development targets",
+    "singleton_centering_population_frozen_before_held_truth": true,
+    "model_parameters_frozen_before_held_truth": true,
+    "panel_corrections_frozen_before_held_truth": true,
+    "null_assignments_frozen_before_held_truth": true,
+    "all_artifacts_sha256_bound": true,
+    "all_source_files_sha256_bound": true,
+    "required_artifacts": [
+      "axes.json",
+      "source-input-manifest.json",
+      "source-cache-snapshot.json",
+      "memory-guard.json",
+      "source-test-model.npz",
+      "source-test-holdouts.npz",
+      "selected-model.npz",
+      "tune-selection.json",
+      "source-test.json",
+      "source-bootstrap.npz",
+      "source-nulls.npz",
+      "source-null-selection.json",
+      "singleton-corrections.npz",
+      "held-label-nulls.npz"
+    ],
+    "required_source_gates": [
+      "cosine_positive",
+      "nmse_nonpositive",
+      "bootstrap_lower_positive",
+      "above_within_target_null_p95",
+      "above_cross_target_null_p95",
+      "direction_preserving_shrink_not_better"
+    ],
+    "post_held_refit_or_reselection_forbidden": true
+  },
+  "artifact_schemas": {
+    "source_input_manifest": {
+      "schema_version": 4,
+      "shared_guide_axis_hash_required": true,
+      "feature_eligibility_predicate": "normalized_valid_protospacer_and_seed",
+      "bind_all_experiment_083_extractor_outputs": true,
+      "bind_experiment_083_extractor_and_feature_builder_source": true,
+      "bind_singleton_development_and_panel_mapping_arrays": true
+    },
+    "source_cache_snapshot": {
+      "schema_version": 1,
+      "all_fitted_arrays_loaded_only_from_embedded_snapshot": true,
+      "original_and_snapshot_members_hashed_before_load": true,
+      "original_and_snapshot_members_rehashed_after_source_computation": true,
+      "atomic_publication_requires_identical_before_after_hashes": true
+    },
+    "memory_guard": {
+      "schema_version": 1,
+      "complete_heavy_source_run_covered": true,
+      "receipt_recomputed_and_hash_bound": true
+    },
+    "source_nulls": {
+      "schema_version": 2,
+      "permutation_indices_frozen": true,
+      "assignments_deterministically_recomputed": true,
+      "complete_candidate_records_required": true,
+      "selected_candidate_recomputed_from_records": true
+    },
+    "source_test_model": {
+      "schema_version": 1,
+      "fit_population": "exact_fit_plus_tune_target_axis",
+      "distinct_from_final_all_development_refit": true
+    },
+    "source_test_holdouts": {
+      "schema_version": 1,
+      "required_arrays": [
+        "raw_residual",
+        "recovered_nuisance",
+        "shrink_recovered_nuisance",
+        "target_labels",
+        "held_guide_rows"
+      ],
+      "metrics_recomputed_from_arrays": true,
+      "bootstrap_recomputed_from_per_guide_cosine_deltas": true
+    },
+    "singleton_corrections": {
+      "schema_version": 2,
+      "pre_perturbmatch_zero_mean_population": "all_6689_canonical_singletons",
+      "post_perturbmatch_zero_mean_required": false,
+      "panel_support_count": 215,
+      "features_and_target_mapping_hash_bound_to_source_input_manifest": true,
+      "panel_singleton_features_are_exact_frozen_subset": true,
+      "panel_response_and_source_slot_corrections_recomputed": true,
+      "extrapolation_diagnostics_required": true
+    },
+    "held_label_nulls": {
+      "schema_version": 1,
+      "deterministically_recomputed": true,
+      "bijection_required": true,
+      "support_and_perturbmatch_strata_preserved": true
+    }
+  },
+  "production_adapter": {
+    "modify_only_k562_rows": true,
+    "zero_mean_stage": "raw K562 singleton response correction before PerturbMatch target-by-gene retention",
+    "post_perturbmatch_zero_mean_claimed": false,
+    "perturbmatch_unchanged": true,
+    "k562_share_on_target_and_gene_perturbmatch_intersection": 0.5,
+    "k562_share_on_perturbmatch_unsupported_targets": 1.0,
+    "k562_share_on_perturbmatch_missing_genes": 1.0,
+    "unchanged_stages_after_slot": [
+      "donor_averaging",
+      "frozen_whitening",
+      "norm_preservation",
+      "cd4_residual"
+    ],
+    "target_coverage_must_not_change": true
+  },
+  "source_only_runner": {
+    "entrypoint": "experiments/109-global-guide-nuisance/source_only.py",
+    "preflight_and_dry_run_available": true,
+    "cache_modes": [
+      "verify",
+      "generate only absent caches"
+    ],
+    "source_bundle_published_by_atomic_directory_rename": true,
+    "partial_or_existing_outputs_overwritten": false,
+    "prefit_extraction_repair": {
+      "failed_attempt_date": "2026-08-30",
+      "source_matrix_streamed": true,
+      "cache_published": false,
+      "fit_started": false,
+      "held_outcomes_opened": false
+    },
+    "memory_guard": {
+      "script": "scripts/run_with_memory_guard.py",
+      "sha256": "3be02ceaa44ea0c0ed4641827dd9305095255ec6cbacb82d667cefb4f7915198",
+      "scope": "before_source_preflight_and_cache_generation_through_postcompute_cache_rehash_and_receipt_freeze",
+      "max_rss_gib": 48.0,
+      "min_free_percent": 15,
+      "poll_seconds": 3.0
+    },
+    "held_evaluation_enabled": false,
+    "held_outcomes_opened": false
+  },
+  "held_evaluation": {
+    "primary": [
+      "h1_test",
+      "orion_hek293t"
+    ],
+    "pds_only_safety_diagnostic": [
+      "orion_hct116"
+    ],
+    "diagnostic_only_previously_inspected": [
+      "kolf"
+    ],
+    "complete_gallery_required": true,
+    "raw_uncentered_truth_required": true,
+    "held_donor_excluded_from_prediction_and_operator": true,
+    "baseline": "exact current production arm-D reconstruction",
+    "singleton_only_stratum_reported": true,
+    "six_panel_multiguide_rows_cannot_carry_result": true
+  },
+  "promotion_gates": {
+    "source_test_cosine_delta_strictly_positive": true,
+    "source_test_nmse_delta_maximum": 0.0,
+    "source_test_bootstrap_lower_95_strictly_positive": true,
+    "source_gain_above_within_target_permutation_p95": true,
+    "source_gain_above_cross_target_bundle_permutation_p95": true,
+    "correction_mean_over_source_singleton_support_abs_max": 1e-12,
+    "correction_outside_supported_singletons_abs_max": 0.0,
+    "feature_nullspace_prediction_change_abs_max": 1e-10,
+    "excluded_coordinate_abs_max": 0.0,
+    "eta_zero_exact_identity": true,
+    "exact_current_production_baseline_reconstruction": true,
+    "h1_raw_pds_delta_minimum": 0.0,
+    "hct116_raw_pds_delta_minimum": 0.0,
+    "hek293t_raw_pds_delta_minimum": 0.0,
+    "h1_directional_credit_delta_minimum": 0.0,
+    "hek293t_directional_credit_delta_minimum": 0.0,
+    "equal_donor_macro_raw_pds_delta_minimum": 0.003,
+    "singleton_only_macro_raw_pds_delta_minimum": 0.003,
+    "held_gain_above_frozen_label_permutation_p95": true,
+    "unchanged_target_coverage": true,
+    "kolf_raw_pds_delta_minimum_if_reported": 0.0,
+    "kolf_is_fresh_confirmation": false
+  },
+  "prohibited": [
+    "absolute singleton nuisance subtraction",
+    "feature directions absent from within-target contrasts",
+    "panel-target fitting",
+    "held-context tuning",
+    "post-held refit",
+    "manual named-gene correction",
+    "whole-row deletion",
+    "count-level scoring before every effect-level gate passes",
+    "challenge submission",
+    "commit",
+    "push"
+  ]
+}

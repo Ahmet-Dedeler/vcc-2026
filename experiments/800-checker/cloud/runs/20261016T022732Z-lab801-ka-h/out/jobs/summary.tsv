@@ -1,0 +1,8 @@
+1	0	17	4184	bash experiments/801-lab-folds/cloud801.sh verify
+2	0	79	3963396	bash experiments/801-lab-folds/cloud801.sh ka-efp k562_gwps
+3	0	155	4482668	bash experiments/801-lab-folds/cloud801.sh ka-efp orion_hct116
+4	0	157	4501488	bash experiments/801-lab-folds/cloud801.sh ka-efp orion_hek293t
+6	0	465	1132924	bash experiments/801-lab-folds/cloud801.sh smoke L-k562_gwps L1/k562_gwps L2/k562_gwps L3/k562_gwps L4/k562_gwps L5/k562_gwps L6/k562_gwps 
+5	0	530	12578704	T801_THREADS=6 bash experiments/801-lab-folds/cloud801.sh refit-study k562_gwps
+7	0	561	1485068	bash experiments/801-lab-folds/cloud801.sh smoke L-orion_hct116 L1/orion_hct116 L2/orion_hct116 L3/orion_hct116 L4/orion_hct116 L5/orion_hct116 L6/orion_hct116 
+8	0	563	1503580	bash experiments/801-lab-folds/cloud801.sh smoke L-orion_hek293t L1/orion_hek293t L2/orion_hek293t L3/orion_hek293t L4/orion_hek293t L5/orion_hek293t L6/orion_hek293t 

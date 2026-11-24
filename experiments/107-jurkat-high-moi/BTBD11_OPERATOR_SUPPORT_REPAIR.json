@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "experiment": "107-jurkat-high-moi",
+  "date_authorized": "2026-08-30",
+  "status": "implementation_only_repair_before_any_held_outcome_access",
+  "failure": {
+    "exception": "KeyError: 9002",
+    "official_gene": "BTBD11",
+    "official_zero_based_index": 9002,
+    "affected_surfaces": [
+      "h1",
+      "orion_hek293t"
+    ],
+    "cause": "BTBD11 is on the frozen source-response and held score axes but absent from every incumbent donor gene axis, so it is correctly absent from both incumbent whitening operators"
+  },
+  "decision": {
+    "operator_axis": "unchanged",
+    "score_axis": "unchanged",
+    "reason": "BTBD11 is a real held scored coordinate and dropping it after seeing the build failure would make evaluation optimistic",
+    "source_policy": "apply the frozen supported-principal whitening transform only where the score axis intersects the operator; require exact-zero incumbent and source values at every operator-missing score coordinate",
+    "expected_operator_missing_score_genes": [
+      "BTBD11"
+    ]
+  },
+  "bindings": {
+    "strict_validation_contract": {
+      "path": "experiments/107-jurkat-high-moi/strict_validation_contract.json",
+      "sha256": "8a6b874dddcfb2d4f172dacb6ed608c321b6039b82df15789364d727e1e572ee"
+    },
+    "strict_nadig_validation": {
+      "path": "experiments/107-jurkat-high-moi/strict_nadig_validation.py",
+      "sha256": "793761810ad7cbf724855d10bc40ebf6f91ac056848f983d55035bd74e90254a"
+    },
+    "old_strict_artifact_builder": {
+      "path": "experiments/107-jurkat-high-moi/strict_artifact_builder.py",
+      "bytes": 40909,
+      "sha256": "3a9f7f4084411ec062fbe575b596f6612d8e0824ccfa175114a501a218b41c5d"
+    },
+    "repaired_strict_artifact_builder": {
+      "path": "experiments/107-jurkat-high-moi/strict_artifact_builder.py",
+      "bytes": 42924,
+      "sha256": "aacff67419a4c5c314a604305a09a7154ec9e42d5066c3c10ee61094f606e14a"
+    }
+  },
+  "existing_artifact_reuse": {
+    "allowed": true,
+    "expected_existing_role_count": 23,
+    "policy": "preserve every NPZ byte; preserve an exact copy of every old JSON manifest; verify the NPZ file binding, every logical array binding, and every non-builder transitive input before replacing only the builder file binding in the live JSON manifest",
+    "numerical_outputs_affected": false,
+    "justification": "the repaired branch is reachable only while constructing an integration bundle whose frozen score axis is not contained in its operator; all existing roles either precede integration or have complete score-axis containment"
+  },
+  "forbidden": {
+    "open_nadig_delta": true,
+    "open_held_expression_values": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "challenge_submission": true,
+    "commit": true,
+    "push": true
+  }
+}

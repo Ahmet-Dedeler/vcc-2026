@@ -1,0 +1,47 @@
+{
+  "date": "2026-08-22",
+  "cell_eval2_invoked_locally": false,
+  "challenge_submission_created_or_sent": false,
+  "lint": {
+    "ruff": "passed"
+  },
+  "shell": {
+    "bash_syntax": "passed",
+    "shellcheck": "not installed"
+  },
+  "synthetic_tests": {
+    "count": 3,
+    "status": "passed",
+    "outer_process_tree_peak_rss_gib": 0.14,
+    "checks": [
+      "dry-run emits one block without writing an h5ad",
+      "full synthetic output preserves obs and var",
+      "full synthetic output preserves control rows exactly",
+      "full synthetic output preserves every perturbation column total and scorer pseudobulk",
+      "paired score collector handles higher-is-better and lower-is-better metrics"
+    ]
+  },
+  "real_size_dry_run": {
+    "purpose": "memory and execution-path validation only",
+    "prediction": "experiments/040-union-gamma/out/runs/g0.75_q1.0_a1.08_spread0.25/pred.h5ad",
+    "real": "data/harness/h1-test.h5ad",
+    "shape": [
+      52400,
+      18080
+    ],
+    "targets_in_layout": 85,
+    "control_rows_streamed": 18400,
+    "template_cells": 400,
+    "exercised_target": "AASS",
+    "exact_pseudobulk": true,
+    "script_peak_rss_gib": 0.8037109375,
+    "outer_process_tree_peak_rss_gib": 0.81,
+    "hard_guard_gib": 4.0,
+    "output_h5ad_written": false,
+    "limitation": "This matched H1-layout dry run is not an HCT116 biological or scoring result."
+  },
+  "full_hct116_transform": {
+    "status": "not run locally",
+    "reason": "No clean full HCT116 experiment-040 prediction was present locally."
+  }
+}

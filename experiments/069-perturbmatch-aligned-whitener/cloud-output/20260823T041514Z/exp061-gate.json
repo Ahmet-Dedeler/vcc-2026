@@ -1,0 +1,10 @@
+{
+  "baseline_aggregate_sha256": "f1011cd12786d2196949daa6ce3bf328d52c0afc9d46966e8d3e882f6200cccf",
+  "candidate_aggregate_sha256": "f469c2c445cc86eb77cfccce141a4639f23fee2bbcb0eb9000162bb9eed544de",
+  "candidate_h5ad_bytes": 2282477819,
+  "candidate_h5ad_sha256": "61990b2bbef737ec7f1fdd028735adcac0c29c922aa2357a193aac8bae4daf71",
+  "count_level_avg6_delta": 9.058291006130981e-05,
+  "exit_code": 0,
+  "experiment": "061-perturbmatch-hct-count",
+  "status": "pass"
+}

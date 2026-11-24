@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "experiment": "111-depmap-context-program-gain",
+  "date_recorded": "2026-08-30",
+  "status": "authorized_exact_source_schema_recovery",
+  "bindings": {
+    "source_manifest_sha256": "90e15f3c9d4c698805d0a680fc51085ee18fc6164b77adb2dfade1e7ad92a638",
+    "preregistered_protocol_sha256": "51051875b00057c0e4a23271784dbff30ba4909567ac15b04ee21cbeb533dcee",
+    "failed_execution_authorization_sha256": "33fa3e55f1df461fd9e1ae9ffb42e27b75ded36141cc15b67897cfb7e5e456b4"
+  },
+  "crispr_table_exception": {
+    "member_size_bytes": 76367,
+    "member_crc32": "ff7d6f0c",
+    "member_sha256": "cf10cfedf2036478298a0b595a4cdd82dc6682d07aa42caa553618f59b26ea41",
+    "row_count": 1600,
+    "missing_row_count": 70,
+    "sorted_cell_line_guide_pairs_sha256": "cf7d62365d6898ad27856a6773b3ca2c2533703b677a6ee75cc0c9012feb480a",
+    "missing_fields_exactly": [
+      "gene_effect",
+      "dependency_strength_class"
+    ],
+    "missing_rows_must_be_control_targets": true,
+    "is_dependent_must_equal": "False",
+    "all_other_fields_nonempty": true
+  },
+  "scope": {
+    "only_crispr_table_control_metadata_missingness": true,
+    "matrix_empty_field_contract_unchanged": true,
+    "analysis_target_rows_must_remain_complete": true,
+    "source_model_grid_and_gates_unchanged": true,
+    "held_truth_access": false,
+    "cell_eval2": false,
+    "counts": false,
+    "production_change": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  }
+}

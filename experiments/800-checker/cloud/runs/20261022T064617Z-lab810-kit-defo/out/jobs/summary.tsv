@@ -1,0 +1,4 @@
+1	1	10	339584	bash experiments/801-lab-folds/kit/kit810.sh prep DEFo
+2	8	11	3644	bash experiments/801-lab-folds/kit/kit810.sh fold DEFo k562_gwps
+3	8	11	3732	bash experiments/801-lab-folds/kit/kit810.sh fold DEFo orion_hct116
+4	8	11	3696	bash experiments/801-lab-folds/kit/kit810.sh fold DEFo orion_hek293t

@@ -1,0 +1,268 @@
+{
+ "R5": {
+  "conditions": [
+   "hESC_TF_screen"
+  ],
+  "contiguous": true,
+  "dataset": "Nakatake2020_hESC_TF_screen",
+  "duplicate_symbols": [],
+  "ensembl_sha256": "c848117567b35a10382884bad1470ffbacc7ecf60d31e42cbf52fd8474af1cd9",
+  "first_row": 184,
+  "last_row": 693,
+  "mask": {
+   "canonical_coverage_max": 15324,
+   "canonical_coverage_median": 15324.0,
+   "canonical_coverage_min": 15324,
+   "n_rows_all_measured": 0,
+   "row_constant": true,
+   "source_coverage_fraction_median": 0.8722111773801635,
+   "source_coverage_max": 15794,
+   "source_coverage_median": 15794.0,
+   "source_coverage_min": 15794
+  },
+  "n_rows": 510,
+  "n_unique_symbols": 510,
+  "obs_id_pattern_ok": true,
+  "obs_id_sha256": "e1ba1c32c9c267d810e428ae0965738e13d0c1a644db3d0d7cced48e04f5a0e2",
+  "row_index_sha256": "85abd9a4c04591313ed66895157cfb9eab1eaf78b1c0fc4f974b5981f871f33b",
+  "signs": [
+   1
+  ],
+  "symbols_sha256": "a76bb7ec0ff7aea94e7068b9176af215b2554ceca5ecba5240dc1e949a2fddb4"
+ },
+ "axis": {
+  "bank_mask_row_constant": true,
+  "bank_measured": 16268,
+  "canonical_genes": 18533,
+  "definition": "canonical genes measured in EVERY cohort Nakatake row (after 115's duplicate-collapse mask AND) and in EVERY cohort gse295214_h1 bank row",
+  "duplicate_collapse_groups": 1,
+  "n": 15309,
+  "n_source_features": 18108,
+  "n_unique_source_symbols": 18074,
+  "sha256": "ec1a5719fc5a0bb624e15c13d1a3787a4d89d9c59af31c3dc5e447ef7ecdda20",
+  "source_covered_canonical": 16290
+ },
+ "bank_source_rows": {
+  "canonical_coverage_median": 16268.0,
+  "first_row": 17991,
+  "last_row": 20344,
+  "mask_row_constant_canonical": true,
+  "n": 2354,
+  "row_index_sha256": "77ff634866b51bffeac2d8272144b956930a275d5c1c6bc75324078e9deca8ea"
+ },
+ "claim": "C7",
+ "code": {
+  "access303.py": "4c5154e6553017c1c368a2287fa416ae825576f4d75f8c573af637adbb1c6391",
+  "ka303.py": "9f504fe7c22f842b9820b2c4e503c736e945f9a73a82e72dcd7b41b88b66e65a",
+  "lib303.py": "1ffe619486b1ca9b714eecd10f1fb52d881a2075cc0446223ac23f54d5a9fe84",
+  "meta303.py": "61fefc3200f4cfee4c5292d60e7400e8ceba54216201fa69014b193d5e88729f",
+  "stats303.py": "478ab38394a3fa77de085282de8d7b588dd7277712c7e124784c1e653f3b78a1",
+  "test303.py": "1c7ecc3b968f39c78cee456a768bfb8c7f74f8a68379cdd393ee64d1bb18522c"
+ },
+ "cohorts": {
+  "nakatake_x_302_cohort": {
+   "claimed": 58,
+   "n": 45,
+   "n_302_primary": 148,
+   "n_302_rows": 175,
+   "n_with_302_scored_any": 58,
+   "sha256": "f495dc036dc0f535a1c9caa83978de013707796c5d8c0e1a3697e00120eb14f6"
+  },
+  "nakatake_x_bank": {
+   "claimed": 100,
+   "n": 100,
+   "sha256": "fca12254412534255a618dc07aa9f2da3fbdcef05b4c00de6fe900efed0a07ff"
+  },
+  "nakatake_x_db_joung": {
+   "claimed": 13,
+   "members": [
+    "CDX2",
+    "EOMES",
+    "HNF4A",
+    "KLF1",
+    "KLF2",
+    "KLF4",
+    "KLF5",
+    "MSC",
+    "MSGN1",
+    "PAX2",
+    "PAX5",
+    "PTF1A",
+    "TSHZ1"
+   ],
+   "n": 13,
+   "n_joung_rows": 28,
+   "sha256": "e46fd87906f45d81e01d5708b51d9b394c302db33f63d88ee99af4126a3f2154"
+  },
+  "own_column_on_axis": {
+   "n": 98
+  },
+  "own_column_present": {
+   "n": 98
+  }
+ },
+ "datasets": {
+  "AdamsonWeissman2016": 77,
+  "FrangiehIzar2021": 107,
+  "Jiang2024": 1083,
+  "Joung2023_hESC_TF_screen": 28,
+  "Nakatake2020_hESC_TF_screen": 510,
+  "Pan2025_hESC": 2354,
+  "PertOrg": 4363,
+  "Replogle2022_K562_essential": 1577,
+  "Replogle2022_K562_gwps": 6608,
+  "Replogle2022_rpe1": 1301,
+  "Tian2021_CRISPRa": 54,
+  "Tian2021_CRISPRi": 89,
+  "knockTF_human": 639,
+  "knockTF_mouse": 106,
+  "omnipath_pseudo_perturbation": 1449
+ },
+ "documents": {
+  "HANDOFF-MANDATE.md": "85e2c3c3549f2e1900e5d16c592e9e138d30f183a935ca09310aad00986590ae",
+  "MANDATE.md": "83e15632a44315355e7d6b621794829a51fb4563ee3fc942411611fa4fdf733f",
+  "PREACCESS.md": "956bfa0d97569fbdc5b529aff3942fe9ca3499f266eeab93f67b37e0b112dca6",
+  "PREREGISTRATION-DRAFT.md": "6a92011a608c1ba04a262bd02198fd73f39f0b8a1a92462dc0b9c4cb2b6a5375",
+  "RESULTS.md": "2c144343d455bdda2195fb2728c1ae6fa30cc81c8db19bd18b136c376e1fb373"
+ },
+ "experiment": "303-second-overexpression-library",
+ "file": {
+  "X_chunks": null,
+  "X_dtype": "float32",
+  "layers": {
+   "control": {
+    "chunks": null,
+    "dtype": "float32",
+    "shape": [
+     20345,
+     18108
+    ]
+   },
+   "measure_mask": {
+    "chunks": null,
+    "dtype": "float32",
+    "shape": [
+     20345,
+     18108
+    ]
+   }
+  },
+  "n_obs": 20345,
+  "n_var": 18108,
+  "obs_columns": [
+   "condition",
+   "perturbed_gene",
+   "perturbation_sign",
+   "perturbed_gene_name",
+   "dataset"
+  ],
+  "obsm_keys": [],
+  "uns_keys": [],
+  "var_columns": [
+   "gene_name"
+  ],
+  "var_index": "human_id"
+ },
+ "inputs": {
+  "data/challenge/gene_names.csv": {
+   "exists": true,
+   "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+   "size_bytes": 119295
+  },
+  "experiments/115-gse295214-h1/work/compact-donor/b_ctrl.npy": {
+   "exists": true,
+   "sha256": "c88816a57c57c3a088183ae24bca406d8ded374871e3d330aa444fcb13811b4f",
+   "size_bytes": 74260
+  },
+  "experiments/115-gse295214-h1/work/compact-donor/delta.npy": {
+   "exists": true,
+   "sha256": "d0fa6555f9a62ce503d2ad55c8bfda954322657b52dcd48a24e29c330e718c7a",
+   "size_bytes": 174506856
+  },
+  "experiments/115-gse295214-h1/work/compact-donor/genes.txt": {
+   "exists": true,
+   "sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+   "size_bytes": 119285
+  },
+  "experiments/115-gse295214-h1/work/compact-donor/measured_mask.npy": {
+   "exists": true,
+   "sha256": "da468865f861be0714037c33357b93b9f747351f7478866e6e0dd6dff9d1ebcb",
+   "size_bytes": 43626810
+  },
+  "experiments/115-gse295214-h1/work/compact-donor/meta.json": {
+   "exists": true,
+   "sha256": "ac51c243a69068e10f0e4cd2ec426360a920e531aba8911a854daa5d6c620f13",
+   "size_bytes": 2730
+  },
+  "experiments/115-gse295214-h1/work/compact-donor/perts.txt": {
+   "exists": true,
+   "sha256": "7060076272d411d4ee00b898cc26eedcb1eaaac5f5e94e2c60f3b45978320747",
+   "size_bytes": 14572
+  },
+  "experiments/279-znf-state-dependence/work/held279.npz": {
+   "exists": true,
+   "sha256": "570b1adf6d55e3b35ae3e3ef25543ec8eef1f2a256836d154154230ec2b51783",
+   "size_bytes": 1320880
+  },
+  "experiments/279-znf-state-dependence/work/znf279.csv": {
+   "exists": true,
+   "sha256": "f19bfa84a44377671bf66c9f8c868e3a430457065ced3e5ec57f125dc89e58bb",
+   "size_bytes": 1830104
+  },
+  "experiments/290-remainder-response-features/work/persrc290.npz": {
+   "exists": true,
+   "sha256": "3ce07e88d0aff6330461b350594a4a2202ba8e9af250a93dc1473ef22b19c27c",
+   "size_bytes": 4957398
+  },
+  "experiments/302-orf-vs-crispri-symmetry/work/sums302.npz": {
+   "exists": true,
+   "sha256": "01c2a69669ff17b694b349f1b50783b0caeec686a8781fea9e9b700f76d51671",
+   "size_bytes": 141302221
+  },
+  "experiments/302-orf-vs-crispri-symmetry/work/symmetry302.csv": {
+   "exists": true,
+   "sha256": "9c15824aed80d984b42a548ab5f8b46c4929adec1752038c6bf1b0bf043ace9f",
+   "size_bytes": 26118
+  }
+ },
+ "phase": "PREACCESS",
+ "producer_notebook": {
+  "commit": "aa848b9d517071d27b141e058e9bdae1966a869f",
+  "local": "work/producer_hESC_TF_screen_source.py",
+  "outputs_stripped": true,
+  "path": "manuscript2025/datasets/pseudobulk_perturbation/hESC_TF_screen.ipynb",
+  "repo": "xingjiepan/SCMG_scripts",
+  "sha256": "2461207bda93b43b15e2b35ccf8e77918d70c9d0cf98c78c72afeeddb2cda455"
+ },
+ "read_contract": {
+  "free_Pan2025_X_rows_read": 20,
+  "free_Pan2025_control_rows_read": 21,
+  "free_measure_mask_rows_read": 2864,
+  "note": "Pan2025 rows and measure_mask are explicitly free per the R5 declaration",
+  "reserve_X_rows_read": 0,
+  "reserve_control_rows_read": 0
+ },
+ "release": {
+  "exists": false,
+  "marker_exists": false,
+  "product_exists": false
+ },
+ "reserve": "R5",
+ "reserve_state": "UNREAD",
+ "source": {
+  "matches_115_meta": true,
+  "path": "data/external/gse295214/pseudo_bulk_perturbation_database.h5ad",
+  "sha256": "0754d6206fe045744dfd9b21eb37c8e3435152c76b158b9810a84c64a029c0ac",
+  "size_bytes": 4425260319
+ },
+ "work_artifacts": {
+  "AXIS.txt": "ec1a5719fc5a0bb624e15c13d1a3787a4d89d9c59af31c3dc5e447ef7ecdda20",
+  "COHORT.tsv": "3d114511339617d16c6c7fde16712c2d5297a52df737f8367966733029a009ea",
+  "R5-ROWS.tsv": "0c92b72da253e865eb140d0bcad8c41b1b17e315b64dd4c49a457cf46d51ab9b",
+  "ka303.json": "ec13fd5c1a9c8a30476b8c80a7ac9bbefa10bae021da9a052185e659ee929bfc",
+  "meta303.json": "d2f3c2a2093021f3eddaef5186034abb69c537b6bde215f446d9672293a3f521",
+  "producer_hESC_TF_screen_source.py": "b9c4d0274c01460037f5cda1f2692888d16a1b2bf954a074c933c1ede1ee6243",
+  "source.sha256": "c36986cfb46cbe2cc93e9d507a78d131f857d6e432bcea621fa22ee9f153b25d",
+  "test303.json": "fcff8ffe64dda6d185a220b54f522486267b6b5cfe3e0006c81af9d2f3eb6a42"
+ }
+}

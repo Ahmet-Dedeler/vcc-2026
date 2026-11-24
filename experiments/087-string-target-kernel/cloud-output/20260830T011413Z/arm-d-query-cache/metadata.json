@@ -1,0 +1,748 @@
+{
+  "schema_version": 3,
+  "experiment": "087-string-target-kernel",
+  "status": "arm_d_query_cache_complete",
+  "arm": "D",
+  "arm_definition": "50:50 incumbent/PerturbMatch K562 slot, source-only gamma=0.65 union whitening, then CD4 mean3 gene_norm residual at fraction 0.05",
+  "implementation": {
+    "exp062_run_sha256": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176",
+    "exp064_run_sha256": "39d0f5a29731c5633f3d8fd4035a5a9c3a91cbd435780a201059eaa25a36df81",
+    "exact_arm_d_formula": true,
+    "leakage_safe_preparation": "blocked coordinates are excluded from source means, scales, effects, CD4 statistics, and whitening inputs; development uses the principal restriction of the frozen dense operator"
+  },
+  "development_folds": [
+    "orion_hct116",
+    "orion_hek293t"
+  ],
+  "final_folds": [
+    "orion_hct116",
+    "orion_hek293t",
+    "kolf2"
+  ],
+  "valid_outer_donors": [
+    "orion_hct116",
+    "orion_hek293t"
+  ],
+  "invalid_outer_donor": "k562_gwps omitted because PerturbMatch is a reanalysis of the same assay",
+  "training_targets": 600,
+  "outer_targets": 259,
+  "outer_targets_role": "legacy shared HCT116/HEK293T reference used only to validate the experiment-064 reproduction subset",
+  "training_outer_overlap": 0,
+  "vcc_targets": 300,
+  "training_blocked_targets": 900,
+  "training_blocked_target_coordinates": 851,
+  "training_blocked_target_coordinates_sha256": "731476361e4fd6de13b0cfc389d470a3ff2b9bb7dbcdf6a409de78ebabc4b4ad",
+  "training_targets_without_official_coordinate": 49,
+  "training_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605",
+  "training_targets_without_master_coordinate": 109,
+  "training_targets_without_master_coordinate_sha256": "b6820a8f5aa109e2fb7935bf67579e2dc9339d7830537994c40a201bc1a4268f",
+  "panel_blocked_target_coordinates": 300,
+  "panel_blocked_target_coordinates_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+  "historical_target_coordinates_restored_for_panel": 551,
+  "master_genes": 7312,
+  "dev_score_genes": 6821,
+  "panel_score_genes": 17806,
+  "dev_score_gene_order_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+  "panel_score_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+  "panel_score_official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+  "dev_to_panel_positions_sha256": "faa083a23f46d7be8c0d68b3781ee7608c5abb6c9c9570998fb17d07bf3678cf",
+  "train_order_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+  "outer_order_sha256": "3f5a41d98fc2b4e6e8d3b69dba41b5db1e2d2e44dda230814bb53eb3b97d0ffb",
+  "panel_order_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+  "exp064_target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+  "coordinate_contract": {
+    "development_blocked": {
+      "vcc_targets": 300,
+      "nonpanel_development_targets": 600,
+      "nonpanel_development_target_coordinates": 551,
+      "before_dense_whitening": true,
+      "before_source_normalization": true,
+      "score_axis_excludes_both_sets": true
+    },
+    "final_panel_blocked": {
+      "vcc_targets": 300,
+      "nonpanel_development_targets": 0,
+      "before_dense_whitening": true,
+      "before_source_normalization": true,
+      "score_axis_excludes_exactly_vcc_targets": true
+    }
+  },
+  "folds": {
+    "orion_hct116": {
+      "held_donor": "orion_hct116",
+      "source_donors": [
+        "k562_gwps",
+        "orion_hek293t"
+      ],
+      "held_donor_used_in_prediction": false,
+      "held_donor_used_in_operator": false,
+      "operator_npz_sha256": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+      "operator_json_sha256": "c4e00ad1fa5fbba7b9b0f93e4dae91b76da73638ef9431316923bb6ca4b585bc",
+      "operator_columns": 17942,
+      "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+      "panel_targets": 290,
+      "panel_target_order_sha256": "b4d62e504c487d5cea40548ecb8c1672fbd49c651cc039b182b14ab2325213c4",
+      "panel_targets_file_sha256": "e4d306ddf3a67d3fedd3b7d6101561774f7a9b5ef8c442595c08d6d01a78333e",
+      "complete_held_panel": true,
+      "panels": {
+        "train": {
+          "rows": 600,
+          "columns": 6821,
+          "source_vote_histogram": {
+            "2": 600
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 5.9148252571502145,
+            "after_operator_median_norm": 32.525394361259174,
+            "applied_scale": 0.18185253010168975,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605",
+            "nonpanel_targets_without_master_coordinate": 109,
+            "nonpanel_targets_without_master_coordinate_sha256": "b6820a8f5aa109e2fb7935bf67579e2dc9339d7830537994c40a201bc1a4268f"
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 5.9148252571502145,
+            "after_operator_median_norm": 32.525394361259174,
+            "applied_scale": 0.18185253010168975,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605",
+            "nonpanel_targets_without_master_coordinate": 109,
+            "nonpanel_targets_without_master_coordinate_sha256": "b6820a8f5aa109e2fb7935bf67579e2dc9339d7830537994c40a201bc1a4268f"
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 5.914825257150214,
+            "candidate_pre_preserve_median_norm": 5.914825257150214,
+            "post_add_global_preserve_scale": 1.0
+          },
+          "cd4_targets_with_any_condition": 0,
+          "cd4_targets_with_all_conditions": 0,
+          "support": {
+            "blocked_target_labels": 900,
+            "blocked_target_labels_sha256": "79e2bf5154011139714d9661f26e12d0661e6c021a6d1b8f4ba61185d225f73b",
+            "blocked_coordinates": 851,
+            "main_source_statistics_exclude_blocked_coordinates": true,
+            "cd4_statistics_exclude_blocked_coordinates": true,
+            "pm_shared_unblocked_genes": 6590,
+            "pm_shared_columns_sha256": "1fd950e5d333fa7d0fb8c1210607c92141bf9c071ab584cc15d75c68c063554c",
+            "pm_support": {
+              "targets_total": 600,
+              "targets_pm_modified": 583,
+              "targets_incumbent_preserved": 17
+            },
+            "pm_fallback_rows": 17,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 600
+            },
+            "source_coverage": {
+              "k562_gwps": 600,
+              "orion_hek293t": 600
+            }
+          },
+          "query_sha256": "3aa5690061a99bd78d5c78c551b6ba6ff311c24999b0e64e29ae7d56b857d211",
+          "source_count_sha256": "fbd47900e800497309239f7718a13101e9488a147f2c2def94a3540bb77e5d92",
+          "source_count_histogram": {
+            "0": 0,
+            "1": 0,
+            "2": 600
+          },
+          "held_truth_opened": false
+        },
+        "panel": {
+          "rows": 290,
+          "columns": 17806,
+          "source_vote_histogram": {
+            "1": 31,
+            "2": 259
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.831053558809586,
+            "after_operator_median_norm": 29.546443649210907,
+            "applied_scale": 0.1635071082044965,
+            "preserve_rows": 221
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.831053558809586,
+            "after_operator_median_norm": 29.546443649210907,
+            "applied_scale": 0.1635071082044965,
+            "preserve_rows": 221
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 4.831053558809586,
+            "candidate_pre_preserve_median_norm": 4.8519561595061935,
+            "post_add_global_preserve_scale": 0.995691923008073
+          },
+          "cd4_targets_with_any_condition": 282,
+          "cd4_targets_with_all_conditions": 267,
+          "support": {
+            "blocked_target_labels": 300,
+            "blocked_target_labels_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+            "blocked_coordinates": 300,
+            "main_source_statistics_exclude_blocked_coordinates": true,
+            "cd4_statistics_exclude_blocked_coordinates": true,
+            "pm_shared_unblocked_genes": 7075,
+            "pm_shared_columns_sha256": "58a5985b38fed6d16e0c74f8b21b4ea84134c7bcfcff61c1b8222e661ad65418",
+            "pm_support": {
+              "targets_total": 290,
+              "targets_pm_modified": 239,
+              "targets_incumbent_preserved": 21
+            },
+            "pm_fallback_rows": 21,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 8,
+              "1": 4,
+              "2": 11,
+              "3": 267
+            },
+            "source_coverage": {
+              "k562_gwps": 260,
+              "orion_hek293t": 289
+            }
+          },
+          "query_sha256": "1ddbc73864a9fc5b25e876e95d0e183e2f99432163de0cc7eb309ff40c21a29b",
+          "source_count_sha256": "52ef355c4b6a302235c134aa749fa4131e6052c359e6ff11d6d3ed6adb67c9e0",
+          "source_count_histogram": {
+            "0": 0,
+            "1": 31,
+            "2": 259
+          },
+          "target_order_sha256": "b4d62e504c487d5cea40548ecb8c1672fbd49c651cc039b182b14ab2325213c4",
+          "score_axis_excludes_exactly_vcc_coordinates": true,
+          "score_gene_count": 17806,
+          "score_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+          "score_official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+          "saved_query_is_complete_scored_axis": true,
+          "held_truth_opened": false
+        }
+      },
+      "exp064_reproduction": {
+        "passed": true,
+        "comparison": "tight numeric equality of saved panel_query rows to the direct arm-D formula on the complete retrieval axis",
+        "absolute_tolerance": 1e-06,
+        "max_abs_error": 5.860180340988563e-08,
+        "validated_targets": 221,
+        "validated_target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+        "retrieval_genes": 17806,
+        "retrieval_columns_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+        "retrieval_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+        "saved_query_score_axis_exact": true,
+        "leakage_safe_source_statistics": true,
+        "source_vote_histogram": {
+          "2": 221
+        },
+        "extension_targets": 69,
+        "extension_target_order_sha256": "480e1b847a44b8665a1aeb1cd40bd94ba330156f61571e24a5fab90923f375e5",
+        "extension_audit": {
+          "pm_missing_rows": 21,
+          "cd4_condition_histogram": {
+            "0": 8,
+            "1": 4,
+            "2": 11,
+            "3": 46
+          },
+          "fallback_policy": "preserve incumbent K562 row when PerturbMatch lacks a target; average only available main donors; add CD4 only where measured"
+        }
+      }
+    },
+    "orion_hek293t": {
+      "held_donor": "orion_hek293t",
+      "source_donors": [
+        "k562_gwps",
+        "orion_hct116"
+      ],
+      "held_donor_used_in_prediction": false,
+      "held_donor_used_in_operator": false,
+      "operator_npz_sha256": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1",
+      "operator_json_sha256": "cb22406a7a529380c4348bf636f2532c29a43ab0fc4b00d6f6d98fb5e02360c6",
+      "operator_columns": 17942,
+      "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+      "panel_targets": 294,
+      "panel_target_order_sha256": "b971c471a3533a436cb0f3ed9fcecfb9c4dac786a0a8182b28c1bb44b982a11b",
+      "panel_targets_file_sha256": "d9d24186259cca95b0a1303fc12ce44fa92f3ed81d424d3bc48cec80e07be165",
+      "complete_held_panel": true,
+      "panels": {
+        "train": {
+          "rows": 600,
+          "columns": 6821,
+          "source_vote_histogram": {
+            "2": 600
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 6.032141933174676,
+            "after_operator_median_norm": 31.091983893011008,
+            "applied_scale": 0.19400955416455776,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605",
+            "nonpanel_targets_without_master_coordinate": 109,
+            "nonpanel_targets_without_master_coordinate_sha256": "b6820a8f5aa109e2fb7935bf67579e2dc9339d7830537994c40a201bc1a4268f"
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 6.032141933174676,
+            "after_operator_median_norm": 31.091983893011008,
+            "applied_scale": 0.19400955416455776,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605",
+            "nonpanel_targets_without_master_coordinate": 109,
+            "nonpanel_targets_without_master_coordinate_sha256": "b6820a8f5aa109e2fb7935bf67579e2dc9339d7830537994c40a201bc1a4268f"
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 6.032141933174676,
+            "candidate_pre_preserve_median_norm": 6.032141933174676,
+            "post_add_global_preserve_scale": 1.0
+          },
+          "cd4_targets_with_any_condition": 0,
+          "cd4_targets_with_all_conditions": 0,
+          "support": {
+            "blocked_target_labels": 900,
+            "blocked_target_labels_sha256": "79e2bf5154011139714d9661f26e12d0661e6c021a6d1b8f4ba61185d225f73b",
+            "blocked_coordinates": 851,
+            "main_source_statistics_exclude_blocked_coordinates": true,
+            "cd4_statistics_exclude_blocked_coordinates": true,
+            "pm_shared_unblocked_genes": 6590,
+            "pm_shared_columns_sha256": "1fd950e5d333fa7d0fb8c1210607c92141bf9c071ab584cc15d75c68c063554c",
+            "pm_support": {
+              "targets_total": 600,
+              "targets_pm_modified": 583,
+              "targets_incumbent_preserved": 17
+            },
+            "pm_fallback_rows": 17,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 600
+            },
+            "source_coverage": {
+              "k562_gwps": 600,
+              "orion_hct116": 600
+            }
+          },
+          "query_sha256": "92b7058f12b8718e22db9910e939a58211286f9d29549bc213ba4e23e1775a7d",
+          "source_count_sha256": "fbd47900e800497309239f7718a13101e9488a147f2c2def94a3540bb77e5d92",
+          "source_count_histogram": {
+            "0": 0,
+            "1": 0,
+            "2": 600
+          },
+          "held_truth_opened": false
+        },
+        "panel": {
+          "rows": 294,
+          "columns": 17806,
+          "source_vote_histogram": {
+            "0": 1,
+            "1": 34,
+            "2": 259
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.920571865814755,
+            "after_operator_median_norm": 28.1786271380886,
+            "applied_scale": 0.17462070957898784,
+            "preserve_rows": 221
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.920571865814755,
+            "after_operator_median_norm": 28.1786271380886,
+            "applied_scale": 0.17462070957898784,
+            "preserve_rows": 221
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 4.920571865814754,
+            "candidate_pre_preserve_median_norm": 4.941494129454515,
+            "post_add_global_preserve_scale": 0.9957660045541589
+          },
+          "cd4_targets_with_any_condition": 286,
+          "cd4_targets_with_all_conditions": 271,
+          "support": {
+            "blocked_target_labels": 300,
+            "blocked_target_labels_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+            "blocked_coordinates": 300,
+            "main_source_statistics_exclude_blocked_coordinates": true,
+            "cd4_statistics_exclude_blocked_coordinates": true,
+            "pm_shared_unblocked_genes": 7075,
+            "pm_shared_columns_sha256": "58a5985b38fed6d16e0c74f8b21b4ea84134c7bcfcff61c1b8222e661ad65418",
+            "pm_support": {
+              "targets_total": 294,
+              "targets_pm_modified": 242,
+              "targets_incumbent_preserved": 21
+            },
+            "pm_fallback_rows": 21,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 8,
+              "1": 4,
+              "2": 11,
+              "3": 271
+            },
+            "source_coverage": {
+              "k562_gwps": 263,
+              "orion_hct116": 289
+            }
+          },
+          "query_sha256": "6bc291e55aa80b1884729fa871cfd82ffd9d2c802d60eaa8616c6a2698750198",
+          "source_count_sha256": "65be7212aab10c632b2c52d843704d2a0385361cede54283cf730a544b478454",
+          "source_count_histogram": {
+            "0": 1,
+            "1": 34,
+            "2": 259
+          },
+          "target_order_sha256": "b971c471a3533a436cb0f3ed9fcecfb9c4dac786a0a8182b28c1bb44b982a11b",
+          "score_axis_excludes_exactly_vcc_coordinates": true,
+          "score_gene_count": 17806,
+          "score_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+          "score_official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+          "saved_query_is_complete_scored_axis": true,
+          "held_truth_opened": false
+        }
+      },
+      "exp064_reproduction": {
+        "passed": true,
+        "comparison": "tight numeric equality of saved panel_query rows to the direct arm-D formula on the complete retrieval axis",
+        "absolute_tolerance": 1e-06,
+        "max_abs_error": 5.356767829312048e-08,
+        "validated_targets": 221,
+        "validated_target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+        "retrieval_genes": 17806,
+        "retrieval_columns_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+        "retrieval_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+        "saved_query_score_axis_exact": true,
+        "leakage_safe_source_statistics": true,
+        "source_vote_histogram": {
+          "2": 221
+        },
+        "extension_targets": 73,
+        "extension_target_order_sha256": "2aa0c365c6235893afbad006f62d5a6085023f696adf7cac7d249f030942c85f",
+        "extension_audit": {
+          "pm_missing_rows": 21,
+          "cd4_condition_histogram": {
+            "0": 8,
+            "1": 4,
+            "2": 11,
+            "3": 50
+          },
+          "fallback_policy": "preserve incumbent K562 row when PerturbMatch lacks a target; average only available main donors; add CD4 only where measured"
+        }
+      }
+    },
+    "kolf2": {
+      "held_donor": "kolf2",
+      "source_donors": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "held_donor_used_in_prediction": false,
+      "held_donor_used_in_operator": false,
+      "operator_npz_sha256": "5608e807230dea04f93f5e804ed26e8f7285d9487d16a2791283793ffb80fed3",
+      "operator_json_sha256": "a77f9425ac524cdcf3a53a1744520e1e63cb8b925ef77fae2864c4d8b72337b6",
+      "operator_columns": 17942,
+      "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+      "panel_targets": 300,
+      "panel_target_order_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+      "panel_targets_file_sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4",
+      "complete_held_panel": false,
+      "panels": {
+        "train": {
+          "rows": 600,
+          "columns": 6821,
+          "source_vote_histogram": {
+            "3": 600
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 5.122079018572592,
+            "after_operator_median_norm": 28.239560872233675,
+            "applied_scale": 0.1813795562100555,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605",
+            "nonpanel_targets_without_master_coordinate": 109,
+            "nonpanel_targets_without_master_coordinate_sha256": "b6820a8f5aa109e2fb7935bf67579e2dc9339d7830537994c40a201bc1a4268f"
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17391,
+            "forbidden_input_coordinates": 551,
+            "active_columns_sha256": "7bed025c2acf91c9a6cfa4190983cc02da0bbfa14aa635df4b1e1db16c439787",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 5.122079018572592,
+            "after_operator_median_norm": 28.239560872233675,
+            "applied_scale": 0.1813795562100555,
+            "preserve_rows": 600,
+            "nonpanel_target_overlap_with_active_operator": 0,
+            "all_nonpanel_target_coordinates_excluded": true,
+            "excluded_nonpanel_targets_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+            "nonpanel_targets_without_official_coordinate": 49,
+            "nonpanel_targets_without_official_coordinate_sha256": "76fb8028ef4d38c4e880c05fbb21212406c5387bdb77b47fbbc4aebf5c224605",
+            "nonpanel_targets_without_master_coordinate": 109,
+            "nonpanel_targets_without_master_coordinate_sha256": "b6820a8f5aa109e2fb7935bf67579e2dc9339d7830537994c40a201bc1a4268f"
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 5.122079018572592,
+            "candidate_pre_preserve_median_norm": 5.122079018572592,
+            "post_add_global_preserve_scale": 1.0
+          },
+          "cd4_targets_with_any_condition": 0,
+          "cd4_targets_with_all_conditions": 0,
+          "support": {
+            "blocked_target_labels": 900,
+            "blocked_target_labels_sha256": "79e2bf5154011139714d9661f26e12d0661e6c021a6d1b8f4ba61185d225f73b",
+            "blocked_coordinates": 851,
+            "main_source_statistics_exclude_blocked_coordinates": true,
+            "cd4_statistics_exclude_blocked_coordinates": true,
+            "pm_shared_unblocked_genes": 6590,
+            "pm_shared_columns_sha256": "1fd950e5d333fa7d0fb8c1210607c92141bf9c071ab584cc15d75c68c063554c",
+            "pm_support": {
+              "targets_total": 600,
+              "targets_pm_modified": 583,
+              "targets_incumbent_preserved": 17
+            },
+            "pm_fallback_rows": 17,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 600
+            },
+            "source_coverage": {
+              "k562_gwps": 600,
+              "orion_hct116": 600,
+              "orion_hek293t": 600
+            }
+          },
+          "query_sha256": "665bae92b9dd9f74f38ba114d97dd6059d0c701d20a0ea6ffef0b13676d632b2",
+          "source_count_sha256": "fd2a6c138ed48a220a064df2a5f4dfd1434b3c8db309764dea9f7707579823ec",
+          "source_count_histogram": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 600
+          },
+          "held_truth_opened": false
+        },
+        "panel": {
+          "rows": 300,
+          "columns": 17806,
+          "source_vote_histogram": {
+            "1": 6,
+            "2": 35,
+            "3": 259
+          },
+          "whitening": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.248532635289747,
+            "after_operator_median_norm": 25.77957697825972,
+            "applied_scale": 0.16480226339138904,
+            "preserve_rows": 300
+          },
+          "operator_restriction": {
+            "method": "principal restriction W_RR = E_R diag(lambda^-gamma/2) E_R.T",
+            "full_operator_columns": 17942,
+            "active_operator_columns": 17942,
+            "forbidden_input_coordinates": 0,
+            "active_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+            "dense_zero_equivalence_proved": true,
+            "proof": "For x_F=0, (x W)_R = x_R W_RR; the implementation evaluates that principal block directly and never materializes (x W)_F.",
+            "before_operator_median_norm": 4.248532635289747,
+            "after_operator_median_norm": 25.77957697825972,
+            "applied_scale": 0.16480226339138904,
+            "preserve_rows": 300
+          },
+          "cd4_post_whiten": {
+            "fraction": 0.05,
+            "baseline_output_median_norm": 4.248532635289748,
+            "candidate_pre_preserve_median_norm": 4.260665583793943,
+            "post_add_global_preserve_scale": 0.9971523349426097
+          },
+          "cd4_targets_with_any_condition": 291,
+          "cd4_targets_with_all_conditions": 276,
+          "support": {
+            "blocked_target_labels": 300,
+            "blocked_target_labels_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+            "blocked_coordinates": 300,
+            "main_source_statistics_exclude_blocked_coordinates": true,
+            "cd4_statistics_exclude_blocked_coordinates": true,
+            "pm_shared_unblocked_genes": 7075,
+            "pm_shared_columns_sha256": "58a5985b38fed6d16e0c74f8b21b4ea84134c7bcfcff61c1b8222e661ad65418",
+            "pm_support": {
+              "targets_total": 300,
+              "targets_pm_modified": 248,
+              "targets_incumbent_preserved": 21
+            },
+            "pm_fallback_rows": 21,
+            "pm_fallback_exact_incumbent": true,
+            "cd4_target_condition_histogram": {
+              "0": 9,
+              "1": 4,
+              "2": 11,
+              "3": 276
+            },
+            "source_coverage": {
+              "k562_gwps": 269,
+              "orion_hct116": 290,
+              "orion_hek293t": 294
+            }
+          },
+          "query_sha256": "be43fffe8c732b94906740c9d88d72da52c7ffeefc7cb4089152ebac7dcc4760",
+          "source_count_sha256": "fe3585e692684e02c1735a80acf75b22469a67ace575b57bc119da5ad729cc35",
+          "source_count_histogram": {
+            "0": 0,
+            "1": 6,
+            "2": 35,
+            "3": 259
+          },
+          "target_order_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+          "score_axis_excludes_exactly_vcc_coordinates": true,
+          "score_gene_count": 17806,
+          "score_gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+          "score_official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+          "saved_query_is_complete_scored_axis": true,
+          "held_truth_opened": false
+        }
+      }
+    }
+  },
+  "panel_query_target_counts": {
+    "orion_hct116": 290,
+    "orion_hek293t": 294,
+    "kolf2": 300
+  },
+  "panel_query_target_order_sha256": {
+    "orion_hct116": "b4d62e504c487d5cea40548ecb8c1672fbd49c651cc039b182b14ab2325213c4",
+    "orion_hek293t": "b971c471a3533a436cb0f3ed9fcecfb9c4dac786a0a8182b28c1bb44b982a11b",
+    "kolf2": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca"
+  },
+  "final_score_axis": {
+    "gene_count": 17806,
+    "gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+    "official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+    "development_donor_axes_equal": true,
+    "excludes_exactly_vcc_coordinates_within_held_support": true,
+    "donor_gene_axes": {
+      "orion_hct116": {
+        "axis_rows": 38606,
+        "unique_symbols": 38584,
+        "duplicate_symbols": 21,
+        "duplicate_extra_rows": 22,
+        "axis_rows_sha256": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "duplicate_symbols_sha256": "23bc91a63f75057529e193320593c0b87b25046d3422b691a038b21fca06cebf",
+        "projection_policy": "preserve the full ordered matrix axis; project each unique symbol from its deterministic last occurrence"
+      },
+      "orion_hek293t": {
+        "axis_rows": 38606,
+        "unique_symbols": 38584,
+        "duplicate_symbols": 21,
+        "duplicate_extra_rows": 22,
+        "axis_rows_sha256": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "duplicate_symbols_sha256": "23bc91a63f75057529e193320593c0b87b25046d3422b691a038b21fca06cebf",
+        "projection_policy": "preserve the full ordered matrix axis; project each unique symbol from its deterministic last occurrence"
+      }
+    }
+  },
+  "leakage_audit": {
+    "all_vcc_target_coordinates_removed": true,
+    "all_nonpanel_target_coordinates_removed_from_training": true,
+    "training_dense_whitener_principally_restricted": true,
+    "development_target_coordinates_excluded_from_development_score_axis": true,
+    "development_target_coordinates_retained_on_final_panel_score_axis": true,
+    "final_panel_excludes_exactly_the_vcc_target_set": true,
+    "coordinate_less_nonpanel_targets_treated_as_no_coordinate_to_remove": true,
+    "source_normalization_excludes_blocked_coordinates": true,
+    "saved_panel_query_uses_complete_17806_gene_score_axis": true,
+    "held_truth_opened": false,
+    "held_donor_used_in_query": false,
+    "held_donor_used_in_operator": false
+  },
+  "peak_rss_gib": 5.836036682128906
+}

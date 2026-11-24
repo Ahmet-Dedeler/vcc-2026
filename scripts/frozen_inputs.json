@@ -1,0 +1,48 @@
+{
+  "_comment": [
+    "The BUNDLE half of the builder's frozen-input table (AGENTS.md 11.1 rule 11).",
+    "",
+    "It lives in a file rather than in `make_submission_pm_cd4.py` because it is the only",
+    "part of that table that moves when a new panel lands: the final round ships different",
+    "`context_*.h5ad`, a different `pert_counts.csv` and a different `manifest.json`, while",
+    "the donor / PerturbMatch / CD4 / whitener hashes are ours and never move. Re-pinning is",
+    "then a reviewable diff instead of a source edit.",
+    "",
+    "It lives in `scripts/` and not in `data/challenge/` because `data/challenge/*` is",
+    "gitignored, and a freeze whose recorded value is not under version control is not a",
+    "freeze.",
+    "",
+    "To re-pin for a new bundle:",
+    "  uv run python scripts/make_submission_pm_cd4.py --repin-frozen-inputs \\",
+    "      --bundle data/challenge -o /dev/null",
+    "It prints the old -> new diff, refuses to guess `panel_support` when the panel files",
+    "changed, and never builds. `panel_support` is then pinned by one effects-only run:",
+    "  uv run python scripts/make_submission_pm_cd4.py --repin-panel-support ... -o /dev/null",
+    "",
+    "`panel_support` is the PerturbMatch / CD4 target-coverage pair the build asserts. It is",
+    "a property of (panel x donor tables), so a new 300-target panel WILL move it and the",
+    "old values would abort every D/E/F build."
+  ],
+  "panel_id": "vcc2026-val-1",
+  "contexts": [
+    "A",
+    "B",
+    "C"
+  ],
+  "n_constructs": 300,
+  "cells_per_pert": 400,
+  "files": {
+    "bundle/context_A.h5ad": "f22e71968487d3da9402769dcd0c73a47851fad4cd7dd25510283c923031fe3e",
+    "bundle/context_B.h5ad": "41557555b3febf6db19fd930b4dd7db88941840077bf985d14dfff959c782380",
+    "bundle/context_C.h5ad": "e090e7c7cfdd0006f689214ba38ba0cd2669578e89c9bc325b65f0bd940c02e0",
+    "bundle/gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "bundle/manifest.json": "2c2b5d425df817ca35e9edf08282d12494ce42913ba824375bf0f98a1cc676f5",
+    "bundle/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+  },
+  "panel_support": {
+    "cd4_complete_targets": 276,
+    "perturbmatch_replacement_targets": 248
+  },
+  "repinned_at": "2026-08-21 (values lifted verbatim from the in-source table, unchanged)",
+  "supersedes": null
+}

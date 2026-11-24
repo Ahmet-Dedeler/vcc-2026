@@ -1,0 +1,40 @@
+{
+  "accession": "GSE337804",
+  "assay": {
+    "cell_line": "A549",
+    "cell_line_clone": "monoclonal",
+    "editing_modality": "CRISPRn knockout",
+    "low_moi_egfp_positive_fraction_approx": 0.06,
+    "retained_cell_rule": "filtered cells with exactly one called sgRNA",
+    "selection": "puromycin",
+    "tenx_chemistry": "Chromium Next GEM Single Cell 5-prime HT v2",
+    "tenx_channels": 2
+  },
+  "description_source": {
+    "local_path": "data/external/myllia-a549/GSE337804_2cl_description.pdf",
+    "sha256": "6374660318364c2e3d407cecad5904c5fb42ad6b5ee3a36ebbb5cd8cebecd87e"
+  },
+  "experiment": "120-myllia-a549",
+  "file_semantics": {
+    "h5ad": "Seurat-v3 converted H5AD, one A549 Chromium channel per file",
+    "matrix": "raw non-negative integer gene-expression counts in X and raw.X",
+    "obs_guide_id": "sgrna_id",
+    "obs_guide_symbol": "sgrna_symbol",
+    "source_gene_symbol": "var.features and raw.var index",
+    "source_controls": {
+      "gene_desert": "gene_desert",
+      "non_targeting": "non-targeting"
+    }
+  },
+  "library_design": {
+    "gene_desert_guides": 20,
+    "non_targeting_guides": 20,
+    "target_genes": 218,
+    "targeting_guides": 654,
+    "targeting_guides_per_gene": 3,
+    "total_guides": 694
+  },
+  "official_record": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE337804",
+  "recorded_at": "2026-08-30",
+  "schema_version": 1
+}

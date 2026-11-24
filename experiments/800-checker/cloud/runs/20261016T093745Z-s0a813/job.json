@@ -1,0 +1,15 @@
+{
+ "name": "s0a813",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "data/external/igvf-telohaec/b_ctrl.npy",
+  "data/external/igvf-telohaec/genes.txt",
+  "data/donors/k562_gwps/delta.npy",
+  "data/donors/k562_gwps/genes.txt",
+  "data/donors/k562_gwps/perts.txt"
+ ],
+ "collect": [
+  "experiments/813-public-data/work/s0a"
+ ]
+}

@@ -1,0 +1,82 @@
+{
+  "empty_set_policy": {
+    "applies_uniformly_to_all_targets_and_authorizing_surfaces": true,
+    "candidate_and_incumbent_absolute_credit": 0.0,
+    "candidate_minus_incumbent_delta": 0.0,
+    "denominator_definition": "max(sum(abs(reference_lfc_over_eligible_set)),1e-300)",
+    "eligible_set": "reference_significant_genes_after_exact_axis_projection_excluding_the_perturbed_gene_nonfinite_lfc_and_zero_lfc",
+    "empty_sum_definition": 0.0,
+    "mathematical_extension": "sum(empty)=0_and_0_divided_by_max(0,1e-300)=0",
+    "nonempty_target_semantics": "bit_identical_to_the_original_directional_credit_implementation",
+    "pds_semantics": "unchanged_v1_frozen_score_axes_and_original_pds_implementation",
+    "target_handling": "retain_every_target_in_original_order_and_equal_weighting_no_exclusion_no_reweighting_no_alias_merge"
+  },
+  "experiment": "107-jurkat-high-moi",
+  "failure": {
+    "exception_type": "EvaluationDriverError",
+    "exact_error": "PCCB has no directional-credit genes",
+    "failing_callable": "ORIGINAL.directional_credit_per_target",
+    "observation_source": "authorized_operator_report",
+    "reported_stage": "after_outcome_reload_before_result_publication",
+    "v1_result_published": false
+  },
+  "predecessor_bindings": {
+    "artifact_bindings_sha256": "b11deb9572f8a57a73c7518ed2e4ba26c078ac7cd0202fa077a4fa9987d3ecca",
+    "original_outcome_access_receipt": {
+      "bytes": 1803,
+      "path": "experiments/107-jurkat-high-moi/work/nadig-outcome-access-receipt.json",
+      "sha256": "3ec3e08ab87d0c094457f8a3e76e1c0fac8cf5273ee675de0d9c2e1784a7078b"
+    },
+    "strict_validator": {
+      "bytes": 123048,
+      "path": "experiments/107-jurkat-high-moi/strict_nadig_validation.py",
+      "sha256": "6a4d92cce4599b7d60ffcd2a983f924359df8d3696feab9fe5c98c8542ddd2a9"
+    },
+    "v1_failure_recovery_amendment": {
+      "bytes": 7064,
+      "path": "experiments/107-jurkat-high-moi/STRICT_EVALUATION_FAILURE_RECOVERY.v1.json",
+      "sha256": "73d0f30b5e9e9fa941624e99fa067d58c90f30777a14688abadd38fd06198c66"
+    },
+    "v1_failed_recovery_lock": {
+      "bytes": 0,
+      "path": "experiments/107-jurkat-high-moi/work/.strict-evaluation-recovery-v1.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "v1_resume_runner": {
+      "bytes": 39049,
+      "path": "experiments/107-jurkat-high-moi/resume_strict_evaluation_v1.py",
+      "sha256": "aa8b0a8ced62bd9731776c01cbe1c410689af6c409dd605017de0f6a5d6f4c2d"
+    }
+  },
+  "recovery_contract": {
+    "existing_access_receipt_must_authenticate_before_outcome_reload": true,
+    "frozen_components_unchanged": [
+      "source_model",
+      "integration_candidates",
+      "fraction_grid",
+      "nested_selection",
+      "permutation_null",
+      "cluster_bootstrap",
+      "promotion_gates",
+      "pds_score_axes",
+      "exact_symbol_axis_projection",
+      "target_order",
+      "target_weighting"
+    ],
+    "new_exclusive_lock": "experiments/107-jurkat-high-moi/work/.strict-evaluation-recovery-v2.lock",
+    "output_binding": {
+      "arrays": "evaluation-arrays.npz",
+      "directory": "experiments/107-jurkat-high-moi/work/strict-evaluation-results-v2",
+      "manifest": "result-manifest.json",
+      "summary": "evaluation-summary.json"
+    },
+    "predecessor_result_directories_must_be_absent": [
+      "experiments/107-jurkat-high-moi/work/strict-evaluation-results",
+      "experiments/107-jurkat-high-moi/work/strict-evaluation-results-v1"
+    ],
+    "replay_limit": 1,
+    "v2_result_directory_must_be_absent_before_replay": true
+  },
+  "schema_version": 2,
+  "status": "frozen_v2_recovery_candidate_for_independent_review"
+}

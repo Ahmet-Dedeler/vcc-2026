@@ -1,0 +1,72 @@
+{
+  "bindings": {
+    "final_provenance_receipt": {
+      "bytes": 21609,
+      "path": "experiments/107-jurkat-high-moi/work/btbd11-final-provenance-reseal-receipt.json",
+      "sha256": "d7cc50610d0a72ff62ab1f3f29811f6a43c3fb9802e164d0f3d1b444cd05e491"
+    },
+    "held_inputs": {
+      "h1": {
+        "harness": {
+          "bytes": 676544876,
+          "path": "data/harness/h1-test.h5ad",
+          "sha256": "06c6baea8c62ef3d38cacdbf58e104908eb93f0ef3b25aca56b86d28240f9692"
+        },
+        "reference_de": {
+          "bytes": 5770079,
+          "path": "experiments/098-nmae/work/refde_h1.npz",
+          "sha256": "fdff36498e655c079debec356ed163b560e4db4745876f69547a244c4f814d3c"
+        }
+      },
+      "orion_hek293t": {
+        "harness": {
+          "bytes": 1144870463,
+          "path": "data/harness/orion-hek293t-thinned.h5ad",
+          "sha256": "e37f39bb6aae9ce6334f133416b4780ac4226b5a407c4f1a511a5a09ef75d6be"
+        },
+        "reference_de": {
+          "bytes": 9443796,
+          "path": "experiments/099-donors/work/refde_hek293t.npz",
+          "sha256": "5b358881d3c669d02575817646f4ea03cd28317571f37435947885f56aaf2f63"
+        }
+      }
+    },
+    "pretruth_plan": {
+      "bytes": 4917018,
+      "path": "experiments/107-jurkat-high-moi/work/strict-validation-plan.json",
+      "sha256": "dbd0c6871eff9afbb57be7ef898015c794973ec24dfbec4fad1eb28c984126cf"
+    },
+    "runner": {
+      "bytes": 44032,
+      "path": "experiments/107-jurkat-high-moi/run_strict_evaluation.py",
+      "sha256": "f5d3416fe8e60351f912c13d6cbe9ea9912fea90212435568b2f2e1f298b45e5"
+    },
+    "strict_artifact_binding_sha256": "b11deb9572f8a57a73c7518ed2e4ba26c078ac7cd0202fa077a4fa9987d3ecca",
+    "strict_validator": {
+      "bytes": 123048,
+      "path": "experiments/107-jurkat-high-moi/strict_nadig_validation.py",
+      "sha256": "6a4d92cce4599b7d60ffcd2a983f924359df8d3696feab9fe5c98c8542ddd2a9"
+    }
+  },
+  "execution_contract": {
+    "cluster_bootstrap_replicates": 20000,
+    "fractions": [
+      0.0,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "gallery_count": 6,
+    "held_surfaces": [
+      "h1",
+      "orion_hek293t"
+    ],
+    "immutable_result_directory": "experiments/107-jurkat-high-moi/work/strict-evaluation-results",
+    "outcome_loader_must_follow_authentication": true,
+    "permutation_replicates": 99,
+    "targets_per_gallery": 300
+  },
+  "experiment": "107-jurkat-high-moi",
+  "schema_version": 1,
+  "status": "frozen_before_experiment_107_outcome_execution"
+}

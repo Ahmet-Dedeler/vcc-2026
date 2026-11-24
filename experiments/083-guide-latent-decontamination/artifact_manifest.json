@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "challenge": {
+    "gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+  },
+  "guide_source": {
+    "filename": "ReplogleWeissman2022_K562_gwps.h5ad",
+    "bytes": 8805466154,
+    "sha256": "d3269d9c863d96555eba768b42ab330cc1b57493cd33b4ac8fe7fbab8278f104",
+    "upstream_url": "https://zenodo.org/api/records/10044268/files/ReplogleWeissman2022_K562_gwps.h5ad/content"
+  },
+  "seed_metadata": {
+    "repository": "AustinHartman/perturb_seed_reproduce",
+    "commit": "198fe3d84263002e9cfa17e1a2178d4e8dd0a669",
+    "filename": "replogle_k562_2kb_filt_no_lfc_cutoff_off_target_candidates.csv.gz",
+    "bytes": 14460423,
+    "sha256": "820f9e5ac81bbdbc1700e4520d7f95b0da6034f7640da1f9c0577e535454db8d"
+  },
+  "donors": {
+    "k562_gwps": {
+      "delta.npy": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+      "b_ctrl.npy": "d06cf51d51cde1ae999e86bbd3be0bdc15471392bae153a1aa1e21dc5c81b957",
+      "genes.txt": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba",
+      "perts.txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec",
+      "meta.json": "0bd3478aa6b63164bd4816cd8bbb439b805b6b93b2a267ddf8114b196c5e19aa"
+    },
+    "orion_hct116": {
+      "delta.npy": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+      "b_ctrl.npy": "b3044d439cfac932024e0a48152196387714e4b460a339fb9a03e32fcb2fe069",
+      "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+      "perts.txt": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8",
+      "meta.json": "7a1ec5a9323c6ebd4b586aa300b28bcd9ddf271e67f04bdaf353cb15b8b2d6c8"
+    },
+    "orion_hek293t": {
+      "delta.npy": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+      "b_ctrl.npy": "e04234cffbe102731cc562e8fb06bddb8ef0644b2af894b8a0ee6ce079ca4984",
+      "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+      "perts.txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547",
+      "meta.json": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f"
+    },
+    "kolf": {
+      "delta.npy": "a8ed5c7eebb0b01a6a0a4effb0651fd0c6c706aee81cac87b6369d4d04c91d6b",
+      "b_ctrl.npy": "dd4c30afee5b6bd7fc68c469da30a1eb771e367d186de41d13de16ca4aee7fc9",
+      "genes.txt": "2f077fda94cc07cf6cfddae28fc78440e80963e4e866f9904b91417f3189420b",
+      "perts.txt": "b366592072d1e0da04aaabafbcc78882d34c97ff26eb2fca5fd9a9af0084f22f",
+      "meta.json": "57737834c91663d154e84721ce73c0a33f4b670fea1d6bdab8ad35d0cf8b466a"
+    }
+  },
+  "perturbmatch": {
+    "delta.npy": "efa20944f6f6485a7cc7f484c7ab70bd2ba491a6e07b231f306e104b2e1e4cf2",
+    "genes.txt": "e889994e2d0462d064018408ca456fc8be428e660523fb1bd9a7bcd7b3ab5959",
+    "perts.txt": "1131758c3ab0d0c781a17580894511986d9baeadc1ad1304251f5a133086998e",
+    "meta.json": "0b8224c2e04b1d2e4a331ecb26c5d1733eb32c143f949424b1cd518299066a41"
+  },
+  "cd4": {
+    "cd4_rest": {
+      "delta.npy": "b2bafd6e24c2aa34b03ec17836db34fcd9512f78920aed207413a9d727f9e765",
+      "b_ctrl.npy": "5c47ef6b15a00a867b7b24034273bf3aba118d7cdf87ce58ec58427751313d81",
+      "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+      "perts.txt": "ddcd8ff07e2f38d93fc035ce2aadebe4bcaeb097ef95e1f26e8e4860b641374b",
+      "meta.json": "cece9564be470b133ac6399012af42bcfa1934776c1820838c6aa8ab6a15b9cc"
+    },
+    "cd4_stim8hr": {
+      "delta.npy": "eea7996d6694450fb1167b9ebbb6b709a3477e6d0347b49a4475e13ff7800c99",
+      "b_ctrl.npy": "75e35371ec33677462acdbc56938c2cc266d583dc2e75ed50b6b825c4a20161e",
+      "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+      "perts.txt": "639feb3fba1d6cf3b5bb5e2ef9dfdc0ff3044adb4c7477b4588c82ff096d828e",
+      "meta.json": "9ca1e9b8ccbf785d88b2a31bc47818479327c205145faa78d9b8eaa215bff4cc"
+    },
+    "cd4_stim48hr": {
+      "delta.npy": "568119ac25c8d16116d8953d3ee61762fe3c45d9ee8c22a6e7b2669c39837a9a",
+      "b_ctrl.npy": "a35f6c639937332cc483c82b9717dec9ff8a3fc70e6030e1b9f6df5fcc6658fd",
+      "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+      "perts.txt": "4bf6468927fc11f0709bb0e63d14852f5a49f4f577455f0fa92e88719777d618",
+      "meta.json": "62390f52782a592b2a144349bebebffc2675309a614bff0eef99c0b315668ef8"
+    }
+  },
+  "operators": {
+    "held_orion_hct116.npz": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+    "held_orion_hct116.json": "c4e00ad1fa5fbba7b9b0f93e4dae91b76da73638ef9431316923bb6ca4b585bc",
+    "held_orion_hek293t.npz": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1",
+    "held_orion_hek293t.json": "cb22406a7a529380c4348bf636f2532c29a43ab0fc4b00d6f6d98fb5e02360c6"
+  },
+  "frozen_baseline": {
+    "experiments/062-cd4-post-whiten/run.py": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176",
+    "experiments/064-pm-cd4-composition/run.py": "39d0f5a29731c5633f3d8fd4035a5a9c3a91cbd435780a201059eaa25a36df81",
+    "experiments/064-pm-cd4-composition/cloud-output/results.json": "723c7e94b3aee687b001be435bf7b7a7b55d6a54991404e0ce9dcdd3f59a6113",
+    "experiments/064-pm-cd4-composition/cloud-output/per_target_pds.csv": "ecb8927f76684695e8a9a0a93251b9475e991596b9951a516792f7bcd3ef467f",
+    "experiments/068-seed-offtarget-ablation/run.py": "fc8e0459379c0c790efbf1c0c3283b36cd0d945359222f851ed2f13120fab452"
+  },
+  "forbidden_dependencies": [
+    "experiments/080-listwise-metric-adapter"
+  ]
+}

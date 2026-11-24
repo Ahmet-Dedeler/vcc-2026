@@ -1,0 +1,80 @@
+{
+ "entries": {
+  "319": {
+   "file": "xuDelEik7zGWMXdNu0R4.json",
+   "model": "the parrot approved my expenses",
+   "note": "319 cap variant, suppression-only; prereg 8f641644",
+   "score_avg": 0.21865973944346428,
+   "mean_of_six": 0.21865973944346426,
+   "absdiff": 2.7755575615628914e-17,
+   "match_tol1e12": true
+  },
+  "319p": {
+   "file": "SvzrTOQJAAaNjawzSyrC.json",
+   "model": "the stapler has tenure",
+   "note": "319p = 319 + VCC_CD4_PARTIAL_G=0.34; prereg 1af351c1; slot 1 of 2026-09-10",
+   "score_avg": 0.2198189777860172,
+   "mean_of_six": 0.2198189777860172,
+   "absdiff": 0.0,
+   "match_tol1e12": true
+  },
+  "319pA": {
+   "file": "sEa0LAsWFnXOoXSPJZ59.json",
+   "model": "the fern unionized",
+   "note": "319pA = 319p + VCC_CTX_A_PRIOR blend_rows beta 0.35 (Jurkat-calibrated, 259 A targets); prereg 4ba9fff3; slot 2 of 2026-09-10",
+   "score_avg": 0.21853962008843353,
+   "mean_of_six": 0.21853962008843353,
+   "absdiff": 0.0,
+   "match_tol1e12": true
+  },
+  "254": {
+   "file": "PVHrJHweHD5gvOf43ftL.json",
+   "model": "the intern watered the plastic plant",
+   "note": "254 cd4svd5+partial (VCC_CD4_PARTIAL_G=0.34); prereg 0a5eb220; slot 2 of 2026-09-09",
+   "score_avg": 0.2174269299752826,
+   "mean_of_six": 0.2174269299752826,
+   "absdiff": 0.0,
+   "match_tol1e12": true
+  },
+  "cd4svd5": {
+   "file": "Xv0ayvuoHpsKYWv2iu42.json",
+   "model": "You can do it too.",
+   "note": "You can do it too.",
+   "score_avg": 0.2160944021991198,
+   "mean_of_six": 0.21609440219911977,
+   "absdiff": 2.7755575615628914e-17,
+   "match_tol1e12": true
+  },
+  "319d3": {
+   "file": "5LOjb2VLiIBh0JG6aAgg.json",
+   "model": "a moth in the lint trap",
+   "note": "319d3 cap -3.0, dose-2 of the cap family; prereg PREREGISTRATION-dose2.md; slot 1 of 2026-09-09",
+   "score_avg": 0.2183911409003796,
+   "mean_of_six": 0.2183911409003796,
+   "absdiff": 0.0,
+   "match_tol1e12": true
+  }
+ },
+ "deltas": {
+  "319p_vs_319": {
+   "delta_recomputed": 0.0011592383425529096,
+   "assignment_headline": "+0.0011593",
+   "absdiff_vs_headline": 6.165744709045982e-08
+  },
+  "319pA_vs_319p": {
+   "delta_recomputed": -0.0012793576975836662,
+   "assignment_headline": "-0.0012794",
+   "absdiff_vs_headline": 4.230241633373932e-08
+  },
+  "254_vs_cd4svd5": {
+   "delta_recomputed": 0.0013325277761628007,
+   "assignment_headline": "+0.0013325",
+   "absdiff_vs_headline": 2.7776162800797338e-08
+  },
+  "319d3_vs_319": {
+   "delta_recomputed": -0.0002685985430846971,
+   "assignment_headline": "-0.000269",
+   "absdiff_vs_headline": 4.0145691530287355e-07
+  }
+ }
+}

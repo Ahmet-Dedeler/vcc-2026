@@ -1,0 +1,11 @@
+{
+ "name": "de803-b7",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "experiments/803-de-engine/outmerged"
+ ],
+ "collect": [
+  "experiments/803-de-engine/work/out"
+ ]
+}

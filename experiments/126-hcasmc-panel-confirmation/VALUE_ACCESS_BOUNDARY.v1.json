@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "experiment": "126-hcasmc-panel-confirmation",
+  "created_at_utc": "2026-08-30T17:11:02Z",
+  "status": "closed",
+  "permanent": true,
+  "effect_asset": {
+    "accession": "IGVFFI0206LUDV",
+    "path": "data/external/hcasmc-igvf/IGVFFI0206LUDV.tsv.gz"
+  },
+  "opaque_operations_authorized": [
+    "download compressed bytes",
+    "measure compressed byte count",
+    "compute hashes over compressed bytes",
+    "compare compressed byte count and MD5 to published metadata"
+  ],
+  "value_access_authorized": false,
+  "forbidden_until_new_authorization": [
+    "decompression",
+    "gzip integrity testing",
+    "header inspection",
+    "content-type sniffing from file bytes",
+    "strings extraction",
+    "tabular parsing",
+    "row or column counting",
+    "effect-value access",
+    "value-dependent statistics"
+  ],
+  "required_preconditions_for_any_future_value_access": [
+    "Experiment 125 candidate is frozen and hash-addressed.",
+    "A confirmation protocol is preregistered without HCASMC effect-value access.",
+    "A new permanent authorization file binds the candidate and confirmation protocol hashes to this acquisition's immutable hashes.",
+    "The new authorization explicitly names every permitted value-level operation."
+  ],
+  "binding_hashes": {
+    "ACQUISITION_PROTOCOL.v1.json": "bd8787ba52042733baed33ace93b042cd1053ff3445ddd4ba73375d126a34b11",
+    "SOURCE_MANIFEST.expected.v1.json": "f008b7af91e43f20e4b74c6469fa394497b166ae5033243575e543d985917e25",
+    "VCC_TARGET_OVERLAP.v1.txt": "1eca70b0690b367dd8e980e9175634a2c900c7907e98904f3d2e68f20b378232"
+  },
+  "non_revocation_rule": "This boundary must not be edited, replaced, deleted, or reinterpreted as authorization. Future access requires an additive authorization artifact."
+}

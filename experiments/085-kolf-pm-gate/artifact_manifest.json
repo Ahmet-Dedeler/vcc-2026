@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "experiment": "085-kolf-pm-gate",
+  "frozen_protocol_sha256": "5243193ecab37c86bea041346dd5d530dafdc565c1dbf9fffaf3c91e3da1a4bb",
+  "frozen_readme_sha256": "98e3cdeb73e082d3d154fbad46200cf699acbb1e49d7ea41c6c81db2c7725c36",
+  "pre_kolf": {
+    "implementation": {
+      "experiments/061-perturbmatch-hct-count/build_candidate.py": "77e6fbf7edf1aeea6d39be4fe801591d0b0c2867f95042b697f0fc4042a2fae4",
+      "experiments/062-cd4-post-whiten/run.py": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176",
+      "experiments/064-pm-cd4-composition/run.py": "39d0f5a29731c5633f3d8fd4035a5a9c3a91cbd435780a201059eaa25a36df81",
+      "scripts/build_submission.py": "3e0a7643f604c59b5ff8494af2fa36dc08c37303dae19bc7557ac95a8dde4e44",
+      "scripts/make_submission.py": "e85879effd33334cd6b1ddd189b02e1373ea6f918add30298e9cf9bebb6a0ab1",
+      "scripts/make_submission_pm_cd4.py": "e450453b04e9fad2d6b4eac2c55a0e723a2d7a24238a9cd76d6cf3d0fb96ca17",
+      "src/vcc2026/donor_transfer.py": "cecb27035a6c301f96e7fe364032216b1211bb2a92fddd1f9439d9cf8730cb3e",
+      "src/vcc2026/multi_donor.py": "3bb75320ed54e438b0a1ea10acff413e9738fc3294056db06ac337ed4d51cd8f",
+      "src/vcc2026/whiten.py": "5dbddefde17192cda4bc7f8f7eceb202faf672de1833c42251366078e7e18bc1"
+    },
+    "design_provenance": {
+      "experiments/066-leakage-safe-target-gate/RESULTS.md": "5771b1675d008a56354ebf9795242ff6cb63feade0ef51bf703d0d8c9f22031c",
+      "experiments/066-leakage-safe-target-gate/metrics.json": "cd16907ec62ce938667a1f590b8f55d89319d72a2d562b79b845cad5043fbb61"
+    },
+    "experiment_064": {
+      "cloud-output/code.sha256": "4c06ee29b4be5456bce189be78f63385c46e19c4fbcbb0d97f1fcfe6efbe1de9",
+      "cloud-output/manifest.sha256": "d77b17099a4387818e0764fca267259986b123d92379b1782947a1046562f637",
+      "cloud-output/per_target_pds.csv": "ecb8927f76684695e8a9a0a93251b9475e991596b9951a516792f7bcd3ef467f",
+      "cloud-output/results.json": "723c7e94b3aee687b001be435bf7b7a7b55d6a54991404e0ce9dcdd3f59a6113"
+    },
+    "challenge": {
+      "gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+      "pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    },
+    "donors": {
+      "k562_gwps": {
+        "b_ctrl.npy": "d06cf51d51cde1ae999e86bbd3be0bdc15471392bae153a1aa1e21dc5c81b957",
+        "delta.npy": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+        "genes.txt": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba",
+        "meta.json": "0bd3478aa6b63164bd4816cd8bbb439b805b6b93b2a267ddf8114b196c5e19aa",
+        "perts.txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec"
+      },
+      "orion_hct116": {
+        "b_ctrl.npy": "b3044d439cfac932024e0a48152196387714e4b460a339fb9a03e32fcb2fe069",
+        "delta.npy": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+        "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "meta.json": "7a1ec5a9323c6ebd4b586aa300b28bcd9ddf271e67f04bdaf353cb15b8b2d6c8",
+        "perts.txt": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8"
+      },
+      "orion_hek293t": {
+        "b_ctrl.npy": "e04234cffbe102731cc562e8fb06bddb8ef0644b2af894b8a0ee6ce079ca4984",
+        "delta.npy": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+        "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "meta.json": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f",
+        "perts.txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547"
+      }
+    },
+    "perturbmatch": {
+      "delta.npy": "efa20944f6f6485a7cc7f484c7ab70bd2ba491a6e07b231f306e104b2e1e4cf2",
+      "genes.txt": "e889994e2d0462d064018408ca456fc8be428e660523fb1bd9a7bcd7b3ab5959",
+      "meta.json": "0b8224c2e04b1d2e4a331ecb26c5d1733eb32c143f949424b1cd518299066a41",
+      "perts.txt": "1131758c3ab0d0c781a17580894511986d9baeadc1ad1304251f5a133086998e"
+    },
+    "cd4": {
+      "cd4_rest": {
+        "b_ctrl.npy": "5c47ef6b15a00a867b7b24034273bf3aba118d7cdf87ce58ec58427751313d81",
+        "delta.npy": "b2bafd6e24c2aa34b03ec17836db34fcd9512f78920aed207413a9d727f9e765",
+        "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+        "meta.json": "cece9564be470b133ac6399012af42bcfa1934776c1820838c6aa8ab6a15b9cc",
+        "perts.txt": "ddcd8ff07e2f38d93fc035ce2aadebe4bcaeb097ef95e1f26e8e4860b641374b"
+      },
+      "cd4_stim8hr": {
+        "b_ctrl.npy": "75e35371ec33677462acdbc56938c2cc266d583dc2e75ed50b6b825c4a20161e",
+        "delta.npy": "eea7996d6694450fb1167b9ebbb6b709a3477e6d0347b49a4475e13ff7800c99",
+        "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+        "meta.json": "9ca1e9b8ccbf785d88b2a31bc47818479327c205145faa78d9b8eaa215bff4cc",
+        "perts.txt": "639feb3fba1d6cf3b5bb5e2ef9dfdc0ff3044adb4c7477b4588c82ff096d828e"
+      },
+      "cd4_stim48hr": {
+        "b_ctrl.npy": "a35f6c639937332cc483c82b9717dec9ff8a3fc70e6030e1b9f6df5fcc6658fd",
+        "delta.npy": "568119ac25c8d16116d8953d3ee61762fe3c45d9ee8c22a6e7b2669c39837a9a",
+        "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+        "meta.json": "62390f52782a592b2a144349bebebffc2675309a614bff0eef99c0b315668ef8",
+        "perts.txt": "4bf6468927fc11f0709bb0e63d14852f5a49f4f577455f0fa92e88719777d618"
+      }
+    },
+    "held_operators": {
+      "held_orion_hct116.json": "c4e00ad1fa5fbba7b9b0f93e4dae91b76da73638ef9431316923bb6ca4b585bc",
+      "held_orion_hct116.npz": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+      "held_orion_hek293t.json": "cb22406a7a529380c4348bf636f2532c29a43ab0fc4b00d6f6d98fb5e02360c6",
+      "held_orion_hek293t.npz": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1"
+    },
+    "production_operator": {
+      "whitener_union.json": "a77f9425ac524cdcf3a53a1744520e1e63cb8b925ef77fae2864c4d8b72337b6",
+      "whitener_union.npz": "5608e807230dea04f93f5e804ed26e8f7285d9487d16a2791283793ffb80fed3"
+    }
+  },
+  "post_freeze_kolf_truth_only": {
+    "b_ctrl.npy": "dd4c30afee5b6bd7fc68c469da30a1eb771e367d186de41d13de16ca4aee7fc9",
+    "delta.npy": "a8ed5c7eebb0b01a6a0a4effb0651fd0c6c706aee81cac87b6369d4d04c91d6b",
+    "gene_map.csv": "d0cf4c941b26c35c769a8a8032564f81aeec73c1bf954fe6a69a3ea28109e4e6",
+    "genes.txt": "2f077fda94cc07cf6cfddae28fc78440e80963e4e866f9904b91417f3189420b",
+    "meta.json": "57737834c91663d154e84721ce73c0a33f4b670fea1d6bdab8ad35d0cf8b466a",
+    "perts.txt": "b366592072d1e0da04aaabafbcc78882d34c97ff26eb2fca5fd9a9af0084f22f",
+    "provenance.json": "a35566f91d7ffedf6479c250f1cd7e00f56728b6131c758b79c1ce7c3c8bcc33",
+    "source_rows_int8.npy": "6c482697aae226d7dff4caf800c287893be0674a419c9d0d6537e3f3c16606d0",
+    "target_row_map.csv": "cab9ad14ce06d09c2dbef2ee3bedb7efcf1eaa25c4cad8488249e4ffe717aca6"
+  },
+  "fixed_axes": {
+    "panel_targets": 300,
+    "experiment_064_targets": 221,
+    "kolf_targets": 273,
+    "official_genes": 18533,
+    "operator_genes": 17942,
+    "kolf_score_genes": 17806,
+    "panel_order_sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4",
+    "experiment_064_target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+    "kolf_target_order_sha256": "b366592072d1e0da04aaabafbcc78882d34c97ff26eb2fca5fd9a9af0084f22f",
+    "kolf_score_axis_sha256": "280aab34a0e86f27db8ade213e000f9066c8d5f9b89edd3ea966aba061ba9ae9"
+  }
+}

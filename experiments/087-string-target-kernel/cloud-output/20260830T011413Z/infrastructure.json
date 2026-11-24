@@ -1,0 +1,21 @@
+{
+  "provider": "AWS EC2",
+  "instance_id": "i-08300b395f88f6f55",
+  "instance_type": "r7i.8xlarge",
+  "market": "on-demand",
+  "source_prefix": "s3://<your-s3-bucket>/input/exp087-string-target-kernel/20260830T011413Z/",
+  "output_prefix": "s3://<your-s3-bucket>/output/exp087-string-target-kernel/20260830T011413Z/",
+  "minimum_instance_memory_gib": 64,
+  "minimum_available_memory_gib": 48,
+  "available_memory_kib_at_worker_start": 256784408,
+  "source_archive_sha256": "c780299f909947a439503f9fcd190ca3527ac50dc029785ca0e137afc0e23fe2",
+  "runner_sha256": "efb8a28ea40b1fc939b9ce9a40702e4f2e983119fddb52aff25cb772fd7f892a",
+  "stage_guard_gib": 48,
+  "evaluation_guard_gib": 24,
+  "bundled_only_pinned_string_h5": true,
+  "string_embedding_sha256": "789416877b8701ef6f800106d26bf7bb97ea8e72744e6ab93e24933a717f247d",
+  "expression_bundle_downloaded": false,
+  "cell_eval2": false,
+  "count_generation": false,
+  "submission": false
+}

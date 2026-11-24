@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "experiment": "107-jurkat-high-moi",
+  "date_preregistered": "2026-08-30",
+  "status": "acquisition_complete_and_protocol_frozen_before_transcriptome_coordinate_values_are_parsed",
+  "scientific_question": "Can target-level additive deconvolution of the high-MOI Jurkat screen recover perturbation identity on an independent Jurkat dataset and then improve the frozen incumbent through a narrow supported-coordinate residual?",
+  "immutable_inputs": {
+    "acquisition_manifest": {
+      "path": "experiments/107-jurkat-high-moi/ACQUISITION_MANIFEST.json",
+      "sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74"
+    },
+    "provenance": {
+      "path": "experiments/107-jurkat-high-moi/PROVENANCE.json",
+      "sha256": "0c3277a5ee1fa9b179d5f91683375c7f2a9b5a72dd38c2e00c35df4950a1c722"
+    },
+    "guide_reference": {
+      "path": "experiments/107-jurkat-high-moi/downloads/GSE249595_guides_reference.fa.gz",
+      "sha256": "99e99d6c14907a2cc60c4c11ed3d93e9da5cc113740489b7e8d1e8c0abe00ca6"
+    },
+    "supplementary_workbook": {
+      "path": "experiments/107-jurkat-high-moi/downloads/MOESM3_ESM.xlsx",
+      "sha256": "307f346279b4bda2e9c19aca39c692a144197c0117dfd9d595724cc353e2f7ff"
+    },
+    "challenge_targets": {
+      "path": "data/challenge/pert_counts.csv",
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    },
+    "challenge_genes": {
+      "path": "data/challenge/gene_names.csv",
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201"
+    },
+    "demultiplex_code": {
+      "repository": "https://github.com/chris-mcginnis-ucsf/MULTI-seq",
+      "commit": "9883367c16d374962955e8eeb9fab720a64d7a57",
+      "package_version": "1.0.2",
+      "classification_source_sha256": "7f7e2c8ab7da5ec8d11a94f41eed5fbe635fd40776e6fc4ccbe09ca03b73ae11"
+    },
+    "emptydrops_semantic_reference": {
+      "repository": "https://github.com/MarioniLab/DropletUtils",
+      "commit": "b423c0fafe7271b173317b407a8538bbbcbede5c",
+      "package_version": "1.31.2",
+      "empty_drops_source_sha256": "a3fee383fe41a630b1afc7094ff18fc92813165b1dba16b6ede2e2efe3131c19",
+      "barcode_ranks_source_sha256": "fe2704de5df903e8e7004cb36f6214d53c176151bcc4fd4239413f0b1ce8a6d9",
+      "ambient_profile_source_sha256": "9f4a39c0ef27fe67e026917d552e0c63e07a53bcdd9e9cfd8548649778a3b3c5",
+      "monte_carlo_source_sha256": "0b00e899bb2df88a37056a2329dd777f044efe6165475d4e2d00245baaac7676",
+      "good_turing_reference": {
+        "repository": "https://git.bioconductor.org/packages/edgeR",
+        "commit": "61de2f486eebbf9332efabb11c0c80b72e334111",
+        "package_version": "4.99.0",
+        "r_source_sha256": "b1888b215c0c8c4da9e035bfd03c0c7976b8acb610601f99ce58812142ef59ce",
+        "c_source_sha256": "d8a6083152f3052e053f5c72bfada53fe0805e7a3ccd869913cab99fe62b70f7"
+      }
+    }
+  },
+  "source_method_checks": {
+    "reported_high_quality_cells_minimum": 586000,
+    "reported_median_guides_per_cell": 13,
+    "reported_mean_cells_per_target": 400,
+    "reported_untreated_fraction": 0.1,
+    "reported_activated_fraction": 0.9,
+    "reported_guide_call": "per-cell binomial upper-tail test with Benjamini-Hochberg adjusted p_value <= 0.05",
+    "reported_hash_call": "deMULTIplex; retain exactly one known label"
+  },
+  "acquisition_gates": [
+    "provenance_with_raw_hash",
+    "inventory",
+    "schema",
+    "barcode_hashes",
+    "assignment_matrix_integrity",
+    "all_gzip_members_crc"
+  ],
+  "cell_and_assignment_freeze": {
+    "cell_key": [
+      "channel",
+      "barcode"
+    ],
+    "transcriptome_cell_call": {
+      "method": "streaming_python_port_of_dropletutils_emptydrops",
+      "semantic_reference": "MarioniLab/DropletUtils@b423c0fafe7271b173317b407a8538bbbcbede5c_version_1.31.2",
+      "parameters": {
+        "lower": 100,
+        "niters": 10000,
+        "test.ambient": false,
+        "ignore": null,
+        "alpha": "Inf",
+        "retain": "barcodeRanks(matrix, lower=100, exclude.from=50, window=1, gradient.threshold=-1)$knee",
+        "round": false,
+        "BPPARAM": "SerialParam"
+      },
+      "ambient_profile": "per_channel_sum_over_barcodes_with_total_umi_le_100_then_DropletUtils_safe_Good_Turing_after_removing_globally_zero_features",
+      "observed_log_probability": "multinomial_log_probability_with_DropletUtils_data_and_total_terms",
+      "monte_carlo_p_value": "(number_of_simulated_log_probabilities_le_observed_log_probability + 1) / 10001",
+      "fdr_construction": "set_temporary_p_value_to_zero_for_Total_ge_retain_then_BH_over_all_non_NA_tested_barcodes; Total_le_100_remains_NA",
+      "accepted_cell": "FDR_le_0.01_including_forced_retain_barcodes",
+      "rng_contract": {
+        "base_seed": 1072026,
+        "numpy_version": "2.5.2",
+        "bit_generator": "PCG64",
+        "seed_sequence": "numpy.random.SeedSequence([1072026, channel_number, monte_carlo_iteration_zero_based])",
+        "execution_order": "channels_1_through_16_then_iterations_0_through_9999_serial",
+        "draw_contract": "one_categorical_prefix_stream_per_iteration_reused_for_all_tested_barcodes_sorted_by_total_then_observed_log_probability",
+        "chunking_must_not_change_results": true,
+        "r_dqrng_bit_identity_claimed": false
+      },
+      "port_validation_before_real_coordinates": {
+        "deterministic_components": "exact_against_pinned_R_on_synthetic_sparse_matrices_for_totals_knee_ambient_profile_observed_log_probability_and_BH",
+        "monte_carlo_components": "exact_against_an_independent_small-state_enumeration_and_deterministic_across_chunk_sizes",
+        "real_data_execution_blocked_until_tests_pass": true
+      }
+    },
+    "additional_cell_qc": {
+      "minimum_detected_genes": 10,
+      "maximum_mitochondrial_fraction": 0.3,
+      "maximum_absolute_log_library_mad_within_channel": 5.0
+    },
+    "hash_assignment": {
+      "method": "deMULTIplex_three_round_quantile_sweep",
+      "source": "deMULTIplex_1.0.2_MULTISEQ.Classification.Suite.R_at_9883367c16d374962955e8eeb9fab720a64d7a57",
+      "input": "raw_seven_hash_UMI_counts_for_expression_called_cells_only_per_channel",
+      "normalization": "for_each_hash_log2_counts_replace_nonfinite_with_zero_then_subtract_that_hash_column_mean",
+      "q_values": {
+        "start": 0.01,
+        "stop": 0.99,
+        "step": 0.02,
+        "inclusive": true
+      },
+      "per_hash_threshold": "KernSmooth_bkde_kernel_normal_defaults_then_approxfun_defaults_on_100_points_between_type7_quantiles_0.001_and_0.999; low_extreme_is_largest_KDE_local_maximum; high_extreme_is_rightmost_local_maximum; threshold_is_type7_quantile_of_the_two_extrema_at_q",
+      "classification": "count_hash_thresholds_met_with_ge_comparison; zero_is_Negative_one_is_the_hash_label_more_than_one_is_Doublet",
+      "q_selection": "among_local_maxima_of_singlet_fraction_over_the_ascending_q_grid_choose_the_first_q_with_maximum_singlet_fraction",
+      "round_state_machine": "start_with_all_expression_called_cells; for_rounds_1_through_3_sweep_q_select_q_and_classify_the_current_active_set; permanently_remove_only_Negative_cells_before_the_next_round; reclassify_prior_singlets_and_doublets_in_later_rounds; final_calls_are_the_last_executed_rounds_calls_for_survivors_plus_Negative_for_every_previously_removed_cell",
+      "early_stop": "if_a_round_produces_no_new_Negative_cells_stop_immediately_and_use_that_rounds_calls_for_all_survivors",
+      "undefined_threshold_or_q_policy": "stop_the_channel_and_report_no_fallback",
+      "negative_rescue": false,
+      "retained_classes": "exactly_one_known_label",
+      "cross_condition_or_ambiguous_policy": "exclude"
+    },
+    "guide_assignment": {
+      "method": "channel_specific_binomial_bh",
+      "null_guide_probability": "sum_guide_UMI_over_all_retained_hash_singlet_cells_in_channel_divided_by_sum_all_guide_UMI_over_the_same_cells",
+      "test": "scipy.stats.binom.sf(observed_umi - 1, total_guide_umi_in_cell, channel_probability_for_guide)",
+      "scipy_version": "1.18.0",
+      "multiple_testing": "Benjamini_Hochberg_within_each_cell_over_exactly_all_83401_guides_in_canonical_feature_order_including_zero_observations_as_p_equals_1",
+      "bh_tie_break": "stable_by_canonical_guide_index",
+      "adjusted_p_value_maximum": 0.05,
+      "minimum_observed_umi": 1,
+      "zero_total_or_zero_probability_policy": "p_equals_1_for_zero_observation;_positive_observation_with_zero_channel_probability_is_a_hard_error",
+      "burden_accounting": "all_83401_guide_calls_contribute_to_total_called_guide_burden_and_the_250_pinned_non_targeting_records_contribute_to_non_targeting_burden",
+      "target_design_eligibility": "only_guides_mapping_unambiguously_to_exactly_one_source_target_are_collapsed_to_binary_target_presence; composite_or_unmapped_guides_never_create_target_columns",
+      "design_value": "binary_target_presence_after_eligible_guide_to_target_collapse"
+    },
+    "assay_compatibility_stop_gates": {
+      "retained_cells_inclusive_range": [
+        400000,
+        700000
+      ],
+      "median_called_guides_per_cell_inclusive_range": [
+        8,
+        18
+      ],
+      "untreated_cell_fraction_inclusive_range": [
+        0.05,
+        0.15
+      ]
+    },
+    "target_eligibility": {
+      "minimum_distinct_called_guides": 3,
+      "minimum_distinct_guides_with_at_least_3_untreated_cells": 2,
+      "minimum_untreated_carrier_cells": 20,
+      "minimum_channels": 4
+    },
+    "required_reports_before_expression_fit": [
+      "exact_fasta_feature_crosswalk",
+      "exact_workbook_hash_label_crosswalk",
+      "cell_qc_counts_by_channel",
+      "expression_qc_retention_by_guide_target_channel_and_condition",
+      "hash_class_counts_by_channel_and_condition",
+      "guide_count_distribution",
+      "target_support_by_guide_and_channel",
+      "target_design_alias_and_condition_number_diagnostics"
+    ]
+  },
+  "response_axis": {
+    "source": "supplementary_table_2_rows_with_a_non_null_integer_entrez_id",
+    "required_unique_source_symbols": 374,
+    "exclude_coordinates": "union_of_all_300_vcc_targets_and_each_validation_gallery_targets",
+    "estimated_vcc_visible_coordinates": 349,
+    "unsupported_coordinate_policy": "exact_incumbent_fallback"
+  },
+  "estimator": {
+    "primary_condition": "untreated",
+    "activated_condition_use": "diagnostic_only_and_never_selected_or_blended_in_experiment_107",
+    "design_unit": "target_not_guide",
+    "model": "low_rank_multiresponse_ridge",
+    "response_transform": "log1p_10000_cpm_using_full_transcriptome_library_size",
+    "channel_effect_elimination": "before_any_fold_fit_subtract_each_channels_own_mean_from_every_response_coordinate_and_every_scalar_or_target_design_column; no_channel_one_hot_is_fit_or_transferred",
+    "channel_centering_scope": "subtract_each_columns_own_marginal_mean_over_all_retained_untreated_cells_in_that_channel; response_means_are_not_conditioned_on_target_identity_and_no_Nadig_truth_is_used",
+    "nuisance_covariates": [
+      "centered_log1p_library_size",
+      "called_non_targeting_guide_count",
+      "total_called_guide_count"
+    ],
+    "nuisance_fit_scope": "training_channels_only",
+    "nuisance_residualization": "fit_training_only_float64_least_squares_to_both_response_and_original_binary_target_design_then_apply_the_same_training_slopes_to_held_channel_demeaned_response_and_design",
+    "target_feature": "binary_any_called_guide_for_target",
+    "target_parameterization": "nuisance_residualized_original_binary_target_design",
+    "target_feature_centering": "within_channel_before_fold_split",
+    "target_feature_scaling": "training_only_unit_standard_deviation_then_map_coefficients_back_to_original_binary_target_units_before_export",
+    "fold_local_estimability": {
+      "support_thresholds": "recomputed_from_training_channels_only",
+      "unsupported_or_zero_variance_target": "exclude_from_that_fold_fit_and_export_no_source_effect",
+      "nuisance_alias": "drop_target_if_its_training_column_has_zero_residual_variance_after_nuisance_projection",
+      "identifiable_projection": "compute_float64_SVD_of_the_training_nuisance_residualized_target_design_in_original_binary_units; retain_right_singular_vectors_with_sigma_over_sigma_max_gt_1e-6; P_ident_equals_V_ident_transpose_times_V_ident; map_ridge_coefficients_back_to_binary_units_then_export_P_ident_times_B_raw",
+      "target_transferability": "target_is_transferable_in_that_fold_only_if_support_gates_pass_and_P_ident_diagonal_for_that_target_is_at_least_0.99",
+      "rank_tolerance": "sigma_over_sigma_max_strictly_greater_than_1e-6",
+      "selection_population": "same_complete_held_cell_set_for_every_lambda_with_dropped_target_contributions_fixed_at_zero",
+      "report": "per_fold_supported_dropped_zero_variance_nuisance_aliased_projection_diagonal_effective_rank_condition_number_and_held_cell_unmodelled_target_burden"
+    },
+    "response_basis_rank": 64,
+    "response_basis_fit_scope": "training_channels_only",
+    "ridge_objective": "after_training_only_nuisance_residualization_target_standardization_and_response_basis_fit_minimize_sum_squared_error_plus_lambda_times_squared_coefficient_norm",
+    "lambda_grid": [
+      1.0,
+      3.0,
+      10.0,
+      30.0,
+      100.0
+    ],
+    "folds": [
+      [
+        1,
+        5,
+        9,
+        13
+      ],
+      [
+        2,
+        6,
+        10,
+        14
+      ],
+      [
+        3,
+        7,
+        11,
+        15
+      ],
+      [
+        4,
+        8,
+        12,
+        16
+      ]
+    ],
+    "selection_metric": "mean_held_cell_response_variance_weighted_sse_gain_over_nuisance_only",
+    "selection_tie_break": "largest_lambda_within_0.001_relative_gain_of_best",
+    "effect_gauge": "export_only_the_identifiable_row_space_component_P_ident_times_B_raw; arbitrary_post_fit_mean_subtraction_is_forbidden",
+    "nullspace_invariance_test": "adding_any_finite_coefficient_vector_in_null_of_the_training_residualized_design_must_leave_exported_effects_unchanged_within_1e-10",
+    "channel_stability_report": "four_fold_target_effect_cosine_and_sign_agreement",
+    "challenge_target_policy": "never_used_for_lambda_or_threshold_selection"
+  },
+  "independent_source_validation": {
+    "truth": "data/donors/nadig_jurkat",
+    "truth_effects": "raw_uncentered_log_pseudobulk",
+    "eligible_targets": "shared_non_vcc_targets_only",
+    "expected_shared_targets": 2194,
+    "expected_visible_response_coordinates_after_masks": 236,
+    "gallery_construction": {
+      "sort_key": "sha256('exp107|' + target_symbol)",
+      "take_first": 1800,
+      "gallery_count": 6,
+      "targets_per_gallery": 300
+    },
+    "operator_rule": "for_each_gallery_rebuild_the_incumbent_whitener_from_incumbent_donor_rows_whose_target_labels_are_outside_that_gallery_after_removing_the_union_of_gallery_and_vcc_target_coordinates; gamma_lambda_donor_weights_gene_norm_and_norm_preservation_remain_frozen_to_a14_and_are_never_selected_on_Nadig",
+    "source_fit_rule": "fit_the_GSE249595_source_model_once_without_Nadig_expression_or_gallery_scores; gallery_masks_change_only_scored_coordinates_and_the_strict_incumbent_operator_not_source_coefficients",
+    "reported_metrics": [
+      "pure_source_pds",
+      "pure_source_cosine",
+      "incumbent_pds",
+      "masked_blend_pds"
+    ],
+    "nested_selection": "for_each_gallery_select_blend_on_the_other_five_then_score_once_on_the_holdout"
+  },
+  "integration": {
+    "stage": "post_whitening_masked_residual",
+    "ordinary_fourth_donor_insertion": "forbidden",
+    "source_effect_preparation": "identifiable_row_space_projected_target_effect_then_row_norm_matched_to_incumbent_on_supported_coordinates",
+    "source_whitening": "zero_pad_the_source_effect_then_apply_only_the_supported_by_supported_principal_submatrix_of_the_gallery_specific_frozen_incumbent_whitener; mask_again_afterward; never_refit_a_whitener_with_GSE249595_rows",
+    "candidate_formula_supported": "(1-f)*incumbent_supported + f*scaled_jurkat_supported",
+    "candidate_formula_unsupported": "incumbent_bit_exact",
+    "blend_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "initial_context_route": "all_contexts",
+    "context_a_only_route": "forbidden_without_a_separate_preregistered_cross_context_routing_gate",
+    "missing_target_policy": "exact_incumbent_fallback",
+    "refit_production_whitener": false,
+    "frozen_incumbent_parameters": "exact_a14_donor_weights_gamma_lambda_gene_norm_norm_preservation_and_CD4_stage; only_the_strict_gallery_row_and_coordinate_exclusions_change_the_operator"
+  },
+  "promotion_gates": {
+    "source_only_pds_each_gallery_minimum": 0.5,
+    "source_only_macro_pds_minimum": 0.55,
+    "nested_blend_pds_delta_each_gallery_minimum": 0.0,
+    "nested_blend_macro_pds_delta_minimum": 0.003,
+    "target_block_bootstrap_lower_95_minimum": 0.0,
+    "target_label_permutations": 99,
+    "observed_gain_must_exceed_permutation_maximum": true,
+    "maximum_gain_fraction_from_one_target_cluster": 0.5,
+    "held_context_pds_delta_minimum_each": 0.0,
+    "held_context_directional_credit_delta_minimum_each_clean_surface": 0.0,
+    "exact_fallback_required": true
+  },
+  "forbidden_before_all_source_gates_pass": [
+    "challenge_build",
+    "challenge_submission",
+    "context_a_only_routing",
+    "count_level_scoring",
+    "post_result_threshold_or_grid_changes"
+  ]
+}

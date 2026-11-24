@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "experiment": "111-depmap-context-program-gain",
+  "date_recorded": "2026-08-30",
+  "stage": "second_selective_acquisition_publication",
+  "status": "failed_closed_no_source_published",
+  "bindings": {
+    "source_manifest_sha256": "90e15f3c9d4c698805d0a680fc51085ee18fc6164b77adb2dfade1e7ad92a638",
+    "preregistered_protocol_sha256": "51051875b00057c0e4a23271784dbff30ba4909567ac15b04ee21cbeb533dcee",
+    "execution_authorization_sha256": "6276050b7b890cd1d51c93e10c5d65d37b9eed55b71e7fc510b8c7d84581878c",
+    "acquisition_schema_recovery_sha256": "e88f86013adbaf988c3b0fa6e5351b2966330f206f800d17842d08ef6357b231"
+  },
+  "observed_failure": {
+    "message": "path escapes ~/Code/virtual-cell-challenge-2026/experiments/111-depmap-context-program-gain: ~/Code/virtual-cell-challenge-2026/data/external/depmap26q1/extracted",
+    "classification": "mechanical exact-output-root confinement mismatch",
+    "source_schema_validation_completed_before_failure": true
+  },
+  "resource_use": {
+    "wall_seconds": 120.83,
+    "maximum_resident_set_bytes": 133021696,
+    "selected_compressed_payload_bytes": 300011660
+  },
+  "publication": {
+    "source_root_created": true,
+    "all_six_authorized_members_published": true,
+    "receipt_created": false,
+    "temporary_stage_removed_by_atomic_rename": true
+  }
+}

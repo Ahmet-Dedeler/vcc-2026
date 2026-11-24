@@ -1,0 +1,24 @@
+Virtual Cell Challenge 2026 - Open Research Archive
+Copyright 2026 Ahmet Dedeler
+
+Licensing:
+- Software source code (src/, scripts/, analysis/, experiments/**/*.py,
+  experiments/**/*.sh): Apache License, Version 2.0 (see LICENSE).
+- Documentation, research notes, experiment write-ups, figures, and
+  leaderboard snapshots (README.md, docs/, experiments/**/*.md,
+  data/leaderboard/, submissions/): Creative Commons Attribution 4.0
+  International (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/).
+
+Upstream datasets & tools:
+No raw single-cell matrices from the Arc Institute Virtual Cell Challenge
+or third-party Perturb-seq studies are redistributed in this repository.
+Users reproducing experiments must obtain those datasets directly from
+their original sources under their respective licenses and terms of use
+(see docs/FINDINGS.md and docs/FINALIST-DESCRIPTION-DRAFT.md for citations).
+Evaluation metrics and specifications in docs/reference/ belong to the
+Arc Institute / cell-eval2 authors.
+
+Open Science & Beneficial Use:
+This work is shared openly to support reproducible, beneficial research in
+computational biology, perturbation modeling, and scientific benchmarking.
+See the "Open Science & Beneficial Use" section of README.md.

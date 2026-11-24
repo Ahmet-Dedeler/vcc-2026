@@ -1,0 +1,119 @@
+{
+  "cell_eval2_counts_build_submission_authorized": false,
+  "created_utc": "2026-08-30T21:35:51.170101+00:00",
+  "development_outcome_authorized": false,
+  "implementation": {
+    "experiments/140-batch-matched-controls/PREFREEZE_AMENDMENT_001.json": "7be9584b2118fab4def1f0996bfc559db0b17a9606beac61bff6d2e8c1b5a8ce",
+    "experiments/140-batch-matched-controls/PREFREEZE_AMENDMENT_002.json": "6f68fb9f7383cd6964122e724321204cfa3dac9fcc7ac94b6c51bd129a00be49",
+    "experiments/140-batch-matched-controls/README.md": "dd26a9c28ab4aa5061b03b8fcb85d77db1e023bc98e0e281376a529fdb878c55",
+    "experiments/140-batch-matched-controls/preregistered_protocol.json": "1b1747122dcf7d80421ce10d0f3f33bca7e6c46cdf66e261eb009c3a07d565cf",
+    "experiments/140-batch-matched-controls/run.py": "3d9df47326d86608c5f2d256284ec1d2424a76ebbd9554f3405b05edd12b037d",
+    "experiments/140-batch-matched-controls/test_run.py": "3775c44704505249dc0dda72aa09326a47911ece6c78f6e11f0786e412906599"
+  },
+  "peak_rss_gib": 0.5313262939453125,
+  "plan": {
+    "bootstrap_draws": 20000,
+    "created_before_development_outcome_access": true,
+    "development_targets": 613,
+    "etas": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "files": {
+      "plan-arrays.npz": {
+        "bytes": 15425495,
+        "sha256": "bdd17742d8691ff5174631c11c00c7d3dfb23f51c9e225ca672549608d466d5b"
+      },
+      "source-schema.json": {
+        "bytes": 7087,
+        "sha256": "3586dbca2c6d29bc0187fce090ad9616a3e72a16f4d000c234ca9df8f17ced86"
+      }
+    },
+    "fold_sizes": [
+      123,
+      123,
+      123,
+      122,
+      122
+    ],
+    "maximum_target_block_size": 26,
+    "null_draws_each": 49,
+    "outer_operator_basis": {
+      "k562": {
+        "basis_per_donor_cap": 12000,
+        "donors": [
+          "orion_hct116",
+          "orion_hek293t"
+        ],
+        "post_cap_prune": "data/donors/k562_essential/perts.txt",
+        "row_index_sha256": {
+          "orion_hct116": "8d8001a999dc8270f39051998990e89ac233163d3465943d896690e23d65da36",
+          "orion_hek293t": "40b54949f1626fa5f46d2b96b44e7ec08a46bf238bb42e39549a340cd536c462"
+        },
+        "rows_dropped_after_cap": {
+          "orion_hct116": 1193,
+          "orion_hek293t": 1197
+        },
+        "rows_kept": {
+          "orion_hct116": 10807,
+          "orion_hek293t": 10803
+        },
+        "rows_kept_total": 21610,
+        "seed": 0,
+        "source_rows": {
+          "orion_hct116": 17767,
+          "orion_hek293t": 17977
+        }
+      },
+      "non_k562": {
+        "basis_per_donor_cap": 12000,
+        "donors": [
+          "k562_gwps",
+          "orion_hct116",
+          "orion_hek293t"
+        ],
+        "post_cap_prune": "data/donors/k562_essential/perts.txt",
+        "row_index_sha256": {
+          "k562_gwps": "adf7cf446e9b3633fc05d07b66461a168a33325a8282a57403b092061e42f55a",
+          "orion_hct116": "8d8001a999dc8270f39051998990e89ac233163d3465943d896690e23d65da36",
+          "orion_hek293t": "40b54949f1626fa5f46d2b96b44e7ec08a46bf238bb42e39549a340cd536c462"
+        },
+        "rows_dropped_after_cap": {
+          "k562_gwps": 2003,
+          "orion_hct116": 1193,
+          "orion_hek293t": 1197
+        },
+        "rows_kept": {
+          "k562_gwps": 7784,
+          "orion_hct116": 10807,
+          "orion_hek293t": 10803
+        },
+        "rows_kept_total": 29394,
+        "seed": 0,
+        "source_rows": {
+          "k562_gwps": 9787,
+          "orion_hct116": 17767,
+          "orion_hek293t": 17977
+        }
+      }
+    },
+    "response_genes": 4992,
+    "schema_version": 1,
+    "seeds": {
+      "batch_mixture": 140202611,
+      "bootstrap": 140202612,
+      "target_label": 140202610
+    },
+    "target_blocks": 531,
+    "targets_in_multi_target_blocks": 105,
+    "untouched_test_targets": 410
+  },
+  "plan_manifest_sha256": "2f91872b1318ab7f0ee608600f5acfaaad0397f508e833707e28c2f379e6007c",
+  "preoutcome_work_authorized": true,
+  "protocol_sha256": "1b1747122dcf7d80421ce10d0f3f33bca7e6c46cdf66e261eb009c3a07d565cf",
+  "schema_version": 1,
+  "source_hash_manifest_sha256": "b270a04b8970530cdc86dc1e182ad7870a00be8cb572b3432468f69fa1864fde",
+  "untouched_test_outcome_authorized": false
+}

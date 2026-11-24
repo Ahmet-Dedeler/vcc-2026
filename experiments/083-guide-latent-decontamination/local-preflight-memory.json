@@ -1,0 +1,26 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--python",
+    "3.12",
+    "--with",
+    "numpy,h5py",
+    "python",
+    "~/Code/virtual-cell-challenge-2026/experiments/083-guide-latent-decontamination/inspect_source.py",
+    "--h5ad",
+    "~/Code/virtual-cell-challenge-2026/data/external/scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+    "--panel-csv",
+    "~/Code/virtual-cell-challenge-2026/data/challenge/pert_counts.csv",
+    "--allow-network",
+    "--hash-h5ad",
+    "--output",
+    "~/Code/virtual-cell-challenge-2026/experiments/083-guide-latent-decontamination/source-audit-launch.json",
+    "--require-promotion-coverage"
+  ],
+  "max_rss_gib": 1.0,
+  "peak_process_tree_rss_gib": 0.120025634765625,
+  "killed_for_memory": false,
+  "return_code": 78
+}

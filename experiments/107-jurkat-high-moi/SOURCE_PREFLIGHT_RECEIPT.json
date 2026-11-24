@@ -1,0 +1,27 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "held_outcomes_opened": false,
+  "implementation_sha256": {
+    "demultiplex.py": "ca8afa62f7dc3c7353201ee1f0132994b87e6e0d35495251f22c79e877e7c3de",
+    "guide_calling.py": "b480f82f5ecb7d3b566fba97c1cfa8a19c1d132fcb1ae649c3893de82c735df8",
+    "preprocess.py": "3e68398e68eb294a6bc0839230de7fc9127a054ffce0425b42b6a4b728d7edb9",
+    "source_stage.py": "a37a117eecf7319d717538769dd8055b2dd82e19787ad521203bc2250afce348"
+  },
+  "numpy_version": "2.5.2",
+  "preflight_implementation_sha256": "67eb6a058739959e1af35c79f28b0e9b8053d62a1888847596d3b44df0e3ebe7",
+  "protocol_sha256": "68f6598277b73201885e94582fba0d15295b936a7184312e08356eb2604a3748",
+  "python_version": "3.12.12",
+  "schema_version": 1,
+  "scipy_version": "1.18.0",
+  "skipped": 0,
+  "status": "pass",
+  "test_module_sha256": {
+    "test_demultiplex.py": "cf2ac6a1e36c79ffe2e02ff176ec4fc8bdefc19ce31f54d23ccc4f065c3e3a81",
+    "test_guide_calling.py": "c57c62c9589cfb7973a4aed0973ea384f7e3802966cf9c420978cdad749cb599",
+    "test_preprocess.py": "31e31d9afec50c7e8f501ca696f41096ceea81ab15faa5c2202ea3337aacec00",
+    "test_source_stage.py": "72d5844d3d05a54b529d049f81c70fef56e7f8df34f658b2d1f5e928eae2c364"
+  },
+  "tests_run": 39,
+  "transcript_sha256": "4ea94cdf110d451fbb4de337651e481a8bff837c08fc39764f8845c366f407c2"
+}

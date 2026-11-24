@@ -1,0 +1,38 @@
+{
+  "inputs_sha256": {
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "experiments/047-cd4-direct/extract_cd4.py": "a6b4142109274affbce47bac4430c156f3aa5433580a5c7aaa0d69be7b5b9a39",
+    "experiments/199-def-runbook/work/GWCD4i.DE_stats.h5ad": "c355f535ff32cf7ba1edc49cf9c6039fe84f2c9ebe4d005515cba75790cfbb62",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_rest/delta.npy": "aeab41a88d3f79173a62f6fa809244ef087e20c7f9022f3479638f73bed0212e",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_rest/genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_rest/lfc_se.npy": "b07b82020a39ed7394ff261a817487bb44fe66193f5ccc1e8369d446f56144a3",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_rest/log_fc.npy": "aef5e639ffb97586cb5ebbe74beb93bf3d1eeeaf4e9e664f1b77b6ddcf0e7cba",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_rest/perts.txt": "872a3c6ae1c9e4f484b004ad256844f9946c7a99c6b630cd5034b29571239066",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim48hr/delta.npy": "cda6f3fef315f1586b894013874a1d7f05fcf41f0fb380c636b309a3cb6e9fd8",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim48hr/genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim48hr/lfc_se.npy": "d2b693363d6cc289f2b2d8b884548f812c8b62776f7a6122bc28c028abfad306",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim48hr/log_fc.npy": "d5406ff58f36b78a60608f05d2ce2ffe552402f5d5515ec4f53b135d7100e7a8",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim48hr/perts.txt": "b8051fb0a58b782623687416d1c524bd19fcffd2b81718ee244b054931684ad0",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim8hr/delta.npy": "85eefe646fc9241de95f1ed39577b103662e3c266d32f6d38f8ef49e768769cd",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim8hr/genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim8hr/lfc_se.npy": "63d0df0eb0332c3c49c355c7e02a1e733045e095936f72d2eddd916df13fa6f5",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim8hr/log_fc.npy": "b35a1be44706b575ee8949a46ba4b37844df2faf876b88e0f2af27523fdfe121",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/cd4_stim8hr/perts.txt": "b8051fb0a58b782623687416d1c524bd19fcffd2b81718ee244b054931684ad0",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/gene_map.csv": "4d5e76ed796baeea9c39d84f0105d57ea59db7983232d510fe8e5ab1cd78fa2e",
+    "experiments/273-flex-reference-instrument/work/cd4/cd4_compact_h1/target_row_map.csv": "6f26bd343d5b66cf67d44f6e63a0bbf1ea6fb8732351f95eb9d183243b1ffe7d",
+    "experiments/323-current-family-validation/inputs.json": "50ff05fe589f0b45625ef0913b87d190c7cfa4d1009c6fa5844789b4b980d6ea",
+    "experiments/323-current-family-validation/run323.py": "22c92b60e09fc22da9f8774adac4ed09e7ea521b1bb00f52d190e6b58c6033ac",
+    "experiments/328-joint-cd4-estimation/PREREGISTRATION.md": "044d6fac693069bee124e9aa9ef7e11eaa6f9de7a4f11cdd809ce565e83f01f6",
+    "experiments/328-joint-cd4-estimation/mixture328.py": "18b866e3236fc6a7312591f4c5d166ea8200f01fb60913db5d201bfcf3c9b45d",
+    "experiments/328-joint-cd4-estimation/run328.py": "fd7fbdb043df6a0d18010fb633afb3ad42724910d180fd4bbeade29da94f1eca",
+    "experiments/328-joint-cd4-estimation/selection.json": "7a062675938eaf93ca1a28d07d5055ebd6435018ea8ef15bed954176c3a35af9",
+    "experiments/328-joint-cd4-estimation/test328.py": "c55fd771fe1fe263c24015d73ae541592e48fe2abe64f82a8ffbd7ab72ed0b12",
+    "uv.lock": "2e458aacefa51a18d1057e09f4984357ad5340674466047350e7fb12a163d78f"
+  },
+  "packages": {
+    "anndata": "0.13.2",
+    "h5py": "3.16.0",
+    "numpy": "2.5.2",
+    "scipy": "1.18.0"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": 2,
+  "experiment": "135-telohaec-atlas-confirmation",
+  "created_at": "2026-08-30",
+  "status": "draft_before_any_telohaec_panel_response_aggregation_or_analysis",
+  "objective": "Test whether adding the exact Experiment 122 equal_mean_agreement panel atlas improves the exact staged-a15 incumbent on 65 TeloHAEC panel targets after Experiment 128 integer-budget transport.",
+  "candidate": {
+    "name": "equal_mean_agreement",
+    "candidate_index": 2,
+    "dose": 1.0,
+    "no_selection_or_tuning": true,
+    "artifact_manifest_path": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/artifact-manifest.json",
+    "artifact_manifest_sha256": "f4b1a42bfffde3c2499130ac378bf2c2cfbf5b07e58dca11a1046d4cce661472",
+    "result_receipt_path": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/result-receipt.json",
+    "result_receipt_sha256": "bfd137cba001ff43b617ab245b4cd08676652a829e1c44194139ee2ba75d6d24",
+    "artifact_sha256": {
+      "selected-panel-residual.npy": "6ad50b0dbd134b6074da69bf42e94f75aa4cd999abce0d614e7b6cc73f70ec63",
+      "selected-panel-confidence.npy": "01f2884408d4fde02549abd9b40fe4204961cf711567ab4b32d08c2fc56d6b65",
+      "all-candidate-panel-residuals.npy": "6af22753bf0aea9db8201c6ad9b6cc91f84a5d888334d1009bea094d9cb6627e",
+      "all-candidate-panel-confidence.npy": "49fc0811c31a46aae8ec543149578d78d0e4009b5bbdea4e4c4cb9ece1c9de58",
+      "all-candidate-panel-support.npy": "6aa4993f43e6b38c041ab628f594921d1824db805920b23ea5d54ed5e9c66103",
+      "candidate-names.txt": "b07e6b45ee3af8ccc03ad8487e6d414d0ae378fdf530f26fff3cd18e4d70ec7a",
+      "panel-targets.txt": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4",
+      "results.json": "12f6f8146a750a812976b6611545f39c544a04d43142c5c1fa1f325f6b6435f4"
+    },
+    "support_role": "Bound and reported as provenance only. Support never changes mutability; every finite residual coordinate uses Experiment 128 semantics."
+  },
+  "incumbent": {
+    "name": "exact_staged_a15",
+    "effect_path": "experiments/103-residual-only-production/work/staged-a15-linux/a15-effects.npy",
+    "effect_sha256": "6f2b0488d67a31b59aff2ce6c7868f1de443f5153f28386b6a07f7489e12eb6f",
+    "metadata_path": "experiments/103-residual-only-production/work/staged-a15-linux/a15-effects.npy.json",
+    "metadata_sha256": "a1808f6af4fd803ed2084dbf02387d9f573b932a207683eab6110874b727ebb0",
+    "role": "Comparator and candidate share the same target-specific staged-a15 effect, TeloHAEC control profile, replayed target library, integerization, and metric code. The candidate differs only by the frozen panel transport."
+  },
+  "source": {
+    "matrix_path": "data/external/igvf-telohaec/IGVFFI8645YMGX.h5ad",
+    "guide_qc_path": "data/external/igvf-telohaec/guide_qc.csv",
+    "metadata_receipt_path": "experiments/130-telohaec-panel-confirmation/SOURCE_METADATA_RECEIPT.v1.json",
+    "expected_matrix_size_bytes": 1473190952,
+    "expected_matrix_sha256": "e11b252c1f05689bb7a7916921f6ac0b83cc0381df295102b12b9e0cdd8d3e04",
+    "expected_targets": 65,
+    "expected_controls": 549
+  },
+  "axes": {
+    "canonical_genes": "data/challenge/gene_names.csv",
+    "canonical_panel": "data/challenge/pert_counts.csv",
+    "expected_genes": 18533,
+    "expected_panel_targets": 300
+  },
+  "truth": {
+    "minimum_cells_per_guide": 5,
+    "minimum_eligible_cells_per_target": 20,
+    "minimum_eligible_guides_per_target": 2,
+    "controls": "All Experiment 105 eligible safe-targeting and non-targeting control cells, pooled exactly as one pseudobulk to match Experiment 128 production semantics.",
+    "guide_profile": "log1p(50000 * guide pseudobulk / full unique-gene guide library)",
+    "control_profile": "log1p(50000 * pooled eligible-control-cell pseudobulk / full pooled unique-gene library), matching Experiment 128.",
+    "target_truth": "Coordinate-wise median of every eligible guide effect relative to the frozen control profile.",
+    "prior_access_disclosure": "Experiment 105 streamed and validated every raw X/data chunk but excluded all 300 panel coordinates before guide aggregation. TeloHAEC panel responses have not been aggregated, inspected biologically, or used for selection.",
+    "first_pass": "Semantically aggregate only eligible control-cell expression, build the control profile, exact staged-a15 incumbent rows, target-specific replayed libraries, response-abundance bins, and both null banks.",
+    "second_pass": "Aggregate only eligible targeting cells belonging to the 65 frozen panel targets."
+  },
+  "transport": {
+    "implementation": "experiments/128-panel-integer-budget-transport/run.py",
+    "implementation_sha256": "42a0ffadee3560a77636b3b6641e1d4eb7bf437839ca165a6bb8e3fa139e9123",
+    "freeze_sha256": "67df1b5c5e4f1960fc4ec7a1cc06d7f0754b485443b4e1b7478daefee3ac1426",
+    "source_units": "log1p(50000 * relative_abundance)",
+    "source_ts": 50000.0,
+    "cells": 400,
+    "minimum_control_cpm": 10.0,
+    "library_seed": 0,
+    "maximum_library": 1000000,
+    "library": "Replay one numpy default_rng(0) over all 300 canonical targets; sample 400 eligible control-cell full-library counts without replacement per target and use floor(median(sample)), capped at 1000000.",
+    "control_baseline": "Normalize expm1(pooled control-cell log pseudobulk) to unit mass over the collapsed unique-gene axis, matching Experiment 128.",
+    "incumbent_profile": "Map the exact staged-a15 effect row onto the collapsed TeloHAEC gene axis, zero-fill source genes absent from the canonical axis, gate at control CPM strictly greater than 10 and positive control log expression, exponentiate against the TeloHAEC control profile, and normalize exactly as Experiment 128 profile_from_effect.",
+    "integer_semantics": "Form target-specific incumbent integer totals with floor(400 * L_target * q0_g), then call Experiment 128 integer_budget_transport directly. Preserve all non-panel totals, target-self, panel total, and grand total exactly.",
+    "support_semantics": "Every finite residual coordinate that passes the Experiment 128 control-expression gate is mutable. Experiment 122 support is bound and reported but never gates transport."
+  },
+  "metrics": {
+    "target_signed_credit": "For baseline and candidate separately, sum(sign(truth_j) * predicted_effect_j) / sum(abs(truth_j)) over all 299 off-diagonal panel responses; equal target weight. Primary endpoint is candidate minus baseline.",
+    "top20_truth_magnitude_weighted_sign_precision": "For baseline and candidate separately, select ceil(0.20 * 299) coordinates by descending absolute value of that prediction with canonical response-order ties; zero prediction is incorrect; weight correctness by abs(truth); equal target weight. Primary endpoint is candidate minus baseline.",
+    "transport_sign_retention": "Fraction of nonzero finite source residual signs retained by the candidate-minus-incumbent integer transport."
+  },
+  "diagnostics": {
+    "target_cell_totals": "Exact eligible-cell total summed over retained guides for every target.",
+    "guide_sign_agreement": "For every target, hold out each guide and compare that guide against the median of all remaining guides over off-diagonal coordinates where the remaining-guide median is nonzero; report the mean.",
+    "leave_one_guide": "For every target, report the minimum and median held-out-guide sign agreement and maximum normalized absolute error of a held-out guide against the median of all remaining guides. Diagnostics are descriptive and not promotion gates."
+  },
+  "nulls": {
+    "draws_each": 199,
+    "target_label_seed": 1352026,
+    "response_label_seed": 1352027,
+    "target_label": "Unrestricted random permutations of the 65 candidate target rows with the same permutation conjugated onto those 65 corresponding response labels. This maps the source row's self-zero onto the destination row's self coordinate. Fixed points are allowed, all other response labels are fixed, and truth plus the target-specific incumbent remain fixed before transport.",
+    "response_label": "Ten equal-frequency bins from pooled control panel abundance, frozen before targeting-guide panel responses are aggregated. For every target row and draw, hold target-self fixed and independently apply an unrestricted random permutation to every other response within its bin. Fixed points are allowed. Move residual and confidence coherently; keep truth and incumbent fixed before transport.",
+    "endpoint": "Candidate-minus-incumbent metric delta.",
+    "complete_procedure": true
+  },
+  "bootstrap": {
+    "replicates": 10000,
+    "seed": 1352028,
+    "unit": "target label",
+    "method": "Equal-target resampling with replacement of the candidate-minus-incumbent per-target delta.",
+    "interpretation": "Stability within the availability-selected 65 TeloHAEC targets only; not an IID panel-wide generalization interval."
+  },
+  "promotion_gates": {
+    "all_required": true,
+    "exact_candidate_and_dependency_hashes": true,
+    "evaluable_targets_exactly_65": true,
+    "truth_responses_per_target_exactly_299": true,
+    "candidate_absolute_signed_credit_strictly_positive": true,
+    "candidate_absolute_precision_at_least": 0.5,
+    "macro_signed_credit_delta_at_least": 0.005,
+    "macro_precision_delta_at_least": 0.01,
+    "signed_credit_delta_bootstrap_lower_95_strictly_above": 0.0,
+    "precision_delta_bootstrap_lower_95_strictly_above": 0.0,
+    "both_metrics_strictly_above_both_null_p95": true,
+    "both_add_one_null_p_values_at_most": 0.05,
+    "median_transport_sign_retention_at_least": 0.9,
+    "all_integer_transport_invariants": true
+  },
+  "value_release": "After target access, write aggregate preregistered metrics, gates, diagnostics summaries, and hashes of hidden in-memory arrays only. Do not persist truth, per-target outcomes, null samples, or bootstrap samples.",
+  "authorization_if_passed": "One separately reviewed production implementation and full artifact audit only.",
+  "forbidden": [
+    "candidate, dose, comparator, metric, null, seed, threshold, target subset, or support-rule tuning",
+    "HCASMC",
+    "DLD1",
+    "Pan",
+    "KOLF",
+    "H1 or Orion held outcomes",
+    "challenge truth",
+    "challenge-context expression values",
+    "cell-eval2",
+    "count generation",
+    "challenge build or submission",
+    "commit",
+    "push"
+  ]
+}

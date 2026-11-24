@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-30",
+  "stage": "after_k562_source_build_v1_before_any_source_evaluation_or_orion_expression_scan",
+  "finding": [
+    "The rank-stability bootstrap sampled globally precomputed ranks instead of reranking each bootstrap resample.",
+    "Target-level matched-null PDS values were downcast to float32 before a strict greater-than gate against float64 observed reliability.",
+    "Source evaluation and source gate wrote directly into final directories and were not restartable after interruption."
+  ],
+  "correction": {
+    "bootstrap": "Rerank x and y independently inside every bootstrap resample before computing Spearman correlation.",
+    "null_precision": "Retain target-level null directional PDS and null reliability in float64 through the strict comparison.",
+    "atomic_stages": "Publish source-build, source-evaluation, and source-gate directories only through a same-filesystem temporary-directory rename.",
+    "replacement_freeze": "work/preoutcome-freeze-v2",
+    "replacement_source_build": "work/source-build-v2",
+    "replacement_source_evaluation": "work/source-evaluation-v2",
+    "replacement_source_gate": "work/source-gate-v2"
+  },
+  "completed_v1_k562_build": {
+    "status": "valid_source-reconstruction_pilot_but_not_accepted_into_repaired_chain",
+    "path": "work/source-build-v1/k562_gwps",
+    "artifact_manifest_sha256": "3af34216380b88ba437c51331de09242cee0c09589cf7e17d6f5c5b39dfb39ea",
+    "receipt_sha256": "4f3e77d640444c4930f750904adf5ad729897edf83c97d42a3efe3203051d839",
+    "pooled_reconstruction_max_abs": 1.1920928955078125e-07,
+    "valid_pairs_min": 8,
+    "peak_rss_gib": 1.643310546875
+  },
+  "access_state": {
+    "k562_source_expression_opened": true,
+    "orion_source_expression_opened": false,
+    "source_evaluation_run": false,
+    "source_gate_run": false,
+    "development_613_outcomes_opened": false,
+    "sealed_410_outcomes_opened": false,
+    "xu_cao_expression_opened": false,
+    "tian_kampmann_expression_opened": false,
+    "count_generation": false,
+    "cell_eval2": false,
+    "challenge_build": false,
+    "submission": false
+  }
+}

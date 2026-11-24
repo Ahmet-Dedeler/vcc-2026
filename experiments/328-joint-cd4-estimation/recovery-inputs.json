@@ -1,0 +1,16 @@
+{
+  "sha256": {
+    "experiments/328-joint-cd4-estimation/NUMERICAL-RECOVERY.md": "95e7655314c9c5398b090da59f6a843f91412f79d17419b17baa690363e298ad",
+    "experiments/328-joint-cd4-estimation/inputs.json": "d84c3a137b5964d37316593f86b877bb2f6ec3d4bb131ed89a6b21e95908e54b",
+    "experiments/328-joint-cd4-estimation/recover328.py": "eaa921860ba560cb66049a90411c09f79949685906cff470ed90767d8cbe1ee6",
+    "experiments/328-joint-cd4-estimation/selection.json": "7a062675938eaf93ca1a28d07d5055ebd6435018ea8ef15bed954176c3a35af9",
+    "experiments/328-joint-cd4-estimation/test_recovery328.py": "26d36b896ab300612eb5ce7fceaf5597d3c09c611cb16dd696103bb660bd1bc6",
+    "experiments/328-joint-cd4-estimation/work/fit-diagonal.json": "083e6b6b6a558e1acdda20d3471dae512b4bde764f4503a9473a3bb00d63f07f",
+    "experiments/328-joint-cd4-estimation/work/fit-joint.json": "1b311e6d23078132cc82e6dbcf8db93c742f18daffd634dc98e00025ad7989c7",
+    "experiments/328-joint-cd4-estimation/work/fit-shuffled_joint.json": "88d176f373824235a1f7b3df29826012e70577e1c21e38fcbdc7de2aab9f598d",
+    "experiments/328-joint-cd4-estimation/work/per-target.csv": "99fdd53eac59e26d4e5d3c97bc70a204a2654ccaea1d2f077611bc3baf6e1cef",
+    "experiments/328-joint-cd4-estimation/work/results.json": "66dfe37aa9c480bc4cbf827b28aeb95b35404576a80260234cfb0fe661539df3",
+    "experiments/328-joint-cd4-estimation/work/source.json": "294ea56f9456a1c42f52c20db5f44cf8e03103beb5685f3c577c9dc882d8a097",
+    "experiments/328-joint-cd4-estimation/work/source.npz": "ad14bdd98ae8c89303a96bec85271657bf8feebe56348dab582e919a7749fff3"
+  }
+}

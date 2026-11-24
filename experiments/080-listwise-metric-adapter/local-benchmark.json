@@ -1,0 +1,18 @@
+{
+  "run_sha256": "f472fde750c18f414a2dce9cfb5c8aa1af4d7b732e19130e73eea601cabc304f",
+  "python": "3.12.12",
+  "numpy": "2.5.2",
+  "shape": {
+    "queries": 360,
+    "basis_dim": 64,
+    "rank": 16,
+    "candidates": 36,
+    "teachers": 1,
+    "epochs": 5
+  },
+  "wall_seconds": 0.15687474998412654,
+  "projected_120_epoch_rank_batch_seconds": 3.764993999619037,
+  "projected_1212_rank_batches_hours": 1.2675479798717424,
+  "peak_process_tree_rss_gib": 0.41278076171875,
+  "note": "Bounded synthetic linear extrapolation only; not a real-data runtime guarantee."
+}

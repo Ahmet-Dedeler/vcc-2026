@@ -1,0 +1,113 @@
+{
+  "accepted_at": "2026-08-30",
+  "acquisition_amendment_sha256": "29120defa1bdda84e2461b2748cee0f1481b91a318e463848adc211ba33215a9",
+  "assets": {
+    "low1_lfc_matrix": {
+      "accepted": true,
+      "byte_for_byte_equal": true,
+      "filename": "GSE337988_sublib2_de_matrices_lfc_matrix_Low1.csv.gz",
+      "gzip": {
+        "uncompressed_sha256": "22218107cb60b71f5639fa6c371e69ee405bbc0d3a4e4f8087c096870eb9b313",
+        "uncompressed_size_bytes": 352165262
+      },
+      "independent_full_transfers": 2,
+      "live_head": {
+        "accept_ranges": "bytes",
+        "content_length": 155201822,
+        "content_type": "application/x-gzip",
+        "etag": null,
+        "last_modified": "Tue, 30 Jun 2026 21:16:28 GMT",
+        "status": 200
+      },
+      "path": "data/external/dld1-lowmoi/GSE337988_sublib2_de_matrices_lfc_matrix_Low1.csv.gz",
+      "primary_transfer": {
+        "get": {
+          "cache_control": "public, max-age=86400",
+          "content_length": 155201822,
+          "content_range": null,
+          "content_type": "application/x-gzip",
+          "last_modified": "Tue, 30 Jun 2026 21:16:28 GMT",
+          "offset": 0,
+          "status": 200
+        },
+        "network_bytes_this_invocation": 155201822,
+        "resumed_from_bytes": 0,
+        "transfer_name": "primary"
+      },
+      "sha256": "aaa70afe2dfefd22b72fe6294b87887bc6ee928590e419f459bcdf9616fba517",
+      "size_bytes": 155201822,
+      "verification_transfer": {
+        "get": {
+          "cache_control": "public, max-age=86400",
+          "content_length": 155201822,
+          "content_range": null,
+          "content_type": "application/x-gzip",
+          "last_modified": "Tue, 30 Jun 2026 21:16:28 GMT",
+          "offset": 0,
+          "status": 200
+        },
+        "network_bytes_this_invocation": 155201822,
+        "resumed_from_bytes": 0,
+        "transfer_name": "verification"
+      }
+    },
+    "low2_lfc_matrix": {
+      "accepted": true,
+      "byte_for_byte_equal": true,
+      "filename": "GSE337988_sublib2_de_matrices_lfc_matrix_Low2.csv.gz",
+      "gzip": {
+        "uncompressed_sha256": "6a2bf290d614d0740ba8d145618552479f63345fbfb7db61e13a39a4ffa03587",
+        "uncompressed_size_bytes": 352617876
+      },
+      "independent_full_transfers": 2,
+      "live_head": {
+        "accept_ranges": "bytes",
+        "content_length": 155251513,
+        "content_type": "application/x-gzip",
+        "etag": null,
+        "last_modified": "Tue, 30 Jun 2026 21:16:28 GMT",
+        "status": 200
+      },
+      "path": "data/external/dld1-lowmoi/GSE337988_sublib2_de_matrices_lfc_matrix_Low2.csv.gz",
+      "primary_transfer": {
+        "get": {
+          "cache_control": "public, max-age=86400",
+          "content_length": 155251513,
+          "content_range": null,
+          "content_type": "application/x-gzip",
+          "last_modified": "Tue, 30 Jun 2026 21:16:28 GMT",
+          "offset": 0,
+          "status": 200
+        },
+        "network_bytes_this_invocation": 155251513,
+        "resumed_from_bytes": 0,
+        "transfer_name": "primary"
+      },
+      "sha256": "4e9bd64d8a3223dcb50d9c2a5b844698099a81dc2f86c38e4c0e270b4c87c390",
+      "size_bytes": 155251513,
+      "verification_transfer": {
+        "get": {
+          "cache_control": "public, max-age=86400",
+          "content_length": 155251513,
+          "content_range": null,
+          "content_type": "application/x-gzip",
+          "last_modified": "Tue, 30 Jun 2026 21:16:28 GMT",
+          "offset": 0,
+          "status": 200
+        },
+        "network_bytes_this_invocation": 155251513,
+        "resumed_from_bytes": 0,
+        "transfer_name": "verification"
+      }
+    }
+  },
+  "dataset": "GSE337988",
+  "experiment": "116-dld1-lowmoi",
+  "matrix_values_parsed": false,
+  "other_processed_asset_downloaded": false,
+  "prevalue_bound_file_count": 8,
+  "prevalue_freeze_sha256": "9d3d6dc2489f648c9a0586f2a4c27e99a6344ed1fd915e8d23f0ecab74c5fc7b",
+  "raw_archive_downloaded": false,
+  "schema_version": 1,
+  "status": "accepted_after_two_independent_transfers"
+}

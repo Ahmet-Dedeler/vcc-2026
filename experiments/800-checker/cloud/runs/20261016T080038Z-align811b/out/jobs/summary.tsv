@@ -1,0 +1,1 @@
+1	1	1	438600	OPENBLAS_NUM_THREADS=4 ALIGN811_OUT=experiments/811-lolo-model/work/align/align811.json uv run python experiments/811-lolo-model/align811.py

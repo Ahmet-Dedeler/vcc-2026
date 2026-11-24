@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "experiment": "111-depmap-context-program-gain",
+  "date_authorized": "2026-08-30",
+  "status": "authorized_source_only_execution",
+  "authorization_basis": "The user explicitly authorized Experiment 111 selective acquisition, source schema validation, and source-only fitting under the existing fixed grid and gates while forbidding held truth, scoring, counts, production changes, challenge builds, submissions, commits, and pushes.",
+  "bindings": {
+    "source_manifest": {
+      "path": "experiments/111-depmap-context-program-gain/SOURCE_MANIFEST.json",
+      "sha256": "90e15f3c9d4c698805d0a680fc51085ee18fc6164b77adb2dfade1e7ad92a638"
+    },
+    "preregistered_protocol": {
+      "path": "experiments/111-depmap-context-program-gain/preregistered_protocol.json",
+      "sha256": "51051875b00057c0e4a23271784dbff30ba4909567ac15b04ee21cbeb533dcee"
+    }
+  },
+  "recovery_amendments": [
+    {
+      "path": "experiments/111-depmap-context-program-gain/ACQUISITION_SCHEMA_RECOVERY.v1.json",
+      "sha256": "e88f86013adbaf988c3b0fa6e5351b2966330f206f800d17842d08ef6357b231"
+    }
+  ],
+  "allowed_members": [
+    "metadata/cell_line_metadata.csv",
+    "processed/pseudobulk_sum_by_ko.csv",
+    "processed/lfc_matrix.csv",
+    "processed/fdr_matrix.csv",
+    "processed/crispr_table.csv",
+    "processed/cell_quality_covariates.csv"
+  ],
+  "authorized_actions": {
+    "selective_member_acquisition": true,
+    "metadata_extraction": true,
+    "source_schema_validation": true,
+    "source_only_model_fitting": true,
+    "complete_selection_nulls": true
+  },
+  "forbidden_actions": {
+    "full_processed_zip_download": false,
+    "single_cell_archive_download": false,
+    "unlisted_member_access": false,
+    "held_truth_access": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "production_change": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  },
+  "output_policy": {
+    "source_root": "data/external/depmap26q1/extracted",
+    "source_result_root": "experiments/111-depmap-context-program-gain/work/source-only-v1",
+    "refuse_source_overwrite": true,
+    "refuse_result_overwrite": true
+  },
+  "fixed_source_model_contract": {
+    "source_model_sha256": "32e62a3d3af684c9c2bf0067f37d854c77f3492b5548f7e9218103b8f30b1e9f",
+    "source_validation_sha256": "1233f4e150643bab6b26ffc5a7cd2fa33c12aa456f5190712ef0a1d7404053f3",
+    "source_promotion_gates_sha256": "8160aeb6dd5e4cee0aacbecdd85cb5688dfbd65f7938accb0a63ae3ed7b4a775",
+    "held_truth_stops_before_access": true
+  }
+}

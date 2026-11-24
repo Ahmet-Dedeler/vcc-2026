@@ -1,0 +1,4 @@
+3	0	2	45676	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/aggtag811.py DEFo experiments/811-lolo-model/work/run-comp811kit-DEFo --family 811-composite --tries 1 --pairs C0:B0
+4	0	2	45928	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/aggtag811.py DEFo experiments/811-lolo-model/work/run-comp811kit-DEFo --family 811-composite --tries 1 --pairs C1:C0
+1	0	2	45800	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/aggtag811.py DEFo experiments/811-lolo-model/work/run-comp811kit-DEFo --family 811-composite --tries 1 --pairs C1:B1
+2	0	2	45752	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/aggtag811.py DEFo experiments/811-lolo-model/work/run-comp811kit-DEFo --family 811-composite --tries 1 --pairs C1:B0

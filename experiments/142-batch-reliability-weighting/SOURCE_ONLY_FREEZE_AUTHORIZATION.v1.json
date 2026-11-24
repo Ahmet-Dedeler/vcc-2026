@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-30",
+  "authorization_basis": "Ahmet asked the lead agent to continue the Virtual Cell Challenge work after reviewing current status. This artifact scopes that continuation to the source-only Experiment 142 freeze, donor scans, source evaluations, and source gate.",
+  "source_only_freeze_authorized": true,
+  "source_builds_authorized": true,
+  "source_evaluations_authorized": true,
+  "source_gate_authorized": true,
+  "development_613_authorized": false,
+  "untouched_410_test_authorized": false,
+  "reserved_confirmation_expression_authorized": false,
+  "count_generation_authorized": false,
+  "cell_eval2_authorized": false,
+  "challenge_build_authorized": false,
+  "submission_authorized": false,
+  "bindings": {
+    "plan_manifest": "experiments/142-batch-reliability-weighting/work/preregistered-plan-v2/plan-manifest.json",
+    "plan_manifest_sha256": "5d8a067626e6969d5468db34fec4f11f6e79f0f33c6b97cccc47950f7ffabc5b",
+    "prefreeze_amendment": "experiments/142-batch-reliability-weighting/PREFREEZE_AMENDMENT_001.json",
+    "prefreeze_amendment_sha256": "4890fb3522902b3e3f8b3606a1c293d53d463ce1195f20068171af69f48bf246",
+    "provenance_clock_correction": "experiments/142-batch-reliability-weighting/PROVENANCE_CLOCK_CORRECTION.v1.json",
+    "provenance_clock_correction_sha256": "84e1266155d80e284f8baf784870355b62c8dc13df4d0b2806f281bd0e529627",
+    "freeze_provenance_utc": "2026-08-30T18:45:00+00:00"
+  },
+  "implementation": {
+    "experiments/142-batch-reliability-weighting/README.md": "dac956898325078c7666cfb585bae41ba6901a60ba636ce196764cd862f7a3f9",
+    "experiments/142-batch-reliability-weighting/preregistered_protocol.json": "900e58e74c80c36883a5a1f99d106ab0110de89b127d3132f329a3c8781247de",
+    "experiments/142-batch-reliability-weighting/test_run.py": "ea3a0a95078b209faee1b8fc262b9b92da8729edac53dbcdccb5882151b21c9a",
+    "experiments/142-batch-reliability-weighting/run.py": "7d62708ff3b2268077537c4ae60cfe9beea3b565a0654e37386a7f717ecfdd7c",
+    "experiments/142-batch-reliability-weighting/DEVELOPMENT_INTERFACE.v1.json": "b49922a7436e6f2582fea941632c589d8eed6bd0da3da9207f819a58719ee4f1",
+    "experiments/142-batch-reliability-weighting/PREFREEZE_AMENDMENT_001.json": "4890fb3522902b3e3f8b3606a1c293d53d463ce1195f20068171af69f48bf246",
+    "experiments/142-batch-reliability-weighting/PROVENANCE_CLOCK_CORRECTION.v1.json": "84e1266155d80e284f8baf784870355b62c8dc13df4d0b2806f281bd0e529627"
+  },
+  "review_state": {
+    "target_specific_plan_v1_superseded": true,
+    "donor_wide_plan_v2_passed": true,
+    "unit_tests_passed": 20,
+    "ruff_passed": true,
+    "json_validation_passed": true,
+    "held_or_reserved_expression_opened": false
+  }
+}

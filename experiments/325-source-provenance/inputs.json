@@ -1,0 +1,8 @@
+{
+  "inputs_sha256": {
+    "experiments/324-residual-label-feasibility/work/panel__id_fallback__same_method__pairs.csv": "22360c012ad7cdfbfaa0626bde5edef4556f503273fbdc4aea59d9056f8a681a",
+    "experiments/325-source-provenance/PREREGISTRATION.md": "0c0ac44aab724bde49de4a09b6e7aca8d251d96eef96c99171ebea710ced7ec3",
+    "experiments/325-source-provenance/fetch325.py": "083639fecab67be25eb126ea3751c792fb6e275a106a557a7cb89cfa051d77c2",
+    "experiments/325-source-provenance/test325.py": "d2d1f23fcf17894a2e5175879dad0f4add96e067da3504d98d55d72de1a4db01"
+  }
+}

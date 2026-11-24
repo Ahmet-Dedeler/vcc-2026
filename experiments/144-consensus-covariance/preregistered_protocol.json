@@ -1,0 +1,132 @@
+{
+  "schema_version": 2,
+  "experiment": "144-consensus-covariance",
+  "date": "2026-08-31",
+  "status": "SOURCE_ONLY_V2_UNAUTHORIZED",
+  "hypothesis": "A covariance fitted to matched same-target consensus effects from multiple source donors better matches the geometry of an equal-donor predictor than covariance fitted to stacked donor-private effects.",
+  "scope": {
+    "stage": "source-only operator preparation",
+    "development_evaluation": "not implemented or authorized",
+    "independent_no_truth_audit_required_before_prepare_authorization": true,
+    "independent_no_truth_audit_required_before_any_evaluation": true
+  },
+  "basis": {
+    "roles": {
+      "k562": [
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "non_k562": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ]
+    },
+    "row_rule": "Use the sorted exact perturbation-name intersection across every donor in the role, then remove the complete forbidden target-name union before loading any fitted row values.",
+    "forbidden_target_name_sources": [
+      "all 1023 frozen Experiment-132 613/410 target names",
+      "all 300 VCC panel target names",
+      "all targets in data/donors/k562_essential/perts.txt"
+    ],
+    "response_axis": "Exact 4992-gene Experiment-132 response_genes.txt axis.",
+    "donor_centering": "For each donor and role, compute the mean only over the explicitly allowed matched rows on the response axis.",
+    "donor_normalization": "For each donor and role, compute the median L2 norm only over its allowed centered matched rows. Renormalize donors to the median of those role-local donor medians.",
+    "consensus": "Take the equal arithmetic mean of the allowed, centered, role-renormalized same-target rows.",
+    "consensus_centering": "Subtract the consensus mean computed only over those same allowed consensus rows.",
+    "covariance": "M.T @ M / n over the allowed, centered consensus basis only.",
+    "excluded_rows_affect_no_fitted_statistic": true
+  },
+  "candidate_family": {
+    "candidates": [
+      {
+        "name": "identity",
+        "gamma": 0.0,
+        "eta": 0.0
+      },
+      {
+        "name": "consensus:g=0.65:eta=0.25",
+        "gamma": 0.65,
+        "eta": 0.25
+      }
+    ],
+    "candidate_count_including_identity": 2,
+    "new_grid_or_tuning": false,
+    "row_norm_preserved": true,
+    "identity_is_exact_fallback": true
+  },
+  "numerical_rank": {
+    "covariance_precision": "float64",
+    "epsilon_multiplier": 10.0,
+    "tolerance": "lambda_max * max(n_rows,n_columns) * eps(float64) * 10",
+    "acceptance": "Every one of the 4992 raw covariance eigenvalues must be finite and strictly greater than the numerical-rank tolerance. A rows-greater-than-columns check is not evidence of rank.",
+    "regularization_floor": "max(lambda_max * 1e-12, numerical_rank_tolerance)",
+    "positive_spectrum_required_after_regularization": true,
+    "failure_policy": "fail closed before writing the final v2 directory"
+  },
+  "memory": {
+    "max_process_tree_rss_gib": 18.0,
+    "min_free_memory_percent": 25.0,
+    "internal_monitor": "Use process_rss and free_percent from experiments/144-consensus-covariance/memory_guard.py for fail-closed checkpoints around every source loader, fitted statistic, covariance and eigensolver boundary, hash pass, serializer, and finalization",
+    "external_monitor": "experiments/144-consensus-covariance/memory_guard.py continuously samples the isolated process group every 0.25 seconds and is mandatory with limits at least as strict as the authorization",
+    "live_supervision_proof": "Before source loading, run.py must complete a two-way request-response handshake over inherited pipe descriptors created by the bound external wrapper",
+    "monitor_failure_policy": "A process-table error, unavailable free-memory measurement, orphaned descendant, interrupt, RSS violation, or free-memory violation terminates the complete guarded process group; termination is verified after SIGTERM and escalated to SIGKILL if members remain",
+    "zero_or_disabled_limit_allowed": false,
+    "all_source_loaders_require_guard": true,
+    "all_serializers_require_guard": true
+  },
+  "authorization_identity": {
+    "schema_version": 2,
+    "experiment": "144-consensus-covariance",
+    "stage": "source_only_prepare_v2",
+    "confirmation": "AUTHORIZE_SOURCE_ONLY_PREPARE_V2",
+    "source_only_prepare_v2_authorized": true,
+    "independent_no_truth_audit_passed": true
+  },
+  "artifacts": {
+    "output_directory": "work/source-only-v2",
+    "contents": [
+      "candidate-spec.json",
+      "consensus-operator-k562.npz",
+      "consensus-operator-k562.basis.json",
+      "consensus-operator-non_k562.npz",
+      "consensus-operator-non_k562.basis.json",
+      "result.json",
+      "artifact-manifest.json"
+    ],
+    "development_predictions_materialized": false,
+    "truth_ledger_copied": false,
+    "no_overwrite": true
+  },
+  "v1_quarantine": {
+    "immutable": true,
+    "exact_directory_membership_required": "Every entry recursively below work/preoutcome-v1 must match the frozen file set; unexpected files, directories, symlinks, or other entries fail quarantine",
+    "authorization": "SOURCE_ONLY_PREPARE_AUTHORIZATION.v1.json",
+    "output_directory": "work/preoutcome-v1",
+    "sha256": {
+      "SOURCE_ONLY_PREPARE_AUTHORIZATION.v1.json": "3082ca258904192a41007fad9b03eb5c3aa9444823fbd5b23289852908f4e067",
+      "work/preoutcome-v1/artifact-manifest.json": "06db1b027fa59688eb6de14c68f980214d62dc56605dc3f4094238ad8bfbe1e2",
+      "work/preoutcome-v1/candidates-k562.npz": "4d740d8136a4ea74e8824196d517da5119eb553f68492e63618b7b1e26e98bba",
+      "work/preoutcome-v1/candidates-non_k562.npz": "9b30aaeffe5f252d61867d690197863e9de5a2ef8fa70b0efe5d0bd84546e8bc",
+      "work/preoutcome-v1/consensus-operator-k562.basis.json": "c242552e171125b44a34498200b32ba8c9aa15cacb7f7fe4ff8a665a9c6d4d0b",
+      "work/preoutcome-v1/consensus-operator-k562.npz": "94782ffc954e8b94d7e37d9b6f18538fde4f9ff5ed694fb46e5d4069c41d789c",
+      "work/preoutcome-v1/consensus-operator-non_k562.basis.json": "3279850548a221dbbdb927bfce63862e043b9c7a90dcded9dbe00c48656e018c",
+      "work/preoutcome-v1/consensus-operator-non_k562.npz": "a4e8e1eb491da7b6997dfdf5f58b6d9f9130d2792727ccd02b394b746554cb26",
+      "work/preoutcome-v1/development-plan.npz": "8e8c76fec57ce75274a1b9feb709d0391cf74aa70bc6bd6fb4d05e3546231876",
+      "work/preoutcome-v1/result.json": "1d1ed77e0ad246e56b5b46f304854e46fd9c61b502010c8cbb54f8c55d190a98",
+      "work/preoutcome-v1/truth-source-hashes.json": "6ac2a3bbac6b314f74bfa1fcab77d8d130cae435a5545c20e77555fc8e7e4ae0"
+    }
+  },
+  "forbidden": {
+    "development_or_held_outcomes": true,
+    "sealed_613_410_values": true,
+    "kolf_values": true,
+    "reserved_expression": true,
+    "challenge_controls": true,
+    "cell_eval2": true,
+    "counts": true,
+    "builds": true,
+    "submissions": true,
+    "commits": true,
+    "pushes": true
+  }
+}

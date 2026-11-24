@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "required_filename": "CANDIDATE_BINDING_AMENDMENT.json",
+  "status": "template_only_not_an_authorization",
+  "required": {
+    "schema_version": 1,
+    "experiment": "130-telohaec-panel-confirmation",
+    "created_before_telohaec_value_access": true,
+    "experiment_125": {
+      "result_directory": "repository-relative immutable directory",
+      "artifact_manifest_path": "repository-relative path",
+      "artifact_manifest_sha256": "64 lowercase hex",
+      "results_path": "repository-relative path",
+      "results_sha256": "64 lowercase hex",
+      "result_receipt_path": "repository-relative path",
+      "result_receipt_sha256": "64 lowercase hex",
+      "decision": "GO",
+      "promotion_passes": true
+    },
+    "selection": {
+      "rule": "modal selected_candidate_counts_across_15_outer_target_folds, candidate_order tie break",
+      "candidate_name": "exact Experiment 125 candidate name",
+      "selection_count": "integer at least 8",
+      "transport": "production_log1p",
+      "selection_record_path": "repository-relative immutable path",
+      "selection_record_sha256": "64 lowercase hex"
+    },
+    "candidate_artifacts": {
+      "residual_path": "repository-relative .npy",
+      "residual_sha256": "64 lowercase hex",
+      "confidence_path": "repository-relative .npy",
+      "confidence_sha256": "64 lowercase hex",
+      "support_path": "repository-relative .npy",
+      "support_sha256": "64 lowercase hex",
+      "panel_axis_path": "repository-relative text axis",
+      "panel_axis_sha256": "64 lowercase hex",
+      "units": "log1p(50000 * relative_abundance)",
+      "shape": [300, 300]
+    },
+    "attestations": {
+      "candidate_was_selected_without_telohaec_values": true,
+      "no_telohaec_expression_value_has_been_read": true,
+      "no_post_result_tuning": true,
+      "authorize_one_telohaec_confirmation": true
+    }
+  }
+}

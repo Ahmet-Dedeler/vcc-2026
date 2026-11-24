@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "experiment": "118-pds-null-panel-residual",
+  "stage": "pan_confirmation_v1",
+  "date_authorized": "2026-08-30",
+  "status": "go_for_independent_review",
+  "scope": "experiment_118_pan_confirmation_v1",
+  "authorization_basis": "The user explicitly requested a separately frozen one-shot Pan confirmation evaluator, prohibited executing it or opening Pan values in this implementation turn, and required immutable one-shot access controls plus no counts, cell-eval2, challenge build or submission, commit, or push.",
+  "protocol_sha256": "28760983e0b32253239de8ae8979e671e2da530348405b86d2b6efbb9bb53130",
+  "selected_candidate": "unweighted_eta1p00",
+  "selection_json_sha256": "3d849a0fb1227b3e968861fb891d954513a73de12c80130a2b20059f880028d4",
+  "implementation_files": {
+    "experiments/118-pds-null-panel-residual/PAN_CONFIRMATION_README.v1.md": "a0489d2b1f6c943e4f00075a4fee6a21978873a87e51eeb87398504145cf79b8",
+    "experiments/118-pds-null-panel-residual/evaluate_pan_confirmation_v1.py": "c3ca0ac8ff7c52e6460fbc28878729d81430eb938e6d1bd65ddd3b5b8afe3664",
+    "experiments/118-pds-null-panel-residual/test_pan_confirmation_v1.py": "8e9947cc64e6ec898ba5a94ea5c22cd5c26f512a4379cc6c36c17fb6a4239dc1"
+  },
+  "experiment_118_source_inputs": {
+    "data/challenge/gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/adj_p_value.npy": "b346137ad6e7178b0a0786ecd0e7a2faa6a7bf411f64529e26f61638963cbbe1",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/base_mean.npy": "f9c7bfe5d4ea3e065c3a6e55331b456897f76599a9c57cce54c616b41be0a9b2",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/lfc_se.npy": "280f4e7d3f7a01d58185860dc7eb2e3929cf58fd9c636b5aab2ab0c9c1c6b66e",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/log_fc.npy": "eccdde6c54c3e3a24819efeb32721175679645d6cf3c2c35f7acd3982ce1417a",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/obs.csv": "a39d807dda40e62cf3ee8092039b5d89ef5c4c2099310f0c1b82629e513aeb0b",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/perts.txt": "ddcd8ff07e2f38d93fc035ce2aadebe4bcaeb097ef95e1f26e8e4860b641374b",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_rest/valid_log_fc.npy": "52b73b40c1d4528a0e8b1d99153a1365a45634e42b856f612e3a1633b2070de7",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/adj_p_value.npy": "ded1deb8ad05a4e7f8030b18b160830a314e62a1d3e186037bb5975af501ea3b",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/base_mean.npy": "3b177eab70925bba4400c0301e120488e32f7d59f209fe7d50d3ff4d01d4afaf",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/lfc_se.npy": "343017f3f6fbe8f012f217ac89feb298493d0e631eb3ecd1c54300b2df3f3441",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/log_fc.npy": "6abf293b48a8314b323d3e8c68739cd47d038dfa221d9b589b72d068e877b906",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/obs.csv": "6103831cc6c9b464e8e0eff0e47d364384ec8bad86d7ed6a19b12effc739691c",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/perts.txt": "4bf6468927fc11f0709bb0e63d14852f5a49f4f577455f0fa92e88719777d618",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim48hr/valid_log_fc.npy": "6753342392ce4163b660ea9304af0d6293fc359a6e55ad4b0cb5b60a508a5273",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/adj_p_value.npy": "8cb3672b41195f7d94ccb269ef123dc20f4320037054c41301d8f782568fdbe5",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/base_mean.npy": "04ac2a6fbbd2c9514759f07c52b3bcc613f05d04107cf7eeefe8667824a9a867",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/lfc_se.npy": "ac3cd4d2ea52f349a3013aa5f31ba65a52402d55b3be1fbcd8a5ff6c4ff8b708",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/log_fc.npy": "0809c1e62b619982e3ced4c3f1bcc75cc6bc5ffba5bedfc8162fa2e6b1c5e67e",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/obs.csv": "8a2699db02a58855b8df162b1fb4f4b4366e53e15e73decdcff5dc9901ffb6da",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/perts.txt": "639feb3fba1d6cf3b5bb5e2ef9dfdc0ff3044adb4c7477b4588c82ff096d828e",
+    "data/external/cd4t/cloud-compact/cd4_compact/cd4_stim8hr/valid_log_fc.npy": "659a7b4759c12f7aeac1ec084cb88b6bf78332dbfd19a6df831433e3e2557faa",
+    "data/external/cd4t/cloud-compact/cd4_compact/manifest.json": "b8c3ea5b1ffeab67bb426447aa9c3f50b9ead3bfad5b7eefd0d1c37fb00f3ff3"
+  },
+  "experiment_118_frozen_outputs": {
+    "experiments/118-pds-null-panel-residual/README.md": "b56fe6c40153442f7e77647b8f37a696fea3f4807fc58746b1c1b4efa8f9f6cf",
+    "experiments/118-pds-null-panel-residual/SOURCE_ONLY_AUTHORIZATION.json": "502997d88bed0eca529f787374322008ceddac6aebd52bcd678f2364a7304533",
+    "experiments/118-pds-null-panel-residual/preregistered_protocol.json": "c91f5e17b7ca8bdba6c2a3f5663e81c125503918b06267aeb72353af9b10706f",
+    "experiments/118-pds-null-panel-residual/run.py": "1692ac997adc25583da7961cab2d24f18aca0398cc50302c9cb021c4cf553bc1",
+    "experiments/118-pds-null-panel-residual/test_run.py": "f1264e8f8e8810860243b5a002f18598213c8240cb8f63b4ad209452534a45d7",
+    "experiments/118-pds-null-panel-residual/work/source-freeze-v1/candidate_panel_effects.npy": "b1a6d3a39dbeabe979efa79278a66b03539a556c16d57e9521977fac28a4eb99",
+    "experiments/118-pds-null-panel-residual/work/source-freeze-v1/freeze-manifest.json": "40a0ef4ec5dbbd919f67877c2818f6fc7534ae440547031b149839d97d29252f",
+    "experiments/118-pds-null-panel-residual/work/source-freeze-v1/response_expression_bins.npy": "dec73b80a9a2ce07f6791faf8b69b0d772930ef08c19e87081d67defecb15db4",
+    "experiments/118-pds-null-panel-residual/work/source-freeze-v1/response_label_permutations.npy": "d940822105963093477b6ea181291f920f5e671ee17c3363e6d8953e17258626",
+    "experiments/118-pds-null-panel-residual/work/source-freeze-v1/results.json": "53f6a42746e96b25e30b73ee067df4b83606861308baf3b4012772d8350b5f10",
+    "experiments/118-pds-null-panel-residual/work/source-freeze-v1/selected_residual_full.npy": "56475ab2d5cdb3c38d260b0c57271e44e85e7a6342fbbd00977dad922a752a43",
+    "experiments/118-pds-null-panel-residual/work/source-freeze-v1/selection.json": "3d849a0fb1227b3e968861fb891d954513a73de12c80130a2b20059f880028d4",
+    "experiments/118-pds-null-panel-residual/work/source-freeze-v1/target_label_permutations.npy": "c8ac6561eea3f3fdd98434d35445121b919f71b42a8d5e40cfb76936057309e7"
+  },
+  "experiment_115_compact": {
+    "artifact_manifest": {
+      "path": "experiments/115-gse295214-h1/work/compact-donor/artifact-manifest.json",
+      "bytes": 2025,
+      "sha256": "773895e0dcff2b6ae4aa9db22f98cd1376315a62b1a7cd193ef559330cf25cd2"
+    },
+    "compact_receipt": {
+      "path": "experiments/115-gse295214-h1/work/compact-donor/compact-donor-receipt.json",
+      "bytes": 983,
+      "sha256": "2d24b8fcf86cf6fd6c5fc0a02d1da5525393692e9f67d70f865c72189f875348"
+    },
+    "delta": {
+      "path": "experiments/115-gse295214-h1/work/compact-donor/delta.npy",
+      "bytes": 174506856,
+      "sha256": "d0fa6555f9a62ce503d2ad55c8bfda954322657b52dcd48a24e29c330e718c7a"
+    },
+    "measured_mask": {
+      "path": "experiments/115-gse295214-h1/work/compact-donor/measured_mask.npy",
+      "bytes": 43626810,
+      "sha256": "da468865f861be0714037c33357b93b9f747351f7478866e6e0dd6dff9d1ebcb"
+    },
+    "b_ctrl": {
+      "path": "experiments/115-gse295214-h1/work/compact-donor/b_ctrl.npy",
+      "bytes": 74260,
+      "sha256": "c88816a57c57c3a088183ae24bca406d8ded374871e3d330aa444fcb13811b4f"
+    },
+    "genes": {
+      "path": "experiments/115-gse295214-h1/work/compact-donor/genes.txt",
+      "bytes": 119285,
+      "sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723"
+    },
+    "perts": {
+      "path": "experiments/115-gse295214-h1/work/compact-donor/perts.txt",
+      "bytes": 14572,
+      "sha256": "7060076272d411d4ee00b898cc26eedcb1eaaac5f5e94e2c60f3b45978320747"
+    },
+    "vcc_targets": {
+      "path": "experiments/115-gse295214-h1/work/compact-donor/vcc_targets.txt",
+      "bytes": 401,
+      "sha256": "f7fee89539444565949d9f7d3ac39e3b5ffa727c165fbc39165d86fa2ee48bc2"
+    }
+  },
+  "one_shot_constraints": {
+    "authenticate_must_not_numpy_load_pan_values": true,
+    "permanent_exclusive_lock_before_pan_numpy_load": true,
+    "one_pan_value_load_phase": true,
+    "immutable_results": true,
+    "caller_supplied_paths": false,
+    "selected_candidate_only": "unweighted_eta1p00",
+    "reselection": false
+  },
+  "external_actions": {
+    "execute_pan_confirmation_during_implementation": false,
+    "counts": false,
+    "cell_eval2": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  }
+}

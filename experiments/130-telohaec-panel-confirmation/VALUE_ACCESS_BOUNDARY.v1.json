@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "experiment": "130-telohaec-panel-confirmation",
+  "status": "LOCKED",
+  "candidate_binding_path": "experiments/130-telohaec-panel-confirmation/CANDIDATE_BINDING_AMENDMENT.json",
+  "candidate_binding_present_at_freeze": false,
+  "protected_values": [
+    "data/external/igvf-telohaec/IGVFFI8645YMGX.h5ad:/X",
+    "data/external/igvf-telohaec/IGVFFI8645YMGX.h5ad:/layers/*",
+    "data/external/igvf-telohaec/delta.npy",
+    "data/external/igvf-telohaec/b_ctrl.npy",
+    "all Experiment 125 candidate residual, confidence, and support arrays"
+  ],
+  "unlock_requires": [
+    "Experiment 130 implementation freeze validates byte-for-byte",
+    "SOURCE_METADATA_RECEIPT.v1.json validates byte-for-byte",
+    "candidate-binding amendment exists and matches its frozen schema",
+    "Experiment 125 immutable results.json says GO and promotion_passes=true",
+    "every Experiment 125 gate is true",
+    "modal candidate rule selects the bound candidate with at least 8 of 15 folds",
+    "bound candidate transport is production_log1p",
+    "candidate artifacts and canonical panel axis match all pinned hashes",
+    "no prior TeloHAEC expression-value access is attested"
+  ],
+  "failure_policy": "Any missing, malformed, mutable, mismatched, or ambiguous item keeps access locked."
+}

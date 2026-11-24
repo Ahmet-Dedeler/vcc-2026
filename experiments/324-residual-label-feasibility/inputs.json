@@ -1,0 +1,11 @@
+{
+  "inputs_sha256": {
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "experiments/268-broad16-context-residuals/work/units268.md": "50c91284d5cddbc1be5a6cea45dc5fd5e76b05dd0e31639c641886eaa399177e",
+    "experiments/270-data-reconnaissance/work/gpsadb_metadata_browse.csv": "97204cb049b3248d9ea1c2d3a8aa15f28eecce695ef4f5731fcc423e50876dad",
+    "experiments/285-reliability-benchmark/work/inv285.json": "c4e493c97d7e36525bec0dceec3fab0095283e7bd8cbb052fbd13d457c50ac48",
+    "experiments/324-residual-label-feasibility/PREREGISTRATION.md": "cd66410e52710705e307b2afe22846d4860ace555df2d6c53c6ff6dc8a820d78",
+    "experiments/324-residual-label-feasibility/audit324.py": "a5edb908fa7ead492286a7f2315a3cd3aeb039cc8155933b7b425a587c7b0ac3",
+    "experiments/324-residual-label-feasibility/test324.py": "0a622517663e2c7481573dc18ddc101cebe1c2aaaea5f05245578eac177eddec"
+  }
+}

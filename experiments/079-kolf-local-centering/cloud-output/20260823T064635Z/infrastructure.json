@@ -1,0 +1,13 @@
+{
+  "provider": "AWS EC2",
+  "instance_id": "i-0e05556f09944111f",
+  "instance_type": "r7i.2xlarge",
+  "market": "spot",
+  "source_prefix": "s3://<your-s3-bucket>/input/exp079-kolf-local-centering/20260823T064635Z/",
+  "output_prefix": "s3://<your-s3-bucket>/output/exp079-kolf-local-centering/20260823T064635Z/",
+  "worker_was_created_or_started": false,
+  "fits_eigensystem": false,
+  "cell_eval2": false,
+  "count_emission": false,
+  "submission": false
+}

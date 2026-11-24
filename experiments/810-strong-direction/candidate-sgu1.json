@@ -1,0 +1,24 @@
+{
+ "name": "810-sgu1",
+ "family": "810-sgu",
+ "class": "transfer",
+ "calib_class": null,
+ "prereg": "experiments/810-strong-direction/PROPOSAL-2.md",
+ "prereg_sha256": "3153d6c8b37e2eef900e187694e15a15571f2dfcc914a3ba5591a914f12e51de",
+ "base": "inc",
+ "bulk": {
+  "module": "experiments/810-strong-direction/price810.py",
+  "sha256": "9c33b24fae3bb9cfee135a7d217b2dd495ac238908e878f961914a6d4488fe36",
+  "args": {
+   "arm": "sgu1",
+   "gate": "top z_src tertile over targets with a donor row",
+   "beta": 1.0
+  },
+  "sha256_history": {
+   "da001560468d703fc9d08c004a2b24d1db60b6bc6f19fc49ff087d575f290f77": "21 folds (run 20261016T082954Z-s810-price-b)",
+   "9c33b24fae3bb9cfee135a7d217b2dd495ac238908e878f961914a6d4488fe36": "ABC/orion_hek293t (run 20261016T084311Z-s810-price-c); RULING-KA.md: only the beta-0 KA tolerance and the print order differ"
+  }
+ },
+ "n_tries_declared": 6,
+ "notes": "VERDICT-2 G4: this family is charged N = 6 (e(6) = 1.28 sd) for the six composition-level forms read on these 22 folds before pricing (PROPOSAL-2 section 3); check800's ledger-derived N (1) understates it. decide810.py (724e8059...) applies N = 6. Comparators inc / 707 / sgu1all are not tries of this family."
+}

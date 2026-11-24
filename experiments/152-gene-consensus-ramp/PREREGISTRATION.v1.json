@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "experiment": "152-gene-consensus-ramp",
+  "status": "preregistered_before_hct_outcome_access",
+  "provenance_utc_lower_bound": "2026-08-31T18:45:00+00:00",
+  "provenance_basis": "Frozen later in the same Monday, August 31, 2026 session after the user stated 21:45 Europe/Istanbul; host clock is known unreliable.",
+  "outcome_state_at_freeze": {
+    "experiment_150_results_json_existed": false,
+    "experiment_151_results_json_existed": false,
+    "experiment_150_candidate_was_still_running": true,
+    "experiment_150_and_151_scoring_outputs_were_not_read": true
+  },
+  "hypothesis": "A smooth gene-wise source-consensus ramp isolates the cross-context-stable portion of the gamma relaxation, preserving exact PDS while improving NMAE, reach, and fidelity more consistently than a uniform or target-wise lambda.",
+  "source_artifacts": {
+    "hek_effects": {
+      "path": "experiments/149-dual-moment-hek293t/work/source-build-v1/effects.npz",
+      "sha256": "cd0e6854fdf4584c257973571b5aafc3025dac2e0060789bd268b192b5afbe28"
+    },
+    "hct_effects": {
+      "path": "experiments/150-dual-moment-score-level-hct116/work/source-build-v1/effects.npz",
+      "sha256": "edf55db4eac6aaae4dc8c11c1e03681838eb225dfde317d52bc9bd3d7c8f69cd"
+    },
+    "dual_moment_implementation": {
+      "path": "experiments/147-dual-moment-emitter/dual_moment.py",
+      "sha256": "89dda8f617261f9b4cfb6ba44cb8ee85db41c3c55adf0e46991be7c5b81e5bcd"
+    },
+    "held_hct_harness": {
+      "path": "data/harness/orion-hct116-thinned.h5ad",
+      "sha256": "04f98cd764bfa428cae4cd1060e814a327cdcf1a2167e6485d7c57646403b401"
+    },
+    "held_hct_harness_metadata": {
+      "path": "data/harness/orion-hct116-thinned.h5ad.meta.json",
+      "sha256": "98e0d4577d0133d02e61272ed2d24ac5e75b2bcaa84027a6c2c26cacb5f075ff"
+    }
+  },
+  "required_effect_keys": [
+    "genes",
+    "targets",
+    "incumbent",
+    "direction"
+  ],
+  "common_surface": {
+    "common_target_count": 120,
+    "eligible_gene_count_per_target": 17942,
+    "primary_targets_in_hct_order_sha256_newline_terminated": "ecbfb06f75a6c275cd1f06f4ea10a13cf4512ca279ef507b7bc0aca0fbbfa90a",
+    "hct_only_targets_excluded_from_primary_analysis": [
+      "API5",
+      "CSNK2A1",
+      "CYTH2",
+      "DBF4B",
+      "DEK",
+      "E2F1",
+      "KHDRBS1",
+      "LMAN1",
+      "MTA1",
+      "MYPOP",
+      "NCLN",
+      "ZDHHC12"
+    ]
+  },
+  "gene_wise_selector": {
+    "numeric_rule": "Cast incumbent and direction arrays to float64 before subtraction.",
+    "hek_relaxation": "HEK direction minus HEK incumbent",
+    "hct_relaxation": "HCT direction minus HCT incumbent",
+    "magnitude": "minimum of the two absolute relaxation values",
+    "eligible": "both relaxation values finite and magnitude strictly positive",
+    "midrank_percentile": "(number of eligible magnitudes strictly smaller + (number equal + 1) / 2) / eligible_count",
+    "agreement": "HEK relaxation times HCT relaxation strictly greater than zero",
+    "confidence": "indicator(agreement) * clip(2 * midrank_percentile - 1, 0, 1)",
+    "lambda": "0.5 + 0.5 * confidence",
+    "ineligible_lambda": 0.5,
+    "hct_only_lambda": 1.0,
+    "no_sweep": true,
+    "no_learned_coefficients": true
+  },
+  "desired_arithmetic_cpm": {
+    "incumbent_cpm": "Arithmetic mean of per-cell CPM from the frozen Experiment 150 incumbent emitted block.",
+    "direction_cpm": "Arithmetic mean of per-cell CPM from the frozen Experiment 150 gamma-0.45 emitted block.",
+    "coordinate_interpolation": "incumbent_cpm + lambda_gene * (direction_cpm - incumbent_cpm)",
+    "post_interpolation": "Require finite nonnegative coordinates, then renormalize the vector to sum exactly 1000000 in float64 before bounded projection.",
+    "allocator": "Existing dual-moment two-depth bounded exact-margin projection and quasi allocation.",
+    "required_invariant": "Candidate integer column totals exactly equal incumbent integer column totals for every target."
+  },
+  "fixed_emission": {
+    "incumbent_gamma": 0.65,
+    "direction_gamma": 0.45,
+    "depth_contrast": 0.5,
+    "within_group_quasi_spread": 0.25,
+    "dual_moment_seed": 14700,
+    "seed_payload": "14700:{target}:gene-ramp-v1",
+    "cells_per_target": 400,
+    "all_other_parameters_identical_to_experiment_150": true
+  },
+  "primary_analysis": {
+    "targets": "120 HEK-HCT common targets in frozen HCT order",
+    "comparison_a": "gene-wise candidate minus Experiment 150 incumbent",
+    "comparison_a_gates": {
+      "all_per_target_pds_exact": true,
+      "official_anchor_projected_avg_delta_min": 0.006,
+      "target_bootstrap_95pct_lower_min": 0.0,
+      "minimum_improved_metrics_among_nmae_reach_fidelity": 2,
+      "minimum_individual_de_scaled_delta": -0.015,
+      "minimum_scaled_mse_delta": 0.0
+    },
+    "comparison_b": "gene-wise candidate minus the higher projected-average frozen comparator among Experiment 150 uniform lambda 1 and Experiment 151 target-wise selector",
+    "comparison_b_gates": {
+      "official_anchor_projected_avg_delta_min": 0.001,
+      "target_bootstrap_95pct_lower_min": -0.001
+    },
+    "bootstrap_draws": 20000,
+    "bootstrap_seed_vs_incumbent": 15200,
+    "bootstrap_seed_vs_best_frozen_comparator": 15201
+  },
+  "diagnostics_only": [
+    "n_pred",
+    "call-set intersection",
+    "call-set union"
+  ],
+  "decision_rule": {
+    "advance_gene_ramp_to_production_build": "comparison_a and comparison_b both pass",
+    "otherwise": "close this exact gene-wise consensus-ramp family; do not tune alternate percentiles, cutoffs, or coefficients on HCT outcomes"
+  },
+  "forbidden_before_source_build_authorization": [
+    "read HCT116 perturbation expression rows",
+    "run cell-eval2",
+    "change the selector, interpolation, emission parameters, gates, or bootstrap seeds"
+  ],
+  "forbidden_without_later_authorization": [
+    "challenge prediction build",
+    "challenge submission"
+  ]
+}

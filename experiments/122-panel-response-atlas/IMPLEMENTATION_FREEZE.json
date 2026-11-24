@@ -1,0 +1,20 @@
+{
+  "created_before_effect_matrix_loading": false,
+  "experiment": "122-panel-response-atlas",
+  "files": {
+    "experiments/122-panel-response-atlas/IMPLEMENTATION_AMENDMENT_001.json": "b75f13fe1507d861eb9212be1251edba537a63f360287f383640487969d99f08",
+    "experiments/122-panel-response-atlas/freeze_implementation.py": "5311fd5b472a206fb2244279562c8e7870428f1100b9c88e1b464984242675fb",
+    "experiments/122-panel-response-atlas/freeze_plans.py": "7d24118bad67eb1d17253d847cec4f55d2576310f9238bb541869ebcf9498711",
+    "experiments/122-panel-response-atlas/run.py": "8d36ed021f25db67792098fe0a212dda8b534dfd39c7d7c48758055aa1ecaf7f",
+    "experiments/122-panel-response-atlas/test_run.py": "633d5bc9f81779b77b848e191c65818f9eaa24a0588d74a9fc7cf1ec7112d325"
+  },
+  "implementation_amendment": {
+    "path": "experiments/122-panel-response-atlas/IMPLEMENTATION_AMENDMENT_001.json",
+    "sha256": "b75f13fe1507d861eb9212be1251edba537a63f360287f383640487969d99f08"
+  },
+  "phase": "phase_1_source_only",
+  "plan_freeze_manifest_sha256": "2f0add851d0b5aee669272735b19b30631685d0a1409034fb6853ff1576ae6e3",
+  "preregistration_sha256": "e8122e4386e93f60f935df7e04157177366b1443d73a39a343e713b37516fa50",
+  "schema_version": 1,
+  "scientific_spec_frozen_before_effect_matrix_loading": true
+}

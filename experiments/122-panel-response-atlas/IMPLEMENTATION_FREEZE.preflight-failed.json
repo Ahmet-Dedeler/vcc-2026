@@ -1,0 +1,13 @@
+{
+  "created_before_effect_matrix_loading": true,
+  "experiment": "122-panel-response-atlas",
+  "files": {
+    "experiments/122-panel-response-atlas/freeze_plans.py": "5e2acfa72d285822b423b64d2a0cf014de4376639475e2a3bcff8b1ce2f54dec",
+    "experiments/122-panel-response-atlas/run.py": "655bbde0c9781d44e086c97160c1e7287a09379e0bf4fbf2b2c1d228200b19ae",
+    "experiments/122-panel-response-atlas/test_run.py": "917ad0f490836c611973a139237d18c40bf7e1a46e79e7fc0f27e0a44d797c7b"
+  },
+  "phase": "phase_1_source_only",
+  "plan_freeze_manifest_sha256": "95faf6b3cd254836e3cfa8dc7eb2373434492bd15cd25c89623ff9f6e8eeb22d",
+  "preregistration_sha256": "7112520202a0f653c790df8def27a559b9ea317adef8eb1f73e8856a1f9efade",
+  "schema_version": 1
+}

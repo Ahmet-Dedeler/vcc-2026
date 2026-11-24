@@ -1,0 +1,765 @@
+{
+  "experiment": "057-kolf-union-whiten",
+  "status": "completed",
+  "decision": {
+    "primary_gamma": 0.65,
+    "primary_delta": -0.00686889818688982,
+    "passes_positive_gate": false,
+    "rule": "retain KOLF only if the a-priori gamma=0.65 target-observed-axis delta is positive; diagnostic gammas are not selectors"
+  },
+  "protocol": {
+    "metric": "effect-level rank PDS",
+    "held_out_target_role": "k562_gwps",
+    "predictive_sources": [
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "auxiliary": "kolf2",
+    "auxiliary_mode": "raw",
+    "auxiliary_fraction": 0.1,
+    "targets": 240,
+    "full_retrieval_gallery": 240,
+    "query_folds": 5,
+    "query_fold_semantics": "disjoint round-robin query subsets; every query ranks against the complete target gallery",
+    "gammas": [
+      0.0,
+      0.55,
+      0.65,
+      0.75,
+      0.85
+    ],
+    "primary_gamma_fixed_before_holdout": 0.65,
+    "gamma_selection_on_k562": false,
+    "operator_fit_rows": "source donors only",
+    "count_emission": false,
+    "cell_eval2": false,
+    "submission": false,
+    "renormalization": "production preserve is a positive scalar per candidate and is omitted because effect-level cosine PDS is exactly scale invariant"
+  },
+  "axes": {
+    "official_genes": 18533,
+    "challenge_targets": 300,
+    "operator_genes": 17806,
+    "target_observed_score_genes": 7448,
+    "exp055_shared_score_genes": 7312,
+    "target_score_genes_outside_operator": 136,
+    "target_score_genes_outside_operator_and_kolf": 136,
+    "target_order_sha256": "60efa65231bcac23892c258e4e757de53ec0b1b3ef6558d7f7f4a678d53da754",
+    "target_observed_score_axis_sha256": "b8e7e447d92cb1b7bbd5d0bbaaa6144a90feacf2d638004fa0f47ec8a7f7d164",
+    "exp055_shared_score_axis_sha256": "dedeefb0d286fb0e715ef2a5175320067408b0445f591e39acd87a6560db168f"
+  },
+  "leakage_audit": {
+    "operator_sources_exact": [
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "k562_rows_in_operator": 0,
+    "kolf_rows_in_operator": 0,
+    "panel_coordinate_overlap_with_operator": 0,
+    "predictions_frozen_before_k562_delta_open": true,
+    "k562_used_for_candidate_selection": false,
+    "fixed_rule_source": "experiments/055-kolf-direct/results.json",
+    "exp055_reproduction": {
+      "expected_baseline_pds": 0.7363493723849374,
+      "expected_kolf_pds": 0.7403417015341702,
+      "observed_baseline_pds": 0.7363493723849374,
+      "observed_kolf_pds": 0.7403417015341702,
+      "max_abs_error": 0.0,
+      "passes": true
+    }
+  },
+  "blend_audit": {
+    "rule": "experiment 055 raw KOLF fraction 0.1",
+    "source_panel_norms_on_exp055_shared_axis": {
+      "orion_hct116": 5.639412879943848,
+      "orion_hek293t": 4.679981231689453
+    },
+    "kolf_panel_norm_on_exp055_shared_axis": 6.293209075927734,
+    "reference_panel_norm": 5.15969705581665,
+    "kolf_fraction": 0.1,
+    "kolf_available_operator_genes": 17806,
+    "kolf_missing_policy": "preserve baseline",
+    "duplicate_policy": {
+      "orion_hct116": "max_b_ctrl",
+      "orion_hek293t": "max_b_ctrl",
+      "kolf2": "max_b_ctrl"
+    },
+    "duplicate_symbols": {
+      "orion_hct116": [
+        "ELFN2",
+        "GOLGA8M",
+        "MKKS",
+        "SPATA13"
+      ],
+      "orion_hek293t": [
+        "ELFN2",
+        "GOLGA8M",
+        "MKKS",
+        "SPATA13"
+      ],
+      "kolf2": []
+    }
+  },
+  "operator_audit": {
+    "axis": "union",
+    "source_donors_only": [
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "forbidden_fit_donors": [
+      "k562_gwps",
+      "kolf2"
+    ],
+    "basis_per_donor_cap": 6000,
+    "basis_rows": 12000,
+    "operator_seed": 0,
+    "operator_genes": 17806,
+    "operator_genes_sha256": "280aab34a0e86f27db8ade213e000f9066c8d5f9b89edd3ea966aba061ba9ae9",
+    "operator_wcols_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+    "excluded_target_coordinates": 300,
+    "excluded_targets_sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4",
+    "panel_overlap_with_operator": 0,
+    "source_selections": {
+      "orion_hct116": {
+        "rows": 6000,
+        "row_indices_sha256": "231baf13e200eb920f82889544d2d1b8ff5fe3b49b518243757bccccd9f15365",
+        "mapped_operator_genes": 17806,
+        "donor_scale": 7.129641298514131,
+        "basis_relative_scale": 0.9363176914396513
+      },
+      "orion_hek293t": {
+        "rows": 6000,
+        "row_indices_sha256": "e3ba410fcb892535f427359a79aab48eedf54ebac836f984a231e267cbdd6589",
+        "mapped_operator_genes": 17806,
+        "donor_scale": 6.221577264320966,
+        "basis_relative_scale": 1.0729769956728388
+      }
+    },
+    "operator_npz": "/work/repo/experiments/057-kolf-union-whiten/out/whitener_union.npz",
+    "operator_npz_sha256": "1718c54f230929ac1b8f62f67f721855f4564b35a73f99345730dcd6e537ffa7"
+  },
+  "input_fingerprints": {
+    "orion_hct116": {
+      "path": "/work/repo/experiments/057-kolf-union-whiten/inputs/orion_hct116",
+      "shape": [
+        17767,
+        38606
+      ],
+      "dtype": "float32",
+      "delta_bytes": 2743651336,
+      "genes_sha256": "ebd177c833a5f0582116dc9de2a65f2735cb76a349c0b847c204ab07d503d366",
+      "perts_sha256": "2280829df277b5efe070f021790d06e2d00b184ebffed1ded5c161ad621a74b9"
+    },
+    "orion_hek293t": {
+      "path": "/work/repo/experiments/057-kolf-union-whiten/inputs/orion_hek293t",
+      "shape": [
+        17977,
+        38606
+      ],
+      "dtype": "float32",
+      "delta_bytes": 2776080376,
+      "genes_sha256": "ebd177c833a5f0582116dc9de2a65f2735cb76a349c0b847c204ab07d503d366",
+      "perts_sha256": "0b3c0a1b04586604c99318f5e8c014cde83dae6d7fc6cb53624e42e0a2c53281"
+    },
+    "k562_gwps": {
+      "path": "/work/repo/experiments/057-kolf-union-whiten/inputs/k562_gwps",
+      "shape": [
+        9787,
+        8248
+      ],
+      "dtype": "float32",
+      "delta_bytes": 322892832,
+      "genes_sha256": "ff1e8ea1608fcad45c42bbf73b9eedaeb4ddca1ac1524e5091e4ae51c59973b2",
+      "perts_sha256": "1cf8b4c67b4fb0b0e12712e3236f27b83e1368a5a9946454c416f7aa7edae39c"
+    },
+    "kolf2": {
+      "path": "/work/repo/experiments/057-kolf-union-whiten/inputs/kolf2",
+      "shape": [
+        273,
+        18106
+      ],
+      "dtype": "float32",
+      "delta_bytes": 19771880,
+      "genes_sha256": "2f077fda94cc07cf6cfddae28fc78440e80963e4e866f9904b91417f3189420b",
+      "perts_sha256": "b366592072d1e0da04aaabafbcc78882d34c97ff26eb2fca5fd9a9af0084f22f"
+    }
+  },
+  "gamma_results": [
+    {
+      "gamma": 0.0,
+      "is_primary": false,
+      "target_observed_axis": {
+        "baseline_pds": 0.7363319386331939,
+        "kolf_pds": 0.7402022315202231,
+        "delta": 0.0038702928870292907,
+        "baseline_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.7698744769874478,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.7394525801952581,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.685407949790795,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.7398884239888425,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.7470362622036264,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "kolf_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.7704846582984658,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.7380578800557881,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.7013598326359833,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.7491283124128313,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.7419804741980475,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "fold_deltas": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "delta": 0.0006101813110179766
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "delta": -0.001394700139469962
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "delta": 0.015951882845188337
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "delta": 0.009239888423988818
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "delta": -0.005055788005578932
+          }
+        ]
+      },
+      "exp055_shared_axis": {
+        "baseline_pds": 0.7363493723849374,
+        "kolf_pds": 0.7403417015341702,
+        "delta": 0.003992329149232916
+      }
+    },
+    {
+      "gamma": 0.55,
+      "is_primary": false,
+      "target_observed_axis": {
+        "baseline_pds": 0.6763598326359833,
+        "kolf_pds": 0.6683054393305439,
+        "delta": -0.008054393305439339,
+        "baseline_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.6596931659693166,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.7282949790794979,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.6514121338912134,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.6752963737796375,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.6671025104602512,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "kolf_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.6431311018131102,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.7273361227336123,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.6694560669456067,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.6378138075313807,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.6637900976290098,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "fold_deltas": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "delta": -0.016562064156206424
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "delta": -0.0009588563458856614
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "delta": 0.018043933054393224
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "delta": -0.03748256624825674
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "delta": -0.003312412831241396
+          }
+        ]
+      },
+      "exp055_shared_axis": {
+        "baseline_pds": 0.6765341701534171,
+        "kolf_pds": 0.6683926080892608,
+        "delta": -0.008141562064156215
+      }
+    },
+    {
+      "gamma": 0.65,
+      "is_primary": true,
+      "target_observed_axis": {
+        "baseline_pds": 0.6677475592747559,
+        "kolf_pds": 0.6608786610878662,
+        "delta": -0.00686889818688982,
+        "baseline_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.6527196652719666,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.7200139470013948,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.6443514644351465,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.6659693165969317,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.6556834030683403,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "kolf_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.6357217573221758,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.7223675034867504,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.6596931659693165,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.631276150627615,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.6553347280334728,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "fold_deltas": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "delta": -0.016997907949790725
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "delta": 0.0023535564853556235
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "delta": 0.015341701534170027
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "delta": -0.03469316596931671
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "delta": -0.00034867503486746276
+          }
+        ]
+      },
+      "exp055_shared_axis": {
+        "baseline_pds": 0.6677649930264994,
+        "kolf_pds": 0.6610355648535565,
+        "delta": -0.006729428172942817
+      }
+    },
+    {
+      "gamma": 0.75,
+      "is_primary": false,
+      "target_observed_axis": {
+        "baseline_pds": 0.6646094839609483,
+        "kolf_pds": 0.657758019525802,
+        "delta": -0.006851464435146443,
+        "baseline_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.6500174337517434,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.7139993026499303,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.6419107391910739,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.668497210599721,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.6486227336122733,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "kolf_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.6321478382147839,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.720624128312413,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.6569037656903766,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.6283124128312413,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.6508019525801952,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "fold_deltas": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "delta": -0.017869595536959437
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "delta": 0.006624825662482681
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "delta": 0.014993026499302675
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "delta": -0.04018479776847972
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "delta": 0.0021792189679219476
+          }
+        ]
+      },
+      "exp055_shared_axis": {
+        "baseline_pds": 0.6646269177126918,
+        "kolf_pds": 0.6578626220362622,
+        "delta": -0.006764295676429566
+      }
+    },
+    {
+      "gamma": 0.85,
+      "is_primary": false,
+      "target_observed_axis": {
+        "baseline_pds": 0.6641039051603904,
+        "kolf_pds": 0.6571478382147837,
+        "delta": -0.006956066945606696,
+        "baseline_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.6486227336122733,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.7132147838214785,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.6381624825662483,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.6737273361227336,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.646792189679219,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "kolf_query_folds": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "pds": 0.6309274755927476,
+            "targets_sha256": "9bec1022a89beafed66fa0db3382035916ec0256600b89c4994e5098d5304f22",
+            "gallery_size": 240
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "pds": 0.7212343096234309,
+            "targets_sha256": "788401b6d8ee3419882df1fe62d55fab5ad5c57025d9bf583866ba10309523fe",
+            "gallery_size": 240
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "pds": 0.6564679218967922,
+            "targets_sha256": "3669c86e10a0aeea27e7e23275319d90cd36caac23d6c798868539a91df724dd",
+            "gallery_size": 240
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "pds": 0.6273535564853557,
+            "targets_sha256": "5cd37a7c2035641d748064ba32f3e2e2fa46349145c8342a42f3b8ba86c9227f",
+            "gallery_size": 240
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "pds": 0.6497559274755927,
+            "targets_sha256": "9291ff1f0dea0e8183cdb1af9699413e91cccdbcc11e18b99fa1fc290e0e55bb",
+            "gallery_size": 240
+          }
+        ],
+        "fold_deltas": [
+          {
+            "fold": 0,
+            "n_queries": 48,
+            "delta": -0.01769525801952565
+          },
+          {
+            "fold": 1,
+            "n_queries": 48,
+            "delta": 0.00801952580195242
+          },
+          {
+            "fold": 2,
+            "n_queries": 48,
+            "delta": 0.01830543933054385
+          },
+          {
+            "fold": 3,
+            "n_queries": 48,
+            "delta": -0.04637377963737788
+          },
+          {
+            "fold": 4,
+            "n_queries": 48,
+            "delta": 0.002963737796373711
+          }
+        ]
+      },
+      "exp055_shared_axis": {
+        "baseline_pds": 0.6641039051603905,
+        "kolf_pds": 0.657339609483961,
+        "delta": -0.0067642956764295695
+      }
+    }
+  ],
+  "peak_rss_gib": 3.9920272827148438
+}

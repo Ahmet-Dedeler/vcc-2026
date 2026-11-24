@@ -1,0 +1,25 @@
+{
+  "created_before_source_effect_loading": false,
+  "experiment": "125-hierarchical-panel-posterior",
+  "files": {
+    "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FAILURE_RECOVERY.v1.json": "b671f6be00932768117dd080d9177a59f0aade52a90e9737a9c26dea63d6bf9f",
+    "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FREEZE.v1.json": "3f28202bdd8a3f52f3cfe4a3fc377062cb7164f201d6a699439e90f8681a7988",
+    "experiments/125-hierarchical-panel-posterior/PREREGISTRATION.sha256": "ac26a83f1a8a3340e17c9a0ae77f7261e402656ebf6b09d123199fd40cd5b873",
+    "experiments/125-hierarchical-panel-posterior/README.md": "0b2c09d4706ea7247f989e95c31b4913fbb8f80d178ea8abab684446af8a7b45",
+    "experiments/125-hierarchical-panel-posterior/SOURCE_ONLY_AUTHORIZATION.json": "1be3ba7c0ce38394e7a178f5c9e1ebfee35a54cbf503bbaa23bda14ed9338c73",
+    "experiments/125-hierarchical-panel-posterior/freeze_implementation.py": "9c5b25977af3136bbb77984c5da887417cf24727fa37005abfc96d31be15afb4",
+    "experiments/125-hierarchical-panel-posterior/freeze_plans.py": "21776d0493d226999491ae71568c4846e1da28ecc9c555b2f0f5cb26ced12d38",
+    "experiments/125-hierarchical-panel-posterior/preregistered_protocol.json": "383e4f857746ee4957b35550b03be99ef0378bc606e07f8ff9df545103147509",
+    "experiments/125-hierarchical-panel-posterior/run.py": "4c0e893531f4ae5eb3c8e69d872964a1de1bcaa4e1585b1567d557e21904a7c2",
+    "experiments/125-hierarchical-panel-posterior/test_run.py": "7f0cc7114206c42353fdf63e6e9feb9aff11922c80bed136246bfd25e7a34442",
+    "experiments/125-hierarchical-panel-posterior/verify.py": "4a1edbc286fd451f7d5b528ff6eef8632bc9b6b54a213b264639a3e68cea8012"
+  },
+  "implementation_recovery": {
+    "path": "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FAILURE_RECOVERY.v1.json",
+    "sha256": "b671f6be00932768117dd080d9177a59f0aade52a90e9737a9c26dea63d6bf9f"
+  },
+  "phase": "source_only_nested_evaluation",
+  "plan_freeze_manifest_sha256": "51d06dd0d6275dbb6ae1471a9a5f9319cde16a19039dbe01c08999e3c4d4b5e4",
+  "schema_version": 1,
+  "scientific_spec_frozen_before_source_effect_loading": true
+}

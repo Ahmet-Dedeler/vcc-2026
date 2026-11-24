@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "experiment": "152-gene-consensus-ramp",
+  "status": "authorized_once_source_only",
+  "provenance_date": "2026-08-31",
+  "provenance_basis": "Created Monday, August 31, 2026 before Experiments 150 and 151 outcomes existed; host clock is known unreliable.",
+  "outcome_state_at_authorization": {
+    "experiment_150_results_json_existed": false,
+    "experiment_151_results_json_existed": false,
+    "experiment_150_candidate_was_still_running": true,
+    "experiment_150_and_151_scoring_outputs_were_not_read": true
+  },
+  "builder": {
+    "path": "experiments/152-gene-consensus-ramp/build_candidate.py",
+    "sha256": "c0f6e56b5b71c0d2cfa26c0463588b951fbf91f249e3a2481ff083dc2fcea4f8"
+  },
+  "bindings_sha256": {
+    "experiments/152-gene-consensus-ramp/PREREGISTRATION.v1.json": "e560d0acca01d318490f6fc70e0d362222e6f7555f3174924e06db75c21b6f25",
+    "experiments/152-gene-consensus-ramp/PREREGISTRATION.v1.sha256": "92e88d1981d7b5427daf87245510d8f524d8bf5d12e45118117228ad495ed2c1",
+    "experiments/152-gene-consensus-ramp/test_experiment152.py": "932a9548ea04864e9536cf64c7302b03c934953e72f661939b50cd15b72d9ff8",
+    "experiments/149-dual-moment-hek293t/work/source-build-v1/effects.npz": "cd0e6854fdf4584c257973571b5aafc3025dac2e0060789bd268b192b5afbe28",
+    "experiments/150-dual-moment-score-level-hct116/work/source-build-v1/effects.npz": "edf55db4eac6aaae4dc8c11c1e03681838eb225dfde317d52bc9bd3d7c8f69cd",
+    "experiments/150-dual-moment-score-level-hct116/work/source-build-v1/build-report.json": "9aa9ba42b14ccd043916e0c90b4ac05cbf6d8101ec0076cb8fd7d62549ecfbd6",
+    "experiments/147-dual-moment-emitter/dual_moment.py": "89dda8f617261f9b4cfb6ba44cb8ee85db41c3c55adf0e46991be7c5b81e5bcd",
+    "experiments/147-dual-moment-emitter/build_candidates.py": "7ccac4e7fba73be3d69c1d7f4e7343cdbd5e11f3156a4c2125ef005866c699b0",
+    "experiments/149-dual-moment-hek293t/build_predictions.py": "a8b84bb6fbce9c9cf2eb712c3e437426dc174f450026b53b074f26f0e512859d",
+    "scripts/make_submission_pm_cd4.py": "7562cf5a16fd751c55ddf248e05f2e4281f907e27be0a5bb9da959d61991b62b",
+    "data/harness/orion-hct116-thinned.h5ad": "04f98cd764bfa428cae4cd1060e814a327cdcf1a2167e6485d7c57646403b401",
+    "data/harness/orion-hct116-thinned.h5ad.meta.json": "98e0d4577d0133d02e61272ed2d24ac5e75b2bcaa84027a6c2c26cacb5f075ff"
+  },
+  "authorized_action": "Build exactly one source-only Experiment 152 gene-ramp candidate using only held-HCT control expression rows and the frozen source effects.",
+  "required_postconditions": [
+    "all 132 target-wise integer column totals exactly equal the Experiment 150 incumbent construction",
+    "all 132 target-wise scorer pseudobulks exactly equal the Experiment 150 incumbent construction",
+    "exactly 400 prediction rows per target and 18400 unchanged control rows",
+    "zero held-HCT perturbation expression rows read",
+    "no cell-eval2 invocation",
+    "immutable build report, gene-ramp matrix hash, and candidate hash recorded"
+  ],
+  "forbidden": [
+    "read held-HCT perturbation expression rows",
+    "run cell-eval2",
+    "change the gene-wise selector, interpolation, emission parameters, gates, or bootstrap seeds",
+    "prepare a challenge submission",
+    "submit to the challenge"
+  ]
+}

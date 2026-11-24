@@ -1,0 +1,25 @@
+1	0	22	4056	bash experiments/801-lab-folds/cloud801.sh verify
+4	0	74	2595568	bash experiments/801-lab-folds/cloud801.sh prep L3
+2	0	86	2593788	bash experiments/801-lab-folds/cloud801.sh prep L1
+6	0	98	2593820	bash experiments/801-lab-folds/cloud801.sh prep L5
+3	0	110	2594284	bash experiments/801-lab-folds/cloud801.sh prep L2
+14	0	116	4880176	bash experiments/810-strong-direction/cloud/job810.sh L3/k562_gwps
+5	0	124	2594168	bash experiments/801-lab-folds/cloud801.sh prep L4
+8	0	127	4880372	bash experiments/810-strong-direction/cloud/job810.sh L1/k562_gwps
+16	0	129	5401100	bash experiments/810-strong-direction/cloud/job810.sh L3/orion_hek293t
+15	0	129	5362112	bash experiments/810-strong-direction/cloud/job810.sh L3/orion_hct116
+7	0	135	2594140	bash experiments/801-lab-folds/cloud801.sh prep L6
+20	0	137	4879024	bash experiments/810-strong-direction/cloud/job810.sh L5/k562_gwps
+10	0	139	5391112	bash experiments/810-strong-direction/cloud/job810.sh L1/orion_hek293t
+9	0	140	5372412	bash experiments/810-strong-direction/cloud/job810.sh L1/orion_hct116
+11	0	149	4879372	bash experiments/810-strong-direction/cloud/job810.sh L2/k562_gwps
+22	0	150	5400516	bash experiments/810-strong-direction/cloud/job810.sh L5/orion_hek293t
+21	0	152	5363004	bash experiments/810-strong-direction/cloud/job810.sh L5/orion_hct116
+13	0	161	5409972	bash experiments/810-strong-direction/cloud/job810.sh L2/orion_hek293t
+12	0	161	5357088	bash experiments/810-strong-direction/cloud/job810.sh L2/orion_hct116
+17	0	167	4879616	bash experiments/810-strong-direction/cloud/job810.sh L4/k562_gwps
+23	0	177	4880056	bash experiments/810-strong-direction/cloud/job810.sh L6/k562_gwps
+19	0	179	5400204	bash experiments/810-strong-direction/cloud/job810.sh L4/orion_hek293t
+18	0	179	5361868	bash experiments/810-strong-direction/cloud/job810.sh L4/orion_hct116
+24	0	187	5371888	bash experiments/810-strong-direction/cloud/job810.sh L6/orion_hct116
+25	0	188	5391320	bash experiments/810-strong-direction/cloud/job810.sh L6/orion_hek293t

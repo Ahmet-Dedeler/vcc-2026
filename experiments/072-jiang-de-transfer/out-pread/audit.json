@@ -1,0 +1,55 @@
+{
+  "archive": "~/Code/virtual-cell-challenge-2026/data/external/jiang2025/DE_results_all_pathway.zip",
+  "archive_bytes": 324112587,
+  "archive_md5": "f077cba680a1affc599f5153d99b0e45",
+  "archive_sha256": "d2f6d920abaf5e05de6e5343acdfae6a18537d23bf9003e80aa73cce97193c80",
+  "cell_lines": [
+    "A549",
+    "BXPC3",
+    "HAP1",
+    "HT29",
+    "K562",
+    "MCF7"
+  ],
+  "de_table_files": 271,
+  "expected_md5": "f077cba680a1affc599f5153d99b0e45",
+  "gene_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+  "mapped_vcc_genes_union": 9540,
+  "panel_axis_sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4",
+  "panel_target_count": 9,
+  "panel_target_files": 10,
+  "panel_targets": [
+    "ELK1",
+    "FOXO4",
+    "IFNAR2",
+    "IFNGR2",
+    "MED15",
+    "MTF1",
+    "SMARCA5",
+    "STAT6",
+    "ZNF22"
+  ],
+  "pathways": {
+    "IFNB": 61,
+    "IFNG": 59,
+    "INS": 44,
+    "TGFB1": 52,
+    "TNFA": 55
+  },
+  "peak_rss_gib_after_audit": 0.0735015869140625,
+  "proxy_targets_shared_all_banks": 171,
+  "shared_panel_target_count_all_banks": 9,
+  "shared_panel_targets_all_banks": [
+    "ELK1",
+    "FOXO4",
+    "IFNAR2",
+    "IFNGR2",
+    "MED15",
+    "MTF1",
+    "SMARCA5",
+    "STAT6",
+    "ZNF22"
+  ],
+  "unique_targets": 218,
+  "zip_entries_total": 289
+}

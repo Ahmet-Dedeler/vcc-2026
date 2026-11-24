@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-31",
+  "stage": "after_v5_k562_source_evaluation_before_any_published_orion_build",
+  "finding": [
+    "The v5 K562 source build and evaluation reproduced the prior source-only statistics exactly but are not accepted into the replacement chain.",
+    "The Arrow dataset scanner still decoded the one-row-group nested Orion Parquet columns too eagerly. The HCT116 process tree reached 22.18 GiB before batch 20 and the 18 GiB guard terminated it.",
+    "No HCT116 final donor directory was published. Stale lock files were removed only after the recorded process no longer existed.",
+    "A Polars 1.43.2 lazy streaming probe on the largest HCT116 file decoded all four required columns for 950 eligible cells at 3.83 GiB peak.",
+    "On HCT116_Batch106.parquet, the former whole-file reader and the Polars reader produced bit-identical SHA-256 hashes for the 613 by 4,992 response sums, target cell counts, and target total UMI. Peak RSS was 4.211 GiB for whole-file reading and 1.776 GiB for Polars."
+  ],
+  "correction": {
+    "orion_reader": "Use polars.scan_parquet with parallel none, low_memory true, rechunk false, cache false, the unchanged eligibility and target filters, and collect_batches with engine streaming and chunk_size 256.",
+    "aggregation": "Convert each returned small frame to Arrow and apply the unchanged float64 sparse target and response aggregation, then sum chunks within the same physical GEM-batch file.",
+    "real_batch_equivalence": {
+      "source": "data/external/orion/data/HCT116_Batch106.parquet",
+      "values_sha256": "7b0229bc08afaadda6d114bf84e92e97f1b286ce8f02f52af2e62410302f35e2",
+      "cells_sha256": "5e104747608839e940630bd214825cee7122ab5d77d4be237f4bef75f3427200",
+      "umi_sha256": "d822bfde6410cdcb53410f0b5446149e96f715ab71b22b13f8cf19aae9b47efb"
+    },
+    "scientific_contract": "Target eligibility, source rows, total UMI, response coordinates, duplicate-symbol rule, split assignments, arithmetic, reconstruction tolerance, operators, nulls, and gates remain unchanged.",
+    "replacement_authorization": "SOURCE_ONLY_FREEZE_AUTHORIZATION.v6.json",
+    "replacement_freeze": "work/preoutcome-freeze-v4",
+    "replacement_source_build": "work/source-build-v4",
+    "replacement_source_evaluation": "work/source-evaluation-v4",
+    "replacement_source_gate": "work/source-gate-v4"
+  },
+  "access_state": {
+    "k562_v3_source_build_completed": true,
+    "k562_v3_source_evaluation_completed": true,
+    "hct116_source_expression_opened": true,
+    "hct116_final_artifact_published": false,
+    "hek293t_source_expression_opened": false,
+    "development_613_outcomes_opened": false,
+    "sealed_410_outcomes_opened": false,
+    "reserved_confirmation_expression_opened": false,
+    "count_generation": false,
+    "cell_eval2": false,
+    "challenge_build": false,
+    "submission": false
+  }
+}

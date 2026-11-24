@@ -1,0 +1,13 @@
+{
+  "expected_bytes": 574395233,
+  "expected_md5": "3f6ce4317e3a0091978ae5cb8fbf05a3",
+  "record": 10833191,
+  "sha256": {
+    "data/challenge/gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "experiments/333-genept-feature-feasibility/PREREGISTRATION.md": "c850a91f48f24f18dd8752288c89120170b33af236dafd4a00efd53b4cb448eb",
+    "experiments/333-genept-feature-feasibility/acquire333.py": "f378ccaf7adcd465dccb6d1b4797c0633850e399ae95b44956f9ef4757509fac",
+    "experiments/333-genept-feature-feasibility/test333.py": "d89a572a1fb5cebff2776d4219484f43c0a180904a5d57c5d7329c398f60d76e",
+    "uv.lock": "2e458aacefa51a18d1057e09f4984357ad5340674466047350e7fb12a163d78f"
+  }
+}

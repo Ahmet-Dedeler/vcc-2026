@@ -1,0 +1,107 @@
+{
+  "recorded_at": "2026-08-30",
+  "state_repository": {
+    "url": "https://github.com/ArcInstitute/state.git",
+    "commit": "9bbfe78a434a55205e4de834e1ea99f85f7a3add",
+    "commit_date": "2026-07-23T17:53:03-07:00"
+  },
+  "official_notebook": {
+    "google_drive_id": "1QKOtYP7bMpdgDJEipDxaJqOchv7oQ-_l",
+    "sha256": "0b3888b9a36e6fbfc056b9e5585d825aa5a97a92f34d3bc2ff69cba064f21422",
+    "source_model_profile": "state",
+    "recorded_output_profile_match": "state_sm",
+    "recorded_output_parameter_bytes_gib": 0.61,
+    "recorded_output_cell_set_len": 128,
+    "recorded_output_hidden_dim": 672,
+    "recorded_output_transformer_layers": 4,
+    "recorded_output_training_throughput_steps_per_second_approx": 1.25
+  },
+  "support_archive": {
+    "url": "https://storage.googleapis.com/vcc_data_prod/datasets/state/competition_support_set.zip",
+    "generation": "1763329752965344",
+    "last_modified": "2025-11-16T21:49:12Z",
+    "content_length": 8716992349,
+    "etag": "\"-CODBsJzT95ADEAI=\"",
+    "crc32c_base64": "MBP7uA==",
+    "component_count": 32,
+    "sha256": "f1d5fd56a2eee240e5585fac52bb75b0b830a7be6a5f6de1bf773bff4f507f7c",
+    "uncompressed_bytes": 48691267232,
+    "status": "verified_and_extracted",
+    "manifest": "experiments/106-state-baseline/bundle-manifest.json"
+  },
+  "support_view": {
+    "path": "data/external/state-vcc/competition_support_set-log1p",
+    "manifest": "experiments/106-state-baseline/support-view-manifest.json",
+    "source_starter_toml_sha256": "e9b3d0dc3be7b78002bce40e49d3a0f1f4d1ed17cf5af591786ade6538cf85a9",
+    "change": "APFS-cloned files with missing empty AnnData uns/log1p metadata added to five training donor files"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "uv_lock_sha256": "ce7ee30ac4dbcfbb879500747ce04d0e310c87fafbff6c09eff36d2064d588a1",
+    "torch": "2.13.0",
+    "transformers": "5.16.1",
+    "mps_built": true,
+    "mps_available": true,
+    "upstream_tests": {
+      "passed": 37,
+      "failed": 0
+    },
+    "mps_runtime_patch": {
+      "path": "experiments/106-state-baseline/mps-runtime.patch",
+      "sha256": "4500fe7a0d099e917410e129288ee3a64cde8044382df4104e73c8badb8059e5",
+      "opt_in_environment_variable": "STATE_USE_MPS=1"
+    },
+    "architecture_smoke": {
+      "implementation": "experiments/106-state-baseline/benchmark_architecture.py",
+      "implementation_sha256": "d7d68b7f82c76605395357518802fecb42d40e5eb6825114f9590613c37920eb",
+      "cpu_fallback_enabled": false,
+      "state_sm": {
+        "artifact": "experiments/106-state-baseline/state-sm-architecture-smoke.json",
+        "artifact_sha256": "2710b98edbda554cdb74eae13e760fe282a97efd023934eb772e7db2e54f83bb",
+        "parameters": 162626484,
+        "parameter_bytes": 650505936,
+        "cell_set_len": 128,
+        "mps_driver_allocated_bytes": 3272327168,
+        "optimization_step_seconds": 0.14628437500505242,
+        "status": "passed"
+      },
+      "state": {
+        "artifact": "experiments/106-state-baseline/state-architecture-smoke.json",
+        "artifact_sha256": "7637bd3704c2508ca8abb5c662366526571b292c268982be7a73738b2e796cc9",
+        "parameters": 213551124,
+        "parameter_bytes": 854204496,
+        "cell_set_len": 512,
+        "mps_driver_allocated_bytes": 4488691712,
+        "optimization_step_seconds": 0.23232395900413394,
+        "status": "passed"
+      }
+    },
+    "real_data_smoke": {
+      "state_batch_1_steps_2_peak_rss_gib": 3.63,
+      "state_batch_16_steps_2_peak_rss_gib": 5.72,
+      "state_sm_batch_1_steps_2_peak_rss_gib": 1.36,
+      "state_sm_batch_16_steps_10_peak_rss_gib": 4.61,
+      "status": "passed"
+    }
+  },
+  "active_training": {
+    "profile": "state_sm",
+    "max_steps": 20000,
+    "batch_size": 16,
+    "num_workers": 8,
+    "device": "mps",
+    "cpu_fallback": false,
+    "run_directory": "experiments/106-state-baseline/runs/official-state_sm",
+    "selection_rule": "fixed step 20000; never select best.ckpt on held-out HepG2"
+  },
+  "live_motivation_snapshot": {
+    "observed_at": "2026-08-30",
+    "leaderboard_entries": 447,
+    "state_baseline_team": "GZ YAI",
+    "state_baseline_rank": 2,
+    "state_baseline_score_avg": 0.18602908926412512,
+    "state_baseline_model_name": "STATE baseline",
+    "ahmet_rank": 10,
+    "ahmet_score_avg": 0.1704242443095885
+  }
+}

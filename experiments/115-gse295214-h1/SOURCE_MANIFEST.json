@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "dataset": "GSE295214",
+  "recorded_at": "2026-08-30",
+  "scope": "metadata_only",
+  "authorization": {
+    "download_small_public_metadata": true,
+    "read_public_post_qc_obs_metadata_by_bounded_http_range": true,
+    "download_geo_raw_archive": false,
+    "download_full_public_pseudobulk_database": false,
+    "open_vcc_held_perturbation_truth": false,
+    "model_fitting": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_submission": false
+  },
+  "large_download_gate": {
+    "confirmation_token": "I_CONFIRM_GSE295214_LARGE_DOWNLOAD",
+    "default_authorized": false,
+    "applies_to": [
+      "geo_raw_archive",
+      "public_pseudobulk_database"
+    ]
+  },
+  "official_sources": {
+    "geo": {
+      "series": "GSE295214",
+      "series_status": "Public on May 05 2026",
+      "series_last_update": "Aug 06 2026",
+      "cell_line": "H1 hESC",
+      "assay": "CRISPRi Perturb-seq, 10x 5-prime scRNA-seq",
+      "sample_count": 85,
+      "file_count": 85
+    },
+    "paper": {
+      "doi": "10.64898/2026.05.16.725005",
+      "version": "v1",
+      "posted": "2026-05-18",
+      "license": "CC BY 4.0",
+      "reported_target_genes": 2978,
+      "reported_sgrnas": 6638,
+      "reported_negative_control_sgrnas": 370,
+      "reported_profiled_cells_approx": 1300000,
+      "reported_final_qc_removals": 259
+    },
+    "code": {
+      "analysis_repository": "https://github.com/xingjiepan/SCMG_scripts",
+      "analysis_commit": "aa848b9d517071d27b141e058e9bdae1966a869f",
+      "analysis_license": "MIT",
+      "model_repository": "https://github.com/xingjiepan/SCMG",
+      "model_commit": "29f44c98c5621d575a058b549e0fdde0ba31a730",
+      "model_license": "MIT"
+    },
+    "public_derived_data": {
+      "repository": "xingjiepan/SCMG_data",
+      "revision": "1d3f28d966772dcf75870beac052923efdc078c5",
+      "license": "MIT"
+    }
+  },
+  "assets": {
+    "geo_file_inventory": {
+      "group": "metadata",
+      "filename": "GSE295214_filelist.txt",
+      "local_path": "data/external/gse295214/GSE295214_filelist.txt",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE295nnn/GSE295214/suppl/filelist.txt",
+      "size_bytes": 8469,
+      "sha256": "e95eb3e35e75bee58d16f709a9c7e63b85aff7a73c16ec722beb419e9f33db14"
+    },
+    "geo_family_soft": {
+      "group": "metadata",
+      "filename": "GSE295214_family.soft.gz",
+      "local_path": "data/external/gse295214/GSE295214_family.soft.gz",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE295nnn/GSE295214/soft/GSE295214_family.soft.gz",
+      "size_bytes": 6409,
+      "sha256": "999251e8158a8b11e94fc4c6344fb731a026e50e742751c849d976acfc6be1d8"
+    },
+    "supplementary_table_1": {
+      "group": "metadata",
+      "filename": "media-1.xlsx",
+      "local_path": "data/external/gse295214/media-1.xlsx",
+      "url": "https://www.biorxiv.org/content/biorxiv/early/2026/05/18/2026.05.16.725005/DC1/embed/media-1.xlsx?download=true",
+      "size_bytes": 27761,
+      "sha256": "10ec8a241ff665d50b070d013357eb079d089476c07885bca98e7f53df82012b"
+    },
+    "supplementary_table_2": {
+      "group": "metadata",
+      "filename": "media-2.xlsx",
+      "local_path": "data/external/gse295214/media-2.xlsx",
+      "url": "https://www.biorxiv.org/content/biorxiv/early/2026/05/18/2026.05.16.725005/DC2/embed/media-2.xlsx?download=true",
+      "size_bytes": 10067,
+      "sha256": "ddcc50702497e062f4083390f922c6460a77f00832f713322b679d84f419fdeb"
+    },
+    "supplementary_table_3": {
+      "group": "metadata",
+      "filename": "media-3.xlsx",
+      "local_path": "data/external/gse295214/media-3.xlsx",
+      "url": "https://www.biorxiv.org/content/biorxiv/early/2026/05/18/2026.05.16.725005/DC3/embed/media-3.xlsx?download=true",
+      "size_bytes": 115452,
+      "sha256": "17558dd7c747bd1f1e52cb925e62b34a5d40db38b42cd3068b4721d5804c9f83"
+    },
+    "supplementary_table_4": {
+      "group": "metadata",
+      "filename": "media-4.xlsx",
+      "local_path": "data/external/gse295214/media-4.xlsx",
+      "url": "https://www.biorxiv.org/content/biorxiv/early/2026/05/18/2026.05.16.725005/DC4/embed/media-4.xlsx?download=true",
+      "size_bytes": 26255,
+      "sha256": "94b78834ca5e22263ce95ebea8cb5414296c528b8e92b946de7ef97fb93df15d"
+    },
+    "supplementary_table_5": {
+      "group": "metadata",
+      "filename": "media-5.xlsx",
+      "local_path": "data/external/gse295214/media-5.xlsx",
+      "url": "https://www.biorxiv.org/content/biorxiv/early/2026/05/18/2026.05.16.725005/DC5/embed/media-5.xlsx?download=true",
+      "size_bytes": 6444,
+      "sha256": "0a5c57770a6456d8d544b93bee8b9b2a4752d41f251167bff519b9161f3224a0"
+    },
+    "supplementary_table_6": {
+      "group": "metadata",
+      "filename": "media-6.xlsx",
+      "local_path": "data/external/gse295214/media-6.xlsx",
+      "url": "https://www.biorxiv.org/content/biorxiv/early/2026/05/18/2026.05.16.725005/DC6/embed/media-6.xlsx?download=true",
+      "size_bytes": 909719,
+      "sha256": "301405e9bfcec18ed8b73da1fb5f335fad44f24f1a1e79f9e4f728d1addc1b99"
+    },
+    "post_qc_target_axis": {
+      "group": "derived_metadata",
+      "filename": "Pan2025_hESC_post_qc_targets.txt",
+      "local_path": "data/external/gse295214/Pan2025_hESC_post_qc_targets.txt",
+      "source_asset": "public_pseudobulk_database",
+      "size_bytes": 14572,
+      "sha256": "7060076272d411d4ee00b898cc26eedcb1eaaac5f5e94e2c60f3b45978320747",
+      "row_count": 2354
+    },
+    "geo_raw_archive": {
+      "group": "large",
+      "filename": "GSE295214_RAW.tar",
+      "local_path": "data/external/gse295214/GSE295214_RAW.tar",
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE295nnn/GSE295214/suppl/GSE295214_RAW.tar",
+      "size_bytes": 8340520960,
+      "sha256": null,
+      "sha256_status": "not_source_pinned",
+      "downloaded": false
+    },
+    "public_pseudobulk_database": {
+      "group": "large",
+      "filename": "pseudo_bulk_perturbation_database.h5ad",
+      "local_path": "data/external/gse295214/pseudo_bulk_perturbation_database.h5ad",
+      "url": "https://huggingface.co/datasets/xingjiepan/SCMG_data/resolve/1d3f28d966772dcf75870beac052923efdc078c5/data/pseudo_bulk_perturbation_database.h5ad",
+      "size_bytes": 4425260319,
+      "sha256": "0754d6206fe045744dfd9b21eb37c8e3435152c76b158b9810a84c64a029c0ac",
+      "downloaded": false,
+      "metadata_range_access_only": true,
+      "range_byte_cap": 67108864
+    }
+  },
+  "local_axes": {
+    "vcc_2026_panel": {
+      "path": "data/challenge/pert_counts.csv",
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+      "row_count": 300
+    },
+    "vcc_2025_h1_donor_targets": {
+      "path": "data/donors/h1_2025/perts.txt",
+      "sha256": "977b808e723c73eea5dc4a60cec6e71512387dc520512bf133d3b18fce7287dd",
+      "row_count": 255
+    }
+  },
+  "expected_audit": {
+    "geo_h5_member_count": 85,
+    "geo_h5_member_bytes": 8340448451,
+    "library_workbook_rows": 43451,
+    "library_unique_oligo_sequences": 6638,
+    "library_unique_negative_controls": 370,
+    "library_literal_target_labels": 2995,
+    "post_qc_targets": 2354,
+    "vcc_panel_library_overlap": 66,
+    "vcc_panel_post_qc_overlap": 64,
+    "vcc_panel_post_qc_new_vs_vcc2025_h1": 57,
+    "vcc2025_h1_post_qc_overlap": 96,
+    "vcc_panel_library_targets_removed_by_qc": [
+      "PARP3",
+      "SYVN1"
+    ]
+  }
+}

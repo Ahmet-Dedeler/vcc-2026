@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "experiment": "119-altair-a549",
+  "source": {
+    "name": "Altair - A549 1k scRNA",
+    "organism": "Homo sapiens",
+    "cell_line": "A549 lung adenocarcinoma",
+    "perturbation": "CROP-seq CRISPR knockout",
+    "duration": "89h",
+    "collection_id": "6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3",
+    "dataset_id": "7006c6c0-6487-43c5-b6ca-735acebb4375",
+    "paper_doi": "10.64898/2026.06.01.728087"
+  },
+  "license": {
+    "paper_analysis_bundle": "CC-BY-4.0",
+    "analysis_code": "BSD-3-Clause",
+    "public_h5ad_dataset_specific_license_observed": null
+  },
+  "scope": {
+    "source_acquisition": true,
+    "source_audit": true,
+    "compact_source": true,
+    "modeling": false,
+    "held_truth": false,
+    "evaluation": false,
+    "counts": false,
+    "submission": false
+  }
+}

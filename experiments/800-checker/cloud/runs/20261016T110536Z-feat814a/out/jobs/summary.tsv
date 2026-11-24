@@ -1,0 +1,1 @@
+1	0	60	2596760	uv run python experiments/814-panel-rule/feat814.py --rules R0,R1 --n 1000 --out experiments/814-panel-rule/work/run1

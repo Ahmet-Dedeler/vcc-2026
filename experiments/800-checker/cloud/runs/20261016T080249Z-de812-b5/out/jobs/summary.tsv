@@ -1,0 +1,2 @@
+1	0	10	229284	uv run python experiments/812-de-signs/rates812.py
+2	0	10	220432	uv run python experiments/812-de-signs/head812.py

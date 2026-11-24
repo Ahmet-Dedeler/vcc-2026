@@ -1,0 +1,36 @@
+{
+ "experiment": "713-labc-dose-partners (part 2: H1 dose)",
+ "written": "2026-10-16T12:00:35Z (by the clock, before any number of these configurations exists)",
+ "by": "science session [d80a10], on the coordinator [2d6f46]'s ask (10-16 ~12:00Z): fallback slot (2), the H1 dose partner",
+ "purpose": "Arc-drawn held-out prices of H1 x2.5 and x3 at CD4 x1 (October's CD4 dose) against the October composition h2c1, to calibrate 708's day-of H1 grid; a slot only if LABC says the step is not HARM and 710's board read is not HARM.",
+ "surface": "LABC rebuilt by the lab with dump801 --designs h2.5c1,h3c1 (every other array byte-identical to the current LABC dumps; the three new dump shas are added to this file BEFORE any number is read)",
+ "dumps": {
+  "k562_gwps": "ba5433a259efcc0b006110197f60cfe15a2b1d660e1d4d0ffac911856ee0440f",
+  "orion_hct116": "f48b21de135abda5714e9d66947c98f952028667a4dc4bae1a7e35572b202da4",
+  "orion_hek293t": "bc524dc5b88d49a9563e4c37eafc3f1e7f8b6a402aae6f50e715d2de88c5634d"
+ },
+ "scorer": {
+  "path": "experiments/708-def-panel-repricing/score708.py",
+  "sha256": "117a1d7310bb203638809ca551b381a79558996974d5a184efc5a4900c0d7586",
+  "arm": "score708's A:<design> arm: weights wp (the percentile-cap incumbent key), composition fin_<design> against fin (h2c1); q 1.75 row sharpening, minnorm render, ballast KMAX 16; 522 units, k 1, ret 1, mean over 3 folds; leave-top-3-out as score708 computes it"
+ },
+ "configs": [
+  {
+   "name": "A:h2.5c1",
+   "family": "H1/CD4 design",
+   "role": "candidate point",
+   "definition": "FC.final('h2.5c1'): H1 x2.5, CD4 x1 composition (dump708 --designs) vs h2c1, incumbent key"
+  },
+  {
+   "name": "A:h3c1",
+   "family": "H1/CD4 design",
+   "role": "candidate point (the 710 partner's dose)",
+   "definition": "FC.final('h3c1'): H1 x3, CD4 x1 vs h2c1, incumbent key"
+  }
+ ],
+ "ci": "paired target bootstrap within folds (same resampled targets for arm and incumbent), 4,000 draws, seed 7132; mean over 3 folds",
+ "decision_rule": "HARM on LABC (708's veto definition) = mean <= -0.0005 (522 units) with >= 2/3 folds negative. The H1 x3 point gets the fallback slot (2) only if A:h3c1 is NOT HARM on LABC AND 710's A/B/C board read is not HARM (read710's bins). If both A:h2.5c1 and A:h3c1 read <= 0 on the mean (null or negative), science reports so and slot (3) (R-ABC2's seed-only re-roll) takes it. Every number is reported with its best-of-N-corrected lower bound (the lab's N for the family; e(N) x the bootstrap sd).",
+ "tries_note": "Starting Arc-drawn N for the H1/CD4 design family (lab, 10-16): 2 (062, ABCp; not yet on LABC). This adds 2 (N 4).",
+ "dumps_tag": "LABCd (experiments/801-lab-folds/work/dumps/dump708-LABCd-<held>.npz; the lab's run lab801-labcd)",
+ "dumps_added": "2026-10-16T12:57:12Z by the clock, before any number of these configurations exists. Science's own known answer on the files: every array of the original LABC dumps is byte-identical in LABCd (np tobytes), and the only new arrays are fin_h2.5c1 and fin_h3c1."
+}

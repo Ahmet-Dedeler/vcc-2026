@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "experiment": "125-hierarchical-panel-posterior",
+  "date": "2026-08-30",
+  "failed_freeze_path": "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FREEZE.v1.json",
+  "failed_freeze_sha256": "3f28202bdd8a3f52f3cfe4a3fc377062cb7164f201d6a699439e90f8681a7988",
+  "failure_stage": "first observed source-only inner comparator transport before any observed metric, null, bootstrap, result artifact, or candidate selection was produced",
+  "exception": "ExperimentError: production_log1p: transport invariant failed",
+  "diagnosis": {
+    "first_failing_target_index": 2,
+    "first_failing_target": "ADNP",
+    "failed_invariant": "mutable_mass_conservation",
+    "other_invariants_passed": true,
+    "cause": "The implementation first repaired the mutable subset to its original compensated sum and then performed a second repair using a differently ordered whole-panel compensated sum. The second repair changed the mutable-subset sum by floating-point roundoff while preserving the whole-panel sum."
+  },
+  "authorized_mechanical_repair": "Remove the redundant second repair. Define both original and candidate panel totals with the same immutable-plus-mutable compensated partition. Because immutable coordinates are byte-identical and the mutable compensated sum is exact, this proves exact panel mass conservation without changing any transported value after the frozen mutable-sum repair.",
+  "scientific_changes": {
+    "protocol": false,
+    "inputs": false,
+    "family_grouping": false,
+    "target_folds": false,
+    "model_formula": false,
+    "candidate_grid": false,
+    "transport_formula": false,
+    "transport_dose": false,
+    "selection": false,
+    "metrics": false,
+    "null_assignments": false,
+    "bootstrap_assignments": false,
+    "promotion_gates": false
+  },
+  "source_effect_values_opened_before_failure": true,
+  "source_outcomes_or_metrics_observed_before_failure": false,
+  "held_outcomes_accessed": false,
+  "cell_eval2_run": false,
+  "counts_or_submission_built": false,
+  "commit_or_push": false
+}

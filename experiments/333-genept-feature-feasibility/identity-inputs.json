@@ -1,0 +1,12 @@
+{
+  "description_members": [
+    "NCBI_summary_of_genes.json",
+    "NCBI_UniProt_summary_of_genes.json"
+  ],
+  "sha256": {
+    "experiments/333-genept-feature-feasibility/IDENTITY-AUDIT-SCOPE.md": "afdb36d4d28db8b29ab58beef6bb123e314543c10f8da4ac03e1d7e07c356bbc",
+    "experiments/333-genept-feature-feasibility/audit_identity333.py": "fa78393401477e497082afcb86420ecd01b625774e97541f27dfffd3c1837985",
+    "experiments/333-genept-feature-feasibility/canonical-inputs.json": "8cfdc216f11e4f0f237b55401a3cd2211ece69e31376e27339c3ac0070465265",
+    "experiments/333-genept-feature-feasibility/work/canonical-results.json": "f1e2b145a26592b854ebad68fc0ed0d7c8ab3dcfe506cee55377d51d222c01a3"
+  }
+}

@@ -1,0 +1,680 @@
+{
+  "dataset": "GSE295214",
+  "geo_series": {
+    "Series_geo_accession": "GSE295214",
+    "Series_last_update_date": "Aug 06 2026",
+    "Series_overall_design": "Genome-scale CRISPRi Perturb-seq experiment in hESCs. Cells were transduced with a lentiviral library targetting thousands of genes and were analyzed by scRNA-seq.",
+    "Series_status": "Public on May 05 2026",
+    "Series_submission_date": "Apr 21 2025",
+    "Series_title": "Global cell-state and gene-program representations reveal conserved and context-specific perturbation responses of cells",
+    "Series_web_link": "https://doi.org/10.64898/2026.05.16.725005",
+    "sample_count": "85",
+    "sample_h5_url_count": "85"
+  },
+  "interpretation": {
+    "full_download_performed": false,
+    "held_truth_opened": false,
+    "large_source_recommendation": "acquire",
+    "reason": "64 VCC-panel targets survive the authors' final H1 QC, including 57 targets absent from the existing VCC-2025 H1 donor axis."
+  },
+  "inventory": {
+    "archive_size_bytes": 8340520960,
+    "h5_member_bytes": 8340448451,
+    "h5_member_count": 85,
+    "h5_members": [
+      {
+        "name": "GSM8943713_jan_10_GEX_A7_sg_H6_filtered_feature_bc_matrix.h5",
+        "size_bytes": 98759993
+      },
+      {
+        "name": "GSM8943714_jan_10_GEX_B7_sg_G6_filtered_feature_bc_matrix.h5",
+        "size_bytes": 101097499
+      },
+      {
+        "name": "GSM8943715_jan_10_GEX_C7_sg_F6_filtered_feature_bc_matrix.h5",
+        "size_bytes": 26477774
+      },
+      {
+        "name": "GSM8943716_jan_10_GEX_D7_sg_E6_filtered_feature_bc_matrix.h5",
+        "size_bytes": 94433268
+      },
+      {
+        "name": "GSM8943717_jan_10_GEX_E7_sg_D6_filtered_feature_bc_matrix.h5",
+        "size_bytes": 107429644
+      },
+      {
+        "name": "GSM8943718_jan_10_GEX_G7_sg_B6_filtered_feature_bc_matrix.h5",
+        "size_bytes": 110671293
+      },
+      {
+        "name": "GSM8943719_jan_10_GEX_H7_sg_A6_filtered_feature_bc_matrix.h5",
+        "size_bytes": 106796563
+      },
+      {
+        "name": "GSM8943720_jan_12_GEX_A8_sg_H5_filtered_feature_bc_matrix.h5",
+        "size_bytes": 87346774
+      },
+      {
+        "name": "GSM8943721_jan_12_GEX_B8_sg_G5_filtered_feature_bc_matrix.h5",
+        "size_bytes": 93843275
+      },
+      {
+        "name": "GSM8943722_jan_12_GEX_C8_sg_F5_filtered_feature_bc_matrix.h5",
+        "size_bytes": 104426637
+      },
+      {
+        "name": "GSM8943723_jan_12_GEX_D8_sg_E5_filtered_feature_bc_matrix.h5",
+        "size_bytes": 98217826
+      },
+      {
+        "name": "GSM8943724_jan_12_GEX_E8_sg_D5_filtered_feature_bc_matrix.h5",
+        "size_bytes": 109785299
+      },
+      {
+        "name": "GSM8943725_jan_12_GEX_F8_sg_C5_filtered_feature_bc_matrix.h5",
+        "size_bytes": 17971197
+      },
+      {
+        "name": "GSM8943726_jan_12_GEX_G8_sg_B5_filtered_feature_bc_matrix.h5",
+        "size_bytes": 99674683
+      },
+      {
+        "name": "GSM8943727_jan_12_GEX_H8_sg_A5_filtered_feature_bc_matrix.h5",
+        "size_bytes": 102565556
+      },
+      {
+        "name": "GSM8943728_jan_13_GEX_A9_sg_H4_filtered_feature_bc_matrix.h5",
+        "size_bytes": 108010814
+      },
+      {
+        "name": "GSM8943729_jan_13_GEX_B9_sg_G4_filtered_feature_bc_matrix.h5",
+        "size_bytes": 105218317
+      },
+      {
+        "name": "GSM8943730_jan_13_GEX_C9_sg_F4_filtered_feature_bc_matrix.h5",
+        "size_bytes": 106149308
+      },
+      {
+        "name": "GSM8943731_jan_13_GEX_D9_sg_E4_filtered_feature_bc_matrix.h5",
+        "size_bytes": 102513271
+      },
+      {
+        "name": "GSM8943732_jan_13_GEX_E9_sg_D4_filtered_feature_bc_matrix.h5",
+        "size_bytes": 111095146
+      },
+      {
+        "name": "GSM8943733_jan_13_GEX_F9_sg_C4_filtered_feature_bc_matrix.h5",
+        "size_bytes": 128354937
+      },
+      {
+        "name": "GSM8943734_jan_13_GEX_G9_sg_B4_filtered_feature_bc_matrix.h5",
+        "size_bytes": 110132183
+      },
+      {
+        "name": "GSM8943735_jan_13_GEX_H9_sg_A4_filtered_feature_bc_matrix.h5",
+        "size_bytes": 113100406
+      },
+      {
+        "name": "GSM8943736_jan_14_GEX_A10_sg_H3_filtered_feature_bc_matrix.h5",
+        "size_bytes": 84092909
+      },
+      {
+        "name": "GSM8943737_jan_14_GEX_B10_sg_G3_filtered_feature_bc_matrix.h5",
+        "size_bytes": 96671587
+      },
+      {
+        "name": "GSM8943738_jan_14_GEX_C10_sg_F3_filtered_feature_bc_matrix.h5",
+        "size_bytes": 93442232
+      },
+      {
+        "name": "GSM8943739_jan_14_GEX_D10_sg_E3_filtered_feature_bc_matrix.h5",
+        "size_bytes": 87308870
+      },
+      {
+        "name": "GSM8943740_jan_14_GEX_E10_sg_D3_filtered_feature_bc_matrix.h5",
+        "size_bytes": 96904236
+      },
+      {
+        "name": "GSM8943741_jan_14_GEX_F10_sg_C3_filtered_feature_bc_matrix.h5",
+        "size_bytes": 111087429
+      },
+      {
+        "name": "GSM8943742_jan_14_GEX_G10_sg_B3_filtered_feature_bc_matrix.h5",
+        "size_bytes": 100524168
+      },
+      {
+        "name": "GSM8943743_jan_14_GEX_H10_sg_A3_filtered_feature_bc_matrix.h5",
+        "size_bytes": 99534875
+      },
+      {
+        "name": "GSM8943744_jan_16_GEX_A11_sg_H2_filtered_feature_bc_matrix.h5",
+        "size_bytes": 105382070
+      },
+      {
+        "name": "GSM8943745_jan_16_GEX_B11_sg_G2_filtered_feature_bc_matrix.h5",
+        "size_bytes": 108560222
+      },
+      {
+        "name": "GSM8943746_jan_16_GEX_C11_sg_F2_filtered_feature_bc_matrix.h5",
+        "size_bytes": 109411242
+      },
+      {
+        "name": "GSM8943747_jan_16_GEX_D11_sg_E2_filtered_feature_bc_matrix.h5",
+        "size_bytes": 86669020
+      },
+      {
+        "name": "GSM8943748_jan_16_GEX_E11_sg_D2_filtered_feature_bc_matrix.h5",
+        "size_bytes": 115684497
+      },
+      {
+        "name": "GSM8943749_jan_16_GEX_F11_sg_C2_filtered_feature_bc_matrix.h5",
+        "size_bytes": 125704346
+      },
+      {
+        "name": "GSM8943750_jan_16_GEX_G11_sg_B2_filtered_feature_bc_matrix.h5",
+        "size_bytes": 107930839
+      },
+      {
+        "name": "GSM8943751_jan_16_GEX_H11_sg_A2_filtered_feature_bc_matrix.h5",
+        "size_bytes": 118027918
+      },
+      {
+        "name": "GSM8943752_jan_17_GEX_A12_sg_H1_filtered_feature_bc_matrix.h5",
+        "size_bytes": 90307138
+      },
+      {
+        "name": "GSM8943753_jan_17_GEX_B12_sg_G1_filtered_feature_bc_matrix.h5",
+        "size_bytes": 90785033
+      },
+      {
+        "name": "GSM8943754_jan_17_GEX_C12_sg_F1_filtered_feature_bc_matrix.h5",
+        "size_bytes": 88085541
+      },
+      {
+        "name": "GSM8943755_jan_17_GEX_D12_sg_E1_filtered_feature_bc_matrix.h5",
+        "size_bytes": 97914084
+      },
+      {
+        "name": "GSM8943756_jan_17_GEX_E12_sg_D1_filtered_feature_bc_matrix.h5",
+        "size_bytes": 92345220
+      },
+      {
+        "name": "GSM8943757_jan_17_GEX_F12_sg_C1_filtered_feature_bc_matrix.h5",
+        "size_bytes": 122114197
+      },
+      {
+        "name": "GSM8943758_jan_17_GEX_G12_sg_B1_filtered_feature_bc_matrix.h5",
+        "size_bytes": 83908314
+      },
+      {
+        "name": "GSM8943759_jan_17_GEX_H12_sg_A1_filtered_feature_bc_matrix.h5",
+        "size_bytes": 80719457
+      },
+      {
+        "name": "GSM8943760_jan_3_GEX_A1_sg_H12_filtered_feature_bc_matrix.h5",
+        "size_bytes": 96008017
+      },
+      {
+        "name": "GSM8943761_jan_3_GEX_B1_sg_G12_filtered_feature_bc_matrix.h5",
+        "size_bytes": 83536191
+      },
+      {
+        "name": "GSM8943762_jan_3_GEX_C1_sg_F12_filtered_feature_bc_matrix.h5",
+        "size_bytes": 93489069
+      },
+      {
+        "name": "GSM8943763_jan_3_GEX_D1_sg_E12_filtered_feature_bc_matrix.h5",
+        "size_bytes": 99859558
+      },
+      {
+        "name": "GSM8943764_jan_3_GEX_E1_sg_D12_filtered_feature_bc_matrix.h5",
+        "size_bytes": 92574896
+      },
+      {
+        "name": "GSM8943765_jan_3_GEX_F1_sg_C12_filtered_feature_bc_matrix.h5",
+        "size_bytes": 108128658
+      },
+      {
+        "name": "GSM8943766_jan_3_GEX_G1_sg_B12_filtered_feature_bc_matrix.h5",
+        "size_bytes": 91570155
+      },
+      {
+        "name": "GSM8943767_jan_3_GEX_H1_sg_A12_filtered_feature_bc_matrix.h5",
+        "size_bytes": 82356557
+      },
+      {
+        "name": "GSM8943768_jan_4_GEX_A2_sg_H11_filtered_feature_bc_matrix.h5",
+        "size_bytes": 90972293
+      },
+      {
+        "name": "GSM8943769_jan_4_GEX_B2_sg_G11_filtered_feature_bc_matrix.h5",
+        "size_bytes": 82287807
+      },
+      {
+        "name": "GSM8943770_jan_4_GEX_C2_sg_F11_filtered_feature_bc_matrix.h5",
+        "size_bytes": 72863042
+      },
+      {
+        "name": "GSM8943771_jan_4_GEX_D2_sg_E11_filtered_feature_bc_matrix.h5",
+        "size_bytes": 161561509
+      },
+      {
+        "name": "GSM8943772_jan_4_GEX_E2_sg_D11_filtered_feature_bc_matrix.h5",
+        "size_bytes": 98999377
+      },
+      {
+        "name": "GSM8943773_jan_4_GEX_F2_sg_C11_filtered_feature_bc_matrix.h5",
+        "size_bytes": 89264524
+      },
+      {
+        "name": "GSM8943774_jan_4_GEX_G2_sg_B11_filtered_feature_bc_matrix.h5",
+        "size_bytes": 89607437
+      },
+      {
+        "name": "GSM8943775_jan_4_GEX_H2_sg_A11_filtered_feature_bc_matrix.h5",
+        "size_bytes": 114388866
+      },
+      {
+        "name": "GSM8943776_jan_6_GEX_A3_sg_H10_filtered_feature_bc_matrix.h5",
+        "size_bytes": 97516311
+      },
+      {
+        "name": "GSM8943777_jan_6_GEX_B3_sg_G10_filtered_feature_bc_matrix.h5",
+        "size_bytes": 92034104
+      },
+      {
+        "name": "GSM8943778_jan_6_GEX_C3_sg_F10_filtered_feature_bc_matrix.h5",
+        "size_bytes": 95399897
+      },
+      {
+        "name": "GSM8943779_jan_6_GEX_D3_sg_E10_filtered_feature_bc_matrix.h5",
+        "size_bytes": 99890112
+      },
+      {
+        "name": "GSM8943780_jan_6_GEX_E3_sg_D10_filtered_feature_bc_matrix.h5",
+        "size_bytes": 91876952
+      },
+      {
+        "name": "GSM8943781_jan_6_GEX_F3_sg_C10_filtered_feature_bc_matrix.h5",
+        "size_bytes": 117421821
+      },
+      {
+        "name": "GSM8943782_jan_6_GEX_G3_sg_B10_filtered_feature_bc_matrix.h5",
+        "size_bytes": 106526249
+      },
+      {
+        "name": "GSM8943783_jan_6_GEX_H3_sg_A10_filtered_feature_bc_matrix.h5",
+        "size_bytes": 99897851
+      },
+      {
+        "name": "GSM8943784_jan_7_GEX_A4_sg_H9_filtered_feature_bc_matrix.h5",
+        "size_bytes": 89052992
+      },
+      {
+        "name": "GSM8943785_jan_7_GEX_B4_sg_G9_filtered_feature_bc_matrix.h5",
+        "size_bytes": 86298558
+      },
+      {
+        "name": "GSM8943786_jan_7_GEX_C4_sg_F9_filtered_feature_bc_matrix.h5",
+        "size_bytes": 88495481
+      },
+      {
+        "name": "GSM8943787_jan_7_GEX_D4_sg_E9_filtered_feature_bc_matrix.h5",
+        "size_bytes": 86806629
+      },
+      {
+        "name": "GSM8943788_jan_7_GEX_E4_sg_D9_filtered_feature_bc_matrix.h5",
+        "size_bytes": 93967394
+      },
+      {
+        "name": "GSM8943789_jan_7_GEX_F4_sg_C9_filtered_feature_bc_matrix.h5",
+        "size_bytes": 107787554
+      },
+      {
+        "name": "GSM8943790_jan_7_GEX_G4_sg_B9_filtered_feature_bc_matrix.h5",
+        "size_bytes": 96674861
+      },
+      {
+        "name": "GSM8943791_jan_7_GEX_H4_sg_A9_filtered_feature_bc_matrix.h5",
+        "size_bytes": 89178914
+      },
+      {
+        "name": "GSM8943792_jan_8_GEX_A5_sg_H8_filtered_feature_bc_matrix.h5",
+        "size_bytes": 112967402
+      },
+      {
+        "name": "GSM8943793_jan_8_GEX_B5_sg_G8_filtered_feature_bc_matrix.h5",
+        "size_bytes": 91007666
+      },
+      {
+        "name": "GSM8943794_jan_8_GEX_C5_sg_F8_filtered_feature_bc_matrix.h5",
+        "size_bytes": 88179242
+      },
+      {
+        "name": "GSM8943795_jan_8_GEX_D5_sg_E8_filtered_feature_bc_matrix.h5",
+        "size_bytes": 98523039
+      },
+      {
+        "name": "GSM8943796_jan_8_GEX_E5_sg_D8_filtered_feature_bc_matrix.h5",
+        "size_bytes": 109453212
+      },
+      {
+        "name": "GSM8943797_jan_8_GEX_F5_sg_C8_filtered_feature_bc_matrix.h5",
+        "size_bytes": 116837147
+      }
+    ]
+  },
+  "manifest_sha256": "cd57ac5692ce3f3e472067e37226b8f2a786a8f8b0cf271ab08d0915f7169050",
+  "overlaps": {
+    "vcc2025_h1_post_qc": [
+      "ACAT2",
+      "ACLY",
+      "ARPC2",
+      "ATF4",
+      "BIRC2",
+      "C1QBP",
+      "CHMP3",
+      "COX4I1",
+      "COX6C",
+      "CTBP2",
+      "CTNNB1",
+      "CYCS",
+      "DAXX",
+      "DHCR24",
+      "DHX36",
+      "DLG5",
+      "DNMT1",
+      "DPF2",
+      "DPH2",
+      "EHMT2",
+      "EIF4B",
+      "EP300",
+      "EWSR1",
+      "FOXH1",
+      "GSK3B",
+      "HDAC3",
+      "HIRA",
+      "HMGCR",
+      "HMGCS1",
+      "HSP90B1",
+      "HTATSF1",
+      "IGF1R",
+      "INSIG1",
+      "ITGAV",
+      "JAZF1",
+      "KLF10",
+      "LRPPRC",
+      "MAT2A",
+      "MAU2",
+      "MED1",
+      "MED15",
+      "MED19",
+      "MED23",
+      "MED24",
+      "MED25",
+      "METTL17",
+      "METTL3",
+      "MLLT1",
+      "NCK2",
+      "NCKAP1",
+      "NDUFB4",
+      "NDUFB6",
+      "NDUFB9",
+      "NDUFC2",
+      "NGRN",
+      "PAXIP1",
+      "PBX1",
+      "PGAM1",
+      "PSME1",
+      "RBPJ",
+      "RRM1",
+      "RRM2",
+      "SAFB",
+      "SAFB2",
+      "SETDB1",
+      "SIN3B",
+      "SIX4",
+      "SLC5A6",
+      "SLIRP",
+      "SMARCA4",
+      "SMARCA5",
+      "SMARCB1",
+      "SMARCE1",
+      "SOX2",
+      "SOX4",
+      "SSBP1",
+      "STAG2",
+      "STRAP",
+      "STUB1",
+      "TADA1",
+      "TCF3",
+      "TCF7L2",
+      "TET1",
+      "TFAM",
+      "TGFBR2",
+      "THAP11",
+      "TMSB10",
+      "TOR1A",
+      "TSFM",
+      "UQCRB",
+      "UQCRQ",
+      "USP22",
+      "WSB2",
+      "XRCC4",
+      "ZNF581",
+      "ZNF714"
+    ],
+    "vcc_panel_library": [
+      "ACLY",
+      "ADNP",
+      "ANKRD52",
+      "ANP32B",
+      "BRD1",
+      "BRPF1",
+      "C5orf22",
+      "COIL",
+      "CSNK2A1",
+      "DCAF16",
+      "DHX35",
+      "DLAT",
+      "DNTTIP1",
+      "EAPP",
+      "EPC2",
+      "EZH2",
+      "GIGYF2",
+      "GMEB2",
+      "GPATCH8",
+      "GTF2IRD1",
+      "HMGN3",
+      "HMGN4",
+      "HSP90AB1",
+      "KHDRBS1",
+      "KMT2A",
+      "MED15",
+      "MED25",
+      "NABP2",
+      "PAN2",
+      "PAPOLA",
+      "PARP3",
+      "PCGF1",
+      "PHF23",
+      "PI4KB",
+      "PIN1",
+      "PKN3",
+      "POR",
+      "PPIF",
+      "PQBP1",
+      "PRMT6",
+      "PRNP",
+      "RSRC1",
+      "SCAF8",
+      "SFXN4",
+      "SIN3B",
+      "SLIRP",
+      "SMARCA5",
+      "SNRK",
+      "SSR4",
+      "STT3A",
+      "SYVN1",
+      "TAF4",
+      "TEAD4",
+      "TIMM17B",
+      "TIMM50",
+      "TMEM41B",
+      "TRPC4AP",
+      "UPF3B",
+      "UROS",
+      "USP28",
+      "ZNF219",
+      "ZNF22",
+      "ZNF397",
+      "ZNF462",
+      "ZNF670",
+      "ZNF714"
+    ],
+    "vcc_panel_post_qc": [
+      "ACLY",
+      "ADNP",
+      "ANKRD52",
+      "ANP32B",
+      "BRD1",
+      "BRPF1",
+      "C5orf22",
+      "COIL",
+      "CSNK2A1",
+      "DCAF16",
+      "DHX35",
+      "DLAT",
+      "DNTTIP1",
+      "EAPP",
+      "EPC2",
+      "EZH2",
+      "GIGYF2",
+      "GMEB2",
+      "GPATCH8",
+      "GTF2IRD1",
+      "HMGN3",
+      "HMGN4",
+      "HSP90AB1",
+      "KHDRBS1",
+      "KMT2A",
+      "MED15",
+      "MED25",
+      "NABP2",
+      "PAN2",
+      "PAPOLA",
+      "PCGF1",
+      "PHF23",
+      "PI4KB",
+      "PIN1",
+      "PKN3",
+      "POR",
+      "PPIF",
+      "PQBP1",
+      "PRMT6",
+      "PRNP",
+      "RSRC1",
+      "SCAF8",
+      "SFXN4",
+      "SIN3B",
+      "SLIRP",
+      "SMARCA5",
+      "SNRK",
+      "SSR4",
+      "STT3A",
+      "TAF4",
+      "TEAD4",
+      "TIMM17B",
+      "TIMM50",
+      "TMEM41B",
+      "TRPC4AP",
+      "UPF3B",
+      "UROS",
+      "USP28",
+      "ZNF219",
+      "ZNF22",
+      "ZNF397",
+      "ZNF462",
+      "ZNF670",
+      "ZNF714"
+    ],
+    "vcc_panel_post_qc_new_vs_vcc2025_h1": [
+      "ADNP",
+      "ANKRD52",
+      "ANP32B",
+      "BRD1",
+      "BRPF1",
+      "C5orf22",
+      "COIL",
+      "CSNK2A1",
+      "DCAF16",
+      "DHX35",
+      "DLAT",
+      "DNTTIP1",
+      "EAPP",
+      "EPC2",
+      "EZH2",
+      "GIGYF2",
+      "GMEB2",
+      "GPATCH8",
+      "GTF2IRD1",
+      "HMGN3",
+      "HMGN4",
+      "HSP90AB1",
+      "KHDRBS1",
+      "KMT2A",
+      "NABP2",
+      "PAN2",
+      "PAPOLA",
+      "PCGF1",
+      "PHF23",
+      "PI4KB",
+      "PIN1",
+      "PKN3",
+      "POR",
+      "PPIF",
+      "PQBP1",
+      "PRMT6",
+      "PRNP",
+      "RSRC1",
+      "SCAF8",
+      "SFXN4",
+      "SNRK",
+      "SSR4",
+      "STT3A",
+      "TAF4",
+      "TEAD4",
+      "TIMM17B",
+      "TIMM50",
+      "TMEM41B",
+      "TRPC4AP",
+      "UPF3B",
+      "UROS",
+      "USP28",
+      "ZNF219",
+      "ZNF22",
+      "ZNF397",
+      "ZNF462",
+      "ZNF670"
+    ]
+  },
+  "schema_version": 1,
+  "status": "metadata_audit_complete_large_download_locked",
+  "summary": {
+    "geo_h5_member_bytes": 8340448451,
+    "geo_h5_member_count": 85,
+    "library_literal_target_labels": 2995,
+    "library_unique_negative_controls": 370,
+    "library_unique_oligo_sequences": 6638,
+    "library_workbook_rows": 43451,
+    "post_qc_targets": 2354,
+    "vcc2025_h1_post_qc_overlap": 96,
+    "vcc_panel_library_overlap": 66,
+    "vcc_panel_library_targets_removed_by_qc": [
+      "PARP3",
+      "SYVN1"
+    ],
+    "vcc_panel_post_qc_new_vs_vcc2025_h1": 57,
+    "vcc_panel_post_qc_overlap": 64
+  }
+}

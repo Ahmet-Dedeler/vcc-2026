@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "experiment": "073-postwhiten-csls-distill",
+  "status": "query_cache_complete",
+  "gamma": 0.65,
+  "whitening_or_full_covariance_eigendecompositions": 0,
+  "operator_action": "reuse frozen experiment-062 eigensystems; zero both-panel target coordinates on input and retain the full leakage-safe score outputs",
+  "official_genes": 18533,
+  "vcc_targets": 300,
+  "training_targets": 600,
+  "outer_targets": 259,
+  "train_outer_overlap": 0,
+  "master_score_genes": 7312,
+  "outer_score_genes": 6821,
+  "correction_genes": 5582,
+  "score_only_genes": 1239,
+  "vcc_target_coordinate_overlap": 0,
+  "training_target_coordinate_overlap": 0,
+  "official_order_sha256": "e7f9a3f37c34fac61d98d2478eceec0806e2dffd19df49c7b9eb2f258fa42529",
+  "vcc_panel_order_sha256": "c9c4c9a69f76afd4507e9a7619fe9925c19ff34e5878c7854493683b23bea5ca",
+  "train_order_sha256": "f97526dfe600acd21853ec217474e6a557d5c5eb8fdc6c81e0bfadfc9e5e788e",
+  "outer_order_sha256": "3f5a41d98fc2b4e6e8d3b69dba41b5db1e2d2e44dda230814bb53eb3b97d0ffb",
+  "score_gene_order_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+  "correction_gene_order_sha256": "015b59dc3d059f984bff2e5b2dd7a08b66978ca9e05cfb6a85b525670d9416d8",
+  "correction_in_score_sha256": "7085202ace0b6bbeaf266566203421dc11d0227306c62f7bd8d51a3bed0b6c3d",
+  "folds": {
+    "k562_gwps": {
+      "source_donors": [
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "operator_columns": 17806,
+      "operator_columns_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02",
+      "blocked_training_target_coordinates": 551,
+      "blocked_training_target_symbols_sha256": "f88cb7d9cdb305442ef4fa5c2850d52019bfba9a425504df5615f28e2e14a910",
+      "selected_score_coordinates": 6821,
+      "selected_score_symbols_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+      "correction_coordinates": 5582,
+      "correction_symbols_sha256": "015b59dc3d059f984bff2e5b2dd7a08b66978ca9e05cfb6a85b525670d9416d8",
+      "operator_npz_sha256": "13d988fcc3b129d25d254524db73e8f8253143fa493ee64d9654f0f61bc3ac55",
+      "operator_json_sha256": "9df1f55ab2672a327228e9bbfc602107897e6cec15e4289c3e92f33746274e83",
+      "panels": {
+        "train": {
+          "rows": 600,
+          "columns": 6821,
+          "query_sha256": "b10d9a9069a2455e254c70d77d33d486e35332d622dce900502385804338e910",
+          "transform": {
+            "input_median_norm_active_map": 5.9949140548706055,
+            "output_median_norm_active_map_before_preserve": 32.045597076416016,
+            "global_median_norm_preserve_scale": 0.18707450014350233
+          }
+        },
+        "outer": {
+          "rows": 259,
+          "columns": 6821,
+          "query_sha256": "671cba5111a54e7ca8ee4194f4983756f098e1422a2b4d0cea6b18bd8c10fb72",
+          "transform": {
+            "input_median_norm_active_map": 4.743039131164551,
+            "output_median_norm_active_map_before_preserve": 28.60137939453125,
+            "global_median_norm_preserve_scale": 0.16583253086288025
+          }
+        }
+      }
+    },
+    "orion_hct116": {
+      "source_donors": [
+        "k562_gwps",
+        "orion_hek293t"
+      ],
+      "operator_columns": 17942,
+      "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+      "blocked_training_target_coordinates": 551,
+      "blocked_training_target_symbols_sha256": "f88cb7d9cdb305442ef4fa5c2850d52019bfba9a425504df5615f28e2e14a910",
+      "selected_score_coordinates": 6821,
+      "selected_score_symbols_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+      "correction_coordinates": 5582,
+      "correction_symbols_sha256": "015b59dc3d059f984bff2e5b2dd7a08b66978ca9e05cfb6a85b525670d9416d8",
+      "operator_npz_sha256": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+      "operator_json_sha256": "c4e00ad1fa5fbba7b9b0f93e4dae91b76da73638ef9431316923bb6ca4b585bc",
+      "panels": {
+        "train": {
+          "rows": 600,
+          "columns": 6821,
+          "query_sha256": "d85758c653cbf7f6bd60c64b27113edb0782244a63286acad71b145b48f4ad2e",
+          "transform": {
+            "input_median_norm_active_map": 5.83089017868042,
+            "output_median_norm_active_map_before_preserve": 31.20166778564453,
+            "global_median_norm_preserve_scale": 0.1868775162513311
+          }
+        },
+        "outer": {
+          "rows": 259,
+          "columns": 6821,
+          "query_sha256": "28e62a7bf9123b3e70621533efbbe97df18b1396617f0547d8ba7b976dcbad91",
+          "transform": {
+            "input_median_norm_active_map": 4.927971839904785,
+            "output_median_norm_active_map_before_preserve": 29.252771377563477,
+            "global_median_norm_preserve_scale": 0.16846170833866633
+          }
+        }
+      }
+    },
+    "orion_hek293t": {
+      "source_donors": [
+        "k562_gwps",
+        "orion_hct116"
+      ],
+      "operator_columns": 17942,
+      "operator_columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+      "blocked_training_target_coordinates": 551,
+      "blocked_training_target_symbols_sha256": "f88cb7d9cdb305442ef4fa5c2850d52019bfba9a425504df5615f28e2e14a910",
+      "selected_score_coordinates": 6821,
+      "selected_score_symbols_sha256": "bb6289cf1b8b237825ea2ff630556117d32386f73fd810cd7d50997502ea996d",
+      "correction_coordinates": 5582,
+      "correction_symbols_sha256": "015b59dc3d059f984bff2e5b2dd7a08b66978ca9e05cfb6a85b525670d9416d8",
+      "operator_npz_sha256": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1",
+      "operator_json_sha256": "cb22406a7a529380c4348bf636f2532c29a43ab0fc4b00d6f6d98fb5e02360c6",
+      "panels": {
+        "train": {
+          "rows": 600,
+          "columns": 6821,
+          "query_sha256": "fe0a25b98f4e0337a1605f46fa099b8df427a06ec87a1b5f2859d1a097816b3b",
+          "transform": {
+            "input_median_norm_active_map": 5.9577178955078125,
+            "output_median_norm_active_map_before_preserve": 29.719521522521973,
+            "global_median_norm_preserve_scale": 0.2004647985665903
+          }
+        },
+        "outer": {
+          "rows": 259,
+          "columns": 6821,
+          "query_sha256": "1519ac2602908f9a37b26473f6049d5cf71b6473b9cb6e58d197484c5d21358b",
+          "transform": {
+            "input_median_norm_active_map": 4.980662822723389,
+            "output_median_norm_active_map_before_preserve": 27.69182777404785,
+            "global_median_norm_preserve_scale": 0.17986038564746354
+          }
+        }
+      }
+    }
+  },
+  "peak_rss_gib": 2.7087974548339844
+}

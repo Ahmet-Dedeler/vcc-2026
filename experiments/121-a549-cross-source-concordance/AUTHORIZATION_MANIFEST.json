@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "experiment": "121-a549-cross-source-concordance",
+  "created_date": "2026-08-30",
+  "created_before_source_expression_value_access": true,
+  "source_bindings": {
+    "altair_experiment_119": {
+      "artifact_manifest": {
+        "path": "experiments/119-altair-a549/work/compact-source/artifact-manifest.json",
+        "sha256": "4b5415b8f73db391d6a073b63066a719d1abb69c0ef9383bbf0ffc5687e818b0"
+      },
+      "compact_receipt": {
+        "path": "experiments/119-altair-a549/work/compact-source/compact-source-receipt.json",
+        "sha256": "6f26ed7994a07ba8bb9ff6c1763fe475843af8a8801464cd10d714abf5aaae62"
+      },
+      "expression_array": {
+        "path": "experiments/119-altair-a549/work/compact-source/log2_fold_change.npy",
+        "sha256": "c60bf9def78d58f9b110aaa7480b86b40222735d5d457924828688cdd46d3f5b"
+      },
+      "measured_mask": {
+        "path": "experiments/119-altair-a549/work/compact-source/measured_mask.npy",
+        "sha256": "3076394dbbf6cbc973dbc9311e422421b14ef9696a84f610a07ab24ad54acb69"
+      },
+      "genes": {
+        "path": "experiments/119-altair-a549/work/compact-source/genes.txt",
+        "sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723"
+      },
+      "perturbations": {
+        "path": "experiments/119-altair-a549/work/compact-source/perts.txt",
+        "sha256": "c1dc7a837d28e26232b32578b003e3235240d060b279ecee0df5d7a9a1ebe9d9"
+      }
+    },
+    "myllia_experiment_120": {
+      "artifact_manifest": {
+        "path": "experiments/120-myllia-a549/work/compact-donor/artifact-manifest.json",
+        "sha256": "74aaf21b1a1aaff976653e81843c8dc310a0c76e44195bffa6d48eba2cdbe622"
+      },
+      "compact_receipt": {
+        "path": "experiments/120-myllia-a549/work/compact-donor/compact-donor-receipt.json",
+        "sha256": "1dc1f662675bacaad4c8f5b9ece2e8115c64565533c3d945f210fcf760af3268"
+      },
+      "expression_array": {
+        "path": "experiments/120-myllia-a549/work/compact-donor/delta.npy",
+        "sha256": "e81436089579914637bfcb54df454e5bf4b3759fba44b8d8e48e5204ed1c9ed6"
+      },
+      "measured_mask": {
+        "path": "experiments/120-myllia-a549/work/compact-donor/measured_mask.npy",
+        "sha256": "3d3b6f82ca28812a14a278978f8cc3d00f6186aa98138598b8ba3e9d2ad8fba0"
+      },
+      "genes": {
+        "path": "experiments/120-myllia-a549/work/compact-donor/genes.txt",
+        "sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723"
+      },
+      "perturbations": {
+        "path": "experiments/120-myllia-a549/work/compact-donor/perts.txt",
+        "sha256": "56906d4a9a91925ac0a29194caf88434880d026e041ed0626d448acf9b325f19"
+      }
+    },
+    "canonical_gene_axis": {
+      "path": "data/challenge/gene_names.csv",
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201"
+    },
+    "vcc_panel_axis": {
+      "path": "data/challenge/pert_counts.csv",
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    }
+  },
+  "authorization": {
+    "read_source_text_metadata": true,
+    "write_and_test_synthetic_code": true,
+    "freeze_target_derangements_and_bootstrap_before_values": true,
+    "read_only_the_two_pinned_source_expression_arrays_after_freeze_preflight": true,
+    "read_only_the_two_pinned_measured_masks_after_freeze_preflight": true,
+    "run_one_preregistered_source_only_evaluation": true,
+    "write_only_below_experiment_121": true,
+    "open_vcc_held_perturbation_truth": false,
+    "open_existing_outcome_directories": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "submission_path_access": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  },
+  "fail_closed": [
+    "any_hash_mismatch",
+    "target_intersection_not_exactly_the_preregistered_20_labels",
+    "canonical_gene_axes_not_bit_identical",
+    "missing_or_changed_preregistered_resampling_plan",
+    "response_mask_not_global_complete_case",
+    "any_attempt_to_overwrite_a_frozen_or_evaluation_output"
+  ]
+}

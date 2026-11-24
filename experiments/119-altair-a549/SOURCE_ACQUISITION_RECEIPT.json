@@ -1,0 +1,32 @@
+{
+  "experiment": "119-altair-a549",
+  "official_ids": {
+    "collection_id": "6a3f8b91-1c5e-4d3a-9b4c-f7e0a2d8b6f3",
+    "dataset_id": "7006c6c0-6487-43c5-b6ca-735acebb4375"
+  },
+  "public_object_head": {
+    "content_type": "binary/octet-stream",
+    "etag": "cb152c5b6fb206a010d327174e224493-34",
+    "last_modified": "2026-08-25T17:01:21+00:00",
+    "server_side_encryption": "AES256",
+    "version_id": "faMp5Esq6WYP5QbbKEwXEbneXEMTyMyk"
+  },
+  "safety": {
+    "counts_generated": false,
+    "evaluation_run": false,
+    "existing_outcome_opened": false,
+    "held_truth_opened": false,
+    "model_fitted": false,
+    "submission_built": false
+  },
+  "schema_version": 1,
+  "semantics_status": "official_source_authenticated_and_semantics_verified",
+  "source": {
+    "path": "data/external/altair-a549/altair-scrna.h5ad",
+    "sha256": "4632972e6c2871603f4ca9108489787d7761aae05dc6a4bf3488f1ed78a63c9f",
+    "size_bytes": 281474102
+  },
+  "source_manifest_sha256": "61c1b6338ad197d34f28162766c7e5cf8e4b1be0324fe2e974015152285fff88",
+  "status": "verified_existing_official_public_source",
+  "verification_date_utc": "2026-08-30"
+}

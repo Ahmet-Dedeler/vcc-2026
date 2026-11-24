@@ -1,0 +1,15 @@
+{
+  "provider": "AWS EC2",
+  "instance_id": "i-08300b395f88f6f55",
+  "instance_type": "r7i.8xlarge",
+  "market": "on-demand",
+  "source_prefix": "s3://<your-s3-bucket>/input/exp085-kolf-pm-gate/20260830T003317Z/",
+  "output_prefix": "s3://<your-s3-bucket>/output/exp085-kolf-pm-gate/20260830T003317Z/",
+  "worker_was_created_or_started": false,
+  "minimum_available_memory_gib": 48,
+  "systemd_memory_max_gib": 44,
+  "systemd_swap_max_gib": 0,
+  "one_time_kolf_evaluation": true,
+  "count_generation": false,
+  "submission": false
+}

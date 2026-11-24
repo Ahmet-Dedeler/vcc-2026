@@ -1,0 +1,18 @@
+{
+ "name": "btidzs",
+ "desc": "KA: identity bulk_transform on E0 (== zs)",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": false,
+  "bulk_transform": {
+   "module": "experiments/803-de-engine/bt/identity803.py",
+   "sha256": "0c4827971929042eb5db23e4e5c0544e27ca65c40f7a281304eaefbc6e77c6ea",
+   "args": {}
+  }
+ },
+ "stage": "zs"
+}

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "--no-project",
+    "--python",
+    "3.12",
+    "--with",
+    "numpy",
+    "--with",
+    "h5py",
+    "python",
+    "experiments/087-string-target-kernel/test_run.py"
+  ],
+  "max_rss_gib": 1.0,
+  "peak_process_tree_rss_gib": 0.12354660034179688,
+  "killed_for_memory": false,
+  "return_code": 0
+}

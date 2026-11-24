@@ -1,0 +1,183 @@
+{
+  "audited_at": "2026-08-30",
+  "authorization": {
+    "authorized_large_assets": [],
+    "raw_archive_authorized": false,
+    "reason": "NCBI publishes exact URLs, byte counts, and modification timestamps for the two LFC matrices, but no ETag or checksum sidecar was publicly discoverable. A bounded gzip-header digest cannot authenticate the matrix payload."
+  },
+  "dataset": "GSE337988",
+  "experiment": "116-dld1-lowmoi",
+  "geo_series": {
+    "Series_geo_accession": "GSE337988",
+    "Series_last_update_date": "Jul 28 2026",
+    "Series_overall_design": "CRISPRi Perturb-seq was performed in DLD-1 cells expressing inducible Zim3-dCas9 at multiple multiplicities of infection (MOI). A pilot experiment tested six MOI levels (0.1, 0.2, 0.5, 1.0, 3.0, 5.0) with a 35-gene library across 4 10x Chromium channels. A scaled experiment used a 5000-gene CRISPRi sub-library across three MOI levels (Low ~0.3, Medium ~3, High ~10) in 44 10x Chromium channels. Cells were treated with doxycycline and Shield-1 ligand for 5 days to induce CRISPRi activity, then multiplexed via MULTI-seq CMO hashing. Three library types (GEX, sgRNA, CMO) were generated per channel and sequenced on Illumina NovaSeq 6000 (pilot) or NovaSeq X Plus (scaled experiment).",
+    "Series_status": "Public on Jul 10 2026",
+    "Series_submission_date": "Jul 08 2026",
+    "Series_summary": "Perturb-seq measures transcriptomic responses to genetic perturbations at scale, but standard low-MOI designs remain resource-intensive. Conventional designs aim to recover one guide RNA per cell and often discard cells carrying multiple guides during analysis. Here, we characterize how overloading cells with guides affects signal recovery, information loss, and cost reduction. Increasing guide RNA dosage eventually induced cellular stress and suppressed cell-cycle progression. Among multiplets, cells carrying two or three guides recovered perturbation responses better than higher-order guide multiplets. In a 5000-gene Perturb-seq screen across MOI levels, high MOI reduced per-cell costs by 81% while keeping information loss within 1.5-fold of a low-MOI baseline. In existing genome-wide Perturb-seq data, incorporating previously discarded multiplets increased usable cell numbers and improved statistical power. Compared with a singlet-only holdout set, adding multiplets moved signal recovery closer to the theoretical reproducibility limit. Together, these results provide an experimental and computational framework for designing cost-efficient Perturb-seq screens at scale.",
+    "Series_title": "Joint analysis of multiply perturbed cells improves statistical power and cost efficiency in Perturb-seq screens",
+    "sample_count": 48
+  },
+  "interpretation": {
+    "held_truth_opened": false,
+    "large_file_downloaded": false,
+    "model_fit_or_evaluation_performed": false,
+    "overlap_is_post_effect_qc": false,
+    "overlap_unit": "VCC gene symbols with one or more exact-prefix official LFC target labels"
+  },
+  "inventory": {
+    "raw_archive_size_bytes": 26495651840,
+    "raw_member_bytes": 26495440950,
+    "raw_member_count": 280
+  },
+  "remote_probes": {
+    "geo_raw_archive": {
+      "head": {
+        "accept_ranges": "bytes",
+        "content_length": 26495651840,
+        "etag": null,
+        "last_modified": "Tue, 28 Jul 2026 14:10:43 GMT",
+        "status": 200
+      }
+    },
+    "low1_lfc_matrix": {
+      "bounded_header": {
+        "compressed_bytes_read": 131072,
+        "content_range": "bytes 0-131071/155201822",
+        "header_line_bytes": 62617,
+        "header_sha256": "de441b374d2f020f67993fa36922e2195fb34e8de82e885c5091b601a0a878a4",
+        "range_status": 206,
+        "target_label_count": 6451,
+        "target_labels_sha256": "d49fb70eb8a6c9c39f5ff72a86ca71fcf47cb66a507b8d1b1d5ed7804b4d3a0f"
+      },
+      "head": {
+        "accept_ranges": "bytes",
+        "content_length": 155201822,
+        "etag": null,
+        "last_modified": "Tue, 30 Jun 2026 21:16:28 GMT",
+        "status": 200
+      }
+    },
+    "low2_lfc_matrix": {
+      "bounded_header": {
+        "compressed_bytes_read": 131072,
+        "content_range": "bytes 0-131071/155251513",
+        "header_line_bytes": 62617,
+        "header_sha256": "de441b374d2f020f67993fa36922e2195fb34e8de82e885c5091b601a0a878a4",
+        "range_status": 206,
+        "target_label_count": 6451,
+        "target_labels_sha256": "d49fb70eb8a6c9c39f5ff72a86ca71fcf47cb66a507b8d1b1d5ed7804b4d3a0f"
+      },
+      "head": {
+        "accept_ranges": "bytes",
+        "content_length": 155251513,
+        "etag": null,
+        "last_modified": "Tue, 30 Jun 2026 21:16:28 GMT",
+        "status": 200
+      }
+    }
+  },
+  "schema_version": 1,
+  "source_manifest_sha256": "2daaea4adb80cb1f6009fa29be6206a355e2b7e5f7c52c3d0d9660589dfa23c3",
+  "status": "source_metadata_verified_large_assets_locked",
+  "summary": {
+    "geo_sample_count": 48,
+    "guide_library_promoter_labels": 6459,
+    "guide_library_rows": 23480,
+    "guide_library_unique_labels": 23480,
+    "lfc_headers_identical": true,
+    "lfc_non_ntc_target_labels": 5955,
+    "lfc_target_labels": 6451,
+    "lfc_unique_non_ntc_gene_prefixes": 4954,
+    "lfc_unique_target_labels": 6451,
+    "raw_archive_size_bytes": 26495651840,
+    "vcc_panel_gene_overlap": 67,
+    "vcc_panel_multi_promoter_labels": {
+      "DEK": [
+        "DEK_P1",
+        "DEK_P2"
+      ],
+      "LDLR": [
+        "LDLR_P1",
+        "LDLR_P2"
+      ],
+      "PBLD": [
+        "PBLD_P1",
+        "PBLD_P2"
+      ],
+      "SMARCA5": [
+        "SMARCA5_P1",
+        "SMARCA5_P2"
+      ]
+    },
+    "vcc_panel_overlap_genes": [
+      "AGO1",
+      "AKT2",
+      "ALG12",
+      "API5",
+      "BCL6",
+      "BRPF1",
+      "C5orf22",
+      "CAPRIN2",
+      "CARM1",
+      "CHD3",
+      "COIL",
+      "CYTH2",
+      "DCP2",
+      "DEK",
+      "DTNBP1",
+      "ELK1",
+      "EPC2",
+      "EZH2",
+      "FCGRT",
+      "GTF2IRD1",
+      "HMGXB3",
+      "KMT2A",
+      "LDLR",
+      "LENG1",
+      "LPCAT3",
+      "MAP2K2",
+      "MAPK7",
+      "MSANTD4",
+      "MTF1",
+      "MYPOP",
+      "NAIF1",
+      "PAN2",
+      "PARP3",
+      "PBLD",
+      "PHF19",
+      "PHF23",
+      "PIN1",
+      "PPIF",
+      "PRMT7",
+      "PRNP",
+      "PSKH1",
+      "RABEP2",
+      "RBM26",
+      "RFK",
+      "RNF141",
+      "SEMA4F",
+      "SH2D3A",
+      "SMARCA5",
+      "STT3A",
+      "TARBP2",
+      "THAP7",
+      "TRIM35",
+      "TTBK2",
+      "UPF3B",
+      "UROS",
+      "ZBTB34",
+      "ZC3HAV1",
+      "ZHX3",
+      "ZKSCAN2",
+      "ZKSCAN3",
+      "ZNF219",
+      "ZNF25",
+      "ZNF251",
+      "ZNF324",
+      "ZNF410",
+      "ZNF821",
+      "ZRANB3"
+    ],
+    "vcc_panel_promoter_label_overlap": 71
+  }
+}

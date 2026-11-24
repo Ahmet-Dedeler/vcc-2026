@@ -1,0 +1,17 @@
+{
+  "provider": "AWS EC2",
+  "instance_id": "i-08300b395f88f6f55",
+  "instance_type": "r7i.8xlarge",
+  "market": "on-demand",
+  "source_prefix": "s3://<your-s3-bucket>/input/exp080-listwise-metric-adapter/20260830T1228Z-codex-lead/",
+  "output_prefix": "s3://<your-s3-bucket>/output/exp080-listwise-metric-adapter/20260830T1228Z-codex-lead/",
+  "minimum_instance_memory_gib": 64,
+  "minimum_available_memory_gib": 48,
+  "source_archive_sha256": "737b87249ee0976e4c8b92a626548304f4c5d17dba8fe8190c1e1cf3044cc52d",
+  "runner_sha256": "40b287343065554eabe0f6fa5c73652a3df0721b78f823708f67e8e10e6f58de",
+  "stage_guard_gib": 48,
+  "evaluation_guard_gib": 16,
+  "cell_eval2": false,
+  "count_generation": false,
+  "submission": false
+}

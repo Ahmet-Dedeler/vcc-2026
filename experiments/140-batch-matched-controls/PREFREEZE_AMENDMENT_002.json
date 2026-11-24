@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-30",
+  "stage": "after_source_hash_freeze_v1_but_before_any_development_outcome_access",
+  "superseded_source_hash_manifest": "SOURCE_HASH_MANIFEST.v1.json",
+  "superseded_preoutcome_authorization": "PREOUTCOME_AUTHORIZATION.v1.json",
+  "superseded_partial_preparation": "work/source-preparation-v1",
+  "replacement_source_hash_manifest": "SOURCE_HASH_MANIFEST.v2.json",
+  "replacement_preoutcome_authorization": "PREOUTCOME_AUTHORIZATION.v2.json",
+  "replacement_preparation": "work/source-preparation-v2",
+  "replacement_identity": "work/identity-reproduction-v2",
+  "trigger": "The first guarded preparation stopped at the internal memory limit while reading HCT116 batch 10.",
+  "cause": "The draft loaded every cell's sparse expression in each Orion batch and duplicated the exact-control rows while separately accumulating the legacy pool.",
+  "repair": [
+    "Read target labels, pass_guide_filter, and total_counts as metadata only for target batch/UMI mixtures.",
+    "Use Parquet predicate pushdown to read expression only for exact Non-Targeting and NEGR1 rows.",
+    "Continue to use exact Non-Targeting for matched q_b and the legacy Non-Targeting plus NEGR1 pool only for frozen b_ctrl reconstruction."
+  ],
+  "scientific_design_changed": false,
+  "candidate_grid_changed": false,
+  "weighting_changed": false,
+  "outcomes_accessed": false,
+  "untouched_test_accessed": false
+}

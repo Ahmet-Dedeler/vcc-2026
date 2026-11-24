@@ -1,0 +1,178 @@
+{
+  "recorded_at": "2026-08-30",
+  "source": {
+    "provider": "IGVF Data Portal",
+    "analysis_set": {
+      "accession": "IGVFDS7943IIWZ",
+      "doi": "10.65695/IGVFDS7943IIWZ",
+      "status": "released",
+      "release_timestamp": "2025-08-04T22:08:38.363578+00:00",
+      "description": "TeloHAEC 2285-gene Perturb-seq: CRISPRi-Perturb-seq targeting the promoters of 2285 genes in telomerase-immortalized human aortic endothelial cells, to map how genes near risk loci for coronary artery disease affect gene programs",
+      "api_url": "https://api.data.igvf.org/analysis-sets/IGVFDS7943IIWZ/"
+    },
+    "matrix_file": {
+      "accession": "IGVFFI8645YMGX",
+      "status": "released",
+      "file_format": "h5ad",
+      "content_type": "cell by gene and guide matrix",
+      "summary": "filtered cell by gene and guide matrix",
+      "size_bytes": 1473190952,
+      "md5_expected": "167d157d6ffd318a415739113fdea649",
+      "download_url": "https://api.data.igvf.org/matrix-files/IGVFFI8645YMGX/@@download/IGVFFI8645YMGX.h5ad"
+    },
+    "guide_file": {
+      "accession": "IGVFFI9754AGFB",
+      "status": "released",
+      "file_format": "tsv",
+      "content_type": "guide RNA sequences",
+      "summary": "GRCh38 guide RNA sequences",
+      "size_bytes": 729687,
+      "md5_expected": "10de9535f3914a1a7bcfa94b0ce11e18",
+      "download_url": "https://api.data.igvf.org/tabular-files/IGVFFI9754AGFB/@@download/IGVFFI9754AGFB.tsv.gz"
+    },
+    "publication": {
+      "pmid": "38326615",
+      "title": "Convergence of coronary artery disease genes onto endothelial cell programs"
+    },
+    "license": {
+      "per_file_machine_readable_license": null,
+      "portal_policy_url": "https://www.igvf.org/policies/data-use-policy/",
+      "portal_policy_summary": "IGVF states that released data may be used without restriction while requesting acknowledgement; human-participant data must not be used for re-identification.",
+      "redistribution_note": "Do not redistribute source or derived data until any study-specific terms have been checked."
+    }
+  },
+  "local_files": {
+    "IGVFFI8645YMGX.h5ad": {
+      "status": "downloaded_and_verified",
+      "size_bytes_observed": 1473190952,
+      "md5_observed": "167d157d6ffd318a415739113fdea649",
+      "sha256_observed": "e11b252c1f05689bb7a7916921f6ac0b83cc0381df295102b12b9e0cdd8d3e04"
+    },
+    "IGVFFI9754AGFB.tsv.gz": {
+      "status": "downloaded_and_verified",
+      "size_bytes_observed": 729687,
+      "md5_observed": "10de9535f3914a1a7bcfa94b0ce11e18",
+      "sha256_observed": "03aaf578a0c33b4cf0bda43716091db22f0deabafc8c960c7f7f84737664459b"
+    }
+  },
+  "local_environment": {
+    "available_disk_bytes_before_download": 264440901632,
+    "available_disk_gib_before_download": 246.28
+  },
+  "protocol_amendments": [
+    {
+      "recorded_at": "2026-08-30",
+      "basis": "guide labels and cell counts only; no expression values or evaluation outcomes",
+      "change": "minimum cells per guide reduced from 10 to 5",
+      "unchanged_target_minimum_cells": 20,
+      "preliminary_barcode_label_retained_targets_at_10": 1567,
+      "preliminary_barcode_label_retained_targets_at_5": 2167,
+      "pre_repair_manifest_mapped_retained_targets_at_10": 1997,
+      "pre_repair_manifest_mapped_retained_targets_at_5": 2213,
+      "repaired_manifest_mapped_retained_targets_at_10": 1567,
+      "repaired_manifest_mapped_retained_targets_at_5": 2167,
+      "reason": "With the target minimum correctly computed from guides that pass the guide floor, the five-cell cutoff retains 600 additional adequately represented clean gene targets."
+    },
+    {
+      "recorded_at": "2026-08-30",
+      "basis": "read-only guide-label and cell-count audit; no expression values or evaluation outcomes",
+      "change": "target-level minimum now sums only cells from guides that individually meet the five-cell guide floor",
+      "previous_retained_targets": 2213,
+      "repaired_retained_targets": 2167,
+      "removed_targets": 46,
+      "previous_panel_target_coverage": 66,
+      "repaired_panel_target_coverage": 65,
+      "reason": "The first implementation counted cells from excluded sub-threshold guides toward target eligibility."
+    }
+  ],
+  "extraction": {
+    "status": "repaired_completed_and_validated",
+    "completed_at": "2026-08-30",
+    "implementation": "experiments/105-telohaec-residual/extract.py",
+    "implementation_sha256": "32ea1f9b068827e2f274399cbd23017ad088b3096c6f00da1ee3b73dda6a6dc7",
+    "protocol_sha256": "7136a1c9dede164e50afc1f4f0367e89c02fa5653b5bc576231116f8dc2f9e78",
+    "synthetic_tests": {
+      "implementation": "experiments/105-telohaec-residual/test_extract.py",
+      "implementation_sha256": "92c83b9c4ff37ee45b73fb07606f423d19d156a97b5fb6791fae7b7ed39cf14c",
+      "tests_run": 5,
+      "status": "passed",
+      "wall_seconds": 0.19,
+      "maximum_resident_set_bytes": 62259200
+    },
+    "resource_use": {
+      "wall_seconds": 18.27,
+      "user_seconds": 17.01,
+      "system_seconds": 0.98,
+      "maximum_resident_set_bytes": 3593207808,
+      "maximum_resident_set_gib": 3.346436,
+      "swaps": 0
+    },
+    "schema": {
+      "cells": 214449,
+      "raw_feature_rows": 17472,
+      "unique_feature_symbols": 17464,
+      "duplicate_feature_rows_collapsed": 8,
+      "nonpanel_working_features": 17164,
+      "sparse_entries_checked": 638734499,
+      "explicit_zero_entries": 0,
+      "maximum_count_entry": 1977
+    },
+    "coverage": {
+      "eligible_guides": 19564,
+      "eligible_targeting_guides": 19015,
+      "eligible_control_guides": 549,
+      "retained_clean_targets": 2167,
+      "minimum_retained_target_eligible_cells": 20,
+      "targets_removed_by_eligibility_repair": 46,
+      "vcc_targets_as_source_perturbations": 65,
+      "vcc_target_symbols_on_expression_axis": 300
+    },
+    "panel_coordinate_exclusion": {
+      "excluded_before_library_size_normalization": true,
+      "delta_exact_zero_verified": true,
+      "control_exact_zero_verified": true
+    },
+    "artifacts": {
+      "delta.npy": {
+        "size_bytes": 151378080,
+        "sha256": "6dfd8f69c26f7beb9b36ab8f08f824003af08e8dcfe8a1b4f149efbc3348501b"
+      },
+      "b_ctrl.npy": {
+        "size_bytes": 69984,
+        "sha256": "cbc0f2cc8727ab423fdea70d955bc9c44be2d5e8ab0c3b3d73d7692293f6003f"
+      },
+      "genes.txt": {
+        "size_bytes": 116789,
+        "sha256": "a55a422e73af1a0b10e46092905559ea1c32883fdd5e60961f708a92ff398890"
+      },
+      "perts.txt": {
+        "size_bytes": 13639,
+        "sha256": "e5b9f8a4b69f79a5577ffeed6fc844c859d4f3b92696fd875536bd343730c5f0"
+      },
+      "guide_qc.csv": {
+        "size_bytes": 4167502,
+        "sha256": "7fae32e59990acb58bcc662044cb0cd31fd8c759f3debb51d6ce8a53c0cd58a7"
+      },
+      "extraction_report.json": {
+        "size_bytes": 3267,
+        "sha256": "c23baed4cee07deb35f4c1a20b6fb1e58d5ca3f44689762dc968bcb7665fab2a"
+      }
+    }
+  },
+  "scope_guards": {
+    "allowed_write_roots": [
+      "experiments/105-telohaec-residual/",
+      "data/external/igvf-telohaec/"
+    ],
+    "forbidden": [
+      "AWS",
+      "KOLF",
+      "cell-eval2",
+      "count build",
+      "challenge submission",
+      "git commit",
+      "held evaluation truth",
+      "panel-outcome tuning"
+    ]
+  }
+}

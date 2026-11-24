@@ -1,0 +1,18 @@
+{
+ "id": "bc-c226c87f-9ec4-46cd-add2-089ec5554595",
+ "status": "CREATING",
+ "source": {
+  "repository": "https://github.com/Ahmet-Dedeler/virtual-cell-challenge-2026",
+  "ref": "master"
+ },
+ "target": {
+  "autoBranch": true,
+  "autoCreatePr": false,
+  "openAsCursorGithubApp": false,
+  "skipReviewerRequest": false,
+  "branchName": "cloud/500-bulk-review",
+  "url": "https://cursor.com/agents/bc-c226c87f-9ec4-46cd-add2-089ec5554595"
+ },
+ "name": "Bulk channel bugs",
+ "createdAt": "2026-09-26T22:24:57.319Z"
+}

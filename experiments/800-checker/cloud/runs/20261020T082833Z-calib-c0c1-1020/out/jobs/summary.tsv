@@ -1,0 +1,1 @@
+1	0	0	32940	uv run python experiments/804-known-answers/calib804.py > experiments/804-known-answers/work/calib804.txt 2>&1; rc=$?; grep ABCp experiments/804-known-answers/work/calib804.txt; exit $rc

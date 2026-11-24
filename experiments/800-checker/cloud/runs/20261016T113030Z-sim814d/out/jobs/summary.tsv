@@ -1,0 +1,1 @@
+1	0	21	839556	uv run python experiments/814-panel-rule/sim814.py --rules R0,R1,V2r,V2rk,V2p --n 1000 --seq6 --indep6 --out experiments/814-panel-rule/work/sim2 && uv run python experiments/814-panel-rule/sim814.py --rules R1,V2p --fresh --n 1000 --out experiments/814-panel-rule/work/sim2

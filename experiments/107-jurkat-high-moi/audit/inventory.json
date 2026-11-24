@@ -1,0 +1,99 @@
+{
+  "archive": {
+    "filename": "GSE249595_RAW.tar",
+    "size_bytes": 3753820160
+  },
+  "channels": [
+    {
+      "accession": "GSM7951413",
+      "channel": 1,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951414",
+      "channel": 2,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951415",
+      "channel": 3,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951416",
+      "channel": 4,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951417",
+      "channel": 5,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951418",
+      "channel": 6,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951419",
+      "channel": 7,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951420",
+      "channel": 8,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951421",
+      "channel": 9,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951422",
+      "channel": 10,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951423",
+      "channel": 11,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951424",
+      "channel": 12,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951425",
+      "channel": 13,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951426",
+      "channel": 14,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951427",
+      "channel": 15,
+      "member_count": 9
+    },
+    {
+      "accession": "GSM7951428",
+      "channel": 16,
+      "member_count": 9
+    }
+  ],
+  "file_inventory_sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca",
+  "input_binding": {
+    "file_inventory_sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca",
+    "manifest_sha256": "59e37105c31b68cbca84b3c77834d1fa53b6316b2b351c1d0029f51f0f837c74",
+    "provenance_sha256": "0c3277a5ee1fa9b179d5f91683375c7f2a9b5a72dd38c2e00c35df4950a1c722",
+    "raw_archive_sha256": "3c0c5fa8cab2983dfe0fa3b38b31662bb68e191e6dbaf3d03af02a67587a67a9",
+    "raw_hash_recomputed_for_this_run": true
+  },
+  "member_count": 144,
+  "member_total_compressed_bytes": 3753694370,
+  "status": "pass"
+}

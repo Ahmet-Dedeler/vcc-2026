@@ -1,0 +1,2 @@
+1	0	20	892712	cd /work/repo && for d in experiments/*/; do mkdir -p "${d}work"; done; GUARD801_ALLOW_MKDIR=1 OPENBLAS_NUM_THREADS=2 uv run python experiments/810-strong-direction/dev/ka706dbg.py k562_gwps
+2	0	31	1213176	cd /work/repo && for d in experiments/*/; do mkdir -p "${d}work"; done; GUARD801_ALLOW_MKDIR=1 OPENBLAS_NUM_THREADS=2 uv run python experiments/810-strong-direction/dev/ka706dbg.py orion_hek293t

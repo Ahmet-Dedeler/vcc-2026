@@ -1,0 +1,481 @@
+{
+  "experiment": "081-igvf-cardiomyocyte",
+  "status": "completed",
+  "decision": "NO-GO",
+  "promotion": {
+    "nonpanel_test_gate": false,
+    "vcc_panel_final_gate": false,
+    "promote": false
+  },
+  "selection": {
+    "representation": "signed_sqrt",
+    "scale_mode": "global_l2",
+    "fraction": 0.2,
+    "selection_rule": "maximize worst held-fold delta, then macro delta, then smaller fraction, then log2fc, then global_l2; identity is mandatory",
+    "selected_tune_metrics": {
+      "representation": "signed_sqrt",
+      "scale_mode": "global_l2",
+      "fraction": 0.2,
+      "pds_k562_gwps": 0.6490303412628966,
+      "pds_orion_hct116": 0.6473616735516168,
+      "pds_orion_hek293t": 0.6341547791050244,
+      "delta_k562_gwps": 0.003917299200260516,
+      "delta_orion_hct116": 0.00858753383122035,
+      "delta_orion_hek293t": 0.006104881870535928,
+      "worst_fold_delta": 0.003917299200260516,
+      "macro_delta": 0.006203238300672265
+    }
+  },
+  "tune_selected_summary": {
+    "representation": "signed_sqrt",
+    "scale_mode": "global_l2",
+    "fraction": 0.2,
+    "pds_k562_gwps": 0.6490303412628966,
+    "pds_orion_hct116": 0.6473616735516168,
+    "pds_orion_hek293t": 0.6341547791050244,
+    "delta_k562_gwps": 0.003917299200260516,
+    "delta_orion_hct116": 0.00858753383122035,
+    "delta_orion_hek293t": 0.006104881870535928,
+    "worst_fold_delta": 0.003917299200260516,
+    "macro_delta": 0.006203238300672265
+  },
+  "nonpanel_test": {
+    "stage": "nonpanel_test",
+    "targets": 331,
+    "target_order_sha256": "8a20a03475efa9ed81b279c28cd101f51b12158f82e587a4939cf2f1699e2ac9",
+    "igvf_covered_targets": 317,
+    "igvf_missing_targets_preserved": 14,
+    "baseline_pds": {
+      "k562_gwps": 0.6728096676737161,
+      "orion_hct116": 0.6710885287924563,
+      "orion_hek293t": 0.6552961640574932
+    },
+    "candidate_pds": {
+      "k562_gwps": 0.6770026549482743,
+      "orion_hct116": 0.6712533186853429,
+      "orion_hek293t": 0.6606884555525039
+    },
+    "delta": {
+      "k562_gwps": 0.004192987274558191,
+      "orion_hct116": 0.0001647898928865965,
+      "orion_hek293t": 0.005392291495010637
+    },
+    "macro_baseline_pds": 0.6663981201745552,
+    "macro_candidate_pds": 0.6696481430620403,
+    "macro_delta": 0.0032500228874851413,
+    "bootstrap": {
+      "method": "paired target-cluster bootstrap; clusters from candidate-independent incumbent prediction cosine geometry",
+      "reps": 20000,
+      "seed": 8102026,
+      "clusters": 42,
+      "max_cluster_size": 69,
+      "estimate": 0.003250022887485123,
+      "ci95": [
+        -0.001052204256495301,
+        0.00911347958404644
+      ],
+      "positive_probability": 0.9288
+    },
+    "nulls": {
+      "reps": 500,
+      "seed": 8102027,
+      "exact_sparsity_sign_null": {
+        "definition": "independent random sign for every released nonzero edge; exact target/gene support, magnitudes, and nnz preserved",
+        "mean": -0.0014416308096066397,
+        "p95": 0.001112026610516036,
+        "p99": 0.002190729042692787
+      },
+      "matched_label_null": {
+        "definition": "whole IGVF target rows permuted within nnz, L2-norm, and cell-count strata; the same permutation is used in every fold",
+        "mean": -0.00022996124385852345,
+        "p95": 0.002570569745796333,
+        "p99": 0.0033305563184717266,
+        "strata": 60
+      }
+    },
+    "gate": {
+      "fraction_nonzero": true,
+      "every_fold_nonnegative": true,
+      "macro_delta_at_least_0.003": true,
+      "cluster_bootstrap_ci_low_positive": false,
+      "beats_sign_null_p95": true,
+      "beats_matched_label_null_p95": true,
+      "complete_gallery": true,
+      "missing_targets_exactly_preserved": true,
+      "passed": false
+    },
+    "folds": {
+      "k562_gwps": {
+        "source_names": [
+          "orion_hct116",
+          "orion_hek293t"
+        ],
+        "operator_genes": 17806,
+        "retrieval_genes": 6672,
+        "whitener_sha256": "13d988fcc3b129d25d254524db73e8f8253143fa493ee64d9654f0f61bc3ac55",
+        "whitening": {
+          "before_operator_median_norm": 4.781187097013906,
+          "after_operator_median_norm": 28.584101969752748,
+          "applied_scale": 0.16726735379244323
+        }
+      },
+      "orion_hct116": {
+        "source_names": [
+          "k562_gwps",
+          "orion_hek293t"
+        ],
+        "operator_genes": 17942,
+        "retrieval_genes": 16312,
+        "whitener_sha256": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+        "whitening": {
+          "before_operator_median_norm": 4.741505037456314,
+          "after_operator_median_norm": 29.166047037132685,
+          "applied_scale": 0.1625693406932958
+        }
+      },
+      "orion_hek293t": {
+        "source_names": [
+          "k562_gwps",
+          "orion_hct116"
+        ],
+        "operator_genes": 17942,
+        "retrieval_genes": 16312,
+        "whitener_sha256": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1",
+        "whitening": {
+          "before_operator_median_norm": 4.879520129200708,
+          "after_operator_median_norm": 27.96716894187004,
+          "applied_scale": 0.1744731524074827
+        }
+      }
+    }
+  },
+  "vcc_panel_final": {
+    "stage": "vcc_panel_final",
+    "targets": 259,
+    "target_order_sha256": "3f5a41d98fc2b4e6e8d3b69dba41b5db1e2d2e44dda230814bb53eb3b97d0ffb",
+    "igvf_covered_targets": 81,
+    "igvf_missing_targets_preserved": 178,
+    "baseline_pds": {
+      "k562_gwps": 0.7997964742150788,
+      "orion_hct116": 0.8005746610397773,
+      "orion_hek293t": 0.7823321660530963
+    },
+    "candidate_pds": {
+      "k562_gwps": 0.7992128340965551,
+      "orion_hct116": 0.7996767531651252,
+      "orion_hek293t": 0.7816138397533746
+    },
+    "delta": {
+      "k562_gwps": -0.0005836401185237428,
+      "orion_hct116": -0.0008979078746520486,
+      "orion_hek293t": -0.0007183262997216833
+    },
+    "macro_baseline_pds": 0.7942344337693176,
+    "macro_candidate_pds": 0.7935011423383517,
+    "macro_delta": -0.0007332914309658248,
+    "bootstrap": {
+      "method": "paired target-cluster bootstrap; clusters from candidate-independent incumbent prediction cosine geometry",
+      "reps": 20000,
+      "seed": 8112026,
+      "clusters": 33,
+      "max_cluster_size": 17,
+      "estimate": -0.000733291430965849,
+      "ci95": [
+        -0.0043031603605986814,
+        0.002609045764485403
+      ],
+      "positive_probability": 0.33865
+    },
+    "nulls": {
+      "reps": 500,
+      "seed": 8112027,
+      "exact_sparsity_sign_null": {
+        "definition": "independent random sign for every released nonzero edge; exact target/gene support, magnitudes, and nnz preserved",
+        "mean": -0.0021000468907445653,
+        "p95": 8.53012480919468e-05,
+        "p99": 0.001122634262169145
+      },
+      "matched_label_null": {
+        "definition": "whole IGVF target rows permuted within nnz, L2-norm, and cell-count strata; the same permutation is used in every fold",
+        "mean": -0.0015218740335019403,
+        "p95": 0.00023146069657697433,
+        "p99": 0.0005795995330879039,
+        "strata": 43
+      }
+    },
+    "gate": {
+      "fraction_nonzero": true,
+      "every_fold_nonnegative": false,
+      "macro_delta_at_least_0.003": false,
+      "cluster_bootstrap_ci_low_positive": false,
+      "beats_sign_null_p95": false,
+      "beats_matched_label_null_p95": false,
+      "complete_gallery": true,
+      "missing_targets_exactly_preserved": true,
+      "passed": false
+    },
+    "folds": {
+      "k562_gwps": {
+        "source_names": [
+          "orion_hct116",
+          "orion_hek293t"
+        ],
+        "operator_genes": 17806,
+        "retrieval_genes": 7312,
+        "whitener_sha256": "13d988fcc3b129d25d254524db73e8f8253143fa493ee64d9654f0f61bc3ac55",
+        "whitening": {
+          "before_operator_median_norm": 4.852526526529896,
+          "after_operator_median_norm": 28.905582236107033,
+          "applied_scale": 0.167875066030271
+        }
+      },
+      "orion_hct116": {
+        "source_names": [
+          "k562_gwps",
+          "orion_hek293t"
+        ],
+        "operator_genes": 17942,
+        "retrieval_genes": 17806,
+        "whitener_sha256": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+        "whitening": {
+          "before_operator_median_norm": 5.060652092990686,
+          "after_operator_median_norm": 29.58276231065812,
+          "applied_scale": 0.17106759807779776
+        }
+      },
+      "orion_hek293t": {
+        "source_names": [
+          "k562_gwps",
+          "orion_hct116"
+        ],
+        "operator_genes": 17942,
+        "retrieval_genes": 17806,
+        "whitener_sha256": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1",
+        "whitening": {
+          "before_operator_median_norm": 5.114696812234944,
+          "after_operator_median_norm": 28.05071296260285,
+          "applied_scale": 0.1823374977689104
+        }
+      }
+    }
+  },
+  "coverage": {
+    "de_rows": 27578,
+    "de_targets": 1889,
+    "guide_rows": 14151,
+    "guide_targets": 2062,
+    "response_genes": 8236,
+    "duplicate_target_response_pairs_aggregated": 120,
+    "nonpanel_raw_de_targets_shared": 1525,
+    "nonpanel_usable_targets_shared": 1514,
+    "split_sizes": {
+      "fit": 869,
+      "tune": 314,
+      "test": 331
+    },
+    "panel_complete_gallery": 259,
+    "panel_raw_de_targets": 85,
+    "panel_official_response_targets": 84,
+    "panel_usable_after_coordinate_exclusion": 81,
+    "panel_incumbent_fallback": 178,
+    "fit_rows_for_clip": 10994,
+    "fit_clip_abs_log2fc_p99": 4.319573408969998
+  },
+  "protocol": {
+    "incumbent": "equal-source held-donor LODO baseline with frozen source-only union whitening at gamma=0.65",
+    "adapter": "post-whitening sparse residual; unreported targets and genes remain exactly incumbent",
+    "representations": [
+      "log2fc",
+      "signed_sqrt",
+      "sign"
+    ],
+    "scale_modes": [
+      "global_l2",
+      "per_target_l2"
+    ],
+    "fractions": [
+      0.0,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2,
+      0.35
+    ],
+    "split": "SHA256 target split 60/20/20, seed prefix exp081:",
+    "selection_data": "non-panel fit/tune targets only",
+    "nonpanel_test_opened_after_selection": true,
+    "panel_truth_opened_once_after_selection_and_nonpanel_test": true,
+    "complete_galleries": true,
+    "all_300_panel_coordinates_excluded": true,
+    "all_proxy_target_coordinates_excluded_in_nonpanel_evaluation": true,
+    "count_emission": false,
+    "cell_eval2": false,
+    "cloud": false,
+    "submission": false
+  },
+  "scale_parameters": {
+    "k562_gwps": {
+      "log2fc:global_l2": {
+        "mode": "global_l2",
+        "global_factor": 1.609414914872134,
+        "row_factor_low": 0.5265776141331231,
+        "row_factor_high": 10.69942253100874
+      },
+      "log2fc:per_target_l2": {
+        "mode": "per_target_l2",
+        "global_factor": 1.609414914872134,
+        "row_factor_low": 0.5265776141331231,
+        "row_factor_high": 10.69942253100874
+      },
+      "signed_sqrt:global_l2": {
+        "mode": "global_l2",
+        "global_factor": 2.175872928029994,
+        "row_factor_low": 0.700731588457809,
+        "row_factor_high": 7.119805554817313
+      },
+      "signed_sqrt:per_target_l2": {
+        "mode": "per_target_l2",
+        "global_factor": 2.175872928029994,
+        "row_factor_low": 0.700731588457809,
+        "row_factor_high": 7.119805554817313
+      },
+      "sign:global_l2": {
+        "mode": "global_l2",
+        "global_factor": 2.2647628784179688,
+        "row_factor_low": 0.6649124566220082,
+        "row_factor_high": 6.014675756982258
+      },
+      "sign:per_target_l2": {
+        "mode": "per_target_l2",
+        "global_factor": 2.2647628784179688,
+        "row_factor_low": 0.6649124566220082,
+        "row_factor_high": 6.014675756982258
+      }
+    },
+    "orion_hct116": {
+      "log2fc:global_l2": {
+        "mode": "global_l2",
+        "global_factor": 1.6598084158144506,
+        "row_factor_low": 0.5279908893629472,
+        "row_factor_high": 10.451972533674905
+      },
+      "log2fc:per_target_l2": {
+        "mode": "per_target_l2",
+        "global_factor": 1.6598084158144506,
+        "row_factor_low": 0.5279908893629472,
+        "row_factor_high": 10.451972533674905
+      },
+      "signed_sqrt:global_l2": {
+        "mode": "global_l2",
+        "global_factor": 2.238996328233588,
+        "row_factor_low": 0.7202959636221368,
+        "row_factor_high": 7.208513537752373
+      },
+      "signed_sqrt:per_target_l2": {
+        "mode": "per_target_l2",
+        "global_factor": 2.238996328233588,
+        "row_factor_low": 0.7202959636221368,
+        "row_factor_high": 7.208513537752373
+      },
+      "sign:global_l2": {
+        "mode": "global_l2",
+        "global_factor": 2.335676431655884,
+        "row_factor_low": 0.6888458147367404,
+        "row_factor_high": 5.603983983206939
+      },
+      "sign:per_target_l2": {
+        "mode": "per_target_l2",
+        "global_factor": 2.335676431655884,
+        "row_factor_low": 0.6888458147367404,
+        "row_factor_high": 5.603983983206939
+      }
+    },
+    "orion_hek293t": {
+      "log2fc:global_l2": {
+        "mode": "global_l2",
+        "global_factor": 1.6646337274202143,
+        "row_factor_low": 0.5300447131658516,
+        "row_factor_high": 10.603611026329741
+      },
+      "log2fc:per_target_l2": {
+        "mode": "per_target_l2",
+        "global_factor": 1.6646337274202143,
+        "row_factor_low": 0.5300447131658516,
+        "row_factor_high": 10.603611026329741
+      },
+      "signed_sqrt:global_l2": {
+        "mode": "global_l2",
+        "global_factor": 2.2455054258287985,
+        "row_factor_low": 0.7041324344600306,
+        "row_factor_high": 6.9506920769095295
+      },
+      "signed_sqrt:per_target_l2": {
+        "mode": "per_target_l2",
+        "global_factor": 2.2455054258287985,
+        "row_factor_low": 0.7041324344600306,
+        "row_factor_high": 6.9506920769095295
+      },
+      "sign:global_l2": {
+        "mode": "global_l2",
+        "global_factor": 2.3424665927886963,
+        "row_factor_low": 0.7071708887580198,
+        "row_factor_high": 5.527701234817502
+      },
+      "sign:per_target_l2": {
+        "mode": "per_target_l2",
+        "global_factor": 2.3424665927886963,
+        "row_factor_low": 0.7071708887580198,
+        "row_factor_high": 5.527701234817502
+      }
+    }
+  },
+  "input_hashes": {
+    "downloads": {
+      "IGVFFI0830FXFI.csv.gz": {
+        "size": 1887277,
+        "md5": "39097b9eb95bb1e43e245480d242fea9",
+        "sha256": "e4a68a15db8609b4f57b0e1387da0848f7447346fec2fbf19cc7c9ffdc41477f"
+      },
+      "IGVFFI8270UPKB.csv.gz": {
+        "size": 348103,
+        "md5": "766b1fd06fe7d641104d2569a735a63f",
+        "sha256": "dcd5eb865e1caa61557cf7c39ca39b42745f1ada4f8465bcfb53b91fc1c4925b"
+      }
+    },
+    "run_py": "167fa22bfd42c4cbe30877106830cd560534ff5eb7ab542e54de57c5bfada34a",
+    "test_run_py": "e3361acb0fe7d0004d166de7f1fcfb1440cb4e1d227f13be4f1707d8d332abed",
+    "provenance_json": "b25c4fd98d18f47a1bb481e082e9d3e8f33ee1c3293cf5f0805932d33383483c",
+    "panel_csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "genes_csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "whiteners": {
+      "k562_gwps": "13d988fcc3b129d25d254524db73e8f8253143fa493ee64d9654f0f61bc3ac55",
+      "orion_hct116": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+      "orion_hek293t": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1"
+    },
+    "donor_metadata": {
+      "k562_gwps": {
+        "genes_txt": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba",
+        "perts_txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec",
+        "meta_json": "0bd3478aa6b63164bd4816cd8bbb439b805b6b93b2a267ddf8114b196c5e19aa"
+      },
+      "orion_hct116": {
+        "genes_txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "perts_txt": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8",
+        "meta_json": "7a1ec5a9323c6ebd4b586aa300b28bcd9ddf271e67f04bdaf353cb15b8b2d6c8"
+      },
+      "orion_hek293t": {
+        "genes_txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "perts_txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547",
+        "meta_json": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f"
+      }
+    }
+  },
+  "resource": {
+    "max_allowed_rss_gib": 0.9,
+    "peak_rss_gib": 0.6895751953125,
+    "operator_block_rows": 256,
+    "donor_chunk_rows": 32,
+    "scale_target_chunk_rows": 64
+  }
+}

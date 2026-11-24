@@ -1,0 +1,10 @@
+{
+  "max_rss_gib": 1.0,
+  "peak_process_tree_rss_gib": 0.0466766357421875,
+  "return_code": 0,
+  "killed_for_memory": false,
+  "command": [
+    "/work/exp070-20260823T063300Z/repo/.venv/bin/python",
+    "experiments/070-viperturb-k562/test_run.py"
+  ]
+}

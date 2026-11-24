@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "experiment": "147-dual-moment-emitter",
+  "status": "development_prefreeze",
+  "provenance_utc": "2026-08-31T18:45:00+00:00",
+  "source_only_evidence": {
+    "source_report": "experiments/147-dual-moment-emitter/work/source-feasibility-v2/results.json",
+    "source_report_sha256": "9780db2eff27aca44fa804665074f7e56ef3d7d3408a4cd15daa9ccbc4cd97c8",
+    "memory_report": "experiments/147-dual-moment-emitter/work/source-feasibility-v2/memory-guard.json",
+    "memory_report_sha256": "4946fe65fd1ca62d9d755b687e85fab8a5270c9de28287321f59e6fb4fba5666",
+    "source_protocol_sha256": "58a4aef12f7579869a22ee1189fe75f03924c6c1be72a9154806ebcebba5d8db",
+    "source_only_gate_passed": true
+  },
+  "builder": {
+    "path": "experiments/147-dual-moment-emitter/build_candidates.py",
+    "sha256": "7ccac4e7fba73be3d69c1d7f4e7343cdbd5e11f3156a4c2125ef005866c699b0",
+    "guard_wrapper": "experiments/147-dual-moment-emitter/run_build_guarded.sh",
+    "guard_wrapper_sha256": "5792f4f8ed7c286031e678951d447fe680e979acc037e9e8ff42dfd451d668f3",
+    "output_directory": "experiments/147-dual-moment-emitter/work/h1-fast-v2",
+    "outputs": [
+      "incumbent.h5ad",
+      "lambda-0.25.h5ad",
+      "lambda-0.50.h5ad",
+      "lambda-1.00.h5ad"
+    ],
+    "development_perturbation_truth_access": false,
+    "development_control_access": "copy non-targeting rows only"
+  },
+  "scoring": {
+    "real": "data/harness/h1-fast.h5ad",
+    "real_bundle": "experiments/002-calibration-sweep/fast/bundle",
+    "preset": "vcc2026",
+    "pert_col": "target_gene",
+    "control": "non-targeting",
+    "execution": "one cell-eval2 process at a time",
+    "max_process_tree_rss_gib": 24,
+    "minimum_system_free_percent": 15,
+    "arms": [
+      "incumbent",
+      "lambda-0.25",
+      "lambda-0.50",
+      "lambda-1.00"
+    ]
+  },
+  "decision": {
+    "raw_pds_exactly_equal": true,
+    "minimum_scaled_avg_gain": 0.002,
+    "nmae_must_improve": true,
+    "fidelity_material_regression_forbidden": true,
+    "reach_material_regression_forbidden": true,
+    "mse_must_not_erase_net_gain": true,
+    "selection_rule": "highest scaled avg gain among candidates passing every gate",
+    "no_post_truth_retuning": true
+  },
+  "forbidden": [
+    "parallel_cell_eval2",
+    "opening_h1_fast_perturbation_X_before_scoring",
+    "changing_lambda",
+    "changing_depth_contrast",
+    "changing_quasi_spread",
+    "challenge_build",
+    "challenge_submission"
+  ]
+}

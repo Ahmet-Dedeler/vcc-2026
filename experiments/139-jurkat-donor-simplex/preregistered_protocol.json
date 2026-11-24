@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "experiment": "139-jurkat-donor-simplex",
+  "date_preregistered": "2026-08-30",
+  "status": "written_before_any_experiment_139_development_or_test_outcome_access",
+  "hypothesis": "The high-MOI Jurkat same-target effect contains enough target-specific landmark information to route convex weights among Experiment 132's already-allowed source-context vectors, without directly contributing any expression value to the prediction.",
+  "distinctness": {
+    "experiment_107": "No fixed fraction or direct Jurkat source residual is added.",
+    "experiment_137": "No chord, tangent, angular cap or source-vector interpolation is used.",
+    "experiment_132": "The exact same-target source vectors are retained; only their convex weights change.",
+    "target_kernel_family": "No other target, neighbour, embedding or target-feature response prediction is used."
+  },
+  "parent_132": {
+    "run_sha256": "e78e079fc3b4a715e8b412b0a48bfe44a2f3f6cfcadb8a65a789351c53877778",
+    "authorization_sha256": "9bca6e620359e44b5440d0b8588412f40f274304ae67d9f55fd7e7d03341e197",
+    "plan_manifest_sha256": "170d55ed5f812eb85f5503af4bb9d7dec8d17dce6e58fe966d85bf0eec5185d1",
+    "development_targets": 613,
+    "untouched_test_targets": 410,
+    "response_genes": 4992,
+    "scored_datasets": ["k562_gwps", "k562_essential", "rpe1", "nadig_jurkat"],
+    "biological_groups": ["k562", "rpe1", "jurkat"],
+    "source_contexts": ["k562", "rpe1", "jurkat", "pan_h1", "orion_hct116", "orion_hek293t"],
+    "allowed_sources_per_held_group": "all six source contexts except the held biological group, exactly five vectors",
+    "comparator": "equal arithmetic mean of those exact five raw uncentered same-target source vectors",
+    "metrics": ["complete-gallery raw cosine PDS", "prediction-denominator signed credit"]
+  },
+  "jurkat_landmarks": {
+    "source_model": "experiments/107-jurkat-high-moi/work/frozen-source-model/source-model.npz",
+    "source_model_sha256": "03759a7b2cafa86d2643a58669235aca7fc38a33599aa403c67439f8979a7e26",
+    "manifest_sha256": "ae7cf5bf374e05d18080e48c7318a6405d96b77edd2e5e1bfe513ca81bff4a68",
+    "effect_semantics": "identifiable high-MOI conditional target contrast",
+    "shared_exportable_landmarks": 138,
+    "development_transferable_targets": 609,
+    "test_transferable_targets": 409,
+    "minimum_nonzero_landmarks": 16,
+    "use": "cosine similarities for donor routing only",
+    "direct_addition_or_blending": false
+  },
+  "candidate_family": {
+    "identity": "exact Experiment 132 equal source mean",
+    "rho": [0.25, 0.5],
+    "temperature": [0.1, 0.25],
+    "softmax": "stable rowwise softmax of five landmark cosines divided by temperature",
+    "weights": "uniform-to-softmax convex interpolation: (1-rho)/5 + rho*softmax",
+    "tie_break": "identity, then smaller rho, then larger temperature",
+    "fallback": "bit-exact identity for absent, nontransferable, fewer-than-16-nonzero-landmark, nonfinite or zero-norm landmark rows",
+    "invariants": ["finite weights", "weights >= 0", "weights sum to one", "coordinatewise convex hull", "exact fallback"]
+  },
+  "development": {
+    "folds": 5,
+    "fold_definition": "contiguous numpy.array_split blocks preserving Experiment 132 target order",
+    "nested_selection": "select on inner queries against an inner-only PDS gallery, then evaluate held queries against the complete 613-target gallery",
+    "final_arm_selected_on_all_613": true,
+    "freeze_before_test": true
+  },
+  "nulls": {
+    "draws_each": 49,
+    "target_label": "derange high-MOI landmark rows among transferable targets and repeat complete nested selection",
+    "landmark_coordinate": "derange the 138 high-MOI landmark coordinates relative to the fixed source landmark coordinates and repeat complete nested selection",
+    "test": "fixed final arm, no retuning"
+  },
+  "bootstrap": {
+    "draws": 20000,
+    "blocks": "connected components of reciprocal five-nearest DepMap neighbours at cosine >= 0.40",
+    "common_resampling_across_datasets": true
+  },
+  "gates": {
+    "nonidentity": true,
+    "development_each_dataset_each_fold_pds_min": 0.0,
+    "development_each_dataset_each_fold_credit_min": 0.0,
+    "each_dataset_pds_min": 0.0,
+    "each_dataset_credit_min": 0.0,
+    "macro_pds_min": 0.003,
+    "macro_credit_min": 0.003,
+    "bootstrap_lower_95_positive": true,
+    "observed_above_both_null_p95s": true,
+    "maximum_family_positive_gain_share": 0.5,
+    "maximum_target_block_positive_gain_share": 0.5,
+    "all_invariants": true,
+    "test_same_without_retuning": true
+  },
+  "freeze": {
+    "metadata_plan_before_source_effect_or_outcome_access": true,
+    "authorization_binds_all_code_plans_parent_inputs_and_source_model": true,
+    "development_lock_before_613_row_access": true,
+    "candidate_freeze_before_test": true,
+    "separate_post_development_test_authorization": true,
+    "test_lock_before_410_row_access": true,
+    "atomic_no_overwrite": true,
+    "fail_closed": true
+  },
+  "prohibited": {
+    "hcasmc": true,
+    "telohaec": true,
+    "pan_panel_outcomes": true,
+    "experiment_137_jurkat_79": true,
+    "challenge_outcomes": true,
+    "cell_eval2": true,
+    "counts": true,
+    "submission": true,
+    "commit": true,
+    "push": true,
+    "writes_outside_experiment_139": true
+  }
+}

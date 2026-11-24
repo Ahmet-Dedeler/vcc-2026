@@ -1,0 +1,10 @@
+{
+ "name": "calib-c0c1-1020",
+ "parallel": 1,
+ "venv": true,
+ "sync": [],
+ "collect": [
+  "experiments/804-known-answers/work/calib804.txt",
+  "experiments/800-checker/ka800.json"
+ ]
+}

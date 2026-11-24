@@ -1,0 +1,4 @@
+# tag	rule_tag	driver_log	gate_log	gate_tag   (659: chain1008 reads this at 10-07 20:00Z; row order = the queue tail order)
+630arm	630arm	experiments/630-rank-neutral-up/work/build630arm/build_630arm.log	experiments/428-zero-gene-audit/work/build_630arm/run630arm.log	630arm
+524dr2	-	experiments/658-prereg-1007-builds/work/dr2/recipe_dr524dr2.log	experiments/658-prereg-1007-builds/work/dr2/gates524.log	524dr
+allsw658	ALLSW	experiments/658-prereg-1007-builds/work/allsw/build_allsw658.log	experiments/428-zero-gene-audit/work/build_allsw658/runallsw658.log	allsw658

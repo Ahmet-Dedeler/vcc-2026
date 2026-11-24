@@ -1,0 +1,36 @@
+{
+  "axis": "union",
+  "basis": [
+    18591,
+    17942
+  ],
+  "basis_per_donor_cap": 12000,
+  "basis_prune": "essential",
+  "donors": [
+    "k562_gwps",
+    "orion_hct116"
+  ],
+  "dropped_in_panel": [],
+  "essential_list": "~/Code/virtual-cell-challenge-2026/data/donors/k562_essential/perts.txt",
+  "essential_list_sha256": "b1e5279534eb240f0f3487f0814d379e05b12799b21f6cb3818f5c7f55557e2d",
+  "essential_list_size": 2021,
+  "gamma": 0.65,
+  "lambda": null,
+  "n_cols": 17942,
+  "reference_metadata": "experiments/062-cd4-post-whiten/cloud-output/whiteners/held_orion_hek293t.json",
+  "reference_metadata_sha256": "cb22406a7a529380c4348bf636f2532c29a43ab0fc4b00d6f6d98fb5e02360c6",
+  "rows_dropped_per_donor": {
+    "k562_gwps": 2003,
+    "orion_hct116": 1193
+  },
+  "rows_dropped_total": 3196,
+  "rows_kept_per_donor": {
+    "k562_gwps": 7784,
+    "orion_hct116": 10807
+  },
+  "seed": 0,
+  "sha256": "5684a5b155ba4f5f99d813c8f2ad91d5dda5b4127e16aa028d1963017887c394",
+  "source_builder": "scripts/build_union_whitener.py",
+  "source_builder_sha256": "2337092687eaa973e2d141a869dfdb45969b4d4c48e9c0b166bb738c1eb1116e",
+  "wcols_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d"
+}

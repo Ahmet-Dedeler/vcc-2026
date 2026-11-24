@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "experiment": "150-dual-moment-score-level-hct116",
+  "status": "preregistered_source_only",
+  "provenance_utc": "2026-08-31T18:45:00+00:00",
+  "hypothesis": "the fixed dual-moment transform improves total projected score across held contexts even when the winning DE metric differs",
+  "surface": {
+    "name": "Orion HCT116 thinned",
+    "real_harness": "data/harness/orion-hct116-thinned.h5ad",
+    "targets": 132,
+    "real_cells_per_target": 150,
+    "controls": 18400,
+    "control_expression_rows_allowed_during_build": 18400,
+    "perturbation_expression_forbidden_during_build": true,
+    "limitation": "residual atlas batch mismatch; supporting arbitration rather than definitive independent replication"
+  },
+  "fixed_model_and_emission": {
+    "source_donors": [
+      "k562_gwps",
+      "orion_hek293t"
+    ],
+    "held_donor": "orion_hct116",
+    "alpha": 0.982,
+    "perturbmatch_fraction": 0.5,
+    "operator": "essential-pruned held-HCT union operator",
+    "incumbent_gamma": 0.65,
+    "direction_gamma": 0.45,
+    "cd4_fraction": 0.09472706196346517,
+    "cells_per_target": 400,
+    "min_cpm": 10.0,
+    "tail_spread": 1.0,
+    "keep_top": 8000,
+    "keep_spread": 0.25,
+    "overdispersion": 4.0,
+    "dual_moment_lambda": 1.0,
+    "depth_contrast": 0.5,
+    "within_group_quasi_spread": 0.25,
+    "dual_moment_seed": 14700
+  },
+  "source_only_gate": {
+    "experiment_104_unpruned_gamma065_cd4_solved_exact": true,
+    "experiment_106_pruned_gamma065_cd4_f005_exact": true,
+    "all_target_column_totals_exact": true,
+    "all_target_pseudobulks_exact": true,
+    "real_harness_control_rows_read": 18400,
+    "real_harness_perturbation_rows_read": 0
+  },
+  "confirmation_gate": {
+    "all_per_target_pds_exact": true,
+    "official_anchor_projected_avg_delta_min": 0.004,
+    "target_bootstrap_95pct_lower_min": 0.0,
+    "minimum_nonnegative_de_metrics": 2,
+    "minimum_individual_de_scaled_delta": -0.015,
+    "minimum_scaled_mse_delta": 0.0,
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 15000
+  },
+  "builder": {
+    "path": "experiments/150-dual-moment-score-level-hct116/build_predictions.py",
+    "sha256": "fdf7a493b434832fc08b58653d9be69efe80aa15fb84ff971c3e7303f82eafb1"
+  },
+  "source_bindings_sha256": {
+    "experiments/150-dual-moment-score-level-hct116/README.md": "b4fb0da3b851041645b82f8bb8aac819d0de6060242181626fa1c8f464c85706",
+    "experiments/149-dual-moment-hek293t/build_predictions.py": "a8b84bb6fbce9c9cf2eb712c3e437426dc174f450026b53b074f26f0e512859d",
+    "experiments/104-context-heldout-credit-adapter/run.py": "7c0300992db400e5ad6a6e5be2e8d64955f4d00a06ab7d9738f14a8c5ad096dd",
+    "experiments/106-state-baseline/freeze_a14_endpoints.py": "e723fd1445593de97a29183e54b83b3f1159edc2649b3bd4ce2a6b8a7300065f",
+    "experiments/062-cd4-post-whiten/run.py": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176",
+    "experiments/064-pm-cd4-composition/run.py": "39d0f5a29731c5633f3d8fd4035a5a9c3a91cbd435780a201059eaa25a36df81",
+    "experiments/100-sign-confidence/run.py": "e47c5cff1671ebe49bc5c65f3af7f599c4e0a54907652f636b14c7143aa1492b",
+    "scripts/make_submission_pm_cd4.py": "7562cf5a16fd751c55ddf248e05f2e4281f907e27be0a5bb9da959d61991b62b",
+    "experiments/147-dual-moment-emitter/dual_moment.py": "89dda8f617261f9b4cfb6ba44cb8ee85db41c3c55adf0e46991be7c5b81e5bcd",
+    "experiments/147-dual-moment-emitter/build_candidates.py": "7ccac4e7fba73be3d69c1d7f4e7343cdbd5e11f3156a4c2125ef005866c699b0",
+    "experiments/104-context-heldout-credit-adapter/work-v2/hct116/frozen.npz": "857dfd5aa7bcd682071c9638964e8c05f11fd850f159e3aec3526d2c61553474",
+    "experiments/104-context-heldout-credit-adapter/work-v2/hct116/manifest.json": "002706709e78a03764a664c954f5b23826e29377c60c4cd5675d2c820a439d9b",
+    "experiments/106-state-baseline/work/runs/20260830T064800Z/incumbent-a14/hct116/frozen.npz": "b158e0020290a3abf8292c23a79ac760d8a561975ea8ec115d9854782b283ddb",
+    "experiments/106-state-baseline/work/runs/20260830T064800Z/incumbent-a14/hct116/manifest.json": "86d9225c20e93138b2e6f911228580d4ea0364805cd9fc122e3bc4b8cfb5da84",
+    "experiments/062-cd4-post-whiten/cloud-output/whiteners/held_orion_hct116.npz": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+    "experiments/062-cd4-post-whiten/cloud-output/whiteners/held_orion_hct116.json": "c4e00ad1fa5fbba7b9b0f93e4dae91b76da73638ef9431316923bb6ca4b585bc",
+    "experiments/106-state-baseline/operators/held_orion_hct116_pruned.npz": "028645b97d1eed9c8264b4d3e9de23951688efb23f9d7735e893a01868de6423",
+    "experiments/106-state-baseline/operators/held_orion_hct116_pruned.json": "56f62f049164a01d6a2f3fdcd3a4ed70431cf7011fd8f50745b78360c9c2a9b4",
+    "data/harness/orion-hct116-thinned.h5ad": "04f98cd764bfa428cae4cd1060e814a327cdcf1a2167e6485d7c57646403b401",
+    "data/harness/orion-hct116-thinned.h5ad.meta.json": "98e0d4577d0133d02e61272ed2d24ac5e75b2bcaa84027a6c2c26cacb5f075ff",
+    "submissions/a15-cd4f010.vcc.meta.json": "34223442e4e8816bb9be2b1fdfe6a563ed114c17a2893bee0ff603953f84287a",
+    "data/challenge/gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+  },
+  "forbidden_before_source_gate": [
+    "read HCT116 perturbation expression rows",
+    "run cell-eval2",
+    "change any frozen model or emitter parameter"
+  ],
+  "forbidden_without_later_authorization": [
+    "challenge prediction build",
+    "challenge submission"
+  ]
+}

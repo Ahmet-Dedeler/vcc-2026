@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-30",
+  "stage": "after_metadata_plan_v1_before_source_expression_scan_or_any_outcome_access",
+  "superseded_artifact": "work/preregistered-plan-v1",
+  "finding": "The v1 plan assigned batches separately for every target. Complete-gallery PDS would therefore compare target rows constructed from different batch halves, so the gallery was not coherent.",
+  "correction": {
+    "plan_directory": "work/preregistered-plan-v2",
+    "partition": "One donor-wide whole-batch partition is shared by every target for each split.",
+    "search": "For each frozen split seed, choose among 512 deterministic metadata-only candidate partitions by supported-target count and target-level UMI balance.",
+    "minimum_cells_per_half": 5,
+    "minimum_occupied_batches_per_half": 4,
+    "distinct_donor_wide_partitions": 8,
+    "target_level_null_gate": "Reliability ranks are zero unless observed target reliability exceeds its own matched-null p95.",
+    "additional_ancestry_controls": [
+      "target_total_umi",
+      "occupied_batch_count"
+    ],
+    "donor_assignment_null": {
+      "draws": 49,
+      "seed": 142202622,
+      "frozen_in_plan_v2": true
+    },
+    "batch_axis_validation": "Raw scans must reproduce the exact ordered batch-label tuple frozen by plan v2."
+  },
+  "orion_batch_semantics": {
+    "dataset_field": "sample",
+    "meaning": "GEM batch",
+    "local_file_unit": "one numbered Batch*.parquet per GEM batch",
+    "evidence_checked_before_freeze": true
+  },
+  "access_state": {
+    "source_expression_opened": false,
+    "development_613_outcomes_opened": false,
+    "sealed_410_outcomes_opened": false,
+    "xu_cao_expression_opened": false,
+    "tian_kampmann_expression_opened": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "submission": false
+  }
+}

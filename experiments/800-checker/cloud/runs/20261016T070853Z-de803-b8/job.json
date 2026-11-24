@@ -1,0 +1,21 @@
+{
+ "name": "de803-b8",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "data/donors/k562_gwps",
+  "data/donors/orion_hct116",
+  "data/donors/orion_hek293t",
+  "experiments/323-current-family-validation/work",
+  "experiments/371-consensus-block-prior-lolo/work/consensus_prior.npz",
+  "experiments/528-callprop-block/work/keys528.npz",
+  "experiments/803-de-engine/stage",
+  "experiments/803-de-engine/outmerged"
+ ],
+ "collect": [
+  "experiments/803-de-engine/work/out/pairs_sharp.*",
+  "experiments/803-de-engine/work/out/ka_noop803.json",
+  "experiments/803-de-engine/work/out/batch.log",
+  "experiments/803-de-engine/work/out/h1t*/sh*/s*/members-meta.json"
+ ]
+}

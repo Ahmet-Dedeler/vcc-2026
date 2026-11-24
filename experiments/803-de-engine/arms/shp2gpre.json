@@ -1,0 +1,14 @@
+{
+ "name": "shp2gpre",
+ "desc": "(b) P2g: per-target q by key-ratio terciles (builder tercile); surface's own ps bulk (410b key, clip 0.3/3); E0's DE config (coarse MDE, zr -5); stage pre",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": false,
+  "sharpen": "tercile:2.5,2.0,1.75"
+ },
+ "stage": "pre"
+}

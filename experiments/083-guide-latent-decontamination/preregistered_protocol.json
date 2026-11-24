@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "experiment": "083-guide-latent-decontamination",
+  "date": "2026-08-23",
+  "hypothesis_source": "experiments/078-remaining-hypotheses/RESULTS.md hypothesis 3",
+  "comparator": "exact frozen experiment-064 arm D",
+  "evidence_source": "experiment 068 showed whole-row deletion destroys useful on-target signal",
+  "current_status": "structural_preflight_failed",
+  "current_source_evidence": {
+    "cells": 1989578,
+    "genes": 8248,
+    "guide_pair_categories": 11187,
+    "target_labels": 9867,
+    "perturbation_targets_with_at_least_two_retained_guide_pairs": 775,
+    "vcc_panel_targets_covered": 272,
+    "vcc_panel_targets_with_at_least_two_guide_pairs": 8,
+    "vcc_panel_targets_with_at_least_two_identifiable_guide_pairs": 8,
+    "vcc_panel_arm_d_evaluable_identifiable_multi_guide_targets": 6,
+    "minimum_required": 100,
+    "passes": false
+  },
+  "fit_tune_test": {
+    "population": "identifiable multi-guide non-panel targets only",
+    "split": [0.6, 0.2, 0.2],
+    "seed": 832026,
+    "unit": "target",
+    "selection": "deterministic held-one-guide prediction on tune targets",
+    "test": "single untouched non-panel held-guide pre-gate",
+    "panel_targets_used": false
+  },
+  "candidate_grid": {
+    "identity": true,
+    "rank": [8, 16, 32],
+    "ridge": [0.1, 1.0, 10.0, 100.0],
+    "eta": [0.25, 0.5, 0.75, 1.0],
+    "guide_cell_weight_power": [0.0, 0.5],
+    "huber_c": [2.0]
+  },
+  "coordinate_contract": {
+    "remove_all_300_vcc_target_coordinates_before_fit": true,
+    "remove_nonpanel_development_target_coordinates_from_learned_adjustment": true,
+    "remove_all_300_vcc_target_coordinates_before_transform": true,
+    "remove_all_300_vcc_target_coordinates_before_retrieval": true,
+    "final_retrieval_excludes_nonpanel_development_coordinates": false,
+    "whole_row_deletion_forbidden": true
+  },
+  "fallback": {
+    "single_guide_target": "exact original K562 row",
+    "fewer_than_two_sequence_identifiable_guides": "exact original K562 row",
+    "target_absent_from_k562": "exact arm-D behavior",
+    "failed_fit_or_nonpanel_gate": "identity; no panel evaluation"
+  },
+  "freeze_boundary": {
+    "final_refit_population": "all non-panel targets after untouched non-panel test passes",
+    "panel_adjustments_frozen_before_held_truth": true,
+    "post_panel_refit_forbidden": true,
+    "experiment_080_artifacts_forbidden": true
+  },
+  "held_evaluation": {
+    "primary": ["orion_hct116", "orion_hek293t"],
+    "independent": ["kolf"],
+    "held_donor_excluded_from_prediction_and_operator": true,
+    "gallery": "complete available VCC-panel truth gallery",
+    "baseline_fidelity": "bit-exact per-target PDS reconstruction of experiment-064 arm D"
+  },
+  "nulls": {
+    "ordinary_averaging": "identity arm-D baseline",
+    "guide_to_target_assignment": {
+      "repetitions": 100,
+      "matching": ["guide_count", "source_response_norm_decile"],
+      "repeats_complete_candidate_selection_and_nonpanel_test_gate": true
+    },
+    "seed_features": {
+      "repetitions": 100,
+      "matching": ["guide_count", "source_response_norm_decile"],
+      "repeats_complete_candidate_selection_and_nonpanel_test_gate": true
+    },
+    "shrink_control": "direction-preserving norm match to each cleaned K562 row"
+  },
+  "bootstrap": {
+    "repetitions": 20000,
+    "seed": 832026,
+    "clusters": "per-outer-fold reciprocal-8NN connected components of that fold's arm-D source query; resampled independently before combining folds",
+    "uses_held_truth": false
+  },
+  "promotion_gates": {
+    "minimum_identifiable_multi_guide_panel_targets": 100,
+    "nonidentity": true,
+    "nonnegative_each_held_donor": true,
+    "minimum_macro_raw_pds_delta": 0.003,
+    "cluster_bootstrap_lower_95_above_zero": true,
+    "above_each_null_p95": true,
+    "exact_arm_d_baseline_fidelity": true,
+    "unchanged_target_coverage": true,
+    "unsupported_targets_exactly_unchanged": true,
+    "seed_evidence_stratum_nonnegative": true,
+    "unflagged_multiguide_stratum_nonnegative": true,
+    "beats_direction_preserving_shrink_control": true,
+    "all_leave_one_cluster_out_deltas_nonnegative": true
+  },
+  "prohibited": [
+    "whole-row hard deletion",
+    "manual named off-target zeroing",
+    "held-panel tuning",
+    "post-panel refit",
+    "partial held-truth galleries",
+    "experiment-080 caches or evaluator",
+    "count generation before effect-level promotion",
+    "cell-eval2 before effect-level promotion",
+    "challenge submission"
+  ]
+}

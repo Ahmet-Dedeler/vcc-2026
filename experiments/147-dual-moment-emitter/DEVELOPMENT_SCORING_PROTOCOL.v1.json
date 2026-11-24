@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "experiment": "147-dual-moment-emitter",
+  "status": "authorized_once",
+  "provenance": {
+    "user_reported_local_time": "2026-08-31T21:45:00+03:00",
+    "authorization_utc": "2026-08-31T18:45:00+00:00",
+    "host_clock_trusted": false
+  },
+  "development_protocol": {
+    "path": "experiments/147-dual-moment-emitter/development_protocol.json",
+    "sha256": "151753830015fa5578e2f3f421f4048d97753e567ab1a4ddd5f52d9a79ba0b7b"
+  },
+  "build_evidence": {
+    "report": "experiments/147-dual-moment-emitter/work/h1-fast-v2/build-report.json",
+    "report_sha256": "f98efe40c09367f3b15b567e8e59b78de8c3fe2673f0609eebba642129b651f2",
+    "memory_report": "experiments/147-dual-moment-emitter/work/h1-fast-build-guard-v2/memory-guard.json",
+    "memory_report_sha256": "cc2c6a7097aeb61004f39a054aa44ec321d5d73124f4e1084e137d44f2ef15ae",
+    "development_perturbation_truth_opened": false,
+    "all_pseudobulk_exact": true
+  },
+  "candidate_sha256": {
+    "experiments/147-dual-moment-emitter/work/h1-fast-v2/incumbent.h5ad": "167ab6f0c326bc13bfbc0512e551e94138c0efdaaee679aae1373073bab75416",
+    "experiments/147-dual-moment-emitter/work/h1-fast-v2/lambda-0.25.h5ad": "a83de1e8e36a7d3f3cb50974238952d52eafb0b3d65129ea4367ac5834f20040",
+    "experiments/147-dual-moment-emitter/work/h1-fast-v2/lambda-0.50.h5ad": "e58adfcb71282ff5a217531e57109d631d48e74d527a5e4b8275f965b0fc9302",
+    "experiments/147-dual-moment-emitter/work/h1-fast-v2/lambda-1.00.h5ad": "3fb50f95e21b6effaef4f84918f065eadd62944a45dd48a469ee17193750dbee"
+  },
+  "scorer": {
+    "path": "experiments/147-dual-moment-emitter/score_candidates.py",
+    "sha256": "3a83be2e5b0a2454e603e981666688fdea768ae2576d999970828f180a966e42",
+    "real": "data/harness/h1-fast.h5ad",
+    "real_bundle": "experiments/002-calibration-sweep/fast/bundle",
+    "preset": "vcc2026",
+    "execution": "strictly serial"
+  },
+  "memory_guard_sha256": "3be02ceaa44ea0c0ed4641827dd9305095255ec6cbacb82d667cefb4f7915198",
+  "decision_thresholds": {
+    "raw_pds_absolute_delta_max": 1e-12,
+    "scaled_average_gain_min": 0.002,
+    "raw_nmae_delta_max_exclusive": 0.0,
+    "raw_fidelity_delta_min": -0.001,
+    "raw_reach_delta_min": -0.001,
+    "raw_mse_delta_max": 0.01
+  },
+  "access_scope": {
+    "h1_fast_perturbation_truth": "cell-eval2 only",
+    "manual_truth_inspection": false,
+    "candidate_count": 3,
+    "incumbent_count": 1,
+    "repeat_authorized": false
+  },
+  "forbidden": [
+    "parallel_cell_eval2",
+    "post_truth_parameter_changes",
+    "additional_lambda_values",
+    "challenge_build",
+    "challenge_submission"
+  ]
+}

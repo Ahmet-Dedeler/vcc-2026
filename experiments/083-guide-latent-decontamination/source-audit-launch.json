@@ -1,0 +1,94 @@
+{
+  "experiment": "083-guide-latent-decontamination",
+  "audit_kind": "read_only_h5ad_structure",
+  "h5ad": {
+    "path": "~/Code/virtual-cell-challenge-2026/data/external/scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+    "bytes": 8805466154,
+    "sha256": "d3269d9c863d96555eba768b42ab330cc1b57493cd33b4ac8fe7fbab8278f104",
+    "cells": 1989578,
+    "genes": 8248,
+    "dtype": "float32",
+    "chunks": [
+      3886,
+      33
+    ],
+    "compression": "gzip",
+    "guide_categories": 11187,
+    "target_categories": 9867,
+    "ambiguous_guide_targets": 0,
+    "minimum_cells_per_guide": 20
+  },
+  "guide_structure": {
+    "targets_with_cells": 9788,
+    "guide_count_histogram": {
+      "1": 9012,
+      "2": 762,
+      "3": 9,
+      "4": 2,
+      "5": 2,
+      "509": 1
+    },
+    "perturbation_guide_count_histogram": {
+      "1": 9012,
+      "2": 762,
+      "3": 9,
+      "4": 2,
+      "5": 2
+    },
+    "multi_guide_targets": 775,
+    "panel_targets": 300,
+    "panel_covered_targets": 269,
+    "panel_multi_guide_targets": 8,
+    "panel_identifiable_multi_guide_targets": 8,
+    "panel_arm_d_evaluable_identifiable_multi_guide_targets": 6,
+    "nonpanel_identifiable_multi_guide_targets": 506,
+    "panel_multi_guide_target_names": [
+      "CAT",
+      "MED15",
+      "MYD88",
+      "MYRF",
+      "NABP2",
+      "PDCD4",
+      "ZNF514",
+      "ZNF768"
+    ],
+    "panel_identifiable_multi_guide_target_names": [
+      "CAT",
+      "MED15",
+      "MYD88",
+      "MYRF",
+      "NABP2",
+      "PDCD4",
+      "ZNF514",
+      "ZNF768"
+    ],
+    "panel_arm_d_evaluable_identifiable_multi_guide_target_names": [
+      "CAT",
+      "MED15",
+      "MYD88",
+      "MYRF",
+      "NABP2",
+      "PDCD4"
+    ]
+  },
+  "seed_metadata": {
+    "inspected": true,
+    "source": "https://raw.githubusercontent.com/AustinHartman/perturb_seed_reproduce/198fe3d84263002e9cfa17e1a2178d4e8dd0a669/data/replogle_k562_2kb_filt_no_lfc_cutoff_off_target_candidates.csv.gz",
+    "repository_commit": "198fe3d84263002e9cfa17e1a2178d4e8dd0a669",
+    "compressed_bytes": 14460423,
+    "compressed_sha256": "820f9e5ac81bbdbc1700e4520d7f95b0da6034f7640da1f9c0577e535454db8d",
+    "rows": 214025,
+    "guide_ids_with_sequence": 7723
+  },
+  "perturbmatch_metadata": {
+    "path": "~/Code/virtual-cell-challenge-2026/data/external/perturbmatch/perts.txt",
+    "sha256": "1131758c3ab0d0c781a17580894511986d9baeadc1ad1304251f5a133086998e",
+    "targets": 9471
+  },
+  "promotion_preflight": {
+    "minimum_panel_multi_guide_targets": 100,
+    "observed_panel_arm_d_evaluable_identifiable_multi_guide_targets": 6,
+    "passes": false,
+    "heavy_compute_authorized_by_structure": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-30",
+  "stage": "after_source_preparation_v3_but_before_identity_and_before_any_development_outcome_access",
+  "superseded_source_hash_manifest": "SOURCE_HASH_MANIFEST.v3.json",
+  "superseded_preoutcome_authorization": "PREOUTCOME_AUTHORIZATION.v3.json",
+  "superseded_source_preparation": "work/source-preparation-v3",
+  "replacement_source_hash_manifest": "SOURCE_HASH_MANIFEST.v4.json",
+  "replacement_preoutcome_authorization": "PREOUTCOME_AUTHORIZATION.v4.json",
+  "replacement_source_preparation": "work/source-preparation-v4",
+  "replacement_identity": "work/identity-reproduction-v4",
+  "finding": "The v3 draft selected the correct union_pruned rows but computed donor means, centered rows, and donor median-norm scales in float64. Independent review also found that eta eligibility used four datasets rather than three biological families, inferential gates were incomplete for the fixed candidate, and preparation receipts overstated the expression-access boundary.",
+  "repair": [
+    "Compute donor means, centered rows, and donor norm scales in float32.",
+    "Cast selected centered response-axis rows to float64 only immediately before applying the fixed donor renormalization and writing the covariance basis.",
+    "Correct the K562 preparation receipt to state that candidate and reconstruction pools are identical; the NEGR1 discrepancy explanation applies only to Orion.",
+    "Select eta using nonnegative deltas in each biological family, matching the frozen gate.",
+    "Apply bootstrap, both null comparisons, and both concentration gates independently to nested OOF and the final fixed candidate; each null draw repeats both selections.",
+    "Freeze all-donor, Orion-only, and K562-only component diagnostics at the primary selected eta values without retuning.",
+    "Record exact preparation expression access: K562 streams all rows only for the ncounts row-sum check, while Orion reads NEGR1 expression only for legacy-control reconstruction.",
+    "Revalidate frozen content hashes for the exact raw or processed source subset consumed at preparation, identity, and development."
+  ],
+  "scientific_design_changed": true,
+  "candidate_grid_changed": false,
+  "weighting_changed": false,
+  "primary_candidate_changed": false,
+  "primary_thresholds_changed": false,
+  "component_diagnostics_added_before_outcome_access": true,
+  "coordinate_exclusion_clarification": "The 300 VCC and 1,023 gallery targets are excluded as response coordinates. Donor perturbation rows are intentionally retained because public same-target donor responses are legal production inputs and a15's operator retains them.",
+  "outcomes_accessed": false,
+  "untouched_test_accessed": false
+}

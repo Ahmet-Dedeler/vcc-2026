@@ -1,0 +1,13 @@
+{
+ "name": "mde",
+ "desc": "433a's DE: coarse MDE 0.1/0.1/0.3, no zs, no zero repair (618's g2mde; on h1test = 435's base run, KA a)",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": 0,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": false
+ },
+ "stage": "pre"
+}

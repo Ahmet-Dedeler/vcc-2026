@@ -1,0 +1,17 @@
+{
+ "name": "de803-b4",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "data/donors/k562_gwps",
+  "data/donors/orion_hct116",
+  "data/donors/orion_hek293t",
+  "experiments/323-current-family-validation/work",
+  "experiments/371-consensus-block-prior-lolo/work/consensus_prior.npz",
+  "experiments/528-callprop-block/work/keys528.npz",
+  "experiments/803-de-engine/stage"
+ ],
+ "collect": [
+  "experiments/803-de-engine/work/out"
+ ]
+}

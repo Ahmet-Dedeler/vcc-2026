@@ -1,0 +1,11 @@
+{
+ "name": "de812-b6",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "data/challenge"
+ ],
+ "collect": [
+  "experiments/812-de-signs/work/ntcflag812.json"
+ ]
+}

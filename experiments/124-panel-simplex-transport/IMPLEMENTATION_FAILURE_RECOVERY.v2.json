@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "experiment": "124-panel-simplex-transport",
+  "created_at_utc": "2026-08-30",
+  "failed_freeze_path": "experiments/124-panel-simplex-transport/IMPLEMENTATION_FREEZE.v2.json",
+  "failed_freeze_sha256": "62dcafa55fc9b3b635b0441657118bb451b4f46437054de692d4ff5e2f6d8d5d",
+  "failure": {
+    "stage": "released-control invariant audit after all source and incumbent inputs were fixed",
+    "exception": "AuditError: panel-simplex invariant failed",
+    "first_failure": {
+      "context": "A",
+      "target_index": 1,
+      "target": "ACLY",
+      "dose": 0.1,
+      "invariant": "exact_panel_mass_conservation",
+      "baseline_panel_math_fsum": 0.02898894807114725,
+      "candidate_panel_math_fsum": 0.028988948071147252
+    },
+    "other_first-row_invariants_passed": true,
+    "results_written": false,
+    "challenge_truth_accessed": false,
+    "held_perturbation_outcome_accessed": false
+  },
+  "cause": "The v2 implementation repaired the compensated sum of the mutable panel subset, then compared the full panel under a different compensated summation order. The 2e-18 discrepancy is arithmetic only.",
+  "authorized_repair": "After assigning the transported mutable values, perform a second compensated-sum repair on a mutable coordinate while summing the complete 300-gene panel slice. Keep target-self and all immutable coordinates fixed. Add a 300-coordinate regression test. No arm, dose, metric, input, or decision rule changes.",
+  "forbidden": {
+    "candidate_change": true,
+    "dose_change": true,
+    "metric_change": true,
+    "input_change": true,
+    "held_outcome_access": true,
+    "submission": true,
+    "commit": true,
+    "push": true
+  }
+}
+

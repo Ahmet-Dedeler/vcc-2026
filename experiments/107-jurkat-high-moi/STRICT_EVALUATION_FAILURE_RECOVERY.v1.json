@@ -1,0 +1,163 @@
+{
+  "axis_evidence": {
+    "h1": {
+      "held_axis_sha256": "e29ff3512b4c2440759bfb2a34577049b2f49df786b3e19c2a91b565de47b38e",
+      "held_gene_count": 18080,
+      "held_only_gene_count": 3,
+      "held_only_genes": [
+        "TBCE-1",
+        "HSPA14-1",
+        "TMSB15B-1"
+      ],
+      "held_only_genes_sha256": "e7a502d3dfa7edf093ad43c8a13accc8b5aa02b2bc31ce44b332ea825ceeb6a3",
+      "hspa14_exact_symbol": {
+        "held_alias_index": 8677,
+        "held_index": 8676,
+        "official_index": 15254,
+        "representable_index": 15054
+      },
+      "integration_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+      "integration_gene_count": 18533,
+      "official_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+      "official_gene_count": 18533,
+      "official_only_gene_count": 456,
+      "official_only_genes_sha256": "a6266cb71a38629ac2a4b46a43a5de3edf8e0ba3e4f794534839d2d85ba465da",
+      "reference_axis_sha256": "e29ff3512b4c2440759bfb2a34577049b2f49df786b3e19c2a91b565de47b38e",
+      "reference_gene_count": 18080,
+      "representable_axis_sha256": "5149e23027efc7f145d30510df5d488a0238847c120f23d8404822b162f185d8",
+      "representable_gene_count": 18077,
+      "score_axis_all_representable": true,
+      "score_axis_sha256": "19eb6052a4dfad3fac09463c2f8983a65200d57c53f33b1e85f74526d5ebf09c",
+      "score_gene_count": 343
+    },
+    "orion_hek293t": {
+      "held_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+      "held_gene_count": 18533,
+      "held_only_gene_count": 0,
+      "held_only_genes": [],
+      "held_only_genes_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hspa14_exact_symbol": {
+        "held_alias_index": null,
+        "held_index": 15254,
+        "official_index": 15254,
+        "representable_index": 15254
+      },
+      "integration_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+      "integration_gene_count": 18533,
+      "official_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+      "official_gene_count": 18533,
+      "official_only_gene_count": 0,
+      "official_only_genes_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reference_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+      "reference_gene_count": 18533,
+      "representable_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+      "representable_gene_count": 18533,
+      "score_axis_all_representable": true,
+      "score_axis_sha256": "17df8d274cec1507ba8818854e7b6cd4c10ea2c647a02450653791ee6ee0eef0",
+      "score_gene_count": 349
+    }
+  },
+  "axis_sources": {
+    "h1": {
+      "held_harness": {
+        "bytes": 676544876,
+        "path": "data/harness/h1-test.h5ad",
+        "sha256": "06c6baea8c62ef3d38cacdbf58e104908eb93f0ef3b25aca56b86d28240f9692"
+      },
+      "integration": {
+        "bytes": 76471358,
+        "path": "experiments/107-jurkat-high-moi/work/strict-validation/h1/integration.npz",
+        "sha256": "766c233b67a833f8584d504a76588a0f49e7a52626005853044d7c3608e547e7"
+      },
+      "reference_de": {
+        "bytes": 5770079,
+        "path": "experiments/098-nmae/work/refde_h1.npz",
+        "sha256": "fdff36498e655c079debec356ed163b560e4db4745876f69547a244c4f814d3c"
+      }
+    },
+    "official_gene_axis": {
+      "bytes": 119295,
+      "path": "data/challenge/gene_names.csv",
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201"
+    },
+    "orion_hek293t": {
+      "held_harness": {
+        "bytes": 1144870463,
+        "path": "data/harness/orion-hek293t-thinned.h5ad",
+        "sha256": "e37f39bb6aae9ce6334f133416b4780ac4226b5a407c4f1a511a5a09ef75d6be"
+      },
+      "integration": {
+        "bytes": 118283469,
+        "path": "experiments/107-jurkat-high-moi/work/strict-validation/orion_hek293t/integration.npz",
+        "sha256": "e547d8dc43d2c29a5bedce0596ecf4c16d8cd9572b228bb977f519a146db92fb"
+      },
+      "reference_de": {
+        "bytes": 9443796,
+        "path": "experiments/099-donors/work/refde_hek293t.npz",
+        "sha256": "5b358881d3c669d02575817646f4ea03cd28317571f37435947885f56aaf2f63"
+      }
+    }
+  },
+  "experiment": "107-jurkat-high-moi",
+  "failure": {
+    "diagnosis_scope": "metadata_and_axes_only",
+    "error": "h1 held genes are absent from official axis",
+    "failed_run_lock_must_remain": "experiments/107-jurkat-high-moi/work/.strict-evaluation-run.lock",
+    "original_result_directory_absent_at_freeze": true
+  },
+  "predecessor_bindings": {
+    "artifact_bindings_sha256": "b11deb9572f8a57a73c7518ed2e4ba26c078ac7cd0202fa077a4fa9987d3ecca",
+    "failed_run_lock": {
+      "bytes": 0,
+      "path": "experiments/107-jurkat-high-moi/work/.strict-evaluation-run.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "original_execution_amendment": {
+      "bytes": 2505,
+      "path": "experiments/107-jurkat-high-moi/STRICT_EVALUATION_EXECUTION_AMENDMENT.json",
+      "sha256": "4d7d11097c649ec97c07f5f2b4a03c55b651c7b74b633fb72b1311b0cafe84c6"
+    },
+    "original_runner": {
+      "bytes": 44032,
+      "path": "experiments/107-jurkat-high-moi/run_strict_evaluation.py",
+      "sha256": "f5d3416fe8e60351f912c13d6cbe9ea9912fea90212435568b2f2e1f298b45e5"
+    },
+    "outcome_access_receipt": {
+      "bytes": 1803,
+      "path": "experiments/107-jurkat-high-moi/work/nadig-outcome-access-receipt.json",
+      "sha256": "3ec3e08ab87d0c094457f8a3e76e1c0fac8cf5273ee675de0d9c2e1784a7078b"
+    },
+    "pretruth_plan": {
+      "bytes": 4917018,
+      "path": "experiments/107-jurkat-high-moi/work/strict-validation-plan.json",
+      "sha256": "dbd0c6871eff9afbb57be7ef898015c794973ec24dfbec4fad1eb28c984126cf"
+    },
+    "strict_validator": {
+      "bytes": 123048,
+      "path": "experiments/107-jurkat-high-moi/strict_nadig_validation.py",
+      "sha256": "6a4d92cce4599b7d60ffcd2a983f924359df8d3696feab9fe5c98c8542ddd2a9"
+    }
+  },
+  "recovery_contract": {
+    "alias_merging": false,
+    "directional_credit_axis": "official_order_exact_symbol_intersection_with_held_axis",
+    "existing_access_receipt_must_authenticate_before_outcome_reload": true,
+    "frozen_components_unchanged": [
+      "source_model",
+      "integration_candidates",
+      "fraction_grid",
+      "nested_selection",
+      "permutation_null",
+      "cluster_bootstrap",
+      "promotion_gates",
+      "pds_score_axes"
+    ],
+    "new_exclusive_lock": "experiments/107-jurkat-high-moi/work/.strict-evaluation-recovery-v1.lock",
+    "original_result_directory": "experiments/107-jurkat-high-moi/work/strict-evaluation-results",
+    "pds_policy": "byte_identical_frozen_score_axes_and_existing_pds_implementation",
+    "replay_limit": 1,
+    "result_directory_must_be_absent_before_replay": true
+  },
+  "schema_version": 1,
+  "status": "frozen_recovery_candidate_for_independent_review"
+}

@@ -1,0 +1,161 @@
+{
+  "schema_version": 2,
+  "protocol_contracts": {
+    "optimizer_regularization": "0.5 * lambda * ||U V^T||_F^2",
+    "factor_penalty": false,
+    "selection_objective": "exact_macro_tune_pds",
+    "tie_window": null,
+    "exact_tie_break": [
+      "lower_rank",
+      "lower_beta",
+      "stronger_regularization",
+      "temperature_nearest_0.07",
+      "candidate_key"
+    ],
+    "batch_equivalence_regression": {
+      "ranks": [
+        4,
+        8,
+        16
+      ],
+      "teachers": 2,
+      "permuted_labels": true,
+      "forced_gradient_clipping": true
+    },
+    "source_clustering_query": "panel_rows_retained_coordinate_safe"
+  },
+  "challenge": {
+    "gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+  },
+  "final_score_axis": {
+    "gene_count": 17806,
+    "gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+    "official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02"
+  },
+  "donors": {
+    "k562_gwps": {
+      "delta.npy": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+      "b_ctrl.npy": "d06cf51d51cde1ae999e86bbd3be0bdc15471392bae153a1aa1e21dc5c81b957",
+      "genes.txt": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba",
+      "perts.txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec",
+      "meta.json": "0bd3478aa6b63164bd4816cd8bbb439b805b6b93b2a267ddf8114b196c5e19aa"
+    },
+    "orion_hct116": {
+      "delta.npy": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+      "b_ctrl.npy": "b3044d439cfac932024e0a48152196387714e4b460a339fb9a03e32fcb2fe069",
+      "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+      "perts.txt": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8",
+      "meta.json": "7a1ec5a9323c6ebd4b586aa300b28bcd9ddf271e67f04bdaf353cb15b8b2d6c8"
+    },
+    "orion_hek293t": {
+      "delta.npy": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+      "b_ctrl.npy": "e04234cffbe102731cc562e8fb06bddb8ef0644b2af894b8a0ee6ce079ca4984",
+      "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+      "perts.txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547",
+      "meta.json": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f"
+    }
+  },
+  "perturbmatch": {
+    "delta.npy": "efa20944f6f6485a7cc7f484c7ab70bd2ba491a6e07b231f306e104b2e1e4cf2",
+    "genes.txt": "e889994e2d0462d064018408ca456fc8be428e660523fb1bd9a7bcd7b3ab5959",
+    "perts.txt": "1131758c3ab0d0c781a17580894511986d9baeadc1ad1304251f5a133086998e",
+    "meta.json": "0b8224c2e04b1d2e4a331ecb26c5d1733eb32c143f949424b1cd518299066a41"
+  },
+  "cd4": {
+    "cd4_rest": {
+      "delta.npy": "b2bafd6e24c2aa34b03ec17836db34fcd9512f78920aed207413a9d727f9e765",
+      "b_ctrl.npy": "5c47ef6b15a00a867b7b24034273bf3aba118d7cdf87ce58ec58427751313d81",
+      "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+      "perts.txt": "ddcd8ff07e2f38d93fc035ce2aadebe4bcaeb097ef95e1f26e8e4860b641374b",
+      "meta.json": "cece9564be470b133ac6399012af42bcfa1934776c1820838c6aa8ab6a15b9cc"
+    },
+    "cd4_stim8hr": {
+      "delta.npy": "eea7996d6694450fb1167b9ebbb6b709a3477e6d0347b49a4475e13ff7800c99",
+      "b_ctrl.npy": "75e35371ec33677462acdbc56938c2cc266d583dc2e75ed50b6b825c4a20161e",
+      "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+      "perts.txt": "639feb3fba1d6cf3b5bb5e2ef9dfdc0ff3044adb4c7477b4588c82ff096d828e",
+      "meta.json": "9ca1e9b8ccbf785d88b2a31bc47818479327c205145faa78d9b8eaa215bff4cc"
+    },
+    "cd4_stim48hr": {
+      "delta.npy": "568119ac25c8d16116d8953d3ee61762fe3c45d9ee8c22a6e7b2669c39837a9a",
+      "b_ctrl.npy": "a35f6c639937332cc483c82b9717dec9ff8a3fc70e6030e1b9f6df5fcc6658fd",
+      "genes.txt": "cbada1fd0eaeeb0385fa9c905c08ea90f1d472f5f10e832c47836ed9d7fe45fd",
+      "perts.txt": "4bf6468927fc11f0709bb0e63d14852f5a49f4f577455f0fa92e88719777d618",
+      "meta.json": "62390f52782a592b2a144349bebebffc2675309a614bff0eef99c0b315668ef8"
+    }
+  },
+  "truth_cache": {
+    "s3_prefix": "s3://<your-s3-bucket>/input/exp052-cache/",
+    "files": {
+      "meta.json": "02e1b996acef2690b83dbfe3710dbd1f329cae506ec01313695ee7a65aa8d157",
+      "master_genes.txt": "dedeefb0d286fb0e715ef2a5175320067408b0445f591e39acd87a6560db168f",
+      "train_perts.txt": "2cd490fc781f6644fa50344705cd620dcd7feb73c55b1fac40ba2e37f7768c5f",
+      "outer_perts.txt": "64d862833125a772eba7fa349c22810c9043f0951a56c3a66bd0e1bd98937f3e",
+      "train_mask.npy": "0762c03532e38590d50335f695065dbf13c09d928b6be599e831bc7e4b02220f",
+      "rpe1_raw_train.npy": "66eae196fad6e62607279fae6e883ab9bc8526c4ccc4c9314cc254149dd14e47",
+      "nadig_jurkat_raw_train.npy": "ef631404832580275b1af4942efd36463da21545d08f15da60e494b7bdefbcd6",
+      "orion_hct116_raw_outer.npy": "0e070927a33fa5ecb5d9d323c3bd68a693c654dd3699c08235c1f8fab4b35506",
+      "orion_hek293t_raw_outer.npy": "d41d2456128b873098d879d942f3f6b2681324cfaf1b52a48e7b27ac1123012a"
+    }
+  },
+  "exp064_reference": {
+    "results_sha256": "723c7e94b3aee687b001be435bf7b7a7b55d6a54991404e0ce9dcdd3f59a6113",
+    "gallery_targets": 221,
+    "target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+    "required_max_abs_error": 1e-06,
+    "normalization_contract": "all_mapped_then_block_vcc",
+    "independent_raw_bank_reconstruction_required": true,
+    "learned_statistics_use_separate_retained_coordinate_features": true
+  },
+  "kolf_confirmation": {
+    "supported": true,
+    "reason": "Untouched KOLF2.1J compact panel truth and the frozen source-only three-donor production whitener are both available and authenticated.",
+    "expected_targets": 273,
+    "files": {
+      "delta.npy": "a8ed5c7eebb0b01a6a0a4effb0651fd0c6c706aee81cac87b6369d4d04c91d6b",
+      "b_ctrl.npy": "dd4c30afee5b6bd7fc68c469da30a1eb771e367d186de41d13de16ca4aee7fc9",
+      "genes.txt": "2f077fda94cc07cf6cfddae28fc78440e80963e4e866f9904b91417f3189420b",
+      "perts.txt": "b366592072d1e0da04aaabafbcc78882d34c97ff26eb2fca5fd9a9af0084f22f",
+      "meta.json": "57737834c91663d154e84721ce73c0a33f4b670fea1d6bdab8ad35d0cf8b466a"
+    }
+  },
+  "operators": {
+    "orion_hct116": {
+      "source_donors": [
+        "k562_gwps",
+        "orion_hek293t"
+      ],
+      "npz_sha256": "7cecbf7f36e40d22a6bea1ff3adc86a8788b329def397044fb5b9ba675247cbc",
+      "json_sha256": "c4e00ad1fa5fbba7b9b0f93e4dae91b76da73638ef9431316923bb6ca4b585bc"
+    },
+    "orion_hek293t": {
+      "source_donors": [
+        "k562_gwps",
+        "orion_hct116"
+      ],
+      "npz_sha256": "97e486e0d1a805e1f24a622f1cefbfb0917e9282c5d0491c4ddb41c8475f2af1",
+      "json_sha256": "cb22406a7a529380c4348bf636f2532c29a43ab0fc4b00d6f6d98fb5e02360c6"
+    },
+    "kolf2": {
+      "source_donors": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "npz_sha256": "5608e807230dea04f93f5e804ed26e8f7285d9487d16a2791283793ffb80fed3",
+      "json_sha256": "a77f9425ac524cdcf3a53a1744520e1e63cb8b925ef77fae2864c4d8b72337b6",
+      "columns_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d"
+    }
+  },
+  "cloud": {
+    "bucket": "<your-s3-bucket>",
+    "main_donor_prefix": "input/clean-hct",
+    "perturbmatch_prefix": "input/exp061-perturbmatch-hct-count/perturbmatch",
+    "cd4_archive": "input/exp060-cd4-union-k562/cd4_compact.tar.gz",
+    "truth_cache_prefix": "input/exp052-cache",
+    "operator_source_prefix": "output/exp062-cd4-post-whiten/whiteners",
+    "production_operator_prefix": "input/production-challenge",
+    "kolf_prefix": "input/exp079-kolf-local-centering/20260823T064635Z/kolf2"
+  }
+}

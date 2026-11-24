@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "experiment": "130-telohaec-panel-confirmation",
+  "created_at": "2026-08-30",
+  "status": "terminal_no_candidate_closure",
+  "files": {
+    "experiments/130-telohaec-panel-confirmation/FINAL_STATUS.md": "c21a191b0f20bfa9252069a2a94f8f5a4abda1cc98f9ba6e2d1060365d442f39",
+    "experiments/130-telohaec-panel-confirmation/TERMINAL_CLOSURE.v1.json": "fd0b74065939875310353f6437f5859327bf25163e717b9c358cf2a258eeca4f",
+    "experiments/130-telohaec-panel-confirmation/IMPLEMENTATION_FREEZE.json": "ac750cedf88ccb3307c4cfd9764376cb47f88015b2efb9a29e959e36abf0026b",
+    "experiments/130-telohaec-panel-confirmation/SOURCE_METADATA_RECEIPT.v1.json": "4e1582e61b5f23e8154bfb52ef73af181df1314f6f04eaa4270cf05448d1d393",
+    "experiments/125-hierarchical-panel-posterior/work/source-only-evaluation-v1/results.json": "635701eefa74271e9209489b7593c045a22b573576c5a6e4319c7e7f99621010",
+    "experiments/125-hierarchical-panel-posterior/work/source-only-evaluation-v1/artifact-manifest.json": "b3efbd1db8a39ab933c4e4fe0bd998917216866df6157441a33a0e1560cdc63a",
+    "experiments/125-hierarchical-panel-posterior/work/source-only-evaluation-v1/result-receipt.json": "c7659a615b9ac4a7fb88ba53fce7002ac9e894e34f27de6738d2e6d7acc4aa86"
+  },
+  "candidate_binding_present": false,
+  "telohaec_value_access_authorized": false,
+  "telohaec_value_access_occurred": false,
+  "terminal": true
+}

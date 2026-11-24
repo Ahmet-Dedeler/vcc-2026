@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "experiment": "111-depmap-context-program-gain",
+  "date_recorded": "2026-08-30",
+  "stage": "first_selective_acquisition_schema_validation",
+  "status": "failed_closed_no_source_published",
+  "bindings": {
+    "source_manifest_sha256": "90e15f3c9d4c698805d0a680fc51085ee18fc6164b77adb2dfade1e7ad92a638",
+    "preregistered_protocol_sha256": "51051875b00057c0e4a23271784dbff30ba4909567ac15b04ee21cbeb533dcee",
+    "execution_authorization_sha256": "33fa3e55f1df461fd9e1ae9ffb42e27b75ded36141cc15b67897cfb7e5e456b4",
+    "crispr_table_sha256": "cf10cfedf2036478298a0b595a4cdd82dc6682d07aa42caa553618f59b26ea41"
+  },
+  "observed_failure": {
+    "message": "crispr_table.csv row 1442 gene_effect is empty",
+    "missing_row_count": 70,
+    "all_missing_rows_are_olfactory_controls": true,
+    "all_missing_rows_have_gene_effect_and_dependency_strength_class_blank": true,
+    "all_missing_rows_have_is_dependent_false": true,
+    "sorted_cell_line_guide_pairs_sha256": "cf7d62365d6898ad27856a6773b3ca2c2533703b677a6ee75cc0c9012feb480a"
+  },
+  "resource_use": {
+    "wall_seconds": 74.16,
+    "maximum_resident_set_bytes": 133070848,
+    "selected_compressed_payload_bytes": 300011660
+  },
+  "publication": {
+    "source_root_created": false,
+    "receipt_created": false,
+    "temporary_stage_removed": true
+  }
+}

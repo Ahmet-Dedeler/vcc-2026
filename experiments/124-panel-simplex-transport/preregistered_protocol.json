@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "experiment": "124-panel-simplex-transport",
+  "created_at_utc": "2026-08-30",
+  "objective": "Test whether Experiment 122 remains PDS-invisible through the exact production profile transform and validate a positivity-preserving within-panel simplex transport.",
+  "inputs": {
+    "panel_residual": {
+      "path": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/selected-panel-residual.npy",
+      "sha256": "6ad50b0dbd134b6074da69bf42e94f75aa4cd999abce0d614e7b6cc73f70ec63"
+    },
+    "staged_a15_effects": {
+      "path": "experiments/103-residual-only-production/work/staged-a15-linux/a15-effects.npy",
+      "sha256": "6f2b0488d67a31b59aff2ce6c7868f1de443f5153f28386b6a07f7489e12eb6f"
+    },
+    "gene_names": {
+      "path": "data/challenge/gene_names.csv",
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201"
+    },
+    "panel_targets": {
+      "path": "data/challenge/pert_counts.csv",
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    },
+    "released_controls": {
+      "A": {
+        "path": "data/challenge/context_A.h5ad",
+        "sha256": "f22e71968487d3da9402769dcd0c73a47851fad4cd7dd25510283c923031fe3e"
+      },
+      "B": {
+        "path": "data/challenge/context_B.h5ad",
+        "sha256": "41557555b3febf6db19fd930b4dd7db88941840077bf985d14dfff959c782380"
+      },
+      "C": {
+        "path": "data/challenge/context_C.h5ad",
+        "sha256": "e090e7c7cfdd0006f689214ba38ba0cd2669578e89c9bc325b65f0bd940c02e0"
+      }
+    }
+  },
+  "production_semantics": {
+    "ts": 50000.0,
+    "min_cpm": 10.0,
+    "effect_scale": 1.0,
+    "cells_per_perturbation": 400,
+    "representative_median_libraries": [
+      19946,
+      20034,
+      20109
+    ]
+  },
+  "fixed_doses": [
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "arms": {
+    "naive_log_effect": "Add eta times the panel residual to staged a15 log effects, then apply the existing whole-profile exponentiation and normalization.",
+    "panel_simplex": "Build the a15 relative-abundance profile first. On eligible expressed off-diagonal panel genes only, multiply abundance by exp(eta times residual) and renormalize that mutable panel slice to its original exact compensated sum. Copy all other coordinates exactly."
+  },
+  "required_panel_simplex_invariants": [
+    "finite",
+    "nonnegative",
+    "exact_nonpanel_relative_abundance_identity",
+    "exact_target_self_relative_abundance_identity",
+    "exact_panel_mass_conservation",
+    "exact_total_mass_conservation",
+    "exact_nonpanel_log_effect_identity",
+    "exact_nonpanel_emitted_pseudobulk_total_identity_at_all_representative_libraries"
+  ],
+  "decision": {
+    "naive_arm": "Diagnostic only. Any non-panel change refutes exact PDS-null production integration.",
+    "panel_simplex": "Mechanically valid only if every required invariant passes for all 300 targets, all three released contexts, and all four fixed doses.",
+    "promotion": "No production promotion is authorized. A separately frozen independent perturbation source must validate signed credit and confidence ordering under this exact context-specific transport before any held evaluation or challenge build."
+  },
+  "forbidden": {
+    "challenge_truth": true,
+    "held_perturbation_outcomes": true,
+    "dld1_values": true,
+    "cell_eval2": true,
+    "count_h5ad_or_vcc_build": true,
+    "challenge_submission": true,
+    "commit": true,
+    "push": true,
+    "dose_selection_from_this_audit": true
+  },
+  "output_directory": "experiments/124-panel-simplex-transport/work/integration-audit-v1"
+}
+

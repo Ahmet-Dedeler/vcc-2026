@@ -1,0 +1,17 @@
+{
+ "name": "overread-1016",
+ "parallel": 2,
+ "venv": true,
+ "sync": [
+  "experiments/804-known-answers/work/run",
+  "experiments/801-lab-folds/work/ka-abcp",
+  "experiments/810-strong-direction/work/price-final",
+  "experiments/810-strong-direction/work/abcp",
+  "experiments/811-lolo-model/work/run-m811s1",
+  "experiments/811-lolo-model/work/run-m811s2",
+  "experiments/811-lolo-model/work/run-m811s2b"
+ ],
+ "collect": [
+  "experiments/800-checker/work/"
+ ]
+}

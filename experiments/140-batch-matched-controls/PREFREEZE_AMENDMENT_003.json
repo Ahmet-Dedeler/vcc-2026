@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "date": "2026-08-30",
+  "stage": "after_source_hash_freeze_v2_but_before_any_development_outcome_access",
+  "superseded_source_hash_manifest": "SOURCE_HASH_MANIFEST.v2.json",
+  "superseded_preoutcome_authorization": "PREOUTCOME_AUTHORIZATION.v2.json",
+  "superseded_partial_preparation": "work/source-preparation-v2",
+  "replacement_source_hash_manifest": "SOURCE_HASH_MANIFEST.v3.json",
+  "replacement_preoutcome_authorization": "PREOUTCOME_AUTHORIZATION.v3.json",
+  "replacement_preparation": "work/source-preparation-v3",
+  "replacement_identity": "work/identity-reproduction-v3",
+  "trigger": "The second guarded preparation stopped at the internal memory limit while reading HCT116 batch 20.",
+  "cause": "Filtered PyArrow list-column buffers were retained by the allocator between batches. A bounded follow-up probe also found that decoding token IDs and expression values together created a single-batch high-water spike near the outer guard.",
+  "repair": [
+    "Read exact Non-Targeting and NEGR1 expression in separate Arrow-native filtered tables.",
+    "Construct the legacy reconstruction sum as exact Non-Targeting plus NEGR1, which is exact because the frozen metadata audit proves there are no other eligible legacy matches.",
+    "Decode sparse token IDs and expression values in separate filtered reads, copying only the selected token vector between them.",
+    "Release Arrow allocator pages after each large list-column read and after every batch."
+  ],
+  "scientific_design_changed": false,
+  "candidate_grid_changed": false,
+  "weighting_changed": false,
+  "outcomes_accessed": false,
+  "untouched_test_accessed": false
+}

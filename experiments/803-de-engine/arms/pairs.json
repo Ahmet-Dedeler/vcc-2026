@@ -1,0 +1,120 @@
+{
+ "pairs": [
+  {
+   "name": "G1 zs",
+   "arm": "zs",
+   "base": "g1pre",
+   "board": {
+    "overall": 0.0005493,
+    "nmae": -0.00218
+   },
+   "board_pair": "446bj2z - 446bj2"
+  },
+  {
+   "name": "G2 coarse MDE",
+   "arm": "mde",
+   "base": "nomde",
+   "board": {
+    "nmae": -0.01679,
+    "reach": 0.0024
+   },
+   "board_pair": "433a - 417e"
+  },
+  {
+   "name": "G3 cp call set (WORN on h1tv)",
+   "arm": "cp",
+   "base": "zs",
+   "board": {
+    "fid": -0.00358,
+    "jac": 0.00399
+   },
+   "board_pair": "446bj2zcp - 446bj2z",
+   "surfaces": [
+    "h1tv"
+   ]
+  },
+  {
+   "name": "CLEAN4 hook (board form, pre-zs)",
+   "arm": "c4hpre",
+   "base": "g1pre",
+   "board": {
+    "overall": 0.0005552,
+    "nmae": -0.00158
+   },
+   "board_pair": "496a - 446bj2"
+  },
+  {
+   "name": "CLEAN4 hook (618 form, on zs)",
+   "arm": "c4h",
+   "base": "zs",
+   "board": {
+    "overall": 0.0005552,
+    "nmae": -0.00158
+   },
+   "board_pair": "496a - 446bj2 (zs base here)"
+  },
+  {
+   "name": "UPRN",
+   "arm": "upr",
+   "base": "zs",
+   "board": {
+    "overall": 0.0009297,
+    "nmae": -0.00305
+   },
+   "board_pair": "630arm - 446bj2z"
+  },
+  {
+   "name": "DN d_m200",
+   "arm": "updn",
+   "base": "upr",
+   "board": {
+    "overall": 0.0003736,
+    "nmae": -0.001646
+   },
+   "board_pair": "DN - 630arm"
+  },
+  {
+   "name": "idall3 vs c4h",
+   "arm": "idall3",
+   "base": "c4h",
+   "board": {
+    "overall": -0.000501
+   },
+   "board_pair": "idall3 vs the plain hook (DESIGN 9; 663)"
+  },
+  {
+   "name": "K 2,000",
+   "arm": "k20",
+   "base": "zs",
+   "board": {
+    "overall": -0.0007,
+    "fid": -0.0017
+   },
+   "board_pair": "446bj2zk20 - 446bj2z"
+  },
+  {
+   "name": "K 1,600",
+   "arm": "k16",
+   "base": "zs",
+   "board": {
+    "overall": -0.0021,
+    "fid": -0.0041
+   },
+   "board_pair": "446bj2zk16 - 446bj2z"
+  },
+  {
+   "name": "incumbent vs zs (stack, info)",
+   "arm": "inc",
+   "base": "zs",
+   "board": null,
+   "board_pair": "no single board pair"
+  },
+  {
+   "name": "hook on the UPRN stack (info)",
+   "arm": "c4hupr",
+   "base": "upr",
+   "board": null,
+   "board_pair": "none"
+  }
+ ]
+}

@@ -1,0 +1,244 @@
+{
+  "array_hashes": {
+    "identity_eval": "41f1a1476ae72afc5420522389eb340dc1aadd84a4ab50e98801d708289f0d83",
+    "kolf_truth": "6b996cbb08fcb802e41dad6e925ba27f9a871c2b619a55d8099171a0dfe82442",
+    "local_center_eval": "20f98a1d3a63464f0a8a269f7cbaf04d4223c05ee3f52b0046857d2693fbcccb",
+    "per_target_delta": "db0f16e4af6ccf12807c70d25e947d88cf0d41369513d23f5df6d2463fafa853"
+  },
+  "decision": "reject",
+  "experiment": "079-kolf-local-centering",
+  "frozen_method": {
+    "beta": 0.5,
+    "candidate_count_evaluated_on_kolf": 1,
+    "k": 64,
+    "minimum_mutual": 2,
+    "preregistration": {
+      "bootstrap": {
+        "interval": "percentile_95",
+        "replicates": 20000,
+        "seed": 7902026,
+        "unit": "target_gene"
+      },
+      "candidate": {
+        "beta": 0.5,
+        "k": 64,
+        "minimum_mutual": 2
+      },
+      "candidate_grid": null,
+      "promotion_gate": {
+        "all_required": true,
+        "lower_95_positive": true,
+        "minimum_raw_pds_delta": 0.0015,
+        "raw_pds_delta_positive": true
+      },
+      "retuning_on_kolf": false,
+      "sha256": "4cc86fbdca015200b1d1f56aa526ccfb098fa8bcf25e4c878390f7a6fe2b464d"
+    },
+    "retuned_on_kolf": false,
+    "source_contract": {
+      "experiment": "075-postwhiten-local-centering",
+      "hidden_gallery_used": false,
+      "minimum_mutual": 2,
+      "query_only": true,
+      "selected": "reciprocal-local-center:k=64:beta=0.5",
+      "selection_freeze_sha256": "d0aabafee320a8f9cd37aab2a1c2ecc88794b8be019ed3a865886173219b2988"
+    },
+    "source_experiment": "075-postwhiten-local-centering",
+    "source_result_sha256": "72968b6ca3518e2c49c83365b661ce65942f50268c12587a04aa30fc41abbb4e",
+    "source_selection_freeze_sha256": "d0aabafee320a8f9cd37aab2a1c2ecc88794b8be019ed3a865886173219b2988"
+  },
+  "held_truth": {
+    "b_ctrl_used": false,
+    "genes": 17806,
+    "representation": "decoded raw quantized z-score, per-gene centered across all 273 compact KOLF VCC rows; no scaling or whitening",
+    "role": "untouched held truth only",
+    "rows_used_as_source": 0,
+    "rows_used_in_operator": 0,
+    "rows_used_in_query_neighbors": 0,
+    "score_gene_order_sha256": "280aab34a0e86f27db8ade213e000f9066c8d5f9b89edd3ea966aba061ba9ae9",
+    "source_commit": "8f84531a784f24b14d7e2c9b80c375d7e78fd46c",
+    "source_repository": "https://github.com/Y-Doctor/KOLF2.1J_Perturbation_Cell_Atlas",
+    "target_order_sha256": "b366592072d1e0da04aaabafbcc78882d34c97ff26eb2fca5fd9a9af0084f22f",
+    "targets": 273,
+    "used_for_hyperparameter_selection": false
+  },
+  "input_hashes": {
+    "challenge": {
+      "gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+      "pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    },
+    "implementation": {
+      "src/vcc2026/donor_transfer.py": "cecb27035a6c301f96e7fe364032216b1211bb2a92fddd1f9439d9cf8730cb3e",
+      "src/vcc2026/multi_donor.py": "3bb75320ed54e438b0a1ea10acff413e9738fc3294056db06ac337ed4d51cd8f",
+      "src/vcc2026/whiten.py": "5dbddefde17192cda4bc7f8f7eceb202faf672de1833c42251366078e7e18bc1"
+    },
+    "kolf_held_truth": {
+      "b_ctrl.npy": "dd4c30afee5b6bd7fc68c469da30a1eb771e367d186de41d13de16ca4aee7fc9",
+      "delta.npy": "a8ed5c7eebb0b01a6a0a4effb0651fd0c6c706aee81cac87b6369d4d04c91d6b",
+      "genes.txt": "2f077fda94cc07cf6cfddae28fc78440e80963e4e866f9904b91417f3189420b",
+      "meta.json": "57737834c91663d154e84721ce73c0a33f4b670fea1d6bdab8ad35d0cf8b466a",
+      "perts.txt": "b366592072d1e0da04aaabafbcc78882d34c97ff26eb2fca5fd9a9af0084f22f"
+    },
+    "production_donors": {
+      "k562_gwps": {
+        "b_ctrl.npy": "d06cf51d51cde1ae999e86bbd3be0bdc15471392bae153a1aa1e21dc5c81b957",
+        "delta.npy": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+        "genes.txt": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba",
+        "meta.json": "0bd3478aa6b63164bd4816cd8bbb439b805b6b93b2a267ddf8114b196c5e19aa",
+        "perts.txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec"
+      },
+      "orion_hct116": {
+        "b_ctrl.npy": "b3044d439cfac932024e0a48152196387714e4b460a339fb9a03e32fcb2fe069",
+        "delta.npy": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+        "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "meta.json": "7a1ec5a9323c6ebd4b586aa300b28bcd9ddf271e67f04bdaf353cb15b8b2d6c8",
+        "perts.txt": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8"
+      },
+      "orion_hek293t": {
+        "b_ctrl.npy": "e04234cffbe102731cc562e8fb06bddb8ef0644b2af894b8a0ee6ce079ca4984",
+        "delta.npy": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+        "genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+        "meta.json": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f",
+        "perts.txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547"
+      }
+    },
+    "production_whitener": "5608e807230dea04f93f5e804ed26e8f7285d9487d16a2791283793ffb80fed3",
+    "production_whitener_metadata": "a77f9425ac524cdcf3a53a1744520e1e63cb8b925ef77fae2864c4d8b72337b6"
+  },
+  "leakage_audit": {
+    "all_300_vcc_target_coordinates_excluded_from_local_centering": true,
+    "all_300_vcc_target_coordinates_excluded_from_whitener": true,
+    "kolf_labels_used_by_transform": false,
+    "kolf_opened_after_identity_and_candidate_frozen": true,
+    "kolf_rows_in_query_neighbor_graph": 0,
+    "kolf_rows_in_source_model": 0,
+    "kolf_rows_in_whitening_operator": 0,
+    "kolf_values_used_for_tuning": false,
+    "production_query_built_for_all_300_before_kolf_subset": true
+  },
+  "peak_rss_gib": 14.646400451660156,
+  "promotion_gate": {
+    "minimum_raw_pds_delta": 0.0015,
+    "passed": false,
+    "predeclared": true,
+    "raw_pds_delta_at_least_0_0015": false,
+    "raw_pds_delta_positive": true,
+    "target_cluster_bootstrap_lower_95_positive": false
+  },
+  "protocol": {
+    "cell_eval2": false,
+    "count_emission": false,
+    "full_shared_gallery": true,
+    "held_gallery_targets": 273,
+    "held_score_genes": 17806,
+    "held_truth": "KOLF2.1J",
+    "local_center_axis_genes": 18233,
+    "local_center_query_rows": 300,
+    "metric": "raw effect-level rank PDS",
+    "production_query_axis": "all official VCC genes before scorer target-coordinate exclusion",
+    "production_query_targets": 300,
+    "query_freeze_before_kolf_open": true,
+    "submission": false
+  },
+  "query": {
+    "production": {
+      "alpha": 1.0796,
+      "beta": 0.0,
+      "coverage": {
+        "any": 1.0,
+        "k562_gwps": 0.8966666666666666,
+        "orion_hct116": 0.9666666666666667,
+        "orion_hek293t": 0.98
+      },
+      "donors": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "empirical_bayes": false,
+      "gene_norm": false,
+      "genes": 18533,
+      "operator": {
+        "after_all_median_norm": 4.784002019833881,
+        "after_operator_unscaled_median_norm": 27.612037173965838,
+        "before_all_median_norm": 4.800568335288971,
+        "before_operator_median_norm": 4.653641822718356,
+        "columns": 17942,
+        "columns_index_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+        "gamma": 0.65,
+        "lambda": 0.0,
+        "metadata": {
+          "basis": [
+            33787,
+            17942
+          ],
+          "donors": [
+            "k562_gwps",
+            "orion_hct116",
+            "orion_hek293t"
+          ],
+          "n_cols": 17942
+        },
+        "metadata_sha256": "a77f9425ac524cdcf3a53a1744520e1e63cb8b925ef77fae2864c4d8b72337b6",
+        "operator_preserve_scale": 0.16853670713966978,
+        "renormalization": "candidate-specific on-axis preserve",
+        "sha256": "5608e807230dea04f93f5e804ed26e8f7285d9487d16a2791283793ffb80fed3"
+      },
+      "panel_coordinates_excluded_from_operator": 300,
+      "post_whiten_sha256": "01e1087c3ae47cce32b00b6616e8a35183575e9ce86668abc07e046c4d2297f2",
+      "pre_whiten_sha256": "414fbebd082e5cc16af6b8bf060790b8819d096a0397e709bf31d3ae337245f8",
+      "targets": 300,
+      "weights": {
+        "k562_gwps": 1.0,
+        "orion_hct116": 1.0,
+        "orion_hek293t": 1.0
+      }
+    },
+    "transform": {
+      "centered_sha256": "8d1133830b32169121ca93d07d9523a32af0bf442b066f46c650ddae7a9e0172",
+      "diagnostics": {
+        "beta": 0.5,
+        "fallback_rows": 0,
+        "genes": 18233,
+        "k": 64,
+        "max_row_norm_error": 1.7763568394002505e-15,
+        "mean_mutual_degree": 58.666666666666664,
+        "median_centroid_norm": 0.12921290985037312,
+        "median_mutual_degree": 60.0,
+        "minimum_mutual": 2,
+        "rows": 300
+      },
+      "formula": "q_i' = ||q_i|| * normalize(normalize(q_i) - 0.5 * mean(reciprocal_64NN(normalized full-panel queries)))",
+      "held_truth_used": false,
+      "identity_sha256": "8ec927e82df07ccbc09e77e541d688f45451f80817211c9f6e1ce92273793348",
+      "panel_coordinate_overlap": 0,
+      "panel_coordinates_excluded": 300,
+      "query_axis_genes": 18233,
+      "query_rows_seen_by_transform": 300,
+      "row_norm_preserved": true,
+      "score_positions_sha256": "21a55c35d551d454e9e1ad359729b8ea923c5c7394aba7b7f8ed3ff21e8ee9cd",
+      "target_labels_used": false
+    }
+  },
+  "runtime": {
+    "numpy": "2.5.2",
+    "platform": "Linux-6.18.41-94.142.amzn2023.x86_64-x86_64-with-glibc2.34",
+    "python": "3.12.14"
+  },
+  "schema_version": 1,
+  "scores": {
+    "identity_raw_pds": 0.6064291101055808,
+    "local_center_raw_pds": 0.6067253824606765,
+    "raw_pds_delta": 0.0002962723550958822,
+    "target_cluster_bootstrap": {
+      "lower_95": -0.002289377289377292,
+      "mean": 0.0002842288838612345,
+      "probability_positive": 0.5805,
+      "replicates": 20000,
+      "seed": 7902026,
+      "unit": "target_gene",
+      "upper_95": 0.002854988149105796
+    }
+  },
+  "status": "completed"
+}

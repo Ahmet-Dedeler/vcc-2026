@@ -1,0 +1,17 @@
+{
+  "alpha": 0.7,
+  "beta": 0.0,
+  "dispersion": 0.1,
+  "emit": "even",
+  "min_cpm": 20.0,
+  "space": "log1p",
+  "gate": true,
+  "seed": 0,
+  "donor": "data/donors/k562_gwps",
+  "n_rows": 360000,
+  "nnz": 2674086525,
+  "nnz_per_cell": 7428.018125,
+  "pct_of_density_cap": 56.29655842105263,
+  "donor_pert_coverage": 0.8966666666666666,
+  "donor_gene_coverage": 0.41434198456806776
+}

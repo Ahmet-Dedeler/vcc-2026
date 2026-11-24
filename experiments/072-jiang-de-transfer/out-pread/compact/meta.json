@@ -1,0 +1,26 @@
+{
+  "archive_md5": "f077cba680a1affc599f5153d99b0e45",
+  "artifacts": {
+    "effects.npy": "86beabb03a80780793a74cbc539d9d867c3ff8b94538149015ce1a4178702818",
+    "genes.txt": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+    "observed.npy": "05c3f207a75746e2af48e253ac9ae86a1b08cf4af5ef66af4aeaeeb8d3d62fe1",
+    "pathway_observations.npy": "a60c76638d72a7bc7b9f0f45f0e3f09edc0f8e683e1f5a968610b0ca0daa0db6",
+    "targets.txt": "254d8388adad410ad40ab20923aefb738751d703165a2580f7c125980e63363e"
+  },
+  "cell_lines": [
+    "A549",
+    "BXPC3",
+    "HAP1",
+    "HT29",
+    "K562",
+    "MCF7"
+  ],
+  "centering": "within pathway over non-panel targets; non-panel rows use leave-one-target-out centers; repeated target pathways averaged",
+  "gene_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+  "shape": [
+    218,
+    6,
+    18533
+  ],
+  "target_axis_sha256": "254d8388adad410ad40ab20923aefb738751d703165a2580f7c125980e63363e"
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "experiment": "141-pan-coordinate-calibration",
+  "date_preregistered": "2026-08-30",
+  "status": "written_before_experiment_141_development_effect_values_were_loaded",
+  "scientific_question": "Can a cross-context gene-coordinate calibration of the same-target Pan2025 H1 residual improve the frozen production-shaped incumbent while suppressing H1-specific coordinates?",
+  "hypothesis": {
+    "input": "q[h,t] = norm-matched Pan effect in destination family h's fixed operator geometry minus destination incumbent m[h,t]",
+    "teacher": "r[c->h,t] = permitted teacher-family raw uncentered truth minus the destination incumbent m[h,t]; all terms for one fit remain in destination h's coordinate system",
+    "calibration": "no-intercept nonnegative diagonal least squares shrunk toward one pooled scalar and clipped to [0,1]",
+    "pan_role": "input only; Pan is never a teacher, outcome, or whitener basis"
+  },
+  "candidate_grid": [
+    {
+      "name": "identity",
+      "rho": null,
+      "promotable": false
+    },
+    {
+      "name": "scalar_control",
+      "rho": 0.0,
+      "promotable": false
+    },
+    {
+      "name": "diag_rho025",
+      "rho": 0.25,
+      "promotable": false
+    },
+    {
+      "name": "diag_rho050",
+      "rho": 0.5,
+      "promotable": true
+    },
+    {
+      "name": "diag_rho075",
+      "rho": 0.75,
+      "promotable": false
+    }
+  ],
+  "data_boundary": {
+    "development_targets": "Experiment 132 preregistered 613-target selection split",
+    "untouched_test_targets": "Experiment 132 410-target split remains sealed",
+    "response_axis": "Experiment 132 frozen 4,992-gene axis excluding all 300 VCC coordinates and all 1,023 gallery-target coordinates",
+    "scored_outcomes": [
+      "k562_gwps",
+      "k562_essential",
+      "rpe1",
+      "nadig_jurkat"
+    ],
+    "biological_families": {
+      "k562": [
+        "k562_gwps",
+        "k562_essential"
+      ],
+      "rpe1": [
+        "rpe1"
+      ],
+      "jurkat": [
+        "nadig_jurkat"
+      ]
+    },
+    "h1_2025_role": "not used",
+    "challenge_outcomes": "forbidden"
+  },
+  "incumbent_and_pan_geometry": {
+    "baseline": "Experiment 140 identity-reproduction-v5 production-shaped non-PerturbMatch surrogate baselines",
+    "operators": "Experiment 140 frozen leave-family-out union_pruned operators",
+    "pan_centering": "subtract the mean Pan effect over authenticated rows outside all 1,023 Experiment 132 gallery targets; the sealed 410 are excluded by name and their effect values are never read",
+    "pan_scale": "after outer-operator application, norm-match each Pan row to the corresponding incumbent row",
+    "pan_support": "every selected 613 x 4,992 coordinate must be measured; unsupported rows or coordinates would be exact identity",
+    "candidate_specific_whitener": false,
+    "perturbmatch_status": "omitted by the frozen Experiment 140 comparator; a positive result requires a separate exact-a15 613-target follow-up before independent confirmation"
+  },
+  "cross_fitting": {
+    "target_folds": 5,
+    "fold_source": "Experiment 140 preregistered-plan-v2",
+    "outer_target_isolation": true,
+    "outer_biological_family_isolation": true,
+    "teacher_policy": {
+      "k562_held": [
+        "rpe1",
+        "jurkat"
+      ],
+      "rpe1_held": [
+        "jurkat"
+      ],
+      "jurkat_held": [
+        "rpe1"
+      ],
+      "reason": "K562 cannot teach a non-K562 destination because the frozen non-K562 surrogate contains the K562 donor slot; every fitted coordinate map also stays inside one fixed outer-operator geometry."
+    },
+    "candidate_selection": "none; diag_rho050 is the sole primary fixed before development outcome access",
+    "outer_gallery": "complete 613-target gallery",
+    "diagnostics": [
+      "identity",
+      "scalar_control",
+      "diag_rho025",
+      "diag_rho075"
+    ]
+  },
+  "raw_development_gate": {
+    "primary": "diag_rho050",
+    "pds_each_family_minimum": 0.0,
+    "signed_credit_each_family_minimum": 0.0,
+    "macro_pds_minimum": 0.003,
+    "macro_signed_credit_minimum": 0.003,
+    "primary_minus_scalar_macro_pds_minimum": 0.001
+  },
+  "conditional_inference": {
+    "run_only_if_raw_development_gate_passes": true,
+    "target_label_null_draws": 49,
+    "coordinate_correspondence_null_draws": 49,
+    "null_scope": "repeat the fixed five-fold cross-fitting procedure for diag_rho050; there is no candidate selection",
+    "target_label_operation": "apply one frozen target derangement shared across families and folds to the transformed Pan rows before destination-row norm matching; incumbent rows and outcomes remain fixed",
+    "coordinate_operation": "apply one frozen response-coordinate derangement shared across families and folds to transformed Pan rows before destination-row norm matching; incumbent rows and outcomes remain fixed",
+    "bootstrap_draws": 20000,
+    "bootstrap_blocks": "Experiment 140 frozen development target blocks",
+    "required": {
+      "both_endpoints_above_both_null_p95": true,
+      "both_bootstrap_lower_95_positive": true,
+      "positive_gain_concentration_family_max": 0.5,
+      "positive_gain_concentration_target_block_max": 0.5
+    }
+  },
+  "distinctness": {
+    "experiment_117": "Direct Pan interpolation and fraction tuning are closed; scalar_control cannot promote.",
+    "experiment_129": "No Pan target-neighbor retrieval is used.",
+    "experiment_132": "No DepMap response prediction or replacement is used.",
+    "experiment_136": "No Ridge residual, margin router, or Ridge-derived confidence is used.",
+    "experiment_096": "Experiment 096 rejected unrestricted per-gene model-to-truth slopes as cell-line-specific. Experiment 141 instead fits a clipped nonnegative reliability map for an external same-target Pan residual around an unchanged incumbent and must materially beat its scalar ancestry control."
+  },
+  "authorization_boundary": {
+    "development_613_effect_access": true,
+    "untouched_410_effect_access": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "challenge_submission": false,
+    "commit_or_push": false,
+    "production_integration": false
+  }
+}

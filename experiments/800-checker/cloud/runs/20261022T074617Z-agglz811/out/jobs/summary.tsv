@@ -1,0 +1,1 @@
+1	0	7	47796	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/agglz811.py experiments/811-lolo-model/work/run-comp811-LZ --family 811-LZ --tries 1 --pairs C0:B0,C1:B1

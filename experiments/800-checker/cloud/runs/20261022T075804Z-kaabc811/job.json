@@ -1,0 +1,18 @@
+{
+ "name": "kaabc811",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "experiments/811-lolo-model",
+  "experiments/180-def-readiness/work/def-bundle/pert_counts.csv",
+  "experiments/811-lolo-model/work/kamac/in",
+  "experiments/811-lolo-model/work/kamac/c0on",
+  "experiments/811-lolo-model/work/banks",
+  "experiments/811-lolo-model/work/banks_def_ec2",
+  "experiments/811-lolo-model/work/defbanks",
+  "data/donors"
+ ],
+ "collect": [
+  "experiments/811-lolo-model/work/kaabc"
+ ]
+}

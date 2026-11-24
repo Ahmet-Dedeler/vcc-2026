@@ -1,0 +1,1 @@
+1	0	37	219980	uv run python experiments/804-known-answers/grade_de804.py --root experiments/803-de-engine/outmerged > experiments/804-known-answers/work/grade_de804.txt 2>&1; cat experiments/804-known-answers/work/grade_de804.txt

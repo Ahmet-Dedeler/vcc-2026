@@ -1,0 +1,18 @@
+{
+ "name": "calib-707-1017",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "experiments/804-known-answers/work/run",
+  "experiments/804-known-answers/work/run710p",
+  "experiments/801-lab-folds/work/ka-abcp"
+ ],
+ "collect": [
+  "experiments/804-known-answers/work/grade804.json",
+  "experiments/804-known-answers/work/grade804.txt",
+  "experiments/804-known-answers/work/grade804p.json",
+  "experiments/804-known-answers/work/grade804p.txt",
+  "experiments/804-known-answers/work/calib804.txt",
+  "experiments/800-checker/ka800.json"
+ ]
+}

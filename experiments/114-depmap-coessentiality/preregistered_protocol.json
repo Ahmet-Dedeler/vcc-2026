@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "experiment": "114-depmap-coessentiality",
+  "date_preregistered": "2026-08-30",
+  "status": "role_source_builders_implemented_real_bundles_not_built_or_authorized",
+  "source_schema_amendment": {
+    "path": "experiments/114-depmap-coessentiality/SOURCE_SCHEMA_AMENDMENT.json",
+    "sha256": "266f805bc80d011b53322bbf81c54bd69507e39c3752fa9a47c8b95cae886075",
+    "timing": "after_verified_source_download_before_feature_construction_or_held_truth_access",
+    "amended_gene_columns": 17916
+  },
+  "source_candidate_freeze_boundary": {
+    "path": "experiments/114-depmap-coessentiality/SOURCE_CANDIDATE_FREEZE_BOUNDARY.json",
+    "sha256": "a22ca21f51e7d6729c9c7f09c2901ba0fa9cf1ecb067fc75ab91d9324ef18025",
+    "feature_build_protocol_sha256": "90c3c458f182ce4fa39a62757fdffac69ff105c26fa57bd6e28cec2e5804edc0",
+    "authorization": "false_until_each_role_manifest_and_artifact_bundle_is_hash_pinned_and_independently_reviewed"
+  },
+  "role_source_manifest": {
+    "path": "experiments/114-depmap-coessentiality/ROLE_SOURCE_MANIFEST.json",
+    "sha256": "e05d877b5ea0a7aeae06f4c53ad363e984379678b5b61fd852e3e877d17d0248",
+    "status": "builders_defined_real_role_bundles_not_built_or_approved",
+    "roles": [
+      "h1",
+      "orion_hek293t"
+    ]
+  },
+  "hypothesis": "For a14 rows lacking the incumbent K562/PerturbMatch route or having fewer than three real-donor carriers, a leave-target-out neighbor direction built from the exact DepMap 24Q4 co-essentiality representation, especially its published-weight 1.0 blend with STRING, improves target retrieval and downstream sign precision without changing any other row.",
+  "primary_arm": "string_depmap_blend_w1",
+  "secondary_arms": [
+    "string_neighbor",
+    "depmap_neighbor"
+  ],
+  "controls": [
+    "identity",
+    "current_fallback"
+  ],
+  "incumbent_contract": {
+    "name": "a14_support_contract",
+    "reference_metadata": "submissions/a15-cd4f010.vcc.meta.json",
+    "reference_metadata_sha256": "34223442e4e8816bb9be2b1fdfe6a563ed114c17a2893bee0ff603953f84287a",
+    "reference_metadata_role": "audit_only_cross_check_of_pre_cd4_perturbmatch_support_fields_shared_by_a14_and_a15",
+    "reference_metadata_fields_used": [
+      "effects.perturbmatch.neither_supported_preserved"
+    ],
+    "eligibility_primary_source": "hash_pinned_panel_k562_perturbmatch_and_orion_target_lists",
+    "alpha": 0.982,
+    "donor_weights": "equal_over_role_donors_that_carry_the_target",
+    "gene_norm": false,
+    "empirical_bayes": false,
+    "beta": 0.0,
+    "perturbmatch_blend": 0.5,
+    "whitener_id": "union_pruned",
+    "whiten_gamma": 0.65,
+    "whiten_lambda": 0.0,
+    "basis_prune": "common_essential_after_sampling",
+    "basis_row_cap_per_donor": 12000,
+    "basis_rng": "numpy_default_rng_seed_0_one_stream_in_role_donor_order",
+    "cd4_fraction": 0.05,
+    "cd4_target_solve": null,
+    "real_donors": [
+      "k562_gwps",
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "real_donor_target_counts": {
+      "k562_gwps": 269,
+      "orion_hct116": 290,
+      "orion_hek293t": 294
+    },
+    "source_vote_count_histogram": {
+      "1": 6,
+      "2": 35,
+      "3": 259
+    },
+    "targets_with_any_real_source": 300,
+    "targets_without_real_source": 0
+  },
+  "eligibility": {
+    "selection_time": "before_any_experiment_114_held_truth_access",
+    "incumbent_uncovered_definition": "The exact a14 PerturbMatch audit category neither_supported_preserved: neither K562-GWPS nor PerturbMatch carries the target, so the K562 slot is absent and preserved unchanged.",
+    "incumbent_uncovered_targets": [
+      "ABCD1",
+      "CAPRIN2",
+      "EPHB2",
+      "HEATR6",
+      "KIF21B",
+      "MAPK7",
+      "MLKL",
+      "NICN1",
+      "PARP3",
+      "PBLD",
+      "PDK3",
+      "PHF11",
+      "PSMB9",
+      "RAB11FIP5",
+      "SEMA4F",
+      "SLC44A1",
+      "SNN",
+      "SOCS5",
+      "SPATA20",
+      "TAF4",
+      "TBC1D19",
+      "TDRD7",
+      "TESK2",
+      "TMEM104",
+      "TMEM79",
+      "TTBK2",
+      "TXNDC16",
+      "ZC2HC1A"
+    ],
+    "incumbent_uncovered_count": 28,
+    "incumbent_uncovered_ordered_sha256": "2ca99e21178d85bb8e6fe8a49d9a304cce8de30786463cbb7f50f88c4cdbf91c",
+    "low_confidence_definition": "A target carried by fewer than all three frozen real donors, excluding rows already in incumbent_uncovered_targets. No held outcome, target embedding, effect norm, or leaderboard value enters this rule.",
+    "low_confidence_targets": [
+      "ANKRD52",
+      "BRD1",
+      "C5orf22",
+      "CDK8",
+      "DLAT",
+      "GLYR1",
+      "IL10RB",
+      "MAN2A1",
+      "MAPK12",
+      "PHF19",
+      "RFK",
+      "UNK",
+      "VAPB"
+    ],
+    "low_confidence_count": 13,
+    "low_confidence_ordered_sha256": "c12e419a49fe91ffb40cb235aa2841d64d869a3bac3b8def15f301eb74ec0a6b",
+    "eligible_targets": [
+      "ABCD1",
+      "ANKRD52",
+      "BRD1",
+      "C5orf22",
+      "CAPRIN2",
+      "CDK8",
+      "DLAT",
+      "EPHB2",
+      "GLYR1",
+      "HEATR6",
+      "IL10RB",
+      "KIF21B",
+      "MAN2A1",
+      "MAPK12",
+      "MAPK7",
+      "MLKL",
+      "NICN1",
+      "PARP3",
+      "PBLD",
+      "PDK3",
+      "PHF11",
+      "PHF19",
+      "PSMB9",
+      "RAB11FIP5",
+      "RFK",
+      "SEMA4F",
+      "SLC44A1",
+      "SNN",
+      "SOCS5",
+      "SPATA20",
+      "TAF4",
+      "TBC1D19",
+      "TDRD7",
+      "TESK2",
+      "TMEM104",
+      "TMEM79",
+      "TTBK2",
+      "TXNDC16",
+      "UNK",
+      "VAPB",
+      "ZC2HC1A"
+    ],
+    "eligible_count": 41,
+    "eligible_ordered_sha256": "508daf6356aeb62fd30e9048482bdaca9b1b001ec80e8aef9dabe5b32bc0dcb0",
+    "all_other_rows": "bit_exact_incumbent"
+  },
+  "representations": {
+    "depmap_24q4": {
+      "input": "CRISPRGeneEffect.csv",
+      "rows_cell_lines": 1178,
+      "columns_genes": 17916,
+      "column_label_parser": "split once on literal ' (' and retain the symbol prefix",
+      "minimum_finite_values_per_gene": 2,
+      "transform": [
+        "read source values as float32",
+        "transpose to genes_by_cell_lines",
+        "replace every nonfinite source value with NaN",
+        "subtract each gene row nanmean",
+        "replace NaN centered entries with exact float32 zero",
+        "L2 normalize each gene row in float32 with zero norms replaced by one",
+        "drop rows with fewer than two finite values; retain zero centered-norm rows as zero feature vectors"
+      ],
+      "implementation_parity": "bit_exact_against_pphouse_virtual_cell_commit_79cd46024dcca8e6afd96bb0bca6bfcbbe77978c",
+      "neighbourhood_transform": false
+    },
+    "string": {
+      "artifact": "data/external/slim/gene_string_embeddings.v0.3.h5",
+      "sha256": "789416877b8701ef6f800106d26bf7bb97ea8e72744e6ab93e24933a717f247d",
+      "rows_genes": 21688,
+      "dimensions": 64,
+      "row_normalization": "L2"
+    },
+    "blend": {
+      "formula": "row_normalize(concatenate(row_normalized_STRING, 1.0 * row_normalized_DepMap))",
+      "published_weight": 1.0,
+      "similarity_share_when_both_present": {
+        "string": 0.5,
+        "depmap": 0.5
+      },
+      "missing_block_policy": "zero block; do not drop a gene covered by the other representation"
+    }
+  },
+  "candidate_construction": {
+    "source_effect_input": "role-owned donor-level source-only rows from ROLE_SOURCE_MANIFEST.json on the canonical gene axis",
+    "source_bank_target_universe": "union of the exact positive top-25 leave-query-target-out neighbours for every one of the 41 eligible queries across STRING, DepMap, and the weight-1 blend",
+    "source_bank_effect_space": "a14 donor deviations after role normalization and role-specific whitening at gamma 0.65 lambda 0, with no bank-global median renormalization because final candidates are restored to incumbent row norm",
+    "source_bank_excluded_response_coordinates": "union of all 300 VCC panel targets and the role held-surface target axis",
+    "source_consensus": "equal donor weight per target and per-coordinate mean over rows that cover that coordinate",
+    "leave_target_out": "For each query target, remove every source signature with the same target symbol before neighbor selection and aggregation.",
+    "response_coordinate_mask": "Remove all 300 VCC target-gene coordinates from source effects, incumbent rows, candidate rows, normalization, PDS, and directional precision.",
+    "neighbours": 25,
+    "neighbour_tie_policy": "exactly 25 positive neighbours maximum; descending similarity with ties resolved by frozen sorted source-target order",
+    "similarity_floor": 0.0,
+    "neighbour_weight": "max(cosine,0)^3",
+    "aggregation": "coverage-aware weighted mean per response coordinate",
+    "row_scale": "restore the incumbent row L2 norm on allowed response coordinates",
+    "confidence": "absolute value of the final stored effect array after dtype conversion",
+    "unsupported_policy": "If the query feature is unavailable, no positive neighbor survives, the candidate row is nonfinite or zero norm, or the incumbent row has zero allowed-coordinate norm, return the incumbent row bit-for-bit.",
+    "ineligible_policy": "return the incumbent row bit-for-bit",
+    "panel_coordinates_after_construction": "exactly zero"
+  },
+  "arms": {
+    "identity": "Exact incumbent matrix; mandatory bit-identity control.",
+    "current_fallback": "Exact incumbent matrix under a separate named comparator; it must be array-identical to identity.",
+    "string_neighbor": "Eligible rows use the frozen STRING representation and candidate construction; every other or unsupported row is exact incumbent.",
+    "depmap_neighbor": "Eligible rows use the exact DepMap 24Q4 representation and candidate construction; every other or unsupported row is exact incumbent.",
+    "string_depmap_blend_w1": "Eligible rows use the frozen 1.0 STRING plus DepMap concatenated representation and candidate construction; every other or unsupported row is exact incumbent."
+  },
+  "evaluation": {
+    "held_access_order": "All real arms, permutation-null arms, source-blind confidence arrays, target lists, gene masks, implementation hashes, and input hashes must be frozen before any held perturbation truth path is accepted or opened.",
+    "clean_surface_policy": "Every surface marked clean=true in the separately reviewed evaluation manifest is mandatory. A depth-confounded surface may not contribute directional precision.",
+    "pds": {
+      "space": "raw control-referenced effect",
+      "centering": "none",
+      "gallery": "complete predeclared gallery",
+      "ties": "midrank",
+      "exclude_response_coordinates": "all 300 VCC target genes"
+    },
+    "directional_precision": {
+      "selection": "For each arm and target, rank allowed response genes by absolute frozen predicted effect, before truth access.",
+      "fraction": 0.2,
+      "truth": "reference directional sign; reference-nonsignificant or zero-sign genes count as incorrect when selected",
+      "aggregation": "equal weight per target, then equal weight per clean surface",
+      "source_blind": true
+    },
+    "target_label_permutation_nulls": {
+      "draws": 100,
+      "seed_namespace": "experiment-114-target-label-null-v1",
+      "strata": [
+        "incumbent_uncovered",
+        "low_confidence"
+      ],
+      "operation": "Permute query-target feature labels within stratum while keeping source effects, source labels, incumbent rows, support masks, arm parameters, and target ordering fixed.",
+      "repeat_candidate_construction": true
+    }
+  },
+  "promotion_gate": {
+    "applies_to": "string_depmap_blend_w1 versus current_fallback",
+    "raw_pds_delta_each_clean_surface_minimum": 0.0,
+    "macro_raw_pds_delta_minimum": 0.003,
+    "directional_precision_delta_each_clean_direction_surface_minimum": 0.0,
+    "macro_directional_precision_delta_minimum_exclusive": 0.0,
+    "observed_macro_raw_pds_gain_must_exceed_permutation_p95": true,
+    "identity_and_current_fallback_must_be_array_identical": true,
+    "ineligible_rows_must_be_bit_identical_to_incumbent": true,
+    "unsupported_rows_must_be_bit_identical_to_incumbent": true,
+    "target_coverage_must_be_unchanged": true,
+    "all_invariants_required": true
+  },
+  "current_authorization": {
+    "small_public_code_and_metadata_inspection": true,
+    "local_synthetic_tests": true,
+    "depmap_large_download": true,
+    "source_feature_build": true,
+    "source_candidate_freeze": false,
+    "held_truth_access": false,
+    "model_fitting": false,
+    "evaluation": false,
+    "count_generation": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  },
+  "prohibited": [
+    "opening_held_perturbation_truth_before_freeze",
+    "using_held_truth_to_select_rows_features_neighbours_or_scales",
+    "using_target_gene_coordinates_as_response_features",
+    "across_perturbation_centering_for_pds",
+    "same_target_source_signature_use",
+    "post_truth_refit_or_arm_selection",
+    "downloading_any_depmap_artifact_other_than_figshare_file_51064667",
+    "writing_depmap_source_or_feature_artifacts_outside_experiment_114_work_source_features",
+    "overwriting_any_existing_depmap_source_feature_or_receipt_artifact",
+    "count_generation",
+    "challenge_build",
+    "submission",
+    "commit",
+    "push",
+    "writes_outside_experiment_directory"
+  ]
+}

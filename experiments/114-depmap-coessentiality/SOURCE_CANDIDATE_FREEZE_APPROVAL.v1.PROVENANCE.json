@@ -1,0 +1,57 @@
+{
+  "authorization": {
+    "authorized_action": "source_candidate_freeze",
+    "count_generation": false,
+    "evaluation": false,
+    "held_truth_access": false,
+    "submission": false
+  },
+  "created_at": "2026-08-30",
+  "experiment": "114-depmap-coessentiality",
+  "files": {
+    "approval_amendment": {
+      "path": "experiments/114-depmap-coessentiality/SOURCE_CANDIDATE_FREEZE_APPROVAL.v1.json",
+      "sha256": "fa360e7b04c61d5effb137de3d990925b899f9f15cf0e2551459fb28752113a4"
+    },
+    "entrypoint": {
+      "path": "experiments/114-depmap-coessentiality/freeze_source_candidates_v1.py",
+      "sha256": "6724e92a4f35fe2efa57006af1623ddcb8b51f09d1d9e9ef56bc93cdbd58ce72"
+    },
+    "tests": {
+      "path": "experiments/114-depmap-coessentiality/test_freeze_source_candidates_v1.py",
+      "sha256": "1caab22a87c638fa95b912b9ac25cd03a6be7d8dd8e46cde8dd0de4dc05fb058"
+    }
+  },
+  "real_execution": {
+    "candidate_freeze_executed": false,
+    "held_truth_opened": false,
+    "outputs_created": false
+  },
+  "reviewed_role_manifests": {
+    "h1": "357244f5515db1e51686facc1d923da6209fe9ac95c3ce686c28b7474bece017",
+    "orion_hek293t": "939c43916c3addb0a2fd2ff7753a8c69dd866d39e33a0481d901f0dc87247ad3"
+  },
+  "schema_version": 1,
+  "sealed_predecessors": {
+    "ROLE_SOURCE_MANIFEST.json": "e05d877b5ea0a7aeae06f4c53ad363e984379678b5b61fd852e3e877d17d0248",
+    "SOURCE_CANDIDATE_FREEZE_BOUNDARY.json": "a22ca21f51e7d6729c9c7f09c2901ba0fa9cf1ecb067fc75ab91d9324ef18025",
+    "preregistered_protocol.json": "cfd495175d87cba7e7cad1ff171b7a817664eabc3e836aa311ec7417f0c59b91",
+    "run.py": "737d0bf225c5ee5e5108a54a07e9fdfc3ee6e8728f1ad559def5ff2c03569fd9"
+  },
+  "stage": "source_candidate_freeze_approval_provenance",
+  "validation": {
+    "real_lock_audit": {
+      "command": "uv run python experiments/114-depmap-coessentiality/freeze_source_candidates_v1.py audit",
+      "result": "passed_both_roles_outputs_absent"
+    },
+    "ruff": {
+      "command": "uv run ruff check experiments/114-depmap-coessentiality/freeze_source_candidates_v1.py experiments/114-depmap-coessentiality/test_freeze_source_candidates_v1.py",
+      "result": "passed"
+    },
+    "tests": {
+      "command": "uv run --with pytest python -m pytest -q experiments/114-depmap-coessentiality/test_run.py experiments/114-depmap-coessentiality/test_build_role_inputs.py experiments/114-depmap-coessentiality/test_freeze_source_candidates_v1.py",
+      "result": "47_passed"
+    }
+  },
+  "write_scope": "experiments/114-depmap-coessentiality"
+}

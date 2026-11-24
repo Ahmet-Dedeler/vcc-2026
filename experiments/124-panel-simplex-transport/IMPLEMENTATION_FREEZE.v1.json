@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "experiment": "124-panel-simplex-transport",
+  "created_at_utc": "2026-08-30",
+  "status": "implementation_frozen_before_released_control_profile_audit",
+  "files": {
+    "experiments/124-panel-simplex-transport/preregistered_protocol.json": "a6d6c3b62f2b9d76100e2c1185fd296bbb332351705c5a2b12e377c365dce734",
+    "experiments/124-panel-simplex-transport/run.py": "dcd4622720ce877c92d1dc14ae39de7d244919a4a301e74fdfafe9bf389819de",
+    "experiments/124-panel-simplex-transport/test_run.py": "1f653bee2f61224c18d2668ea90042cb717bd5f9c1df2a22b3b9011c5712c0a3"
+  },
+  "preflight": {
+    "synthetic_tests": "4/4 passed",
+    "ruff": "passed",
+    "python_compile": "passed"
+  },
+  "authorization": {
+    "released_control_profiles": true,
+    "experiment_122_frozen_source_result": true,
+    "staged_a15_effects": true,
+    "challenge_truth": false,
+    "held_perturbation_outcomes": false,
+    "cell_eval2": false,
+    "count_or_submission_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  }
+}
+

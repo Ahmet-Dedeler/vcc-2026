@@ -1,0 +1,21 @@
+{
+  "acquisition_receipt_sha256": "8115283b263381ed283d6ffc6e72f40a2de6882bc7917c623dae7bd26787f454",
+  "conversion_protocol_sha256": "59414ac52ad15bd600330c8096a2c7fd3b0e2d8d178fe633c27796cd63a58587",
+  "created_at": "2026-08-30",
+  "experiment": "116-dld1-lowmoi",
+  "prevalue_freeze_sha256": "9d3d6dc2489f648c9a0586f2a4c27e99a6344ed1fd915e8d23f0ecab74c5fc7b",
+  "schema_version": 1,
+  "source_assets": {
+    "low1_lfc_matrix": {
+      "path": "data/external/dld1-lowmoi/GSE337988_sublib2_de_matrices_lfc_matrix_Low1.csv.gz",
+      "sha256": "aaa70afe2dfefd22b72fe6294b87887bc6ee928590e419f459bcdf9616fba517",
+      "size_bytes": 155201822
+    },
+    "low2_lfc_matrix": {
+      "path": "data/external/dld1-lowmoi/GSE337988_sublib2_de_matrices_lfc_matrix_Low2.csv.gz",
+      "sha256": "4e9bd64d8a3223dcb50d9c2a5b844698099a81dc2f86c38e4c0e270b4c87c390",
+      "size_bytes": 155251513
+    }
+  },
+  "status": "matrix_value_access_authorized_from_frozen_protocol"
+}

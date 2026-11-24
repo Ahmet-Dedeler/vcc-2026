@@ -1,0 +1,16 @@
+{
+  "baseline": 0.09488940666904175,
+  "gene z-score (divide by donor sd)": 0.095856444640589,
+  "gene sd^-0.5 (half standardisation)": 0.09568778614584314,
+  "gene sd^+0.5 (anti-standardisation)": 0.09294928336152139,
+  "divide by mean |effect| per gene": 0.09814554983764955,
+  "rank-normalise per perturbation": 0.046985184829222294,
+  "keep top 50% most-variable genes": 0.06375965698778865,
+  "keep top 25% most-variable genes": 0.05342311161097405,
+  "keep top 9% most-variable genes": 0.040677023772466334,
+  "keep target CPM > 1.0": 0.09704922522382561,
+  "keep target CPM > 5.0": 0.0982589432647619,
+  "keep target CPM > 20.0": 0.10094095432658991,
+  "clip at +-3 gene sd": 0.0630040412828722,
+  "sign only (binarised)": 0.03687315681681906
+}

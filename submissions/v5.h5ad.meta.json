@@ -1,0 +1,24 @@
+{
+  "alpha": 1.0796,
+  "beta": 0.0,
+  "dispersion": 0.1,
+  "whiten_gamma": 0.65,
+  "whiten_lam": 0.0,
+  "emit": "even",
+  "min_cpm": 20.0,
+  "space": "log1p",
+  "gate": true,
+  "seed": 0,
+  "donor": "data/donors/k562_gwps",
+  "donors": [
+    "k562_gwps=data/donors/k562_gwps:1",
+    "orion_hct116=data/donors/orion_hct116:1",
+    "orion_hek293t=data/donors/orion_hek293t:1"
+  ],
+  "eb": false,
+  "n_rows": 360000,
+  "nnz": 2673809876,
+  "nnz_per_cell": 7427.249655555555,
+  "pct_of_density_cap": 56.290734231578945,
+  "donor_pert_coverage": 1.0
+}

@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "experiment": "138-dld1-replicate-sign",
+  "date_preregistered": "2026-08-30",
+  "status": "written_before_any_experiment_138_development_or_test_outcome_access",
+  "scientific_question": "Does target-specific coordinate sign evidence that replicates across the DLD1 Low1 and Low2 screens improve the exact Experiment 132 same-target source-mean comparator when used only as a sparse sign-preserving magnitude gate?",
+  "distinctness": {
+    "experiment_080": "No learned metric or output-space operator is fitted.",
+    "experiments_100_104": "The signal is direct target-specific replicate evidence from an independent perturbation assay, not a generic learned pairwise confidence model.",
+    "experiment_116": "Experiment 116 tested broad-row reliability and explicitly left a separately preregistered sparse-response mechanism open.",
+    "experiment_108": "Experiment 108 reweighted a K562 predictor using a literature-derived DoRothEA reconstruction. Experiment 138 instead uses paired same-target DLD1 experimental replicates and the exact Experiment 132 multi-source comparator.",
+    "experiments_129_132_136": "DLD1 never predicts a target from neighbours or target features and never replaces the same-target source mean. It only reweights the exact incumbent.",
+    "experiment_137": "No Jurkat high-MOI source value, chord blend, tangent interpolation, angular cap, source scaling or 79-target outcome is used."
+  },
+  "parent_experiment_132": {
+    "implementation": "experiments/132-response-decomposition-ridge/run.py",
+    "implementation_sha256": "e78e079fc3b4a715e8b412b0a48bfe44a2f3f6cfcadb8a65a789351c53877778",
+    "authorization": "experiments/132-response-decomposition-ridge/SOURCE_ONLY_AUTHORIZATION.v2.json",
+    "authorization_sha256": "9bca6e620359e44b5440d0b8588412f40f274304ae67d9f55fd7e7d03341e197",
+    "plan_manifest": "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/plan-manifest.json",
+    "plan_manifest_sha256": "170d55ed5f812eb85f5503af4bb9d7dec8d17dce6e58fe966d85bf0eec5185d1",
+    "development_targets": {
+      "path": "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/selection_targets.txt",
+      "file_sha256": "74a070a538455ffc2a528dae3094d21e047905463779b2a5206d681f5ca6ebb5",
+      "logical_sha256": "9b65bdb108fd7827259f185242274cabd8f03f8288907c309abc82d490bf5519",
+      "count": 613,
+      "dld1_supported_count": 140
+    },
+    "untouched_test_targets": {
+      "path": "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/test_targets.txt",
+      "file_sha256": "bd37bcacb4eea90da11902bbb8f4736068a7ff67c001739e3407de2b4bf73fc6",
+      "logical_sha256": "b0273706c5eee911650a631559b7dc2e022fba47b0a7116cdad842706752c703",
+      "count": 410,
+      "dld1_supported_count": 94
+    },
+    "response_axis": {
+      "path": "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/response_genes.txt",
+      "file_sha256": "24743754eead5b8ddd81634bd12feac1df431eb2b9581197755b75c4c90949c8",
+      "logical_sha256": "5f61b28c4648af26e970bc5762a599dd8d4500f380a7ef6d9633b1e106404d3f",
+      "count": 4992,
+      "excludes_all_300_vcc_coordinates": true,
+      "excludes_all_1023_gallery_target_coordinates": true
+    },
+    "outcome_rules": {
+      "scored_datasets": [
+        "k562_gwps",
+        "k562_essential",
+        "rpe1",
+        "nadig_jurkat"
+      ],
+      "biological_families": [
+        "k562",
+        "rpe1",
+        "jurkat"
+      ],
+      "k562_pair_is_one_exclusion_group": true,
+      "training_only_contexts": [
+        "pan_h1",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "comparator": "exact Experiment 132 raw uncentered equal arithmetic mean of the five allowed same-target source-context effects",
+      "truth": "raw uncentered source delta",
+      "pds": "complete-gallery cosine retrieval with exact midranks and zero prediction equal to 0.5",
+      "signed_credit": "per-target sum(sign(truth) * prediction) divided by sum(abs(prediction)); zero prediction equals zero"
+    }
+  },
+  "dld1_source": {
+    "artifact_root": "experiments/116-dld1-lowmoi/work/compact-source-v1",
+    "artifact_manifest_sha256": "c592e2ec51cb56e7df085224b3ff75d8735ce87280683fd0967135472e22be79",
+    "conversion_protocol_sha256": "59414ac52ad15bd600330c8096a2c7fd3b0e2d8d178fe633c27796cd63a58587",
+    "prevalue_freeze_sha256": "9d3d6dc2489f648c9a0586f2a4c27e99a6344ed1fd915e8d23f0ecab74c5fc7b",
+    "acquisition_receipt_sha256": "8115283b263381ed283d6ffc6e72f40a2de6882bc7917c623dae7bd26787f454",
+    "target_axis_sha256": "db4847da3fd2312d66bc7e4808dcea597ed56af3fb2dee4bb91d8f25a801867d",
+    "gene_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+    "proposal_arrays": {
+      "transfer_lfc_low1.npy": "9eb958b76556d6f25aa94c6989b965b0ee895eba69a6cdb73b3e25dfc1ea7f6c",
+      "transfer_lfc_low2.npy": "c72b095bf12b3a20cb7d4a6d8bffaf1e3e47b2ca5d1e656779f1699876368533",
+      "transfer_measured_low1.npy": "8c7019eac573af5b5ac05865c427b8f2e7f4be3447821ebb09c20c97f0f7da64",
+      "transfer_measured_low2.npy": "8c7019eac573af5b5ac05865c427b8f2e7f4be3447821ebb09c20c97f0f7da64"
+    },
+    "role": "proposal evidence only; never a source-mean donor, truth context, whitening row set or target-neighbour model"
+  },
+  "candidate_family": {
+    "identity": true,
+    "k": [
+      50,
+      100,
+      200
+    ],
+    "beta": [
+      0.025,
+      0.05
+    ],
+    "actionable": "measured in both splits, finite, same nonzero Low1/Low2 sign, and independently top-k absolute magnitude in both splits",
+    "tie_break_for_top_k": "Experiment 132 response-axis order",
+    "matching_coordinate": "multiply the incumbent coordinate by exp(+beta)",
+    "mismatching_coordinate": "multiply the incumbent coordinate by exp(-beta)",
+    "post_transform": "preserve the full 4992-coordinate incumbent row L2 norm; this is exactly neutral to both positive-scale-invariant evaluation endpoints and only bounds later interpretation",
+    "sign_flips": false,
+    "unsupported_target": "bit-exact incumbent fallback",
+    "unsupported_coordinate_imputation": false,
+    "arm_selection": "eligible arms require nonnegative PDS and signed credit in every scored dataset; maximize macro PDS, then macro signed credit, then smallest complexity with identity first, smaller k second and smaller beta third"
+  },
+  "development": {
+    "targets": 613,
+    "folds": 5,
+    "fold_definition": "five contiguous numpy.array_split blocks preserving exact Experiment 132 v2 development-target order",
+    "fold_sizes": [
+      123,
+      123,
+      123,
+      122,
+      122
+    ],
+    "nested_selection": "for each held fold select one arm using only the other four folds as both queries and the PDS gallery, then evaluate it on the held fold against the complete 613-target gallery",
+    "final_selection": "select one final arm on all 613 development targets after nested evaluation",
+    "freeze_before_test": true
+  },
+  "nulls": {
+    "draws_each": 49,
+    "target_label": "derange DLD1 Low1/Low2 proposal rows jointly among DLD1-supported targets; unsupported destinations remain unsupported; repeat complete nested selection",
+    "response_coordinate": "derange all 4992 DLD1 response coordinates, moving both split values and both measured masks together; repeat complete nested selection",
+    "test_rule": "apply each frozen null to the fixed final development arm without retuning",
+    "quantile": "numpy linear 0.95"
+  },
+  "uncertainty": {
+    "draws": 20000,
+    "seed": 138202612,
+    "block_definition": "connected components of reciprocal five-nearest-neighbour authenticated DepMap target-feature edges at cosine at least 0.40",
+    "resampling": "sample target blocks with replacement using common multiplicities for every scored dataset",
+    "quantile": "numpy linear 0.025 and 0.975"
+  },
+  "concentration": {
+    "maximum_positive_gain_share": 0.5,
+    "family_definition": "K562 pair, RPE1 and Nadig Jurkat",
+    "target_block_definition": "the same reciprocal-5NN DepMap components used by the bootstrap",
+    "zero_total_positive_gain": "concentration is one and fails"
+  },
+  "development_promotion_gates": {
+    "selected_final_arm_nonidentity": true,
+    "nested_pds_delta_each_dataset_each_fold_minimum": 0.0,
+    "nested_signed_credit_delta_each_dataset_each_fold_minimum": 0.0,
+    "nested_macro_pds_delta_minimum": 0.003,
+    "nested_macro_signed_credit_delta_minimum": 0.003,
+    "final_arm_pds_delta_each_dataset_minimum": 0.0,
+    "final_arm_signed_credit_delta_each_dataset_minimum": 0.0,
+    "final_arm_macro_pds_delta_minimum": 0.003,
+    "final_arm_macro_signed_credit_delta_minimum": 0.003,
+    "pds_bootstrap_lower_95_strictly_positive": true,
+    "signed_credit_bootstrap_lower_95_strictly_positive": true,
+    "observed_pds_strictly_above_target_null_p95": true,
+    "observed_credit_strictly_above_target_null_p95": true,
+    "observed_pds_strictly_above_response_null_p95": true,
+    "observed_credit_strictly_above_response_null_p95": true,
+    "pds_family_concentration_at_most": 0.5,
+    "credit_family_concentration_at_most": 0.5,
+    "pds_target_block_concentration_at_most": 0.5,
+    "credit_target_block_concentration_at_most": 0.5,
+    "all_invariants": true
+  },
+  "untouched_test": {
+    "targets": 410,
+    "access_requires_all_development_gates": true,
+    "candidate": "exact final development arm; no refit, retuning, threshold change or fallback change",
+    "gates": "the same per-dataset, macro, bootstrap, both-null, concentration and invariant gates, without fold-specific checks",
+    "minimum_macro_pds_delta": 0.003,
+    "minimum_macro_signed_credit_delta": 0.003,
+    "outcome_access_is_irreversible": true
+  },
+  "freeze_and_replay": {
+    "metadata_plan_before_effect_access": true,
+    "authorization_binds_protocol_readme_runner_tests_parent_132_and_dld1_artifacts": true,
+    "development_access_lock_before_any_613_row_load": true,
+    "candidate_freeze_before_any_410_row_load": true,
+    "separate_post_development_test_authorization_binds_reviewed_result_and_candidate_freeze": true,
+    "test_access_lock_before_any_410_row_load": true,
+    "atomic_outputs": true,
+    "refuse_overwrite": true,
+    "fail_closed": true
+  },
+  "prohibited": {
+    "hcasmc": true,
+    "telohaec": true,
+    "pan_panel": true,
+    "experiment_137_jurkat_79": true,
+    "challenge_outcomes": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "challenge_build": true,
+    "submission": true,
+    "commit": true,
+    "push": true,
+    "writes_outside_experiment_138": true
+  }
+}

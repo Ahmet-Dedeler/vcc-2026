@@ -1,0 +1,2 @@
+1	0	4	38824	mkdir -p experiments/800-checker/work && uv run python experiments/800-checker/panelrank800.py > experiments/800-checker/work/panelrank800.txt 2>&1; cat experiments/800-checker/work/panelrank800.txt
+2	0	26	54748	mkdir -p experiments/800-checker/work && uv run python experiments/800-checker/overread800.py --abc LABC > experiments/800-checker/work/overread800-LABC.txt 2>&1; cat experiments/800-checker/work/overread800-LABC.txt

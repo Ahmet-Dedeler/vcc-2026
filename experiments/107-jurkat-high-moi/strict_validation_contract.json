@@ -1,0 +1,454 @@
+{
+  "schema_version": 3,
+  "experiment": "107-jurkat-high-moi",
+  "date_frozen": "2026-08-30",
+  "status": "repaired_before_experiment_107_nadig_outcome_access",
+  "benchmark_role": "reused_development_benchmark_not_independent_confirmation",
+  "parent_protocol": {
+    "path": "experiments/107-jurkat-high-moi/preregistered_protocol.json",
+    "sha256": "68f6598277b73201885e94582fba0d15295b936a7184312e08356eb2604a3748"
+  },
+  "held_truth": {
+    "directory": "data/donors/nadig_jurkat",
+    "effect_file": "delta.npy",
+    "effect_semantics": "raw_uncentered_log_pseudobulk",
+    "target_axis_file": "perts.txt",
+    "gene_axis_file": "genes.txt",
+    "effect_values_forbidden_before_source_model_freeze": true,
+    "control_profile_forbidden_for_selection": true,
+    "metadata_effect_norm_forbidden_for_selection": true
+  },
+  "authorization_bindings": {
+    "validation_implementation": "experiments/107-jurkat-high-moi/strict_nadig_validation.py",
+    "artifact_manifest": "experiments/107-jurkat-high-moi/work/strict-validation-inputs.json",
+    "artifact_manifest_schema_version": 1,
+    "artifact_manifest_status": "frozen_before_experiment_107_nadig_outcome_access",
+    "pretruth_plan": "experiments/107-jurkat-high-moi/work/strict-validation-plan.json",
+    "required_artifact_roles": [
+      "donor.k562_gwps",
+      "donor.orion_hct116",
+      "donor.orion_hek293t",
+      "incumbent.nadig.gallery_1",
+      "incumbent.nadig.gallery_2",
+      "incumbent.nadig.gallery_3",
+      "incumbent.nadig.gallery_4",
+      "incumbent.nadig.gallery_5",
+      "incumbent.nadig.gallery_6",
+      "operator.nadig.gallery_1",
+      "operator.nadig.gallery_2",
+      "operator.nadig.gallery_3",
+      "operator.nadig.gallery_4",
+      "operator.nadig.gallery_5",
+      "operator.nadig.gallery_6",
+      "integration.nadig.gallery_1",
+      "integration.nadig.gallery_2",
+      "integration.nadig.gallery_3",
+      "integration.nadig.gallery_4",
+      "integration.nadig.gallery_5",
+      "integration.nadig.gallery_6",
+      "incumbent.h1",
+      "incumbent.orion_hek293t",
+      "operator.h1",
+      "operator.orion_hek293t",
+      "integration.h1",
+      "integration.orion_hek293t"
+    ],
+    "role_value": "exactly_two_unique_role_owned_files_in_npz_then_json_order",
+    "path_policy": "canonical_repo_relative_posix_regular_files_without_symlink_traversal",
+    "role_bundle_schema_version": 1,
+    "role_bundle_status": "frozen_before_experiment_107_nadig_outcome_access",
+    "role_bundle_provenance": "each_role_json_binds_the_role_npz_exact_array_schema_and_every_transitive_regular_file_consumed_to_build_it; transitive_paths_may_repeat_across_role_json_manifests_but_top_level_bundle_paths_may_not",
+    "nadig_artifacts_hashed_before_array_open": [
+      "perts.txt",
+      "genes.txt",
+      "delta.npy"
+    ],
+    "array_binding": "role_npz_file_sha256_plus_per_array_dtype_shape_c_order_and_sha256_array",
+    "outcome_access_receipt": "experiments/107-jurkat-high-moi/work/nadig-outcome-access-receipt.json",
+    "outcome_access_receipt_policy": "exclusive_create_before_numpy_load_and_reject_any_replay"
+  },
+  "role_bundle_contract": {
+    "schema_version": 1,
+    "official_gene_count": 18533,
+    "official_gene_axis_sha256_newline_terminated": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+    "donor_arrays": [
+      "genes",
+      "perts",
+      "delta_shape",
+      "b_ctrl_shape"
+    ],
+    "operator_arrays": "evals_evecs_columns_and_one_basis_row_index_array_per_frozen_operator_donor",
+    "incumbent_arrays": [
+      "targets",
+      "genes",
+      "score_genes",
+      "score_indices",
+      "effects"
+    ],
+    "integration_arrays": "incumbent_and_source_effects_transferable_and_coordinate_masks_plus_candidate_and_effective_arrays_for_every_frozen_fraction",
+    "effect_dtype": "<f8",
+    "eigenvalue_dtype": "<f8",
+    "eigenvector_dtype": "<f4",
+    "index_dtype": "<i8",
+    "mask_dtype": "|b1",
+    "all_arrays_c_order": true
+  },
+  "gallery_construction": {
+    "eligible_targets": "intersection_of_GSE249595_source_targets_and_Nadig_Jurkat_targets_minus_the_300_VCC_targets",
+    "eligible_target_count": 2194,
+    "sort_key": "sha256_utf8_bytes_of_exp107_pipe_plus_target_symbol",
+    "take_first": 1800,
+    "combined_order_sha256_newline_terminated": "7aede31f8bace2b74208193da2a9f29885b37c9d7bb42b1a763083bca9a9ebac",
+    "gallery_count": 6,
+    "targets_per_gallery": 300,
+    "galleries": [
+      {
+        "gallery": 1,
+        "target_axis_sha256_newline_terminated": "8b449c60d13e9163956d14f5baf8dd4927f99c7c57509a5c4a9e3e44cd396b23",
+        "score_gene_order": "lexicographic_symbol_order",
+        "score_gene_count": 230,
+        "score_axis_sha256_newline_terminated": "095edef149f0051df6571f730a492190fca2a7d8a531aff5ee8527ef35bf34a8",
+        "whitener_column_count": 17661,
+        "whitener_columns_int64_sha256": "acfb08e37781f360936d0b4eb0859a15afc91e65c668420fe001d9e3285b21cd",
+        "whitener_basis_rows": 29295,
+        "whitener_basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7737,
+            "int64_sha256": "90c459abe52b8470378d3d3981d1d626d4e557d38d3f9c474c432f63fe7a8268"
+          },
+          "orion_hct116": {
+            "count": 10777,
+            "int64_sha256": "1f63f2bbdc7c1e14fe8715111691efe88f9d24e169c8723d294fc133335b96d2"
+          },
+          "orion_hek293t": {
+            "count": 10781,
+            "int64_sha256": "154a32785455b70d436155c37440d7652068d859d6919b9ea87916bf0a63ee45"
+          }
+        },
+        "transferable_target_count": 298
+      },
+      {
+        "gallery": 2,
+        "target_axis_sha256_newline_terminated": "285a6f332244cf8a60f4552dc5f25d742681a835340ff2a19561dd51180bc388",
+        "score_gene_order": "lexicographic_symbol_order",
+        "score_gene_count": 226,
+        "score_axis_sha256_newline_terminated": "ed370aece40bdb614c95093bdab21897793556231e404e7805460529e954c880",
+        "whitener_column_count": 17675,
+        "whitener_columns_int64_sha256": "8715bf9c9ad07e17413a4149215a69605ac5a89be66d43b280f87cec01d7c088",
+        "whitener_basis_rows": 29282,
+        "whitener_basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7736,
+            "int64_sha256": "708b01d2b78ba61fab54eed6f8f8dc22003e3a31ba220a89e6068bc0763a90f3"
+          },
+          "orion_hct116": {
+            "count": 10770,
+            "int64_sha256": "319c4aaad419382d9bb7e10119c610bf84c36d4fd18c4bdb7d1376cd88ba8c0f"
+          },
+          "orion_hek293t": {
+            "count": 10776,
+            "int64_sha256": "16409b644359916442cdf91cb6c534244e3c30a6066b81ec8ee70b1316528d1c"
+          }
+        },
+        "transferable_target_count": 295
+      },
+      {
+        "gallery": 3,
+        "target_axis_sha256_newline_terminated": "a94e17828d5dad2ddaabd692f1e51ac05428d4e3b8e83a3e8c09a170923b39c2",
+        "score_gene_order": "lexicographic_symbol_order",
+        "score_gene_count": 224,
+        "score_axis_sha256_newline_terminated": "c147cbe6766dd75dfa8091a5be3feaaa65158765bcec3dfcd22a23e944b6f138",
+        "whitener_column_count": 17668,
+        "whitener_columns_int64_sha256": "df207d3fac29abc8a3a154343789067e55bdcc78db6145349bd705d9839b8ab3",
+        "whitener_basis_rows": 29293,
+        "whitener_basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7742,
+            "int64_sha256": "0ae9723ac934a121d31a7658257b373f6ef4170faf61ba37f3c27cb366f7b649"
+          },
+          "orion_hct116": {
+            "count": 10778,
+            "int64_sha256": "f27e8d93f9631e2055536dadbe1f8848a378122d3ae1512f841175994b812cb0"
+          },
+          "orion_hek293t": {
+            "count": 10773,
+            "int64_sha256": "38091fa7394ac0719fbef2b39fcf028e92e74bae29a095c99c1760ab625b5b8b"
+          }
+        },
+        "transferable_target_count": 298
+      },
+      {
+        "gallery": 4,
+        "target_axis_sha256_newline_terminated": "c10d9178d56e895cdd65a4933ae56019eb3c669db2e89e4e1dbdc8df1fd52baf",
+        "score_gene_order": "lexicographic_symbol_order",
+        "score_gene_count": 229,
+        "score_axis_sha256_newline_terminated": "92767eed2a0f6b906ec0e31b79bea28dade3ce75565f1c94310f086a8ec57bf1",
+        "whitener_column_count": 17670,
+        "whitener_columns_int64_sha256": "b4e9006422a9683a9a7e9265a99fe688c1d1ae956778d2051a0de149fc159531",
+        "whitener_basis_rows": 29285,
+        "whitener_basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7736,
+            "int64_sha256": "393e9e26f68fe6fc1deaf6d7c410db1b68db66f6b6dec133d9d0c8b660e7ef5c"
+          },
+          "orion_hct116": {
+            "count": 10778,
+            "int64_sha256": "c7689d0a8704014c49e71d41ac80ef2ce3f669388115a9deb8ef9b908766769e"
+          },
+          "orion_hek293t": {
+            "count": 10771,
+            "int64_sha256": "849ca5f0753a7a0a9c81adbe76fdd8a14a24666cb74f967c12d861b0814c7bb4"
+          }
+        },
+        "transferable_target_count": 294
+      },
+      {
+        "gallery": 5,
+        "target_axis_sha256_newline_terminated": "972df94904e609a0eb7d6012126180a0f9824c87f5c1bb6b3ae18019fa8fdf0d",
+        "score_gene_order": "lexicographic_symbol_order",
+        "score_gene_count": 226,
+        "score_axis_sha256_newline_terminated": "bf0af5e6858ebd422dd42f1f81e81881889536c1f5ac7665c1b7b5fed138ff71",
+        "whitener_column_count": 17668,
+        "whitener_columns_int64_sha256": "319f5078cf8999b2d852f16713932eb330c6bbcbf84317ee1e309525258ec1ca",
+        "whitener_basis_rows": 29298,
+        "whitener_basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7740,
+            "int64_sha256": "e7d8f4a80738ccd3d5e7666d9932436362c4f00a6743ba824460004e25af3809"
+          },
+          "orion_hct116": {
+            "count": 10780,
+            "int64_sha256": "c3394db627503878f36b9359534f39a3ecd63c9f7ed9783617521587c90612ab"
+          },
+          "orion_hek293t": {
+            "count": 10778,
+            "int64_sha256": "9564cb378d9d38eeb3e95b9a9d8422dc9f9b4f9c7d3bb3a3e4574173212b5950"
+          }
+        },
+        "transferable_target_count": 293
+      },
+      {
+        "gallery": 6,
+        "target_axis_sha256_newline_terminated": "630beb632633f2958ad2b4034295297ba229c35834e4f88ab3bd5c1f595d6339",
+        "score_gene_order": "lexicographic_symbol_order",
+        "score_gene_count": 228,
+        "score_axis_sha256_newline_terminated": "5ae65284cb8ca925fe2f5a5a19746cf9c46353ab691ab51a1d7cc4f8c5772a2a",
+        "whitener_column_count": 17665,
+        "whitener_columns_int64_sha256": "d3d0258121dc0a0ddaf8d5dcadfda710a1a664972d1ff87f68415ca0d200789b",
+        "whitener_basis_rows": 29276,
+        "whitener_basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7732,
+            "int64_sha256": "8fd91ec1350727000ca3f788da05a014c17d4bf65a641f63851ec5b0b4287ef0"
+          },
+          "orion_hct116": {
+            "count": 10775,
+            "int64_sha256": "905b206978ad0db4c856f077df483e65b0d7886c772ee2c811efcb57d9e62eae"
+          },
+          "orion_hek293t": {
+            "count": 10769,
+            "int64_sha256": "e5bc13e5856de37f6329a6d1600b759467256c5819a7414754cf50b828ac5b8e"
+          }
+        },
+        "transferable_target_count": 287
+      }
+    ]
+  },
+  "incumbent": {
+    "must_be_rebuilt_per_gallery": true,
+    "existing_experiment_106_endpoints_are_not_exact_a14": true,
+    "donor_order": [
+      "k562_gwps",
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "donor_weights": "equal",
+    "gene_norm": false,
+    "empirical_bayes": false,
+    "effect_alpha": 0.982,
+    "perturbmatch_fraction": 0.5,
+    "cd4_fraction": 0.05,
+    "whiten_gamma": 0.65,
+    "whiten_lambda": 0.0,
+    "basis_prune": "common_essential",
+    "basis_row_cap": 12000,
+    "basis_rng": "numpy_default_rng_seed_0_one_stream_in_production_donor_order",
+    "basis_row_exclusion": "exclude_every_donor_row_whose_target_is_in_the_current_gallery",
+    "coordinate_exclusion": "remove_union_of_the_300_VCC_targets_and_current_gallery_targets_before_operator_fit_or_scoring",
+    "eigenvalue_floor": "maximum_eigenvalue_times_1e-12",
+    "serialized_operator_reload_required": true,
+    "norm_preservation": "candidate_specific_on_axis_row_norm"
+  },
+  "known_coverage": {
+    "perturbmatch_targets": 1734,
+    "k562_perturbmatch_replacement_targets": 1724,
+    "cd4_targets": 0,
+    "incumbent_mean_fallback_targets": [
+      "NAPA",
+      "FNTB",
+      "TREX2",
+      "SNRPD2"
+    ],
+    "ambiguous_source_target": {
+      "symbol": "MEMO1",
+      "combined_zero_based_index": 1726,
+      "gallery": 6,
+      "policy": "unsupported_exact_incumbent_fallback"
+    }
+  },
+  "source_integration": {
+    "ordinary_fourth_donor_insertion": false,
+    "supported_operator": "W_SS_equals_V_S_times_diag_eigenvalues_power_minus_0.325_times_V_S_transpose",
+    "source_row_scaling": "match_each_finite_nonzero_source_supported_row_norm_to_the_same_incumbent_supported_row_norm",
+    "blend_formula": "(1-f)*incumbent_supported+f*scaled_source_supported",
+    "blend_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "unsupported_target_or_coordinate": "bit_exact_incumbent_fallback",
+    "zero_or_nonfinite_source_norm": "bit_exact_incumbent_fallback",
+    "fraction_zero_branch": "return_direct_incumbent_copy"
+  },
+  "nested_selection": {
+    "outer_unit": "one_300_target_gallery",
+    "training_objective": "unweighted_mean_of_the_five_training_gallery_mean_PDS_values",
+    "held_objective": "mean_PDS_over_all_300_targets_in_the_held_gallery_including_unsupported_rows_at_PDS_0.5",
+    "tie_break": "smallest_fraction",
+    "final_fraction_for_external_context_gates": "maximize_unweighted_mean_PDS_over_all_six_galleries_then_choose_smallest_fraction_on_exact_tie",
+    "no_target_is_dropped_for_missing_source_support": true
+  },
+  "target_label_permutation_null": {
+    "replicates": 99,
+    "bit_generator": "PCG64",
+    "seed_sequence": "numpy.random.SeedSequence([1072026, 107, permutation_zero_based, gallery_one_based])",
+    "scope": "independent_permutation_within_each_gallery_among_transferable_source_rows_only",
+    "unsupported_destination_rows": "remain_unsupported",
+    "post_permutation_scaling": "norm_match_each_permuted_source_row_to_its_destination_incumbent_row",
+    "selection": "repeat_complete_five_gallery_nested_fraction_selection_for_every_permutation",
+    "gate": "observed_nested_macro_PDS_gain_strictly_greater_than_maximum_null_gain"
+  },
+  "cluster_bootstrap": {
+    "replicates": 20000,
+    "bit_generator": "PCG64",
+    "seed_sequence": "numpy.random.SeedSequence([1072026, 107, 20000, replicate_zero_based, gallery_one_based])",
+    "cluster_definition": "reciprocal_5_nearest_neighbors_on_pretruth_incumbent_score_axis_effects_with_cosine_at_least_0.80",
+    "cluster_identity": "prefix_each_cluster_with_gallery_number",
+    "resampling": "within_each_gallery_sample_exactly_its_observed_number_of_clusters_with_replacement_and_apply_the_result_as_whole_target_cluster_multiplicities",
+    "gallery_statistic": "multiplicity_weighted_mean_target_delta_within_each_gallery",
+    "macro_statistic": "unweighted_mean_of_the_six_gallery_statistics",
+    "selection": "repeat_complete_five_gallery_nested_fraction_selection_inside_every_bootstrap_draw",
+    "confidence_interval": "type7_quantiles_at_0.025_and_0.975",
+    "gate": "lower_95_percent_bound_strictly_greater_than_zero"
+  },
+  "gain_concentration": {
+    "cluster_contribution": "sum_of_observed_per_target_PDS_delta_within_each_gallery_prefixed_cluster",
+    "fraction": "maximum_positive_cluster_sum_divided_by_1800_times_positive_observed_nested_macro_PDS_gain",
+    "nonpositive_observed_gain": "automatic_failure",
+    "maximum_fraction": 0.5
+  },
+  "held_context_gate": {
+    "fraction": "final_fraction_selected_from_all_six_Nadig_galleries_without_retuning",
+    "fresh_strict_a14_endpoints_required": true,
+    "coordinate_exclusion": "union_of_VCC_targets_and_each_held_surface_target_gallery",
+    "row_exclusion": "exclude_held_surface_target_rows_from_whitener_basis",
+    "authorizing_directional_surfaces": [
+      "h1",
+      "orion_hek293t"
+    ],
+    "surfaces": {
+      "h1": {
+        "surface": "h1",
+        "target_axis_source": "sorted_unique_non_control_target_gene_from_data/harness/h1-test.h5ad_obs",
+        "harness_path": "data/harness/h1-test.h5ad",
+        "target_count": 85,
+        "target_axis_sha256": "f49f8343fe877c378fc258884def4a66241adac43d4c2798e9257cecd6d6bd1f",
+        "held_gene_count": 18080,
+        "held_gene_axis_sha256": "e29ff3512b4c2440759bfb2a34577049b2f49df786b3e19c2a91b565de47b38e",
+        "score_gene_count": 343,
+        "score_axis_sha256": "19eb6052a4dfad3fac09463c2f8983a65200d57c53f33b1e85f74526d5ebf09c",
+        "operator_donors": [
+          "k562_gwps",
+          "orion_hct116",
+          "orion_hek293t"
+        ],
+        "whitener_column_count": 17862,
+        "whitener_columns_int64_sha256": "00242e6a8fdd1f5c6dd5b8ee6a511a949c730537b9352865d653a1361d80a622",
+        "whitener_basis_rows": 29244,
+        "whitener_basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7720,
+            "int64_sha256": "024e9e6181f0147013f6181a78e70f08d713f193c4b9cfe9f20eda0e5e6b195f"
+          },
+          "orion_hct116": {
+            "count": 10766,
+            "int64_sha256": "2c40f33a6901ab5a5e0a2dcd783aa70d1572d91e74dea79bdb5192e062a7449e"
+          },
+          "orion_hek293t": {
+            "count": 10758,
+            "int64_sha256": "c6497e786ef947621f20ab4abc2c1b6341a37aa344cf1a97d6fa397625f6083f"
+          }
+        },
+        "transferable_target_count": 83
+      },
+      "orion_hek293t": {
+        "surface": "orion_hek293t",
+        "target_axis_source": "sorted_unique_non_control_target_gene_from_data/harness/orion-hek293t-thinned.h5ad_obs",
+        "harness_path": "data/harness/orion-hek293t-thinned.h5ad",
+        "target_count": 132,
+        "target_axis_sha256": "d4fbc4d5e296f9eb73a87a4df84e01ae91aead80aa52e110bd166782f87fccca",
+        "held_gene_count": 18533,
+        "held_gene_axis_sha256": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+        "score_gene_count": 349,
+        "score_axis_sha256": "17df8d274cec1507ba8818854e7b6cd4c10ea2c647a02450653791ee6ee0eef0",
+        "operator_donors": [
+          "k562_gwps",
+          "orion_hct116"
+        ],
+        "whitener_column_count": 17942,
+        "whitener_columns_int64_sha256": "b2cae0d381c3cd7065a3de33f1a6da5514577f2b3187b6dc84786ee789e27e4d",
+        "whitener_basis_rows": 18370,
+        "whitener_basis_rows_by_donor": {
+          "k562_gwps": {
+            "count": 7652,
+            "int64_sha256": "aba1323325bb26391d670544050f9fb8738a0f513491fa88e730efdc54b0eb32"
+          },
+          "orion_hct116": {
+            "count": 10718,
+            "int64_sha256": "82c7601522a2244ae990fc1738308f3632703752c6a06593e9ea282d6d92f051"
+          }
+        },
+        "transferable_target_count": 131
+      }
+    },
+    "diagnostic_directional_surface": null,
+    "diagnostic_surface_policy": "no_diagnostic_surface_is_part_of_the_strict_promotion_input_or_artifact_manifest",
+    "pds_delta_minimum_each_surface": 0.0,
+    "directional_credit_delta_minimum_each_authorizing_surface": 0.0
+  },
+  "promotion_gates": {
+    "nadig_alone_cannot_authorize_promotion": true,
+    "pure_source_pds_each_gallery_minimum": 0.5,
+    "pure_source_macro_pds_minimum": 0.55,
+    "nested_blend_pds_delta_each_gallery_minimum": 0.0,
+    "nested_blend_macro_pds_delta_minimum": 0.003,
+    "target_block_bootstrap_lower_95_minimum": 0.0,
+    "observed_gain_must_exceed_permutation_maximum": true,
+    "maximum_gain_fraction_from_one_target_cluster": 0.5,
+    "exact_fallback_required": true
+  },
+  "forbidden_before_source_model_freeze": [
+    "load_data/donors/nadig_jurkat/delta.npy",
+    "read_Nadig_expression_values",
+    "compute_Nadig_PDS_or_directional_scores",
+    "select_blend_fraction"
+  ],
+  "forbidden_before_all_promotion_gates_pass": [
+    "challenge_build",
+    "challenge_submission",
+    "context_A_only_routing",
+    "count_level_scoring",
+    "post_result_threshold_grid_or_statistic_changes"
+  ]
+}

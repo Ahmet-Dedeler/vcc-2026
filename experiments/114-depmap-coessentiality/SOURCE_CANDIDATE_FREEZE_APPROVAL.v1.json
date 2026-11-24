@@ -1,0 +1,88 @@
+{
+  "amendment_id": "experiment-114-source-candidate-freeze-approval-v1",
+  "approved_roles": {
+    "h1": {
+      "allowed_source_ids": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "forbidden_source_ids": [
+        "h1_2025"
+      ],
+      "held_surface_source_id": "h1_2025",
+      "incumbent_endpoint": "a14-role-heldout-canonical-300-v1",
+      "manifest_path": "experiments/114-depmap-coessentiality/work/roles/h1/manifest.json",
+      "manifest_sha256": "357244f5515db1e51686facc1d923da6209fe9ac95c3ce686c28b7474bece017",
+      "output_directory": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/h1",
+      "role_directory": "experiments/114-depmap-coessentiality/work/roles/h1",
+      "source_effect_space": "a14_role_donor_deviation_role_whitened_no_global_renorm_v1",
+      "surface": "h1"
+    },
+    "orion_hek293t": {
+      "allowed_source_ids": [
+        "k562_gwps",
+        "orion_hct116"
+      ],
+      "forbidden_source_ids": [
+        "orion_hek293t"
+      ],
+      "held_surface_source_id": "orion_hek293t",
+      "incumbent_endpoint": "a14-role-heldout-canonical-300-v1",
+      "manifest_path": "experiments/114-depmap-coessentiality/work/roles/orion_hek293t/manifest.json",
+      "manifest_sha256": "939c43916c3addb0a2fd2ff7753a8c69dd866d39e33a0481d901f0dc87247ad3",
+      "output_directory": "experiments/114-depmap-coessentiality/work/source-candidate-freeze-v1/orion_hek293t",
+      "role_directory": "experiments/114-depmap-coessentiality/work/roles/orion_hek293t",
+      "source_effect_space": "a14_role_donor_deviation_role_whitened_no_global_renorm_v1",
+      "surface": "orion_hek293t"
+    }
+  },
+  "authorization": {
+    "challenge_build": false,
+    "commit": false,
+    "count_generation": false,
+    "evaluation": false,
+    "held_truth_access": false,
+    "model_fitting": false,
+    "push": false,
+    "source_candidate_freeze": true,
+    "submission": false
+  },
+  "date_approved": "2026-08-30",
+  "entrypoint_path": "experiments/114-depmap-coessentiality/freeze_source_candidates_v1.py",
+  "experiment": "114-depmap-coessentiality",
+  "invariants": {
+    "allowed_action": "source_candidate_freeze",
+    "canonical_axes_required": true,
+    "exact_a14_parameters_required": true,
+    "exact_eligibility_required": true,
+    "full_artifact_receipt_and_transitive_hash_verification_required": true,
+    "held_surface_coordinates_zero_and_uncovered_required": true,
+    "held_truth_must_not_be_opened": true,
+    "operator_mask_must_equal_source_bank_coverage_required": true,
+    "outputs_must_be_absent_and_must_not_be_overwritten": true,
+    "panel_coordinates_zero_and_uncovered_required": true,
+    "real_freeze_executed_by_this_amendment": false
+  },
+  "predecessors": {
+    "preregistered_protocol": {
+      "path": "experiments/114-depmap-coessentiality/preregistered_protocol.json",
+      "sha256": "cfd495175d87cba7e7cad1ff171b7a817664eabc3e836aa311ec7417f0c59b91"
+    },
+    "role_source_manifest": {
+      "path": "experiments/114-depmap-coessentiality/ROLE_SOURCE_MANIFEST.json",
+      "sha256": "e05d877b5ea0a7aeae06f4c53ad363e984379678b5b61fd852e3e877d17d0248"
+    },
+    "run_implementation": {
+      "path": "experiments/114-depmap-coessentiality/run.py",
+      "sha256": "737d0bf225c5ee5e5108a54a07e9fdfc3ee6e8728f1ad559def5ff2c03569fd9"
+    },
+    "source_candidate_freeze_boundary": {
+      "path": "experiments/114-depmap-coessentiality/SOURCE_CANDIDATE_FREEZE_BOUNDARY.json",
+      "sha256": "a22ca21f51e7d6729c9c7f09c2901ba0fa9cf1ecb067fc75ab91d9324ef18025"
+    }
+  },
+  "schema_version": 1,
+  "stage": "source_candidate_freeze_approval",
+  "status": "approved_for_source_only_freeze_pending_independent_review_and_execution"
+}

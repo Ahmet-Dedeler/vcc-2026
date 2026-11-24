@@ -1,0 +1,13 @@
+{
+ "name": "nomde",
+ "desc": "417e's DE: production emitter without MDE, no zs, no zero repair (618's g2nomde)",
+ "emit": {
+  "hook": "none",
+  "mde": "none",
+  "zero_repair": 0,
+  "callset_cpm": 2200,
+  "zs": false,
+  "dump": false
+ },
+ "stage": "pre"
+}

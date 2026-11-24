@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "experiment": "149-dual-moment-hek293t",
+  "status": "authorized_once",
+  "provenance_utc": "2026-08-31T18:45:00+00:00",
+  "scorer": {
+    "path": "experiments/149-dual-moment-hek293t/score_confirmation.py",
+    "sha256": "f87413f5d4e986c45a091fbce512c625c0e2d2207c4d88e395c817e38916e1d1"
+  },
+  "bindings_sha256": {
+    "experiments/149-dual-moment-hek293t/preregistered_protocol.json": "558adfca87176f2f7058ab3beec9e2bf3f40d544b2c7aa7013becec7ba308c58",
+    "experiments/149-dual-moment-hek293t/build_predictions.py": "a8b84bb6fbce9c9cf2eb712c3e437426dc174f450026b53b074f26f0e512859d",
+    "experiments/149-dual-moment-hek293t/work/source-build-v1/build-report.json": "c4268d95f81e013bdcf88d061ab534537e58444c17d53fe290a8618d8af33de8",
+    "experiments/149-dual-moment-hek293t/work/source-build-v1/effects.npz": "cd0e6854fdf4584c257973571b5aafc3025dac2e0060789bd268b192b5afbe28",
+    "experiments/149-dual-moment-hek293t/work/source-build-v1/incumbent.h5ad": "e837f122edc831a7012a2f8558516b9fa3d786b519ff49c6e8dce8b7e8dcb9b6",
+    "experiments/149-dual-moment-hek293t/work/source-build-v1/candidate.h5ad": "fadd11121718c73449978a9c48d283a5577ee180e54007ea6bf921e15e68dd77",
+    "data/harness/orion-hek293t-thinned.h5ad": "e37f39bb6aae9ce6334f133416b4780ac4226b5a407c4f1a511a5a09ef75d6be",
+    "data/harness/orion-hek293t-thinned.h5ad.meta.json": "2a3949d613854abbe21faf60c7d67ba27c52bec5d6c8eaa0de7f3536f4b2f657",
+    "scripts/run_with_memory_guard.py": "3be02ceaa44ea0c0ed4641827dd9305095255ec6cbacb82d667cefb4f7915198"
+  },
+  "target_count": 132,
+  "target_order_sha256": "d4fbc4d5e296f9eb73a87a4df84e01ae91aead80aa52e110bd166782f87fccca",
+  "bootstrap": {
+    "draws": 20000,
+    "seed": 14900
+  },
+  "authorizes": [
+    "one serial incumbent score on the frozen HEK harness",
+    "one serial dual-moment candidate score on the frozen HEK harness",
+    "the frozen paired target bootstrap"
+  ],
+  "does_not_authorize": [
+    "parameter retuning",
+    "alternative lambda or gamma testing",
+    "challenge prediction build",
+    "challenge submission"
+  ]
+}

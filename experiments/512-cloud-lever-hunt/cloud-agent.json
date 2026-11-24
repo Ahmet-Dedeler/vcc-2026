@@ -1,0 +1,18 @@
+{
+ "id": "bc-c654f296-e17f-46d8-b79e-0b5d838ab352",
+ "status": "CREATING",
+ "source": {
+  "repository": "https://github.com/Ahmet-Dedeler/virtual-cell-challenge-2026",
+  "ref": "master"
+ },
+ "target": {
+  "autoBranch": true,
+  "autoCreatePr": false,
+  "openAsCursorGithubApp": false,
+  "skipReviewerRequest": false,
+  "branchName": "cloud/512-lever-hunt",
+  "url": "https://cursor.com/agents/bc-c654f296-e17f-46d8-b79e-0b5d838ab352"
+ },
+ "name": "Fresh model levers",
+ "createdAt": "2026-09-27T11:32:54.889Z"
+}

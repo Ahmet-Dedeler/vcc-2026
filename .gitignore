@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Large datasets and submission artifacts (not tracked in git)
+data/challenge/
+data/challenge-def/
+data/external/
+data/donors/
+data/harness/
+*.h5ad
+*.vcc
+*.npy
+*.npz
+*.parquet
+*.pkl
+*.ckpt
+*.pt
+*.safetensors
+
+# OS / local
+.DS_Store
+.env
+*.log

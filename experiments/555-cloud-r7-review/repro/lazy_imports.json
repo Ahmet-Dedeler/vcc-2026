@@ -1,0 +1,162 @@
+{
+ "closure_n": 27,
+ "closure": [
+  "experiments/551-r6-c10b/lib551.py",
+  "experiments/551-r6-c10b/full551.py",
+  "experiments/551-r6-c10b/comp551.py",
+  "experiments/551-r6-c10b/price551.py",
+  "experiments/551-r6-c10b/aggregate551.py",
+  "experiments/551-r6-c10b/designs551.py",
+  "experiments/551-r6-c10b/gate551.py",
+  "experiments/551-r6-c10b/guard551.py",
+  "experiments/420-bulk-stack/lib420.py",
+  "experiments/418-bulk-composition/lib418.py",
+  "experiments/162-retrodicting-validator/plolo.py",
+  "experiments/414-bulk-reprice/arms414.py",
+  "experiments/415-lodo-key/sens415.py",
+  "experiments/218-independent-donors/resid218.py",
+  "experiments/218-independent-donors/compose218.py",
+  "experiments/418-bulk-composition/analyse418.py",
+  "experiments/414-bulk-reprice/ballast414.py",
+  "experiments/415-lodo-key/lodo415.py",
+  "experiments/410-pertscale-revisit/key410.py",
+  "experiments/410-pertscale-revisit/size410.py",
+  "experiments/169-sharpening-six-member/sharp.py",
+  "experiments/228-theta-gain-plolo/arms228.py",
+  "experiments/162-retrodicting-validator/run_arms.py",
+  "experiments/218-independent-donors/sources218.py",
+  "experiments/187-joint-amplitude/joint187.py",
+  "experiments/187-joint-amplitude/cliff187.py",
+  "experiments/187-joint-amplitude/mse187.py"
+ ],
+ "n_lazy": 11,
+ "uncovered_repo": [
+  {
+   "name": "ntclevel417",
+   "line": 642,
+   "where": "ntc_claims",
+   "kind": "import",
+   "file": "experiments/551-r6-c10b/lib551.py",
+   "resolved": "experiments/417-bulk-sharpen/ntclevel417.py",
+   "pinned": false,
+   "repo": true
+  },
+  {
+   "name": "mech_a12_audit",
+   "line": 87,
+   "where": "load_096_arms",
+   "names": [
+    "cp_proxies",
+    "measure"
+   ],
+   "kind": "from",
+   "file": "experiments/187-joint-amplitude/mse187.py",
+   "resolved": "experiments/096-mse-floor/mech_a12_audit.py",
+   "pinned": false,
+   "repo": true
+  }
+ ],
+ "covered_repo": [
+  {
+   "name": "lodo415",
+   "line": 118,
+   "where": "main",
+   "names": [
+    "whiten_split"
+   ],
+   "kind": "from",
+   "file": "experiments/551-r6-c10b/full551.py",
+   "resolved": "experiments/415-lodo-key/lodo415.py",
+   "pinned": true,
+   "repo": true
+  },
+  {
+   "name": "analyse418",
+   "line": 221,
+   "where": "main",
+   "kind": "import",
+   "file": "experiments/551-r6-c10b/full551.py",
+   "resolved": "experiments/418-bulk-composition/analyse418.py",
+   "pinned": true,
+   "repo": true
+  }
+ ],
+ "non_repo": [
+  {
+   "name": "h5py",
+   "line": 181,
+   "where": "bundle_frames",
+   "kind": "import",
+   "file": "experiments/551-r6-c10b/lib551.py",
+   "resolved": null,
+   "pinned": false,
+   "repo": false
+  },
+  {
+   "name": "cell_eval2.metrics.delta",
+   "line": 643,
+   "where": "ntc_claims",
+   "names": [
+    "_row_weights"
+   ],
+   "kind": "from",
+   "file": "experiments/551-r6-c10b/lib551.py",
+   "resolved": null,
+   "pinned": false,
+   "repo": false
+  },
+  {
+   "name": "scipy.stats",
+   "line": 656,
+   "where": "level_rho",
+   "names": [
+    "norm"
+   ],
+   "kind": "from",
+   "file": "experiments/551-r6-c10b/lib551.py",
+   "resolved": null,
+   "pinned": false,
+   "repo": false
+  },
+  {
+   "name": "ast",
+   "line": 106,
+   "where": "builders",
+   "kind": "import",
+   "file": "experiments/551-r6-c10b/gate551.py",
+   "resolved": null,
+   "pinned": false,
+   "repo": false
+  },
+  {
+   "name": "json",
+   "line": 171,
+   "where": "floor_gib",
+   "kind": "import",
+   "file": "experiments/551-r6-c10b/gate551.py",
+   "resolved": null,
+   "pinned": false,
+   "repo": false
+  },
+  {
+   "name": "shutil",
+   "line": 187,
+   "where": "gate",
+   "kind": "import",
+   "file": "experiments/551-r6-c10b/gate551.py",
+   "resolved": null,
+   "pinned": false,
+   "repo": false
+  },
+  {
+   "name": "h5py",
+   "line": 289,
+   "where": "challenge_bctrl",
+   "kind": "import",
+   "file": "experiments/162-retrodicting-validator/plolo.py",
+   "resolved": null,
+   "pinned": false,
+   "repo": false
+  }
+ ]
+}

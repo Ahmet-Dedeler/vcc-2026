@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "experiment": "082-biological-target-kernel",
+  "created_utc_date": "2026-08-23",
+  "hypothesis_source": "experiments/078-remaining-hypotheses/RESULTS.md hypothesis 2",
+  "final_score_axis": {
+    "gene_count": 17806,
+    "gene_order_sha256": "6eaba848c81b77dd1d4b83c0d61b7a8689c1e39762a34da7dcfe26ea1b5d765f",
+    "official_positions_sha256": "a000353b3dbeb8a55bdf7ae3bcc60abd13bbc52f714270413c10f7b1c23e1a02"
+  },
+  "arm_d_sources": [
+    "experiments/062-cd4-post-whiten/run.py",
+    "experiments/064-pm-cd4-composition/run.py",
+    "experiments/064-pm-cd4-composition/cloud-output/results.json"
+  ],
+  "exp064_reproduction": {
+    "gallery_targets": 221,
+    "target_order_sha256": "59e231eeae34ac02ac336bef4828bec6bba373224051af78ddb49914c3ec383f",
+    "required_max_abs_error": 1e-06
+  },
+  "kolf_confirmation": {
+    "supported": true,
+    "expected_targets": 273,
+    "truth_prefix": "input/exp079-kolf-local-centering/20260823T064635Z/kolf2",
+    "operator_prefix": "input/production-challenge"
+  },
+  "embedding": {
+    "repository": "altoslabs/primeflow-vcc-datasets",
+    "repository_type": "dataset",
+    "revision": "d773a3476d15e5d32d385b13cebf87e62580097e",
+    "filename": "ESM2_pert_features.parquet",
+    "size_bytes": 595319311,
+    "sha256": "f05fe94e3a592bfa0973b3816b956af8c0a99387484d4c68ee89e0eac0b21db3",
+    "xet_hash": "45cf853729691bbb378e0efb7e829bfb805f15eca71e6caebe98e6da01eb693d",
+    "file_commit": "3f8c1fbca743dda8f62d480a2d21ce2555a1798c",
+    "rows": 19790,
+    "numeric_features": 5120,
+    "inspection": "Repository metadata, HTTP range footer, and Parquet schema inspected without downloading the full file."
+  },
+  "forbidden_inputs": [
+    "*.h5ad",
+    "*.h5ad.gz",
+    "the associated PRiMeFlow expression bundle"
+  ],
+  "protocol_repairs": {
+    "coordinate_less_training_targets_are_valid_rows": true,
+    "blocked_coordinates_excluded_from_source_statistics": true,
+    "primary_folds": [
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "kolf_is_independent_confirmation": true,
+    "final_null_strata_are_fold_specific": true,
+    "reused_s3_prefixes_rejected": true,
+    "orion_duplicate_axis_rows_preserved": true,
+    "duplicate_symbol_projection": "last occurrence",
+    "strict_timestamp_run_ids": true,
+    "existing_local_run_directories_rejected_without_deletion": true,
+    "canonical_work_root_containment_required": true
+  },
+  "execution": {
+    "cloud_launched": false,
+    "submission_performed": false
+  }
+}

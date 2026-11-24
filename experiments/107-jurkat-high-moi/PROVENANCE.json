@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-08-30",
+  "source": {
+    "geo_series": "GSE249595",
+    "parent_series": "GSE247601",
+    "bioproject": "PRJNA1049794",
+    "raw_archive_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249595/suppl/GSE249595_RAW.tar",
+    "raw_archive_size_bytes": 3753820160,
+    "guide_reference_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249595/suppl/GSE249595_guides_reference.fa.gz",
+    "file_inventory_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249595/suppl/filelist.txt",
+    "supplementary_table_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41556-025-01626-9/MediaObjects/41556_2025_1626_MOESM3_ESM.xlsx",
+    "downloaded_metadata": {
+      "filelist.txt": {
+        "size_bytes": 11869,
+        "sha256": "ce492b775742632b3b07c854c37712b62ef6bb3262050edb8c81950a96db8eca"
+      },
+      "GSE249595_guides_reference.fa.gz": {
+        "size_bytes": 847505,
+        "sha256": "99e99d6c14907a2cc60c4c11ed3d93e9da5cc113740489b7e8d1e8c0abe00ca6"
+      },
+      "MOESM3_ESM.xlsx": {
+        "size_bytes": 412522,
+        "sha256": "307f346279b4bda2e9c19aca39c692a144197c0117dfd9d595724cc353e2f7ff"
+      }
+    }
+  },
+  "screen": {
+    "cell_line": "Jurkat E6",
+    "perturbation": "CRISPRi",
+    "delivery": "high-MOI CROP-seq",
+    "channels": 16,
+    "guide_records": 83401,
+    "guide_reference_parsed_targets": 18601,
+    "non_targeting_guide_records": 250,
+    "reported_targeted_genes": 18595,
+    "supplementary_table_1_rows": 18466,
+    "supplementary_table_1_unique_symbols": 18465,
+    "vcc_target_overlap": 299,
+    "missing_vcc_target": "ZNF714",
+    "transcriptome_features": 20606,
+    "vcc_expression_gene_overlap": 18378,
+    "enriched_response_genes": 374,
+    "supplementary_table_2_unique_symbols": 375,
+    "hash_oligos": 7,
+    "estimated_pds_visible_high_sensitivity_genes_after_panel_mask": 349
+  },
+  "status": "preregistered_before_acquisition"
+}

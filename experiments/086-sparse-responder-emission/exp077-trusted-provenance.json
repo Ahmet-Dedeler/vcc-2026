@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "blocked_pending_immutable_terminal_attestation",
+  "launch": {
+    "run_id": "20260823T060938Z",
+    "region": "us-east-1",
+    "instance_id": "i-0e4070204e83188fb",
+    "bucket": "<your-s3-bucket>",
+    "source_prefix": "input/exp077-low-alpha-union/20260823T060938Z",
+    "output_prefix": "output/exp077-low-alpha-union/20260823T060938Z",
+    "ssm_command_id": "2eb4e082-e153-4ff1-810a-7124e77a2dd2",
+    "launch_metadata_sha256": "0fed5b97c6212cc70a1fd63593983bc057b655a64c6bbb3e0ce5c5fc379e8cd5",
+    "source_archive_sha256": "e1ec0cdb2b5647224431ce334931d9210d1d038494a92660cbff63bcecee3292",
+    "runner_sha256": "c15e4f50d49eaf7df848b5999dc420d7f6793ac48d008fefea543dd8f616bb7f",
+    "grid_sha256": "75a4af2d08ad413ed17dcebfb925b8bbd2af44eceb2990307e08311e3c7a32ac",
+    "summarizer_sha256": "70b28fc5a3ad0c5bdfc40888f290e9caf72047c572e3971edbcaaa692e2ff998"
+  },
+  "terminal_attestation": null,
+  "required_terminal_attestation": {
+    "authority": "AWS Systems Manager Run Command",
+    "attestor_sha256": "c28cc6948d78fc830c22a891415d706f3f6ce58af3071aae9608eb52a3310475",
+    "attestor_s3_key": "input/exp086-provenance-attestor/c28cc6948d78fc830c22a891415d706f3f6ce58af3071aae9608eb52a3310475/attest_exp077.py",
+    "required_hashes": [
+      "source_archive",
+      "runner",
+      "grid",
+      "summarizer",
+      "exit_code",
+      "summary",
+      "results",
+      "artifact_manifest"
+    ],
+    "completion_rule": "After exp077 finishes, run the pinned read-only attestor through a dedicated SSM command on the original instance. Record that command id here only after AWS reports Success. The SSM command output, not the rewritable S3 manifest, must bind every required hash."
+  }
+}

@@ -1,0 +1,13 @@
+{
+ "name": "k16",
+ "desc": "K16: zs with the CPM call block 1,600",
+ "emit": {
+  "hook": "none",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 1600,
+  "zs": true,
+  "dump": false
+ },
+ "stage": "zs"
+}

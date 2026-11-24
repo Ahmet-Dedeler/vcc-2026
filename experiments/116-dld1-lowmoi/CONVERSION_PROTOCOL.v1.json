@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "experiment": "116-dld1-lowmoi",
+  "dataset": "GSE337988",
+  "created_at": "2026-08-30",
+  "status": "frozen_before_matrix_value_access",
+  "scope": "source_only_compact_canonical_artifact",
+  "inputs": {
+    "acquisition_amendment_path": "experiments/116-dld1-lowmoi/ACQUISITION_AMENDMENT.v1.json",
+    "source_manifest_path": "experiments/116-dld1-lowmoi/SOURCE_MANIFEST.json",
+    "source_manifest_sha256": "2daaea4adb80cb1f6009fa29be6206a355e2b7e5f7c52c3d0d9660589dfa23c3",
+    "target_labels_path": "experiments/116-dld1-lowmoi/metadata/lfc_target_labels.txt",
+    "target_labels_sha256": "d49fb70eb8a6c9c39f5ff72a86ca71fcf47cb66a507b8d1b1d5ed7804b4d3a0f",
+    "target_label_count": 6451,
+    "canonical_gene_axis": {
+      "path": "data/challenge/gene_names.csv",
+      "column": "gene_name",
+      "row_count": 18533,
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201"
+    },
+    "vcc_panel_axis": {
+      "path": "data/challenge/pert_counts.csv",
+      "column": "target_gene",
+      "row_count": 300,
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    }
+  },
+  "predeclared_mapping": {
+    "response_gene_rule": "A source response row maps only by exact case-sensitive equality to one canonical gene symbol. No aliases, case folding, Ensembl stripping, punctuation normalization, or fuzzy matching are allowed.",
+    "duplicate_response_gene_rule": "Any duplicate source response-row label fails the build, including duplicate unsupported labels.",
+    "target_label_rule": "NTC_ labels are controls. Every other label maps to the exact case-sensitive canonical symbol before its first underscore, or to the entire label when no underscore exists. A prefix absent from the canonical axis is unsupported. No aliases or fuzzy matching are allowed.",
+    "expected_metadata_counts": {
+      "all_promoter_labels": 6451,
+      "ntc_labels": 496,
+      "non_ntc_labels": 5955,
+      "canonical_mapped_promoter_labels": 5656,
+      "unsupported_promoter_labels": 299,
+      "canonical_mapped_target_symbols": 4715,
+      "canonical_targets_with_multiple_promoters": 759,
+      "vcc_panel_target_overlap": 67,
+      "vcc_panel_promoter_overlap": 71
+    }
+  },
+  "value_parsing": {
+    "preserved_dtype": "float64",
+    "transfer_dtype": "float32",
+    "missing_tokens": [
+      "",
+      "NA",
+      "NaN",
+      "nan"
+    ],
+    "positive_or_negative_infinity": "fail_closed",
+    "invalid_numeric_token": "fail_closed",
+    "measured_definition": "A value is measured if and only if its source token parses to a finite float. Numeric zero is measured."
+  },
+  "author_value_preservation": {
+    "artifact": "author_lfc.h5",
+    "orientation": "canonical_response_gene_by_original_promoter_label",
+    "splits": [
+      "low1",
+      "low2"
+    ],
+    "include_ntc_columns": true,
+    "include_unsupported_target_columns": true,
+    "store_values_without_centering_scaling_clipping_or_imputation": true,
+    "store_exact_measured_masks": true,
+    "unsupported_source_response_rows": "not copied into the canonical artifact; their exact row labels and counts are recorded, while the accepted source gzip files preserve the original bytes"
+  },
+  "duplicate_promoter_policy": {
+    "preserve_each_promoter_column": true,
+    "target_level_aggregation": "For each split and response coordinate independently, take the median of all finite author LFC values among promoter columns mapping to that target. If none are finite, the target coordinate is unmeasured.",
+    "selection_by_observed_effect": false,
+    "drop_low_concordance_promoters": false,
+    "target_order": "canonical gene-axis order restricted to symbols with at least one mapped non-NTC promoter"
+  },
+  "transfer_arrays": {
+    "orientation": "canonical_response_gene_by_canonical_target_symbol",
+    "split_files": [
+      "transfer_lfc_low1.npy",
+      "transfer_lfc_low2.npy"
+    ],
+    "measured_mask_files": [
+      "transfer_measured_low1.npy",
+      "transfer_measured_low2.npy"
+    ],
+    "unmeasured_value": 0.0,
+    "panel_response_coordinate_policy": "All 300 VCC panel response coordinates are exactly 0.0 and measured=false in every transferable array, regardless of preserved author values.",
+    "author_artifact_is_not_transferable": true
+  },
+  "qc_policy": {
+    "hard_structural_qc": [
+      "complete gzip and exact accepted source SHA-256",
+      "exact frozen target header",
+      "identical complete response-row label sequence across Low1 and Low2",
+      "unique source response-row labels",
+      "exact row width",
+      "finite-or-declared-missing values only"
+    ],
+    "reliability_mask_only_does_not_delete_values": true,
+    "minimum_common_nonpanel_measured_fraction": 0.8,
+    "minimum_low1_low2_cosine": 0.1,
+    "minimum_top100_sign_agreement": 0.6,
+    "top100_definition": "The 100 common measured non-panel coordinates with largest mean absolute LFC across Low1 and Low2; use all common coordinates when fewer than 100."
+  },
+  "source_only_diagnostics": {
+    "split_metrics": [
+      "common measured count and fraction",
+      "cosine",
+      "centered Pearson",
+      "top-100 sign agreement",
+      "normalized RMSE"
+    ],
+    "duplicate_promoter_metrics": [
+      "within-Low1 pairwise cosine",
+      "within-Low2 pairwise cosine"
+    ],
+    "vcc_overlap_retrieval": {
+      "target_set": "canonical target symbols overlapping the fixed 300-gene VCC panel",
+      "response_coordinates": "pairwise common measured coordinates after all 300 panel response coordinates are excluded",
+      "directions": [
+        "Low1 query against Low2 gallery",
+        "Low2 query against Low1 gallery"
+      ],
+      "pds_ties": "half credit",
+      "permutations": 10000,
+      "bootstrap_replicates": 20000,
+      "seed": 11620260830
+    },
+    "preregistered_held_experiment_recommendation_gate": {
+      "minimum_vcc_overlap_targets": 50,
+      "minimum_macro_replicate_pds": 0.65,
+      "minimum_each_direction_pds": 0.6,
+      "minimum_bootstrap_lower_95": 0.55,
+      "maximum_permutation_p_value": 0.01,
+      "require_macro_above_null_p95": true,
+      "minimum_median_target_cosine": 0.2,
+      "minimum_reliable_target_fraction": 0.5
+    }
+  },
+  "forbidden": {
+    "open_vcc_held_perturbation_truth": true,
+    "open_existing_outcomes": true,
+    "run_cell_eval2": true,
+    "generate_counts": true,
+    "build_submission": true,
+    "submit": true,
+    "commit": true,
+    "push": true
+  }
+}

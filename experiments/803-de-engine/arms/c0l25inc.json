@@ -1,0 +1,23 @@
+{
+ "name": "c0l25inc",
+ "desc": "811 c0_l25 (many-line consensus U on the D/E/F day bank list, H1 group held out, lambda 0.25) blended into the composition rows; DE as `inc`",
+ "emit": {
+  "hook": "c4h",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": true,
+  "bulk_transform": {
+   "module": "experiments/803-de-engine/bt/c0811h.py",
+   "sha256": "5f8a9e883e91b287952e53bfd95ff83f02e9270d7bb49aac262b152f80b66afc",
+   "args": {
+    "lam": 0.25,
+    "hold": [
+     "H1"
+    ]
+   }
+  }
+ },
+ "stage": "rnup:b_k100_q20r3p10_D200"
+}

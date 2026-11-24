@@ -1,0 +1,86 @@
+{
+  "copy_method": "macOS cp -c clonefile",
+  "created_at": "2026-08-30T02:55:47.954112+00:00",
+  "destination": "~/Code/virtual-cell-challenge-2026/data/external/state-vcc/competition_support_set-log1p",
+  "files": [
+    {
+      "destination_bytes": 15482098599,
+      "log1p_added": false,
+      "log1p_before": true,
+      "name": "competition_train.h5",
+      "source_bytes": 15482098599
+    },
+    {
+      "destination_bytes": 8083148330,
+      "log1p_added": true,
+      "log1p_before": false,
+      "name": "k562_gwps.h5",
+      "source_bytes": 8083142186
+    },
+    {
+      "destination_bytes": 1616892678,
+      "log1p_added": true,
+      "log1p_before": false,
+      "name": "rpe1.h5",
+      "source_bytes": 1616886534
+    },
+    {
+      "destination_bytes": 1551189680,
+      "log1p_added": true,
+      "log1p_before": false,
+      "name": "jurkat.h5",
+      "source_bytes": 1551183536
+    },
+    {
+      "destination_bytes": 1337945246,
+      "log1p_added": true,
+      "log1p_before": false,
+      "name": "k562.h5",
+      "source_bytes": 1337939102
+    },
+    {
+      "destination_bytes": 680432676,
+      "log1p_added": true,
+      "log1p_before": false,
+      "name": "hepg2.h5",
+      "source_bytes": 680426532
+    },
+    {
+      "destination_bytes": 7162595509,
+      "log1p_added": false,
+      "log1p_before": null,
+      "name": "competition_val_template.h5ad",
+      "source_bytes": 7162595509
+    },
+    {
+      "destination_bytes": 12365991970,
+      "log1p_added": false,
+      "log1p_before": null,
+      "name": "competition_test_template.h5ad",
+      "source_bytes": 12365991970
+    },
+    {
+      "destination_bytes": 512,
+      "log1p_added": false,
+      "log1p_before": null,
+      "name": "starter.toml",
+      "source_bytes": 512
+    },
+    {
+      "destination_bytes": 116023,
+      "log1p_added": false,
+      "log1p_before": null,
+      "name": "gene_names.csv",
+      "source_bytes": 116023
+    },
+    {
+      "destination_bytes": 410886729,
+      "log1p_added": false,
+      "log1p_before": null,
+      "name": "ESM2_pert_features.pt",
+      "source_bytes": 410886729
+    }
+  ],
+  "semantic_change": "add missing empty AnnData uns/log1p metadata to training files only",
+  "source": "~/Code/virtual-cell-challenge-2026/data/external/state-vcc/competition_support_set"
+}

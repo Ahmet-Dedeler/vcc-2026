@@ -1,0 +1,9 @@
+{
+  "replacement_basename": "GenePT_gene_protein_embedding_model_3_text.pickle.",
+  "sha256": {
+    "experiments/333-genept-feature-feasibility/RECOVERY-001.md": "8edd47a2120cd10e6af3a00e38d0dc990b212d9146a0fffc628c9428a8059c96",
+    "experiments/333-genept-feature-feasibility/convert_recovery333.py": "f5b32728dc08c16410c925fcd0a647b9442388b954753cf75a8ee44da2c31ec8",
+    "experiments/333-genept-feature-feasibility/inputs.json": "f16bf126379446d49f8e15ccaad4430a67d8c2f305812a26548b9e895b7a4d59",
+    "experiments/333-genept-feature-feasibility/work/download.json": "54a8214dba96ea7433a38366cd6d24d0b430f734922db15aa1f10c632628f234"
+  }
+}

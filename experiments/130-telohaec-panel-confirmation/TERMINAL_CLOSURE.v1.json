@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "experiment": "130-telohaec-panel-confirmation",
+  "closed_at": "2026-08-30",
+  "status": "CLOSED_NO_ELIGIBLE_CANDIDATE",
+  "original_prevalue_freeze": {
+    "path": "experiments/130-telohaec-panel-confirmation/IMPLEMENTATION_FREEZE.json",
+    "sha256": "ac750cedf88ccb3307c4cfd9764376cb47f88015b2efb9a29e959e36abf0026b",
+    "preserved_byte_for_byte": true
+  },
+  "source_metadata_receipt": {
+    "path": "experiments/130-telohaec-panel-confirmation/SOURCE_METADATA_RECEIPT.v1.json",
+    "sha256": "4e1582e61b5f23e8154bfb52ef73af181df1314f6f04eaa4270cf05448d1d393",
+    "biological_value_access": false
+  },
+  "experiment_125_result": {
+    "result_directory": "experiments/125-hierarchical-panel-posterior/work/source-only-evaluation-v1",
+    "results": {
+      "path": "experiments/125-hierarchical-panel-posterior/work/source-only-evaluation-v1/results.json",
+      "sha256": "635701eefa74271e9209489b7593c045a22b573576c5a6e4319c7e7f99621010"
+    },
+    "artifact_manifest": {
+      "path": "experiments/125-hierarchical-panel-posterior/work/source-only-evaluation-v1/artifact-manifest.json",
+      "sha256": "b3efbd1db8a39ab933c4e4fe0bd998917216866df6157441a33a0e1560cdc63a"
+    },
+    "result_receipt": {
+      "path": "experiments/125-hierarchical-panel-posterior/work/source-only-evaluation-v1/result-receipt.json",
+      "sha256": "c7659a615b9ac4a7fb88ba53fce7002ac9e894e34f27de6738d2e6d7acc4aa86"
+    },
+    "implementation_freeze": {
+      "path": "experiments/125-hierarchical-panel-posterior/IMPLEMENTATION_FREEZE.json",
+      "sha256": "4e33671056c2ec6641e49b21c8acc4c4ad730734ad96e9badcb74e2994feef25"
+    },
+    "decision": "NO-GO",
+    "promotion_passes": false,
+    "macro_signed_credit_delta": -0.015049899010796045,
+    "macro_precision_delta": 0.012174572820953597,
+    "family_signed_credit_delta": {
+      "replogle_k562": -0.01214610823191394,
+      "orion": -0.026082415627716488,
+      "cd4": -0.006921173172757709
+    },
+    "precision_nulls": {
+      "target_label_p95": 0.015527271023240793,
+      "target_label_p_value": 0.3333333333333333,
+      "response_label_p95": 0.013516444470243838,
+      "response_label_p_value": 0.12935323383084577
+    },
+    "failed_required_conditions": [
+      "Experiment 125 decision is not GO",
+      "Experiment 125 promotion_passes is false",
+      "signed-credit delta is negative in every biological family",
+      "macro signed-credit minimum gate failed",
+      "signed-credit bootstrap lower-bound gate failed",
+      "signed-credit target-label and response-label null gates failed",
+      "precision target-label and response-label null gates failed"
+    ]
+  },
+  "candidate_binding": {
+    "path": "experiments/130-telohaec-panel-confirmation/CANDIDATE_BINDING_AMENDMENT.json",
+    "present": false,
+    "creation_authorized": false,
+    "reason": "No Experiment 125 candidate satisfies the frozen Experiment 130 unlock prerequisites."
+  },
+  "decision": {
+    "telohaec_value_access_authorized": false,
+    "telohaec_confirmation_authorized": false,
+    "experiment_130_terminal": true,
+    "future_work_requires_new_experiment_number": true
+  },
+  "safety": {
+    "telohaec_X_or_layers_accessed_during_closure": false,
+    "telohaec_compact_effect_or_control_values_accessed_during_closure": false,
+    "hcasmc_accessed": false,
+    "dld1_accessed": false,
+    "pan_accessed": false,
+    "kolf_accessed": false,
+    "h1_or_orion_held_outcomes_accessed": false,
+    "challenge_truth_or_context_values_accessed": false,
+    "cell_eval2_run": false,
+    "counts_or_submission_built": false,
+    "submission_sent": false,
+    "commit_or_push": false
+  }
+}

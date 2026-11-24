@@ -1,0 +1,2 @@
+1	0	36	61004	mkdir -p experiments/800-checker/work && uv run python experiments/800-checker/overread800.py --abc ABCp > experiments/800-checker/work/overread800-ABCp.txt 2>&1; cat experiments/800-checker/work/overread800-ABCp.txt
+2	0	36	61260	mkdir -p experiments/800-checker/work && uv run python experiments/800-checker/overread800.py --abc ABC > experiments/800-checker/work/overread800-ABC.txt 2>&1; cat experiments/800-checker/work/overread800-ABC.txt

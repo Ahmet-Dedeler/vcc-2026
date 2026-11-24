@@ -1,0 +1,1 @@
+1	0	1	36184	mkdir -p experiments/803-de-engine/work && touch experiments/803-de-engine/work/SETUP-OK && bash experiments/803-de-engine/cloud/batch803.sh 1 experiments/803-de-engine/cloud/b7/r.txt

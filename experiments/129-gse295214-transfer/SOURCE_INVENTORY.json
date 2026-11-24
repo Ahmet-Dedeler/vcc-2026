@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "experiment": "129-gse295214-transfer",
+  "effect_inputs": {
+    "data/donors/k562_gwps/delta.npy": "0c9422280fed7afb81ca474e8b9024af788c9ffbde32e11f96cb52422e296aa9",
+    "data/donors/orion_hct116/delta.npy": "72c7a01dc2869bd3e94c37e89b158c3aaf4048a0dff63da6542afa2de4ec2b33",
+    "data/donors/orion_hek293t/delta.npy": "d95202d984d9322dc3830f23b6ef55001ba8562dea1d72c43fb0c9d5064c7d1b",
+    "data/donors/rpe1/delta.npy": "253cc16e51f4635f23e8e597d91bd38a84162a1102486d4a5764c48c379c2b4a",
+    "data/donors/nadig_jurkat/delta.npy": "1fa16024c2d7115fc4b7c06f0ab7d9afe8ba6ebd0ae6dcef62c4955636e29129",
+    "data/external/perturbmatch/delta.npy": "efa20944f6f6485a7cc7f484c7ab70bd2ba491a6e07b231f306e104b2e1e4cf2",
+    "experiments/115-gse295214-h1/work/compact-donor/delta.npy": "d0fa6555f9a62ce503d2ad55c8bfda954322657b52dcd48a24e29c330e718c7a",
+    "experiments/115-gse295214-h1/work/compact-donor/measured_mask.npy": "da468865f861be0714037c33357b93b9f747351f7478866e6e0dd6dff9d1ebcb"
+  },
+  "axis_and_metadata_inputs": {
+    "data/challenge/gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "data/donors/k562_gwps/genes.txt": "f499ffc3077e4f06c86cd4504bfeefd34741bc2fd515be93f7e436c5c08fa2ba",
+    "data/donors/k562_gwps/perts.txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec",
+    "data/donors/k562_gwps/meta.json": "0bd3478aa6b63164bd4816cd8bbb439b805b6b93b2a267ddf8114b196c5e19aa",
+    "data/donors/orion_hct116/genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+    "data/donors/orion_hct116/perts.txt": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8",
+    "data/donors/orion_hct116/meta.json": "7a1ec5a9323c6ebd4b586aa300b28bcd9ddf271e67f04bdaf353cb15b8b2d6c8",
+    "data/donors/orion_hek293t/genes.txt": "db8ba814bd30dcc7fe48be659f4dee3f6955b626d7d7e385f4630232733f893e",
+    "data/donors/orion_hek293t/perts.txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547",
+    "data/donors/orion_hek293t/meta.json": "a7310e69e2e09ad42d88f9192a938b14bf3db44be92575123b86508f0818710f",
+    "data/donors/rpe1/genes.txt": "ac7c7f7b141a74004a5363b2e1aba52f5769c02ea769d9a5b72fdb5eacdbd2f0",
+    "data/donors/rpe1/perts.txt": "4377d2dc2fd57c523d6632416ca5b9f9e7c192192e32b0eebd91a84fabab8c67",
+    "data/donors/rpe1/meta.json": "5d7f65459664620e8041cd0901f57b5da8e5aea503e4a17316601a9938c0b8db",
+    "data/donors/nadig_jurkat/genes.txt": "3071f4366db6896b2dac2cb0d59fbfff18f89840f021d556e42ccee083c39830",
+    "data/donors/nadig_jurkat/perts.txt": "f5a5c1bbbbdf97bcedb789277b13b0901447c28a5f091d798c37a93ef86197d7",
+    "data/donors/nadig_jurkat/meta.json": "9dd47a2652b518f48bfe43fa442c6c602af9f2c792db421f11b7195edc5e84b1",
+    "data/external/perturbmatch/genes.txt": "e889994e2d0462d064018408ca456fc8be428e660523fb1bd9a7bcd7b3ab5959",
+    "data/external/perturbmatch/perts.txt": "1131758c3ab0d0c781a17580894511986d9baeadc1ad1304251f5a133086998e",
+    "data/external/perturbmatch/meta.json": "0b8224c2e04b1d2e4a331ecb26c5d1733eb32c143f949424b1cd518299066a41",
+    "data/external/slim/gene_string_embeddings.v0.3.h5": "789416877b8701ef6f800106d26bf7bb97ea8e72744e6ab93e24933a717f247d",
+    "experiments/107-jurkat-high-moi/work/strict-validation-plan.json": "dbd0c6871eff9afbb57be7ef898015c794973ec24dfbec4fad1eb28c984126cf",
+    "experiments/123-slim-string-reproduction/work/preregistered-freeze-v1/all_targets.txt": "302cc749d3a9d5b27802dfaaa73e786e849268fb7ffdaba88b26341281d12a25",
+    "experiments/115-gse295214-h1/work/compact-donor/artifact-manifest.json": "773895e0dcff2b6ae4aa9db22f98cd1376315a62b1a7cd193ef559330cf25cd2",
+    "experiments/115-gse295214-h1/work/compact-donor/compact-donor-receipt.json": "2d24b8fcf86cf6fd6c5fc0a02d1da5525393692e9f67d70f865c72189f875348",
+    "experiments/115-gse295214-h1/work/compact-donor/genes.txt": "c2b8dec58c02810d64018164155b655c4e7c7be451a3ae579965db193af33723",
+    "experiments/115-gse295214-h1/work/compact-donor/perts.txt": "7060076272d411d4ee00b898cc26eedcb1eaaac5f5e94e2c60f3b45978320747",
+    "experiments/115-gse295214-h1/work/compact-donor/meta.json": "ac51c243a69068e10f0e4cd2ec426360a920e531aba8911a854daa5d6c620f13",
+    "experiments/115-gse295214-h1/work/compact-donor/source_gene_map.tsv": "5456cc15364ade718d4a040e935f9cd522322fe4448017f2dc74d626e4d4f574"
+  },
+  "production_reference_inputs": {
+    "scripts/make_submission_pm_cd4.py": "7562cf5a16fd751c55ddf248e05f2e4281f907e27be0a5bb9da959d61991b62b",
+    "experiments/062-cd4-post-whiten/run.py": "16417a9b985d9aad8993bf2f24ce550ea1e6871d9401bb4672d11ec6d0046176",
+    "src/vcc2026/donor_transfer.py": "c91cb05e1204138900058be2c82a227f132e373493a3b3e15914cd18f807f3b9",
+    "src/vcc2026/whiten.py": "5dbddefde17192cda4bc7f8f7eceb202faf672de1833c42251366078e7e18bc1"
+  },
+  "note": "Every path is hash-pinned before any Experiment 129 effect array is loaded."
+}

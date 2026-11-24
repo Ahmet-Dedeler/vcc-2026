@@ -1,0 +1,24 @@
+4	0	68	2597104	bash experiments/810-strong-direction/cloud/job810aonly.sh prep A4
+3	0	79	2596548	bash experiments/810-strong-direction/cloud/job810aonly.sh prep A3
+2	0	91	2596564	bash experiments/810-strong-direction/cloud/job810aonly.sh prep A2
+1	0	103	2596608	bash experiments/810-strong-direction/cloud/job810aonly.sh prep A1
+5	0	115	2596512	bash experiments/810-strong-direction/cloud/job810aonly.sh prep A5
+6	0	128	2596596	bash experiments/810-strong-direction/cloud/job810aonly.sh prep A6
+16	0	130	4879332	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A4 k562_gwps
+13	0	149	4879424	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A3 k562_gwps
+10	0	156	4880308	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A2 k562_gwps
+17	0	165	5357356	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A4 orion_hct116
+18	0	168	5405300	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A4 orion_hek293t
+14	0	179	5367836	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A3 orion_hct116
+7	0	182	4881796	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A1 k562_gwps
+15	0	183	5404852	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A3 orion_hek293t
+12	0	191	5395668	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A2 orion_hek293t
+11	0	191	5357136	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A2 orion_hct116
+19	0	193	4878928	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A5 k562_gwps
+22	0	202	4881020	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A6 k562_gwps
+8	0	210	5348140	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A1 orion_hct116
+9	0	211	5386236	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A1 orion_hek293t
+21	0	221	5395596	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A5 orion_hek293t
+20	0	221	5358044	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A5 orion_hct116
+24	0	226	5376524	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A6 orion_hek293t
+23	0	229	5368272	bash experiments/810-strong-direction/cloud/job810aonly.sh fold A6 orion_hct116

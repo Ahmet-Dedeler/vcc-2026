@@ -1,0 +1,145 @@
+{
+  "schema_version": 2,
+  "experiment": "114-depmap-coessentiality",
+  "recorded_date": "2026-08-30",
+  "status": "role_source_builders_implemented_real_bundles_not_built_or_authorized",
+  "files": {
+    "README.md": "db0616b25a5cac0afb52386f42d94eb1857028d17b0742f8eda06ce9cac2eb6b",
+    "SOURCE_MANIFEST.json": "5834bcd29a7e31b23aaafdcd02a5f56f509e06c87ad1fb0c2568df40510a5497",
+    "SOURCE_SCHEMA_AMENDMENT.json": "266f805bc80d011b53322bbf81c54bd69507e39c3752fa9a47c8b95cae886075",
+    "SOURCE_CANDIDATE_FREEZE_BOUNDARY.json": "a22ca21f51e7d6729c9c7f09c2901ba0fa9cf1ecb067fc75ab91d9324ef18025",
+    "ROLE_SOURCE_MANIFEST.json": "e05d877b5ea0a7aeae06f4c53ad363e984379678b5b61fd852e3e877d17d0248",
+    "preregistered_protocol.json": "cfd495175d87cba7e7cad1ff171b7a817664eabc3e836aa311ec7417f0c59b91",
+    "run.py": "737d0bf225c5ee5e5108a54a07e9fdfc3ee6e8728f1ad559def5ff2c03569fd9",
+    "build_role_inputs.py": "d7be3515fbd3ec26f25b59ccf545fd6783d77be442b6e6392903e109a0ffb77e",
+    "test_run.py": "0d673e257b3139593ec6a56101f78328f0253462ab0ebe7c83daacf9e47c2d24",
+    "test_build_role_inputs.py": "9275a12e24b6d70aa9008b97bee2332fb60068d4a0955b085e429a8037e42009"
+  },
+  "preserved_source_artifacts": {
+    "work/source-features/CRISPRGeneEffect.csv": "3d8f3ec6dbf2db7ff834b79b508622ec0b226f3518003fe96ecf5a4fcf167e3b",
+    "work/source-features/depmap-features.npz": "7f42b585f788db95cdc345d44b44926bd76ce0fc5ae94c544fd2f6929b9ddc51",
+    "work/source-features/source-receipt.json": "ff33216dd9997026e0cfb756b2139f80724ed4d03fbaa75b283048e488e8330c",
+    "work/source-features/feature-receipt.json": "6e01f6daa6bb39203d8178ea693e39caad6246fbe96fa38dbc18d25deadd7b7b"
+  },
+  "source_feature_audit": {
+    "source_shape": [
+      1178,
+      17916
+    ],
+    "feature_shape": [
+      17916,
+      1178
+    ],
+    "logical_matrix_sha256": "2444fadb3feec310b38823dd962694aea487ea9556e776c7fa545de7ebfe648e",
+    "gene_order_sha256": "0f595cfb921ec95012e07ecd1928f00d29512cdadbbbc1b52733c3923112bb9c",
+    "independent_full_matrix_reproduction": "bit_exact",
+    "maximum_absolute_difference": 0.0,
+    "finite_rows": 17916,
+    "zero_norm_rows": 0
+  },
+  "freeze_boundary": {
+    "approved_role_count": 0,
+    "source_candidate_freeze_authorized": false,
+    "canonical_panel_count": 300,
+    "canonical_gene_count": 18533,
+    "eligible_count": 41,
+    "eligible_ordered_sha256": "508daf6356aeb62fd30e9048482bdaca9b1b001ec80e8aef9dabe5b32bc0dcb0",
+    "requires_hash_pinned_role_manifest": true,
+    "requires_role_owned_incumbent_and_source_bank_receipts": true,
+    "requires_held_surface_source_exclusion": true,
+    "requires_exact_source_id_allowlist": true,
+    "requires_canonical_axes": true,
+    "requires_exact_preregistered_eligibility": true,
+    "requires_receipt_authenticated_depmap_and_string_features": true,
+    "requires_hash_pinned_role_source_manifest": true,
+    "requires_role_specific_experiment_107_operator": true,
+    "requires_held_surface_response_coordinate_exclusion": true,
+    "source_bank_uses_exact_top25_neighbor_closure": true,
+    "stores_and_regenerates_null_query_labels": true,
+    "atomic_directory_publication": true
+  },
+  "role_source_build": {
+    "real_role_bundles_built": false,
+    "roles": {
+      "h1": {
+        "allowed_source_ids": [
+          "k562_gwps",
+          "orion_hct116",
+          "orion_hek293t"
+        ],
+        "held_surface_source_id": "h1_2025",
+        "operator_ready_at_final_check": false
+      },
+      "orion_hek293t": {
+        "allowed_source_ids": [
+          "k562_gwps",
+          "orion_hct116"
+        ],
+        "held_surface_source_id": "orion_hek293t",
+        "operator_ready_at_final_check": false
+      }
+    },
+    "a14_settings_bound": true,
+    "canonical_shape": [
+      300,
+      18533
+    ],
+    "source_bank_effect_space": "a14_role_donor_deviation_role_whitened_no_global_renorm_v1",
+    "held_truth_opened": false
+  },
+  "validation": {
+    "pytest": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 uv run --with pytest python -m pytest -q -p no:cacheprovider experiments/114-depmap-coessentiality/test_run.py experiments/114-depmap-coessentiality/test_build_role_inputs.py",
+      "result": "38 passed",
+      "elapsed_seconds": 4.54
+    },
+    "ruff_check": {
+      "command": "uv run ruff check --no-cache experiments/114-depmap-coessentiality/run.py experiments/114-depmap-coessentiality/build_role_inputs.py experiments/114-depmap-coessentiality/test_run.py experiments/114-depmap-coessentiality/test_build_role_inputs.py",
+      "result": "passed"
+    },
+    "ruff_format_check": {
+      "command": "uv run ruff format --check --no-cache experiments/114-depmap-coessentiality/run.py experiments/114-depmap-coessentiality/build_role_inputs.py experiments/114-depmap-coessentiality/test_run.py experiments/114-depmap-coessentiality/test_build_role_inputs.py",
+      "result": "passed"
+    },
+    "python_compile_without_bytecode": {
+      "result": "passed"
+    },
+    "manifest_audit": {
+      "result": {
+        "panel_count": 300,
+        "incumbent_uncovered_count": 28,
+        "low_confidence_count": 13,
+        "eligible_count": 41,
+        "approved_role_count": 0,
+        "source_candidate_freeze_authorized": false,
+        "freeze_boundary_authorized": false,
+        "role_source_manifest_sha256": "e05d877b5ea0a7aeae06f4c53ad363e984379678b5b61fd852e3e877d17d0248"
+      }
+    }
+  },
+  "actions_taken": {
+    "depmap_large_file_downloaded_previously": true,
+    "depmap_source_feature_built_previously": true,
+    "source_feature_artifacts_preserved_without_overwrite": true,
+    "source_candidate_freeze_boundary_implemented": true,
+    "role_source_manifest_frozen": true,
+    "deterministic_role_builders_implemented": true,
+    "synthetic_role_bundles_built_and_validated_in_temporary_directories": true
+  },
+  "actions_not_taken": {
+    "real_role_manifest_approved": false,
+    "real_role_artifacts_built": false,
+    "experiment_107_operator_artifacts_opened": false,
+    "source_model_fitted": false,
+    "source_candidate_frozen": false,
+    "held_perturbation_truth_opened": false,
+    "evaluation_run": false,
+    "counts_generated": false,
+    "challenge_artifact_built": false,
+    "submission_made": false,
+    "commit_created": false,
+    "push_performed": false,
+    "files_outside_experiment_114_edited": false
+  },
+  "remaining_gate": "Wait for Experiment 107 to finish, run the two documented build-role commands strictly serially, independently audit and hash-pin both real role manifests and receipts, then populate approved_roles and separately decide whether both source_candidate_freeze authorization flags may be enabled."
+}

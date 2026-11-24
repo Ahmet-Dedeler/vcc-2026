@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "experiment": "111-depmap-context-program-gain",
+  "date_frozen": "2026-08-30",
+  "status": "authorized_frozen_source_only_run",
+  "confirmation_string": "I_CONFIRM_EXPERIMENT_111_SOURCE_ONLY_V1",
+  "bindings": {
+    "source_manifest": {
+      "path": "experiments/111-depmap-context-program-gain/SOURCE_MANIFEST.json",
+      "sha256": "90e15f3c9d4c698805d0a680fc51085ee18fc6164b77adb2dfade1e7ad92a638"
+    },
+    "preregistered_protocol": {
+      "path": "experiments/111-depmap-context-program-gain/preregistered_protocol.json",
+      "sha256": "51051875b00057c0e4a23271784dbff30ba4909567ac15b04ee21cbeb533dcee"
+    },
+    "execution_authorization": {
+      "path": "experiments/111-depmap-context-program-gain/EXECUTION_AUTHORIZATION.v1.json",
+      "sha256": "6276050b7b890cd1d51c93e10c5d65d37b9eed55b71e7fc510b8c7d84581878c"
+    },
+    "acquisition_schema_recovery": {
+      "path": "experiments/111-depmap-context-program-gain/ACQUISITION_SCHEMA_RECOVERY.v1.json",
+      "sha256": "e88f86013adbaf988c3b0fa6e5351b2966330f206f800d17842d08ef6357b231"
+    },
+    "implementation_protocol": {
+      "path": "experiments/111-depmap-context-program-gain/SOURCE_MODEL_IMPLEMENTATION_PROTOCOL.v1.json",
+      "sha256": "9add2be6e7a566af879bc385478276cc60156730bcf2cf3212749067f1000128"
+    },
+    "source_model_failure_recovery": {
+      "path": "experiments/111-depmap-context-program-gain/SOURCE_MODEL_FAILURE_RECOVERY.v1.json",
+      "sha256": "08714293cda279b22fd52205faa18f1071e7a0937c76dc51f65add5163a6ba20"
+    },
+    "acquisition_receipt": {
+      "path": "experiments/111-depmap-context-program-gain/audit/acquisition_receipt.json",
+      "sha256": "68cbc7430517cdbce9ca33d3cc031a773f51f5e352f729d3563cc3cea7d367b1"
+    },
+    "source_model": {
+      "path": "experiments/111-depmap-context-program-gain/source_model.py",
+      "sha256": "024db36280b784d5037589b59577a7314dd2ba060a53342861444a192f576dcc"
+    },
+    "source_model_tests": {
+      "path": "experiments/111-depmap-context-program-gain/test_source_model.py",
+      "sha256": "fd33689a5b167f9329494350430e9cae009167a527ff83799c57ff5fcfa0d2f7"
+    }
+  },
+  "authorization": {
+    "read_exact_authenticated_source_members": true,
+    "fit_fixed_source_only_grid": true,
+    "run_complete_selection_nulls": true,
+    "write_only_source_output_root": true,
+    "held_truth_access": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "production_change": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  }
+}

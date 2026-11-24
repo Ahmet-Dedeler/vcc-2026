@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "experiment": "112-orion-control-label-correction",
+  "date_preregistered": "2026-08-30",
+  "status": "preregistered_scaffold_only_expression_unopened",
+  "hypothesis": "Removing NEGR1 from the Orion control pool and propagating the resulting exact baseline translation through freshly fitted whitening operators improves the frozen a14 family without changing target evidence or support.",
+  "comparison": {
+    "incumbent": "exact frozen a14-shaped pipeline with current Orion donors and operators",
+    "candidate": "same pipeline with exact Orion control-label correction and all affected whitening operators refitted",
+    "binary_only": true,
+    "candidate_grid": [],
+    "post_held_choice_forbidden": true
+  },
+  "known_metadata_audit": {
+    "legacy_control_patterns": [
+      "^non.?targeting",
+      "^ntc",
+      "^control",
+      "^safe.?harbou?r",
+      "^neg"
+    ],
+    "misclassified_target": "NEGR1",
+    "NEGR1_in_vcc_2026_panel": false,
+    "NEGR1_in_current_orion_donor_perturbation_axes": false,
+    "lines": {
+      "HCT116": {
+        "exact_control_label": "Non-Targeting",
+        "eligible_exact_control_rows": 165777,
+        "eligible_NEGR1_rows": 154,
+        "legacy_control_rows": 165931,
+        "raw_parquet_row_groups": 109
+      },
+      "HEK293T": {
+        "exact_control_label": "Non-Targeting",
+        "eligible_exact_control_rows": 218838,
+        "eligible_NEGR1_rows": 233,
+        "legacy_control_rows": 219071,
+        "raw_parquet_row_groups": 223
+      }
+    }
+  },
+  "source_audit_contract": {
+    "metadata_only_columns": [
+      "gene_target",
+      "pass_guide_filter"
+    ],
+    "gene_expression_forbidden_during_metadata_audit": true,
+    "bind_each_raw_parquet": [
+      "relative_path",
+      "size_bytes",
+      "row_groups",
+      "sha256"
+    ],
+    "bind_existing_orion_artifacts": [
+      "delta.npy",
+      "b_ctrl.npy",
+      "genes.txt",
+      "perts.txt",
+      "meta.json"
+    ],
+    "required_count_identity": "legacy_control_rows = eligible_exact_control_rows + eligible_NEGR1_rows",
+    "unexpected_legacy_matched_label_count": 0,
+    "challenge_panel_hash_required": true,
+    "donor_axes_hash_required": true
+  },
+  "future_expression_projection": {
+    "authorized_now": false,
+    "columns": [
+      "gene_token_id",
+      "gene_expression",
+      "gene_target",
+      "pass_guide_filter"
+    ],
+    "corrected_control_filter": {
+      "pass_guide_filter": 1,
+      "gene_target_exact": "Non-Targeting"
+    },
+    "legacy_reconstruction_filter": {
+      "pass_guide_filter": 1,
+      "gene_target_exact": "NEGR1"
+    },
+    "regex_or_prefix_filter_forbidden": true,
+    "other_perturbation_expression_forbidden": true
+  },
+  "correction": {
+    "target_sum": 50000.0,
+    "formula": "corrected_delta = old_delta + old_b_ctrl - corrected_b_ctrl",
+    "corrected_baseline": "log1p(50000 * exact_non_targeting_sum / exact_non_targeting_total)",
+    "legacy_baseline_reconstruction": "log1p(50000 * (exact_non_targeting_sum + NEGR1_sum) / sum(exact_non_targeting_sum + NEGR1_sum))",
+    "legacy_baseline_must_match_existing_float32_bitwise": true,
+    "preserve_existing_target_sums": true,
+    "preserve_gene_axis_byte_exact": true,
+    "preserve_perturbation_axis_byte_exact": true,
+    "preserve_target_availability_exact": true,
+    "reconstructed_target_log_profile_max_abs_tolerance": 2e-06,
+    "target_expression_reread_forbidden": true
+  },
+  "whitening": {
+    "refit_required": true,
+    "reuse_incumbent_operator_forbidden": true,
+    "axis": "union",
+    "exclude_all_300_vcc_panel_coordinates_before_fit": true,
+    "covariance": "uncentered_signal_covariance",
+    "gamma": 0.65,
+    "lambda": 0.0,
+    "preserve_incumbent_pruning_row_selection_weights_and_seed": true,
+    "operators": {
+      "held_hct116": [
+        "k562_gwps",
+        "corrected_orion_hek293t"
+      ],
+      "held_hek293t": [
+        "k562_gwps",
+        "corrected_orion_hct116"
+      ],
+      "held_h1": [
+        "k562_gwps",
+        "corrected_orion_hct116",
+        "corrected_orion_hek293t"
+      ],
+      "production_candidate": [
+        "k562_gwps",
+        "corrected_orion_hct116",
+        "corrected_orion_hek293t"
+      ]
+    }
+  },
+  "frozen_non_orion_components": [
+    "a14 target axis and target order",
+    "K562-GWPS donor",
+    "PerturbMatch K562-slot replacement",
+    "CD4 post-whitening residual",
+    "alpha and all donor weights",
+    "all emission-independent transforms",
+    "all support and fallback policies"
+  ],
+  "held_evaluation": {
+    "freeze_candidate_before_truth": true,
+    "surfaces": [
+      "orion_hct116",
+      "orion_hek293t",
+      "h1_test"
+    ],
+    "strict_context_holdout": {
+      "orion_hct116": true,
+      "orion_hek293t": true
+    },
+    "h1_role": "target-held confirmation",
+    "complete_incumbent_gallery_required": true,
+    "raw_uncentered_reference_effects": true,
+    "exclude_all_300_vcc_panel_coordinates_from_query_reference_operator_and_pds": true,
+    "paired_target_deltas": true,
+    "target_block_bootstrap_draws": 20000,
+    "hct116_direction_metrics": "diagnostic_only_never_authorizing",
+    "direction_authorization_surfaces": [
+      "h1_test",
+      "orion_hek293t"
+    ]
+  },
+  "promotion_gates": {
+    "all_source_and_artifact_invariants_pass": true,
+    "raw_pds_delta_each_surface_minimum": 0.0,
+    "raw_pds_equal_surface_macro_delta_minimum": 0.001,
+    "raw_pds_macro_target_bootstrap_lower_95_strictly_above": 0.0,
+    "raw_pds_each_surface_target_bootstrap_lower_95_minimum": -0.001,
+    "linear_directional_credit_delta_each_authorizing_surface_minimum": 0.0,
+    "linear_directional_credit_equal_surface_macro_delta_minimum": 0.001,
+    "top20_weighted_sign_precision_delta_each_authorizing_surface_minimum": 0.0,
+    "panel_coordinates_exactly_zero": true,
+    "unsupported_coordinates_bit_identical_to_incumbent": true,
+    "axes_support_and_gallery_cardinalities_exactly_match_incumbent": true,
+    "hct116_direction_cannot_pass_fail_rescue_tune_or_rank": true,
+    "any_failed_gate": "NO-GO",
+    "GO_authorizes_only": "a separate reviewed production patch and build experiment"
+  },
+  "current_authorization": {
+    "preregistration": true,
+    "pure_algebra_contracts": true,
+    "synthetic_tests": true,
+    "read_existing_text_metadata_and_code": true,
+    "real_metadata_scan": false,
+    "read_gene_expression": false,
+    "open_held_truth": false,
+    "fit_whitening_operator": false,
+    "heavy_work": false,
+    "edit_shared_scripts": false,
+    "edit_production_artifacts": false,
+    "challenge_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  },
+  "prohibited": [
+    "regex_control_selection",
+    "target_expression_reread",
+    "target_axis_or_support_change",
+    "operator_reuse_after_donor_correction",
+    "held_donor_in_its_own_query_or_operator",
+    "partial_gallery_scoring",
+    "panel_coordinate_leakage",
+    "hct116_directional_authorization",
+    "post_held_tuning",
+    "production_patch",
+    "challenge_build",
+    "submission",
+    "commit",
+    "push"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "builder": "scripts/build_union_whitener.py",
+  "builder_sha256": "2337092687eaa973e2d141a869dfdb45969b4d4c48e9c0b166bb738c1eb1116e",
+  "essential_list_sha256": "b1e5279534eb240f0f3487f0814d379e05b12799b21f6cb3818f5c7f55557e2d",
+  "experiment": "106-state-baseline",
+  "operators": {
+    "hct116": {
+      "basis": [
+        18560,
+        17942
+      ],
+      "donors": [
+        "k562_gwps",
+        "orion_hek293t"
+      ],
+      "path": "experiments/106-state-baseline/operators/held_orion_hct116_pruned.npz",
+      "rows_dropped_total": 3227,
+      "sha256": "028645b97d1eed9c8264b4d3e9de23951688efb23f9d7735e893a01868de6423"
+    },
+    "hek293t": {
+      "basis": [
+        18591,
+        17942
+      ],
+      "donors": [
+        "k562_gwps",
+        "orion_hct116"
+      ],
+      "path": "experiments/106-state-baseline/operators/held_orion_hek293t_pruned.npz",
+      "rows_dropped_total": 3196,
+      "sha256": "5684a5b155ba4f5f99d813c8f2ad91d5dda5b4127e16aa028d1963017887c394"
+    }
+  },
+  "selection": "fixed experiment-091 essential-list policy",
+  "stage": "held-essential-pruned-operators"
+}

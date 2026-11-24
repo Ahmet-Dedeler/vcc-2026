@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-31",
+  "supersedes": "PROVENANCE_CLOCK_CORRECTION.v1.json",
+  "prior_user_reported_local_time": "2026-08-30T21:45:00+03:00",
+  "current_calendar_date": "2026-08-31",
+  "host_clock_status": "The host clock previously ran ahead of the user-reported local clock, so it remains unsuitable for uncorrected provenance timestamps.",
+  "replacement_freeze_provenance_utc": "2026-08-31T00:00:00+00:00",
+  "anchor_semantics": "This is a rounded monotonic audit anchor for the replacement chain, not a claim of exact wall-clock creation time.",
+  "correction": "The replacement freeze must require the exact bound timestamp through VCC_PROVENANCE_UTC. Later artifact commands must also set an explicit August 31 UTC provenance value rather than read the host clock.",
+  "development_or_test_outcomes_opened_before_replacement": false
+}

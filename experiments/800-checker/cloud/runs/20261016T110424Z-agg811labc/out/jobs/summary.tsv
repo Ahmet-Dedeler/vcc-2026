@@ -1,0 +1,6 @@
+1	0	4	108292	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/agg811.py experiments/811-lolo-model/work/run-m811labc --family 811-consensus --tries 11 --pairs c0_l25:inc
+6	0	4	109056	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/agg811.py experiments/811-lolo-model/work/run-m811labc --family 811-consensus --tries 11 --pairs c1_l25:c0_l25
+4	0	4	109116	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/agg811.py experiments/811-lolo-model/work/run-m811labc --family 811-consensus --tries 11 --pairs c0_l25:src_l25
+2	0	4	107188	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/agg811.py experiments/811-lolo-model/work/run-m811labc --family 811-consensus --tries 11 --pairs c1_l25:inc
+5	0	4	107540	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/agg811.py experiments/811-lolo-model/work/run-m811labc --family 811-consensus --tries 11 --pairs c1_l25:src_l25
+3	0	4	107280	OPENBLAS_NUM_THREADS=1 uv run python experiments/811-lolo-model/agg811.py experiments/811-lolo-model/work/run-m811labc --family 811-consensus --tries 11 --pairs src_l25:inc

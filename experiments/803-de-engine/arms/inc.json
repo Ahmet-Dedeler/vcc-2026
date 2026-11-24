@@ -1,0 +1,13 @@
+{
+ "name": "inc",
+ "desc": "THE OCTOBER DE INCUMBENT: zs + coarse MDE + CLEAN4 hook 0.05 + UPRN + DNMAG d_m200 + zero repair -5",
+ "emit": {
+  "hook": "c4h",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": true
+ },
+ "stage": "rnup:b_k100_q20r3p10_D200"
+}

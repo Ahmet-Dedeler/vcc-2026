@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "experiment": "142-batch-reliability-weighting",
+  "date": "2026-08-30",
+  "stage": "after_v2_authorization_before_repaired_freeze_or_any_v2_source_scan",
+  "finding": [
+    "The v2 authorization bound the corrected freeze timestamp, but run.py did not require the VCC_PROVENANCE_UTC override to equal that exact value.",
+    "The source-build path held a donor lock, but source-evaluate and source-gate did not share an experiment-wide heavy-stage lock.",
+    "The superseded v1 provenance hashes were recorded in v2 but were not enforced by the freeze command."
+  ],
+  "correction": {
+    "freeze_timestamp": "Require VCC_PROVENANCE_UTC and require its UTC-normalized value to equal the authorization's freeze_provenance_utc binding.",
+    "heavy_stage_serialization": "Acquire one exclusive experiment-wide lock around every CLI source-build, source-evaluate, and source-gate command.",
+    "superseded_provenance": "Validate the immutable v2 authorization, v1 preoutcome authorization, and v1 K562 reconstruction manifest before publishing the repaired freeze.",
+    "replacement_authorization": "SOURCE_ONLY_FREEZE_AUTHORIZATION.v3.json"
+  },
+  "access_state": {
+    "v2_freeze_run": false,
+    "v2_source_build_run": false,
+    "v2_source_evaluation_run": false,
+    "v2_source_gate_run": false,
+    "orion_source_expression_opened": false,
+    "development_613_outcomes_opened": false,
+    "sealed_410_outcomes_opened": false,
+    "reserved_confirmation_expression_opened": false,
+    "count_generation": false,
+    "cell_eval2": false,
+    "challenge_build": false,
+    "submission": false
+  }
+}

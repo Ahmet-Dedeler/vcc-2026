@@ -1,0 +1,4 @@
+1	0	21	4172	bash experiments/801-lab-folds/cloud801.sh verify
+2	0	97	4122740	T801_THREADS=4 bash experiments/801-lab-folds/cloud801.sh designs-ABCp k562_gwps
+4	0	109	4201336	T801_THREADS=4 bash experiments/801-lab-folds/cloud801.sh designs-ABCp orion_hek293t
+3	0	121	4196432	T801_THREADS=4 bash experiments/801-lab-folds/cloud801.sh designs-ABCp orion_hct116

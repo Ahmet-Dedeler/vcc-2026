@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "experiment": "124-panel-simplex-transport",
+  "created_at_utc": "2026-08-30",
+  "status": "recovery_v1_implementation_frozen_before_released_control_count_access",
+  "files": {
+    "experiments/124-panel-simplex-transport/preregistered_protocol.json": "a6d6c3b62f2b9d76100e2c1185fd296bbb332351705c5a2b12e377c365dce734",
+    "experiments/124-panel-simplex-transport/run.py": "9abfc734f4421187a70787d2dfc950711585f9708e15943f2316011322fe53aa",
+    "experiments/124-panel-simplex-transport/test_run.py": "67aeefabeda4670a76c9ec6e82abe6192aba94357863ba9b39c651124e1f1224",
+    "experiments/124-panel-simplex-transport/IMPLEMENTATION_FREEZE.v1.json": "d10c90de26a00da8749b657fc251d6869646b619933009bb3713bd2e5ab5fd80",
+    "experiments/124-panel-simplex-transport/IMPLEMENTATION_FAILURE_RECOVERY.v1.json": "6d3bbc63716dc3cbc250a686925dac83db1c1f88608acf558c07ffc0c6b4ff1b"
+  },
+  "preflight": {
+    "synthetic_tests": "5/5 passed",
+    "ruff": "passed",
+    "python_compile": "passed"
+  },
+  "authorization": {
+    "released_control_profiles": true,
+    "experiment_122_frozen_source_result": true,
+    "staged_a15_effects": true,
+    "challenge_truth": false,
+    "held_perturbation_outcomes": false,
+    "cell_eval2": false,
+    "count_or_submission_build": false,
+    "submission": false,
+    "commit": false,
+    "push": false
+  }
+}
+

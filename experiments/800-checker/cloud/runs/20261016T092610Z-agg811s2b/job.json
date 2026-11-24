@@ -1,0 +1,13 @@
+{
+ "name": "agg811s2b",
+ "parallel": 3,
+ "venv": true,
+ "sync": [
+  "experiments/811-lolo-model/work/run-m811s2b",
+  "experiments/811-lolo-model/work/ka800.copy.json"
+ ],
+ "collect": [
+  "experiments/811-lolo-model/work/run-m811s2b",
+  "experiments/811-lolo-model/work/wear811.jsonl"
+ ]
+}

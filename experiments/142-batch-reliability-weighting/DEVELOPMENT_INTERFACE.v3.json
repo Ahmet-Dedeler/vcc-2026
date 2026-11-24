@@ -1,0 +1,57 @@
+{
+  "schema_version": 3,
+  "status": "audited_corrected_interface_only_not_authorized",
+  "extends": "DEVELOPMENT_INTERFACE.v2.json",
+  "source_only_chain_unchanged": true,
+  "required_prefreeze_authorization": "DEVELOPMENT_PREFREEZE_AUTHORIZATION.v1.json",
+  "required_development_authorization": "DEVELOPMENT_ACCESS_AUTHORIZATION.v1.json",
+  "additional_required_bindings": [
+    "DEVELOPMENT_PREFREEZE_AMENDMENT_002.json",
+    "DEVELOPMENT_INTERFACE.v3.json",
+    "experiments/132-response-decomposition-ridge/SOURCE_ONLY_AUTHORIZATION.v2.json",
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/plan-manifest.json",
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/selection_targets.txt",
+    "experiments/132-response-decomposition-ridge/work/preregistered-freeze-v2/response_genes.txt"
+  ],
+  "required_evaluator_properties": {
+    "source_plan_axis_hashes_enforced": true,
+    "dynamic_experiment_061_import_forbidden": true,
+    "lock_removed_only_by_successful_owner": true,
+    "preoutcome_authorization_lineage_enforced": true,
+    "truth_bytes_verified_only_after_outcome_access_lock": true,
+    "exact_zero_concentration_rule": true,
+    "expected_perturbmatch_target_support": 605,
+    "expected_perturbmatch_response_gene_support": 4750
+  },
+  "authorization_flags": {
+    "prefreeze": {
+      "development_preoutcome_prepare_authorized": true,
+      "development_613_authorized": false,
+      "untouched_410_test_authorized": false,
+      "count_generation_authorized": false,
+      "cell_eval2_authorized": false,
+      "challenge_build_authorized": false,
+      "submission_authorized": false
+    },
+    "development": {
+      "development_613_authorized": true,
+      "untouched_410_test_authorized": false,
+      "count_generation_authorized": false,
+      "cell_eval2_authorized": false,
+      "challenge_build_authorized": false,
+      "submission_authorized": false
+    }
+  },
+  "forbidden": {
+    "modify_source_bound_run_protocol_readme_amendments_001_to_006_or_interfaces_v1_v2": true,
+    "experiment_132_test_targets_path_or_values": true,
+    "reserved_confirmation_expression": true,
+    "operator_refit": true,
+    "post_outcome_retuning": true,
+    "cell_eval2": true,
+    "count_generation": true,
+    "challenge_build": true,
+    "submission": true,
+    "writes_outside_experiment_142": true
+  }
+}

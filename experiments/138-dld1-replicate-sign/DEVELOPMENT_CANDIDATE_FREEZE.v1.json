@@ -1,0 +1,14 @@
+{
+  "authorization_sha256": "0ab0fed573c36c02343f913a6063f03f277e9cef401d5cba2d88d5e2b026f6c0",
+  "created_utc": "2026-08-30T20:37:52.827283+00:00",
+  "development_access_lock_sha256": "2386e3e01bea6121ab73372371bbb1fcb62ca929f19f6dadc272b44d21f6d6bc",
+  "development_manifest_sha256": "549ad4bd29aa68a999a593945c4505bda40f5eb467615089cbed6805f91012e6",
+  "development_passes": false,
+  "development_result_sha256": "9a3cb07d8b6ca0ac5f009dc050a449a19d23237049ad1ce7e97d444fef89c77f",
+  "production_authorized": false,
+  "schema_version": 1,
+  "selected_final_arm": "k200_beta0p050",
+  "test_rows_accessed": false,
+  "test_target_count": 410,
+  "untouched_test_access_authorized": false
+}

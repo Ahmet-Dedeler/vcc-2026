@@ -1,0 +1,9 @@
+{
+  "authorization_sha256": "665621539061cb3600ad0b205ec487b32813a117d889be17c57d54d8b608f969",
+  "created_utc": "2026-08-30T20:46:58.390925+00:00",
+  "development_manifest_sha256": "73025af13f32f3991b433c125515e7912e1fe9ae7bf37478ba07ef00cc6a079c",
+  "development_passes": false,
+  "development_result_sha256": "c72ca68b3fd52792971e872959faa02f97c23c9f846235fae0f8f1a44c595049",
+  "final_arm": "identity",
+  "test_authorized": false
+}

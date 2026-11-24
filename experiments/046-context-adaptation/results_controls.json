@@ -1,0 +1,79 @@
+{
+  "candidate": "pca_ridge:r=32:ridge=0.3",
+  "training_perturbations": 600,
+  "outer_vcc_perturbations": 259,
+  "rows": {
+    "k562_gwps": {
+      "baseline": 0.742779324174673,
+      "paired": 0.7844572146897728,
+      "paired_delta": 0.04167789051509985,
+      "permuted": 0.790877255993535,
+      "permuted_delta": 0.048097931818862016,
+      "wrong_target_maps": {
+        "orion_hct116": {
+          "score": 0.7728442728442729,
+          "delta": 0.030064948669599967
+        },
+        "orion_hek293t": {
+          "score": 0.7578941067313161,
+          "delta": 0.015114782556643114
+        }
+      }
+    },
+    "orion_hct116": {
+      "baseline": 0.6955194397054862,
+      "paired": 0.7549609410074526,
+      "paired_delta": 0.05944150130196635,
+      "permuted": 0.7696417347580139,
+      "permuted_delta": 0.07412229505252765,
+      "wrong_target_maps": {
+        "k562_gwps": {
+          "score": 0.7690431295082458,
+          "delta": 0.07352368980275958
+        },
+        "orion_hek293t": {
+          "score": 0.7282481817365537,
+          "delta": 0.03272874203106746
+        }
+      }
+    },
+    "orion_hek293t": {
+      "baseline": 0.7033761336086918,
+      "paired": 0.7285175540989494,
+      "paired_delta": 0.025141420490257582,
+      "permuted": 0.7508455299152973,
+      "permuted_delta": 0.047469396306605516,
+      "wrong_target_maps": {
+        "k562_gwps": {
+          "score": 0.7733530873065756,
+          "delta": 0.06997695369788381
+        },
+        "orion_hct116": {
+          "score": 0.7573403968752807,
+          "delta": 0.053964263266588874
+        }
+      }
+    }
+  },
+  "macro": {
+    "baseline": 0.7138916324962836,
+    "paired_delta": 0.042086937435774595,
+    "permuted_delta": 0.0565632077259984,
+    "wrong_target_best_delta": 0.057855197390081124
+  },
+  "context_specificity_gate": {
+    "criterion": "The correctly paired target map must beat both the permuted-label map and every wrong-target map in each outer donor.",
+    "paired_beats_permuted": {
+      "k562_gwps": false,
+      "orion_hct116": false,
+      "orion_hek293t": false
+    },
+    "paired_beats_wrong_target_maps": {
+      "k562_gwps": true,
+      "orion_hct116": false,
+      "orion_hek293t": false
+    },
+    "passed": false
+  },
+  "peak_rss_gib": 0.6549072265625
+}

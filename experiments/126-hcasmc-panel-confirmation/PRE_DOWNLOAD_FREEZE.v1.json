@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "experiment": "126-hcasmc-panel-confirmation",
+  "created_at_utc": "2026-08-30T17:11:02Z",
+  "stage": "before_effect_asset_download",
+  "status": "frozen",
+  "expected_effect_asset": {
+    "accession": "IGVFFI0206LUDV",
+    "analysis_set": "IGVFDS6248NDUW",
+    "size_bytes": 1531381676,
+    "published_compressed_md5": "4d3067b3e934842c88b9ea52d74780f9",
+    "canonical_download_url": "https://api.data.igvf.org/tabular-files/IGVFFI0206LUDV/@@download/IGVFFI0206LUDV.tsv.gz",
+    "versioned_https_url": "https://igvf-public.s3.amazonaws.com/2026/04/13/4a5d770b-3db0-474f-87e6-5d9e5a5002a5/IGVFFI0206LUDV.tsv.gz?versionId=3SZ8L36Fg16OblDXxZeouTLr5P7MSIvE"
+  },
+  "frozen_inputs": {
+    "ACQUISITION_PROTOCOL.v1.json": "bd8787ba52042733baed33ace93b042cd1053ff3445ddd4ba73375d126a34b11",
+    "SOURCE_MANIFEST.expected.v1.json": "f008b7af91e43f20e4b74c6469fa394497b166ae5033243575e543d985917e25",
+    "VALUE_ACCESS_BOUNDARY.v1.json": "ca4e6cda907b08a3107c33a7bed6b62e8a300a689fed493adb323d8062906919",
+    "VCC_TARGET_OVERLAP.v1.txt": "1eca70b0690b367dd8e980e9175634a2c900c7907e98904f3d2e68f20b378232",
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "data/external/hcasmc-igvf/IGVFFI9546UECF.tsv.gz": "157415851b66433c6832a0ee19ff6b31ad34e77f4509362d16f9a5c76fa7c7fd",
+    "work/official-metadata/IGVFDS6248NDUW.json": "fdc02ec8db613f115b717959e092c7bd444ea54ffa4656ef6aa0374eeb67debf",
+    "work/official-metadata/IGVFDS9377AZJL.json": "b6970cc747adb92c876ce99acf316374f91b2b669c7f12d3f6de755a2edbc16f",
+    "work/official-metadata/IGVFFI0206LUDV.json": "dcfc5c4d0c133e88a75cf2ec7183c96294af7ec5075e8c3422667ec0ffbfc065",
+    "work/official-metadata/IGVFFI9546UECF.json": "56755aed49b0cd8587ff9ed5151fa7ca6decda3460a4e138935177cf0739f3f7"
+  },
+  "assertions": {
+    "effect_values_opened": false,
+    "effect_header_inspected": false,
+    "effect_asset_download_started_before_this_freeze": false,
+    "confirmation_candidate_defined": false,
+    "experiment_125_candidate_frozen_in_shared_worktree": false,
+    "only_opaque_effect_asset_operations_are_authorized": true
+  },
+  "immutability": "This freeze is append-only evidence. Do not edit or replace it after the effect-asset download begins."
+}

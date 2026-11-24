@@ -1,0 +1,14 @@
+{
+  "build_seconds": 0.9209709589922568,
+  "cell_set_len": 128,
+  "device": "mps",
+  "input_dim": 18080,
+  "loss": 42.94880294799805,
+  "mps_current_allocated_bytes": 2427975168,
+  "mps_driver_allocated_bytes": 3272327168,
+  "optimization_step_seconds": 0.14628437500505242,
+  "parameter_bytes": 650505936,
+  "parameters": 162626484,
+  "pert_dim": 5120,
+  "profile": "state_sm"
+}

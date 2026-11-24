@@ -1,0 +1,12 @@
+{
+  "aws_region": "us-east-1",
+  "instance_id": "i-0343d04439564b709",
+  "instance_type": "r7i.2xlarge",
+  "availability_zone": "us-east-1a",
+  "root_volume_id": "vol-0a965ba966d446ea6",
+  "root_volume_delete_on_termination": true,
+  "input_s3_prefix": "input/exp061-perturbmatch-hct-count",
+  "output_s3_prefix": "output/exp061-perturbmatch-hct-count",
+  "launch_time_utc": "2026-08-22T21:29:56Z",
+  "submission": false
+}

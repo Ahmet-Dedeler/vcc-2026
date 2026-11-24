@@ -1,0 +1,16 @@
+{
+ "name": "cp",
+ "desc": "446bj2zcp: zs with 528's call-propensity block 'kept' (618's G3; h1tv only, WORN there)",
+ "emit": {
+  "hook": "cp",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": false
+ },
+ "stage": "zs",
+ "surfaces": [
+  "h1tv"
+ ]
+}

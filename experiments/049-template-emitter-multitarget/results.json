@@ -1,0 +1,272 @@
+{
+  "all_pseudobulk_exact": true,
+  "cells": {
+    "control_templates": 400,
+    "real_control_all": 18400,
+    "real_control_mwu_sample": 2000
+  },
+  "common_gene_count": 18077,
+  "complete_overlap_targets": [
+    "MED15",
+    "MED25",
+    "PLAGL2"
+  ],
+  "date": "2026-08-22",
+  "elapsed_seconds": 11.58383297920227,
+  "evaluated_targets": [
+    "MED15",
+    "MED25",
+    "PLAGL2"
+  ],
+  "experiment": "049-template-emitter-multitarget",
+  "limitations": [
+    "The prediction artifact has an H1-test-style 85-target, 18,080-gene layout, while the real perturbations and control templates are Orion-HCT116 with 132 targets and 18,533 genes.",
+    "This is an emission-layout diagnostic on the 18,077 common genes, not a clean model or cross-context transfer validation.",
+    "The experiment-040 artifact inherits the quarantined H1 target-mask mismatch; comparisons remain informative only because quasi and template reuse identical per-target column totals.",
+    "The DE diagnostic is a two-sided SciPy Mann-Whitney U test against 2,000 library-quantile-stratified HCT116 controls, not cell-eval2.",
+    "No cell-eval2 invocation and no challenge submission occurred."
+  ],
+  "macro": {
+    "arms": {
+      "quasi": {
+        "de_set_jaccard_bh05": 0.036588721615636845,
+        "detection_rate_mae_vs_real_target": 0.2248749946217723,
+        "direction_accuracy_bh05_intersection": 0.4787476793438083,
+        "lfc_nmae_proxy_vs_real": 9.507744672011938,
+        "library_shape_ks_vs_hct116_control": 0.4918115942028985,
+        "top500_set_overlap_fraction": 0.03866666666666666
+      },
+      "template": {
+        "de_set_jaccard_bh05": 0.042400391019464766,
+        "detection_rate_mae_vs_real_target": 0.08229607297179349,
+        "direction_accuracy_bh05_intersection": 0.5290001356668023,
+        "lfc_nmae_proxy_vs_real": 9.674735509511317,
+        "library_shape_ks_vs_hct116_control": 0.0016123188405797184,
+        "top500_set_overlap_fraction": 0.15133333333333332
+      }
+    },
+    "comparison": {
+      "de_set_jaccard_bh05": {
+        "favorable_delta_for_template": 0.005811669403827921,
+        "preferred": "higher",
+        "targets": 3,
+        "template_minus_quasi": 0.005811669403827921,
+        "template_target_wins": 3,
+        "ties": 0
+      },
+      "detection_rate_mae_vs_real_target": {
+        "favorable_delta_for_template": 0.14257892164997882,
+        "preferred": "lower",
+        "targets": 3,
+        "template_minus_quasi": -0.14257892164997882,
+        "template_target_wins": 3,
+        "ties": 0
+      },
+      "direction_accuracy_bh05_intersection": {
+        "favorable_delta_for_template": 0.050252456322993966,
+        "preferred": "higher",
+        "targets": 3,
+        "template_minus_quasi": 0.050252456322993966,
+        "template_target_wins": 3,
+        "ties": 0
+      },
+      "lfc_nmae_proxy_vs_real": {
+        "favorable_delta_for_template": -0.16699083749937849,
+        "preferred": "lower",
+        "targets": 3,
+        "template_minus_quasi": 0.16699083749937849,
+        "template_target_wins": 0,
+        "ties": 0
+      },
+      "library_shape_ks_vs_hct116_control": {
+        "favorable_delta_for_template": 0.4901992753623188,
+        "preferred": "lower",
+        "targets": 3,
+        "template_minus_quasi": -0.4901992753623188,
+        "template_target_wins": 3,
+        "ties": 0
+      },
+      "top500_set_overlap_fraction": {
+        "favorable_delta_for_template": 0.11266666666666666,
+        "preferred": "higher",
+        "targets": 3,
+        "template_minus_quasi": 0.11266666666666666,
+        "template_target_wins": 3,
+        "ties": 0
+      }
+    }
+  },
+  "peak_rss_gib": 0.9730682373046875,
+  "per_target": {
+    "MED15": {
+      "arms": {
+        "quasi": {
+          "de_set_jaccard_bh05": 0.04240854645516348,
+          "detection_rate_mae_vs_real_target": 0.22350449927163432,
+          "direction_accuracy_bh05_intersection": 0.40458015267175573,
+          "lfc_nmae_proxy_vs_real": 9.486676496501511,
+          "library_shape_ks_vs_hct116_control": 0.4901630434782609,
+          "predicted_bh05_n_sig": 9244,
+          "real_bh05_n_sig": 416,
+          "top500_set_overlap_fraction": 0.048
+        },
+        "template": {
+          "de_set_jaccard_bh05": 0.049380979178390544,
+          "detection_rate_mae_vs_real_target": 0.0824852943888182,
+          "direction_accuracy_bh05_intersection": 0.43874643874643876,
+          "lfc_nmae_proxy_vs_real": 9.65041942622996,
+          "library_shape_ks_vs_hct116_control": 0.001630434782608714,
+          "predicted_bh05_n_sig": 7043,
+          "real_bh05_n_sig": 416,
+          "top500_set_overlap_fraction": 0.16
+        }
+      },
+      "cells": {
+        "quasi": 400,
+        "real_control_mwu_sample": 2000,
+        "real_target": 150,
+        "template": 400
+      },
+      "pseudobulk": {
+        "bulk_lognorm_array_equal": true,
+        "column_totals_exact": true,
+        "max_abs_bulk_lognorm_difference": 0.0,
+        "max_abs_column_total_difference": 0
+      },
+      "target": "MED15",
+      "template_emitter_diagnostics": {
+        "grand_total": 7856589,
+        "introduced_nnz": 164901,
+        "max_row_error_before_repair": 25470,
+        "moved_counts": 211491,
+        "output_nnz": 1893680,
+        "removed_template_nnz": 305535,
+        "retained_template_nnz": 1728779,
+        "row_l1_before_repair": 422982,
+        "template_cpm_relative_l1": 0.07042367729974569,
+        "template_nnz": 2034314
+      },
+      "tested_genes_control_cpm_gt_5_excluding_target": 10134
+    },
+    "MED25": {
+      "arms": {
+        "quasi": {
+          "de_set_jaccard_bh05": 0.054588437567160975,
+          "detection_rate_mae_vs_real_target": 0.22324565285537792,
+          "direction_accuracy_bh05_intersection": 0.5570866141732284,
+          "lfc_nmae_proxy_vs_real": 8.828272583343512,
+          "library_shape_ks_vs_hct116_control": 0.4926086956521739,
+          "predicted_bh05_n_sig": 9263,
+          "real_bh05_n_sig": 551,
+          "top500_set_overlap_fraction": 0.028
+        },
+        "template": {
+          "de_set_jaccard_bh05": 0.06302521008403361,
+          "detection_rate_mae_vs_real_target": 0.08296490936918,
+          "direction_accuracy_bh05_intersection": 0.6244444444444445,
+          "lfc_nmae_proxy_vs_real": 8.988178026893749,
+          "library_shape_ks_vs_hct116_control": 0.001630434782608714,
+          "predicted_bh05_n_sig": 7039,
+          "real_bh05_n_sig": 551,
+          "top500_set_overlap_fraction": 0.174
+        }
+      },
+      "cells": {
+        "quasi": 400,
+        "real_control_mwu_sample": 2000,
+        "real_target": 150,
+        "template": 400
+      },
+      "pseudobulk": {
+        "bulk_lognorm_array_equal": true,
+        "column_totals_exact": true,
+        "max_abs_bulk_lognorm_difference": 0.0,
+        "max_abs_column_total_difference": 0
+      },
+      "target": "MED25",
+      "template_emitter_diagnostics": {
+        "grand_total": 7796544,
+        "introduced_nnz": 164728,
+        "max_row_error_before_repair": 22621,
+        "moved_counts": 208628,
+        "output_nnz": 1888469,
+        "removed_template_nnz": 310573,
+        "retained_template_nnz": 1723741,
+        "row_l1_before_repair": 417256,
+        "template_cpm_relative_l1": 0.06369115861400178,
+        "template_nnz": 2034314
+      },
+      "tested_genes_control_cpm_gt_5_excluding_target": 10134
+    },
+    "PLAGL2": {
+      "arms": {
+        "quasi": {
+          "de_set_jaccard_bh05": 0.012769180824586083,
+          "detection_rate_mae_vs_real_target": 0.22787483173830464,
+          "direction_accuracy_bh05_intersection": 0.4745762711864407,
+          "lfc_nmae_proxy_vs_real": 10.208284936190795,
+          "library_shape_ks_vs_hct116_control": 0.49266304347826084,
+          "predicted_bh05_n_sig": 9239,
+          "real_bh05_n_sig": 120,
+          "top500_set_overlap_fraction": 0.04
+        },
+        "template": {
+          "de_set_jaccard_bh05": 0.014794983795970128,
+          "detection_rate_mae_vs_real_target": 0.0814380151573823,
+          "direction_accuracy_bh05_intersection": 0.5238095238095238,
+          "lfc_nmae_proxy_vs_real": 10.385609075410246,
+          "library_shape_ks_vs_hct116_control": 0.0015760869565217273,
+          "predicted_bh05_n_sig": 7082,
+          "real_bh05_n_sig": 120,
+          "top500_set_overlap_fraction": 0.12
+        }
+      },
+      "cells": {
+        "quasi": 400,
+        "real_control_mwu_sample": 2000,
+        "real_target": 150,
+        "template": 400
+      },
+      "pseudobulk": {
+        "bulk_lognorm_array_equal": true,
+        "column_totals_exact": true,
+        "max_abs_bulk_lognorm_difference": 0.0,
+        "max_abs_column_total_difference": 0
+      },
+      "target": "PLAGL2",
+      "template_emitter_diagnostics": {
+        "grand_total": 8273664,
+        "introduced_nnz": 170279,
+        "max_row_error_before_repair": 26561,
+        "moved_counts": 224375,
+        "output_nnz": 1910076,
+        "removed_template_nnz": 294517,
+        "retained_template_nnz": 1739797,
+        "row_l1_before_repair": 448750,
+        "template_cpm_relative_l1": 0.11526497541661472,
+        "template_nnz": 2034314
+      },
+      "tested_genes_control_cpm_gt_5_excluding_target": 10134
+    }
+  },
+  "prediction": "experiments/040-union-gamma/out/runs/g0.75_q1.0_a1.08_spread0.25/pred.h5ad",
+  "prediction_shape": [
+    52400,
+    18080
+  ],
+  "prediction_target_count": 85,
+  "primary_metric_directions": {
+    "de_set_jaccard_bh05": "higher",
+    "detection_rate_mae_vs_real_target": "lower",
+    "direction_accuracy_bh05_intersection": "higher",
+    "lfc_nmae_proxy_vs_real": "lower",
+    "library_shape_ks_vs_hct116_control": "lower",
+    "top500_set_overlap_fraction": "higher"
+  },
+  "real": "data/harness/orion-hct116.h5ad",
+  "real_shape": [
+    38200,
+    18533
+  ],
+  "real_target_count": 132
+}

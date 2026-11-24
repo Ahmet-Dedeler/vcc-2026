@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "experiment": "126-hcasmc-panel-confirmation",
+  "created_at_utc": "2026-08-30T17:11:02Z",
+  "official_source": {
+    "provider": "IGVF Data Portal",
+    "analysis_set": {
+      "accession": "IGVFDS6248NDUW",
+      "status": "released",
+      "file_set_type": "principal analysis",
+      "doi": "10.65695/IGVFDS6248NDUW",
+      "summary": "CRISPR interference Parse Perturb-seq integrating a guide (sgRNA) library targeting transcription start sites in many genes associated with coronary artery disorder",
+      "assay": "in vitro CRISPR screen using single-cell RNA-seq",
+      "preferred_assay_title": "Parse Perturb-seq",
+      "context": "HCASMC-hTERT",
+      "taxon": "Homo sapiens",
+      "sample_classification": "cell line",
+      "perturbation": "CRISPRi Sp-dCas9-ZIM3-KRAB",
+      "guide_delivery": "lentiviral transduction",
+      "sample_count": 14,
+      "targeted_promoters_reported": 971
+    },
+    "effect_asset": {
+      "accession": "IGVFFI0206LUDV",
+      "status": "released",
+      "upload_status": "validated",
+      "controlled_access": false,
+      "file_format": "tsv",
+      "compression": "gzip",
+      "content_type": "global differential expression per element",
+      "description": "This file contains analysis results for all tested gene-gene pairs",
+      "summary": "GRCh38 GENCODE 43 global differential expression per element",
+      "transcriptome_annotation": "GENCODE 43",
+      "software": "Sceptre v0.10.1",
+      "creation_timestamp": "2026-04-13T18:09:39.967678+00:00",
+      "canonical_download_url": "https://api.data.igvf.org/tabular-files/IGVFFI0206LUDV/@@download/IGVFFI0206LUDV.tsv.gz",
+      "s3_uri": "s3://igvf-public/2026/04/13/4a5d770b-3db0-474f-87e6-5d9e5a5002a5/IGVFFI0206LUDV.tsv.gz",
+      "versioned_https_url": "https://igvf-public.s3.amazonaws.com/2026/04/13/4a5d770b-3db0-474f-87e6-5d9e5a5002a5/IGVFFI0206LUDV.tsv.gz?versionId=3SZ8L36Fg16OblDXxZeouTLr5P7MSIvE",
+      "s3_version_id": "3SZ8L36Fg16OblDXxZeouTLr5P7MSIvE",
+      "s3_etag": "318e52a8e92a1b8209be9b21891d9741-183",
+      "last_modified": "2026-05-15T07:01:16Z",
+      "size_bytes": 1531381676,
+      "published_compressed_md5": "4d3067b3e934842c88b9ea52d74780f9",
+      "published_uncompressed_content_md5_not_to_be_verified_yet": "17de2109d8babe7a05670dfc3d9f8047",
+      "published_sha256": null,
+      "derived_from": [
+        "IGVFFI5999NXAF",
+        "IGVFFI9007DBZO"
+      ]
+    },
+    "guide_metadata_asset": {
+      "accession": "IGVFFI9546UECF",
+      "status": "released",
+      "upload_status": "validated",
+      "controlled_access": false,
+      "file_set": "IGVFDS9377AZJL",
+      "content_type": "guide RNA sequences",
+      "canonical_download_url": "https://api.data.igvf.org/tabular-files/IGVFFI9546UECF/@@download/IGVFFI9546UECF.tsv.gz",
+      "s3_uri": "s3://igvf-public/2026/01/08/00cbe97b-bf84-4752-aca5-20c7d6d762a8/IGVFFI9546UECF.tsv.gz",
+      "s3_version_id": "Be3lmvaY938K3cNqFW5ovlIBSrA1hVcN",
+      "size_bytes": 76842,
+      "published_compressed_md5": "1b444eb41eaec5162e7bf9d72c8ee171",
+      "local_compressed_md5": "1b444eb41eaec5162e7bf9d72c8ee171",
+      "local_sha256": "157415851b66433c6832a0ee19ff6b31ad34e77f4509362d16f9a5c76fa7c7fd"
+    }
+  },
+  "metadata_snapshots": [
+    {
+      "path": "work/official-metadata/IGVFDS6248NDUW.json",
+      "size_bytes": 37866,
+      "sha256": "fdc02ec8db613f115b717959e092c7bd444ea54ffa4656ef6aa0374eeb67debf"
+    },
+    {
+      "path": "work/official-metadata/IGVFDS9377AZJL.json",
+      "size_bytes": 2999,
+      "sha256": "b6970cc747adb92c876ce99acf316374f91b2b669c7f12d3f6de755a2edbc16f"
+    },
+    {
+      "path": "work/official-metadata/IGVFFI0206LUDV.json",
+      "size_bytes": 14402,
+      "sha256": "dcfc5c4d0c133e88a75cf2ec7183c96294af7ec5075e8c3422667ec0ffbfc065"
+    },
+    {
+      "path": "work/official-metadata/IGVFFI9546UECF.json",
+      "size_bytes": 8951,
+      "sha256": "56755aed49b0cd8587ff9ed5151fa7ca6decda3460a4e138935177cf0739f3f7"
+    }
+  ],
+  "vcc_overlap": {
+    "vcc_panel_path": "data/challenge/pert_counts.csv",
+    "vcc_panel_sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "vcc_target_count": 300,
+    "hcasmc_target_count_from_guide_metadata": 971,
+    "overlap_count": 27,
+    "effect_values_used": false,
+    "overlap_symbols": [
+      "ANKRD52",
+      "CARM1",
+      "DNTTIP1",
+      "DRG2",
+      "FHL3",
+      "FXYD5",
+      "FZD2",
+      "GIGYF2",
+      "HMGN4",
+      "LDLR",
+      "LMAN1",
+      "MYPOP",
+      "NABP2",
+      "NIPSNAP3A",
+      "PGLS",
+      "PHF19",
+      "PLCG1",
+      "PRNP",
+      "RAB5A",
+      "SMARCC2",
+      "STAT6",
+      "STT3A",
+      "TEX2",
+      "TRIP4",
+      "TRPC4AP",
+      "ZKSCAN1",
+      "ZNF32"
+    ]
+  }
+}

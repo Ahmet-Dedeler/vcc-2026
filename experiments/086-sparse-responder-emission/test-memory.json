@@ -1,0 +1,14 @@
+{
+  "command": [
+    "uv",
+    "run",
+    "python",
+    "experiments/086-sparse-responder-emission/test_emitter.py"
+  ],
+  "max_rss_gib": 1.0,
+  "peak_process_tree_rss_gib": 0.398834228515625,
+  "peak_process_count": 4,
+  "killed_for_memory": false,
+  "return_code": 0,
+  "elapsed_seconds": 1.263927124964539
+}

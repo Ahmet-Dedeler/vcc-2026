@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "experiment": "128-panel-integer-budget-transport",
+  "created_at_utc": "2026-08-30",
+  "status": "written_after_experiment_124_audit_but_before_experiment_128_accessed_any_released_control_count_value",
+  "objective": "Validate a source-unit-correct, positivity-preserving panel transport whose emitted integer pseudobulk is exactly PDS-invisible on every non-panel coordinate.",
+  "prior_failed_evidence": {
+    "experiment_124_results": {
+      "path": "experiments/124-panel-simplex-transport/work/integration-audit-v1/results.json",
+      "sha256": "ea728c151f90788bc6d8bb5975344d0a7c78a5f822fabffe1a17f8f3a61bb881"
+    },
+    "experiment_124_manifest": {
+      "path": "experiments/124-panel-simplex-transport/work/integration-audit-v1/artifact-manifest.json",
+      "sha256": "ad911c5dbfe9a46e385f8cee638865ce0fe812507a64f95d409b02adc9a73f8f"
+    }
+  },
+  "inputs": {
+    "panel_residual": {
+      "path": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/selected-panel-residual.npy",
+      "sha256": "6ad50b0dbd134b6074da69bf42e94f75aa4cd999abce0d614e7b6cc73f70ec63",
+      "units": "delta in log1p(50000 * relative_abundance)"
+    },
+    "experiment_122_manifest": {
+      "path": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/artifact-manifest.json",
+      "sha256": "f4b1a42bfffde3c2499130ac378bf2c2cfbf5b07e58dca11a1046d4cce661472"
+    },
+    "experiment_122_panel_axis": {
+      "path": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/panel-targets.txt",
+      "sha256": "cd3d00f1cd5da660609ad41d85b53e2d5557f7f5edb3e1f64559f78f7fb3cbc4"
+    },
+    "experiment_122_receipt": {
+      "path": "experiments/122-panel-response-atlas/work/source-only-phase1-v1/result-receipt.json",
+      "sha256": "bfd137cba001ff43b617ab245b4cd08676652a829e1c44194139ee2ba75d6d24"
+    },
+    "staged_a15_effects": {
+      "path": "experiments/103-residual-only-production/work/staged-a15-linux/a15-effects.npy",
+      "sha256": "6f2b0488d67a31b59aff2ce6c7868f1de443f5153f28386b6a07f7489e12eb6f"
+    },
+    "staged_a15_metadata": {
+      "path": "experiments/103-residual-only-production/work/staged-a15-linux/a15-effects.npy.json",
+      "sha256": "a1808f6af4fd803ed2084dbf02387d9f573b932a207683eab6110874b727ebb0"
+    },
+    "a15_submission_metadata": {
+      "path": "submissions/a15-cd4f010.vcc.meta.json",
+      "sha256": "34223442e4e8816bb9be2b1fdfe6a563ed114c17a2893bee0ff603953f84287a"
+    },
+    "production_profile_script": {
+      "path": "scripts/make_submission_pm_cd4.py",
+      "sha256": "7562cf5a16fd751c55ddf248e05f2e4281f907e27be0a5bb9da959d61991b62b"
+    },
+    "production_emitter": {
+      "path": "src/vcc2026/donor_transfer.py",
+      "sha256": "c91cb05e1204138900058be2c82a227f132e373493a3b3e15914cd18f807f3b9"
+    },
+    "gene_names": {
+      "path": "data/challenge/gene_names.csv",
+      "sha256": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201"
+    },
+    "panel_targets": {
+      "path": "data/challenge/pert_counts.csv",
+      "sha256": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276"
+    },
+    "released_controls": {
+      "A": {
+        "path": "data/challenge/context_A.h5ad",
+        "sha256": "f22e71968487d3da9402769dcd0c73a47851fad4cd7dd25510283c923031fe3e"
+      },
+      "B": {
+        "path": "data/challenge/context_B.h5ad",
+        "sha256": "41557555b3febf6db19fd930b4dd7db88941840077bf985d14dfff959c782380"
+      },
+      "C": {
+        "path": "data/challenge/context_C.h5ad",
+        "sha256": "e090e7c7cfdd0006f689214ba38ba0cd2669578e89c9bc325b65f0bd940c02e0"
+      }
+    }
+  },
+  "production_semantics": {
+    "context_order": ["A", "B", "C"],
+    "ts": 50000.0,
+    "min_cpm": 10.0,
+    "effect_scale": 1.0,
+    "cells_per_perturbation": 400,
+    "max_counts_per_cell": 1000000,
+    "library_pick_seed": 0,
+    "representative_libraries": [19946, 20034, 20109],
+    "baseline_profile": "gate staged a15 log1p effects at control CPM strictly greater than 10 and b_ctrl strictly greater than zero; compute clip(expm1(b_ctrl + gated_effect), 0, inf) / 50000; normalize over all 18533 genes",
+    "baseline_integer_totals": "floor(400 * L * q0_g) independently for every gene, matching production quasi emission",
+    "actual_library_replay": "use one numpy default_rng(0) across contexts A,B,C and targets in canonical order; choose 400 control rows without replacement per target; L is int(min(median(chosen library sizes), 1000000))"
+  },
+  "fixed_doses": [0.1, 0.25, 0.5, 1.0],
+  "dose_policy": "All four doses are invariant diagnostics only. No result from this experiment may select, rank, tune, or promote a dose.",
+  "continuous_transform": {
+    "eligible": "control CPM strictly greater than 10, b_ctrl strictly greater than zero, baseline abundance strictly positive, finite residual, and response gene is not the row's target-self",
+    "formula": "a_j = clip(expm1(log1p(50000*q0_j) + eta*r_j), 0, inf) / 50000",
+    "preclip_negative": "record every eligible coordinate whose value before clipping is strictly negative",
+    "degenerate_fallback": "if all transformed mutable weights sum to zero, copy the baseline mutable integer totals and record the fallback"
+  },
+  "integer_budget_transport": {
+    "immutable_coordinates": "copy baseline emitted pseudobulk totals exactly for every non-panel gene, target-self, and ineligible panel gene",
+    "mutable_budget": "sum of baseline emitted pseudobulk totals over eligible off-diagonal panel coordinates",
+    "ideal_allocation": "mutable_budget * transformed_weight_j / sum(transformed_weight)",
+    "allocation": "take floor of every ideal allocation, then assign one count to the largest fractional remainders until the exact mutable budget is exhausted",
+    "tie_break": "canonical panel column order, ascending",
+    "integration_requirement": "a future production implementation must pass these integer totals directly into the exact-total quasi scatter; converting them back to a floating profile and reflooring is not authorized"
+  },
+  "required_invariants": [
+    "candidate integer totals are finite nonnegative int64",
+    "every non-panel integer total is bit-identical to baseline",
+    "target-self integer total is bit-identical to baseline",
+    "every ineligible panel integer total is bit-identical to baseline",
+    "mutable panel integer budget is exactly conserved",
+    "full panel integer total is exactly conserved",
+    "grand emitted integer total is exactly conserved",
+    "scorer-normalized non-panel linear profile is bit-identical",
+    "scorer-normalized non-panel log1p profile is bit-identical",
+    "scorer-normalized non-panel effect against the same control is bit-identical",
+    "scorer-normalized target-self linear and log1p values are bit-identical"
+  ],
+  "audit_grid": {
+    "contexts": ["A", "B", "C"],
+    "targets": "all 300 in canonical order",
+    "doses": [0.1, 0.25, 0.5, 1.0],
+    "library_schemes": [
+      "fixed L=19946",
+      "fixed L=20034",
+      "fixed L=20109",
+      "replayed actual production per-target L"
+    ]
+  },
+  "decision": {
+    "mechanical_pass": "Every required invariant must pass on every context, target, dose, and library scheme.",
+    "promotion": "Always false. This mechanics audit cannot authorize production integration, count generation, held evaluation, or submission. A separately frozen biological confirmation must validate the exact integer-transported candidate."
+  },
+  "forbidden": {
+    "held_outcomes": true,
+    "challenge_perturbation_truth": true,
+    "cell_eval2": true,
+    "count_h5ad_or_vcc_build": true,
+    "submission": true,
+    "commit": true,
+    "push": true,
+    "dose_selection": true,
+    "modification_outside_experiment_128": true
+  },
+  "output_directory": "experiments/128-panel-integer-budget-transport/work/integration-audit-v1"
+}

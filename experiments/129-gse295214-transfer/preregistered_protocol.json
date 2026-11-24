@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "experiment": "129-gse295214-transfer",
+  "date_preregistered": "2026-08-30",
+  "status": "written_before_any_experiment_129_source_effect_value_was_loaded",
+  "correction_boundary": {
+    "gse295214_identity": "Pan2025_hESC, already used by Experiments 117 and 118",
+    "closed_families": [
+      "direct_same_target_Pan_residual",
+      "Pan_fraction_retuning",
+      "Pan_target_mask_retuning",
+      "Pan_residual_magnitude_confidence_ranking",
+      "Experiment_118_panel_residual_rescaling_or_clipping"
+    ],
+    "materially_distinct_family": "nonparametric cross-target response-neighborhood transfer: Pan effects define query-to-training target similarity only; no query Pan effect is directly added"
+  },
+  "scientific_question": "Do broad non-panel Pan H1 response neighborhoods transfer cross-context correction directions that improve an a14/arm-D-style source-only incumbent on untouched RPE1 and Nadig Jurkat targets?",
+  "roles": {
+    "query_geometry": "GSE295214/Pan2025_hESC compact donor from Experiment 115",
+    "outcome_contexts": [
+      "rpe1",
+      "nadig_jurkat"
+    ],
+    "predictor_only_sources": [
+      "k562_gwps",
+      "orion_hct116",
+      "orion_hek293t",
+      "perturbmatch"
+    ],
+    "forbidden_as_outcomes": [
+      "k562_gwps",
+      "orion_hct116",
+      "orion_hek293t",
+      "h1_2025",
+      "Pan2025_hESC held panel",
+      "kolf2",
+      "DLD1",
+      "HCASMC",
+      "challenge contexts"
+    ]
+  },
+  "fresh_target_contract": {
+    "eligible": "exact-symbol intersection of Pan, RPE1, Nadig Jurkat, K562-GWPS, Orion HCT116, Orion HEK293T, and pinned STRING rows",
+    "exclude_vcc_300_targets": true,
+    "exclude_experiment_107_consumed_nadig_targets": true,
+    "exclude_experiment_123_all_targets": true,
+    "expected_eligible_count": 155,
+    "stable_order": "ascending SHA256 of UTF8 experiment-129-broad-pan-knn-v1 NUL target, then UTF8 target",
+    "selection_count": 100,
+    "untouched_test_count": 55,
+    "selection_folds": 5,
+    "fold_assignment": "SHA256 of UTF8 experiment-129-fold-v1 NUL target modulo 5",
+    "post_value_target_dropping": false
+  },
+  "response_axis": {
+    "order": "canonical data/challenge/gene_names.csv order",
+    "required_presence": [
+      "Pan source-covered canonical genes",
+      "k562_gwps genes",
+      "orion_hct116 genes",
+      "orion_hek293t genes",
+      "rpe1 genes",
+      "nadig_jurkat genes"
+    ],
+    "remove_all_300_vcc_target_coordinates": true,
+    "remove_all_155_experiment_target_coordinates": true,
+    "expected_gene_count": 5730,
+    "expected_ordered_sha256": "2efa164f9910158a591367fc237cf0dce0f2d05d03b5ce38ab76779ea21fd674",
+    "truth": "raw uncentered control-referenced source delta",
+    "centered_truth_forbidden": true,
+    "hidden_gallery_methods_forbidden": true
+  },
+  "incumbent": {
+    "classification": "source-only a14/arm-D-style geometry surrogate, not the submitted challenge artifact",
+    "source_slots": [
+      "k562_gwps_with_50_percent_PerturbMatch_replacement_when_both_support",
+      "orion_hct116",
+      "orion_hek293t"
+    ],
+    "weights": "equal across the three source slots",
+    "source_centering": "subtract each source's mean over all source rows except the 155 experiment targets",
+    "source_scale": "equalize each source to the median source median centered-row L2 norm",
+    "whitener": {
+      "basis_sources": [
+        "k562_gwps",
+        "orion_hct116",
+        "orion_hek293t"
+      ],
+      "basis_rows": "all eligible source rows after excluding the 155 experiment targets, capped at 12000 per source by the frozen SHA256 row order",
+      "covariance": "uncentered covariance of donor-centered, source-scale-equalized effects",
+      "gamma": 0.65,
+      "lambda": 0.0,
+      "eigenvalue_floor": "largest_eigenvalue_times_1e-12",
+      "candidate_specific_operator_axis_norm_preservation": true,
+      "Pan_used_in_fit": false,
+      "PerturbMatch_used_in_fit": false
+    },
+    "missing_source_policy": "target pool requires all three base sources, so no base-source fallback is exercised",
+    "cd4": "exact no-op because the experiment uses non-panel perturbation targets"
+  },
+  "learner": {
+    "name": "Pan response-neighborhood tangent transfer",
+    "Pan_query_feature": "unit raw uncentered Pan effect on the frozen response axis",
+    "teacher_isolation": {
+      "rpe1_prediction": "train residual library only from Nadig Jurkat outcomes",
+      "nadig_jurkat_prediction": "train residual library only from RPE1 outcomes"
+    },
+    "teacher_residual": "unit truth minus its projection onto the unit incumbent; no query target truth enters its own prediction",
+    "neighbors": "top-k training targets by Pan cosine, stable target-order tie break; only strictly positive cosine neighbors are usable",
+    "neighbor_weight": "equal",
+    "aggregate": "arithmetic mean teacher tangent residual, then project orthogonally to the query incumbent",
+    "application": "rotate the incumbent unit vector toward the normalized predicted tangent by exactly 5 degrees and restore the incumbent row norm",
+    "candidate_grid": [
+      "identity",
+      "knn_k5_angle5deg",
+      "knn_k15_angle5deg",
+      "knn_k30_angle5deg"
+    ],
+    "unsupported_or_degenerate_policy": "bit-exact incumbent fallback"
+  },
+  "source_only_selection": {
+    "prediction": "five-fold whole-target out-of-fold prediction over all 100 selection targets",
+    "pds": "raw uncentered cosine retrieval with exact midranks over each complete 100-target gallery",
+    "signed_credit": "sum(sign(truth)*prediction)/sum(abs(prediction)) per target; zero prediction receives zero",
+    "eligibility": "nonidentity must have nonnegative PDS and signed-credit delta in both outcome contexts",
+    "selection_order": [
+      "eligible before ineligible",
+      "larger worst-context PDS delta",
+      "larger macro PDS delta",
+      "larger worst-context signed-credit delta",
+      "larger macro signed-credit delta",
+      "smaller k",
+      "identity wins exact ties"
+    ],
+    "seal_before_test_truth": true
+  },
+  "untouched_source_test": {
+    "gallery": "all 55 frozen test targets in each outcome context, including exact fallback rows",
+    "training": "all 100 selection targets; opposite-context teacher outcomes only",
+    "no_reselection": true,
+    "primary_metrics": [
+      "complete-gallery raw uncentered PDS delta",
+      "target-equal directional signed-credit delta"
+    ],
+    "secondary_metrics": [
+      "Pan-query-supported subset PDS delta",
+      "Pan-query-supported subset signed-credit delta",
+      "fallback count and bit equality"
+    ]
+  },
+  "nulls": {
+    "target_label_permutation": {
+      "draws": 199,
+      "seed": 12920261,
+      "operation": "independently derange Pan target-row assignments within selection and untouched-test splits; move the complete Pan row together; keep incumbent and outcome labels fixed",
+      "selection": "repeat complete five-fold candidate selection for every draw",
+      "test": "evaluate that draw's selected candidate once on its permuted untouched-test Pan rows"
+    }
+  },
+  "uncertainty": {
+    "target_block_definition": "connected components of reciprocal five-nearest-neighbor STRING cosine edges at similarity at least 0.80 on the frozen 55 test targets",
+    "bootstrap_draws": 20000,
+    "seed": 12920262,
+    "resampling": "sample target blocks with replacement and apply common target multiplicities to both outcome contexts",
+    "interval": "NumPy linear 2.5 and 97.5 percentiles"
+  },
+  "promotion_gates": {
+    "all_required": true,
+    "selected_candidate_nonidentity": true,
+    "selection_pds_delta_each_context_minimum": 0.0,
+    "selection_signed_credit_delta_each_context_minimum": 0.0,
+    "test_pds_delta_each_context_minimum": 0.0,
+    "test_signed_credit_delta_each_context_minimum": 0.0,
+    "test_macro_pds_delta_minimum": 0.003,
+    "test_macro_signed_credit_delta_strictly_positive": true,
+    "pds_target_block_bootstrap_lower_95_strictly_positive": true,
+    "signed_credit_target_block_bootstrap_lower_95_strictly_positive": true,
+    "observed_test_macro_pds_delta_strictly_above_target_label_null_p95": true,
+    "observed_test_macro_signed_credit_delta_strictly_above_target_label_null_p95": true,
+    "all_fallback_rows_bit_exact": true
+  },
+  "freeze": {
+    "protocol_implementation_candidate_grid_target_splits_folds_nulls_bootstrap_and_input_hashes_before_effect_values": true,
+    "selection_freeze_before_test_effect_values": true,
+    "mechanical_recovery_requires_additive_receipt_before_any_accepted_result": true,
+    "refuse_overwrite": true
+  },
+  "authorization_boundary": {
+    "source_only_effect_access": true,
+    "held_outcome_access": false,
+    "cell_eval2": false,
+    "count_generation": false,
+    "challenge_build_or_submission": false,
+    "commit_or_push": false,
+    "writes_outside_experiment_129": false,
+    "source_pass_authorizes_only_separately_reviewed_held_evaluation": true,
+    "source_pass_authorizes_production": false
+  }
+}
+

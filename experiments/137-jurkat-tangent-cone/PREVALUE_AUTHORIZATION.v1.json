@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "experiment": "137-jurkat-tangent-cone",
+  "date_authorized": "2026-08-30",
+  "status": "approved_before_effect_access",
+  "review": {
+    "independent_target_census": "PASS",
+    "independent_protocol_and_code_audit": "PASS",
+    "local_test_count": 21,
+    "local_tests_passed": true,
+    "ruff_passed": true,
+    "git_diff_check_passed": true,
+    "runtime_amendment": {
+      "path": "experiments/137-jurkat-tangent-cone/RUNTIME_AMENDMENT.v1.json",
+      "sha256": "2551a15548cabee6a5156494d851e140ee22603531a082f58eff95382d5615df"
+    },
+    "resolved_blockers": [
+      "preserved the inherited Experiment 107 target order instead of introducing a new hash sort",
+      "used atan2 for robust near-parallel spherical angles",
+      "made byte comparisons contiguous",
+      "validated final-cap folds and finite scores",
+      "bound operator and candidate transitive inputs",
+      "independently verify exact fallback for every cap",
+      "made outcome-access locks resumable only under identical authenticated payloads",
+      "made nonfinite candidate inputs fail closed",
+      "fixed unsupported development rows at PDS 0.5 in both observed and permutation-null paths",
+      "validated the frozen test cap against the fixed grid, development selection, and candidate array before opening test truth",
+      "documented and bound a numerically blind contiguity-only repair after development opened but before any score or result artifact was observed"
+    ]
+  },
+  "bindings": {
+    "metadata_npz": {
+      "path": "experiments/137-jurkat-tangent-cone/work/metadata-freeze-v1.npz",
+      "sha256": "682afb9a32a2f2732486da04cf27359abf2d4b91c1ba92627b8d05f45dce9d1c"
+    },
+    "metadata_json": {
+      "path": "experiments/137-jurkat-tangent-cone/work/metadata-freeze-v1.json",
+      "sha256": "45de70d1e9c687d8ab8967946f9c7f46a4982d41b6c107f9753905a0fe0ba1a0"
+    },
+    "protocol": {
+      "path": "experiments/137-jurkat-tangent-cone/preregistered_protocol.json",
+      "sha256": "f1f085296213cfcbfab93212cc963982f34b683e5ce6e7945edf5bee65ea65f7"
+    },
+    "builder": {
+      "path": "experiments/137-jurkat-tangent-cone/build_source_candidate.py",
+      "sha256": "78bda0607497b82c30bbca8ca2be4edea3fe819a5c5e86bddef4715e6ac11759"
+    },
+    "evaluator": {
+      "path": "experiments/137-jurkat-tangent-cone/evaluate.py",
+      "sha256": "94ace338df0ea955519ab7d2e3ccf3fdd2641bbc0d90f5e94ced8d75660c7aa4"
+    },
+    "tangent": {
+      "path": "experiments/137-jurkat-tangent-cone/tangent.py",
+      "sha256": "090f277403b8d27306769702c50b1158bb75ca1e5ba79a7a8a2ad28593f81559"
+    },
+    "builder_test": {
+      "path": "experiments/137-jurkat-tangent-cone/test_build_source_candidate.py",
+      "sha256": "eeb0c30d87a15bffd5e5d3d6800ea78533cc0e32fa385e4a96670df5b2448635"
+    },
+    "evaluator_test": {
+      "path": "experiments/137-jurkat-tangent-cone/test_evaluate.py",
+      "sha256": "03532eb7ad4a7f9df6d62a31dc26865447af92f9cb6102f2fbf053ceefa50048"
+    },
+    "tangent_test": {
+      "path": "experiments/137-jurkat-tangent-cone/test_tangent.py",
+      "sha256": "6970c09602236ecf2a589fde2aec72bffae3a9ca419f50a36d6304b2093abad1"
+    },
+    "metadata_test": {
+      "path": "experiments/137-jurkat-tangent-cone/test_freeze_metadata.py",
+      "sha256": "69f5b20e646d894f2d77b0a6bab20d43acf0ec022ac49aecf1b6f7e51a0e870f"
+    }
+  },
+  "authorized_actions": [
+    "build the source-only shared whitener and exact a14 incumbent",
+    "construct the frozen tangent-cap candidate arrays",
+    "write and verify the opaque pretruth plan",
+    "open only the 315 development outcome rows",
+    "open the 79 test rows only after every development gate passes"
+  ],
+  "not_authorized": [
+    "HCASMC access",
+    "TeloHAEC or Pan outcome reuse",
+    "Experiment 132 untouched-test access",
+    "cell-eval2",
+    "count generation",
+    "challenge build",
+    "challenge submission",
+    "commit",
+    "push"
+  ]
+}

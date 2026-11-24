@@ -1,0 +1,48 @@
+{
+  "arms": {
+    "cap15": [
+      -1.5,
+      "cap",
+      null
+    ],
+    "cap30": [
+      -3.0,
+      "cap",
+      null
+    ]
+  },
+  "classification": "reused H1 development diagnostic",
+  "inputs_sha256": {
+    "experiments/323-current-family-validation/anchor-inputs.json": "107d05026265a9d67f67dd6fd98439aa98a733bba916adfd6b60c636c1008eea",
+    "experiments/323-current-family-validation/evaluate323.py": "10f7ba375c3fd9161348a10cf84eb45b364eba5e8bab5cd183aefe3f6b2ceb0c",
+    "experiments/323-current-family-validation/evaluation-inputs.json": "ba0d3ae08e29ce890fa9f657579a18d9d755289eccafeb3e3c5e7d38fbfd2306",
+    "experiments/323-current-family-validation/inputs.json": "50ff05fe589f0b45625ef0913b87d190c7cfa4d1009c6fa5844789b4b980d6ea",
+    "experiments/323-current-family-validation/report323.py": "4f013f11794328ed377a8b33982185f8b517c08ab2383804167a25f7b5aa2bf8",
+    "experiments/323-current-family-validation/run323.py": "22c92b60e09fc22da9f8774adac4ed09e7ea521b1bb00f52d190e6b58c6033ac",
+    "experiments/323-current-family-validation/work/compose.json": "8b279403584561e2dbbb62ba5561ea8fe25b3c363180d33b5e8b50bdaf8ce2c3",
+    "experiments/323-current-family-validation/work/effects.npz": "1ab617c14973ca9d6a071b1fd966059b7c6596c460b21ae099862394766dfd05",
+    "experiments/323-current-family-validation/work/h1-anchors.json": "0a5c8847b20e346f5587d402064eec5b65e94935edc63c84e87725086b8dc709",
+    "experiments/323-current-family-validation/work/metrics-cap15.json": "8586e9d024268c23ee985d264bb5d70099f3b0ad48f013514b2f6610f34091bb",
+    "experiments/323-current-family-validation/work/metrics-known.json": "9b839b4e3a11a33bc5daa2d9e93ba86eef6bfdeb00831f6d74cf559968f7986c",
+    "experiments/323-current-family-validation/work/metrics-plain15.json": "1d9ec9860e3413e72fd23265a512a3ef945fbff88b59e542754f333313abbb3f",
+    "experiments/323-current-family-validation/work/metrics-plain30.json": "cf1e09e6674c537d5bc9e3f240e8d6a310bf7a1a80987874e5c8b76f6bd53393",
+    "experiments/323-current-family-validation/work/per-target-cap15.csv": "648056af315d7ee54b1aed778554971eb54cb5b1994d5c5cbdc5394e70d1a39a",
+    "experiments/323-current-family-validation/work/per-target-plain15.csv": "f427e90f5f96426fda6bdd961f5f2379102f508436487b649ed5c569c3eefb09",
+    "experiments/323-current-family-validation/work/per-target-plain30.csv": "7233fc55b5ed5a1c225d766679f375d3bcda13bf3b8dd6ce1d2ae46956255ef7",
+    "experiments/323-current-family-validation/work/reference.json": "dceff2cb228a98b0a60e23196fa03162e2180519341054cc828d6c17ce2e17eb",
+    "experiments/323-current-family-validation/work/reference.npz": "304aa51133c9776a8d49c29b2075e82f6110671339fa1df77f163cba4843a8c6",
+    "experiments/323-current-family-validation/work/reference_de.parquet": "1bb8c76d1177047569e156af5a7c40e48f8fedce0ce3cf85b7d82998c5485e99",
+    "experiments/323-current-family-validation/work/stage.json": "9e316e1945c54dc63f77972d04c9d366585ebbc37264cc25580217908aca384c",
+    "experiments/323-current-family-validation/work/stage.npz": "3e8dd6613f03fa584e8a951a3b01577067cdac144d4f2900e16dc12b9d3937ba",
+    "experiments/323-current-family-validation/work/stats-cap15.npz": "080ba7094cf3654fd059b7aa4d19a094853408452dab0eb1a0d50896bd118271",
+    "experiments/323-current-family-validation/work/stats-plain15.npz": "0497e21642937de9059d8c81a7a5cabc44d739857539b5df4e88c50d88a148a2",
+    "experiments/323-current-family-validation/work/stats-plain30.npz": "60b9f1df3b5ffbdd90e97baceeb6cdb697a67695c9393e31f8fb4e874dd344c2",
+    "experiments/323-current-family-validation/work/whitener_h1_pruned.json": "ba69c0547ec6a6f9a8e437a18d1c83003a67af74856ccf6b8764af8b381c319c",
+    "experiments/323-current-family-validation/work/whitener_h1_pruned.npz": "a46fd3239a74752d5c72f5c6ae7169d354793f04f7c22b9b3fd39fe6f74b9741",
+    "experiments/326-cap30-current-family/PREREGISTRATION.md": "750128aaf30496e2b2a31fdc4ad4b9dd1a3d22e8b5d0efdb3bfa43de51cec6f9",
+    "experiments/326-cap30-current-family/report326.py": "8428c5fd1f80703cb4a33e43083a63ff6f30161c13ddfd7aa09c79bb61c6835f",
+    "experiments/326-cap30-current-family/run326.py": "006728d7f78a9cf0da8146590055b1b4f35ef80a8088111339aa5a926d4efec6",
+    "experiments/326-cap30-current-family/test326.py": "fce6def671df971545524bbc698b9a5f54d29c44890c0314a31798c1bd71470b",
+    "submissions/319d3-cap30.h5ad.meta.json": "d87bd92b670234f69e1a1fa1a2101b4fa569cd5b35cbe4bb75daacc1a3fb866d"
+  }
+}

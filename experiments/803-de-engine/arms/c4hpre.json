@@ -1,0 +1,13 @@
+{
+ "name": "c4hpre",
+ "desc": "496a: g1pre + the plain CLEAN4 uncalled-gene hook tau 0.05 (VCC_DE_MDE_SIGN=clean4:0.05), before zs",
+ "emit": {
+  "hook": "c4h",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": true
+ },
+ "stage": "pre"
+}

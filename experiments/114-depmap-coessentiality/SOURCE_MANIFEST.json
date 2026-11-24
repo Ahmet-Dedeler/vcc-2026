@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "experiment": "114-depmap-coessentiality",
+  "depmap": {
+    "release": "DepMap Public 24Q4",
+    "article_id": 27993248,
+    "doi": "10.25452/figshare.plus.27993248.v1",
+    "published_date": "2024-12-10T16:07:56Z",
+    "license": "CC BY 4.0",
+    "api_url": "https://api.figshare.com/v2/articles/27993248",
+    "file": {
+      "id": 51064667,
+      "name": "CRISPRGeneEffect.csv",
+      "size_bytes": 428678699,
+      "md5": "6edf7ade09b9b34199210b559d4745d3",
+      "download_url": "https://ndownloader.figshare.com/files/51064667",
+      "sha256": null,
+      "sha256_policy": "Compute from an authorized local copy and bind it into the immutable feature receipt; the official source publishes MD5, not SHA-256."
+    },
+    "expected_matrix": {
+      "cell_lines": 1178,
+      "gene_columns": 17289
+    }
+  },
+  "pphouse_reference": {
+    "repository": "pphouse/virtual_cell",
+    "commit": "79cd46024dcca8e6afd96bb0bca6bfcbbe77978c",
+    "commit_date": "2026-08-30T10:34:18Z",
+    "files": {
+      "src/vcc2026/coessentiality.py": {
+        "git_blob_sha1": "3cfcd34c52e10942a3fa4efcd212c9bdaabf391c",
+        "bytes": 7290
+      },
+      "scripts/build_coessentiality.py": {
+        "git_blob_sha1": "be40317f2164e4443267cd949375d2d289cc2ecf",
+        "bytes": 1521
+      },
+      "src/vcc2026/features.py": {
+        "git_blob_sha1": "bc7026c17a89b8c31c2939a2b0d735e77e54026a",
+        "bytes": 4901
+      },
+      "src/vcc2026/model.py": {
+        "git_blob_sha1": "780787c495356ff1b3f4d529760c60fd10275888",
+        "bytes": 16095
+      },
+      "src/vcc2026/programs.py": {
+        "git_blob_sha1": "5c736a54e9fe5af76eb2f057d74cf09dc845f5a1",
+        "bytes": 3171
+      },
+      "tests/test_transfer_model.py": {
+        "git_blob_sha1": "a02662259aa413e0da5b6b9fd8a5a30d23805146",
+        "bytes": 8925
+      },
+      "docs/08-%E7%B4%B0%E8%83%9E%E6%A0%AA%E3%83%91%E3%83%8D%E3%83%AB%E3%81%A7%E5%9B%9E%E3%81%99%E3%83%AB%E3%83%BC%E3%83%97.md": {
+        "git_blob_sha1": "38d27690d8f2b9bfff7b75e1426fcdfedeade4f9",
+        "bytes": 65489
+      }
+    }
+  },
+  "local_references": {
+    "experiments/082-biological-target-kernel/README.md": "3a4563dfc0036cb6ea82a003b26c7f56905977a041d4bc9696432aa9acf33365",
+    "experiments/082-biological-target-kernel/RESULTS.md": "b2f0fb2da2b791164b54b21731a52457afc9cc8d0f4a2b05b5997ea18c846bd0",
+    "experiments/087-string-target-kernel/README.md": "888a7751512f1594d585a3d6f0f66ae2eabac064cee7b21e6785985cdc490fe5",
+    "experiments/087-string-target-kernel/RESULTS.md": "245b0395a0d4f9fa9454be7ee59fe2c68062b0e9f6e1f273b5677e8c09b09930",
+    "experiments/087-string-target-kernel/artifact_manifest.json": "daa7f856b86fab26872d2e87226dc5d9de009e2588b11912ca7e8cb929fdddaf",
+    "experiments/111-depmap-context-program-gain/README.md": "8915256a098ddb245c8665ffc34c3a840c03529a761f2ef6d95a6c8912a34d81",
+    "experiments/111-depmap-context-program-gain/preregistered_protocol.json": "51051875b00057c0e4a23271784dbff30ba4909567ac15b04ee21cbeb533dcee",
+    "submissions/a15-cd4f010.vcc.meta.json": "34223442e4e8816bb9be2b1fdfe6a563ed114c17a2893bee0ff603953f84287a",
+    "experiments/106-state-baseline/freeze_a14_endpoints.py": "e723fd1445593de97a29183e54b83b3f1159edc2649b3bd4ce2a6b8a7300065f",
+    "experiments/103-residual-only-production/work/frozen/manifest.json": "ed64beca8337fc9bdd4d0524cfe8ca3978c9c3fbc2bc95a3b3d2424870b2239e"
+  },
+  "local_inputs": {
+    "data/challenge/pert_counts.csv": "f57edd7b912ebd718efc7ee9d0f334772513e7cc418d133ce525470e373b3276",
+    "data/challenge/gene_names.csv": "25bfa66715e186bebabce7ac788bbcea47e2bf59ca70be1f8f3a06f2f0e47201",
+    "data/donors/k562_gwps/perts.txt": "b784821e4a662aa8ab8d55da357fc712f109dda5a464c3e7e047b15b61408bec",
+    "data/donors/orion_hct116/perts.txt": "fd2fbbbebdd43c360cd274a246c1eeeb9a2139711ee12a475a8e116021c5caa8",
+    "data/donors/orion_hek293t/perts.txt": "3846edf57cc7a0bd91a499ce9be4ed68c9c8ccc1f36ba062c3bb1301695ef547",
+    "data/external/perturbmatch/perts.txt": "1131758c3ab0d0c781a17580894511986d9baeadc1ad1304251f5a133086998e",
+    "data/external/slim/gene_string_embeddings.v0.3.h5": "789416877b8701ef6f800106d26bf7bb97ea8e72744e6ab93e24933a717f247d"
+  }
+}

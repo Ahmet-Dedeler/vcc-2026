@@ -1,0 +1,18 @@
+{
+ "id": "bc-4d941e18-ec99-41aa-a3e9-98a83c53a3cb",
+ "status": "CREATING",
+ "source": {
+  "repository": "https://github.com/Ahmet-Dedeler/virtual-cell-challenge-2026",
+  "ref": "master"
+ },
+ "target": {
+  "autoBranch": true,
+  "autoCreatePr": false,
+  "openAsCursorGithubApp": false,
+  "skipReviewerRequest": false,
+  "branchName": "cloud/485-october-review",
+  "url": "https://cursor.com/agents/bc-4d941e18-ec99-41aa-a3e9-98a83c53a3cb"
+ },
+ "name": "October day-of path bug hunt",
+ "createdAt": "2026-09-26T21:33:05.871Z"
+}

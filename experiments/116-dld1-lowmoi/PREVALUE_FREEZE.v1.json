@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "experiment": "116-dld1-lowmoi",
+  "dataset": "GSE337988",
+  "frozen_at": "2026-08-30",
+  "status": "frozen_before_matrix_value_access",
+  "matrix_values_accessed": false,
+  "bound_files": {
+    "experiments/116-dld1-lowmoi/ACQUISITION_AMENDMENT.v1.json": "29120defa1bdda84e2461b2748cee0f1481b91a318e463848adc211ba33215a9",
+    "experiments/116-dld1-lowmoi/ACQUISITION_PROTOCOL.v1.md": "f6a81e21d205907adb297795dfba4d35542c4a57fb046204365479b620308e22",
+    "experiments/116-dld1-lowmoi/CONVERSION_PROTOCOL.v1.json": "59414ac52ad15bd600330c8096a2c7fd3b0e2d8d178fe633c27796cd63a58587",
+    "experiments/116-dld1-lowmoi/CONVERSION_PROTOCOL.v1.md": "72249e30910a9ff1f8d4555d2db016e4f13c36446b7bcc452174286b00fa73f7",
+    "experiments/116-dld1-lowmoi/acquire_lfc_v1.py": "34c4828fb73f7831d2ca6ff88819ab824fd36f09a07842ab8e15346b553bed98",
+    "experiments/116-dld1-lowmoi/convert_compact_v1.py": "2079c516cfbd17cb24e29fa754f7098358fc9ad5fc93f1c3f8a090a19af5332b",
+    "experiments/116-dld1-lowmoi/test_acquire_lfc_v1.py": "f4bccea6db5417a909e9e9ce10f52cc6ca8dafe2d619409193f7b9e0cf29b612",
+    "experiments/116-dld1-lowmoi/test_convert_compact_v1.py": "fca3b478db68e0fa0ecfdc65bd254c728c3568ec50e4f27915690d6da8969db0"
+  },
+  "pre_access_validation": {
+    "command": "uv run python -m unittest experiments/116-dld1-lowmoi/test_acquire_lfc_v1.py experiments/116-dld1-lowmoi/test_convert_compact_v1.py experiments/116-dld1-lowmoi/test_source_audit.py",
+    "tests_run": 27,
+    "tests_passed": 27,
+    "ruff": "passed",
+    "json_validation": "passed",
+    "matrix_payload_present": false,
+    "matrix_values_parsed": false
+  },
+  "scope_guards": {
+    "raw_archive_authorized": false,
+    "other_processed_assets_authorized": false,
+    "held_truth_authorized": false,
+    "existing_outcomes_authorized": false,
+    "cell_eval2_authorized": false,
+    "count_generation_authorized": false,
+    "submission_authorized": false,
+    "commit_authorized": false,
+    "push_authorized": false
+  }
+}

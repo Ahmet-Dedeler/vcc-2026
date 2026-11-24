@@ -1,0 +1,13 @@
+{
+ "name": "gradede804",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "experiments/803-de-engine/outmerged",
+  "experiments/804-known-answers/work/board_pairs.json"
+ ],
+ "collect": [
+  "experiments/804-known-answers/work/grade_de804.json",
+  "experiments/804-known-answers/work/grade_de804.txt"
+ ]
+}

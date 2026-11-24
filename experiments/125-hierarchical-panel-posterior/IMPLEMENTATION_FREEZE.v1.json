@@ -1,0 +1,18 @@
+{
+  "created_before_source_effect_loading": true,
+  "experiment": "125-hierarchical-panel-posterior",
+  "files": {
+    "experiments/125-hierarchical-panel-posterior/PREREGISTRATION.sha256": "ac26a83f1a8a3340e17c9a0ae77f7261e402656ebf6b09d123199fd40cd5b873",
+    "experiments/125-hierarchical-panel-posterior/README.md": "0b2c09d4706ea7247f989e95c31b4913fbb8f80d178ea8abab684446af8a7b45",
+    "experiments/125-hierarchical-panel-posterior/SOURCE_ONLY_AUTHORIZATION.json": "1be3ba7c0ce38394e7a178f5c9e1ebfee35a54cbf503bbaa23bda14ed9338c73",
+    "experiments/125-hierarchical-panel-posterior/freeze_implementation.py": "ff474c87b8e80eae93d0c131543d31c4a03ad4e51aa0116b6b5e07386ef912a7",
+    "experiments/125-hierarchical-panel-posterior/freeze_plans.py": "21776d0493d226999491ae71568c4846e1da28ecc9c555b2f0f5cb26ced12d38",
+    "experiments/125-hierarchical-panel-posterior/preregistered_protocol.json": "383e4f857746ee4957b35550b03be99ef0378bc606e07f8ff9df545103147509",
+    "experiments/125-hierarchical-panel-posterior/run.py": "5767a3befb24e39fd99105369b7c255b720d8a1d4d47c225211e977c45265b02",
+    "experiments/125-hierarchical-panel-posterior/test_run.py": "50c3a7dbc76d36d5fd7379cb541dacb31880626fdb529add89d56ade07eb7a78",
+    "experiments/125-hierarchical-panel-posterior/verify.py": "4a1edbc286fd451f7d5b528ff6eef8632bc9b6b54a213b264639a3e68cea8012"
+  },
+  "phase": "source_only_nested_evaluation",
+  "plan_freeze_manifest_sha256": "51d06dd0d6275dbb6ae1471a9a5f9319cde16a19039dbe01c08999e3c4d4b5e4",
+  "schema_version": 1
+}

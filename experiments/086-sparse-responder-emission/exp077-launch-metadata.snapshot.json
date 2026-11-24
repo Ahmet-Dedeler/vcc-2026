@@ -1,0 +1,10 @@
+{
+  "run_id": "20260823T060938Z",
+  "region": "us-east-1",
+  "instance_id": "i-0e4070204e83188fb",
+  "source_s3_prefix": "s3://<your-s3-bucket>/input/exp077-low-alpha-union/20260823T060938Z/",
+  "output_s3_prefix": "s3://<your-s3-bucket>/output/exp077-low-alpha-union/20260823T060938Z/",
+  "ssm_command_id": "2eb4e082-e153-4ff1-810a-7124e77a2dd2",
+  "cell_eval2_jobs": 2,
+  "submission": false
+}

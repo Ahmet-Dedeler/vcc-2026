@@ -1,0 +1,13 @@
+{
+ "name": "idall3pre",
+ "desc": "g1pre + the ungated v3 identity hook (idall3), before zs",
+ "emit": {
+  "hook": "idall3",
+  "mde": "coarse",
+  "zero_repair": -5,
+  "callset_cpm": 2200,
+  "zs": true,
+  "dump": false
+ },
+ "stage": "pre"
+}

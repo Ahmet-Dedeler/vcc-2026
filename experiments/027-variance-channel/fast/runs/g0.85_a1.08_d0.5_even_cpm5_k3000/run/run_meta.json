@@ -1,0 +1,92 @@
+{
+  "anchor_metric_names": [
+    "pds_cosine",
+    "expr_mse_unbiased",
+    "expr_mse_unbiased_capped",
+    "expr_distance_unbiased",
+    "expr_real_mass_ratio",
+    "expr_mse_unbiased_capped_norm",
+    "de_wilcoxon_lfc_nmae",
+    "de_wilcoxon_direction_fidelity_yield_raw",
+    "de_wilcoxon_direction_reach_raw",
+    "de_wilcoxon_sig_jaccard"
+  ],
+  "anchor_semantic_identity": "67663d6876ba7c45f5bf68b9219909f5a72652cb943154e5d45775c8bd97797b",
+  "cell_eval2_version": "0.16.0",
+  "comparator": "bulk_lognorm",
+  "config_digest": "7904e6ff642707f2f7680735b7260c78d2f7df440319cd115403eb39102fa2cb",
+  "created_utc": "2026-08-21T20:45:47+00:00",
+  "de_pred_fingerprint": null,
+  "de_real_fingerprint": null,
+  "environment": {
+    "anndata": {
+      "provenance": "release",
+      "version": "0.13.2"
+    },
+    "numpy": {
+      "provenance": "release",
+      "version": "2.5.2"
+    },
+    "polars": {
+      "provenance": "release",
+      "version": "1.43.2"
+    },
+    "scanpy": {
+      "provenance": "release",
+      "version": "1.12.3"
+    },
+    "scipy": {
+      "provenance": "release",
+      "version": "1.18.0"
+    }
+  },
+  "input_type_pred_effective": "counts",
+  "input_type_real_effective": "counts",
+  "metric_normalization": [
+    [
+      "pds_cosine",
+      "bulk_lognorm"
+    ],
+    [
+      "expr_mse_unbiased",
+      "bulk_lognorm"
+    ],
+    [
+      "expr_mse_unbiased_capped",
+      "bulk_lognorm"
+    ],
+    [
+      "expr_distance_unbiased",
+      "bulk_lognorm"
+    ],
+    [
+      "expr_real_mass_ratio",
+      "bulk_lognorm"
+    ],
+    [
+      "expr_mse_unbiased_capped_norm",
+      "bulk_lognorm"
+    ],
+    [
+      "de_wilcoxon_lfc_nmae",
+      null
+    ],
+    [
+      "de_wilcoxon_direction_fidelity_yield_raw",
+      null
+    ],
+    [
+      "de_wilcoxon_direction_reach_raw",
+      null
+    ],
+    [
+      "de_wilcoxon_sig_jaccard",
+      null
+    ]
+  ],
+  "resolved_de_backend": "scanpy",
+  "resolved_device": "cpu",
+  "source": "data/harness/h1-fast.h5ad",
+  "source_fingerprint": "056c8523b3ba068572ebf6d8d952c848650cd4b5ca96b3eb32ff3e517286e263",
+  "source_fingerprint_strict": true
+}

@@ -1,0 +1,22 @@
+{
+ "name": "agg-abcp-1016b",
+ "parallel": 1,
+ "venv": true,
+ "sync": [
+  "experiments/804-known-answers/work/run",
+  "experiments/804-known-answers/work/run710p",
+  "experiments/801-lab-folds/work/ka-abcp",
+  "experiments/810-strong-direction/work/price-final",
+  "experiments/810-strong-direction/work/abcp",
+  "experiments/811-lolo-model/work/run-m811s1",
+  "experiments/811-lolo-model/work/run-m811s2",
+  "experiments/811-lolo-model/work/run-m811s2b"
+ ],
+ "collect": [
+  "experiments/804-known-answers/work/grade804p.json",
+  "experiments/804-known-answers/work/grade804p.txt",
+  "experiments/804-known-answers/work/calib804.txt",
+  "experiments/800-checker/ka800.json",
+  "experiments/800-checker/work/"
+ ]
+}

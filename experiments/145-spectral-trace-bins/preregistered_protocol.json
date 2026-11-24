@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "experiment": "145-spectral-trace-bins",
+  "date": "2026-08-31",
+  "hypothesis": "The gamma-0.65 incumbent over-amplifies the low-variance half of its source-covariance spectrum; a fixed trace-bin attenuation improves complete-gallery PDS without reducing signed directional credit.",
+  "baseline": {
+    "effects": "Exact Experiment-142 development geometry",
+    "eigenpairs": "Exact Experiment-140 role-specific source-covariance operators",
+    "beta_zero": "Direct byte-exact baseline copy"
+  },
+  "candidate": {
+    "betas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "shared_beta_across_roles": true,
+    "descending_trace_boundaries_one_based": {
+      "k562": [
+        93,
+        806,
+        2006,
+        4992
+      ],
+      "non_k562": [
+        198,
+        994,
+        2252,
+        4992
+      ]
+    },
+    "relative_multipliers_by_bin": [
+      "1",
+      "1",
+      "exp(-beta/2)",
+      "exp(-beta)"
+    ],
+    "row_norm_preserved": true
+  },
+  "selection": {
+    "fold_sizes": [
+      123,
+      123,
+      123,
+      122,
+      122
+    ],
+    "inner_gallery": "Four inner folds only",
+    "held_gallery": "Complete 613-target gallery",
+    "eligibility": "PDS and signed-credit deltas nonnegative in every biological family",
+    "objective": "Largest macro PDS, then largest macro signed credit, then smallest beta",
+    "identity_fallback": true
+  },
+  "bootstrap": {
+    "draws": 20000,
+    "source": "Experiment-142 frozen target-block draws",
+    "selection_repeated": true,
+    "rule": "Reweight precomputed inner-fold per-target scores by sampled block multiplicity, repeat all five selectors, then aggregate selected held-fold complete-gallery scores."
+  },
+  "null_plans": {
+    "spectral_assignment": {
+      "draws": 99,
+      "seed": 145202601,
+      "preserve_exact_bin_sizes": true
+    },
+    "target_alignment": {
+      "draws": 99,
+      "seed": 145202602,
+      "derange_within_outer_fold": true,
+      "same_permutation_across_roles_and_beta_arms": true
+    },
+    "execution": "Only after the primary promotion gate passes, under a separate authorization."
+  },
+  "promotion": {
+    "nested_macro_pds_min": 0.003,
+    "nested_macro_signed_credit_min": 0.003,
+    "fixed_macro_pds_min": 0.003,
+    "fixed_macro_signed_credit_min": 0.003,
+    "bootstrap_lower_must_be_positive": true,
+    "every_family_nonnegative": true,
+    "every_family_by_fold_nonnegative": true,
+    "maximum_positive_gain_concentration": 0.5,
+    "pass_state": "PASS_FOR_FROZEN_NULL_STAGE"
+  },
+  "forbidden": {
+    "untouched_410_test": true,
+    "reserved_confirmation_expression": true,
+    "count_generation": true,
+    "cell_eval2": true,
+    "challenge_build": true,
+    "submission": true
+  }
+}

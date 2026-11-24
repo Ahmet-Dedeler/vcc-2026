@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "repository": "RasmussenLab/SLIM",
+  "revision": "5a7e9ade5d0a",
+  "license": "MIT",
+  "retrieval": "official GitHub repository API",
+  "model_equation": "Y_hat = G @ W @ P.T + b",
+  "vanilla_configuration": {
+    "basis_method": "pca",
+    "bias_method": "train_mean",
+    "solver_method": "ridge_closed_form",
+    "embedding": "STRING",
+    "default_K": 10,
+    "default_lambda_reg": 0.1
+  },
+  "closed_form": "W = solve(G.T@G + lambda*I, G.T@Y) @ P @ inv(P.T@P + lambda*I)",
+  "pca_semantics": "sklearn PCA fit_transform on genes-by-training-perturbations after subtracting the per-gene train-perturbation mean",
+  "prediction_semantics": "clip G@W@P_new.T+b below at zero",
+  "upstream_blobs": {
+    "README.md": "fd44036e899806ca8132ccda1af47b42bb8f84e3",
+    "REPRODUCE.md": "9ce160f9080d96c42ae7076b9690a88939828f8a",
+    "src/slim/model.py": "95863f2b8d632b398ace4f67e126c8edafbdd67a",
+    "src/slim/basis.py": "d8663c0da548bd7605b167e7fc8783e3b71f6a77",
+    "src/slim/bias.py": "b3616fe6a0ec4708765fe51d7795533789e3f07f",
+    "src/slim/embeddings.py": "ce37fc8763caddecef763a6935e2e538634f12a6",
+    "tests/test_solve_w.py": "ee62fd1d2ac90d804fa1aaf5db30cc44edc3f69d"
+  },
+  "local_embedding": {
+    "path": "data/external/slim/gene_string_embeddings.v0.3.h5",
+    "bytes": 19502608,
+    "sha256": "789416877b8701ef6f800106d26bf7bb97ea8e72744e6ab93e24933a717f247d",
+    "rows": 21688,
+    "dimensions": 64
+  },
+  "prior_experiment_distinction": {
+    "experiment_087": "STRING features predicted a low-rank residual around Experiment 064 arm D; it did not fit upstream SLIM's pseudobulk PCA basis or upstream two-sided ridge model.",
+    "experiment_123": "fits the upstream pseudobulk PCA basis and exact closed-form ridge independently in each source donor; any later centered response or incumbent blend is labeled as a production adaptation."
+  }
+}
+

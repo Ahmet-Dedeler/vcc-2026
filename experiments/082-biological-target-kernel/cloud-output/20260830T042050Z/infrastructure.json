@@ -1,0 +1,20 @@
+{
+  "provider": "AWS EC2",
+  "instance_id": "i-0bd65df670234f97e",
+  "instance_type": "r7i.8xlarge",
+  "market": "on-demand",
+  "source_prefix": "s3://<your-s3-bucket>/input/exp082-biological-target-kernel/20260830T042050Z/",
+  "output_prefix": "s3://<your-s3-bucket>/output/exp082-biological-target-kernel/20260830T042050Z/",
+  "minimum_instance_memory_gib": 64,
+  "minimum_available_memory_gib": 48,
+  "available_memory_kib_at_worker_start": 257397168,
+  "source_archive_sha256": "3105c64613075f1410d931760d0d2c942f8632774e925c44e3eb081a87c9e91d",
+  "runner_sha256": "bb39c39b0c8d31d36ea7ca426d0463c70bf8390c1e95d7a8cf7063f3606bf8da",
+  "stage_guard_gib": 48,
+  "evaluation_guard_gib": 24,
+  "downloaded_only_esm2_parquet": true,
+  "expression_bundle_downloaded": false,
+  "cell_eval2": false,
+  "count_generation": false,
+  "submission": false
+}

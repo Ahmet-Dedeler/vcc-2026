@@ -1,0 +1,83 @@
+{
+  "avg6": {
+    "baseline": 0.1216402396184678,
+    "candidate": 0.12173082252852911,
+    "candidate_minus_baseline": 9.058291006130981e-05
+  },
+  "comparison": "candidate minus existing clean gamma-0.65 HCT baseline",
+  "experiment": "061-perturbmatch-hct-count",
+  "metrics": {
+    "de_wilcoxon_direction_fidelity_yield_raw": {
+      "baseline_raw": 0.5281190914033265,
+      "baseline_scaled": 0.048730304677755035,
+      "candidate_raw": 0.526580084248403,
+      "candidate_scaled": 0.043600280828010034,
+      "preferred": "higher",
+      "raw_candidate_minus_baseline": -0.0015390071549234996,
+      "raw_favorable_delta": -0.0015390071549234996,
+      "scaled_candidate_minus_baseline": -0.005130023849745001
+    },
+    "de_wilcoxon_direction_reach_raw": {
+      "baseline_raw": 0.015024842280211007,
+      "baseline_scaled": -0.06358834566940735,
+      "candidate_raw": 0.014380386363656456,
+      "candidate_scaled": -0.0643076045048477,
+      "preferred": "higher",
+      "raw_candidate_minus_baseline": -0.0006444559165545514,
+      "raw_favorable_delta": -0.0006444559165545514,
+      "scaled_candidate_minus_baseline": -0.0007192588354403423
+    },
+    "de_wilcoxon_lfc_nmae": {
+      "baseline_raw": 0.9570910100213278,
+      "baseline_scaled": 0.07352235153612553,
+      "candidate_raw": 0.954848497287287,
+      "candidate_scaled": 0.07725179230452857,
+      "preferred": "lower",
+      "raw_candidate_minus_baseline": -0.002242512734040747,
+      "raw_favorable_delta": 0.002242512734040747,
+      "scaled_candidate_minus_baseline": 0.003729440768403036
+    },
+    "de_wilcoxon_sig_jaccard": {
+      "baseline_raw": 0.03376235851147194,
+      "baseline_scaled": 0.01287123922019443,
+      "candidate_raw": 0.0345113611762028,
+      "candidate_scaled": 0.01489557074649405,
+      "preferred": "higher",
+      "raw_candidate_minus_baseline": 0.0007490026647308592,
+      "raw_favorable_delta": 0.0007490026647308592,
+      "scaled_candidate_minus_baseline": 0.002024331526299619
+    },
+    "expr_mse_unbiased_capped_norm": {
+      "baseline_raw": 2.053752930283477,
+      "baseline_scaled": 0.0,
+      "candidate_raw": 2.067814261643044,
+      "candidate_scaled": 0.0,
+      "preferred": "lower",
+      "raw_candidate_minus_baseline": 0.014061331359566775,
+      "raw_favorable_delta": -0.014061331359566775,
+      "scaled_candidate_minus_baseline": 0.0
+    },
+    "pds_cosine": {
+      "baseline_raw": 0.7978834142956279,
+      "baseline_scaled": 0.6583058879461391,
+      "candidate_raw": 0.7981725653481379,
+      "candidate_scaled": 0.6589448957969897,
+      "preferred": "higher",
+      "raw_candidate_minus_baseline": 0.00028915105250992834,
+      "raw_favorable_delta": 0.00028915105250992834,
+      "scaled_candidate_minus_baseline": 0.0006390078508505814
+    }
+  },
+  "scaling": "reference scaling uses midpoint of official 2026 A/B/C baseline and replicate anchors, exactly as experiments 031/040",
+  "score_files": {
+    "baseline": {
+      "path": "/work/exp061/repo/experiments/061-perturbmatch-hct-count/cloud-output/baseline-agg_results.csv",
+      "sha256": "f1011cd12786d2196949daa6ce3bf328d52c0afc9d46966e8d3e882f6200cccf"
+    },
+    "candidate": {
+      "path": "/work/exp061/repo/experiments/061-perturbmatch-hct-count/cloud-output/candidate-run/agg_results.csv",
+      "sha256": "f469c2c445cc86eb77cfccce141a4639f23fee2bbcb0eb9000162bb9eed544de"
+    }
+  },
+  "status": "scored"
+}

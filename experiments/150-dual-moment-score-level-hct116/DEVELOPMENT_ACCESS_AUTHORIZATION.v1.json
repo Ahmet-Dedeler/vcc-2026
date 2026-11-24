@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "experiment": "150-dual-moment-score-level-hct116",
+  "status": "authorized_once",
+  "provenance_utc": "2026-08-31T18:45:00+00:00",
+  "scorer": {
+    "path": "experiments/150-dual-moment-score-level-hct116/score_confirmation.py",
+    "sha256": "f77ba3f278bac2e2674c4f0d62b828d4458700d26acf45c12a3e3a7b32265390"
+  },
+  "bindings_sha256": {
+    "experiments/150-dual-moment-score-level-hct116/preregistered_protocol.json": "08a89a5f9701aa5e94c516e85d941625912cb7a807c99b9b40a6e5ef7c26d6ef",
+    "experiments/150-dual-moment-score-level-hct116/build_predictions.py": "fdf7a493b434832fc08b58653d9be69efe80aa15fb84ff971c3e7303f82eafb1",
+    "experiments/150-dual-moment-score-level-hct116/work/source-build-v1/build-report.json": "9aa9ba42b14ccd043916e0c90b4ac05cbf6d8101ec0076cb8fd7d62549ecfbd6",
+    "experiments/150-dual-moment-score-level-hct116/work/source-build-v1/effects.npz": "edf55db4eac6aaae4dc8c11c1e03681838eb225dfde317d52bc9bd3d7c8f69cd",
+    "experiments/150-dual-moment-score-level-hct116/work/source-build-v1/incumbent.h5ad": "a569fd33b784db0e663b28554117e7005571bcc0b8d9bd5b537f7840e3fac4e7",
+    "experiments/150-dual-moment-score-level-hct116/work/source-build-v1/candidate.h5ad": "b1bd51ac41a878108f639d82b3128113f6380ad14ee420e33e99dc25146732c1",
+    "data/harness/orion-hct116-thinned.h5ad": "04f98cd764bfa428cae4cd1060e814a327cdcf1a2167e6485d7c57646403b401",
+    "data/harness/orion-hct116-thinned.h5ad.meta.json": "98e0d4577d0133d02e61272ed2d24ac5e75b2bcaa84027a6c2c26cacb5f075ff",
+    "experiments/149-dual-moment-hek293t/score_confirmation.py": "f87413f5d4e986c45a091fbce512c625c0e2d2207c4d88e395c817e38916e1d1",
+    "scripts/run_with_memory_guard.py": "3be02ceaa44ea0c0ed4641827dd9305095255ec6cbacb82d667cefb4f7915198"
+  },
+  "target_count": 132,
+  "target_order_sha256": "476f8fa9f34fe0865fe135eda61e0b3bb979bd5b4725fbcf2436dbc4cc68b17b",
+  "bootstrap": {
+    "draws": 20000,
+    "seed": 15000
+  },
+  "authorizes": [
+    "one serial incumbent score on the frozen HCT116-thinned harness",
+    "one serial candidate score on the frozen HCT116-thinned harness",
+    "the frozen paired target bootstrap"
+  ],
+  "does_not_authorize": [
+    "parameter retuning",
+    "alternative lambda or gamma testing",
+    "challenge prediction build",
+    "challenge submission"
+  ]
+}
